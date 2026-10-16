@@ -5,10 +5,10 @@ criada por [geraldo-netto](https://github.com/geraldo-netto). Agradecemos ao aut
 disponibilizar o motor de efemérides que fundamenta esta versão em WebAssembly e
 sua camada de gráficos TypeScript.
 
-Biblioteca de efemérides em Rust/WebAssembly com bindings TypeScript completos e
-geração de mapas astrológicos e tabelas em SVG. Funciona em Node.js e em workers
-de módulo do navegador. O runtime não depende de DOM, canvas, N-API ou pacotes
-JavaScript externos.
+Biblioteca de efemérides em Rust/WebAssembly com bindings TypeScript completos,
+mapas astrológicos e tabelas em SVG, além de relatórios em português com saídas
+estruturadas e em texto. Funciona em Node.js e em workers de módulo do navegador.
+O runtime não depende de DOM, canvas, N-API ou pacotes JavaScript externos.
 
 Este diretório é a raiz independente da biblioteca: código, configurações,
 scripts, lockfiles, testes, documentação e licença estão contidos nele. Pode ser
@@ -41,7 +41,8 @@ npm test
 
 `npm ci` instala somente ferramentas de desenvolvimento, com versões fixadas em
 `package-lock.json`. `npm run build` gera JavaScript, WebAssembly, declarações
-TypeScript e a camada de gráficos em `pkg/`. O core mantém seu `Cargo.lock`.
+TypeScript e os módulos de gráficos e relatórios em `pkg/`. O core mantém seu
+`Cargo.lock`.
 
 ## Instalar em uma aplicação
 
@@ -197,6 +198,60 @@ com posição e largura configuráveis. Consulte os tipos e exemplos no guia de
 charts. Rótulos podem se afastar para evitar colisões; os marcadores dos astros e
 os extremos das linhas de aspectos continuam nas longitudes calculadas.
 
+## Relatórios astrológicos
+
+O módulo `celestial-wasm/reports` gera relatórios para um dia, um mês ou qualquer
+intervalo entre **2026 e 2035**. Inclui presenças e ingressos em signos, aspectos,
+retrogradações, estações, fases lunares e eclipses, com datas, durações e
+interpretações em português. A leitura é coletiva, ocidental, tropical e
+geocêntrica, com enfoque psicológico: traz um panorama geral e cinco áreas,
+**saúde, relacionamentos, finanças, trabalho e família**.
+
+| Método do gerador | Saída |
+| --- | --- |
+| `report(input)` | Objeto TypeScript com todos os eventos, durações e interpretações |
+| `reportJSON(input)` | Relatório completo serializado em JSON |
+| `reportText(input, options?)` | Parágrafos cronológicos completos; permite escolher as áreas |
+| `reportCompact(input, options?)` | Objeto com panorama, destaques e frases por área |
+| `reportCompactText(input, options?)` | Versão compacta em parágrafos prontos para exibição |
+
+Exemplo no navegador ou em worker (para Node.js, use a
+[inicialização com os bytes do WASM](#uso-em-nodejs)):
+
+```ts
+import init, * as core from 'celestial-wasm';
+import { createReportGenerator } from 'celestial-wasm/reports';
+
+await init();
+const generator = createReportGenerator(core);
+const period = {
+  start: '2026-02-01',
+  end: '2026-02-28',
+  timeZone: 'America/Sao_Paulo',
+};
+
+const fullReport = generator.report(period);
+const compactReport = generator.reportCompact(period);
+const monthText = generator.reportCompactText(period);
+const dayText = generator.reportCompactText({
+  start: '2026-02-17',
+  end: '2026-02-17',
+  timeZone: 'America/Sao_Paulo',
+});
+```
+
+Datas no formato `YYYY-MM-DD` incluem o dia inicial e o final; repetir a data
+seleciona um único dia. A versão compacta traz, por padrão, até cinco destaques
+para o mês e três para o dia, além das cinco áreas. O catálogo de interpretações
+é estático e local. Reutilize o gerador para aproveitar os caches de cálculos,
+relatórios, JSON e textos.
+
+Consulte a **[documentação detalhada dos relatórios](reports/README.md)** para
+formatos de entrada e saída, durações, fusos, opções, critérios de seleção e
+limites da leitura. Há exemplos completos em [JSON](reports/examples/february-2026.json)
+e [texto](reports/examples/february-2026.txt), além das versões compactas de
+[mês](reports/examples/february-2026-compact.txt) e [dia](reports/examples/2026-02-17-compact.txt).
+
 ## Documentação e comandos
 
 - [Guia de mapas, funções, temas, paletas, dados e erros](charts/README.md).
@@ -242,6 +297,4 @@ em [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
 
 O motor usa efemérides embutidas e conserva as aproximações do core original.
 Os testes de regressão não demonstram equivalência de precisão com Swiss
-Ephemeris/JPL. A biblioteca não gera interpretações astrológicas em texto.
-
-Para leituras breves, o módulo de relatórios oferece `generator.reportCompact(input)` e `generator.reportCompactText(input)`, com até cinco destaques mensais ou três diários e cinco áreas práticas. As versões completas continuam disponíveis. Veja [a documentação e os exemplos de mês e dia](reports/README.md#leitura-compacta-de-um-mês-ou-dia).
+Ephemeris/JPL.
