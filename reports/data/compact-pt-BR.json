@@ -1,0 +1,824 @@
+{
+  "version": "1.0.0",
+  "locale": "pt-BR",
+  "overview": {
+    "day": "",
+    "month": "",
+    "period": "",
+    "empty": "Este recorte não apresenta destaques entre os eventos selecionados. A ausência de destaques não indica ausência de movimentos no céu."
+  },
+  "templates": {
+    "signIngress": "{body} entra em {sign}.",
+    "signPresence": "{body} já está em {sign} no início do recorte.",
+    "aspect": "{body1} e {body2} formam {aspect} dentro da orbe adotada.",
+    "retrograde": "{body} está em movimento retrógrado aparente em {sign}.",
+    "stationDirect": "{body} retoma o movimento direto aparente.",
+    "stationRetrograde": "{body} inicia o movimento retrógrado aparente.",
+    "phase": "Ocorre {phase}, com a Lua em {sign}.",
+    "eclipseSolar": "O eclipse solar atinge seu máximo, com o Sol em {sign}.",
+    "eclipseLunar": "O eclipse lunar atinge seu máximo, com a Lua em {sign}.",
+    "background": "{body} permanece em {sign}.",
+    "continuedBefore": "O evento já estava em curso no início do recorte.",
+    "continuesAfter": "O evento continua além deste recorte.",
+    "exactPassages": "O aspecto se torna exato em {exact}.",
+    "omitted": "Outros {count} eventos constam do relatório completo.",
+    "eclipseSolarBackground": "Parte do intervalo físico global do eclipse solar coincide com este recorte.",
+    "eclipseLunarBackground": "Parte do intervalo físico global do eclipse lunar coincide com este recorte.",
+    "aspectExact": "O aspecto de {aspect} entre {body1} e {body2} se torna exato."
+  },
+  "disclaimer": "Leitura astrológica simbólica e coletiva, sem caráter de previsão individual, diagnóstico ou orientação de investimento.",
+  "components": {
+    "pair:sun:moon": {
+      "title": "Sol e Lua: direção e pertencimento",
+      "general": "Propósitos compartilhados precisam encontrar espaço nas necessidades de quem participa.",
+      "health": "O cuidado inclui pausas compatíveis com as metas de desempenho.",
+      "relationships": "Reconhecimento e acolhimento pedem gestos diferentes, ambos importantes para a convivência.",
+      "finance": "As metas materiais podem ser comparadas às necessidades de segurança cotidiana.",
+      "work": "Objetivos de equipe precisam considerar as condições de quem executa.",
+      "family": "Projetos familiares ficam mais claros quando incluem o trabalho doméstico necessário."
+    },
+    "pair:sun:mercury": {
+      "title": "Sol e Mercúrio: propósito e discurso",
+      "general": "Explicar escolhas também significa admitir perguntas sobre a direção proposta.",
+      "health": "Conversas claras permitem reconhecer necessidades de cuidado pouco visíveis.",
+      "relationships": "Defender uma posição deixa espaço para escutar outra perspectiva.",
+      "finance": "Os objetivos financeiros precisam ser compreensíveis para todos os envolvidos.",
+      "work": "Anunciar prioridades exige informação suficiente para orientar o trabalho cotidiano.",
+      "family": "Quem costuma receber orientações também precisa participar das decisões familiares."
+    },
+    "pair:sun:venus": {
+      "title": "Sol e Vênus: reconhecimento e valor",
+      "general": "Prestígio e aprovação entram em conversa com os critérios de valor.",
+      "health": "Necessidades de conforto merecem atenção além das expectativas de aparência.",
+      "relationships": "A admiração pode acolher gostos diferentes sem exigir concordância constante.",
+      "finance": "Vale observar quanto o reconhecimento social pesa nas prioridades de consumo.",
+      "work": "Reconhecer contribuições exige olhar além de quem recebe mais atenção.",
+      "family": "O afeto comporta escolhas que diferem da imagem esperada pela família."
+    },
+    "pair:sun:mars": {
+      "title": "Sol e Marte: direção e iniciativa",
+      "general": "A iniciativa ganha direção quando os objetivos podem ser discutidos.",
+      "health": "Regular o esforço permite reconhecer limites sem medir compromisso pela exaustão.",
+      "relationships": "A afirmação de desejos precisa respeitar a autonomia de quem participa.",
+      "finance": "Uma iniciativa material pede clareza sobre objetivo, custo e responsabilidade.",
+      "work": "Cobranças de resultado precisam vir acompanhadas de autonomia e recursos.",
+      "family": "Disputas sobre decisões podem esconder tarefas e necessidades ainda indefinidas."
+    },
+    "pair:sun:jupiter": {
+      "title": "Sol e Júpiter: direção e horizonte",
+      "general": "Uma visão de futuro precisa comportar diferentes ideias de realização.",
+      "health": "Expectativas de crescimento podem incluir limites e condições reais de cuidado.",
+      "relationships": "Planos compartilhados precisam deixar espaço para dúvidas e desejos distintos.",
+      "finance": "Ambições materiais merecem ser comparadas aos compromissos necessários para sustentá-las.",
+      "work": "Promessas de crescimento ganham conteúdo quando definem oportunidades e responsabilidades.",
+      "family": "O apoio familiar pode acolher definições diferentes de sucesso e realização."
+    },
+    "pair:sun:saturn": {
+      "title": "Sol e Saturno: autoridade e responsabilidade",
+      "general": "Autoridade e responsabilidade podem ser avaliadas pela participação que permitem.",
+      "health": "Descanso e apoio também fazem parte de uma rotina responsável.",
+      "relationships": "O compromisso precisa admitir limites além do cumprimento de papéis.",
+      "finance": "Obrigações assumidas por prestígio merecem ser comparadas às prioridades concretas.",
+      "work": "Responsabilidade pelas entregas precisa acompanhar o poder de decisão.",
+      "family": "Regras familiares podem ser revistas sem abandonar acordos que oferecem segurança."
+    },
+    "pair:sun:uranus": {
+      "title": "Sol e Urano: expressão e autonomia",
+      "general": "A liberdade de propor mudanças revela quem participa da identidade coletiva.",
+      "health": "Rotinas flexíveis podem acolher necessidades que padrões uniformes deixam de fora.",
+      "relationships": "Reconhecer alguém inclui respeitar mudanças de opinião e interesses próprios.",
+      "finance": "Novidades ligadas à independência também envolvem custos e possíveis dependências.",
+      "work": "Experimentar exige ouvir quem terá de adaptar a rotina de trabalho.",
+      "family": "Trajetórias diferentes podem preservar pertencimento e responsabilidades compartilhadas."
+    },
+    "pair:sun:neptune": {
+      "title": "Sol e Netuno: propósito e idealização",
+      "general": "Ideais compartilhados precisam de contornos que tornem as responsabilidades compreensíveis.",
+      "health": "Admitir limites abre espaço para cuidados que imagens de plenitude escondem.",
+      "relationships": "A admiração pode reconhecer a pessoa real, com diferenças e limites.",
+      "finance": "Promessas de realização merecem condições materiais tão claras quanto sua apresentação.",
+      "work": "Uma visão inspiradora precisa se traduzir em escopo, decisões e recursos.",
+      "family": "A convivência comporta diferenças que uma imagem familiar harmoniosa pode encobrir."
+    },
+    "pair:sun:pluto": {
+      "title": "Sol e Plutão: liderança e poder",
+      "general": "A distribuição de poder aparece em quem consegue questionar as prioridades.",
+      "health": "Autonomia e privacidade merecem espaço nas decisões cotidianas de cuidado.",
+      "relationships": "A admiração precisa comportar discordância e liberdade de escolha.",
+      "finance": "Recursos compartilhados pedem clareza sobre dependências e poder de decisão.",
+      "work": "Cargos formais nem sempre revelam quem controla recursos e oportunidades.",
+      "family": "Figuras centrais podem compartilhar decisões sem perder sua importância afetiva."
+    },
+    "pair:moon:mercury": {
+      "title": "Lua e Mercúrio: necessidade e linguagem",
+      "general": "Dar palavras às necessidades ajuda a compreender a experiência cotidiana.",
+      "health": "Organizar dúvidas facilita conversas sobre necessidades e condições de cuidado.",
+      "relationships": "Conferir o entendimento ajuda mais do que esperar compreensão automática.",
+      "finance": "Registros atuais permitem distinguir necessidades materiais de receios herdados.",
+      "work": "Informações da rotina precisam chegar também a quem acaba de entrar.",
+      "family": "Lembranças diferentes podem coexistir dentro de uma mesma história familiar."
+    },
+    "pair:moon:venus": {
+      "title": "Lua e Vênus: cuidado e reciprocidade",
+      "general": "O acolhimento ganha sentido quando reconhece diferentes formas de pertencimento.",
+      "health": "Conforto e apoio precisam corresponder às necessidades de quem recebe.",
+      "relationships": "Gestos de afeto podem ser conversados, pois nem todos acolhem igualmente.",
+      "finance": "Despesas de conforto merecem ser compreendidas pelo cuidado que oferecem.",
+      "work": "O trabalho de acolher colegas também precisa de reconhecimento e apoio.",
+      "family": "Quem oferece cuidado precisa encontrar espaço para suas próprias necessidades."
+    },
+    "pair:moon:mars": {
+      "title": "Lua e Marte: proteção e afirmação",
+      "general": "Defender o pertencimento pede atenção às formas de reagir e proteger.",
+      "health": "Urgências cotidianas precisam deixar espaço para pausas e apoio regular.",
+      "relationships": "Pedir acolhimento diretamente ajuda a esclarecer cobranças e limites.",
+      "finance": "A urgência de proteger a casa merece critérios de custo claros.",
+      "work": "Demandas imediatas não precisam definir toda a organização da equipe.",
+      "family": "Proteger pessoas próximas inclui respeitar sua participação nas decisões."
+    },
+    "pair:moon:jupiter": {
+      "title": "Lua e Júpiter: acolhimento e confiança",
+      "general": "O pertencimento pode se ampliar quando diferentes referências encontram acolhimento.",
+      "health": "Redes de apoio ajudam quando reconhecem necessidades, dúvidas e limites.",
+      "relationships": "A generosidade pode acolher projetos diferentes sem exigir adesão.",
+      "finance": "Promessas de conforto merecem comparação com os recursos do cotidiano.",
+      "work": "Oportunidades de aprendizagem precisam alcançar pessoas fora dos círculos habituais.",
+      "family": "Tradições de hospitalidade podem conviver com novas formas de viver."
+    },
+    "pair:moon:saturn": {
+      "title": "Lua e Saturno: cuidado e dever",
+      "general": "A segurança cotidiana depende de responsabilidades que possam ser compartilhadas.",
+      "health": "Cuidar com continuidade exige apoio e descanso para quem cuida.",
+      "relationships": "Cumprir deveres oferece confiança, mas as necessidades também precisam ser ditas.",
+      "finance": "Compromissos recorrentes podem ser avaliados pelo sustento que realmente oferecem.",
+      "work": "Regras de trabalho precisam considerar o esforço cotidiano pouco visível.",
+      "family": "A divisão do cuidado pode mudar conforme as condições de cada pessoa."
+    },
+    "pair:moon:uranus": {
+      "title": "Lua e Urano: segurança e mudança",
+      "general": "Mudanças de rotina convidam a reconsiderar o que oferece segurança.",
+      "health": "Adaptar rotinas requer apoio para necessidades diferentes durante a mudança.",
+      "relationships": "A proximidade pode comportar autonomia sem abandonar os acordos de cuidado.",
+      "finance": "Mudanças domésticas merecem atenção aos custos e ao apoio disponível.",
+      "work": "Novos processos precisam considerar hábitos que sustentam o cotidiano da equipe.",
+      "family": "Arranjos familiares podem mudar preservando referências e responsabilidades de cuidado."
+    },
+    "pair:moon:neptune": {
+      "title": "Lua e Netuno: acolhimento e sensibilidade",
+      "general": "Acolher experiências diferentes exige distinguir escuta de expectativas pouco claras.",
+      "health": "A disponibilidade para cuidar precisa de limites e informações compreensíveis.",
+      "relationships": "Empatia ajuda a escutar, mas não dispensa pedidos claros.",
+      "finance": "A generosidade doméstica pode incluir limites materiais explicitamente combinados.",
+      "work": "O apoio entre colegas precisa comportar responsabilidades e disponibilidade reais.",
+      "family": "Expectativas silenciosas de cuidado merecem uma conversa respeitosa e direta."
+    },
+    "pair:moon:pluto": {
+      "title": "Lua e Plutão: pertencimento e dependência",
+      "general": "Pertencimento e dependência podem ser examinados pela liberdade de escolha.",
+      "health": "O acesso ao cuidado precisa preservar privacidade e autonomia.",
+      "relationships": "A intimidade pode ser profunda sem exigir controle da vida alheia.",
+      "finance": "A segurança material merece clareza sobre quem controla recursos compartilhados.",
+      "work": "Apoio cotidiano e dependências informais ajudam a compreender o poder na equipe.",
+      "family": "Lealdades familiares podem ser conversadas sem obrigar ninguém a expor intimidades."
+    },
+    "pair:mercury:venus": {
+      "title": "Mercúrio e Vênus: diálogo e negociação",
+      "general": "A delicadeza no diálogo pode conviver com posições claramente formuladas.",
+      "health": "Comunicar dificuldades com respeito não exige diminuir sua importância.",
+      "relationships": "Escolher palavras cuidadosas ajuda quando a conversa também esclarece expectativas.",
+      "finance": "Afinidade com uma proposta precisa ser acompanhada de condições compreensíveis.",
+      "work": "A cordialidade favorece acordos quando responsabilidades e critérios permanecem claros.",
+      "family": "Gostos diferentes podem ser negociados sem exigir consenso para preservar afeto."
+    },
+    "pair:mercury:mars": {
+      "title": "Mercúrio e Marte: argumento e ação",
+      "general": "A pressa de responder pode ser revista à luz do problema concreto.",
+      "health": "Pedidos urgentes de cuidado precisam de clareza e espaço para perguntas.",
+      "relationships": "Discordar permite esclarecer desejos quando a conversa preserva a escuta.",
+      "finance": "A pressão por resposta merece distinção entre urgência real e persuasão.",
+      "work": "Instruções claras orientam a execução melhor do que cobranças sucessivas.",
+      "family": "Pedidos explícitos ajudam a discutir tarefas sem presumir intenções alheias."
+    },
+    "pair:mercury:jupiter": {
+      "title": "Mercúrio e Júpiter: informação e perspectiva",
+      "general": "Uma visão ampla ganha consistência quando permanece aberta aos detalhes.",
+      "health": "Explicações sobre cuidado precisam considerar o contexto de cada informação.",
+      "relationships": "Exemplos concretos ajudam a compreender diferenças de opinião e expectativa.",
+      "finance": "Projeções de crescimento pedem atenção aos dados e às premissas.",
+      "work": "A estratégia precisa manter contato com as informações de quem executa.",
+      "family": "Escutar experiências permite reconhecer trajetórias além das expectativas familiares."
+    },
+    "pair:mercury:saturn": {
+      "title": "Mercúrio e Saturno: clareza e critério",
+      "general": "Critérios claros organizam o entendimento quando também permitem perguntas.",
+      "health": "Orientações e registros precisam ser compreensíveis para quem organiza o cuidado.",
+      "relationships": "Precisão nos acordos pode conviver com abertura para expressar dificuldades.",
+      "finance": "Prazos e condições precisam ser compreendidos, mesmo quando estão documentados.",
+      "work": "Registrar decisões ajuda a reduzir dúvidas sobre responsabilidades e critérios.",
+      "family": "Combinações práticas podem ser claras sem transformar convivência em fiscalização."
+    },
+    "pair:mercury:uranus": {
+      "title": "Mercúrio e Urano: ideia e experimentação",
+      "general": "Ideias novas merecem curiosidade e espaço para examinar sua consistência.",
+      "health": "Novas ferramentas de cuidado precisam ser acessíveis e compreensíveis.",
+      "relationships": "Mudanças de opinião podem abrir conversas sobre acordos já estabelecidos.",
+      "finance": "Novos formatos de proposta pedem clareza sobre funcionamento e responsabilidades.",
+      "work": "A experimentação ganha conteúdo quando inclui quem conhece a rotina.",
+      "family": "Explicar referências diferentes aproxima gerações sem hierarquizar suas experiências."
+    },
+    "pair:mercury:neptune": {
+      "title": "Mercúrio e Netuno: linguagem e imaginação",
+      "general": "Narrativas e imagens podem inspirar sem substituir informações verificáveis.",
+      "health": "Promessas de cuidado merecem perguntas sobre significado e origem das informações.",
+      "relationships": "Conferir o sentido de uma mensagem evita atribuir certeza à intuição.",
+      "finance": "Uma narrativa atraente precisa tornar seus custos e condições explícitos.",
+      "work": "A imaginação encontra aplicação quando o projeto esclarece entregas e responsáveis.",
+      "family": "Histórias familiares podem preservar afeto sem exigir uma única versão."
+    },
+    "pair:mercury:pluto": {
+      "title": "Mercúrio e Plutão: informação e influência",
+      "general": "Perguntas sobre informação também revelam como a influência é distribuída.",
+      "health": "Informações de cuidado precisam ser acessíveis, com respeito à privacidade.",
+      "relationships": "Interesse pela vida alheia precisa reconhecer limites sobre informações pessoais.",
+      "finance": "O acesso desigual aos detalhes de um acordo merece atenção.",
+      "work": "Compartilhar conhecimento reduz dependências de quem concentra informações necessárias.",
+      "family": "Perguntas sobre a história familiar precisam respeitar o direito ao silêncio."
+    },
+    "pair:venus:mars": {
+      "title": "Vênus e Marte: desejo e acordo",
+      "general": "Desejos distintos podem encontrar acordos que preservem a iniciativa de cada parte.",
+      "health": "Prazer e esforço precisam comportar limites além das expectativas alheias.",
+      "relationships": "Expressar desejo inclui respeitar consentimento, reciprocidade e possibilidade de recusa.",
+      "finance": "O desejo de adquirir pode ser comparado às prioridades já estabelecidas.",
+      "work": "Interesses diferentes podem ser negociados sem eliminar iniciativa ou colaboração.",
+      "family": "Afeto e franqueza precisam deixar espaço para recusar escolhas domésticas."
+    },
+    "pair:venus:jupiter": {
+      "title": "Vênus e Júpiter: prazer e generosidade",
+      "general": "Generosidade e convivência convidam a observar quem participa das oportunidades.",
+      "health": "O prazer cotidiano pode respeitar preferências e limites de participação.",
+      "relationships": "Presentes e convites precisam deixar livre a resposta de quem recebe.",
+      "finance": "Conforto e generosidade podem ser pensados dentro dos recursos disponíveis.",
+      "work": "Promessas de reconhecimento precisam corresponder a oportunidades e condições claras.",
+      "family": "Celebrações ficam mais acessíveis quando seus custos e tarefas são compartilhados."
+    },
+    "pair:venus:saturn": {
+      "title": "Vênus e Saturno: vínculo e compromisso",
+      "general": "A continuidade dos vínculos depende de acordos que permaneçam negociáveis.",
+      "health": "Necessidades de conforto não precisam esperar o fim de todas as obrigações.",
+      "relationships": "Compromisso oferece segurança quando admite necessidades e revisão de responsabilidades.",
+      "finance": "O valor de uma escolha também envolve seu custo de manutenção.",
+      "work": "Lealdade profissional pede condições explícitas de reconhecimento e reciprocidade.",
+      "family": "A presença constante pode conviver com a renegociação de papéis antigos."
+    },
+    "pair:venus:uranus": {
+      "title": "Vênus e Urano: afinidade e liberdade",
+      "general": "Preferências podem mudar enquanto os acordos de convivência são renegociados.",
+      "health": "A liberdade de escolha pode incluir formas diferentes de conforto.",
+      "relationships": "Autonomia ganha sentido quando os envolvidos participam da definição dos acordos.",
+      "finance": "Novas preferências merecem atenção aos custos de uso e adaptação.",
+      "work": "Parcerias flexíveis precisam esclarecer reconhecimento, autonomia e trabalho de adaptação.",
+      "family": "Escolhas diferentes podem ampliar o pertencimento sem apagar a reciprocidade."
+    },
+    "pair:venus:neptune": {
+      "title": "Vênus e Netuno: afeto e idealização",
+      "general": "Ideais de convivência pedem atenção às condições que deixam indefinidas.",
+      "health": "Imagens de bem-estar precisam deixar espaço para necessidades reais.",
+      "relationships": "A empatia pode reconhecer limites sem exigir uma relação ideal.",
+      "finance": "A aparência de uma proposta precisa ser comparada às condições oferecidas.",
+      "work": "Afinidade criativa pode vir acompanhada de acordos sobre autoria e remuneração.",
+      "family": "A harmonia familiar precisa comportar diferenças e limites de cuidado."
+    },
+    "pair:venus:pluto": {
+      "title": "Vênus e Plutão: valor e poder de vínculo",
+      "general": "As trocas podem ser examinadas pela influência e pelas dependências envolvidas.",
+      "health": "Escolhas de cuidado precisam preservar autonomia diante de expectativas de aceitação.",
+      "relationships": "A intimidade precisa comportar limites, discordância e liberdade de escolha.",
+      "finance": "Benefícios materiais merecem clareza sobre condições e poder de decisão.",
+      "work": "Critérios de reconhecimento ajudam a tornar visíveis as relações de influência.",
+      "family": "Apoio e presentes podem ser oferecidos sem criar obrigações silenciosas."
+    },
+    "pair:mars:jupiter": {
+      "title": "Marte e Júpiter: iniciativa e convicção",
+      "general": "A defesa de uma ideia precisa considerar alcance, recursos e perspectivas diferentes.",
+      "health": "Metas de superação podem ser comparadas aos limites e apoios disponíveis.",
+      "relationships": "Incentivar planos comuns exige respeitar prioridades e ritmos diferentes.",
+      "finance": "A ampliação de projetos pede clareza sobre compromissos e recursos.",
+      "work": "A iniciativa ganha sustentação quando a ambição considera capacidade de execução.",
+      "family": "Projetos de futuro podem receber apoio sem se tornarem obrigação coletiva."
+    },
+    "pair:mars:saturn": {
+      "title": "Marte e Saturno: esforço e limite",
+      "general": "O esforço encontra direção quando os limites podem ser reconhecidos e negociados.",
+      "health": "O ritmo de atividade precisa considerar pausas e condições de cuidado.",
+      "relationships": "Limites claros ajudam a negociar frustrações sem transformar firmeza em cobrança.",
+      "finance": "Compromissos materiais merecem ser dimensionados pelo esforço necessário para sustentá-los.",
+      "work": "Restrições de execução pedem prioridades, recursos e responsabilidades realistas.",
+      "family": "Tarefas domésticas precisam considerar disponibilidade concreta além do senso de dever."
+    },
+    "pair:mars:uranus": {
+      "title": "Marte e Urano: ação e ruptura de hábitos",
+      "general": "Romper um hábito exige atenção às consequências práticas da mudança.",
+      "health": "Mudanças de ritmo precisam respeitar condições e apoios do cotidiano.",
+      "relationships": "A iniciativa de mudar acordos requer diálogo com quem será afetado.",
+      "finance": "Escolhas motivadas pela novidade também envolvem custos de adaptação.",
+      "work": "Experimentar outros caminhos exige considerar quem absorve o trabalho da transição.",
+      "family": "A autonomia familiar pode ser negociada junto às responsabilidades compartilhadas."
+    },
+    "pair:mars:neptune": {
+      "title": "Marte e Netuno: ação e ideal",
+      "general": "Agir por um ideal exige compreender o que a ação pretende realizar.",
+      "health": "A dedicação ao cuidado precisa de limites para permanecer possível.",
+      "relationships": "Gestos de apoio podem expressar desejos e limites de forma clara.",
+      "finance": "Compromissos assumidos por uma causa pedem clareza sobre destino e responsabilidades.",
+      "work": "O propósito de um projeto precisa orientar tarefas e critérios de entrega.",
+      "family": "A disposição para ajudar pode ser acompanhada de pedidos e limites explícitos."
+    },
+    "pair:mars:pluto": {
+      "title": "Marte e Plutão: força e poder de decisão",
+      "general": "O poder de agir pode ser examinado por seus limites e consequências.",
+      "health": "Exigências de esforço precisam respeitar autonomia e condições de cuidado.",
+      "relationships": "A firmeza de uma posição precisa preservar a liberdade de discordar.",
+      "finance": "Disputas por recursos pedem clareza sobre interesses e poder de decisão.",
+      "work": "Responsabilidade pela execução precisa acompanhar acesso aos recursos necessários.",
+      "family": "Decisões domésticas podem ser negociadas sem transformar influência em imposição."
+    },
+    "pair:jupiter:saturn": {
+      "title": "Júpiter e Saturno: expansão e sustentação",
+      "general": "Projetos de crescimento precisam encontrar estruturas capazes de sustentá-los.",
+      "health": "Expectativas de desenvolvimento podem incluir continuidade e limites do cuidado.",
+      "relationships": "Planos comuns ganham clareza quando entusiasmo e compromissos são discutidos juntos.",
+      "finance": "A expansão de compromissos pode ser comparada aos recursos de manutenção.",
+      "work": "Objetivos amplos precisam de etapas compatíveis com a capacidade da equipe.",
+      "family": "Projetos familiares podem combinar perspectivas de futuro e responsabilidades presentes."
+    },
+    "pair:jupiter:uranus": {
+      "title": "Júpiter e Urano: horizonte e inovação",
+      "general": "A abertura a novos caminhos pede participação nas mudanças propostas.",
+      "health": "Novas possibilidades de cuidado precisam considerar acessibilidade e apoio concreto.",
+      "relationships": "Planos diferentes podem ampliar a convivência quando preservam escolhas individuais.",
+      "finance": "Novos modelos de uso dos recursos merecem compreensão do funcionamento.",
+      "work": "Inovação e aprendizagem precisam incluir quem terá de adaptar os processos.",
+      "family": "Expectativas de futuro podem acolher trajetórias menos familiares às gerações anteriores."
+    },
+    "pair:jupiter:neptune": {
+      "title": "Júpiter e Netuno: esperança e visão coletiva",
+      "general": "Esperanças compartilhadas merecem espaço para dúvidas e condições concretas.",
+      "health": "Incentivos ao cuidado precisam reconhecer limites além de promessas inspiradoras.",
+      "relationships": "Planos idealizados podem ser comparados às expectativas reais de cada pessoa.",
+      "finance": "Imagens de abundância precisam ser acompanhadas de condições materiais compreensíveis.",
+      "work": "Um propósito mobilizador pede clareza sobre alcance, responsáveis e recursos.",
+      "family": "Crenças compartilhadas podem oferecer apoio sem exigir uma experiência uniforme."
+    },
+    "pair:jupiter:pluto": {
+      "title": "Júpiter e Plutão: convicção e influência",
+      "general": "Convicções coletivas podem ser examinadas pela influência que legitimam.",
+      "health": "Projetos de cuidado precisam considerar quem tem acesso e poder de escolha.",
+      "relationships": "Perspectivas diferentes merecem espaço mesmo diante de convicções muito fortes.",
+      "finance": "A expansão de recursos também pode alterar dependências e poder de decisão.",
+      "work": "Visões de crescimento precisam esclarecer quem participa e quem recebe benefícios.",
+      "family": "Crenças familiares podem orientar escolhas sem determinar a trajetória de todos."
+    },
+    "pair:saturn:uranus": {
+      "title": "Saturno e Urano: continuidade e reforma",
+      "general": "A mudança de estruturas exige avaliar o que preservar e o que reformular.",
+      "health": "A continuidade do cuidado precisa acompanhar adaptações nas rotinas.",
+      "relationships": "Acordos estáveis podem ser revistos para acolher necessidades de autonomia.",
+      "finance": "Novas formas de organização merecem avaliação dos compromissos que permanecem.",
+      "work": "Reformar processos envolve negociar continuidade, aprendizagem e condições de execução.",
+      "family": "Costumes podem mudar enquanto as responsabilidades de cuidado permanecem compartilhadas."
+    },
+    "pair:saturn:neptune": {
+      "title": "Saturno e Netuno: estrutura e ideal",
+      "general": "Ideais ganham forma quando seus limites e responsabilidades podem ser discutidos.",
+      "health": "O acolhimento precisa de condições materiais para se sustentar no cotidiano.",
+      "relationships": "A disponibilidade afetiva pode combinar sensibilidade e limites compreensíveis.",
+      "finance": "Uma intenção solidária precisa definir recursos, alcance e compromissos.",
+      "work": "Propósitos coletivos precisam se traduzir em tarefas, critérios e responsáveis.",
+      "family": "O cuidado familiar pode ser generoso sem depender de sacrifício ilimitado."
+    },
+    "pair:saturn:pluto": {
+      "title": "Saturno e Plutão: estrutura e concentração de poder",
+      "general": "Estruturas de responsabilidade podem ser examinadas pela concentração de poder.",
+      "health": "Regras de cuidado precisam preservar acesso, privacidade e possibilidade de escolha.",
+      "relationships": "Compromissos confiáveis precisam admitir discordância e revisão de limites.",
+      "finance": "Obrigações duradouras merecem clareza sobre dependências e alternativas disponíveis.",
+      "work": "Autoridade e controle de recursos precisam vir acompanhados de responsabilidade.",
+      "family": "Papéis antigos podem ser revistos sem impor exposição da intimidade familiar."
+    },
+    "pair:uranus:neptune": {
+      "title": "Urano e Netuno: inovação e imaginário",
+      "general": "Imagens de renovação precisam ser comparadas ao funcionamento das mudanças.",
+      "health": "Novas propostas de cuidado merecem informações claras sobre acesso e limites.",
+      "relationships": "A liberdade de experimentar vínculos pede expectativas e limites compreensíveis.",
+      "finance": "Promessas de novos modelos precisam esclarecer custos, responsabilidades e dependências.",
+      "work": "Ideias inovadoras ganham consistência quando a equipe compreende sua aplicação.",
+      "family": "Outras formas de convivência podem acolher diferenças com responsabilidades explícitas."
+    },
+    "pair:uranus:pluto": {
+      "title": "Urano e Plutão: mudança e redistribuição de poder",
+      "general": "Mudanças coletivas podem redistribuir poder ou preservar dependências já existentes.",
+      "health": "Mudanças no acesso ao cuidado precisam considerar autonomia e participação.",
+      "relationships": "A revisão dos acordos pode incluir quem decide e quem se adapta.",
+      "finance": "Novos arranjos de recursos merecem atenção ao controle das decisões.",
+      "work": "Uma reorganização precisa considerar quem ganha autonomia e quem assume demandas.",
+      "family": "Transformar costumes também envolve negociar influência e continuidade do cuidado."
+    },
+    "pair:neptune:pluto": {
+      "title": "Netuno e Plutão: imaginário e poder coletivo",
+      "general": "Imagens coletivas podem revelar como expectativas e relações de poder se sustentam.",
+      "health": "Promessas de cuidado precisam preservar informação clara e autonomia de escolha.",
+      "relationships": "A empatia precisa reconhecer limites mesmo em vínculos de grande intensidade.",
+      "finance": "Narrativas sobre valor merecem atenção às dependências que podem criar.",
+      "work": "Propósitos compartilhados precisam deixar visível quem controla decisões e recursos.",
+      "family": "Histórias familiares podem ser revisitadas com respeito às diferenças e à privacidade."
+    },
+    "aspect:conjunction": {
+      "title": "Conjunção: encontro e concentração",
+      "general": "A conjunção reúne os temas envolvidos e concentra atenção em sua combinação.",
+      "health": "Demandas de cuidado podem ser observadas em conjunto, sem perder suas diferenças.",
+      "relationships": "Expectativas próximas podem se misturar e precisam de expressão própria.",
+      "finance": "Prioridades concentradas merecem atenção ao espaço reservado para outras necessidades.",
+      "work": "Tarefas relacionadas podem ser coordenadas sem confundir responsabilidades distintas.",
+      "family": "Necessidades compartilhadas podem ser discutidas preservando a voz de cada pessoa."
+    },
+    "aspect:sextile": {
+      "title": "Sextil: articulação e abertura",
+      "general": "O sextil simboliza possibilidades de articulação que dependem de participação concreta.",
+      "health": "Apoios disponíveis podem ser combinados conforme as necessidades da rotina.",
+      "relationships": "A disposição para conversar encontra expressão em pequenos acordos possíveis.",
+      "finance": "A comparação entre alternativas ajuda a reconhecer recursos ainda pouco utilizados.",
+      "work": "A colaboração pode começar por uma tarefa com responsabilidades definidas.",
+      "family": "Pequenas combinações práticas podem distribuir melhor o cuidado cotidiano."
+    },
+    "aspect:square": {
+      "title": "Quadratura: fricção e ajuste",
+      "general": "A quadratura simboliza fricções que pedem escolhas e ajustes de abordagem.",
+      "health": "Exigências concorrentes podem ser revistas conforme os limites do cuidado.",
+      "relationships": "Desacordos ajudam a identificar expectativas que precisam de negociação.",
+      "finance": "Prioridades concorrentes pedem critérios claros para distribuir os recursos disponíveis.",
+      "work": "Impasses de execução merecem revisão de escopo, recursos e responsabilidades.",
+      "family": "Demandas incompatíveis podem ser conversadas antes de virarem cobranças repetidas."
+    },
+    "aspect:trine": {
+      "title": "Trígono: fluidez e continuidade",
+      "general": "O trígono simboliza continuidade e fluidez, com atenção ao que virou hábito.",
+      "health": "Rotinas que oferecem apoio podem ser mantidas com espaço para ajustes.",
+      "relationships": "A familiaridade pode facilitar a convivência sem dispensar conversas sobre necessidades.",
+      "finance": "Hábitos de uso dos recursos também merecem avaliação de sua utilidade.",
+      "work": "Processos conhecidos podem apoiar entregas, desde que continuem adequados às necessidades.",
+      "family": "Costumes acolhedores podem ser preservados sem tornar a participação obrigatória."
+    },
+    "aspect:opposition": {
+      "title": "Oposição: polaridade e perspectiva",
+      "general": "A oposição coloca perspectivas distintas em relação e pede reconhecimento recíproco.",
+      "health": "Necessidades diferentes de cuidado podem ser consideradas sem exigir respostas idênticas.",
+      "relationships": "Ouvir posições distintas ajuda a formular acordos que preservem diferenças.",
+      "finance": "Interesses materiais divergentes pedem clareza sobre contribuições e responsabilidades.",
+      "work": "Prioridades de áreas diferentes precisam de critérios compartilhados de decisão.",
+      "family": "Demandas de cada integrante podem ser reconhecidas sem escolher um único lado."
+    },
+    "phase:new": {
+      "title": "Lua nova: intenção e abertura",
+      "general": "A Lua nova oferece uma imagem de abertura e definição de intenções.",
+      "health": "Uma rotina de cuidado pode começar por uma necessidade concreta.",
+      "relationships": "Uma intenção de aproximação pode ser expressa em um pedido claro.",
+      "finance": "Definir uma prioridade ajuda a dar sentido ao uso dos recursos.",
+      "work": "O início de uma etapa pede objetivo e primeiro passo compreensíveis.",
+      "family": "Uma necessidade da casa pode orientar novos acordos de convivência."
+    },
+    "phase:firstQuarter": {
+      "title": "Quarto crescente: escolha e construção",
+      "general": "O quarto crescente simboliza escolhas que dão forma às intenções iniciais.",
+      "health": "A experiência cotidiana permite adaptar uma rotina às condições de cuidado.",
+      "relationships": "Expectativas ganham clareza quando cada pessoa explicita o que consegue assumir.",
+      "finance": "Uma prioridade precisa ser comparada aos custos de colocá-la em prática.",
+      "work": "A execução permite rever recursos e sequência antes de ampliar tarefas.",
+      "family": "Combinados domésticos podem ser ajustados conforme disponibilidade e capacidade reais."
+    },
+    "phase:full": {
+      "title": "Lua cheia: visibilidade e contraste",
+      "general": "A Lua cheia oferece uma imagem de visibilidade e comparação de perspectivas.",
+      "health": "Observar a rotina ajuda a identificar necessidades e apoios disponíveis.",
+      "relationships": "Diferenças de expectativa podem ser reconhecidas sem exigir uma conclusão imediata.",
+      "finance": "Comparar planos e registros ajuda a compreender despesas e compromissos.",
+      "work": "Resultados podem ser avaliados junto ao esforço e às contribuições menos visíveis.",
+      "family": "A divisão do cuidado pode ser revista ouvindo diferentes necessidades."
+    },
+    "phase:lastQuarter": {
+      "title": "Quarto minguante: revisão e encerramento",
+      "general": "O quarto minguante simboliza revisão de experiências e fechamento de etapas.",
+      "health": "Simplificar exigências cotidianas pode abrir espaço para cuidados mais sustentáveis.",
+      "relationships": "Expectativas podem ser revistas sem decidir tudo sobre um vínculo.",
+      "finance": "Compromissos pouco utilizados merecem revisão de custos e condições de mudança.",
+      "work": "Concluir etapas inclui registrar aprendizados e identificar tarefas que perderam função.",
+      "family": "Costumes podem ser reconsiderados sem abandonar as memórias que continuam importantes."
+    },
+    "eclipse:solar": {
+      "title": "Eclipse solar: propósito em perspectiva",
+      "general": "O eclipse solar destaca simbolicamente propósito, liderança e revisão de referências.",
+      "health": "Expectativas de desempenho podem ser comparadas às necessidades de cuidado.",
+      "relationships": "Papéis nos vínculos podem ser revistos pela liberdade de expressão que permitem.",
+      "finance": "Objetivos materiais merecem atenção ao propósito que procuram sustentar.",
+      "work": "Critérios de sucesso podem ser comparados às decisões concretas da equipe.",
+      "family": "Papéis centrais na família podem ser conversados junto às responsabilidades atuais."
+    },
+    "eclipse:lunar": {
+      "title": "Eclipse lunar: pertencimento em perspectiva",
+      "general": "O eclipse lunar destaca simbolicamente necessidades, vínculos e formas de pertencimento.",
+      "health": "Condições de acolhimento e limites do cuidado merecem ficar mais visíveis.",
+      "relationships": "Hábitos de aproximação podem ser observados pelo apoio que realmente oferecem.",
+      "finance": "A segurança material pode ser pensada junto aos compromissos de cuidado.",
+      "work": "A avaliação da equipe pode incluir apoio cotidiano e trabalho pouco reconhecido.",
+      "family": "Uma história comum pode comportar lembranças e sentimentos diferentes."
+    },
+    "station:retrograde": {
+      "title": "Estação retrógrada: atenção à revisão",
+      "general": "A estação retrógrada propõe simbolicamente uma pausa de atenção aos temas em revisão.",
+      "health": "Combinados de cuidado podem ser conferidos conforme necessidades concretas da rotina.",
+      "relationships": "Expectativas presentes podem ser retomadas quando há algo específico a esclarecer.",
+      "finance": "Premissas de uma decisão merecem revisão quando suas condições mudaram.",
+      "work": "Pontos de dúvida podem orientar revisões de escopo e responsabilidades.",
+      "family": "Acordos antigos podem ser comparados às necessidades atuais da casa."
+    },
+    "station:direct": {
+      "title": "Estação direta: retomada e integração",
+      "general": "A estação direta oferece uma imagem de encaminhamento após a revisão.",
+      "health": "Ajustes já discutidos podem ser acompanhados conforme as condições de cuidado.",
+      "relationships": "Conversas anteriores podem orientar acordos mais claros entre os envolvidos.",
+      "finance": "Decisões reconsideradas dependem dos dados e das condições agora disponíveis.",
+      "work": "Integrar aprendizados ajuda a esclarecer o próximo passo e seus recursos.",
+      "family": "Mudanças combinadas podem ser avaliadas pelo funcionamento na rotina doméstica."
+    },
+    "retro:mercury": {
+      "title": "Mercúrio retrógrado: rever entendimento",
+      "general": "Rever o entendimento inclui conferir contexto, linguagem e circulação de informações.",
+      "health": "Dúvidas organizadas ajudam a esclarecer orientações e registros de cuidado.",
+      "relationships": "Retomar palavras anteriores pode esclarecer sentidos diferentes para cada pessoa.",
+      "finance": "Termos e registros podem ser revistos para compreender melhor os compromissos.",
+      "work": "Fluxos de informação merecem ajustes nos pontos que geram dúvidas.",
+      "family": "Conferir um combinado permite comparar o que cada pessoa compreendeu."
+    },
+    "retro:venus": {
+      "title": "Vênus retrógrada: rever valores e trocas",
+      "general": "Preferências e critérios de valor podem ser reconsiderados pela experiência atual.",
+      "health": "Expectativas de aparência podem ser comparadas às necessidades de conforto.",
+      "relationships": "A reciprocidade pode ser observada no funcionamento presente dos vínculos.",
+      "finance": "Desejo, utilidade e prestígio oferecem critérios distintos para rever escolhas.",
+      "work": "Condições de parceria podem ser revistas junto ao reconhecimento das contribuições.",
+      "family": "Gestos de afeto podem mudar conforme as necessidades atuais da família."
+    },
+    "retro:mars": {
+      "title": "Marte retrógrado: rever ação e conflito",
+      "general": "Rever estratégias permite examinar o objetivo e a direção do esforço.",
+      "health": "Exigências de desempenho podem ser comparadas às condições concretas de cuidado.",
+      "relationships": "A maneira de discordar pode ser revista para tornar limites compreensíveis.",
+      "finance": "Pressões para decidir merecem atenção ao objetivo real da escolha.",
+      "work": "Descompassos entre esforço e resultado pedem revisão de escopo e recursos.",
+      "family": "Conflitos repetidos podem apontar tarefas e limites que precisam de definição."
+    },
+    "retro:jupiter": {
+      "title": "Júpiter retrógrado: rever perspectivas",
+      "general": "Convicções e expectativas de crescimento podem ser revistas à luz da experiência.",
+      "health": "Esperanças de cuidado podem ser acompanhadas de informações e recursos disponíveis.",
+      "relationships": "Planos comuns podem ser ajustados para representar expectativas diferentes.",
+      "finance": "Projetos de expansão merecem revisão de premissas e compromissos assumidos.",
+      "work": "Reconsiderar uma ambição permite ajustar seu alcance aos recursos disponíveis.",
+      "family": "Expectativas de futuro podem acolher trajetórias diferentes das imaginadas pela família."
+    },
+    "retro:saturn": {
+      "title": "Saturno retrógrado: rever responsabilidades",
+      "general": "Rever responsabilidades inclui examinar a função das regras que permanecem.",
+      "health": "Obrigações de rotina podem ser ajustadas aos recursos disponíveis para cuidar.",
+      "relationships": "Compromissos podem ser revistos pela clareza e pela distribuição das responsabilidades.",
+      "finance": "Obrigações recorrentes merecem ser compreendidas pelo alcance no orçamento.",
+      "work": "Procedimentos podem ser reconsiderados pela utilidade que têm no trabalho atual.",
+      "family": "Papéis antigos podem ser renegociados conforme as condições de cada pessoa."
+    },
+    "retro:uranus": {
+      "title": "Urano retrógrado: rever a mudança",
+      "general": "Mudanças podem ser avaliadas pela autonomia e pelas condições que realmente oferecem.",
+      "health": "Adaptações de rotina merecem revisão do apoio concreto ao cuidado.",
+      "relationships": "Acordos de liberdade podem ser revistos pela experiência dos envolvidos.",
+      "finance": "Novos formatos de consumo podem ser comparados aos custos de adaptação.",
+      "work": "Processos alterados merecem avaliação de quem ganhou autonomia ou novas demandas.",
+      "family": "Arranjos familiares podem ser ajustados sem exigir retorno a modelos anteriores."
+    },
+    "retro:neptune": {
+      "title": "Netuno retrógrado: rever imagens e ideais",
+      "general": "Rever ideais permite compreender o que permanece vago nas expectativas.",
+      "health": "Promessas de cuidado podem ser traduzidas em perguntas claras e verificáveis.",
+      "relationships": "Imagens de proximidade podem ser comparadas à convivência e disponibilidade reais.",
+      "finance": "Propostas atraentes merecem revisão das condições que ainda não foram esclarecidas.",
+      "work": "O propósito de um projeto pode orientar critérios mais claros de entrega.",
+      "family": "Expectativas silenciosas de sacrifício podem dar lugar a pedidos e limites explícitos."
+    },
+    "retro:pluto": {
+      "title": "Plutão retrógrado: rever poder e dependência",
+      "general": "Relações de poder podem ser revistas pela possibilidade de questionar decisões.",
+      "health": "Condições de cuidado merecem atenção à autonomia e às dependências envolvidas.",
+      "relationships": "A liberdade de discordar ajuda a avaliar limites e distribuição de poder.",
+      "finance": "Compromissos duradouros podem ser examinados pelas dependências e alternativas disponíveis.",
+      "work": "Mudanças de estrutura podem ser revistas pela participação que permitem.",
+      "family": "Lealdades persistentes podem ser consideradas com respeito à privacidade e à escolha."
+    },
+    "body:sun": {
+      "title": "Sol: direção e reconhecimento",
+      "general": "O Sol simboliza direção, expressão e critérios de reconhecimento coletivo.",
+      "health": "Metas de desempenho podem incluir condições de cuidado e descanso.",
+      "relationships": "Reconhecer alguém inclui oferecer espaço para sua expressão e suas diferenças.",
+      "finance": "Objetivos materiais podem ser examinados pelo reconhecimento que procuram sustentar.",
+      "work": "A liderança pode tornar seus critérios de prioridade e reconhecimento compreensíveis.",
+      "family": "Expectativas familiares podem acolher formas diferentes de realização pessoal."
+    },
+    "body:moon": {
+      "title": "Lua: pertencimento e necessidades",
+      "general": "A Lua simboliza necessidades cotidianas, memória e experiência de pertencimento.",
+      "health": "O cuidado começa por reconhecer necessidades e apoios da vida cotidiana.",
+      "relationships": "A proximidade pode ser conversada a partir do que oferece acolhimento.",
+      "finance": "A segurança material precisa considerar as necessidades concretas do cotidiano.",
+      "work": "O apoio entre colegas merece atenção ao trabalho que sustenta a rotina.",
+      "family": "Hábitos domésticos podem preservar memória sem impedir novos acordos de cuidado."
+    },
+    "body:mercury": {
+      "title": "Mercúrio: linguagem e circulação",
+      "general": "Mercúrio simboliza linguagem, aprendizagem e circulação de informações entre pessoas.",
+      "health": "Organizar dúvidas ajuda a tornar as conversas sobre cuidado mais claras.",
+      "relationships": "A escuta pode incluir conferir o sentido de palavras e pedidos.",
+      "finance": "Comparar propostas exige compreender termos e condições além da apresentação.",
+      "work": "Informações acessíveis permitem coordenar tarefas e esclarecer responsabilidades de execução.",
+      "family": "Recados e combinados podem ser conferidos sem depender de suposições."
+    },
+    "body:venus": {
+      "title": "Vênus: valor e reciprocidade",
+      "general": "Vênus simboliza preferências, reciprocidade e critérios de valor nas trocas.",
+      "health": "Conforto e cuidado podem respeitar gostos e necessidades diferentes.",
+      "relationships": "A reciprocidade pode ser expressa em gestos e expectativas claramente combinados.",
+      "finance": "As escolhas de consumo podem ser comparadas ao que se valoriza.",
+      "work": "Reconhecer contribuições envolve condições de troca e colaboração compreensíveis.",
+      "family": "O afeto pode acolher diferenças de gosto sem exigir concordância."
+    },
+    "body:mars": {
+      "title": "Marte: iniciativa e afirmação",
+      "general": "Marte simboliza iniciativa, afirmação de interesses e formas de agir.",
+      "health": "O esforço precisa comportar limites e condições de cuidado cotidiano.",
+      "relationships": "A expressão de desejos pode preservar consentimento e liberdade de recusa.",
+      "finance": "Decisões urgentes merecem clareza sobre prioridades, custos e responsabilidades.",
+      "work": "A iniciativa precisa de autonomia e recursos para se transformar em execução.",
+      "family": "Pedidos diretos podem esclarecer tarefas antes de se tornarem cobranças."
+    },
+    "body:jupiter": {
+      "title": "Júpiter: expansão e sentido",
+      "general": "Júpiter simboliza horizontes, convicções e expectativas de desenvolvimento coletivo.",
+      "health": "Perspectivas de cuidado podem se ampliar sem negar dúvidas e limites.",
+      "relationships": "Planos de futuro podem incluir diferentes formas de compreender realização.",
+      "finance": "Expectativas de expansão merecem comparação com recursos e compromissos disponíveis.",
+      "work": "Uma visão ampla precisa se traduzir em oportunidades e responsabilidades claras.",
+      "family": "Crenças compartilhadas podem oferecer apoio respeitando trajetórias diferentes."
+    },
+    "body:saturn": {
+      "title": "Saturno: limite e continuidade",
+      "general": "Saturno simboliza limites, responsabilidade e condições de continuidade dos projetos.",
+      "health": "O descanso pode fazer parte da rotina de responsabilidades.",
+      "relationships": "A confiança pode se apoiar em compromissos claros e negociáveis.",
+      "finance": "Obrigações recorrentes precisam ser compreendidas pelo esforço necessário para mantê-las.",
+      "work": "Critérios de cobrança precisam considerar recursos e capacidade de execução.",
+      "family": "Deveres familiares podem ser distribuídos conforme as condições atuais de cada pessoa."
+    },
+    "body:uranus": {
+      "title": "Urano: autonomia e experimentação",
+      "general": "Urano simboliza autonomia, experimentação e revisão das convenções coletivas.",
+      "health": "Rotinas podem ser adaptadas para acolher necessidades que padrões uniformes ignoram.",
+      "relationships": "A autonomia pode ser negociada com respeito aos acordos compartilhados.",
+      "finance": "Novas formas de usar recursos merecem avaliação de acesso e dependências.",
+      "work": "Mudanças de processo precisam incluir quem aprende e quem se adapta.",
+      "family": "A flexibilidade dos arranjos precisa manter o cuidado distribuído entre os envolvidos."
+    },
+    "body:neptune": {
+      "title": "Netuno: imaginação e permeabilidade",
+      "general": "Netuno simboliza imaginação, sensibilidade e ideais que precisam de contornos claros.",
+      "health": "O acolhimento pode ser acompanhado de informações compreensíveis sobre cuidado.",
+      "relationships": "A empatia permite reconhecer diferenças além da imagem esperada do outro.",
+      "finance": "Narrativas de realização precisam esclarecer custos, condições e responsabilidades materiais.",
+      "work": "A imaginação encontra espaço em projetos com escopo e responsáveis definidos.",
+      "family": "A disponibilidade para cuidar pode ser combinada sem exigir compreensão silenciosa."
+    },
+    "body:pluto": {
+      "title": "Plutão: poder e transformação",
+      "general": "Plutão simboliza relações de poder, dependências e possibilidades de reorganização estrutural.",
+      "health": "Decisões de cuidado precisam preservar autonomia, privacidade e acesso à informação.",
+      "relationships": "A confiança pode comportar discordância e limites mesmo em vínculos intensos.",
+      "finance": "Recursos compartilhados pedem compreensão das dependências e do poder de decisão.",
+      "work": "Observar o acesso a informações ajuda a compreender a estrutura de poder.",
+      "family": "Padrões familiares podem ser reconhecidos com respeito à privacidade de cada pessoa."
+    },
+    "sign:aries": {
+      "title": "Áries: começar e afirmar",
+      "general": "Áries acrescenta franqueza e iniciativa, com atenção à continuidade do que começa.",
+      "health": "O início de uma rotina precisa respeitar condições e ritmos possíveis.",
+      "relationships": "Desejos claros podem ser expressos sem exigir uma resposta imediata.",
+      "finance": "Uma escolha pede clareza sobre objetivo e condições além da pressa.",
+      "work": "Definir o primeiro passo ajuda a dar continuidade às novas iniciativas.",
+      "family": "Conversas diretas podem esclarecer necessidades domésticas preservando o direito de discordar."
+    },
+    "sign:taurus": {
+      "title": "Touro: sustentar e usufruir",
+      "general": "Touro acrescenta atenção à continuidade, aos recursos e à experiência concreta.",
+      "health": "O cuidado precisa de regularidade e condições que caibam no cotidiano.",
+      "relationships": "A constância pode oferecer segurança e ainda deixar espaço para mudanças.",
+      "finance": "O valor de uso também inclui manutenção e duração dos recursos.",
+      "work": "Processos estáveis podem receber ajustes quando deixam de atender às necessidades.",
+      "family": "Referências da casa podem ser preservadas enquanto tarefas e objetos são reorganizados."
+    },
+    "sign:gemini": {
+      "title": "Gêmeos: perguntar e conectar",
+      "general": "Gêmeos acrescenta perguntas e conexões, com atenção ao contexto das informações.",
+      "health": "Informações de cuidado ganham utilidade quando respondem a dúvidas específicas.",
+      "relationships": "A curiosidade pode aproximar quando também retoma conversas que ficaram abertas.",
+      "finance": "Comparar alternativas pede atenção aos detalhes que diferenciam suas condições.",
+      "work": "Registrar conclusões ajuda a dar continuidade à circulação de ideias.",
+      "family": "Versões diferentes da história familiar merecem escuta e respeito à privacidade."
+    },
+    "sign:cancer": {
+      "title": "Câncer: acolher e preservar",
+      "general": "Câncer acrescenta memória e proteção, com abertura às necessidades de pertencimento.",
+      "health": "Quem sustenta a rotina de cuidado também precisa encontrar apoio.",
+      "relationships": "Oferecer proteção pode começar por perguntar que apoio a pessoa deseja.",
+      "finance": "Gastos domésticos pedem critérios compartilhados sobre o significado de segurança.",
+      "work": "O acolhimento da equipe precisa aparecer em condições práticas de apoio.",
+      "family": "Uma história comum pode ser valorizada sem repetir todos os costumes."
+    },
+    "sign:leo": {
+      "title": "Leão: expressar e reconhecer",
+      "general": "Leão acrescenta expressão criativa e atenção à distribuição do reconhecimento.",
+      "health": "Prazer e expressão pessoal podem conviver com respeito aos limites.",
+      "relationships": "Demonstrações de afeto podem esclarecer expectativas de atenção e reciprocidade.",
+      "finance": "A generosidade pode ser comparada às prioridades e aos recursos disponíveis.",
+      "work": "Reconhecer autoria inclui contribuições visíveis e trabalho realizado nos bastidores.",
+      "family": "Trajetórias diferentes podem receber atenção além das conquistas mais celebradas."
+    },
+    "sign:virgo": {
+      "title": "Virgem: observar e ajustar",
+      "general": "Virgem acrescenta discernimento e ajustes práticos, com limites para o aperfeiçoamento.",
+      "health": "A organização do cuidado precisa permanecer viável na rotina real.",
+      "relationships": "A ajuda prática acolhe melhor quando corresponde ao apoio solicitado.",
+      "finance": "Registros compreensíveis ajudam a rever despesas e compromissos recorrentes.",
+      "work": "Critérios de conclusão permitem distinguir melhoria útil de revisão interminável.",
+      "family": "Tarefas pequenas e repetidas precisam de reconhecimento e divisão explícita."
+    },
+    "sign:libra": {
+      "title": "Libra: ponderar e negociar",
+      "general": "Libra acrescenta negociação e consideração de perspectivas que podem divergir.",
+      "health": "A divisão do cuidado precisa considerar necessidades e disponibilidades desiguais.",
+      "relationships": "Acordos podem ser revistos quando a harmonia dificulta expressar limites.",
+      "finance": "Despesas compartilhadas pedem clareza sobre contribuições e capacidades diferentes.",
+      "work": "Decisões coletivas precisam esclarecer quem decide e com quais critérios.",
+      "family": "A mediação dos desacordos também precisa ser compartilhada entre os envolvidos."
+    },
+    "sign:scorpio": {
+      "title": "Escorpião: aprofundar e transformar",
+      "general": "Escorpião acrescenta investigação de vínculos e dependências, preservando limites de privacidade.",
+      "health": "Falar de dificuldades exige condições de confiança e escolha sobre a exposição.",
+      "relationships": "Intimidade pode preservar limites sem exigir acesso irrestrito à vida alheia.",
+      "finance": "Recursos compartilhados pedem atenção às responsabilidades que permanecem após os acordos.",
+      "work": "Investigar problemas persistentes exige acesso à informação e critérios de responsabilidade.",
+      "family": "Reconhecer padrões familiares precisa respeitar o que cada pessoa deseja compartilhar."
+    },
+    "sign:sagittarius": {
+      "title": "Sagitário: ampliar e interpretar",
+      "general": "Sagitário acrescenta horizontes e convicções, com abertura a experiências que os questionem.",
+      "health": "Novas perspectivas de cuidado precisam ser compreendidas em seu contexto.",
+      "relationships": "Diferenças de crença podem despertar curiosidade e ampliar a conversa.",
+      "finance": "Projetos amplos pedem comparação entre premissas, recursos e compromissos.",
+      "work": "Uma visão de conjunto precisa se traduzir em tarefas compreensíveis.",
+      "family": "Trajetórias distintas podem conviver com respeito à história familiar."
+    },
+    "sign:capricorn": {
+      "title": "Capricórnio: estruturar e responder",
+      "general": "Capricórnio acrescenta estrutura e responsabilidade pelas consequências ao longo do tempo.",
+      "health": "O descanso pode ser organizado como parte do cuidado cotidiano.",
+      "relationships": "Compromissos confiáveis precisam deixar espaço para expressar necessidades e limites.",
+      "finance": "O planejamento pode ser revisto quando as condições de sustentação mudam.",
+      "work": "As prioridades precisam considerar capacidade de execução e distribuição de recursos.",
+      "family": "Responsabilidades assumidas por costume podem ser comparadas às condições atuais."
+    },
+    "sign:aquarius": {
+      "title": "Aquário: participar e reinventar",
+      "general": "Aquário acrescenta participação em redes e revisão de convenções compartilhadas.",
+      "health": "Soluções coletivas de cuidado precisam considerar barreiras de acesso.",
+      "relationships": "A autonomia pode encontrar acordos construídos com a participação dos envolvidos.",
+      "finance": "Recursos compartilhados exigem clareza sobre acesso, responsabilidades e decisões.",
+      "work": "Colaborar envolve informação, influência nas decisões e condições de execução.",
+      "family": "Redes de apoio podem ampliar o pertencimento além do parentesco."
+    },
+    "sign:pisces": {
+      "title": "Peixes: acolher e imaginar",
+      "general": "Peixes acrescenta sensibilidade e imaginação, com contornos que tornem expectativas compreensíveis.",
+      "health": "A escuta pode oferecer acolhimento preservando tempo e limites de cuidado.",
+      "relationships": "A empatia pode conviver com pedidos claros e liberdade de recusa.",
+      "finance": "Intenções solidárias precisam considerar recursos disponíveis e condições explicitadas.",
+      "work": "A sensibilidade às demandas precisa de tarefas e limites definidos.",
+      "family": "A compaixão pode aproximar sem dispensar conversas diretas sobre necessidades."
+    }
+  }
+}

@@ -18,6 +18,7 @@ copiado para um repositório próprio sem arquivos do diretório pai.
   bindings dos 69 métodos/builders públicos.
 - `celestial-wasm/charts`: cálculo de mapas natais e planetários geocêntricos,
   seis temas, paletas light/dark/personalizadas e componentes SVG independentes.
+- `celestial-wasm/reports`: relatórios coletivos em pt-BR para 2026–2035, eventos temporais, catálogo estático composto e JSON com cache.
 - `celestial-wasm/wasm`: arquivo binário para resolução explícita de URL ou bytes.
 
 ## Instalar a partir do código-fonte
@@ -199,6 +200,7 @@ os extremos das linhas de aspectos continuam nas longitudes calculadas.
 ## Documentação e comandos
 
 - [Guia de mapas, funções, temas, paletas, dados e erros](charts/README.md).
+- [Guia de relatórios coletivos, intervalos, catálogo e cache](reports/README.md).
 - [Referência completa gerada das APIs TypeScript](docs/api-reference.md).
 - [Contratos do binding WASM](wasm/README.md).
 - [Arquitetura](docs/architecture.md), [portabilidade e baseline dos testes](docs/portability.md).
@@ -207,11 +209,13 @@ os extremos das linhas de aspectos continuam nas longitudes calculadas.
 
 | Comando | Ação |
 | --- | --- |
-| `npm run build` | Compila Rust/WASM, bindings e charts |
+| `npm run build` | Compila Rust/WASM, bindings, charts e reports |
 | `npm run build:charts` | Recompila somente TypeScript, após existir o build WASM |
-| `npm test` | Core WASM, bindings, gráficos, referência API e avisos de licença |
+| `npm test` | Core WASM, bindings, gráficos, relatórios, referência API e avisos de licença |
 | `npm run test:core` | Testes unitários, integração e Rustdoc em WASM |
 | `npm run test:bindings` | Build e testes TypeScript sobre o WASM real |
+| `npm run build:reports` | Compila somente relatórios TypeScript, após existir o build WASM |
+| `npm run test:reports` | Build, validação temporal, catálogo, eventos e caches de relatórios |
 | `npm run test:charts` | Build, tipos, testes SVG/worker e mutações dirigidas |
 | `npm run gallery` | Gera SVGs, galeria interativa e catálogo visual de todos os componentes |
 | `npm run docs` | Regenera a referência a partir das declarações compiladas |
@@ -239,3 +243,5 @@ em [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
 O motor usa efemérides embutidas e conserva as aproximações do core original.
 Os testes de regressão não demonstram equivalência de precisão com Swiss
 Ephemeris/JPL. A biblioteca não gera interpretações astrológicas em texto.
+
+Para leituras breves, o módulo de relatórios oferece `generator.reportCompact(input)` e `generator.reportCompactText(input)`, com até cinco destaques mensais ou três diários e cinco áreas práticas. As versões completas continuam disponíveis. Veja [a documentação e os exemplos de mês e dia](reports/README.md#leitura-compacta-de-um-mês-ou-dia).

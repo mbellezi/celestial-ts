@@ -6,23 +6,57 @@
   "type": "module",
   "license": "AGPL-3.0-or-later",
   "author": "geraldo-netto",
-  "engines": { "node": ">=24" },
+  "engines": {
+    "node": ">=24"
+  },
   "exports": {
-    ".": { "types": "./pkg/celestial_wasm.d.ts", "default": "./pkg/celestial_wasm.js" },
-    "./charts": { "types": "./pkg/charts/index.d.ts", "default": "./pkg/charts/index.js" },
-    "./wasm": "./pkg/celestial_wasm_bg.wasm"
+    ".": {
+      "types": "./pkg/celestial_wasm.d.ts",
+      "default": "./pkg/celestial_wasm.js"
+    },
+    "./charts": {
+      "types": "./pkg/charts/index.d.ts",
+      "default": "./pkg/charts/index.js"
+    },
+    "./wasm": "./pkg/celestial_wasm_bg.wasm",
+    "./reports": {
+      "types": "./pkg/reports/index.d.ts",
+      "default": "./pkg/reports/index.js"
+    }
   },
   "files": [
-    "pkg/", "core/", "wasm/", "tests/", "scripts/", "docs/",
-    "charts/src/", "charts/tests/", "charts/examples/",
-    "charts/tsconfig.json", "charts/README.md",
-    "Cargo.toml", "Cargo.lock", "rust-toolchain.toml", ".cargo/config.toml",
-    "LICENSE", "NOTICE", "THIRD-PARTY-NOTICES.txt", "*.md", "npm-shrinkwrap.json"
+    "pkg/",
+    "core/",
+    "wasm/",
+    "tests/",
+    "scripts/",
+    "docs/",
+    "charts/src/",
+    "charts/tests/",
+    "charts/examples/",
+    "charts/tsconfig.json",
+    "charts/README.md",
+    "Cargo.toml",
+    "Cargo.lock",
+    "rust-toolchain.toml",
+    ".cargo/config.toml",
+    "LICENSE",
+    "NOTICE",
+    "THIRD-PARTY-NOTICES.txt",
+    "*.md",
+    "npm-shrinkwrap.json",
+    "reports/src/",
+    "reports/data/",
+    "reports/tests/",
+    "reports/tsconfig.json",
+    "reports/README.md",
+    "reports/scripts/",
+    "reports/examples/"
   ],
   "scripts": {
     "build": "node scripts/wasm.mjs build",
     "build:charts": "node scripts/charts.mjs build",
-    "test": "npm run test:core && npm run test:bindings && npm run test:charts && npm run docs:check && npm run licenses:check",
+    "test": "npm run test:core && npm run test:bindings && npm run test:charts && npm run test:reports && npm run docs:check && npm run licenses:check",
     "test:core": "node scripts/wasm.mjs core",
     "test:bindings": "node scripts/wasm.mjs bindings",
     "test:charts": "node scripts/charts.mjs test",
@@ -33,7 +67,9 @@
     "licenses:check": "node scripts/licenses.mjs --check",
     "prepack": "node scripts/package.mjs",
     "postpack": "node scripts/package.mjs clean",
-    "pack": "npm pack"
+    "pack": "npm pack",
+    "build:reports": "node scripts/reports.mjs build",
+    "test:reports": "node scripts/reports.mjs test"
   },
   "devDependencies": {
     "@types/node": "22.19.13",

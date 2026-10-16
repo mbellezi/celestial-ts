@@ -1,0 +1,15 @@
+import { readFile, writeFile } from 'node:fs/promises';
+import init, * as core from '../../pkg/celestial_wasm.js';
+import { createReportGenerator } from '../../pkg/reports/index.js';
+await init({ module_or_path: await readFile(new URL('../../pkg/celestial_wasm_bg.wasm', import.meta.url)) });
+const generator = createReportGenerator(core);
+const started = performance.now();
+const input = { start: '2026-02-01', end: '2026-02-28', timeZone: 'America/Sao_Paulo' };
+const json = generator.reportJSON(input, 2);
+const firstMs = performance.now() - started;
+const repeated = performance.now();
+generator.reportJSON(input, 2);
+const repeatedMs = performance.now() - repeated;
+await writeFile(new URL('./february-2026.json', import.meta.url), `${json}\n`);
+await writeFile(new URL('./february-2026.txt', import.meta.url), `${generator.reportText(input)}\n`);
+console.log(JSON.stringify({ firstMs, repeatedMs, bytes: Buffer.byteLength(json), cacheStats: generator.cacheStats }, null, 2));

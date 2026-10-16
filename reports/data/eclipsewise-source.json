@@ -1,0 +1,751 @@
+[
+  {
+    "id": "SE2026Feb17A",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2026Feb17Aprime.html",
+    "lines": [
+      "L65: Greatest Eclipse  | 2026 Feb 17 at 12:13:05.8 TD (12:11:53.6 UT1)  | 2461089.008259",
+      "L82: Ephemerides  | JPL DE405",
+      "L83: ΔT  | 72.2 s",
+      "L93: First External Contact  | P1  | 09:57:35.9  | 09:56:23.7  | 62°23.9'S  | 079°23.7'W",
+      "L94: Last External Contact  | P4  | 14:28:51.0  | 14:27:38.7  | 12°29.3'S  | 059°13.9'E",
+      "L107: First External Contact  | U1  | 11:44:00.0  | 11:42:47.8  | 73°52.6'S  | 144°30.0'E",
+      "L108: First Internal Contact  | U2  | 11:56:29.1  | 11:55:16.9  | 69°10.4'S  | 128°14.4'E",
+      "L109: Last Internal Contact  | U3  | 12:30:19.1  | 12:29:06.9  | 53°26.5'S  | 102°40.5'E",
+      "L110: Last External Contact  | U4  | 12:42:41.3  | 12:41:29.1  | 47°34.1'S  | 096°24.3'E",
+      "L137: Greatest Eclipse  | 12:13:05.8  | 12:11:53.6  | 64°43.1'S  | 086°44.4'E  | 12.3°  | 268.3°  | 616.2 km  | 02m19.63s"
+    ]
+  },
+  {
+    "id": "SE2026Aug12T",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2026Aug12Tprime.html",
+    "lines": [
+      "L66: Greatest Eclipse  | 2026 Aug 12 at 17:47:05.8 TD (17:45:53.3 UT1)  | 2461265.240201",
+      "L83: Ephemerides  | JPL DE405",
+      "L84: ΔT  | 72.4 s",
+      "L94: First External Contact  | P1  | 15:35:23.9  | 15:34:11.4  | 56°41.2'N  | 166°02.2'W",
+      "L95: Last External Contact  | P4  | 19:59:09.2  | 19:57:56.8  | 11°26.5'N  | 025°10.8'W",
+      "L108: First External Contact  | U1  | 16:59:18.1  | 16:58:05.6  | 74°56.0'N  | 117°35.5'E",
+      "L109: First Internal Contact  | U2  | 17:03:19.0  | 17:02:06.6  | 75°10.1'N  | 109°03.5'E",
+      "L110: Last Internal Contact  | U3  | 18:31:21.6  | 18:30:09.2  | 39°36.6'N  | 006°20.1'E",
+      "L111: Last External Contact  | U4  | 18:35:17.7  | 18:34:05.3  | 37°47.6'N  | 004°32.6'E",
+      "L138: Greatest Eclipse  | 17:47:05.8  | 17:45:53.3  | 65°13.4'N  | 025°13.7'W  | 25.8°  | 248.4°  | 294.0 km  | 02m18.21s"
+    ]
+  },
+  {
+    "id": "SE2027Feb06A",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2027Feb06Aprime.html",
+    "lines": [
+      "L67: Greatest Eclipse  | 2027 Feb 06 at 16:00:47.7 TD (15:59:35.1 UT1)  | 2461443.166379",
+      "L84: Ephemerides  | JPL DE405",
+      "L85: ΔT  | 72.6 s",
+      "L95: First External Contact  | P1  | 12:58:47.0  | 12:57:34.4  | 33°03.5'S  | 111°20.6'W",
+      "L96: First Internal Contact  | P2  | 15:24:40.4  | 15:23:27.7  | 62°57.2'S  | 170°23.9'W",
+      "L97: Last Internal Contact  | P3  | 16:37:18.3  | 16:36:05.7  | 19°26.2'S  | 030°06.9'E",
+      "L98: Last External Contact  | P4  | 19:02:50.3  | 19:01:37.7  | 12°21.0'N  | 015°23.1'W",
+      "L113: First External Contact  | U1  | 14:05:05.6  | 14:03:53.0  | 38°39.9'S  | 130°20.8'W",
+      "L114: First Internal Contact  | U2  | 14:11:27.4  | 14:10:14.8  | 39°31.6'S  | 132°20.7'W",
+      "L115: Last Internal Contact  | U3  | 17:50:19.1  | 17:49:06.5  | 05°44.7'N  | 004°37.7'E",
+      "L116: Last External Contact  | U4  | 17:56:36.8  | 17:55:24.2  | 06°37.3'N  | 002°48.5'E",
+      "L143: Greatest Eclipse  | 16:00:47.7  | 15:59:35.1  | 31°18.2'S  | 048°28.0'W  | 72.7°  | 333.5°  | 281.5 km  | 07m50.92s"
+    ]
+  },
+  {
+    "id": "SE2027Aug02T",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2027Aug02Tprime.html",
+    "lines": [
+      "Greatest Eclipse  | 2027 Aug 02 at 10:07:50.2 TD (10:06:37.4 UT1)  | 2461619.921266",
+      "Ephemerides  | JPL DE405",
+      "ΔT  | 72.8 s",
+      "First External Contact  | P1  | 07:31:21.9  | 07:30:09.1",
+      "Last External Contact  | P4  | 12:44:21.3  | 12:43:08.5",
+      "First External Contact  | U1  | 08:24:37.8  | 08:23:25.0",
+      "First Internal Contact  | U2  | 08:27:51.1  | 08:26:38.3",
+      "Last Internal Contact  | U3  | 11:47:53.1  | 11:46:40.3",
+      "Last External Contact  | U4  | 11:51:05.9  | 11:49:53.1"
+    ]
+  },
+  {
+    "id": "SE2028Jan26A",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2028Jan26Aprime.html",
+    "lines": [
+      "L67: Greatest Eclipse  | 2028 Jan 26 at 15:08:58.8 TD (15:07:45.8 UT1)  | 2461797.130391",
+      "L84: Ephemerides  | JPL DE405",
+      "L85: ΔT  | 73.0 s",
+      "L95: First External Contact  | P1  | 12:07:52.6  | 12:06:39.6  | 05°28.5'S  | 090°25.4'W",
+      "L96: First Internal Contact  | P2  | 14:49:10.7  | 14:47:57.7  | 43°45.0'N  | 109°56.5'W",
+      "L97: Last Internal Contact  | P3  | 15:28:20.7  | 15:27:07.7  | 71°06.8'N  | 040°50.7'W",
+      "L98: Last External Contact  | P4  | 18:10:00.6  | 18:08:47.5  | 32°37.5'N  | 011°35.8'W",
+      "L113: First External Contact  | U1  | 13:16:03.3  | 13:14:50.3  | 02°05.5'N  | 104°53.5'W",
+      "L114: First Internal Contact  | U2  | 13:23:12.8  | 13:21:59.8  | 03°22.5'N  | 106°14.7'W",
+      "L115: Last Internal Contact  | U3  | 16:54:32.7  | 16:53:19.7  | 41°10.2'N  | 002°33.2'E",
+      "L116: Last External Contact  | U4  | 17:01:45.1  | 17:00:32.1  | 39°56.2'N  | 001°30.5'E",
+      "L143: Greatest Eclipse  | 15:08:58.8  | 15:07:45.8  | 02°57.6'N  | 051°33.6'W  | 67.0°  | 161.0°  | 323.0 km  | 10m27.09s"
+    ]
+  },
+  {
+    "id": "SE2028Jul22T",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2028Jul22Tprime.html",
+    "lines": [
+      "L68: Greatest Eclipse  | 2028 Jul 22 at 02:56:39.6 TD (02:55:26.4 UT1)  | 2461974.621833",
+      "L85: Ephemerides  | JPL DE405",
+      "L86: ΔT  | 73.2 s",
+      "L96: First External Contact  | P1  | 00:28:44.4  | 00:27:31.2  | 05°11.0'S  | 086°39.4'E",
+      "L97: Last External Contact  | P4  | 05:24:22.4  | 05:23:09.2  | 38°12.3'S  | 174°02.0'E",
+      "L110: First External Contact  | U1  | 01:31:51.9  | 01:30:38.7  | 17°57.4'S  | 075°48.5'E",
+      "L111: First Internal Contact  | U2  | 01:34:42.2  | 01:33:28.9  | 18°50.1'S  | 075°27.6'E",
+      "L112: Last Internal Contact  | U3  | 04:18:21.6  | 04:17:08.4  | 50°54.7'S  | 179°33.1'W",
+      "L113: Last External Contact  | U4  | 04:21:15.8  | 04:20:02.6  | 50°06.2'S  | 179°27.4'W",
+      "L140: Greatest Eclipse  | 02:56:39.6  | 02:55:26.4  | 15°34.7'S  | 126°42.4'E  | 52.6°  | 17.2°  | 230.2 km  | 05m09.72s"
+    ]
+  },
+  {
+    "id": "SE2029Jan14P",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2029Jan14Pprime.html",
+    "lines": [
+      "L66: Greatest Eclipse  | 2029 Jan 14 at 17:13:47.5 TD (17:12:34.1 UT1)  | 2462151.217062",
+      "L83: Ephemerides  | JPL DE405",
+      "L84: ΔT  | 73.4 s",
+      "L94: First External Contact  | P1  | 15:03:08.9  | 15:01:55.5  | 24°45.1'N  | 122°53.3'W",
+      "L95: Last External Contact  | P4  | 19:24:17.6  | 19:23:04.2  | 52°50.3'N  | 049°08.2'W"
+    ]
+  },
+  {
+    "id": "SE2029Jun12P",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2029Jun12Pprime.html",
+    "lines": [
+      "L67: Greatest Eclipse  | 2029 Jun 12 at 04:06:13.0 TD (04:04:59.5 UT1)  | 2462299.670133",
+      "L84: Ephemerides  | JPL DE405",
+      "L85: ΔT  | 73.6 s",
+      "L95: First External Contact  | P1  | 02:27:40.7  | 02:26:27.1  | 51°32.5'N  | 020°46.4'E",
+      "L96: Last External Contact  | P4  | 05:44:42.8  | 05:43:29.2  | 48°30.0'N  | 146°59.0'W"
+    ]
+  },
+  {
+    "id": "SE2029Jul11P",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2029Jul11Pprime.html",
+    "lines": [
+      "L67: Greatest Eclipse  | 2029 Jul 11 at 15:37:18.9 TD (15:36:05.3 UT1)  | 2462329.150061",
+      "L84: Ephemerides  | JPL DE405",
+      "L85: ΔT  | 73.6 s",
+      "L95: First External Contact  | P1  | 14:28:56.7  | 14:27:43.1  | 47°46.1'S  | 099°05.2'W",
+      "L96: Last External Contact  | P4  | 16:45:20.1  | 16:44:06.5  | 66°05.4'S  | 045°18.3'W"
+    ]
+  },
+  {
+    "id": "SE2029Dec05P",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2029Dec05Pprime.html",
+    "lines": [
+      "L66: Greatest Eclipse  | 2029 Dec 05 at 15:03:58.0 TD (15:02:44.2 UT1)  | 2462476.126900",
+      "L83: Ephemerides  | JPL DE405",
+      "L84: ΔT  | 73.8 s",
+      "L94: First External Contact  | P1  | 13:07:52.5  | 13:06:38.7  | 38°28.1'S  | 128°07.6'W",
+      "L95: Last External Contact  | P4  | 17:00:04.9  | 16:58:51.1  | 40°52.3'S  | 033°56.4'E"
+    ]
+  },
+  {
+    "id": "SE2030Jun01A",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2030Jun01Aprime.html",
+    "lines": [
+      "L65: Greatest Eclipse  | 2030 Jun 01 at 06:29:12.9 TD (06:27:58.8 UT1)  | 2462653.769431",
+      "L82: Ephemerides  | JPL DE405",
+      "L83: ΔT  | 74.0 s",
+      "L93: First External Contact  | P1  | 03:35:53.3  | 03:34:39.3  | 17°19.7'N  | 028°32.2'E",
+      "L94: Last External Contact  | P4  | 09:22:29.8  | 09:21:15.8  | 21°40.8'N  | 138°25.6'E",
+      "L107: First External Contact  | U1  | 04:48:25.8  | 04:47:11.8  | 28°45.0'N  | 004°49.1'E",
+      "L108: First Internal Contact  | U2  | 04:54:09.4  | 04:52:55.4  | 30°09.8'N  | 002°36.7'E",
+      "L109: Last Internal Contact  | U3  | 08:04:14.9  | 08:03:00.8  | 34°24.3'N  | 164°49.9'E",
+      "L110: Last External Contact  | U4  | 08:09:57.3  | 08:08:43.3  | 33°00.8'N  | 162°33.5'E",
+      "L137: Greatest Eclipse  | 06:29:12.9  | 06:27:58.8  | 56°31.5'N  | 080°03.7'E  | 55.5°  | 176.1°  | 249.6 km  | 05m20.83s"
+    ]
+  },
+  {
+    "id": "SE2030Nov25T",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2030Nov25Tprime.html",
+    "lines": [
+      "L66: Greatest Eclipse  | 2030 Nov 25 at 06:51:36.9 TD (06:50:22.7 UT1)  | 2462830.784984",
+      "L83: Ephemerides  | JPL DE405",
+      "L84: ΔT  | 74.2 s",
+      "L94: First External Contact  | P1  | 04:17:55.5  | 04:16:41.2  | 08°31.3'S  | 019°17.9'E",
+      "L95: First Internal Contact  | P2  | 06:25:54.6  | 06:24:40.4  | 47°24.0'S  | 033°46.9'W",
+      "L96: Last Internal Contact  | P3  | 07:17:13.7  | 07:15:59.5  | 56°20.4'S  | 167°34.0'W",
+      "L97: Last External Contact  | P4  | 09:25:15.0  | 09:24:00.8  | 18°43.4'S  | 133°07.0'E",
+      "L112: First External Contact  | U1  | 05:15:34.1  | 05:14:19.9  | 16°02.2'S  | 001°53.4'E",
+      "L113: First Internal Contact  | U2  | 05:17:19.8  | 05:16:05.5  | 16°23.5'S  | 001°18.2'E",
+      "L114: Last Internal Contact  | U3  | 08:25:50.4  | 08:24:36.2  | 26°31.1'S  | 151°29.3'E",
+      "L115: Last External Contact  | U4  | 08:27:37.6  | 08:26:23.4  | 26°09.8'S  | 150°52.3'E",
+      "L142: Greatest Eclipse  | 06:51:36.9  | 06:50:22.7  | 43°36.6'S  | 071°13.7'E  | 67.0°  | 7.0°  | 169.3 km  | 03m43.53s"
+    ]
+  },
+  {
+    "id": "SE2031May21A",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2031May21Aprime.html",
+    "lines": [
+      "L65: Greatest Eclipse  | 2031 May 21 at 07:16:04.3 TD (07:14:49.9 UT1)  | 2463007.801966",
+      "L82: Ephemerides  | JPL DE405",
+      "L83: ΔT  | 74.4 s",
+      "L93: First External Contact  | P1  | 04:15:23.0  | 04:14:08.6  | 12°57.7'S  | 030°27.4'E",
+      "L94: First Internal Contact  | P2  | 06:30:37.3  | 06:29:22.9  | 31°08.9'S  | 004°37.3'E",
+      "L95: Last Internal Contact  | P3  | 08:01:34.7  | 08:00:20.3  | 19°08.5'S  | 141°44.4'E",
+      "L96: Last External Contact  | P4  | 10:16:51.4  | 10:15:36.9  | 00°46.7'S  | 114°57.5'E",
+      "L111: First External Contact  | U1  | 05:19:52.6  | 05:18:38.2  | 16°38.7'S  | 015°47.3'E",
+      "L112: First Internal Contact  | U2  | 05:23:41.5  | 05:22:27.0  | 16°59.4'S  | 014°58.4'E",
+      "L113: Last Internal Contact  | U3  | 09:08:27.6  | 09:07:13.1  | 04°49.9'S  | 130°33.8'E",
+      "L114: Last External Contact  | U4  | 09:12:20.5  | 09:11:06.0  | 04°28.7'S  | 129°43.4'E",
+      "L141: Greatest Eclipse  | 07:16:04.3  | 07:14:49.9  | 08°55.6'N  | 071°43.6'E  | 78.7°  | 353.8°  | 152.2 km  | 05m25.50s"
+    ]
+  },
+  {
+    "id": "SE2031Nov14H",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2031Nov14Hprime.html",
+    "lines": [
+      "L68: Greatest Eclipse  | 2031 Nov 14 at 21:07:30.7 TD (21:06:16.0 UT1)  | 2463185.379352",
+      "L85: Ephemerides  | JPL DE405",
+      "L86: ΔT  | 74.7 s",
+      "L96: First External Contact  | P1  | 18:24:26.5  | 18:23:11.8  | 19°41.9'N  | 177°06.6'E",
+      "L97: First Internal Contact  | P2  | 20:32:10.8  | 20:30:56.2  | 48°50.1'N  | 160°38.5'E",
+      "L98: Last Internal Contact  | P3  | 21:43:00.1  | 21:41:45.4  | 32°02.2'N  | 071°18.4'W",
+      "L99: Last External Contact  | P4  | 23:50:31.9  | 23:49:17.2  | 02°13.0'N  | 091°57.0'W",
+      "L114: First External Contact  | U1  | 19:25:05.7  | 19:23:51.0  | 25°45.5'N  | 164°20.2'E",
+      "L115: First Internal Contact  | U2  | 19:25:29.6  | 19:24:15.0  | 25°49.2'N  | 164°15.8'E",
+      "L116: Last Internal Contact  | U3  | 22:49:37.4  | 22:48:22.8  | 08°23.4'N  | 078°47.6'W",
+      "L117: Last External Contact  | U4  | 22:49:56.3  | 22:48:41.7  | 08°20.4'N  | 078°51.3'W",
+      "L144: Greatest Eclipse  | 21:07:30.7  | 21:06:16.0  | 00°37.9'S  | 137°38.7'W  | 72.1°  | 188.7°  | 38.3 km  | 01m08.26s"
+    ]
+  },
+  {
+    "id": "SE2032May09A",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2032May09Aprime.html",
+    "lines": [
+      "L67: Greatest Eclipse  | 2032 May 09 at 13:26:42.4 TD (13:25:27.5 UT1)  | 2463362.059346",
+      "L84: Ephemerides  | JPL DE405",
+      "L85: ΔT  | 74.9 s",
+      "L95: First External Contact  | P1  | 11:11:06.6  | 11:09:51.7  | 44°43.8'S  | 060°03.9'W",
+      "L96: Last External Contact  | P4  | 15:42:32.2  | 15:41:17.4  | 25°57.0'S  | 024°53.5'E",
+      "L109: First External Contact  | U1  | 12:48:26.6  | 12:47:11.7  | 69°45.7'S  | 043°23.0'W",
+      "L110: First Internal Contact  | U2  | 12:50:10.9  | 12:48:56.0  | 70°09.6'S  | 041°38.1'W",
+      "L111: Last Internal Contact  | U3  | 14:03:24.2  | 14:02:09.4  | 56°04.0'S  | 030°26.0'E",
+      "L112: Last External Contact  | U4  | 14:05:14.2  | 14:03:59.3  | 55°18.7'S  | 030°49.5'E",
+      "L139: Greatest Eclipse  | 13:26:42.4  | 13:25:27.5  | 51°15.6'S  | 007°04.4'W  | 19.9°  | 344.6°  | 43.7 km  | 00m21.95s"
+    ]
+  },
+  {
+    "id": "SE2032Nov03P",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2032Nov03Pprime.html",
+    "lines": [
+      "L66: Greatest Eclipse  | 2032 Nov 03 at 05:34:12.9 TD (05:32:57.8 UT1)  | 2463539.731224",
+      "L83: Ephemerides  | JPL DE405",
+      "L84: ΔT  | 75.1 s",
+      "L94: First External Contact  | P1  | 03:23:35.3  | 03:22:20.2  | 52°46.8'N  | 056°16.1'E",
+      "L95: Last External Contact  | P4  | 07:44:57.6  | 07:43:42.5  | 29°30.3'N  | 141°04.2'E"
+    ]
+  },
+  {
+    "id": "SE2033Mar30T",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2033Mar30Tprime.html",
+    "lines": [
+      "L66: Greatest Eclipse  | 2033 Mar 30 at 18:02:35.7 TD (18:01:20.4 UT1)  | 2463687.250931",
+      "L83: Ephemerides  | JPL DE405",
+      "L84: ΔT  | 75.3 s",
+      "L94: First External Contact  | P1  | 16:00:45.9  | 15:59:30.6  | 22°05.7'N  | 150°26.9'W",
+      "L95: Last External Contact  | P4  | 20:04:11.4  | 20:02:56.1  | 57°07.1'N  | 023°15.8'W",
+      "L108: First External Contact  | U1  | 17:37:02.7  | 17:35:47.4  | 58°08.9'N  | 179°28.7'W",
+      "L109: First Internal Contact  | U2  | 17:49:24.8  | 17:48:09.5  | 64°49.6'N  | 175°16.9'E",
+      "L110: Last Internal Contact  | U3  | 18:15:23.7  | 18:14:08.4  | 78°58.8'N  | 155°57.2'E",
+      "L111: Last External Contact  | U4  | 18:27:45.2  | 18:26:29.9  | 84°36.6'N  | 124°59.2'E",
+      "L138: Greatest Eclipse  | 18:02:35.7  | 18:01:20.4  | 71°18.9'N  | 155°50.1'W  | 11.2°  | 111.1°  | 781.2 km  | 02m36.99s"
+    ]
+  },
+  {
+    "id": "SE2033Sep23P",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2033Sep23Pprime.html",
+    "lines": [
+      "L66: Greatest Eclipse  | 2033 Sep 23 at 13:54:31.2 TD (13:53:15.7 UT1)  | 2463864.078654",
+      "L83: Ephemerides  | JPL DE405",
+      "L84: ΔT  | 75.5 s",
+      "L94: First External Contact  | P1  | 11:49:06.6  | 11:47:51.1  | 29°59.0'S  | 089°04.3'W",
+      "L95: Last External Contact  | P4  | 15:59:37.1  | 15:58:21.6  | 65°37.2'S  | 029°16.7'E"
+    ]
+  },
+  {
+    "id": "SE2034Mar20T",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2034Mar20Tprime.html",
+    "lines": [
+      "L68: Greatest Eclipse  | 2034 Mar 20 at 10:18:45.2 TD (10:17:29.5 UT1)  | 2464041.928813",
+      "L85: Ephemerides  | JPL DE405",
+      "L86: ΔT  | 75.7 s",
+      "L96: First External Contact  | P1  | 07:41:11.9  | 07:39:56.1  | 06°58.1'S  | 023°06.7'W",
+      "L97: First Internal Contact  | P2  | 09:41:21.7  | 09:40:06.0  | 21°16.1'N  | 053°08.0'W",
+      "L98: Last Internal Contact  | P3  | 10:55:53.9  | 10:54:38.2  | 57°01.0'N  | 108°08.6'E",
+      "L99: Last External Contact  | P4  | 12:56:10.5  | 12:54:54.7  | 28°46.0'N  | 078°06.1'E",
+      "L114: First External Contact  | U1  | 08:38:09.7  | 08:36:53.9  | 01°04.4'S  | 037°26.3'W",
+      "L115: First Internal Contact  | U2  | 08:39:46.4  | 08:38:30.7  | 00°48.9'S  | 037°50.5'W",
+      "L116: Last Internal Contact  | U3  | 11:57:34.8  | 11:56:19.1  | 34°54.8'N  | 092°45.2'E",
+      "L117: Last External Contact  | U4  | 11:59:14.9  | 11:57:59.2  | 34°38.8'N  | 092°21.4'E",
+      "L144: Greatest Eclipse  | 10:18:45.2  | 10:17:29.5  | 16°03.3'N  | 022°13.1'E  | 73.1°  | 161.6°  | 159.1 km  | 04m09.35s"
+    ]
+  },
+  {
+    "id": "SE2034Sep12A",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2034Sep12Aprime.html",
+    "lines": [
+      "L65: Greatest Eclipse  | 2034 Sep 12 at 16:19:27.5 TD (16:18:11.6 UT1)  | 2464218.179301",
+      "L82: Ephemerides  | JPL DE405",
+      "L83: ΔT  | 76.0 s",
+      "L93: First External Contact  | P1  | 13:27:53.6  | 13:26:37.7  | 02°47.7'N  | 112°47.4'W",
+      "L94: First Internal Contact  | P2  | 15:56:56.6  | 15:55:40.6  | 45°56.8'S  | 145°45.1'W",
+      "L95: Last Internal Contact  | P3  | 16:41:33.8  | 16:40:17.8  | 80°22.6'S  | 005°07.9'W",
+      "L96: Last External Contact  | P4  | 19:11:01.2  | 19:09:45.2  | 32°09.1'S  | 020°52.4'W",
+      "L111: First External Contact  | U1  | 14:33:23.3  | 14:32:07.4  | 05°30.2'S  | 128°35.2'W",
+      "L112: First Internal Contact  | U2  | 14:36:13.0  | 14:34:57.1  | 06°03.9'S  | 129°15.3'W",
+      "L113: Last Internal Contact  | U3  | 18:02:29.4  | 18:01:13.5  | 41°00.0'S  | 004°41.9'W",
+      "L114: Last External Contact  | U4  | 18:05:25.2  | 18:04:09.2  | 40°25.2'S  | 005°21.6'W",
+      "L141: Greatest Eclipse  | 16:19:27.5  | 16:18:11.6  | 18°14.5'S  | 072°37.4'W  | 66.7°  | 18.2°  | 102.1 km  | 02m57.70s"
+    ]
+  },
+  {
+    "id": "SE2035Mar09A",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2035Mar09Aprime.html",
+    "lines": [
+      "L65: Greatest Eclipse  | 2035 Mar 09 at 23:05:53.6 TD (23:04:37.4 UT1)  | 2464396.461544",
+      "L82: Ephemerides  | JPL DE405",
+      "L83: ΔT  | 76.2 s",
+      "L93: First External Contact  | P1  | 20:22:04.1  | 20:20:47.9  | 33°47.9'S  | 144°31.2'E",
+      "L94: First Internal Contact  | P2  | 22:57:05.1  | 22:55:48.9  | 81°50.2'S  | 039°56.9'W",
+      "L95: Last Internal Contact  | P3  | 23:15:08.3  | 23:13:52.1  | 61°34.4'S  | 067°56.2'W",
+      "L96: Last External Contact  | P4  | 01:49:43.7  | 01:48:27.5  | 01°04.3'N  | 114°36.2'W",
+      "L111: First External Contact  | U1  | 21:26:19.2  | 21:25:03.0  | 43°11.2'S  | 127°18.2'E",
+      "L112: First Internal Contact  | U2  | 21:27:56.5  | 21:26:40.3  | 43°33.3'S  | 126°50.7'E",
+      "L113: Last Internal Contact  | U3  | 00:44:04.1  | 00:42:47.9  | 08°42.2'S  | 097°27.0'W",
+      "L114: Last External Contact  | U4  | 00:45:35.2  | 00:44:19.0  | 08°21.4'S  | 097°51.4'W",
+      "L141: Greatest Eclipse  | 23:05:53.6  | 23:04:37.4  | 29°02.6'S  | 154°58.1'W  | 63.9°  | 340.2°  | 31.5 km  | 00m47.54s"
+    ]
+  },
+  {
+    "id": "SE2035Sep02T",
+    "kind": "solar",
+    "url": "https://www.eclipsewise.com/solar/SEprime/2001-2100/SE2035Sep02Tprime.html",
+    "lines": [
+      "L66: Greatest Eclipse  | 2035 Sep 02 at 01:56:46.3 TD (01:55:29.9 UT1)  | 2464572.580207",
+      "L83: Ephemerides  | JPL DE405",
+      "L84: ΔT  | 76.4 s",
+      "L94: First External Contact  | P1  | 23:16:45.8  | 23:15:29.4  | 30°13.9'N  | 096°22.7'E",
+      "L95: First Internal Contact  | P2  | 01:28:48.7  | 01:27:32.2  | 69°53.5'N  | 045°26.3'E",
+      "L96: Last Internal Contact  | P3  | 02:25:01.7  | 02:23:45.3  | 38°00.6'N  | 119°39.3'W",
+      "L97: Last External Contact  | P4  | 04:36:57.8  | 04:35:41.4  | 02°26.5'S  | 159°18.4'W",
+      "L112: First External Contact  | U1  | 00:17:05.5  | 00:15:49.1  | 37°57.4'N  | 079°41.8'E",
+      "L113: First Internal Contact  | U2  | 00:18:06.7  | 00:16:50.3  | 38°09.5'N  | 079°23.7'E",
+      "L114: Last Internal Contact  | U3  | 03:35:37.6  | 03:34:21.2  | 05°31.9'N  | 142°50.8'W",
+      "L115: Last External Contact  | U4  | 03:36:33.8  | 03:35:17.3  | 05°20.7'N  | 143°06.3'W",
+      "L142: Greatest Eclipse  | 01:56:46.3  | 01:55:29.9  | 29°05.6'N  | 158°00.9'E  | 67.9°  | 198.5°  | 116.3 km  | 02m54.24s"
+    ]
+  },
+  {
+    "id": "LE2026Mar03T",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2026Mar03Tprime.html",
+    "lines": [
+      "L41: Greatest Eclipse  | 2026 Mar 03 at 11:34:52.1 TD (11:33:40.0 UT1)  | 2461102.981713",
+      "L62: Ephemerides  | JPL DE430",
+      "L63: ΔT  | 72.1 s",
+      "L73: Penumbral Begins  | P1  | 08:45:09.7  | 08:43:57.6  | 07°08.0'N  | 129°28.6'W  | 284.3°  | 1.5011°",
+      "L74: Partial Begins  | U1  | 09:50:48.7  | 09:49:36.6  | 06°51.0'N  | 145°23.4'W  | 276.3°  | 0.9629°",
+      "L75: Total Begins  | U2  | 11:05:06.5  | 11:03:54.4  | 06°31.8'N  | 163°24.0'W  | 243.6°  | 0.4410°",
+      "L76: Greatest Eclipse  | Greatest  | 11:34:52.1  | 11:33:40.0  | 06°24.1'N  | 170°36.9'W  | 208.2°  | 0.3596°",
+      "L77: Total Ends  | U3  | 12:04:04.7  | 12:02:52.6  | 06°16.5'N  | 177°41.7'W  | 173.3°  | 0.4382°",
+      "L78: Partial Ends  | U4  | 13:18:38.0  | 13:17:25.9  | 05°57.2'N  | 164°13.7'E  | 140.2°  | 0.9593°",
+      "L79: Penumbral Ends  | P4  | 14:24:30.7  | 14:23:18.6  | 05°40.1'N  | 148°15.3'E  | 132.1°  | 1.4969°",
+      "L82: Penumbral (P4 - P1)  | 05h39m21.0s",
+      "L83: Partial (U4 - U1)  | 03h27m49.3s",
+      "L84: Total (U3 - U2)  | 00h58m58.1s"
+    ]
+  },
+  {
+    "id": "LE2026Aug28P",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2026Aug28Pprime.html",
+    "lines": [
+      "L43: Greatest Eclipse  | 2026 Aug 28 at 04:14:04.3 TD (04:12:52.0 UT1)  | 2461280.675601",
+      "L64: Ephemerides  | JPL DE430",
+      "L65: ΔT  | 72.3 s",
+      "L75: Penumbral Begins  | P1  | 01:24:41.4  | 01:23:29.0  | 09°58.5'S  | 022°00.0'W  | 261.3°  | 1.4688°",
+      "L76: Partial Begins  | U1  | 02:34:33.8  | 02:33:21.4  | 09°41.8'S  | 038°57.1'W  | 272.5°  | 0.9417°",
+      "L77: Greatest Eclipse  | Greatest  | 04:14:04.3  | 04:12:52.0  | 09°18.1'S  | 063°05.6'W  | 332.9°  | 0.4647°",
+      "L78: Partial Ends  | U4  | 05:53:21.7  | 05:52:09.3  | 08°54.2'S  | 087°11.0'W  | 33.3°  | 0.9411°",
+      "L79: Penumbral Ends  | P4  | 07:03:12.2  | 07:01:59.8  | 08°37.3'S  | 104°07.8'W  | 44.4°  | 1.4700°",
+      "L82: Penumbral (P4 - P1)  | 05h38m30.8s",
+      "L83: Partial (U4 - U1)  | 03h18m47.9s"
+    ]
+  },
+  {
+    "id": "LE2027Feb20N",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2027Feb20Nprime.html",
+    "lines": [
+      "L43: Greatest Eclipse  | 2027 Feb 20 at 23:14:05.3 TD (23:12:52.7 UT1)  | 2461457.467277",
+      "L64: Ephemerides  | JPL DE430",
+      "L65: ΔT  | 72.5 s",
+      "L75: Penumbral Begins  | P1  | 21:13:02.0  | 21:11:49.4  | 10°19.9'N  | 043°56.0'E  | 254.2°  | 1.5664°",
+      "L76: Greatest Eclipse  | Greatest  | 23:14:05.3  | 23:12:52.7  | 09°47.3'N  | 014°43.3'E  | 206.5°  | 1.0542°",
+      "L77: Penumbral Ends  | P4  | 01:14:42.5  | 01:13:29.9  | 09°14.6'N  | 014°23.4'W  | 159.0°  | 1.5622°",
+      "L80: Penumbral (P4 - P1)  | 04h01m40.5s"
+    ]
+  },
+  {
+    "id": "LE2027Jul18N",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2027Jul18Nprime.html",
+    "lines": [
+      "L44: Greatest Eclipse  | 2027 Jul 18 at 16:04:10.5 TD (16:02:57.8 UT1)  | 2461605.168724",
+      "L65: Ephemerides  | JPL DE430",
+      "L66: ΔT  | 72.7 s",
+      "L76: Penumbral Begins  | P1  | 15:55:30.5  | 15:54:17.8  | 22°21.6'S  | 123°21.4'E  | 166.4°  | 1.4199°",
+      "L77: Greatest Eclipse  | Greatest  | 16:04:10.5  | 16:02:57.8  | 22°20.4'S  | 121°15.5'E  | 163.8°  | 1.4184°",
+      "L78: Penumbral Ends  | P4  | 16:13:09.8  | 16:11:57.0  | 22°19.2'S  | 119°04.9'E  | 161.0°  | 1.4200°",
+      "L81: Penumbral (P4 - P1)  | 00h17m39.3s"
+    ]
+  },
+  {
+    "id": "LE2027Aug17N",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2027Aug17Nprime.html",
+    "lines": [
+      "L43: Greatest Eclipse  | 2027 Aug 17 at 07:14:57.9 TD (07:13:45.1 UT1)  | 2461634.801217",
+      "L64: Ephemerides  | JPL DE430",
+      "L65: ΔT  | 72.8 s",
+      "L75: Penumbral Begins  | P1  | 05:25:05.1  | 05:23:52.3  | 12°47.1'S  | 081°11.6'W  | 299.1°  | 1.4250°",
+      "L76: Greatest Eclipse  | Greatest  | 07:14:57.9  | 07:13:45.1  | 12°24.7'S  | 107°53.4'W  | 335.0°  | 1.1544°",
+      "L77: Penumbral Ends  | P4  | 09:04:26.4  | 09:03:13.7  | 12°02.1'S  | 134°29.4'W  | 10.8°  | 1.4235°",
+      "L80: Penumbral (P4 - P1)  | 03h39m21.3s"
+    ]
+  },
+  {
+    "id": "LE2028Jan12P",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2028Jan12Pprime.html",
+    "lines": [
+      "L43: Greatest Eclipse  | 2028 Jan 12 at 04:14:13.4 TD (04:13:00.5 UT1)  | 2461782.675700",
+      "L64: Ephemerides  | JPL DE430",
+      "L65: ΔT  | 73.0 s",
+      "L75: Penumbral Begins  | P1  | 02:08:37.1  | 02:07:24.2  | 23°00.4'N  | 030°52.3'W  | 323.7°  | 1.5756°",
+      "L76: Partial Begins  | U1  | 03:45:59.0  | 03:44:46.1  | 22°45.7'N  | 054°12.6'W  | 359.2°  | 1.0330°",
+      "L77: Greatest Eclipse  | Greatest  | 04:14:13.4  | 04:13:00.5  | 22°41.3'N  | 060°58.8'W  | 14.6°  | 0.9958°",
+      "L78: Partial Ends  | U4  | 04:42:51.5  | 04:41:38.6  | 22°36.9'N  | 067°50.7'W  | 30.2°  | 1.0341°",
+      "L79: Penumbral Ends  | P4  | 06:20:03.2  | 06:18:50.3  | 22°21.5'N  | 091°08.8'W  | 65.5°  | 1.5784°",
+      "L82: Penumbral (P4 - P1)  | 04h11m26.1s",
+      "L83: Partial (U4 - U1)  | 00h56m52.5s"
+    ]
+  },
+  {
+    "id": "LE2028Jul06P",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2028Jul06Pprime.html",
+    "lines": [
+      "L41: Greatest Eclipse  | 2028 Jul 06 at 18:20:57.2 TD (18:19:44.0 UT1)  | 2461959.263704",
+      "L62: Ephemerides  | JPL DE430",
+      "L63: ΔT  | 73.2 s",
+      "L73: Penumbral Begins  | P1  | 15:45:16.5  | 15:44:03.3  | 23°33.5'S  | 124°02.4'E  | 227.7°  | 1.4575°",
+      "L74: Partial Begins  | U1  | 17:09:53.1  | 17:08:40.0  | 23°24.8'S  | 103°37.2'E  | 206.0°  | 0.9316°",
+      "L75: Greatest Eclipse  | Greatest  | 18:20:57.2  | 18:19:44.0  | 23°17.3'S  | 086°28.1'E  | 167.9°  | 0.7331°",
+      "L76: Partial Ends  | U4  | 19:32:05.8  | 19:30:52.7  | 23°09.6'S  | 069°17.7'E  | 129.7°  | 0.9316°",
+      "L77: Penumbral Ends  | P4  | 20:56:45.8  | 20:55:32.6  | 23°00.2'S  | 048°51.4'E  | 108.0°  | 1.4562°",
+      "L80: Penumbral (P4 - P1)  | 05h11m29.3s",
+      "L81: Partial (U4 - U1)  | 02h22m12.7s"
+    ]
+  },
+  {
+    "id": "LE2028Dec31T",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2028Dec31Tprime.html",
+    "lines": [
+      "L41: Greatest Eclipse  | 2028 Dec 31 at 16:53:15.1 TD (16:52:01.7 UT1)  | 2462137.202798",
+      "L62: Ephemerides  | JPL DE430",
+      "L63: ΔT  | 73.4 s",
+      "L73: Penumbral Begins  | P1  | 14:04:40.6  | 14:03:27.2  | 23°35.5'N  | 148°25.6'E  | 292.2°  | 1.5164°",
+      "L74: Partial Begins  | U1  | 15:08:30.6  | 15:07:17.1  | 23°29.6'N  | 133°04.7'E  | 299.1°  | 0.9746°",
+      "L75: Total Begins  | U2  | 16:17:20.2  | 16:16:06.8  | 23°23.1'N  | 116°31.6'E  | 325.1°  | 0.4467°",
+      "L76: Greatest Eclipse  | Greatest  | 16:53:15.1  | 16:52:01.7  | 23°19.6'N  | 107°53.4'E  | 10.2°  | 0.3153°",
+      "L77: Total Ends  | U3  | 17:29:21.7  | 17:28:08.3  | 23°16.1'N  | 099°12.4'E  | 55.5°  | 0.4480°",
+      "L78: Partial Ends  | U4  | 18:38:07.2  | 18:36:53.8  | 23°09.2'N  | 082°40.3'E  | 81.4°  | 0.9770°",
+      "L79: Penumbral Ends  | P4  | 19:41:47.0  | 19:40:33.5  | 23°02.6'N  | 067°21.7'E  | 88.3°  | 1.5198°",
+      "L82: Penumbral (P4 - P1)  | 05h37m06.3s",
+      "L83: Partial (U4 - U1)  | 03h29m36.6s",
+      "L84: Total (U3 - U2)  | 01h12m01.5s"
+    ]
+  },
+  {
+    "id": "LE2029Jun26T",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2029Jun26Tprime.html",
+    "lines": [
+      "L41: Greatest Eclipse  | 2029 Jun 26 at 03:23:22.5 TD (03:22:08.8 UT1)  | 2462313.640380",
+      "L62: Ephemerides  | JPL DE430",
+      "L63: ΔT  | 73.6 s",
+      "L73: Penumbral Begins  | P1  | 00:35:24.8  | 00:34:11.2  | 23°32.1'S  | 009°29.0'W  | 262.7°  | 1.5252°",
+      "L74: Partial Begins  | U1  | 01:33:11.4  | 01:31:57.8  | 23°28.1'S  | 023°21.4'W  | 263.0°  | 1.0003°",
+      "L75: Total Begins  | U2  | 02:32:02.0  | 02:30:48.3  | 23°23.9'S  | 037°29.3'W  | 263.8°  | 0.4660°",
+      "L76: Greatest Eclipse  | Greatest  | 03:23:22.5  | 03:22:08.8  | 23°20.1'S  | 049°49.1'W  | 352.2°  | 0.0121°",
+      "L77: Total Ends  | U3  | 04:14:41.6  | 04:13:28.0  | 23°16.2'S  | 062°08.7'W  | 80.7°  | 0.4655°",
+      "L78: Partial Ends  | U4  | 05:13:31.5  | 05:12:17.9  | 23°11.6'S  | 076°16.6'W  | 81.5°  | 0.9983°",
+      "L79: Penumbral Ends  | P4  | 06:11:25.8  | 06:10:12.2  | 23°07.0'S  | 090°11.2'W  | 81.7°  | 1.5223°",
+      "L82: Penumbral (P4 - P1)  | 05h36m01.0s",
+      "L83: Partial (U4 - U1)  | 03h40m20.1s",
+      "L84: Total (U3 - U2)  | 01h42m39.7s"
+    ]
+  },
+  {
+    "id": "LE2029Dec20T",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2029Dec20Tprime.html",
+    "lines": [
+      "L41: Greatest Eclipse  | 2029 Dec 20 at 22:43:11.8 TD (22:41:57.9 UT1)  | 2462491.445809",
+      "L62: Ephemerides  | JPL DE430",
+      "L63: ΔT  | 73.9 s",
+      "L73: Penumbral Begins  | P1  | 19:43:41.6  | 19:42:27.7  | 23°12.6'N  | 062°17.5'E  | 261.5°  | 1.4529°",
+      "L74: Partial Begins  | U1  | 20:56:08.3  | 20:54:54.5  | 23°09.7'N  | 044°48.2'E  | 252.9°  | 0.9112°",
+      "L75: Total Begins  | U2  | 22:15:58.2  | 22:14:44.3  | 23°06.3'N  | 025°31.9'E  | 216.9°  | 0.4101°",
+      "L76: Greatest Eclipse  | Greatest  | 22:43:11.8  | 22:41:57.9  | 23°05.1'N  | 018°57.5'E  | 185.5°  | 0.3498°",
+      "L77: Total Ends  | U3  | 23:10:21.2  | 23:09:07.4  | 23°03.9'N  | 012°24.1'E  | 154.1°  | 0.4098°",
+      "L78: Partial Ends  | U4  | 00:30:15.3  | 00:29:01.5  | 23°00.1'N  | 006°53.2'W  | 118.0°  | 0.9121°",
+      "L79: Penumbral Ends  | P4  | 01:42:36.0  | 01:41:22.1  | 22°56.6'N  | 024°21.1'W  | 109.4°  | 1.4548°",
+      "L82: Penumbral (P4 - P1)  | 05h58m54.4s",
+      "L83: Partial (U4 - U1)  | 03h34m07.0s",
+      "L84: Total (U3 - U2)  | 00h54m23.1s"
+    ]
+  },
+  {
+    "id": "LE2030Jun15P",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2030Jun15Pprime.html",
+    "lines": [
+      "L41: Greatest Eclipse  | 2030 Jun 15 at 18:34:33.5 TD (18:33:19.4 UT1)  | 2462668.273141",
+      "L62: Ephemerides  | JPL DE430",
+      "L63: ΔT  | 74.1 s",
+      "L73: Penumbral Begins  | P1  | 16:15:01.5  | 16:13:47.4  | 22°37.8'S  | 115°10.0'E  | 295.9°  | 1.5749°",
+      "L74: Partial Begins  | U1  | 17:21:59.7  | 17:20:45.6  | 22°36.0'S  | 099°08.5'E  | 313.7°  | 1.0489°",
+      "L75: Greatest Eclipse  | Greatest  | 18:34:33.5  | 18:33:19.4  | 22°33.8'S  | 081°46.6'E  | 356.7°  | 0.7674°",
+      "L76: Partial Ends  | U4  | 19:47:01.4  | 19:45:47.3  | 22°31.3'S  | 064°26.0'E  | 39.6°  | 1.0481°",
+      "L77: Penumbral Ends  | P4  | 20:54:03.3  | 20:52:49.2  | 22°28.8'S  | 048°23.5'E  | 57.5°  | 1.5735°",
+      "L80: Penumbral (P4 - P1)  | 04h39m01.8s",
+      "L81: Partial (U4 - U1)  | 02h25m01.7s"
+    ]
+  },
+  {
+    "id": "LE2030Dec09N",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2030Dec09Nprime.html",
+    "lines": [
+      "L43: Greatest Eclipse  | 2030 Dec 09 at 22:28:51.1 TD (22:27:36.7 UT1)  | 2462845.435842",
+      "L64: Ephemerides  | JPL DE430",
+      "L65: ΔT  | 74.3 s",
+      "L75: Penumbral Begins  | P1  | 20:08:48.6  | 20:07:34.3  | 21°54.8'N  | 055°05.1'E  | 228.0°  | 1.4289°",
+      "L76: Greatest Eclipse  | Greatest  | 22:28:51.1  | 22:27:36.7  | 21°55.1'N  | 021°13.3'E  | 180.5°  | 0.9652°",
+      "L77: Penumbral Ends  | P4  | 00:48:52.7  | 00:47:38.3  | 21°54.8'N  | 012°38.4'W  | 133.0°  | 1.4287°",
+      "L80: Penumbral (P4 - P1)  | 04h40m04.1s"
+    ]
+  },
+  {
+    "id": "LE2031May07N",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2031May07Nprime.html",
+    "lines": [
+      "L43: Greatest Eclipse  | 2031 May 07 at 03:52:01.3 TD (03:50:46.7 UT1)  | 2462993.660263",
+      "L64: Ephemerides  | JPL DE430",
+      "L65: ΔT  | 74.5 s",
+      "L75: Penumbral Begins  | P1  | 01:52:56.7  | 01:51:42.1  | 17°32.9'S  | 030°08.4'W  | 237.6°  | 1.5481°",
+      "L76: Greatest Eclipse  | Greatest  | 03:52:01.3  | 03:50:46.7  | 17°47.5'S  | 058°45.3'W  | 191.1°  | 1.0670°",
+      "L77: Penumbral Ends  | P4  | 05:51:00.7  | 05:49:46.2  | 18°01.7'S  | 087°20.7'W  | 144.6°  | 1.5487°",
+      "L80: Penumbral (P4 - P1)  | 03h58m04.0s"
+    ]
+  },
+  {
+    "id": "LE2031Jun05N",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2031Jun05Nprime.html",
+    "lines": [
+      "L43: Greatest Eclipse  | 2031 Jun 05 at 11:45:17.4 TD (11:44:02.8 UT1)  | 2463022.988921",
+      "L64: Ephemerides  | JPL DE430",
+      "L65: ΔT  | 74.6 s",
+      "L75: Penumbral Begins  | P1  | 10:57:12.9  | 10:55:58.3  | 21°02.4'S  | 164°50.2'W  | 343.7°  | 1.5690°",
+      "L76: Greatest Eclipse  | Greatest  | 11:45:17.4  | 11:44:02.8  | 21°03.2'S  | 176°21.0'W  | 1.2°  | 1.4967°",
+      "L77: Penumbral Ends  | P4  | 12:33:31.3  | 12:32:16.8  | 21°04.0'S  | 172°06.0'E  | 18.7°  | 1.5695°",
+      "L80: Penumbral (P4 - P1)  | 01h36m18.5s"
+    ]
+  },
+  {
+    "id": "LE2031Oct30N",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2031Oct30Nprime.html",
+    "lines": [
+      "L41: Greatest Eclipse  | 2031 Oct 30 at 07:46:44.2 TD (07:45:29.4 UT1)  | 2463169.823257",
+      "L62: Ephemerides  | JPL DE430",
+      "L63: ΔT  | 74.8 s",
+      "L73: Penumbral Begins  | P1  | 05:50:18.3  | 05:49:03.5  | 14°34.1'N  | 092°36.7'W  | 304.9°  | 1.4931°",
+      "L74: Greatest Eclipse  | Greatest  | 07:46:44.2  | 07:45:29.4  | 14°49.9'N  | 120°43.6'W  | 346.4°  | 1.1188°",
+      "L75: Penumbral Ends  | P4  | 09:42:46.5  | 09:41:31.7  | 15°05.3'N  | 148°44.8'W  | 27.8°  | 1.4898°",
+      "L78: Penumbral (P4 - P1)  | 03h52m28.1s"
+    ]
+  },
+  {
+    "id": "LE2032Apr25T",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2032Apr25Tprime.html",
+    "lines": [
+      "L41: Greatest Eclipse  | 2032 Apr 25 at 15:14:50.6 TD (15:13:35.5 UT1)  | 2463348.134439",
+      "L62: Ephemerides  | JPL DE430",
+      "L63: ΔT  | 75.0 s",
+      "L73: Penumbral Begins  | P1  | 12:23:06.7  | 12:21:51.7  | 13°27.0'S  | 172°29.1'E  | 270.5°  | 1.4825°",
+      "L74: Partial Begins  | U1  | 13:28:50.1  | 13:27:35.0  | 13°35.9'S  | 156°36.2'E  | 263.0°  | 0.9531°",
+      "L75: Total Begins  | U2  | 14:41:39.3  | 14:40:24.3  | 13°45.7'S  | 139°00.5'E  | 233.3°  | 0.4373°",
+      "L76: Greatest Eclipse  | Greatest  | 15:14:50.6  | 15:13:35.5  | 13°50.1'S  | 130°59.4'E  | 193.6°  | 0.3365°",
+      "L77: Total Ends  | U3  | 15:47:49.2  | 15:46:34.2  | 13°54.5'S  | 123°01.4'E  | 154.1°  | 0.4363°",
+      "L78: Partial Ends  | U4  | 17:00:47.7  | 16:59:32.7  | 14°04.1'S  | 105°23.6'E  | 124.3°  | 0.9540°",
+      "L79: Penumbral Ends  | P4  | 18:06:24.5  | 18:05:09.5  | 14°12.6'S  | 089°32.6'E  | 116.7°  | 1.4848°",
+      "L82: Penumbral (P4 - P1)  | 05h43m17.9s",
+      "L83: Partial (U4 - U1)  | 03h31m57.7s",
+      "L84: Total (U3 - U2)  | 01h06m09.9s"
+    ]
+  },
+  {
+    "id": "LE2032Oct18T",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2032Oct18Tprime.html",
+    "lines": [
+      "L41: Greatest Eclipse  | 2032 Oct 18 at 19:03:40.2 TD (19:02:24.9 UT1)  | 2463524.293344",
+      "L62: Ephemerides  | JPL DE430",
+      "L63: ΔT  | 75.3 s",
+      "L73: Penumbral Begins  | P1  | 16:25:32.4  | 16:24:17.1  | 09°58.5'N  | 108°35.7'E  | 269.9°  | 1.5598°",
+      "L74: Partial Begins  | U1  | 17:25:15.3  | 17:24:00.0  | 10°08.8'N  | 094°13.1'E  | 278.4°  | 1.0241°",
+      "L75: Total Begins  | U2  | 18:39:39.6  | 18:38:24.4  | 10°21.4'N  | 076°18.4'E  | 315.7°  | 0.4759°",
+      "L76: Greatest Eclipse  | Greatest  | 19:03:40.2  | 19:02:24.9  | 10°25.5'N  | 070°31.6'E  | 344.4°  | 0.4177°",
+      "L77: Total Ends  | U3  | 19:27:19.5  | 19:26:04.2  | 10°29.5'N  | 064°49.9'E  | 12.6°  | 0.4742°",
+      "L78: Partial Ends  | U4  | 20:41:53.5  | 20:40:38.2  | 10°42.0'N  | 046°52.9'E  | 50.2°  | 1.0214°",
+      "L79: Penumbral Ends  | P4  | 21:41:45.5  | 21:40:30.2  | 10°51.9'N  | 032°28.2'E  | 58.8°  | 1.5566°",
+      "L82: Penumbral (P4 - P1)  | 05h16m13.1s",
+      "L83: Partial (U4 - U1)  | 03h16m38.2s",
+      "L84: Total (U3 - U2)  | 00h47m39.8s"
+    ]
+  },
+  {
+    "id": "LE2033Apr14T",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2033Apr14Tprime.html",
+    "lines": [
+      "L43: Greatest Eclipse  | 2033 Apr 14 at 19:13:51.4 TD (19:12:35.9 UT1)  | 2463702.300415",
+      "L64: Ephemerides  | JPL DE430",
+      "L65: ΔT  | 75.5 s",
+      "L75: Penumbral Begins  | P1  | 16:12:50.6  | 16:11:35.1  | 08°57.8'S  | 115°53.6'E  | 300.2°  | 1.4318°",
+      "L76: Partial Begins  | U1  | 17:26:03.8  | 17:24:48.2  | 09°08.1'S  | 098°07.9'E  | 309.1°  | 0.9001°",
+      "L77: Total Begins  | U2  | 18:49:08.0  | 18:47:52.5  | 09°19.7'S  | 077°58.8'E  | 347.8°  | 0.4052°",
+      "L78: Greatest Eclipse  | Greatest  | 19:13:51.4  | 19:12:35.9  | 09°23.1'S  | 071°59.0'E  | 15.7°  | 0.3581°",
+      "L79: Total Ends  | U3  | 19:38:57.7  | 19:37:42.2  | 09°26.6'S  | 065°53.7'E  | 43.9°  | 0.4066°",
+      "L80: Partial Ends  | U4  | 21:01:50.6  | 21:00:35.1  | 09°38.1'S  | 045°47.5'E  | 82.3°  | 0.9020°",
+      "L81: Penumbral Ends  | P4  | 22:14:55.3  | 22:13:39.7  | 09°48.1'S  | 028°04.0'E  | 91.2°  | 1.4338°",
+      "L84: Penumbral (P4 - P1)  | 06h02m04.6s",
+      "L85: Partial (U4 - U1)  | 03h35m46.8s",
+      "L86: Total (U3 - U2)  | 00h49m49.6s"
+    ]
+  },
+  {
+    "id": "LE2033Oct08T",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2033Oct08Tprime.html",
+    "lines": [
+      "L41: Greatest Eclipse  | 2033 Oct 08 at 10:56:22.6 TD (10:55:06.9 UT1)  | 2463878.954941",
+      "L62: Ephemerides  | JPL DE430",
+      "L63: ΔT  | 75.8 s",
+      "L73: Penumbral Begins  | P1  | 08:19:42.5  | 08:18:26.7  | 05°18.7'N  | 129°08.7'W  | 242.2°  | 1.5856°",
+      "L74: Partial Begins  | U1  | 09:14:52.6  | 09:13:36.8  | 05°29.2'N  | 142°24.8'W  | 236.6°  | 1.0518°",
+      "L75: Total Begins  | U2  | 10:16:47.0  | 10:15:31.2  | 05°41.1'N  | 157°18.1'W  | 216.1°  | 0.4925°",
+      "L76: Greatest Eclipse  | Greatest  | 10:56:22.6  | 10:55:06.9  | 05°48.6'N  | 166°49.5'W  | 163.0°  | 0.2958°",
+      "L77: Total Ends  | U3  | 11:36:12.1  | 11:34:56.4  | 05°56.2'N  | 176°24.1'W  | 109.7°  | 0.4943°",
+      "L78: Partial Ends  | U4  | 12:37:59.2  | 12:36:43.4  | 06°07.9'N  | 168°44.4'E  | 89.3°  | 1.0529°",
+      "L79: Penumbral Ends  | P4  | 13:33:07.1  | 13:31:51.3  | 06°18.3'N  | 155°28.9'E  | 83.7°  | 1.5864°",
+      "L82: Penumbral (P4 - P1)  | 05h13m24.6s",
+      "L83: Partial (U4 - U1)  | 03h23m06.6s",
+      "L84: Total (U3 - U2)  | 01h19m25.1s"
+    ]
+  },
+  {
+    "id": "LE2034Apr03N",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2034Apr03Nprime.html",
+    "lines": [
+      "L41: Greatest Eclipse  | 2034 Apr 03 at 19:06:59.9 TD (19:05:43.9 UT1)  | 2464056.295647",
+      "L62: Ephemerides  | JPL DE430",
+      "L63: ΔT  | 76.0 s",
+      "L73: Penumbral Begins  | P1  | 16:54:03.1  | 16:52:47.1  | 04°15.6'S  | 106°55.5'E  | 331.9°  | 1.4302°",
+      "L74: Greatest Eclipse  | Greatest  | 19:06:59.9  | 19:05:43.9  | 04°35.7'S  | 074°39.2'E  | 17.1°  | 1.0077°",
+      "L75: Penumbral Ends  | P4  | 21:20:12.4  | 21:18:56.4  | 04°55.7'S  | 042°19.2'E  | 62.4°  | 1.4311°",
+      "L78: Penumbral (P4 - P1)  | 04h26m09.3s"
+    ]
+  },
+  {
+    "id": "LE2034Sep28P",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2034Sep28Pprime.html",
+    "lines": [
+      "L43: Greatest Eclipse  | 2034 Sep 28 at 02:47:37.3 TD (02:46:21.1 UT1)  | 2464233.615522",
+      "L64: Ephemerides  | JPL DE430",
+      "L65: ΔT  | 76.3 s",
+      "L75: Penumbral Begins  | P1  | 00:43:06.4  | 00:41:50.2  | 00°39.4'N  | 013°34.5'W  | 211.5°  | 1.5505°",
+      "L76: Partial Begins  | U1  | 02:34:00.5  | 02:32:44.2  | 01°00.4'N  | 040°18.5'W  | 169.5°  | 1.0186°",
+      "L77: Greatest Eclipse  | Greatest  | 02:47:37.3  | 02:46:21.1  | 01°03.0'N  | 043°35.4'W  | 162.2°  | 1.0104°",
+      "L78: Partial Ends  | U4  | 03:01:48.9  | 03:00:32.7  | 01°05.7'N  | 047°00.7'W  | 154.6°  | 1.0193°",
+      "L79: Penumbral Ends  | P4  | 04:52:28.5  | 04:51:12.2  | 01°26.7'N  | 073°41.2'W  | 112.7°  | 1.5543°",
+      "L82: Penumbral (P4 - P1)  | 04h09m22.1s",
+      "L83: Partial (U4 - U1)  | 00h27m48.5s"
+    ]
+  },
+  {
+    "id": "LE2035Feb22N",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2035Feb22Nprime.html",
+    "lines": [
+      "L43: Greatest Eclipse  | 2035 Feb 22 at 09:06:11.4 TD (09:04:55.0 UT1)  | 2464380.878414",
+      "L64: Ephemerides  | JPL DE430",
+      "L65: ΔT  | 76.5 s",
+      "L75: Penumbral Begins  | P1  | 06:57:49.6  | 06:56:33.1  | 09°33.9'N  | 102°09.5'W  | 244.2°  | 1.5214°",
+      "L76: Greatest Eclipse  | Greatest  | 09:06:11.4  | 09:04:55.0  | 09°13.7'N  | 133°08.3'W  | 195.6°  | 1.0066°",
+      "L77: Penumbral Ends  | P4  | 11:14:13.1  | 11:12:56.6  | 08°53.4'N  | 164°02.4'W  | 147.2°  | 1.5175°",
+      "L80: Penumbral (P4 - P1)  | 04h16m23.5s"
+    ]
+  },
+  {
+    "id": "LE2035Aug19P",
+    "kind": "lunar",
+    "url": "https://www.eclipsewise.com/lunar/LEprime/2001-2100/LE2035Aug19Pprime.html",
+    "lines": [
+      "L41: Greatest Eclipse  | 2035 Aug 19 at 01:12:15.0 TD (01:10:58.2 UT1)  | 2464558.549285",
+      "L62: Ephemerides  | JPL DE430",
+      "L63: ΔT  | 76.7 s",
+      "L73: Penumbral Begins  | P1  | 22:46:50.9  | 22:45:34.2  | 12°20.4'S  | 018°11.4'E  | 292.8°  | 1.4516°",
+      "L74: Partial Begins  | U1  | 00:33:34.5  | 00:32:17.8  | 12°06.7'S  | 007°39.0'W  | 326.3°  | 0.9240°",
+      "L75: Greatest Eclipse  | Greatest  | 01:12:15.0  | 01:10:58.2  | 12°01.7'S  | 017°00.8'W  | 345.9°  | 0.8708°",
+      "L76: Partial Ends  | U4  | 01:50:46.0  | 01:49:29.3  | 11°56.7'S  | 026°20.3'W  | 5.4°  | 0.9237°",
+      "L77: Penumbral Ends  | P4  | 03:37:29.3  | 03:36:12.6  | 11°42.6'S  | 052°10.6'W  | 39.0°  | 1.4522°",
+      "L80: Penumbral (P4 - P1)  | 04h50m38.4s",
+      "L81: Partial (U4 - U1)  | 01h17m11.5s"
+    ]
+  }
+]

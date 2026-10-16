@@ -1,0 +1,861 @@
+{
+  "version": "1.0.0",
+  "locale": "pt-BR",
+  "methodology": "Interpretação simbólica coletiva na tradição astrológica ocidental moderna, com orientação psicológica, zodíaco tropical e posições geocêntricas. O catálogo reúne componentes autorais por corpo, par de corpos, signo, aspecto, fase lunar, eclipse, estação e retrogradação. A composição mantém os componentes em parágrafos separados: o par descreve o tema, o aspecto qualifica sua dinâmica e o signo acrescenta uma forma de expressão. Não utiliza casas natais, ascendentes, mapas pessoais ou inferências sobre a vida de uma pessoa. Os textos são reutilizáveis nos eventos calculados para 2026 a 2035; não atribuem acontecimentos históricos futuros a configurações celestes. Uma estação é a mudança aparente de direção, enquanto um período retrógrado é o intervalo de movimento aparente retrógrado, sem inversão física da órbita. Nos eclipses, o signo indica a posição zodiacal do ponto de referência fornecido pelo cálculo, sem pressupor visibilidade local.",
+  "disclaimer": "Astrologia é apresentada aqui como linguagem simbólica de reflexão, sem validade científica estabelecida para prever acontecimentos ou determinar comportamentos. As leituras são coletivas e não descrevem necessariamente experiências individuais. Os trechos sobre saúde tratam de cuidado, limites e organização cotidiana, sem diagnóstico, prescrição ou substituição de atendimento profissional. Os trechos financeiros tratam de valores e gestão de recursos, sem recomendação de investimento ou promessa de resultado. Datas astronômicas não tornam as interpretações previsões factuais.",
+  "narrative": {
+    "bodies": {
+      "sun": "o Sol",
+      "moon": "a Lua",
+      "mercury": "Mercúrio",
+      "venus": "Vênus",
+      "mars": "Marte",
+      "jupiter": "Júpiter",
+      "saturn": "Saturno",
+      "uranus": "Urano",
+      "neptune": "Netuno",
+      "pluto": "Plutão"
+    },
+    "signs": ["Áries", "Touro", "Gêmeos", "Câncer", "Leão", "Virgem", "Libra", "Escorpião", "Sagitário", "Capricórnio", "Aquário", "Peixes"],
+    "aspects": {
+      "0": "conjunção",
+      "60": "sextil",
+      "90": "quadratura",
+      "120": "trígono",
+      "180": "oposição"
+    },
+    "phases": {
+      "new": "a Lua nova",
+      "firstQuarter": "o quarto crescente",
+      "full": "a Lua cheia",
+      "lastQuarter": "o quarto minguante"
+    },
+    "stations": {
+      "retrograde": "retrógrado",
+      "direct": "direto"
+    },
+    "eclipses": {
+      "solar": "eclipse solar",
+      "lunar": "eclipse lunar"
+    },
+    "domains": {
+      "general": "panorama geral",
+      "health": "saúde e cuidado",
+      "relationships": "relacionamentos",
+      "finance": "finanças e recursos",
+      "work": "trabalho",
+      "family": "família"
+    },
+    "templates": {
+      "signIngress": "Em {when}, {body} entra em {sign}. Neste relatório, a passagem pelo signo é acompanhada {period}.",
+      "signPresence": "No início do período consultado, {body} já está em {sign}. Sua presença no signo é acompanhada {period}.",
+      "aspect": "No período {period}, {body1} e {body2} permanecem em {aspect}, dentro da orbe adotada para o cálculo.",
+      "retrograde": "No período {period}, {body} apresenta movimento retrógrado aparente em {sign}.",
+      "stationRetrograde": "Em {when}, {body} inicia o movimento retrógrado aparente. Esse instante marca a estação retrógrada.",
+      "stationDirect": "Em {when}, {body} retoma o movimento direto aparente. Esse instante marca a estação direta.",
+      "phase": "Em {when}, ocorre {phase}, com a Lua em {sign}.",
+      "eclipseSolar": "O intervalo físico global do eclipse solar vai {period}. O fenômeno atinge seu máximo em {maximum}, com o Sol em {sign}.",
+      "eclipseLunar": "O intervalo físico global do eclipse lunar vai {period}. O fenômeno atinge seu máximo em {maximum}, com a Lua em {sign}.",
+      "eclipseDuration": "A duração física global é de {duration}.",
+      "eclipseTimeScale": "Os instantes previstos do catálogo têm referência em UT1 e são apresentados no fuso do relatório, com UT1 aproximado a UTC.",
+      "continuedBefore": "O fenômeno já estava em curso antes do início do período consultado.",
+      "continuesAfter": "O fenômeno continua depois do fim do período consultado.",
+      "exactPassages": "Dentro desse intervalo, o aspecto se torna exato em {exact}.",
+      "interpretationHeading": "Leitura simbólica: {domain}."
+    }
+  },
+  "components": {
+    "pair:sun:moon": {
+      "title": "Sol e Lua: direção e pertencimento",
+      "general": "O encontro entre Sol e Lua aproxima propósitos declarados e necessidades de pertencimento. A reflexão coletiva considera se a direção escolhida encontra apoio na experiência cotidiana de quem participa dela.",
+      "health": "Objetivos de desempenho e necessidades de cuidado podem ser colocados na mesma conversa. Uma rotina coerente precisa considerar o que sustenta a disposição cotidiana, inclusive pausas e apoio disponível.",
+      "relationships": "Desejo de reconhecimento e necessidade de acolhimento nem sempre pedem a mesma resposta. Tornar essas expectativas compreensíveis ajuda a evitar que atenção pública seja tomada como substituta da presença cotidiana.",
+      "finance": "Metas materiais podem ser comparadas com as necessidades de segurança que pretendem atender. A leitura considera se os recursos estão orientados a prioridades concretas ou a uma imagem desejada de estabilidade.",
+      "work": "A relação entre liderança e cotidiano da equipe oferece o eixo profissional. Objetivos ganham consistência quando incluem as condições de trabalho de quem precisa transformá-los em entregas.",
+      "family": "Projetos familiares e necessidades domésticas podem apontar para prioridades distintas. A reflexão procura espaço para desejos de realização sem deixar invisível o cuidado que permite à casa funcionar."
+    },
+    "pair:sun:mercury": {
+      "title": "Sol e Mercúrio: propósito e discurso",
+      "general": "Sol e Mercúrio aproximam direção e linguagem. A leitura observa como lideranças explicam suas escolhas, quais ideias recebem visibilidade e se o discurso público permite perguntas que alterem a compreensão inicial.",
+      "health": "A maneira de falar sobre desempenho e cuidado ajuda a definir o que um grupo considera aceitável. Linguagem clara pode abrir espaço para necessidades que slogans sobre disposição deixam de fora.",
+      "relationships": "A expressão de uma posição pessoal precisa encontrar espaço para escuta. O tema considera conversas em que defender uma imagem de si dificulta compreender o que a outra pessoa está dizendo.",
+      "finance": "Objetivos financeiros precisam ser descritos em termos compreensíveis para quem participa das decisões. Explicar premissas e condições permite avaliar a coerência entre uma intenção declarada e os compromissos envolvidos.",
+      "work": "Orientação e comunicação se encontram na definição do trabalho. A leitura destaca a diferença entre anunciar uma prioridade e oferecer informação suficiente para que a equipe saiba como agir.",
+      "family": "Decisões familiares ganham clareza quando seus motivos podem ser discutidos. Dar voz a quem costuma apenas receber orientações ajuda a perceber informações que uma figura central talvez não conheça."
+    },
+    "pair:sun:venus": {
+      "title": "Sol e Vênus: reconhecimento e valor",
+      "general": "Sol e Vênus colocam em relação reconhecimento, preferências e critérios de valor. A leitura considera como aprovação e prestígio influenciam escolhas coletivas, inclusive quando a imagem consensual esconde interesses diferentes.",
+      "health": "Expectativas de aparência e reconhecimento podem atravessar a relação com o cuidado. O tema propõe observar quando a busca de aprovação ocupa mais espaço do que conforto e necessidades concretas.",
+      "relationships": "Ser reconhecido e sentir afinidade são necessidades que podem se aproximar sem coincidir. A reflexão considera como oferecer admiração preservando a liberdade de expressar gostos, desejos e avaliações diferentes.",
+      "finance": "Prestígio e valor de uso podem levar a escolhas distintas. Examinar a função de uma despesa ajuda a reconhecer quando reconhecimento social participa mais da decisão do que a utilidade esperada.",
+      "work": "Visibilidade, reconhecimento e remuneração podem ser avaliados em conjunto. A leitura observa quem recebe crédito e como a cordialidade participa das oportunidades, sem presumir equivalência entre popularidade e contribuição.",
+      "family": "Aprovação e demonstrações de afeto podem se misturar nas expectativas familiares. O tema convida a reconhecer escolhas diversas sem condicionar carinho à manutenção de uma imagem considerada adequada pela família."
+    },
+    "pair:sun:mars": {
+      "title": "Sol e Marte: direção e iniciativa",
+      "general": "Sol e Marte relacionam propósito e capacidade de agir. A leitura coletiva observa como uma liderança mobiliza esforço e como distingue compromisso com um objetivo de necessidade permanente de vencer disputas.",
+      "health": "A valorização de iniciativa e desempenho pode ser examinada pelos limites que admite. O tema considera se há espaço para regular o esforço sem que pausa seja interpretada como falta de compromisso.",
+      "relationships": "Afirmação pessoal e iniciativa precisam comportar a autonomia de quem está junto. A reflexão observa quando defender uma posição ajuda a esclarecer o vínculo e quando transforma divergência em competição.",
+      "finance": "Decisões ligadas a ambição e reconhecimento merecem critérios além da vontade de avançar. Explicitar objetivo, custo e responsabilidade permite discutir o esforço material exigido por uma iniciativa.",
+      "work": "Liderança e execução se encontram na distribuição da iniciativa. A leitura considera se quem responde pelos resultados tem autonomia e recursos, evitando confundir pressão constante com capacidade de mobilização.",
+      "family": "A disputa sobre quem decide pode esconder necessidades práticas ainda não formuladas. Transformar ordens e reações em uma conversa sobre tarefas e limites ajuda a situar o conflito."
+    },
+    "pair:sun:jupiter": {
+      "title": "Sol e Júpiter: direção e horizonte",
+      "general": "Sol e Júpiter aproximam liderança, confiança e projetos de maior alcance. A leitura considera como uma visão de futuro mobiliza reconhecimento e quais experiências ficam fora dessa definição de progresso.",
+      "health": "Expectativas de realização podem ser comparadas com condições reais de cuidado. O tema abre espaço para perspectivas de desenvolvimento que comportem limites, sem exigir disposição constante como sinal de sucesso.",
+      "relationships": "Planos de crescimento podem aproximar pessoas quando incluem expectativas diferentes. A reflexão observa se a admiração por uma trajetória permite reconhecer dúvidas e desejos que não cabem no projeto dominante.",
+      "finance": "Ambição e expectativas de expansão pedem clareza sobre recursos e compromissos. O tema considera o alcance de uma proposta, especialmente quando prestígio e entusiasmo dificultam formular limites concretos.",
+      "work": "Uma visão ampla pode orientar projetos e formação, mas precisa de critérios de execução. A leitura pergunta como a liderança transforma promessas de crescimento em oportunidades e responsabilidades compreensíveis.",
+      "family": "Ideias de sucesso e orgulho familiar podem orientar planos de futuro. Dar espaço a definições diferentes de realização evita que apoio se torne exigência de corresponder a uma ambição coletiva."
+    },
+    "pair:sun:saturn": {
+      "title": "Sol e Saturno: autoridade e responsabilidade",
+      "general": "Sol e Saturno relacionam autoridade, legitimidade e limites. A leitura examina como um propósito ganha sustentação ao longo do tempo e como regras podem apoiar ou restringir a participação coletiva.",
+      "health": "A exigência de manter desempenho pode entrar em confronto com necessidades de cuidado. O foco está em critérios de responsabilidade que incluam descanso e acesso a apoio, sem glorificar suportar sobrecarga.",
+      "relationships": "Reconhecimento e compromisso precisam ser considerados junto às expectativas de desempenho. A reflexão observa vínculos em que a aprovação depende de cumprir um papel e deixa pouco espaço para mostrar limites.",
+      "finance": "Metas ligadas a reconhecimento podem ser avaliadas pelos compromissos necessários para sustentá-las. O tema favorece distinguir planejamento responsável de obrigações assumidas apenas para preservar uma posição social.",
+      "work": "Autoridade se torna discutível por seus critérios de cobrança e distribuição de recursos. A leitura considera se a responsabilidade acompanha o poder de decisão ou recai sobretudo sobre quem executa.",
+      "family": "Regras e figuras de autoridade participam da definição do que é esperado de cada pessoa. A reflexão permite rever padrões de exigência sem desconsiderar a necessidade de acordos confiáveis."
+    },
+    "pair:sun:uranus": {
+      "title": "Sol e Urano: expressão e autonomia",
+      "general": "Sol e Urano colocam em relação visibilidade, autonomia e revisão de convenções. A leitura considera quem tem liberdade para propor mudanças e como uma identidade coletiva comporta contribuições que desafiam seu modelo habitual.",
+      "health": "Padrões de desempenho e aparência podem ser revistos quanto à liberdade que oferecem. O tema de cuidado inclui adaptar rotinas a necessidades diferentes, sem transformar autonomia em obrigação de resolver tudo sozinho.",
+      "relationships": "Reconhecimento pode incluir o direito de mudar e de manter interesses próprios. A reflexão observa se o vínculo acolhe diferenças reais ou espera que singularidade permaneça dentro de uma imagem já conhecida.",
+      "finance": "Escolhas de consumo ligadas a independência e diferenciação merecem avaliação concreta. A leitura considera custos e dependências de uma novidade, sobretudo quando ela promete expressar uma identidade mais livre.",
+      "work": "Liderança e inovação se encontram na abertura para questionar procedimentos. A reflexão distingue espaço real de experimentação de mudanças concentradas na imagem, sem influência de quem precisa adaptar o trabalho.",
+      "family": "Trajetórias que se afastam das expectativas familiares podem suscitar revisão dos critérios de reconhecimento. O tema inclui conciliar autonomia com responsabilidades compartilhadas, sem exigir uniformidade para preservar pertencimento."
+    },
+    "pair:sun:neptune": {
+      "title": "Sol e Netuno: propósito e idealização",
+      "general": "Sol e Netuno aproximam liderança, imaginação e ideais compartilhados. A leitura observa o que torna uma visão inspiradora e onde a identificação com uma imagem dificulta reconhecer limites e responsabilidades.",
+      "health": "Ideais de disposição e realização podem tornar necessidades de cuidado pouco visíveis. A reflexão considera o espaço para admitir incerteza e pedir apoio, sem exigir correspondência a uma imagem de plenitude.",
+      "relationships": "Admiração pode conviver com projeções sobre quem a outra pessoa deveria ser. O tema propõe reconhecer qualidades e limites reais, preservando o vínculo de expectativas que dependem de uma imagem impossível de sustentar.",
+      "finance": "Promessas de realização pessoal podem participar do apelo de uma proposta. A leitura chama atenção para a distância entre imagem e condições materiais, incluindo custos pouco explicitados e responsabilidades indefinidas.",
+      "work": "Propósito e imaginação podem orientar uma equipe quando se traduzem em decisões compreensíveis. A reflexão considera como uma liderança assume responsabilidades, especialmente onde discursos inspiradores substituem definições de escopo e recursos.",
+      "family": "Imagens idealizadas de pessoas ou da própria família podem limitar o que se consegue conversar. O tema abre espaço para reconhecer diferenças sem exigir que alguém preserve sozinho uma história harmoniosa."
+    },
+    "pair:sun:pluto": {
+      "title": "Sol e Plutão: liderança e poder",
+      "general": "Sol e Plutão colocam em foco autoridade visível e poder estrutural. A leitura considera quem define prioridades, quais interesses sustentam essa posição e como a participação coletiva pode questionar decisões concentradas.",
+      "health": "A relação entre desempenho e controle merece atenção nas condições de cuidado. O tema considera a liberdade de reconhecer limites, preservar privacidade e participar de decisões que afetam o cotidiano.",
+      "relationships": "Reconhecimento e influência podem se misturar nas relações próximas. A reflexão observa se admiração permite discordância e escolha, sem tratar intensidade ou centralidade de alguém como prova de confiança.",
+      "finance": "Recursos podem sustentar tanto objetivos declarados quanto posições de poder. A leitura examina dependências e critérios de decisão, sobretudo quando a manutenção de uma imagem exige compromissos materiais pouco discutidos.",
+      "work": "Liderança formal e controle efetivo de recursos podem ocupar lugares diferentes. Tornar essa relação compreensível ajuda a avaliar mudanças de estrutura e a responsabilidade por decisões que afetam toda a equipe.",
+      "family": "Figuras centrais podem concentrar decisões por hábito, recursos ou reconhecimento. O tema convida a observar como essa influência é exercida e que espaço existe para trajetórias que questionam expectativas antigas."
+    },
+    "pair:moon:mercury": {
+      "title": "Lua e Mercúrio: necessidade e linguagem",
+      "general": "Lua e Mercúrio aproximam experiência cotidiana, memória e comunicação. A leitura considera como necessidades ganham palavras e como informações circulam por grupos em que familiaridade e confiança têm peso importante.",
+      "health": "Descrever necessidades e organizar informações pode facilitar a comunicação sobre cuidado. O tema valoriza escuta e perguntas claras, preservando a diferença entre uma experiência relatada e conclusões que exigem avaliação específica.",
+      "relationships": "Expressar uma necessidade envolve mais do que escolher palavras corretas. A reflexão considera contexto, disponibilidade para escutar e a possibilidade de conferir entendimento, sem exigir que afeto produza leitura de pensamentos.",
+      "finance": "Conversas sobre segurança material podem reunir dados e lembranças de experiências anteriores. Separar registros atuais de receios herdados ajuda a compreender os critérios que orientam decisões domésticas.",
+      "work": "Recados, hábitos e conhecimento informal sustentam parte do cotidiano das equipes. A leitura propõe tornar informações acessíveis, especialmente quando novos integrantes dependem de saberes transmitidos apenas por proximidade pessoal.",
+      "family": "Histórias e lembranças podem ter versões diferentes dentro da mesma família. Escutar essas diferenças ajuda a compreender necessidades atuais sem transformar uma memória compartilhada em relato obrigatório para todos."
+    },
+    "pair:moon:venus": {
+      "title": "Lua e Vênus: cuidado e reciprocidade",
+      "general": "Lua e Vênus aproximam acolhimento, afinidade e formas de convivência. A leitura considera quais gestos produzem pertencimento e como a busca de conforto pode conviver com necessidades diferentes dentro de um grupo.",
+      "health": "Conforto e apoio cotidiano oferecem um eixo concreto para pensar cuidado. O tema inclui reconhecer preferências e condições materiais, sem supor que uma mesma forma de acolhimento sirva para todas as pessoas.",
+      "relationships": "Dar e receber afeto envolve expectativas de proximidade que nem sempre coincidem. Conversar sobre o que é acolhedor ajuda a evitar que um gesto bem-intencionado seja tratado como resposta universal.",
+      "finance": "Despesas com conforto e convivência podem ser observadas pelo papel que cumprem. A reflexão distingue cuidado material de compras feitas para compensar ausências ou corresponder a expectativas de afeto.",
+      "work": "A qualidade da convivência também depende de reconhecer o trabalho de apoio. A leitura considera como acolhimento e cordialidade são distribuídos, evitando que certas pessoas fiquem permanentemente responsáveis pelo bem-estar da equipe.",
+      "family": "Pequenos gestos e costumes participam da experiência de pertencimento. A reflexão inclui quem oferece o cuidado e como recebe apoio, sem presumir que disponibilidade afetiva seja uma obrigação sem limites."
+    },
+    "pair:moon:mars": {
+      "title": "Lua e Marte: proteção e afirmação",
+      "general": "Lua e Marte relacionam necessidades de segurança e formas de reação. A leitura coletiva considera como a defesa do pertencimento mobiliza ação e quando proteção se mistura a disputas por espaço.",
+      "health": "Urgências cotidianas podem disputar espaço com pausas e cuidado regular. O tema propõe observar os ritmos exigidos de quem sustenta outras pessoas, incluindo condições para pedir ajuda e estabelecer limites.",
+      "relationships": "Necessidades de acolhimento podem aparecer em cobranças quando não encontram expressão direta. A reflexão considera formas de pedir apoio e de recusar demandas sem transformar toda diferença em ameaça ao vínculo.",
+      "finance": "Decisões tomadas para proteger a casa ou um grupo podem carregar urgência emocional. Dar clareza à necessidade concreta e ao custo da resposta ajuda a distinguir proteção de reação precipitada.",
+      "work": "Pressão por resposta e necessidades de apoio podem entrar na mesma situação. A leitura considera como agir diante de demandas sem deixar que urgências habituais definam toda a organização da equipe.",
+      "family": "A defesa de pessoas próximas pode ser revista pelo espaço que lhes deixa para escolher. O cuidado se torna negociável quando proteção, autonomia e divisão de tarefas recebem nomes claros."
+    },
+    "pair:moon:jupiter": {
+      "title": "Lua e Júpiter: acolhimento e confiança",
+      "general": "Lua e Júpiter aproximam pertencimento, confiança e ampliação de referências. A leitura considera como comunidades oferecem acolhimento e quais crenças definem quem pode participar dessa experiência de segurança.",
+      "health": "Redes de apoio podem ampliar possibilidades de cuidado quando conhecem necessidades concretas. O tema observa a diferença entre incentivo acolhedor e expectativas de melhora que tornam difícil admitir limites ou dúvidas.",
+      "relationships": "Generosidade e planos compartilhados podem se aproximar da necessidade de segurança. A reflexão considera se o apoio oferecido respeita diferenças ou espera que a outra pessoa adote a mesma visão de futuro.",
+      "finance": "Promessas de segurança podem motivar ampliação de gastos e compromissos. A leitura convida a comparar expectativas de conforto com os recursos que sustentam o cotidiano, sem supor que crescer seja sempre necessário.",
+      "work": "Acolhimento e oportunidades de aprendizagem podem fortalecer o pertencimento a uma equipe. O tema considera se os recursos de desenvolvimento alcançam diferentes pessoas ou permanecem restritos aos círculos de maior proximidade.",
+      "family": "Tradições de hospitalidade e crenças compartilhadas podem oferecer apoio entre gerações. A reflexão abre espaço para ampliar referências sem exigir abandono das memórias que continuam fazendo sentido."
+    },
+    "pair:moon:saturn": {
+      "title": "Lua e Saturno: cuidado e dever",
+      "general": "Lua e Saturno relacionam necessidades de acolhimento e estruturas de responsabilidade. A leitura pergunta como sustentar segurança ao longo do tempo sem deixar que o dever torne invisíveis limites e diferenças.",
+      "health": "A continuidade do cuidado depende de rotinas e de apoio para quem cuida. O tema considera a carga de responsabilidades, especialmente onde pedir descanso parece incompatível com a obrigação assumida.",
+      "relationships": "Confiabilidade pode oferecer segurança, mas não substitui a expressão de necessidades. A reflexão observa relações em que cumprir deveres se tornou a única forma reconhecida de cuidado e aproximação.",
+      "finance": "Despesas de sustento e compromissos recorrentes podem ser avaliados pelo apoio que oferecem. A leitura considera reservas e limites concretos, sem presumir que toda necessidade doméstica possa esperar indefinidamente.",
+      "work": "Estabilidade depende de regras que contemplem o cotidiano de quem executa. O tema destaca apoio, previsibilidade e distribuição de responsabilidades, sobretudo quando a continuidade da equipe depende do esforço silencioso de poucos.",
+      "family": "Obrigações de cuidado podem atravessar gerações e se fixar em determinados papéis. Revisar sua distribuição permite reconhecer a história desses compromissos e as condições atuais de quem os sustenta."
+    },
+    "pair:moon:uranus": {
+      "title": "Lua e Urano: segurança e mudança",
+      "general": "Lua e Urano colocam em relação pertencimento e abertura à mudança. A leitura considera como grupos adaptam seus hábitos e que condições permitem experimentar novas formas de organização sem perder referências de apoio.",
+      "health": "Mudanças de rotina merecem atenção às condições que tornam o cuidado previsível. O tema considera formas de adaptação que preservem apoio e informação, em vez de exigir flexibilidade ilimitada de todos.",
+      "relationships": "Proximidade e autonomia podem exigir acordos diferentes dos habituais. A reflexão pergunta que referências de confiança permitem ampliar liberdade sem deixar expectativas de presença e cuidado inteiramente indefinidas.",
+      "finance": "Alterações no modo de viver podem levar à revisão do que significa segurança material. A leitura considera custos de adaptação e continuidade do sustento, sem antecipar mudanças inesperadas de renda.",
+      "work": "Novos processos podem modificar hábitos que davam orientação à equipe. A reflexão considera tempo de aprendizagem, apoio e participação de quem precisa adaptar o cotidiano a uma mudança organizacional.",
+      "family": "Configurações domésticas diferentes podem pedir revisão de costumes e formas de apoio. O tema propõe preservar referências úteis de pertencimento enquanto se negociam necessidades que a organização anterior não contemplava."
+    },
+    "pair:moon:neptune": {
+      "title": "Lua e Netuno: acolhimento e sensibilidade",
+      "general": "Lua e Netuno aproximam memória, imaginação e sensibilidade às experiências coletivas. A leitura considera como narrativas produzem pertencimento e onde emoções compartilhadas tornam difícil distinguir apoio, expectativa e projeção.",
+      "health": "Escuta e acolhimento podem ser considerados junto à necessidade de limites de cuidado. O tema observa situações em que compreender o sofrimento alheio se confunde com assumir responsabilidade por resolvê-lo integralmente.",
+      "relationships": "Expectativas de compreensão intuitiva podem deixar pedidos importantes sem palavras. A reflexão abre espaço para perguntar e esclarecer, preservando empatia sem exigir que a outra pessoa adivinhe todas as necessidades.",
+      "finance": "Apelos à segurança e ao pertencimento podem influenciar escolhas materiais. A leitura considera propostas ou despesas que prometem acolhimento, pedindo clareza sobre o que efetivamente oferecem e exigem.",
+      "work": "Atividades de apoio podem envolver expectativas pouco delimitadas de disponibilidade. O tema convida a definir responsabilidades e condições de escuta, para que sensibilidade às necessidades da equipe não signifique absorver toda demanda.",
+      "family": "Memórias idealizadas e expectativas de compreensão podem organizar a vida familiar. A reflexão permite reconhecer afeto e ambivalência, sem exigir que uma história comum seja vivida da mesma forma por todos."
+    },
+    "pair:moon:pluto": {
+      "title": "Lua e Plutão: pertencimento e dependência",
+      "general": "Lua e Plutão relacionam segurança, memória e relações de poder. A leitura coletiva considera como vínculos de pertencimento podem oferecer proteção e, ao mesmo tempo, tornar difícil questionar decisões ou lealdades.",
+      "health": "Receber cuidado pode envolver dependências e exposição de necessidades pessoais. O tema considera privacidade e participação nas decisões, incluindo condições para que apoio não implique perda desnecessária de autonomia.",
+      "relationships": "O medo de perder proximidade pode participar de exigências de controle. A reflexão se concentra na liberdade de estabelecer limites e preservar espaços próprios, sem confundir dependência com profundidade afetiva.",
+      "finance": "Recursos domésticos podem definir quem tem poder de escolha dentro de um vínculo. A leitura observa dependências e responsabilidades de sustento, tornando visíveis condições que o discurso de proteção pode deixar implícitas.",
+      "work": "Pertencimento a uma equipe pode se misturar a lealdades que dificultam questionamentos. O tema considera acesso a apoio e informação, especialmente quando discordar parece colocar em risco o lugar de alguém no grupo.",
+      "family": "Lealdades e histórias silenciosas podem influenciar a distribuição de cuidado e autoridade. A reflexão permite reconhecer padrões sem obrigar revelações, preservando o direito de construir escolhas diferentes dentro ou fora do convívio."
+    },
+    "pair:mercury:venus": {
+      "title": "Mercúrio e Vênus: diálogo e negociação",
+      "general": "Mercúrio e Vênus relacionam linguagem, preferências e negociação. A leitura considera como argumentos aproximam pessoas e como a busca de aceitação pode interferir na clareza do que precisa ser dito.",
+      "health": "A forma de comunicar necessidades de cuidado pode facilitar ou dificultar seu acolhimento. O tema propõe linguagem respeitosa e compreensível, sem transformar delicadeza em obrigação de minimizar uma dificuldade real.",
+      "relationships": "Conversas sobre afeto e expectativas podem combinar franqueza e consideração. A reflexão observa quando escolher palavras cuidadosas ajuda o entendimento e quando evita indefinidamente um assunto que precisa de definição.",
+      "finance": "Negociações e apresentações comerciais envolvem informação e persuasão. Comparar condições concretas permite reconhecer o valor de uma proposta sem depender apenas da afinidade com quem a apresenta ou de sua aparência.",
+      "work": "Comunicação e colaboração se encontram na construção de acordos. O tema considera formas de dar retorno e reconhecer contribuições com precisão, evitando que a cordialidade esconda escopo, responsabilidades ou critérios de qualidade.",
+      "family": "Conversas sobre preferências podem evitar que pequenos desacordos se acumulem. A reflexão inclui escutar gostos diferentes e combinar soluções possíveis, sem exigir consenso sobre tudo para preservar o afeto."
+    },
+    "pair:mercury:mars": {
+      "title": "Mercúrio e Marte: argumento e ação",
+      "general": "Mercúrio e Marte aproximam formulação de ideias, iniciativa e disputa verbal. A leitura observa como argumentos orientam ações e onde a pressa em responder reduz a possibilidade de compreender o problema.",
+      "health": "Demandas urgentes de cuidado precisam de comunicação clara e espaço para perguntas. O tema considera como formular necessidades e limites sem deixar que pressão ou excesso de informações substituam o entendimento.",
+      "relationships": "Franqueza e escuta precisam caber na mesma conversa. A reflexão distingue apresentar um desacordo de tentar vencer uma discussão, sobretudo quando respostas rápidas dificultam reconhecer o pedido que está por trás das palavras.",
+      "finance": "Pressão de negociação e urgência na linguagem podem influenciar decisões. Esclarecer o que exige resposta imediata e quais condições ainda estão abertas ajuda a avaliar compromissos sem transformar rapidez em critério principal.",
+      "work": "Informação precisa chegar a quem executa com clareza suficiente para orientar a ação. O tema observa reuniões e instruções em que cobranças rápidas ocupam o lugar de prioridades bem definidas.",
+      "family": "Recados e pedidos podem adquirir tom de cobrança quando tarefas estão mal distribuídas. Tornar a necessidade explícita permite discutir responsabilidades sem fazer de cada conversa uma disputa sobre intenção ou respeito."
+    },
+    "pair:mercury:jupiter": {
+      "title": "Mercúrio e Júpiter: informação e perspectiva",
+      "general": "Mercúrio e Júpiter relacionam detalhes e visão de conjunto. A leitura considera como informações sustentam explicações amplas e onde uma convicção pode levar a selecionar apenas os dados que a confirmam.",
+      "health": "Explicações gerais sobre cuidado precisam ser compreendidas em seu contexto. O tema convida a formular perguntas específicas e reconhecer limites de aplicação, sem tratar uma narrativa convincente como resposta para qualquer situação.",
+      "relationships": "Diferenças de opinião podem revelar pressupostos distintos sobre a vida. A reflexão propõe compreender os exemplos que sustentam cada visão, evitando transformar uma conversa concreta em debate interminável sobre quem tem razão.",
+      "finance": "Projeções e promessas de crescimento pedem atenção às premissas. A leitura considera a relação entre números apresentados, condições de realização e conclusões sugeridas, sobretudo quando a narrativa parece mais segura do que os dados permitem.",
+      "work": "Estratégia e informação operacional precisam permanecer conectadas. O tema observa se uma proposta ampla considera detalhes relevantes e se a equipe compreende como suas tarefas contribuem para os objetivos declarados.",
+      "family": "Conversas sobre educação e futuro podem aproximar experiências concretas e crenças familiares. Escutar exemplos antes de oferecer explicações gerais permite reconhecer trajetórias que não cabem nas expectativas já estabelecidas."
+    },
+    "pair:mercury:saturn": {
+      "title": "Mercúrio e Saturno: clareza e critério",
+      "general": "Mercúrio e Saturno aproximam linguagem, rigor e responsabilidade pela informação. A leitura considera como critérios e registros sustentam entendimento, observando também quando formalidade e receio de errar restringem perguntas necessárias.",
+      "health": "Orientações e registros de cuidado precisam ser compreensíveis e acessíveis. O tema propõe organizar dúvidas e responsabilidades, evitando que linguagem técnica ou excesso de formalidade dificulte pedir esclarecimentos.",
+      "relationships": "Acordos podem ganhar consistência quando expectativas e limites são formulados com precisão. A reflexão considera também o tom das conversas, sobretudo quando correção constante deixa pouco espaço para vulnerabilidade e troca.",
+      "finance": "Condições contratuais, prazos e registros oferecem um campo concreto de atenção. A leitura valoriza compreensão efetiva dos compromissos, sem presumir que linguagem formal ou documentação extensa eliminem dúvidas e diferenças de interesse.",
+      "work": "Documentar decisões e definir critérios pode reduzir dependência de interpretações informais. O tema considera a utilidade dos procedimentos e o espaço para questioná-los, evitando que registro se torne apenas mais uma obrigação.",
+      "family": "Combinações práticas podem precisar de maior clareza quando envolvem responsabilidades contínuas. Registrar o necessário ajuda a preservar acordos, sem transformar a convivência em fiscalização permanente de cada palavra ou gesto."
+    },
+    "pair:mercury:uranus": {
+      "title": "Mercúrio e Urano: ideia e experimentação",
+      "general": "Mercúrio e Urano relacionam pensamento, redes e revisão de explicações habituais. A leitura considera a circulação de ideias novas e as condições para examiná-las sem confundir originalidade com consistência.",
+      "health": "Novas informações e ferramentas de comunicação podem alterar a organização do cuidado. O tema considera clareza, acesso e utilidade, especialmente quando a rapidez de circulação dificulta compreender a qualidade de uma proposta.",
+      "relationships": "Conversas podem abrir espaço para pontos de vista pouco familiares. A reflexão valoriza curiosidade e liberdade de expressão, junto ao cuidado de explicar mudanças de posição que afetam acordos compartilhados.",
+      "finance": "Novos canais e formatos de informação pedem atenção ao funcionamento concreto das propostas. A leitura considera o que é compreendido, o que permanece obscuro e quem assume responsabilidades nas mudanças apresentadas.",
+      "work": "Ideias de automação ou novos processos podem ser examinadas com quem conhece a rotina. O tema propõe testar compreensão e utilidade, registrando aprendizados para que a inovação não dependa apenas de seus proponentes.",
+      "family": "Diferenças de linguagem entre gerações podem revelar maneiras distintas de organizar a experiência. A reflexão convida a explicar referências e tecnologias sem tratar novidade ou familiaridade como critérios automáticos de superioridade."
+    },
+    "pair:mercury:neptune": {
+      "title": "Mercúrio e Netuno: linguagem e imaginação",
+      "general": "Mercúrio e Netuno aproximam comunicação, imagens e construção de sentido. A leitura observa a força de metáforas e narrativas, mantendo atenção à diferença entre expressão simbólica, interpretação e afirmação verificável.",
+      "health": "Mensagens sobre cuidado podem combinar acolhimento e termos pouco definidos. O tema propõe esclarecer o significado das promessas e a origem das informações, preservando espaço para dúvidas sem desqualificar experiências relatadas.",
+      "relationships": "Silêncios e mensagens indiretas podem receber interpretações diferentes. A reflexão sugere conferir o sentido pretendido, em vez de tratar intuição ou familiaridade como acesso seguro ao que outra pessoa pensa.",
+      "finance": "Narrativas atraentes podem deixar condições materiais em segundo plano. A leitura considera quais informações precisam ser explicitadas para avaliar uma proposta, sobretudo quando termos amplos parecem prometer mais do que descrevem.",
+      "work": "Imaginação pode enriquecer a comunicação quando a equipe distingue visão e compromisso. O tema pede atenção a briefings, critérios e responsabilidades que permanecem vagos apesar de uma apresentação convincente.",
+      "family": "Histórias familiares podem reunir lembranças, interpretações e idealizações. A reflexão permite preservar seu significado afetivo sem exigir que cada versão seja tomada como relato completo ou incontestável dos acontecimentos."
+    },
+    "pair:mercury:pluto": {
+      "title": "Mercúrio e Plutão: informação e influência",
+      "general": "Mercúrio e Plutão relacionam investigação, linguagem e poder de influência. A leitura considera quem tem acesso às informações e como perguntas podem esclarecer estruturas, sem transformar suspeitas em conclusões antecipadas.",
+      "health": "Informações de cuidado envolvem privacidade e capacidade de compreender decisões. O tema considera acesso aos próprios registros e espaço para perguntas, preservando limites sobre o que deve circular entre outras pessoas.",
+      "relationships": "Perguntas podem aprofundar entendimento ou funcionar como formas de controle. A reflexão distingue interesse de exigência de acesso irrestrito, considerando o direito de preservar informações pessoais mesmo em vínculos próximos.",
+      "finance": "Assimetria de informação pode alterar o poder de negociação. A leitura propõe compreender condições e dependências, especialmente quando uma parte domina os detalhes e a outra precisa decidir com acesso limitado.",
+      "work": "Controle de informações pode sustentar autoridade além dos cargos formais. O tema considera documentação, transparência e espaço para questionar decisões, evitando que conhecimento necessário à equipe permaneça concentrado em poucas pessoas.",
+      "family": "Segredos e versões dominantes podem influenciar a maneira como uma família interpreta sua história. A reflexão abre espaço para perguntas respeitosas, sem obrigar revelações nem usar informações íntimas como instrumento de pressão."
+    },
+    "pair:venus:mars": {
+      "title": "Vênus e Marte: desejo e acordo",
+      "general": "Vênus e Marte relacionam atração, iniciativa e negociação de interesses. A leitura coletiva considera como desejos diferentes encontram expressão e quais formas de convivência permitem agir sem eliminar o espaço de escolha alheio.",
+      "health": "Prazer e esforço podem ser pensados junto às necessidades de cuidado. O tema observa expectativas de aparência e desempenho, procurando espaço para limites que não dependam de corresponder ao desejo de outras pessoas.",
+      "relationships": "Iniciativa e reciprocidade precisam ser negociadas em cada vínculo. A reflexão considera expressão de desejo, consentimento e possibilidade de recusa, sem tratar intensidade de atração como garantia de compatibilidade.",
+      "finance": "Desejo de adquirir e disposição para agir podem tornar uma escolha urgente. A leitura propõe explicitar prioridades e critérios de valor, especialmente quando competir ou impressionar participa do impulso de consumo.",
+      "work": "Colaboração e disputa podem coexistir em uma equipe. O tema considera como negociar interesses e reconhecer iniciativa, evitando que cordialidade impeça desacordos ou que competição ocupe todo o espaço de trabalho.",
+      "family": "Preferências e limites precisam de expressão clara nas decisões domésticas. A reflexão inclui negociar tarefas e gastos sem tomar afeto como obrigação de concordar ou franqueza como licença para impor escolhas."
+    },
+    "pair:venus:jupiter": {
+      "title": "Vênus e Júpiter: prazer e generosidade",
+      "general": "Vênus e Júpiter aproximam convivência, generosidade e ampliação de valores. A leitura considera como grupos compartilham oportunidades e prazer, incluindo as expectativas materiais que acompanham uma imagem de abundância.",
+      "health": "Prazer, conforto e participação social podem integrar a reflexão sobre cuidado. O tema considera expectativas de aproveitar todas as possibilidades, preservando liberdade para reconhecer limites e preferências menos expansivas.",
+      "relationships": "Generosidade pode abrir espaço de encontro quando respeita a autonomia de quem recebe. A reflexão observa presentes, convites e planos que carregam expectativas implícitas de reciprocidade ou adesão a um modo de viver.",
+      "finance": "Desejo de conforto e expectativas de abundância podem orientar gastos e compromissos. A leitura propõe comparar o que se valoriza com os recursos disponíveis, sem associar prazer ou generosidade à obrigação de ampliar despesas.",
+      "work": "Parcerias e formas de reconhecimento podem ampliar acesso a oportunidades. O tema considera quem participa desses benefícios e se promessas de valorização correspondem a condições claras de remuneração e desenvolvimento.",
+      "family": "Celebrações e hospitalidade podem expressar afeto, mas seus custos e tarefas precisam de distribuição. A reflexão inclui modos de participar que acolham condições materiais diferentes, sem medir proximidade pelo tamanho da contribuição."
+    },
+    "pair:venus:saturn": {
+      "title": "Vênus e Saturno: vínculo e compromisso",
+      "general": "Vênus e Saturno relacionam valores, acordos e continuidade. A leitura considera o que torna uma troca confiável ao longo do tempo e quando a preservação de um compromisso dificulta rever suas condições.",
+      "health": "Conforto e cuidado precisam caber em rotinas atravessadas por obrigações. O tema observa expectativas de aparência e disciplina, abrindo espaço para necessidades que não deveriam depender de merecimento ou produtividade.",
+      "relationships": "Compromisso pode sustentar confiança quando permanece compreensível e negociável. A reflexão distingue responsabilidade pelo vínculo de permanência por obrigação, considerando a possibilidade de expressar necessidades sem receio de perder reconhecimento.",
+      "finance": "Critérios de valor podem ser examinados junto ao custo de manutenção de uma escolha. A leitura considera durabilidade, obrigações e limites, sem reduzir qualidade a preço ou contenção a virtude automática.",
+      "work": "Reconhecimento material e estabilidade dependem de condições explícitas. O tema propõe examinar acordos de parceria e critérios de remuneração, sobretudo quando lealdade é esperada sem compromissos equivalentes da organização.",
+      "family": "Afeto pode ser expresso em presença constante e apoio prático. A reflexão considera também o direito de renegociar obrigações, evitando que um papel antigo determine indefinidamente quanto cada pessoa deve oferecer."
+    },
+    "pair:venus:uranus": {
+      "title": "Vênus e Urano: afinidade e liberdade",
+      "general": "Vênus e Urano aproximam preferências, autonomia e revisão de convenções de convivência. A leitura considera como valores mudam e quais condições permitem experimentar formas de troca sem desconsiderar as pessoas envolvidas.",
+      "health": "Padrões de beleza e conforto podem ser revistos pela liberdade de escolha que oferecem. O tema considera diversidade de necessidades, sem transformar diferenciação estética ou novidade em exigências adicionais de adequação.",
+      "relationships": "Acordos de proximidade podem admitir formatos diferentes dos habituais. A reflexão considera consentimento, comunicação e reciprocidade, para que liberdade seja negociada por quem participa do vínculo e não definida unilateralmente.",
+      "finance": "Preferências novas podem motivar mudanças de consumo e de uso compartilhado de recursos. A leitura propõe compreender custos e responsabilidades antes de tratar novidade como expressão suficiente de valor.",
+      "work": "Parcerias podem se beneficiar de formas flexíveis de participação quando seus termos são claros. O tema considera reconhecimento e autonomia, incluindo o trabalho necessário para adaptar acordos que já estavam em funcionamento.",
+      "family": "Mudanças de gosto, vínculos ou trajetória podem ampliar as formas de pertencimento. A reflexão pergunta como manter reciprocidade sem exigir que todas as escolhas correspondam ao modelo de convivência conhecido."
+    },
+    "pair:venus:neptune": {
+      "title": "Vênus e Netuno: afeto e idealização",
+      "general": "Vênus e Netuno relacionam sensibilidade, imaginação e ideais de beleza ou convivência. A leitura considera a força das imagens compartilhadas e como distinguir inspiração de expectativas que deixam condições concretas indefinidas.",
+      "health": "Ideais de beleza e bem-estar podem influenciar a maneira de avaliar necessidades. O tema propõe observar promessas de plenitude e preservar espaço para experiências reais que não correspondem a uma imagem idealizada.",
+      "relationships": "Empatia e admiração podem conviver com expectativas pouco formuladas. A reflexão considera como reconhecer a pessoa real, incluindo limites e diferenças, sem atribuir ao afeto a tarefa de resolver todas as dificuldades.",
+      "finance": "A aparência de uma proposta pode sugerir qualidades que seus termos não esclarecem. A leitura convida a distinguir valor atribuído à imagem de utilidade, condições e responsabilidades efetivamente oferecidas.",
+      "work": "Sensibilidade estética e propósito podem orientar atividades criativas e parcerias. O tema destaca a necessidade de acordos sobre autoria, remuneração e entrega, especialmente quando afinidade leva a dispensar definições práticas.",
+      "family": "Imagens de convivência harmoniosa podem tornar diferenças difíceis de expressar. A reflexão abre espaço para afeto com limites e para formas de cuidado que não exijam sacrifício permanente de uma pessoa."
+    },
+    "pair:venus:pluto": {
+      "title": "Vênus e Plutão: valor e poder de vínculo",
+      "general": "Vênus e Plutão aproximam valores, atração e relações de poder. A leitura considera o que dá influência a uma preferência ou vínculo e como trocas podem criar dependências pouco discutidas.",
+      "health": "Expectativas sobre aparência e aceitação podem exercer pressão sobre escolhas de cuidado. O tema considera autonomia e privacidade, sobretudo onde aprovação, recursos ou apoio ficam condicionados à correspondência a um ideal.",
+      "relationships": "Intimidade e desejo precisam comportar limites e liberdade de escolha. A reflexão observa quando medo de perda, controle ou exigência de exclusividade passam a definir o vínculo mais do que acordos recíprocos.",
+      "finance": "Trocas materiais podem envolver influência, reconhecimento e dependência. A leitura considera condições associadas a presentes, benefícios ou recursos compartilhados, especialmente quando o direito de decidir fica pouco explícito.",
+      "work": "Valorização e acesso a oportunidades podem depender de relações de influência. O tema examina critérios de reconhecimento e remuneração, tornando visíveis condições que afinidade ou prestígio podem manter fora da discussão.",
+      "family": "Presentes e apoio material podem carregar expectativas de lealdade. A reflexão procura esclarecer a diferença entre uma oferta e uma obrigação futura, preservando afeto sem ocultar relações de dependência."
+    },
+    "pair:mars:jupiter": {
+      "title": "Marte e Júpiter: iniciativa e convicção",
+      "general": "Marte e Júpiter relacionam ação, ambição e defesa de convicções. A leitura considera como causas mobilizam esforço e onde a certeza sobre um objetivo dificulta reconhecer limites, consequências e perspectivas diferentes.",
+      "health": "Disposição para ampliar atividades pode ser pensada junto às condições de cuidado. O tema observa metas e expectativas de superação, preservando espaço para limites que entusiasmo e comparação social podem deixar em segundo plano.",
+      "relationships": "Planos comuns podem mobilizar iniciativa, mas precisam comportar ritmos e prioridades diferentes. A reflexão considera quando incentivar amplia possibilidades e quando se torna pressão para aderir à ambição de outra pessoa.",
+      "finance": "A vontade de ampliar projetos pode acelerar compromissos materiais. A leitura propõe examinar recursos, alcance e premissas da decisão, especialmente quando a confiança na ideia reduz a atenção ao esforço necessário.",
+      "work": "Iniciativa e visão de crescimento podem orientar ações de maior alcance. O tema considera a coerência entre ambição, recursos e capacidade de execução, evitando que mobilização se transforme em promessa sem sustentação.",
+      "family": "Projetos de futuro podem despertar entusiasmo e disputas sobre o caminho a seguir. A reflexão abre espaço para apoiar iniciativas sem exigir que toda a família assuma a mesma prioridade ou ritmo."
+    },
+    "pair:mars:saturn": {
+      "title": "Marte e Saturno: esforço e limite",
+      "general": "Marte e Saturno colocam em relação iniciativa e restrições estruturais. A leitura considera como o esforço encontra direção e quais limites exigem negociação, sem tratar resistência como prova de fracasso ou falta de vontade.",
+      "health": "Ritmos de esforço podem ser observados junto às condições de pausa e continuidade. O tema questiona exigências de suportar sobrecarga, especialmente quando responsabilidade é confundida com disponibilidade para ultrapassar qualquer limite.",
+      "relationships": "Desejos e compromissos podem exigir negociação de tempo e disponibilidade. A reflexão considera formas de afirmar limites com clareza, evitando que frustração se torne cobrança permanente ou que dever substitua o diálogo.",
+      "finance": "Uma iniciativa precisa ser comparada com compromissos já assumidos e recursos disponíveis. A leitura propõe dar nome às restrições concretas, sem transformar a impossibilidade de avançar de imediato em julgamento sobre capacidade pessoal.",
+      "work": "Pressão de execução e regras podem entrar em conflito quando os recursos são insuficientes. O tema considera prioridades, autonomia e escopo, distinguindo disciplina de exigências que nenhuma organização individual conseguiria resolver.",
+      "family": "Tarefas e responsabilidades podem gerar atrito quando tempo e capacidade não são considerados. A reflexão propõe renegociar a carga concreta, sem esperar que lealdade familiar torne qualquer compromisso sustentável."
+    },
+    "pair:mars:uranus": {
+      "title": "Marte e Urano: ação e ruptura de hábitos",
+      "general": "Marte e Urano aproximam iniciativa, autonomia e experimentação. A leitura considera formas de agir que desafiam procedimentos habituais, incluindo a responsabilidade pelos efeitos de uma mudança sobre quem participa dela.",
+      "health": "A vontade de alterar uma rotina pode ser acompanhada de atenção ao suporte disponível. O tema considera ritmo e adaptação, sem presumir que mudanças rápidas sejam necessárias ou adequadas ao cuidado.",
+      "relationships": "Afirmação de liberdade precisa de comunicação sobre limites e acordos. A reflexão observa a diferença entre propor uma mudança e decidir por todas as partes em nome da própria autonomia.",
+      "finance": "Iniciativas novas podem exigir recursos e mudanças de compromisso. A leitura considera custos de transição e responsabilidades, sobretudo quando a vontade de experimentar reduz a atenção às condições concretas de uma escolha.",
+      "work": "Experimentação pode questionar processos que limitam a execução. O tema propõe definir o alcance de testes e a participação de quem será afetado, evitando que agilidade signifique transferir problemas para outras pessoas.",
+      "family": "Mudanças de hábito podem ser negociadas sem esperar concordância automática. A reflexão inclui o direito de iniciar uma trajetória diferente e a responsabilidade de conversar sobre efeitos na organização doméstica."
+    },
+    "pair:mars:neptune": {
+      "title": "Marte e Netuno: ação e ideal",
+      "general": "Marte e Netuno relacionam esforço, imaginação e mobilização por ideais. A leitura considera como uma causa ganha ação concreta e onde objetivos pouco definidos tornam difícil compreender prioridades e responsabilidades.",
+      "health": "A dedicação a outras pessoas pode ocupar espaço maior do que os recursos disponíveis. O tema propõe tornar limites de cuidado compreensíveis, sem tratar disponibilidade ilimitada como medida de solidariedade.",
+      "relationships": "Desejos pouco formulados podem levar a ações que a outra pessoa interpreta de modo diferente. A reflexão considera pedidos explícitos e limites de ajuda, evitando esperar que boa intenção dispense conversa.",
+      "finance": "Apoiar uma causa ou proposta exige compreender para onde vão os recursos e quais compromissos existem. A leitura aproxima intenção e condições concretas, especialmente quando entusiasmo moral torna perguntas práticas desconfortáveis.",
+      "work": "Projetos orientados por propósito precisam de tarefas, responsáveis e critérios de conclusão. O tema considera como preservar motivação sem depender de esforço difuso ou de sacrifício constante para compensar indefinições.",
+      "family": "Ajudar pode se tornar um hábito sem limites claros de tempo e responsabilidade. A reflexão abre espaço para combinar o apoio necessário, preservando afeto sem exigir que alguém resolva tudo silenciosamente."
+    },
+    "pair:mars:pluto": {
+      "title": "Marte e Plutão: força e poder de decisão",
+      "general": "Marte e Plutão relacionam ação, disputa e capacidade de influenciar estruturas. A leitura coletiva considera como recursos e decisões concentram força, sem transformar intensidade simbólica em previsão de conflito ou violência.",
+      "health": "Pressões por resistência e controle podem dificultar reconhecer necessidades de cuidado. O tema considera autonomia para estabelecer limites e condições de apoio, especialmente em ambientes que valorizam suportar exigências sem questionamento.",
+      "relationships": "A maneira de lidar com recusa revela aspectos do poder no vínculo. A reflexão considera consentimento e limites, distinguindo firmeza de tentativas de controlar a escolha ou o comportamento de outra pessoa.",
+      "finance": "Disputas por recursos podem envolver capacidades desiguais de negociação. A leitura observa quem decide, quem assume custos e que alternativas existem, sobretudo quando urgência e dependência dificultam recusar um acordo.",
+      "work": "Execução e poder estrutural se encontram em decisões que alteram responsabilidades. O tema considera a distribuição de autonomia e recursos, evitando que metas sejam impostas por quem não assume seus custos cotidianos.",
+      "family": "Conflitos domésticos podem envolver decisões concentradas além do assunto aparente. A reflexão procura tornar responsabilidades e limites explícitos, sem normalizar pressão ou tratar imposição como prova de proteção."
+    },
+    "pair:jupiter:saturn": {
+      "title": "Júpiter e Saturno: expansão e sustentação",
+      "general": "Júpiter e Saturno aproximam horizontes de crescimento e estruturas de continuidade. A leitura considera como ambições encontram limites concretos e como regras podem sustentar desenvolvimento sem se tornar obstáculos automáticos à revisão.",
+      "health": "Ampliar possibilidades de cuidado exige condições de acesso e continuidade. O tema considera a relação entre expectativas e recursos disponíveis, evitando que entusiasmo ignore limites ou que restrições eliminem toda perspectiva de apoio.",
+      "relationships": "Projetos de futuro precisam encontrar espaço nos compromissos presentes. A reflexão considera como negociar alcance e ritmo, preservando confiança sem exigir promessas que as condições atuais não permitem sustentar.",
+      "finance": "Crescimento e estabilidade podem ser discutidos a partir das mesmas informações. A leitura propõe comparar ambições, compromissos recorrentes e capacidade de sustentação, sem supor que ampliar ou conter recursos seja sempre a resposta adequada.",
+      "work": "Estratégia e estrutura precisam acompanhar uma à outra. O tema considera se novos objetivos incluem equipe, tempo e processos suficientes, além de espaço para rever regras que já não servem ao trabalho.",
+      "family": "Expectativas de desenvolvimento podem ser conciliadas com responsabilidades de cuidado. A reflexão observa como apoiar novos caminhos sem deixar que a continuidade da casa dependa de renúncias sempre concentradas nas mesmas pessoas."
+    },
+    "pair:jupiter:uranus": {
+      "title": "Júpiter e Urano: horizonte e inovação",
+      "general": "Júpiter e Urano relacionam expansão de perspectivas e revisão de modelos coletivos. A leitura considera quem ganha acesso a novas possibilidades e como promessas de progresso podem ser avaliadas para além do entusiasmo pela novidade.",
+      "health": "Novas possibilidades de organização do cuidado merecem atenção ao acesso efetivo. O tema considera barreiras materiais e capacidade de adaptação, evitando supor que uma inovação disponível beneficie todas as pessoas igualmente.",
+      "relationships": "Experiências e referências diferentes podem ampliar projetos compartilhados. A reflexão considera liberdade para experimentar sem exigir que todas as pessoas tenham o mesmo interesse por mudanças ou a mesma disponibilidade para acompanhá-las.",
+      "finance": "Promessas de inovação e crescimento pedem compreensão de custos e dependências. A leitura observa o que torna uma proposta viável, especialmente quando a expectativa de participar de uma novidade acelera compromissos.",
+      "work": "Novos modelos e conhecimentos podem ampliar formas de colaboração. O tema considera aprendizagem, participação e recursos de implementação, para que uma proposta de progresso seja avaliada pelos efeitos concretos na equipe.",
+      "family": "Mudanças de trajetória podem ampliar as referências de realização de uma família. A reflexão inclui apoio a escolhas menos convencionais e clareza sobre responsabilidades, sem exigir adesão imediata a toda novidade."
+    },
+    "pair:jupiter:neptune": {
+      "title": "Júpiter e Netuno: esperança e visão coletiva",
+      "general": "Júpiter e Netuno aproximam crenças, imaginação e ideais de alcance coletivo. A leitura considera o que uma visão oferece como sentido e onde esperança se torna uma promessa difícil de examinar criticamente.",
+      "health": "Esperança pode conviver com incertezas e limites concretos de cuidado. O tema observa discursos que prometem respostas abrangentes, preservando o direito de fazer perguntas sem que dúvida seja tratada como falta de confiança.",
+      "relationships": "Ideais compartilhados podem aproximar pessoas, mas não eliminam diferenças de necessidade. A reflexão considera expectativas de compreensão e crescimento, evitando que um futuro imaginado impeça observar como o vínculo funciona hoje.",
+      "finance": "Narrativas de abundância ou transformação podem tornar uma proposta atraente. A leitura propõe explicitar condições e responsabilidades, sobretudo quando convicção e identificação com a ideia recebem mais atenção do que seus fundamentos materiais.",
+      "work": "Propósitos coletivos precisam de referências que permitam avaliar o que está sendo realizado. O tema considera a passagem de uma visão inspiradora a compromissos concretos, sem exigir que confiança substitua definição de recursos.",
+      "family": "Crenças e expectativas de futuro podem oferecer conforto e também impor ideais difíceis de corresponder. A reflexão permite compartilhar esperança sem exigir uniformidade de experiências, convicções ou maneiras de enfrentar incertezas."
+    },
+    "pair:jupiter:pluto": {
+      "title": "Júpiter e Plutão: convicção e influência",
+      "general": "Júpiter e Plutão relacionam visões de mundo, expansão e concentração de poder. A leitura considera quem define o que conta como progresso e como grandes narrativas podem legitimar interesses específicos.",
+      "health": "Ideias sobre cuidado podem ter alcance desigual conforme os recursos e a influência de quem as promove. O tema considera acesso à informação e liberdade de questionamento, sem confundir autoridade social com adequação de uma proposta.",
+      "relationships": "Convicções fortes podem orientar vínculos e também limitar o espaço de discordância. A reflexão considera se o apoio ao crescimento alheio preserva liberdade ou depende da adesão a uma visão única.",
+      "finance": "Projetos de expansão podem alterar a distribuição de recursos e decisões. A leitura observa quem participa dos benefícios e assume os compromissos, sobretudo quando uma promessa de progresso torna dependências menos visíveis.",
+      "work": "Estratégias de crescimento podem ampliar influência e concentrar decisões. O tema considera critérios de participação e reconhecimento, examinando se o desenvolvimento anunciado corresponde a oportunidades efetivas para diferentes partes da organização.",
+      "family": "Crenças sobre sucesso e prestígio podem sustentar hierarquias familiares. A reflexão abre espaço para trajetórias diferentes, especialmente quando apoio material ou reconhecimento dependem de corresponder a uma ambição coletiva."
+    },
+    "pair:saturn:uranus": {
+      "title": "Saturno e Urano: continuidade e reforma",
+      "general": "Saturno e Urano colocam em relação preservação de estruturas e necessidade de mudança. A leitura considera o que merece continuidade e quais regras precisam ser revistas para comportar novas formas de participação.",
+      "health": "Rotinas de cuidado precisam oferecer previsibilidade e possibilidade de adaptação. O tema considera mudanças que respeitem necessidades existentes, evitando tanto preservar procedimentos sem função quanto remover apoios antes de definir alternativas.",
+      "relationships": "Compromissos podem precisar de novos formatos quando as condições de vida mudam. A reflexão considera como manter confiabilidade enquanto se negociam autonomia e diferenças que o acordo anterior não contemplava.",
+      "finance": "Alterar a organização de recursos exige compreender obrigações que permanecem. A leitura considera custos de transição, continuidade e autonomia, sem tratar estabilidade e mudança como opções que sempre se excluem.",
+      "work": "Revisar processos envolve memória do funcionamento e abertura à experimentação. O tema considera quem conhece as dependências existentes e como participa da mudança, evitando que inovação seja implantada sem condições de continuidade.",
+      "family": "Costumes podem ser revistos sem perder todas as referências de pertencimento. A reflexão propõe distinguir apoio útil de regras que já não comportam as necessidades e trajetórias atuais dos integrantes da família."
+    },
+    "pair:saturn:neptune": {
+      "title": "Saturno e Netuno: estrutura e ideal",
+      "general": "Saturno e Netuno relacionam limites institucionais e ideais compartilhados. A leitura considera como aspirações de acolhimento ganham sustentação concreta e onde regras ou promessas deixam necessidades sem uma resposta definida.",
+      "health": "Acolhimento depende também de horários, acesso e continuidade de apoio. O tema considera como tornar intenções de cuidado praticáveis, preservando sensibilidade sem exigir que disponibilidade pessoal compense indefinidamente a falta de estrutura.",
+      "relationships": "Compaixão e compromisso precisam de limites compreensíveis. A reflexão observa quando uma expectativa de ajuda se torna obrigação silenciosa e como acordos podem preservar proximidade sem prometer disponibilidade irrestrita.",
+      "finance": "Ideais de apoio ou realização podem ser comparados com compromissos e recursos concretos. A leitura considera a estrutura necessária para sustentar uma intenção, especialmente quando custos e responsabilidades permanecem vagos.",
+      "work": "Propósito e estrutura se encontram na definição de responsabilidades. O tema propõe avaliar se a organização oferece condições para realizar o cuidado ou a criação que valoriza em seu discurso.",
+      "family": "Expectativas de sacrifício podem se consolidar como deveres pouco discutidos. A reflexão inclui transformar pedidos implícitos em acordos de cuidado que reconheçam limites, sem desconsiderar o afeto que os motivou."
+    },
+    "pair:saturn:pluto": {
+      "title": "Saturno e Plutão: estrutura e concentração de poder",
+      "general": "Saturno e Plutão relacionam autoridade, permanência e poder estrutural. A leitura considera como regras consolidam decisões e quais condições permitem reformar instituições sem tratar sua existência como prova suficiente de legitimidade.",
+      "health": "Limites institucionais podem definir acesso, privacidade e autonomia no cuidado. O tema considera quem participa das decisões e como responsabilidades são distribuídas, especialmente quando dependências tornam difícil questionar condições estabelecidas.",
+      "relationships": "Compromissos de longa duração podem envolver assimetrias de poder pouco reconhecidas. A reflexão observa a possibilidade de renegociar regras e responsabilidades, sem tratar o tempo de um vínculo como justificativa para qualquer exigência.",
+      "finance": "Obrigações duradouras podem concentrar recursos e restringir escolhas. A leitura considera o alcance dos compromissos e as condições de negociação, distinguindo estabilidade aparente de dependências que permanecem sem discussão.",
+      "work": "Hierarquias e procedimentos podem preservar poder além de sua função declarada. O tema considera critérios de responsabilização e acesso às decisões, especialmente em mudanças que redistribuem tarefas sem redistribuir autonomia.",
+      "family": "Regras familiares antigas podem manter responsabilidades e autoridade concentradas. A reflexão procura compreender sua função atual e abrir espaço para revisão, sem exigir que respeito à história signifique obediência indefinida."
+    },
+    "pair:uranus:neptune": {
+      "title": "Urano e Netuno: inovação e imaginário",
+      "general": "Urano e Netuno aproximam mudanças de modelo e imagens de futuro coletivo. A leitura considera como novas possibilidades são imaginadas e onde promessas de liberdade precisam de contornos para se tornar compreensíveis.",
+      "health": "Imagens de futuro podem estimular propostas diferentes de cuidado. O tema convida a examinar acesso, clareza e utilidade, sem equiparar novidade ou apelo inspirador à capacidade de responder a necessidades reais.",
+      "relationships": "Ideais de liberdade e compreensão podem inspirar acordos menos convencionais. A reflexão considera como definir expectativas e limites, evitando que um modelo imaginado dispense atenção à experiência concreta de quem participa.",
+      "finance": "Novos formatos podem vir acompanhados de narrativas amplas de transformação. A leitura propõe compreender como funcionam, quais custos envolvem e quem responde por decisões, antes de tomar a imagem de futuro como evidência.",
+      "work": "Experimentação e imaginação podem abrir caminhos de criação coletiva. O tema considera como transformar ideias em hipóteses e tarefas compreensíveis, incluindo espaço para avaliar resultados que não correspondam ao entusiasmo inicial.",
+      "family": "Novas formas de convivência podem desafiar imagens antigas de família. A reflexão considera acolhimento e autonomia junto a acordos concretos de cuidado, sem esperar que afinidade de ideais resolva toda necessidade doméstica."
+    },
+    "pair:uranus:pluto": {
+      "title": "Urano e Plutão: mudança e redistribuição de poder",
+      "general": "Urano e Plutão relacionam revisão de modelos e transformação de estruturas de poder. A leitura coletiva considera quem propõe mudanças, quem pode influenciá-las e quais dependências permanecem apesar de uma aparência de renovação.",
+      "health": "Mudanças na organização do cuidado podem ser avaliadas pela autonomia e pelo acesso que oferecem. O tema considera quem ganha poder de escolha e quem permanece dependente de recursos ou decisões concentradas.",
+      "relationships": "Alterar um acordo pode expor diferenças de poder entre as partes. A reflexão procura preservar liberdade de negociação, evitando que a linguagem de autonomia justifique mudanças impostas a quem tem menos alternativas.",
+      "finance": "Novos modelos de recursos podem redistribuir ou reconcentrar influência. A leitura examina governança, acesso e dependências, perguntando quem controla a infraestrutura e quais escolhas permanecem disponíveis para quem participa.",
+      "work": "Transformações de processo podem modificar quem controla informação e decisões. O tema considera participação efetiva e condições de adaptação, distinguindo mudança de ferramentas de mudanças reais na distribuição de autonomia.",
+      "family": "Trajetórias que questionam papéis antigos podem revelar dependências materiais e afetivas. A reflexão considera como negociar autonomia com condições concretas de apoio, sem presumir que uma mudança de forma elimine relações de poder."
+    },
+    "pair:neptune:pluto": {
+      "title": "Netuno e Plutão: imaginário e poder coletivo",
+      "general": "Netuno e Plutão relacionam narrativas compartilhadas e estruturas profundas de influência. A leitura considera como imagens e ideais legitimam relações de poder, preservando a diferença entre investigação simbólica e explicações totais da realidade.",
+      "health": "Narrativas sobre sofrimento e cuidado podem influenciar o acesso a apoio e o direito de escolha. O tema considera quem define essas imagens e se há espaço para experiências que não correspondem a elas.",
+      "relationships": "Ideais de entrega podem encobrir diferenças de poder dentro de um vínculo. A reflexão considera limites e consentimento, evitando tratar renúncia à própria escolha como prova de profundidade ou compreensão.",
+      "finance": "Imagens de realização ou solidariedade podem participar de relações materiais de dependência. A leitura procura esclarecer quem controla recursos e decisões, especialmente quando uma narrativa compartilhada torna perguntas sobre condições difíceis de formular.",
+      "work": "Culturas organizacionais podem usar ideais de pertencimento para sustentar decisões concentradas. O tema considera a distância entre propósito declarado e condições reais de participação, incluindo o direito de questionar sem perder reconhecimento.",
+      "family": "Narrativas sobre união e sacrifício podem atravessar gerações e organizar lealdades. A reflexão permite reconhecer seu significado afetivo enquanto examina quem assume os custos e que espaço existe para escolhas diferentes."
+    },
+    "aspect:conjunction": {
+      "title": "Conjunção: encontro e concentração",
+      "general": "A conjunção reúne os temas dos dois corpos em um mesmo campo de atenção. Essa proximidade pode ser lida como concentração de interesses, cuja combinação depende das diferenças entre os símbolos envolvidos.",
+      "health": "Na reflexão sobre cuidado, a conjunção propõe observar necessidades que aparecem misturadas. Distinguir demandas e recursos ajuda a evitar que uma única prioridade ocupe todo o espaço da rotina.",
+      "relationships": "O encontro simbólico coloca expectativas diferentes muito próximas. A leitura considera como compartilhar interesses sem presumir identidade de desejos, preservando espaço para reconhecer o que cada parte traz ao vínculo.",
+      "finance": "A concentração de atenção em um objetivo permite discutir suas várias exigências. Tornar visíveis custos, prioridades e responsáveis ajuda a perceber quando decisões distintas estão sendo tratadas como se fossem uma só.",
+      "work": "Temas e responsabilidades podem ser pensados em conjunto sob esta configuração. O desafio de coordenação é integrar contribuições mantendo clareza sobre funções, para que proximidade não se confunda com sobreposição de tarefas.",
+      "family": "Necessidades familiares podem se reunir em torno de uma mesma questão. Escutar suas diferenças permite construir uma resposta compartilhada sem supor que todos atribuam o mesmo significado ao que está em discussão."
+    },
+    "aspect:sextile": {
+      "title": "Sextil: articulação e abertura",
+      "general": "O sextil simboliza uma possibilidade de articulação entre temas diferentes. Sua leitura enfatiza a participação necessária para desenvolver uma abertura, sem presumir que afinidades produzam resultados por conta própria.",
+      "health": "Recursos de cuidado podem ser pensados de maneira complementar. A reflexão considera pequenas articulações viáveis, como tornar apoios disponíveis mais conhecidos e facilitar a comunicação entre necessidades cotidianas e possibilidades concretas.",
+      "relationships": "Diferenças podem oferecer pontos de colaboração quando há curiosidade e disposição para negociar. O sextil propõe reconhecer oportunidades de troca que dependem de participação, sem esperar entendimento automático.",
+      "finance": "A complementaridade entre recursos e necessidades oferece um eixo de análise. Comparar alternativas e conversar sobre condições permite avaliar possibilidades, mantendo a distinção entre uma abertura simbólica e um resultado material.",
+      "work": "A cooperação entre funções ou conhecimentos diferentes compõe o tema do sextil. Uma possibilidade ganha forma quando alguém define o próximo passo e cria condições para que a colaboração aconteça.",
+      "family": "Pequenas combinações de apoio podem melhorar a organização da convivência. O foco está em perceber disponibilidades reais e formular pedidos claros, sem transformar uma oferta pontual em obrigação permanente."
+    },
+    "aspect:square": {
+      "title": "Quadratura: fricção e ajuste",
+      "general": "A quadratura simboliza exigências que não se acomodam facilmente. A leitura procura o ponto concreto de atrito e as escolhas envolvidas, sem tratar tensão como anúncio de acontecimentos desfavoráveis.",
+      "health": "Demandas concorrentes podem servir de tema para examinar limites da rotina. O foco do cuidado está em identificar exigências incompatíveis e discutir ajustes, sem interpretar a configuração como indicação de adoecimento.",
+      "relationships": "O desacordo pode tornar visíveis necessidades antes pouco formuladas. Diferenciar o problema discutido de julgamentos sobre a pessoa ajuda a negociar limites, mesmo quando não existe uma solução que satisfaça tudo.",
+      "finance": "Prioridades concorrentes pedem critérios explícitos para o uso de recursos. A quadratura oferece uma linguagem para discutir escolhas e custos de oportunidade, sem associar a tensão simbólica a perdas previstas.",
+      "work": "Prazos, recursos e expectativas podem ser examinados onde deixam de caber juntos. Tornar a incompatibilidade visível permite negociar escopo e responsabilidade, em vez de exigir que esforço individual resolva um problema de estrutura.",
+      "family": "Atritos da convivência merecem ser traduzidos em situações concretas. Nomear tarefas, horários ou limites em disputa permite conversar sobre mudanças sem fazer de um desacordo uma definição de toda a relação."
+    },
+    "aspect:trine": {
+      "title": "Trígono: fluidez e continuidade",
+      "general": "O trígono simboliza afinidade e menor atrito entre os temas envolvidos. A facilidade pode sustentar continuidade, mas também tornar hábitos pouco visíveis; o que funciona merece ser compreendido, não apenas repetido.",
+      "health": "Rotinas de cuidado que já oferecem suporte podem ser reconhecidas e mantidas com flexibilidade. A leitura convida a observar suas condições de funcionamento, sem tomar facilidade simbólica como garantia de saúde.",
+      "relationships": "Afinidades podem favorecer uma convivência que exige menos explicações. Ainda assim, conversar sobre expectativas permite perceber mudanças e evita que familiaridade seja tomada como conhecimento completo da experiência do outro.",
+      "finance": "Práticas que parecem funcionar sem esforço merecem ter suas condições compreendidas. A reflexão considera continuidade e hábito, sem presumir que conforto com uma escolha comprove sua adequação ou seus resultados futuros.",
+      "work": "Competências já articuladas podem oferecer continuidade a projetos. Reconhecer o que sustenta essa fluidez permite compartilhar conhecimento e evita que a facilidade de algumas pessoas esconda trabalho pouco documentado.",
+      "family": "Costumes que tornam a convivência mais simples podem ser valorizados sem se tornar obrigatórios. O tema convida a perceber quem os sustenta e se continuam acolhendo mudanças na vida familiar."
+    },
+    "aspect:opposition": {
+      "title": "Oposição: polaridade e perspectiva",
+      "general": "A oposição coloca dois temas em posições distintas, permitindo observar o que cada perspectiva revela e deixa de fora. O desafio simbólico é sustentar a diferença sem reduzir a situação a dois lados irreconciliáveis.",
+      "health": "Necessidades que parecem competir podem ser examinadas por seus contextos. A reflexão sobre cuidado busca reconhecer limites e apoios de cada posição, sem exigir uma escolha absoluta entre demandas que precisam coexistir.",
+      "relationships": "Expectativas diferentes tornam útil explicitar o que cada parte está defendendo. Uma negociação pode preservar diferenças legítimas, sem exigir fusão de desejos nem atribuir ao outro tudo o que causa desconforto.",
+      "finance": "Interesses de partes diferentes pedem condições compreensíveis de negociação. A leitura considera quem assume custos e quem recebe benefícios, evitando tratar uma divergência de prioridades como simples falta de colaboração.",
+      "work": "Perspectivas de equipes, funções ou níveis de decisão podem entrar em contraste. Comparar critérios e consequências ajuda a formular acordos, especialmente quando cada parte vê apenas uma etapa do processo.",
+      "family": "Diferenças entre gerações ou modos de viver podem ser reconhecidas sem exigir uma versão única da história. A convivência precisa de acordos concretos, mesmo quando valores e interpretações permanecem distintos."
+    },
+    "phase:new": {
+      "title": "Lua nova: intenção e abertura",
+      "general": "A Lua nova simboliza o início de um ciclo de elaboração. A leitura privilegia intenções ainda em formação e perguntas úteis para orientar os próximos passos, sem transformar a fase em garantia de recomeço.",
+      "health": "A abertura simbólica permite pensar em uma intenção de cuidado compatível com a rotina. Definir uma necessidade concreta oferece mais clareza do que reunir metas numerosas sob uma expectativa de renovação completa.",
+      "relationships": "Expectativas novas ou pouco expressas podem ser tomadas como assunto de conversa. O foco está em formular desejos e escutar respostas, preservando o espaço necessário para que um acordo se desenvolva.",
+      "finance": "A intenção de organizar recursos pode começar pela definição de prioridades. A fase funciona como referência de reflexão, sem estabelecer uma ocasião especialmente favorável para compras, contratos ou decisões de investimento.",
+      "work": "Ideias em estágio inicial pedem escopo e perguntas bem formuladas. O tema convida a esclarecer o problema que um projeto pretende resolver antes de assumir compromissos maiores de execução.",
+      "family": "Um assunto doméstico pode ser revisto a partir do que a casa precisa agora. A leitura propõe formular uma intenção compartilhada, sem pressupor que todas as pessoas desejem o mesmo recomeço."
+    },
+    "phase:firstQuarter": {
+      "title": "Quarto crescente: escolha e construção",
+      "general": "O quarto crescente simboliza a passagem da intenção à construção. A leitura considera escolhas práticas, resistência e necessidade de ajuste, tratando obstáculos como questões a compreender, sem atribuir sua ocorrência à fase lunar.",
+      "health": "Uma intenção de cuidado ganha consistência quando cabe nos horários e recursos disponíveis. O tema propõe observar dificuldades de execução e adaptar o plano, evitando interpretar ajustes como falta de empenho.",
+      "relationships": "Expectativas precisam encontrar forma em atitudes e combinações possíveis. A reflexão se concentra no que cada parte consegue assumir e nos desacordos que aparecem quando uma intenção se torna compromisso.",
+      "finance": "Transformar prioridades em decisões exige comparar custos e limites concretos. A fase oferece uma imagem de construção gradual, sem indicar que pressa ou maior exposição sejam necessárias para avançar.",
+      "work": "A execução revela demandas que uma ideia inicial talvez não contemplasse. Rever recursos, sequência e responsabilidades permite discutir os ajustes necessários antes de ampliar o escopo ou multiplicar cobranças.",
+      "family": "Combinações domésticas precisam ser avaliadas quando encontram a rotina real. A leitura convida a ajustar a divisão de tarefas e os horários, considerando capacidade e disponibilidade em vez de expectativas idealizadas."
+    },
+    "phase:full": {
+      "title": "Lua cheia: visibilidade e contraste",
+      "general": "A Lua cheia simboliza visibilidade e contraste entre perspectivas. A leitura privilegia o que pode ser reconhecido e comparado em um processo, sem pressupor efeitos universais sobre humor ou comportamento.",
+      "health": "O tema de visibilidade permite observar como uma rotina de cuidado está funcionando. Comparar necessidades percebidas e apoios disponíveis ajuda a formular ajustes, sem extrair conclusões clínicas da fase lunar.",
+      "relationships": "Expectativas de proximidade e autonomia podem ser colocadas lado a lado. A reflexão favorece tornar diferenças compreensíveis, sem supor que uma conversa intensa deva produzir uma conclusão imediata sobre o vínculo.",
+      "finance": "A imagem de balanço convida a comparar planos com registros concretos. Dar visibilidade a despesas e compromissos ajuda a avaliar escolhas, sem tratar a fase como sinal de valorização ou perda.",
+      "work": "Resultados disponíveis podem ser examinados em relação aos objetivos e ao esforço empregado. A leitura considera também contribuições pouco visíveis, evitando reduzir a avaliação ao que aparece na entrega final.",
+      "family": "Necessidades de diferentes integrantes podem ganhar espaço em uma conversa de revisão. A proposta é tornar a divisão do cuidado mais visível, preservando diferenças sem escolher uma pessoa como responsável por todas elas."
+    },
+    "phase:lastQuarter": {
+      "title": "Quarto minguante: revisão e encerramento",
+      "general": "O quarto minguante simboliza avaliação, seleção e fechamento de etapas. A leitura considera o que foi aprendido e o que deixou de servir, sem impor a obrigação de concluir tudo dentro de um ciclo lunar.",
+      "health": "A revisão das exigências cotidianas pode incluir o que tornou o cuidado difícil de sustentar. O foco está em simplificar rotinas e reconhecer limites, sem associar a fase a procedimentos ou resultados clínicos.",
+      "relationships": "Há espaço para reconsiderar expectativas e encerrar discussões que já esclareceram seus pontos. Rever uma forma de convivência não exige decidir o destino de todo o vínculo de uma só vez.",
+      "finance": "Compromissos pouco utilizados e prioridades antigas oferecem matéria para revisão. A leitura propõe compreender custos e condições de mudança, sem tomar o simbolismo de encerramento como ordem para vender ou cancelar.",
+      "work": "Retomar decisões e registrar aprendizados ajuda a concluir etapas com responsabilidade. O tema inclui identificar tarefas que perderam função, preservando o conhecimento necessário para que mudanças não apaguem a memória do trabalho.",
+      "family": "Costumes e tarefas podem ser revistos à luz do que ainda faz sentido para a casa. O encerramento simbólico admite preservar memórias sem manter todas as obrigações ligadas a elas."
+    },
+    "eclipse:solar": {
+      "title": "Eclipse solar: propósito em perspectiva",
+      "general": "Na tradição adotada, o eclipse solar dá ênfase simbólica a questões de propósito, liderança e renovação de referências. Essa leitura não prevê rupturas e não depende de o fenômeno ser visível em determinada região.",
+      "health": "A reflexão considera quanto as expectativas de desempenho ocupam a organização do cuidado. Rever prioridades pode incluir reconhecer necessidades que receberam pouca atenção, sem relacionar o eclipse ao surgimento de sintomas ou doenças.",
+      "relationships": "Papéis e expectativas de reconhecimento oferecem um eixo para observar os vínculos. Há espaço para perguntar se as formas habituais de participação ainda permitem expressão e escolha às pessoas envolvidas.",
+      "finance": "Objetivos materiais podem ser examinados pelo propósito que pretendem sustentar. A leitura questiona prioridades e critérios de reconhecimento, sem antecipar alterações de renda, preços ou condições de mercado.",
+      "work": "Direção, liderança e critérios de sucesso podem ser colocados em perspectiva. O tema favorece uma reflexão sobre a coerência entre objetivos declarados e decisões concretas, sem prever mudanças de emprego ou de gestão.",
+      "family": "As figuras que organizam a vida familiar e suas expectativas merecem ser vistas em contexto. Rever um papel pode abrir conversa sobre responsabilidades, sem presumir que uma mudança precise romper vínculos."
+    },
+    "eclipse:lunar": {
+      "title": "Eclipse lunar: pertencimento em perspectiva",
+      "general": "O eclipse lunar recebe uma leitura simbólica de reconhecimento de necessidades, vínculos e padrões de pertencimento. A ênfase interpretativa não estabelece efeitos emocionais universais nem transforma o fenômeno em anúncio de perda.",
+      "health": "Necessidades cotidianas e condições de acolhimento oferecem o foco desta leitura. A proposta é tornar o cuidado e seus limites mais visíveis, sem atribuir alterações físicas ou emocionais ao eclipse.",
+      "relationships": "Há espaço para observar expectativas de cuidado e hábitos de aproximação. O tema convida a reconhecer o que sustenta um vínculo e o que precisa ser conversado, sem pressupor separações ou revelações inevitáveis.",
+      "finance": "Segurança material e compromissos de cuidado podem ser considerados em conjunto. A reflexão examina prioridades domésticas e dependências, preservando a diferença entre uma imagem simbólica de balanço e previsões sobre recursos.",
+      "work": "Pertencimento, apoio cotidiano e trabalho pouco reconhecido podem entrar na avaliação de uma equipe. O tema propõe tornar essas condições discutíveis, sem presumir acontecimentos profissionais específicos a partir do eclipse.",
+      "family": "Memórias e formas habituais de cuidar oferecem matéria para reflexão. A leitura admite reconhecer sentimentos diferentes sobre uma história comum, sem exigir consenso nem transformar o passado em explicação única do presente."
+    },
+    "station:retrograde": {
+      "title": "Estação retrógrada: atenção à revisão",
+      "general": "A estação retrógrada marca o início de um intervalo de movimento aparente retrógrado. Simbolicamente, ela destaca a revisão dos temas do planeta, sem indicar uma inversão física da órbita ou prever contratempos.",
+      "health": "O tema de revisão pode ser aplicado à organização do cuidado e à clareza dos combinados. A estação não constitui motivo para adiar atendimento, alterar tratamentos ou interpretar mudanças no corpo.",
+      "relationships": "Reconsiderar uma expectativa pode ser útil quando existe algo concreto a esclarecer. O símbolo não exige retomar vínculos antigos; a reflexão parte das relações e dos acordos que de fato estão presentes.",
+      "finance": "Premissas e compromissos podem ser revistos conforme as necessidades reais da situação. A estação oferece uma referência simbólica de atenção, sem funcionar como proibição de contratar, comprar ou decidir.",
+      "work": "Revisões de escopo, documentação e responsabilidades podem ser consideradas quando há motivos concretos. A leitura propõe atenção aos processos, sem atribuir falhas à estação nem exigir interrupção de atividades em andamento.",
+      "family": "Acordos antigos podem ser retomados para verificar se ainda correspondem à rotina. A revisão simbólica permite formular necessidades atuais, preservando a liberdade de manter o que continua funcionando."
+    },
+    "station:direct": {
+      "title": "Estação direta: retomada e integração",
+      "general": "A estação direta marca o fim de um intervalo de movimento aparente retrógrado. Na leitura simbólica, ela propõe integrar revisões e reconsiderar encaminhamentos, sem prometer resolução automática de dificuldades.",
+      "health": "O tema de retomada permite avaliar ajustes já discutidos na organização do cuidado. A continuidade depende de necessidades e condições concretas, sem que a estação estabeleça autorização ou ocasião clínica favorável.",
+      "relationships": "Uma conversa revisada pode se traduzir em acordos mais claros quando as partes estão disponíveis. O simbolismo de retomada não exige reconciliação nem elimina diferenças que ainda precisam ser negociadas.",
+      "finance": "Decisões reconsideradas podem ser avaliadas pelos dados e pelas condições disponíveis. A estação funciona como imagem de encaminhamento, sem garantir que pendências se resolvam ou que uma escolha produza retorno.",
+      "work": "Integrar aprendizados envolve atualizar combinações e esclarecer o próximo passo. A leitura convida a distinguir retomada de aceleração, sobretudo quando dependências e recursos ainda precisam de definição.",
+      "family": "Mudanças combinadas durante uma revisão da convivência podem ser acompanhadas no cotidiano. O foco está em verificar se os acordos cabem na vida real, sem presumir que uma conversa encerre todas as diferenças."
+    },
+    "retro:mercury": {
+      "title": "Mercúrio retrógrado: rever entendimento",
+      "general": "A retrogradação de Mercúrio recebe uma leitura de revisão da linguagem, dos critérios de entendimento e da circulação de informações. O tema convida a conferir contexto, sem atribuir erros ou falhas técnicas ao planeta.",
+      "health": "Dúvidas e informações sobre cuidado podem ser organizadas para uma conversa mais clara. Conferir orientações e compreender registros responde a necessidades concretas de comunicação, independentemente do movimento aparente de Mercúrio.",
+      "relationships": "Palavras já usadas podem merecer esclarecimento quando deixaram sentidos diferentes para cada parte. A leitura propõe verificar interpretações, sem presumir mal-entendidos inevitáveis ou retorno de pessoas do passado.",
+      "finance": "Termos, registros e critérios de comparação oferecem matéria para revisão. O foco está na compreensão efetiva das condições de uma decisão, sem tratar a retrogradação como impedimento geral para contratos.",
+      "work": "Documentação e fluxos de comunicação podem ser avaliados pelos pontos em que geram dúvidas. Atualizar orientações e responsabilidades ajuda quando há problemas identificados, sem antecipar atrasos ou avarias.",
+      "family": "Combinações familiares podem carregar interpretações que nunca foram comparadas. Retomar um recado ou um acordo permite esclarecer o que cada pessoa compreendeu, evitando recorrer à memória como prova incontestável."
+    },
+    "retro:venus": {
+      "title": "Vênus retrógrada: rever valores e trocas",
+      "general": "A retrogradação de Vênus simboliza reconsideração de preferências, vínculos e critérios de valor. A reflexão examina o que ainda faz sentido nas escolhas, sem presumir insatisfação ou acontecimentos afetivos específicos.",
+      "health": "Expectativas estéticas e formas de conforto podem ser revistas em relação às necessidades de cuidado. O tema considera a liberdade de ajustar preferências, sem vincular procedimentos ou resultados à retrogradação.",
+      "relationships": "Reciprocidade e expectativas de afeto oferecem o centro da revisão. A leitura parte do modo como os vínculos funcionam hoje, sem exigir reaproximações, rompimentos ou comparações com relações anteriores.",
+      "finance": "Há espaço para reconsiderar critérios de compra e valor atribuído a bens ou serviços. A reflexão diferencia desejo, utilidade e reconhecimento social, sem prever preços nem estabelecer restrições universais de consumo.",
+      "work": "Formas de reconhecimento e condições de parceria podem ser examinadas por sua coerência. A revisão considera remuneração, divisão de contribuições e expectativas, sem pressupor desvalorização ou conflito em uma equipe.",
+      "family": "Gestos de afeto e trocas familiares podem ser vistos à luz das necessidades atuais. O tema convida a rever obrigações que passaram a representar carinho, sem desconsiderar o significado que tiveram."
+    },
+    "retro:mars": {
+      "title": "Marte retrógrado: rever ação e conflito",
+      "general": "A retrogradação de Marte simboliza revisão de estratégias, motivos de ação e formas de disputa. A leitura considera onde o esforço encontra direção, sem prever falta de energia ou conflitos inevitáveis.",
+      "health": "Ritmos de esforço e exigências de desempenho podem ser observados pelas condições de cuidado que permitem. O tema de revisão não define capacidade física nem substitui critérios próprios de acompanhamento profissional.",
+      "relationships": "A maneira de expressar desejo, discordância e recusa oferece matéria para reflexão. Rever uma abordagem pode tornar limites mais claros, sem pressupor que o silêncio resolva uma questão ainda presente.",
+      "finance": "Pressões para decidir e disputas por recursos podem ser examinadas pelo objetivo real da ação. A leitura propõe conferir prioridades, sem associar a retrogradação a perdas ou recomendar paralisação de decisões.",
+      "work": "Estratégias de execução merecem revisão quando esforço e resultado deixam de se corresponder. O foco recai sobre escopo, recursos e atribuições, evitando interpretar dificuldades estruturais como falta de vontade individual.",
+      "family": "Conflitos repetidos podem ser observados pelas tarefas e pelos limites que permanecem indefinidos. A reflexão busca reformular a abordagem, sem exigir que diferenças sejam engolidas para preservar uma convivência aparentemente tranquila."
+    },
+    "retro:jupiter": {
+      "title": "Júpiter retrógrado: rever perspectivas",
+      "general": "A retrogradação de Júpiter simboliza revisão de convicções, expectativas de crescimento e critérios de sentido. A leitura considera se uma perspectiva permanece aberta à experiência, sem prever redução de oportunidades.",
+      "health": "Expectativas sobre possibilidades de cuidado podem ser comparadas com informações e recursos disponíveis. A revisão simbólica permite reconhecer limites sem abandonar a busca de apoio ou transformar esperança em obrigação de melhorar.",
+      "relationships": "Planos compartilhados podem ser reconsiderados pelas expectativas que carregam. O tema oferece espaço para ajustar horizontes, especialmente quando uma definição de crescimento não representa igualmente todas as pessoas envolvidas.",
+      "finance": "Premissas de expansão e compromissos assumidos em nome de possibilidades futuras podem ser examinados. A leitura propõe clareza sobre cenários e recursos, sem antecipar escassez nem desaconselhar uma decisão por motivo astrológico.",
+      "work": "Objetivos amplos e propostas de formação podem ser avaliados por sua pertinência. Rever uma ambição permite discutir alcance e recursos, sem tratar redução de escopo como ausência de visão.",
+      "family": "Crenças e expectativas de futuro podem ser revisitadas sem exigir abandono da história familiar. A reflexão considera quais ideias ainda oferecem apoio e quais precisam comportar trajetórias diferentes."
+    },
+    "retro:saturn": {
+      "title": "Saturno retrógrado: rever responsabilidades",
+      "general": "A retrogradação de Saturno simboliza revisão de compromissos, regras e critérios de responsabilidade. O tema convida a examinar a função das estruturas existentes, sem pressupor punições, impedimentos ou cobranças do destino.",
+      "health": "Exigências de rotina podem ser revistas conforme os recursos de cuidado disponíveis. A reflexão distingue continuidade possível de rigidez, especialmente onde uma obrigação deixa pouco espaço para reconhecer necessidades e limites.",
+      "relationships": "Compromissos merecem ser avaliados por sua clareza e distribuição. Revisar uma responsabilidade pode fortalecer a confiabilidade do acordo, sem supor que manter um vínculo exija aceitar qualquer carga.",
+      "finance": "Obrigações recorrentes podem ser examinadas pelo alcance que têm no orçamento. A leitura considera prazos e sustentabilidade, sem associar a retrogradação a restrições externas ou transformar contenção em regra universal.",
+      "work": "Normas e critérios de cobrança podem ser revistos à luz de sua utilidade. O foco está em compreender responsabilidades reais e recursos de execução, evitando preservar procedimentos apenas porque sempre existiram.",
+      "family": "Papéis assumidos há muito tempo podem ser reconsiderados pelas condições atuais. A revisão simbólica inclui responsabilidades de cuidado e autoridade, sem exigir que uma pessoa sustente sozinha a continuidade da família."
+    },
+    "retro:uranus": {
+      "title": "Urano retrógrado: rever a mudança",
+      "general": "A retrogradação de Urano simboliza reconsideração das formas de inovar e conquistar autonomia. A leitura examina as consequências de uma mudança, sem presumir instabilidade, rupturas ou necessidade de contrariar convenções.",
+      "health": "Mudanças de rotina podem ser avaliadas pelo apoio concreto que oferecem ao cuidado. A reflexão considera acessibilidade e adaptação, sem tomar novidade ou diferença como evidência suficiente de benefício.",
+      "relationships": "Acordos sobre liberdade e proximidade podem ser revistos conforme a experiência dos envolvidos. O tema pergunta quem participa das decisões, evitando tratar autonomia como ausência de consideração pelas consequências relacionais.",
+      "finance": "Novos formatos de consumo ou compartilhamento podem ser avaliados por seu funcionamento real. A revisão considera dependências e custos de adaptação, sem prever alterações de mercado ou resultados de inovações.",
+      "work": "Mudanças de processo merecem revisão também depois de implantadas. O tema propõe observar quem ganhou autonomia, quem assumiu novas demandas e quais ajustes permitem que a experiência se torne sustentável.",
+      "family": "Arranjos menos convencionais podem ser reconsiderados pelas necessidades de quem participa deles. A reflexão inclui liberdade de trajetória e continuidade do cuidado, sem exigir retorno a um modelo anterior."
+    },
+    "retro:neptune": {
+      "title": "Netuno retrógrado: rever imagens e ideais",
+      "general": "A retrogradação de Netuno simboliza revisão de ideais, imagens e expectativas pouco delimitadas. A leitura procura compreender o que uma narrativa oferece e o que permanece indefinido, sem prever desilusões ou revelações.",
+      "health": "Promessas e expectativas sobre cuidado podem ser traduzidas em perguntas concretas. A revisão favorece clareza sobre o que é oferecido, preservando a distinção entre acolhimento, crenças pessoais e informações verificáveis.",
+      "relationships": "Imagens idealizadas de proximidade podem ser comparadas com a convivência real. A reflexão considera expectativas de compreensão e disponibilidade, sem presumir engano ou exigir que diferenças sejam recebidas como decepções.",
+      "finance": "Narrativas atraentes merecem ser examinadas por suas condições e responsabilidades. O tema propõe reconhecer lacunas de informação, sem atribuir fraude à configuração nem tratar uma impressão subjetiva como prova.",
+      "work": "Propósitos amplos podem ser revistos pelo que orientam na prática. Tornar escopo e critérios de entrega mais claros ajuda a preservar o sentido de um projeto sem exigir adesão a promessas vagas.",
+      "family": "Expectativas de sacrifício e compreensão silenciosa podem ser reconsideradas. A leitura abre espaço para pedidos explícitos e limites de cuidado, sem invalidar a importância dos vínculos ou das crenças compartilhadas."
+    },
+    "retro:pluto": {
+      "title": "Plutão retrógrado: rever poder e dependência",
+      "general": "A retrogradação de Plutão simboliza revisão de relações de poder e de mudanças estruturais. O tema considera como decisões se consolidam e quem pode questioná-las, sem prever crises ou acontecimentos irreversíveis.",
+      "health": "Autonomia, privacidade e acesso ao cuidado podem ser examinados pelas relações de dependência envolvidas. A revisão simbólica se concentra nas condições de escolha, sem inferir processos clínicos a partir da retrogradação.",
+      "relationships": "Limites e distribuição de poder podem ser revistos pela liberdade de discordar. A leitura considera padrões de controle reconhecíveis na convivência, sem presumir intenções ocultas nem exigir exposição de experiências íntimas.",
+      "finance": "Compromissos que concentram poder de decisão merecem compreensão de seu alcance. A reflexão observa dependências e alternativas, sem antecipar perdas ou afirmar que uma renegociação esteja determinada pelo movimento aparente do planeta.",
+      "work": "Mudanças de estrutura podem ser avaliadas pelo poder que redistribuem ou preservam. O tema convida a examinar acesso à informação e participação, evitando reduzir processos coletivos às características de uma liderança.",
+      "family": "Lealdades e responsabilidades persistentes podem ser observadas com respeito à privacidade. A revisão procura reconhecer possibilidades de escolha, sem impor revelações ou atribuir toda dificuldade atual a um padrão familiar antigo."
+    },
+    "body:sun": {
+      "title": "Sol: direção e reconhecimento",
+      "general": "O Sol simboliza a construção de uma direção compartilhada e a necessidade de reconhecimento. A leitura considera quem ocupa o centro das decisões e quais propósitos justificam essa posição.",
+      "health": "O tema do cuidado aparece na relação entre disposição e exigência de desempenho. Rotinas sustentáveis precisam comportar descanso, inclusive quando a cultura do grupo valoriza estar sempre disponível.",
+      "relationships": "Reconhecimento e espaço para expressão ganham destaque nas relações. A convivência merece atenção quando a necessidade de ser visto deixa pouco lugar para a experiência de outras pessoas.",
+      "finance": "A associação entre dinheiro, prestígio e identidade oferece um eixo de reflexão. Vale distinguir os recursos que sustentam um propósito das despesas feitas para preservar uma imagem pública.",
+      "work": "Liderança e autoria aparecem como temas centrais. Tornar os objetivos compreensíveis e reconhecer contribuições concretas ajuda a examinar como uma equipe distribui visibilidade, responsabilidade e poder de decisão.",
+      "family": "A organização familiar pode ser observada pelas figuras que definem prioridades e recebem reconhecimento. A leitura convida a considerar também quem sustenta a rotina sem ocupar o centro das atenções."
+    },
+    "body:moon": {
+      "title": "Lua: pertencimento e necessidades",
+      "general": "A Lua representa necessidades de acolhimento, memória e continuidade. No plano coletivo, interessa observar como os grupos procuram segurança e como respondem ao que lhes parece familiar ou estranho.",
+      "health": "A dimensão lunar do cuidado envolve regularidade, repouso e atenção às necessidades cotidianas. O foco está nas condições de acolhimento e na possibilidade de reconhecer limites sem constrangimento.",
+      "relationships": "Expectativas de proximidade e disponibilidade ajudam a compreender os vínculos. Há espaço para perguntar como o cuidado é oferecido, recebido e negociado, sem presumir que todos precisem da mesma coisa.",
+      "finance": "Reservas e despesas domésticas aparecem ligadas à busca de segurança. Examinar o que produz estabilidade concreta ajuda a diferenciar planejamento de tentativas de aliviar inseguranças por meio do consumo.",
+      "work": "O cotidiano da equipe, suas formas de apoio e seus hábitos merecem atenção. Pertencimento também depende de condições práticas, como previsibilidade, escuta e distribuição razoável das demandas.",
+      "family": "Memórias, costumes e maneiras de cuidar oferecem o centro desta leitura. Uma tradição pode sustentar pertencimento e ainda precisar de ajustes para acolher necessidades que mudaram ao longo do tempo."
+    },
+    "body:mercury": {
+      "title": "Mercúrio: linguagem e circulação",
+      "general": "Mercúrio simboliza a circulação de informações, a aprendizagem e a capacidade de estabelecer relações entre ideias. A atenção recai sobre a qualidade das perguntas e os caminhos pelos quais mensagens chegam ao público.",
+      "health": "Informações sobre cuidado pedem linguagem compreensível e fontes identificáveis. Organizar dúvidas e registros pode tornar conversas mais claras, sem confundir quantidade de conteúdo disponível com conhecimento adequado à situação.",
+      "relationships": "Conversas, acordos e interpretações constituem o principal eixo relacional. Uma mensagem breve pode carregar expectativas diferentes para cada pessoa; explicitar o sentido pretendido abre espaço para entendimento.",
+      "finance": "Contratos, registros e critérios de comparação entram em foco. A reflexão se concentra em compreender condições, custos e responsabilidades antes de tratar uma proposta bem apresentada como uma boa escolha.",
+      "work": "Fluxos de informação e documentação sustentam a coordenação do trabalho. Observar onde uma orientação se perde ou depende de conhecimento informal permite discutir processos com exemplos, em vez de atribuir culpas vagas.",
+      "family": "A comunicação familiar inclui recados, combinações e histórias transmitidas entre gerações. Registrar decisões práticas e conferir o que foi entendido ajuda a distinguir acordo real de silêncio tomado como consentimento."
+    },
+    "body:venus": {
+      "title": "Vênus: valor e reciprocidade",
+      "general": "Vênus representa escolhas de valor, prazer e convivência. A leitura coletiva considera os critérios de aceitação e as formas de aproximação, incluindo o custo de preservar uma harmonia apenas aparente.",
+      "health": "Conforto e prazer cotidiano podem ser pensados como dimensões do cuidado. O tema convida a avaliar ambientes, ritmos e expectativas estéticas que tornam mais fácil ou mais difícil respeitar necessidades reais.",
+      "relationships": "Reciprocidade, afinidade e negociação constituem o centro da leitura. Acordos merecem ser avaliados pela liberdade de participar e pela distribuição do cuidado, além da aparência de entendimento.",
+      "finance": "Preço, utilidade e desejo nem sempre coincidem. O simbolismo de Vênus propõe examinar os critérios de compra e o valor atribuído ao trabalho, inclusive ao que costuma ser pouco reconhecido.",
+      "work": "Parcerias e reconhecimento material ajudam a revelar como uma organização valoriza pessoas. A cordialidade facilita o cotidiano, mas condições de colaboração também precisam aparecer em atribuições e remuneração compreensíveis.",
+      "family": "Afeto se expressa em gestos, presença e escolhas práticas, não necessariamente da mesma maneira em cada vínculo. A leitura favorece uma conversa sobre reciprocidade sem transformar carinho em contabilidade rígida."
+    },
+    "body:mars": {
+      "title": "Marte: iniciativa e afirmação",
+      "general": "Marte simboliza iniciativa, disputa e capacidade de afirmar uma posição. No plano coletivo, interessa a diferença entre mobilizar energia para um objetivo e manter conflitos por falta de direção.",
+      "health": "A relação entre esforço, ritmo e limites oferece o eixo do cuidado. Culturas que premiam ultrapassar o próprio limite podem ser examinadas pelas condições de pausa e recuperação que permitem.",
+      "relationships": "Desejos e limites precisam encontrar formas claras de expressão. O tema marciano ajuda a observar como os vínculos lidam com divergência, iniciativa e recusa, sem equiparar intensidade a intimidade.",
+      "finance": "Decisões rápidas e disputas por recursos merecem critérios explícitos. Separar urgência comprovada de pressão para agir permite discutir prioridades sem tomar competição ou impaciência como justificativas suficientes.",
+      "work": "Iniciativa depende de objetivos e autonomia bem definidos. A leitura chama atenção para equipes que precisam agir, mas também para conflitos de atribuição que consomem esforço sem resolver a tarefa.",
+      "family": "A divisão de tarefas e o direito de estabelecer limites são temas úteis para a convivência. Tornar uma insatisfação concreta ajuda mais do que acumular cobranças até uma discussão generalizada."
+    },
+    "body:jupiter": {
+      "title": "Júpiter: expansão e sentido",
+      "general": "Júpiter representa a ampliação de horizontes e a busca de um sentido compartilhado. Convicções, educação e promessas de progresso entram em discussão junto com os limites de cada perspectiva.",
+      "health": "O interesse por ampliar possibilidades de cuidado pede atenção à qualidade das informações e às condições de acesso. Entusiasmo e esperança podem coexistir com expectativas proporcionais ao que está disponível.",
+      "relationships": "Projetos comuns e diferenças de visão de mundo oferecem matéria para diálogo. Compartilhar expectativas é útil sobretudo quando uma ideia de crescimento acaba ocupando todo o espaço da relação.",
+      "finance": "Expansão e abundância são temas simbólicos, sem indicar ganhos. A reflexão considera se o aumento de compromissos cabe nos recursos disponíveis e quais premissas sustentam expectativas de crescimento.",
+      "work": "Formação, circulação de conhecimento e projetos de maior alcance ganham destaque. Uma ambição se torna discutível de modo concreto quando inclui recursos, etapas e critérios para avaliar seu alcance.",
+      "family": "Educação, crenças e planos de futuro podem aproximar gerações ou expor diferenças. Dar espaço a perspectivas distintas ajuda a preservar o vínculo sem exigir uma única definição de sucesso."
+    },
+    "body:saturn": {
+      "title": "Saturno: limite e continuidade",
+      "general": "Saturno simboliza compromissos, limites e estruturas que atravessam o tempo. A leitura examina quais regras oferecem sustentação e quais continuam em vigor apenas por hábito ou receio de mudança.",
+      "health": "A organização do cuidado depende de tempo, acesso e continuidade. O tema pede atenção à diferença entre uma rotina que dá suporte e uma cobrança rígida que ignora condições concretas.",
+      "relationships": "Compromissos se tornam visíveis na maneira de lidar com tempo, responsabilidade e frustração. A estabilidade merece ser observada pela confiabilidade cotidiana, sem reduzir afeto ao cumprimento de obrigações.",
+      "finance": "Obrigações recorrentes, prazos e sustentabilidade do orçamento oferecem o centro da reflexão. Reconhecer limites disponíveis permite avaliar compromissos com maior clareza, sem associar contenção a fracasso pessoal.",
+      "work": "Regras, responsabilidades e critérios de qualidade precisam ser compreensíveis. Estruturas úteis distribuem tarefas e permitem continuidade; burocracias sem propósito podem dificultar o próprio trabalho que deveriam sustentar.",
+      "family": "O cuidado familiar envolve compromissos que nem sempre estão distribuídos de forma justa. Revisar responsabilidades antigas ajuda a considerar capacidade, disponibilidade e necessidades atuais de cada integrante."
+    },
+    "body:uranus": {
+      "title": "Urano: autonomia e experimentação",
+      "general": "Urano representa a revisão de convenções e a abertura a formas diferentes de organização. A leitura coletiva aborda autonomia, inovação e os efeitos de mudanças sobre quem precisa se adaptar.",
+      "health": "Mudanças nas rotinas de cuidado podem ser examinadas pelo que facilitam na vida cotidiana. A novidade exige avaliação de acesso e utilidade; ser diferente, por si só, não estabelece benefício.",
+      "relationships": "Autonomia e pertencimento precisam caber na mesma conversa. O simbolismo uraniano abre espaço para acordos menos convencionais, desde que as pessoas envolvidas possam compreender e negociar seus termos.",
+      "finance": "Novos modelos de consumo e organização de recursos levantam questões sobre acesso e dependência. A reflexão propõe examinar o funcionamento concreto de uma novidade antes de aderir ao entusiasmo coletivo.",
+      "work": "Experimentação, tecnologia e revisão de hierarquias são temas centrais. Uma mudança de processo ganha consistência quando considera quem aprende, quem decide e quem absorve o trabalho de adaptação.",
+      "family": "Arranjos familiares podem ser considerados pela capacidade de acolher diferenças e mudanças de trajetória. Flexibilidade exige diálogo sobre responsabilidades para que autonomia não signifique deixar o cuidado concentrado em alguém."
+    },
+    "body:neptune": {
+      "title": "Netuno: imaginação e permeabilidade",
+      "general": "Netuno simboliza imaginação, sensibilidade e ideais que ultrapassam interesses imediatos. A leitura observa tanto a capacidade de produzir sentido coletivo quanto a dificuldade de delimitar expectativas e reconhecer projeções.",
+      "health": "Acolhimento e escuta convivem com a necessidade de informações claras sobre cuidado. Promessas vagas merecem ser traduzidas em termos verificáveis, especialmente quando a busca de alívio torna uma proposta atraente.",
+      "relationships": "Idealização e empatia oferecem duas faces deste tema. A proximidade pode ser examinada pela liberdade de enxergar diferenças reais, sem exigir que alguém corresponda inteiramente a uma imagem desejada.",
+      "finance": "Propostas envolvidas em imagens de realização pedem atenção às condições concretas. O eixo simbólico considera o contraste entre o encanto de uma narrativa e a clareza sobre custos, limites e responsabilidades.",
+      "work": "Imaginação e propósito coletivo podem orientar atividades criativas e de cuidado. Para que uma visão seja compartilhada, também precisam estar claros o escopo, os responsáveis e os critérios de entrega.",
+      "family": "Expectativas silenciosas de compreensão e sacrifício merecem espaço na conversa familiar. Acolher necessidades não exige adivinhar o que falta nem assumir uma disponibilidade sem limites definidos."
+    },
+    "body:pluto": {
+      "title": "Plutão: poder e transformação",
+      "general": "Plutão representa a investigação de relações de poder e de processos difíceis de reverter. No plano coletivo, a leitura acompanha dependências, concentração de recursos e possibilidades de reorganização estrutural.",
+      "health": "O acesso ao cuidado também envolve poder de decisão, privacidade e dependência de instituições. O tema convida a examinar quem pode fazer escolhas e quais condições restringem essa autonomia.",
+      "relationships": "Controle, confiança e vulnerabilidade merecem ser diferenciados. A profundidade de um vínculo pode ser discutida pela liberdade de discordar e pela possibilidade de preservar limites, mesmo em relações muito próximas.",
+      "finance": "Concentração de recursos e compromissos que criam dependência oferecem o eixo da leitura. Compreender quem controla decisões e quais saídas estão disponíveis torna visíveis aspectos pouco discutidos de um acordo.",
+      "work": "Estruturas de poder nem sempre coincidem com cargos formais. Observar quem controla informações, recursos e oportunidades ajuda a compreender resistências e a discutir mudanças sem personalizar todo o problema.",
+      "family": "Silêncios, lealdades e desigualdades podem participar da organização familiar. A leitura abre espaço para reconhecer padrões persistentes, preservando o direito à privacidade e evitando transformar diferenças em acusações gerais."
+    },
+    "sign:aries": {
+      "title": "Áries: começar e afirmar",
+      "general": "Áries acrescenta uma linguagem de início, franqueza e ação direta. O desafio simbólico está em sustentar a iniciativa depois do impulso inicial e reconhecer que outras pessoas podem ter ritmos diferentes.",
+      "health": "A atenção se volta à maneira de começar ou retomar rotinas. Metas claras podem organizar o esforço, desde que deixem espaço para adaptar o ritmo às condições concretas de cuidado.",
+      "relationships": "Desejos e desacordos pedem expressão direta. Há uma diferença útil entre dizer o que se quer e exigir resposta imediata; a negociação precisa comportar também a iniciativa do outro.",
+      "finance": "A disposição para decidir pode ser confrontada com o custo de cada compromisso. Dar nome ao objetivo e às condições da escolha ajuda a distinguir iniciativa de pressa.",
+      "work": "Começar projetos, assumir tarefas e enfrentar pendências compõem esta expressão simbólica. Definir o primeiro passo e a responsabilidade seguinte evita que a energia de abertura termine em iniciativas dispersas.",
+      "family": "A franqueza pode tornar necessidades domésticas mais claras, especialmente onde se espera que alguém perceba tudo sozinho. Conversas diretas ganham espaço quando preservam o direito de discordar."
+    },
+    "sign:taurus": {
+      "title": "Touro: sustentar e usufruir",
+      "general": "Touro acrescenta atenção à continuidade, aos recursos disponíveis e à experiência concreta. O tema convida a distinguir o que merece ser preservado daquilo que permanece apenas por resistência à mudança.",
+      "health": "Conforto, regularidade e condições materiais de cuidado entram em foco. Uma rotina precisa caber no cotidiano e oferecer suporte real, em vez de depender de exigências difíceis de manter.",
+      "relationships": "Confiança se expressa por presença e constância, mas também precisa admitir mudanças. A leitura considera como preservar segurança sem tratar pessoas ou acordos como posses imutáveis.",
+      "finance": "O uso duradouro dos recursos oferece um critério de reflexão. Comparar necessidades concretas, manutenção e custo total ajuda a avaliar o valor de uma escolha para além do apelo imediato.",
+      "work": "Continuidade e qualidade de execução ganham relevo. Processos estáveis podem apoiar a equipe, desde que a busca de previsibilidade não impeça ajustes diante de problemas já reconhecidos.",
+      "family": "Hábitos da casa, objetos e formas de sustento participam do sentimento de segurança. Preservar referências pode ser compatível com reorganizar tarefas e liberar o que deixou de servir."
+    },
+    "sign:gemini": {
+      "title": "Gêmeos: perguntar e conectar",
+      "general": "Gêmeos amplia a circulação de perguntas, informações e pontos de vista. O desafio simbólico consiste em fazer conexões úteis sem perder contexto ao passar rapidamente de um assunto a outro.",
+      "health": "A variedade de informações sobre cuidado pede organização e contexto. Distinguir uma dúvida concreta de uma busca interminável por novidades ajuda a preparar conversas mais proveitosas com quem acompanha a situação.",
+      "relationships": "Curiosidade e troca verbal oferecem caminhos de aproximação. Conversar também envolve retomar o que ficou aberto e conferir se a leveza da forma preserva a seriedade do assunto.",
+      "finance": "Comparações e diferentes alternativas podem esclarecer uma decisão. A leitura chama atenção para detalhes de linguagem, condições e equivalências, evitando que uma apresentação rápida esconda diferenças relevantes entre propostas.",
+      "work": "Aprendizagem, articulação entre áreas e comunicação cotidiana ganham destaque. Reunir informações dispersas e registrar conclusões permite que a troca de ideias produza continuidade, em vez de novas dúvidas a cada reunião.",
+      "family": "Conversas entre gerações e versões diferentes de uma mesma história merecem escuta. Há espaço para curiosidade sem transformar informações pessoais em assunto de circulação automática entre parentes."
+    },
+    "sign:cancer": {
+      "title": "Câncer: acolher e preservar",
+      "general": "Câncer destaca memória, proteção e pertencimento. A leitura considera como grupos constroem um lugar de acolhimento e onde a defesa do familiar pode limitar a abertura a novas necessidades.",
+      "health": "Ambientes de acolhimento e apoio cotidiano compõem o eixo do cuidado. Observar quem cuida de quem permite incluir as necessidades das pessoas que sustentam as rotinas de outras.",
+      "relationships": "Proximidade e segurança afetiva pedem acordos que respeitem diferentes necessidades. Oferecer apoio pode incluir perguntar o que ajuda, sem tomar proteção como autorização para decidir pelo outro.",
+      "finance": "Gastos ligados à casa, ao sustento e à proteção merecem critérios compartilhados. O tema propõe discutir o significado de segurança e os recursos necessários para mantê-la de forma concreta.",
+      "work": "Pertencimento e continuidade das equipes ganham atenção. Uma cultura acolhedora aparece em condições práticas de apoio, sem pressupor intimidade pessoal ou exigir que o trabalho funcione como família.",
+      "family": "Memórias e vínculos domésticos ocupam o centro da leitura. Reconhecer o valor de uma história comum não exige repetir todos os seus costumes, especialmente quando as necessidades da casa mudaram."
+    },
+    "sign:leo": {
+      "title": "Leão: expressar e reconhecer",
+      "general": "Leão acrescenta expressão criativa, presença e busca de reconhecimento. O tema coletivo é a distribuição do espaço para aparecer, criar e participar da definição do que merece atenção.",
+      "health": "A relação entre imagem e cuidado merece observação. Há espaço para valorizar prazer e expressão pessoal sem transformar disposição, aparência ou desempenho em critérios de dignidade e pertencimento.",
+      "relationships": "Demonstrações de afeto e reconhecimento podem fortalecer a convivência quando deixam espaço para reciprocidade. A leitura examina também expectativas de atenção que permanecem implícitas ou difíceis de corresponder.",
+      "finance": "Consumo, generosidade e reconhecimento social podem se misturar. Dar clareza ao propósito de uma despesa ajuda a avaliar se ela cabe nos recursos disponíveis e nas prioridades estabelecidas.",
+      "work": "Autoria e visibilidade entram em foco, sobretudo em atividades criativas. Reconhecer contribuições de modo específico permite valorizar quem aparece e quem viabiliza o resultado nos bastidores.",
+      "family": "Celebrações e manifestações de orgulho participam dos vínculos familiares. A leitura convida a reconhecer trajetórias diferentes, sem reservar atenção apenas a conquistas que correspondem às expectativas mais visíveis da família."
+    },
+    "sign:virgo": {
+      "title": "Virgem: observar e ajustar",
+      "general": "Virgem enfatiza discernimento, detalhes e utilidade prática. A reflexão se concentra em ajustes que melhoram o funcionamento cotidiano, cuidando para que a busca de precisão não se transforme em exigência interminável.",
+      "health": "Rotinas de cuidado podem ser observadas pela viabilidade e pela continuidade. Registros e organização ajudam a formular dúvidas, desde que não virem uma cobrança de controle absoluto sobre o corpo.",
+      "relationships": "O cuidado pode aparecer em ajuda prática e atenção aos detalhes. Convém distinguir apoio solicitado de correção constante, pois a intenção de melhorar algo nem sempre coincide com a necessidade do outro.",
+      "finance": "Despesas recorrentes e pequenas diferenças de custo compõem um campo concreto de revisão. A leitura valoriza registros compreensíveis, sem presumir que todo gasto possa ser eliminado por maior disciplina.",
+      "work": "Qualidade, revisão e manutenção de processos recebem destaque. Critérios de conclusão ajudam a separar uma melhoria necessária do aperfeiçoamento indefinido que consome recursos sem alterar o resultado relevante.",
+      "family": "A organização da casa depende de tarefas pequenas e repetidas, muitas vezes pouco reconhecidas. Torná-las visíveis permite negociar responsabilidades sem transformar preferências pessoais em uma regra universal de convivência."
+    },
+    "sign:libra": {
+      "title": "Libra: ponderar e negociar",
+      "general": "Libra destaca negociação, proporcionalidade e consideração de perspectivas diferentes. A leitura pergunta como construir acordos que comportem divergências e não dependam apenas de evitar o desconforto de decidir.",
+      "health": "A distribuição de tempo e responsabilidades de cuidado merece avaliação. Procurar equilíbrio exige considerar necessidades desiguais, em vez de supor que uma divisão idêntica sempre seja justa.",
+      "relationships": "A reciprocidade ganha contorno concreto em conversas sobre expectativas e limites. Um acordo pode ser revisto quando a busca de harmonia torna difícil dizer que algo deixou de funcionar.",
+      "finance": "Despesas compartilhadas e critérios de troca oferecem o centro da reflexão. Explicitar contribuições, condições e expectativas permite avaliar justiça sem pressupor que as partes tenham a mesma capacidade de pagamento.",
+      "work": "Parcerias e decisões coletivas pedem procedimentos claros. Ouvir diferentes posições ajuda quando também se define quem decide, com quais critérios e como os efeitos da escolha serão acompanhados.",
+      "family": "Mediação e divisão de responsabilidades são temas da convivência. A paz doméstica pode ser examinada pela possibilidade de falar sobre desacordos, sem deixar sempre a mesma pessoa encarregada de conciliá-los."
+    },
+    "sign:scorpio": {
+      "title": "Escorpião: aprofundar e transformar",
+      "general": "Escorpião acrescenta atenção ao que permanece encoberto, aos vínculos de dependência e aos processos de mudança. Investigar um tema exige distinguir profundidade de suspeita e respeitar limites de privacidade.",
+      "health": "Privacidade, confiança e autonomia nas decisões de cuidado merecem espaço. A leitura considera as condições necessárias para falar de dificuldades sem exposição indevida ou obrigação de compartilhar experiências pessoais.",
+      "relationships": "Intimidade envolve confiança e liberdade para preservar limites. A reflexão se volta a expectativas de exclusividade, controle e transparência, evitando tratar acesso irrestrito à vida do outro como prova de vínculo.",
+      "finance": "Recursos compartilhados e compromissos de longo alcance pedem compreensão das dependências envolvidas. Examinar quem decide e quais responsabilidades permanecem depois de um acordo ajuda a tornar seu alcance mais claro.",
+      "work": "Problemas persistentes podem exigir investigação além dos sintomas visíveis. A leitura destaca acesso à informação e responsabilidade pelas decisões, sem transformar a busca de causas em perseguição de culpados.",
+      "family": "Histórias difíceis e lealdades familiares pedem cuidado com o modo de abordagem. Reconhecer um padrão não autoriza impor revelações; cada pessoa precisa conservar escolha sobre o que deseja compartilhar."
+    },
+    "sign:sagittarius": {
+      "title": "Sagitário: ampliar e interpretar",
+      "general": "Sagitário destaca horizontes, convicções e a busca de sentido. A leitura coletiva examina como uma visão mobiliza pessoas e como permanece aberta a experiências que desafiam suas explicações.",
+      "health": "A procura por possibilidades de cuidado pode incluir aprendizagem e revisão de expectativas. Convém distinguir uma perspectiva inspiradora de informações aplicáveis à situação, preservando espaço para dúvidas e limites.",
+      "relationships": "Planos, crenças e formas de compreender a vida oferecem caminhos de encontro. A conversa se amplia quando diferenças despertam curiosidade e não se tornam uma disputa pela visão correta.",
+      "finance": "Projetos de maior alcance pedem atenção às premissas que sustentam seus custos. O entusiasmo por uma possibilidade pode ser acompanhado de comparação entre recursos disponíveis, compromissos e alternativas.",
+      "work": "Aprendizagem e visão de conjunto ajudam a situar tarefas em um propósito. O desafio é traduzir ideias amplas em compromissos compreensíveis, sem perder contato com as condições de execução.",
+      "family": "Crenças, educação e expectativas de futuro podem revelar diferenças entre gerações. A convivência comporta mais perspectivas quando uma trajetória distinta não é tomada automaticamente como rejeição da história familiar."
+    },
+    "sign:capricorn": {
+      "title": "Capricórnio: estruturar e responder",
+      "general": "Capricórnio acrescenta atenção a estruturas, responsabilidades e consequências ao longo do tempo. A leitura considera como sustentar objetivos e como rever critérios de sucesso que exigem custos pouco reconhecidos.",
+      "health": "A continuidade do cuidado depende de organização e de condições materiais. O tema propõe considerar o descanso dentro da rotina, sem tratá-lo como recompensa reservada a quem já cumpriu todas as obrigações.",
+      "relationships": "Confiabilidade e compromissos concretos ganham destaque. A estabilidade pode ser examinada junto à abertura para expressar necessidades, pois suportar tudo em silêncio não esclarece o que a relação precisa.",
+      "finance": "Planejamento, compromissos recorrentes e limites disponíveis compõem o eixo da leitura. Uma estrutura útil deve comportar revisões quando as condições mudam, em vez de exigir fidelidade a metas inviáveis.",
+      "work": "Autoridade, responsabilidade e critérios de resultado pedem clareza. Definir prioridades inclui reconhecer capacidade de execução e distribuir recursos, especialmente quando a cobrança se concentra em quem tem pouca autonomia.",
+      "family": "Deveres e expectativas de maturidade podem organizar a vida doméstica. A leitura convida a observar quem assumiu responsabilidades por costume e se essa divisão ainda corresponde às condições atuais."
+    },
+    "sign:aquarius": {
+      "title": "Aquário: participar e reinventar",
+      "general": "Aquário destaca redes, participação e revisão de convenções coletivas. A reflexão considera quem pode integrar um projeto comum e como preservar diferenças dentro de grupos organizados por uma ideia compartilhada.",
+      "health": "Condições coletivas de acesso e redes de apoio oferecem o foco do cuidado. Uma solução compartilhada precisa considerar barreiras concretas, inclusive para quem não dispõe dos mesmos recursos ou tecnologias.",
+      "relationships": "Amizade, autonomia e pertencimento a grupos atravessam o tema relacional. Acordos podem ganhar flexibilidade quando cada pessoa participa de sua definição, sem precisar aderir a um modelo único de proximidade.",
+      "finance": "Uso compartilhado de recursos e novos formatos de organização merecem avaliação concreta. A leitura propõe examinar governança, responsabilidades e acesso, além da promessa de tornar uma solução mais coletiva.",
+      "work": "Redes de colaboração e revisão de processos ganham atenção. A participação se torna efetiva quando as pessoas têm informação, influência nas decisões e condições de executar aquilo que o grupo propõe.",
+      "family": "Diferenças de trajetória e redes de apoio para além do parentesco podem ampliar o sentido de família. O tema inclui negociar participação sem exigir uniformidade de escolhas ou presença constante."
+    },
+    "sign:pisces": {
+      "title": "Peixes: acolher e imaginar",
+      "general": "Peixes acrescenta sensibilidade às experiências compartilhadas, imaginação e abertura ao que não cabe em explicações simples. O tema pede contornos suficientes para que acolhimento e idealização possam ser reconhecidos separadamente.",
+      "health": "A escuta das necessidades de cuidado precisa de tempo e de limites compreensíveis. Ambientes acolhedores podem incluir espaço para descanso, sem substituir informações claras por promessas vagas de bem-estar.",
+      "relationships": "Empatia pode ampliar a compreensão de experiências diferentes. A leitura considera também o direito de recusar e a necessidade de formular pedidos, evitando esperar que proximidade produza compreensão automática.",
+      "finance": "Generosidade e apelos emocionais podem participar de escolhas de consumo ou apoio. Explicitar valores, condições e limites ajuda a manter coerência entre uma intenção solidária e os recursos disponíveis.",
+      "work": "Imaginação, escuta e propósito podem enriquecer atividades coletivas. A colaboração precisa de tarefas e limites definidos para que sensibilidade às demandas não se transforme em disponibilidade permanente e pouco reconhecida.",
+      "family": "Compaixão e histórias compartilhadas podem aproximar pessoas, mas não eliminam diferenças. A leitura propõe tornar expectativas de cuidado compreensíveis, sobretudo quando alguém assume que o afeto dispensa uma conversa direta."
+    }
+  }
+}

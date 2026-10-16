@@ -1,0 +1,192 @@
+{
+  "version": "1.0.0",
+  "catalogVersion": "1.0.0",
+  "sourceReportVersion": "1.0.0",
+  "locale": "pt-BR",
+  "kind": "month",
+  "range": {
+    "start": "2026-02-01T03:00:00.000Z",
+    "endExclusive": "2026-03-01T03:00:00.000Z",
+    "timeZone": "America/Sao_Paulo"
+  },
+  "overview": "O eclipse solar destaca simbolicamente propósito, liderança e revisão de referências. Aquário acrescenta participação em redes e revisão de convenções compartilhadas. Ideais ganham forma quando seus limites e responsabilidades podem ser discutidos. A conjunção reúne os temas envolvidos e concentra atenção em sua combinação.",
+  "highlights": [
+    {
+      "eventIds": [
+        "station:uranus:direct:2026-02-04T03:58:29.740Z"
+      ],
+      "interpretationKey": "station:uranus:direct",
+      "title": "Urano: autonomia e experimentação · Estação direta: retomada e integração",
+      "text": "Urano retoma o movimento direto aparente.",
+      "timing": "4 de fev., 00:58",
+      "exact": [
+        "2026-02-04T03:58:29.740Z"
+      ],
+      "background": false
+    },
+    {
+      "eventIds": [
+        "sign:saturn:0:2026-02-12T12:41:56.326Z"
+      ],
+      "interpretationKey": "sign:saturn:0",
+      "title": "Saturno: limite e continuidade · Áries: começar e afirmar",
+      "text": "Saturno entra em Áries.",
+      "timing": "12 de fev., 09:41",
+      "exact": [
+        "2026-02-12T12:41:56.326Z"
+      ],
+      "background": false
+    },
+    {
+      "eventIds": [
+        "eclipse:solar:09565"
+      ],
+      "interpretationKey": "eclipse:solar:10",
+      "title": "Eclipse solar: propósito em perspectiva · Aquário: participar e reinventar",
+      "text": "O eclipse solar atinge seu máximo, com o Sol em Aquário.",
+      "timing": "17 de fev., 09:11",
+      "exact": [
+        "2026-02-17T12:11:53.600Z"
+      ],
+      "background": false
+    },
+    {
+      "eventIds": [
+        "aspect:saturn:neptune:0:2026-02-01T03:00:00.000Z"
+      ],
+      "interpretationKey": "aspect:saturn:neptune:0",
+      "title": "Saturno e Netuno: estrutura e ideal · Conjunção: encontro e concentração",
+      "text": "Saturno e Netuno formam conjunção dentro da orbe adotada.",
+      "timing": "Exato em 18 de fev., 10:03",
+      "exact": [
+        "2026-02-18T13:03:27.792Z"
+      ],
+      "background": false
+    },
+    {
+      "eventIds": [
+        "station:mercury:retrograde:2026-02-26T06:30:55.349Z"
+      ],
+      "interpretationKey": "station:mercury:retrograde",
+      "title": "Mercúrio retrógrado: rever entendimento · Estação retrógrada: atenção à revisão",
+      "text": "Mercúrio inicia o movimento retrógrado aparente.",
+      "timing": "26 de fev., 03:30",
+      "exact": [
+        "2026-02-26T06:30:55.349Z"
+      ],
+      "background": false
+    }
+  ],
+  "domains": [
+    {
+      "domain": "health",
+      "text": "Expectativas de desempenho podem ser comparadas às necessidades de cuidado. O acolhimento precisa de condições materiais para se sustentar no cotidiano.",
+      "eventIds": [
+        "eclipse:solar:09565",
+        "aspect:saturn:neptune:0:2026-02-01T03:00:00.000Z"
+      ],
+      "interpretationKeys": [
+        "eclipse:solar:10",
+        "aspect:saturn:neptune:0"
+      ]
+    },
+    {
+      "domain": "relationships",
+      "text": "Papéis nos vínculos podem ser revistos pela liberdade de expressão que permitem. A disponibilidade afetiva pode combinar sensibilidade e limites compreensíveis.",
+      "eventIds": [
+        "eclipse:solar:09565",
+        "aspect:saturn:neptune:0:2026-02-01T03:00:00.000Z"
+      ],
+      "interpretationKeys": [
+        "eclipse:solar:10",
+        "aspect:saturn:neptune:0"
+      ]
+    },
+    {
+      "domain": "finance",
+      "text": "Objetivos materiais merecem atenção ao propósito que procuram sustentar. Uma intenção solidária precisa definir recursos, alcance e compromissos.",
+      "eventIds": [
+        "eclipse:solar:09565",
+        "aspect:saturn:neptune:0:2026-02-01T03:00:00.000Z"
+      ],
+      "interpretationKeys": [
+        "eclipse:solar:10",
+        "aspect:saturn:neptune:0"
+      ]
+    },
+    {
+      "domain": "work",
+      "text": "Critérios de sucesso podem ser comparados às decisões concretas da equipe. Propósitos coletivos precisam se traduzir em tarefas, critérios e responsáveis.",
+      "eventIds": [
+        "eclipse:solar:09565",
+        "aspect:saturn:neptune:0:2026-02-01T03:00:00.000Z"
+      ],
+      "interpretationKeys": [
+        "eclipse:solar:10",
+        "aspect:saturn:neptune:0"
+      ]
+    },
+    {
+      "domain": "family",
+      "text": "Papéis centrais na família podem ser conversados junto às responsabilidades atuais. O cuidado familiar pode ser generoso sem depender de sacrifício ilimitado.",
+      "eventIds": [
+        "eclipse:solar:09565",
+        "aspect:saturn:neptune:0:2026-02-01T03:00:00.000Z"
+      ],
+      "interpretationKeys": [
+        "eclipse:solar:10",
+        "aspect:saturn:neptune:0"
+      ]
+    }
+  ],
+  "interpretations": {
+    "eclipse:solar:10": {
+      "key": "eclipse:solar:10",
+      "title": "Eclipse solar: propósito em perspectiva · Aquário: participar e reinventar",
+      "sourceKeys": [
+        "eclipse:solar",
+        "sign:aquarius"
+      ]
+    },
+    "aspect:saturn:neptune:0": {
+      "key": "aspect:saturn:neptune:0",
+      "title": "Saturno e Netuno: estrutura e ideal · Conjunção: encontro e concentração",
+      "sourceKeys": [
+        "pair:saturn:neptune",
+        "aspect:conjunction"
+      ]
+    },
+    "sign:saturn:0": {
+      "key": "sign:saturn:0",
+      "title": "Saturno: limite e continuidade · Áries: começar e afirmar",
+      "sourceKeys": [
+        "body:saturn",
+        "sign:aries"
+      ]
+    },
+    "station:uranus:direct": {
+      "key": "station:uranus:direct",
+      "title": "Urano: autonomia e experimentação · Estação direta: retomada e integração",
+      "sourceKeys": [
+        "body:uranus",
+        "station:direct"
+      ]
+    },
+    "station:mercury:retrograde": {
+      "key": "station:mercury:retrograde",
+      "title": "Mercúrio retrógrado: rever entendimento · Estação retrógrada: atenção à revisão",
+      "sourceKeys": [
+        "retro:mercury",
+        "station:retrograde"
+      ]
+    }
+  },
+  "selection": {
+    "totalEvents": 128,
+    "selectedEvents": 5,
+    "omittedEvents": 123,
+    "maxHighlights": 5,
+    "policy": "editorial-priority-v1"
+  },
+  "disclaimer": "Leitura astrológica simbólica e coletiva, sem caráter de previsão individual, diagnóstico ou orientação de investimento."
+}

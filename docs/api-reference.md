@@ -4,7 +4,7 @@
 Baseado na biblioteca original [Celestial](https://github.com/geraldo-netto/celestial), de [geraldo-netto](https://github.com/geraldo-netto). Agradecemos ao autor por disponibilizar o motor de efemérides que fundamenta esta distribuição.
 
 Gerada das declarações emitidas pelo build com a AST do TypeScript. Inclui todos os
-exports dos dois entrypoints do pacote, suas assinaturas completas, campos e JSDoc
+exports dos três entrypoints do pacote, suas assinaturas completas, campos e JSDoc
 disponível. Os blocos preservam os tipos emitidos; não substituem a documentação
 matemática do core Rust. Membros privados/protegidos das classes ficam fora da API.
 
@@ -14,6 +14,7 @@ Para atualizar: `npm run build` e `npm run docs`. Para verificar: `npm run docs:
 A geração não executa cálculos nem modifica o pacote compilado.
 
 - [Core WASM](#core-wasm): 410 exports.
+- [Relatórios coletivos](#relatórios-coletivos): 28 exports e 0 tipos de apoio.
 - [Gráficos SVG](#gráficos-svg): 51 exports e 7 tipos de apoio.
 
 `InitOutput` descreve o ABI bruto retornado pela inicialização; os cálculos de
@@ -6640,6 +6641,514 @@ Declaração: [pkg/celestial_wasm.d.ts](../pkg/celestial_wasm.d.ts).
 export type SyncInitInput = BufferSource | WebAssembly.Module;
 ```
 
+
+
+## Relatórios coletivos
+
+Importação: `celestial-wasm/reports`. **28 exports públicos**.
+
+| Categoria | Exports |
+| --- | ---: |
+| Funções | 6 |
+| Classes | 0 |
+| Interfaces | 11 |
+| Aliases de tipos | 5 |
+| Constantes e variáveis | 6 |
+| Enumerações | 0 |
+
+### Funções (6)
+
+[`compactReport`](#reports-compactReport) · [`createReportGenerator`](#reports-createReportGenerator) · [`getCatalog`](#reports-getCatalog) · [`renderCompactReportText`](#reports-renderCompactReportText) · [`renderReportText`](#reports-renderReportText) · [`resolveInterpretation`](#reports-resolveInterpretation)
+
+<a id="reports-compactReport"></a>
+
+#### `compactReport`
+
+Declaração: [pkg/reports/compact.d.ts](../pkg/reports/compact.d.ts).
+
+```typescript
+/** A small editorial view of an existing report; full events remain available in the source report. */
+export declare function compactReport(report: AstrologyReport, options?: CompactReportOptions): CompactAstrologyReport;
+```
+
+<a id="reports-createReportGenerator"></a>
+
+#### `createReportGenerator`
+
+Declaração: [pkg/reports/report.d.ts](../pkg/reports/report.d.ts).
+
+```typescript
+/** Own caches belong to one WASM instance; callers must clear after changing its calculation configuration. */
+export declare function createReportGenerator(core: ReportWasmApi, options?: {
+    cacheSize?: number;
+}): {
+    report: (input: ReportInput) => AstrologyReport;
+    reportCompact: (input: ReportInput, options?: CompactReportOptions) => CompactAstrologyReport;
+    reportCompactText(input: ReportInput, options?: CompactReportOptions): string;
+    reportText(input: ReportInput, textOptions?: ReportTextOptions): string;
+    reportJSON(input: ReportInput, space?: number): string;
+    clearCache(): void;
+    readonly cacheStats: {
+        compact: {
+            size: number;
+            capacity: number;
+            hits: number;
+            misses: number;
+            bytes: number;
+            maxBytes: number;
+        };
+        compactRendered: {
+            size: number;
+            capacity: number;
+            hits: number;
+            misses: number;
+            bytes: number;
+            maxBytes: number;
+        };
+        reports: {
+            size: number;
+            capacity: number;
+            hits: number;
+            misses: number;
+            bytes: number;
+            maxBytes: number;
+        };
+        events: {
+            size: number;
+            capacity: number;
+            hits: number;
+            misses: number;
+            bytes: number;
+            maxBytes: number;
+        };
+        samples: {
+            size: number;
+            capacity: number;
+            hits: number;
+            misses: number;
+            bytes: number;
+            maxBytes: number;
+        };
+        serialized: {
+            size: number;
+            capacity: number;
+            hits: number;
+            misses: number;
+            bytes: number;
+            maxBytes: number;
+        };
+        rendered: {
+            size: number;
+            capacity: number;
+            hits: number;
+            misses: number;
+            bytes: number;
+            maxBytes: number;
+        };
+    };
+};
+```
+
+<a id="reports-getCatalog"></a>
+
+#### `getCatalog`
+
+Declaração: [pkg/reports/catalog.d.ts](../pkg/reports/catalog.d.ts).
+
+```typescript
+/** Resolved combinations are composed from individually authored complete paragraphs. */
+export declare function getCatalog(): ResolvedInterpretation[];
+```
+
+<a id="reports-renderCompactReportText"></a>
+
+#### `renderCompactReportText`
+
+Declaração: [pkg/reports/compact.d.ts](../pkg/reports/compact.d.ts).
+
+```typescript
+export declare function renderCompactReportText(report: CompactAstrologyReport): string;
+```
+
+<a id="reports-renderReportText"></a>
+
+#### `renderReportText`
+
+Declaração: [pkg/reports/text.d.ts](../pkg/reports/text.d.ts).
+
+```typescript
+/** Render every report event in chronological order, with source-authored Portuguese templates. */
+export declare function renderReportText(report: AstrologyReport, options?: ReportTextOptions): string;
+```
+
+<a id="reports-resolveInterpretation"></a>
+
+#### `resolveInterpretation`
+
+Declaração: [pkg/reports/catalog.d.ts](../pkg/reports/catalog.d.ts).
+
+```typescript
+export declare function resolveInterpretation(key: string): ResolvedInterpretation;
+```
+
+
+### Interfaces (11)
+
+[`AstrologyReport`](#reports-AstrologyReport) · [`CompactAstrologyReport`](#reports-CompactAstrologyReport) · [`CompactHighlight`](#reports-CompactHighlight) · [`CompactReportOptions`](#reports-CompactReportOptions) · [`DetectionRequest`](#reports-DetectionRequest) · [`DomainSummary`](#reports-DomainSummary) · [`ReportEntry`](#reports-ReportEntry) · [`ReportEvent`](#reports-ReportEvent) · [`ReportInput`](#reports-ReportInput) · [`ReportTextOptions`](#reports-ReportTextOptions) · [`ResolvedInterpretation`](#reports-ResolvedInterpretation)
+
+<a id="reports-AstrologyReport"></a>
+
+#### `AstrologyReport`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface AstrologyReport {
+    version: string;
+    locale: 'pt-BR';
+    reference: 'western-tropical-geocentric';
+    scope: 'collective-psychological';
+    range: {
+        start: string;
+        endExclusive: string;
+        timeZone: string;
+    };
+    calculation: {
+        bodies: ReportBody[];
+        orbs: Record<AspectAngle, number>;
+    };
+    catalogVersion: string;
+    disclaimer: string;
+    methodology: string;
+    interpretations: Record<string, ResolvedInterpretation>;
+    entries: ReportEntry[];
+    summaries: Record<ReportDomain, DomainSummary>;
+}
+```
+
+<a id="reports-CompactAstrologyReport"></a>
+
+#### `CompactAstrologyReport`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface CompactAstrologyReport {
+    version: string;
+    catalogVersion: string;
+    sourceReportVersion: string;
+    locale: 'pt-BR';
+    kind: 'day' | 'month' | 'period';
+    range: AstrologyReport['range'];
+    overview: string;
+    highlights: CompactHighlight[];
+    domains: {
+        domain: ReportDomain;
+        text: string;
+        eventIds: string[];
+        interpretationKeys: string[];
+    }[];
+    interpretations: Record<string, {
+        key: string;
+        title: string;
+        sourceKeys: string[];
+    }>;
+    selection: {
+        totalEvents: number;
+        selectedEvents: number;
+        omittedEvents: number;
+        maxHighlights: number;
+        policy: string;
+    };
+    disclaimer: string;
+}
+```
+
+<a id="reports-CompactHighlight"></a>
+
+#### `CompactHighlight`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface CompactHighlight {
+    eventIds: string[];
+    interpretationKey: string;
+    title: string;
+    text: string;
+    timing: string;
+    exact: string[];
+    background: boolean;
+}
+```
+
+<a id="reports-CompactReportOptions"></a>
+
+#### `CompactReportOptions`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface CompactReportOptions {
+    /** Five practical domains by default; general overview is always included. */
+    domains?: 'all' | 'none' | readonly ReportDomain[];
+    /** Defaults to three for a local day and five for longer periods. */
+    maxHighlights?: number;
+}
+```
+
+<a id="reports-DetectionRequest"></a>
+
+#### `DetectionRequest`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface DetectionRequest {
+    startMs: number;
+    endMs: number;
+    bodies: readonly ReportBody[];
+    orbs: Record<AspectAngle, number>;
+}
+```
+
+<a id="reports-DomainSummary"></a>
+
+#### `DomainSummary`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface DomainSummary {
+    domain: ReportDomain;
+    text: string;
+    eventIds: string[];
+    highlightCatalogKeys: string[];
+    contributions: {
+        eventIds: string[];
+        catalogKey: string;
+        durationWithinRangeDays: number;
+    }[];
+}
+```
+
+<a id="reports-ReportEntry"></a>
+
+#### `ReportEntry`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface ReportEntry {
+    event: ReportEvent;
+    interpretationKey: string;
+    fullDurationDays: number | null;
+    durationWithinRangeDays: number;
+}
+```
+
+<a id="reports-ReportEvent"></a>
+
+#### `ReportEvent`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface ReportEvent {
+    id: string;
+    kind: 'aspect' | 'sign' | 'station' | 'retrograde' | 'phase' | 'eclipse';
+    catalogKey: string;
+    bodies: ReportBody[];
+    start: string;
+    end: string;
+    exact: string[];
+    details: Record<string, string | number | boolean>;
+    boundary: {
+        startClipped: boolean;
+        endClipped: boolean;
+    };
+}
+```
+
+<a id="reports-ReportInput"></a>
+
+#### `ReportInput`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+/** Date-only end is inclusive; an offset-bearing instant end is exclusive. Never mix the forms. */
+export interface ReportInput {
+    start: string;
+    end: string;
+    timeZone?: string;
+    bodies?: readonly ReportBody[];
+    orbs?: Partial<Record<AspectAngle, number>>;
+}
+```
+
+<a id="reports-ReportTextOptions"></a>
+
+#### `ReportTextOptions`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface ReportTextOptions {
+    /** Defaults to general; use all for all six editorial domains. */
+    domains?: 'all' | readonly ReportDomain[];
+}
+```
+
+<a id="reports-ResolvedInterpretation"></a>
+
+#### `ResolvedInterpretation`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface ResolvedInterpretation extends DomainText {
+    key: string;
+    title: string;
+    sourceKeys: string[];
+}
+```
+
+### Aliases de tipos (5)
+
+[`AspectAngle`](#reports-AspectAngle) · [`DomainText`](#reports-DomainText) · [`ReportBody`](#reports-ReportBody) · [`ReportDomain`](#reports-ReportDomain) · [`ReportWasmApi`](#reports-ReportWasmApi)
+
+<a id="reports-AspectAngle"></a>
+
+#### `AspectAngle`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export type AspectAngle = 0 | 60 | 90 | 120 | 180;
+```
+
+<a id="reports-DomainText"></a>
+
+#### `DomainText`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export type DomainText = Record<ReportDomain, string>;
+```
+
+<a id="reports-ReportBody"></a>
+
+#### `ReportBody`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export type ReportBody = typeof REPORT_BODIES[number];
+```
+
+<a id="reports-ReportDomain"></a>
+
+#### `ReportDomain`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export type ReportDomain = typeof REPORT_DOMAINS[number];
+```
+
+<a id="reports-ReportWasmApi"></a>
+
+#### `ReportWasmApi`
+
+Declaração: [pkg/reports/events.d.ts](../pkg/reports/events.d.ts).
+
+```typescript
+export type ReportWasmApi = Pick<typeof import('../celestial_wasm.js'), 'constants' | 'calcUtMany' | 'setDeltaTUserdef'>;
+```
+
+### Constantes e variáveis (6)
+
+[`CATALOG_VERSION`](#reports-CATALOG_VERSION) · [`COMPACT_REPORT_VERSION`](#reports-COMPACT_REPORT_VERSION) · [`DEFAULT_ORBS`](#reports-DEFAULT_ORBS) · [`REPORT_BODIES`](#reports-REPORT_BODIES) · [`REPORT_DOMAINS`](#reports-REPORT_DOMAINS) · [`REPORT_VERSION`](#reports-REPORT_VERSION)
+
+<a id="reports-CATALOG_VERSION"></a>
+
+#### `CATALOG_VERSION`
+
+Declaração: [pkg/reports/catalog.d.ts](../pkg/reports/catalog.d.ts).
+
+```typescript
+export declare const CATALOG_VERSION: string;
+```
+
+<a id="reports-COMPACT_REPORT_VERSION"></a>
+
+#### `COMPACT_REPORT_VERSION`
+
+Declaração: [pkg/reports/compact.d.ts](../pkg/reports/compact.d.ts).
+
+```typescript
+export declare const COMPACT_REPORT_VERSION = "1.0.0";
+```
+
+<a id="reports-DEFAULT_ORBS"></a>
+
+#### `DEFAULT_ORBS`
+
+Declaração: [pkg/reports/range.d.ts](../pkg/reports/range.d.ts).
+
+```typescript
+export declare const DEFAULT_ORBS: Readonly<Record<AspectAngle, number>>;
+```
+
+<a id="reports-REPORT_BODIES"></a>
+
+#### `REPORT_BODIES`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export declare const REPORT_BODIES: readonly [
+    "sun",
+    "moon",
+    "mercury",
+    "venus",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+    "pluto"
+];
+```
+
+<a id="reports-REPORT_DOMAINS"></a>
+
+#### `REPORT_DOMAINS`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export declare const REPORT_DOMAINS: readonly [
+    "general",
+    "health",
+    "relationships",
+    "finance",
+    "work",
+    "family"
+];
+```
+
+<a id="reports-REPORT_VERSION"></a>
+
+#### `REPORT_VERSION`
+
+Declaração: [pkg/reports/report.d.ts](../pkg/reports/report.d.ts).
+
+```typescript
+export declare const REPORT_VERSION = "1.0.0";
+```
 
 
 ## Gráficos SVG

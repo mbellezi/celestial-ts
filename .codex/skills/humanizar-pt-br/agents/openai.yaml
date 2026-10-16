@@ -1,0 +1,4 @@
+interface:
+  display_name: "Humanizar textos em pt-BR"
+  short_description: "Escreva e revise com voz natural em pt-BR"
+  default_prompt: "Use $humanizar-pt-br para escrever, reescrever ou revisar um texto em português brasileiro com voz natural e precisa, sem construções formulaicas."

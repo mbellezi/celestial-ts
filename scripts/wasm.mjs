@@ -34,6 +34,7 @@ async function build() {
   await mkdir(`${directory}/pkg`, { recursive: true });
   await writeFile(`${directory}/pkg/package.json`, '{"type":"module"}\n');
   run('node', ['scripts/charts.mjs', 'build']);
+  run('node', ['scripts/reports.mjs', 'build']);
 }
 
 async function testBindings() {
