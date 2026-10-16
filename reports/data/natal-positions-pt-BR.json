@@ -1,0 +1,1210 @@
+{
+  "version": "1.0.0",
+  "authorship": {
+    "model": "gpt-6-astra",
+    "skill": "humanizar-pt-br",
+    "reference": "Estrutura do relatório natal fornecido pelo usuário; redação original"
+  },
+  "entries": {
+    "sign:sun:0": {
+      "title": "Sol em Áries",
+      "personal": "Tomar iniciativa e responder diretamente ao que deseja podem ajudar você a reconhecer quem é. A autonomia ganha valor, mas a pressa pode dificultar a escuta de necessidades diferentes das suas. Sustentar uma escolha depois do entusiasmo inicial também fortalece sua identidade.",
+      "professional": "No trabalho, começar projetos e enfrentar situações ainda pouco definidas pode mobilizar sua disposição. Você costuma precisar de espaço para decidir e perceber os efeitos da própria ação. Estabelecer etapas de revisão ajuda a transformar iniciativa em entregas consistentes, sem depender apenas da urgência."
+    },
+    "sign:sun:1": {
+      "title": "Sol em Touro",
+      "personal": "Sua identidade pode se firmar pela continuidade dos vínculos, pelo contato com o corpo e por aquilo que você constrói aos poucos. A estabilidade oferece apoio real, embora manter uma situação conhecida nem sempre preserve o que ela tinha de valioso. Mudanças graduais merecem espaço.",
+      "professional": "Você tende a valorizar trabalhos cujo resultado possa acompanhar e aperfeiçoar com tempo. Constância, qualidade material e critérios claros de remuneração podem pesar nas escolhas profissionais. Convém distinguir compromisso com um projeto da permanência por hábito, especialmente quando as condições já deixaram de favorecer seu desenvolvimento."
+    },
+    "sign:sun:2": {
+      "title": "Sol em Gêmeos",
+      "personal": "Conversas, estudos e diferentes interpretações de uma situação podem revelar a você aspectos da própria identidade. Essa mobilidade favorece a curiosidade, mas também pode tornar difícil permanecer com uma experiência sem explicá-la imediatamente. Nem toda dúvida precisa ser resolvida com mais informação.",
+      "professional": "Ambientes com circulação de ideias e tarefas variadas podem favorecer seu envolvimento profissional. Você tende a se interessar por conexões entre assuntos e pela tradução de informações para públicos diferentes. Escolher prioridades e concluir uma investigação antes de abrir outra permite dar profundidade ao que comunica."
+    },
+    "sign:sun:3": {
+      "title": "Sol em Câncer",
+      "personal": "Pertencer e cuidar podem participar da maneira como você reconhece o próprio valor. Memórias e vínculos próximos ajudam a orientar suas escolhas, sem definir obrigatoriamente o que deve conservar. Construir intimidade inclui perceber quando uma necessidade é sua e quando pertence a quem você acolhe.",
+      "professional": "Você pode se envolver mais quando percebe continuidade nas relações e utilidade humana no trabalho. Sua atenção ao ambiente favorece a leitura de necessidades pouco verbalizadas. Para que o cuidado não se converta em disponibilidade permanente, acordos de responsabilidade precisam acompanhar a confiança entre as pessoas."
+    },
+    "sign:sun:4": {
+      "title": "Sol em Leão",
+      "personal": "Expressar algo que tenha sua marca pode ser uma forma importante de sentir vitalidade. Você tende a buscar reconhecimento pelo que oferece, e a ausência de retorno pode ganhar um peso maior do que merece. Criar também por prazer amplia sua liberdade diante da aprovação alheia.",
+      "professional": "Projetos que permitam autoria, apresentação ou liderança podem despertar seu interesse. Você pode contribuir ao dar direção e tornar visível o esforço coletivo, desde que reconhecimento não signifique concentrar todo o protagonismo. Compartilhar crédito e receber críticas específicas ajudam a sustentar uma presença profissional mais segura."
+    },
+    "sign:sun:5": {
+      "title": "Sol em Virgem",
+      "personal": "Você pode construir autoestima ao perceber diferenças, aperfeiçoar habilidades e tornar a vida cotidiana mais funcional. O critério que ajuda a cuidar também pode se voltar contra você quando qualquer falha parece comprometer seu valor. Admitir limites permite que o aperfeiçoamento continue sem cobrança permanente.",
+      "professional": "No trabalho, observar detalhes e distinguir o que precisa de ajuste pode ser uma fonte de envolvimento. Você tende a preferir competência demonstrável e processos que façam sentido na prática. Definir previamente o que conta como entrega suficiente ajuda a evitar revisões intermináveis e desgaste desnecessário."
+    },
+    "sign:sun:6": {
+      "title": "Sol em Libra",
+      "personal": "No encontro com perspectivas diferentes da sua, sua identidade pode ganhar contornos mais nítidos. Você tende a considerar o efeito das escolhas sobre os vínculos, mas preservar a convivência não exige adiar indefinidamente uma posição. A reciprocidade se torna mais clara quando seus próprios desejos também aparecem.",
+      "professional": "Negociação, comparação de alternativas e atenção à experiência de outras pessoas podem ocupar espaço em seu trabalho. Você tende a perceber desequilíbrios que passam despercebidos em decisões individuais. Para transformar essa percepção em ação, vale combinar escuta com critérios e prazos que permitam concluir acordos."
+    },
+    "sign:sun:7": {
+      "title": "Sol em Escorpião",
+      "personal": "Você pode sentir necessidade de compreender o que existe por trás de uma reação ou de um vínculo. A intensidade favorece envolvimento, mas tentar antecipar todas as intenções alheias pode restringir a confiança. Reconhecer o que ainda não sabe permite proximidade sem exigir controle completo.",
+      "professional": "Questões complexas, investigação e mudanças que pedem concentração podem mobilizar sua atuação profissional. Você tende a investir energia onde percebe consequências reais, evitando envolvimento superficial. Compartilhar informações pertinentes e definir limites de confidencialidade ajuda a transformar profundidade em colaboração, sem concentrar decisões ou responsabilidades em excesso."
+    },
+    "sign:sun:8": {
+      "title": "Sol em Sagitário",
+      "personal": "Ampliar referências e relacionar experiências a um sentido maior pode renovar sua sensação de vitalidade. A vontade de explorar favorece abertura, embora uma convicção muito rápida possa encerrar perguntas que ainda merecem atenção. A liberdade também inclui rever ideias que já participaram da sua identidade.",
+      "professional": "Aprender, ensinar e trabalhar com horizontes amplos podem sustentar seu interesse profissional. Você tende a se envolver com a finalidade dos projetos e com suas possibilidades de expansão. Conferir recursos e detalhes de execução permite que uma visão estimulante se transforme em compromisso viável para todos."
+    },
+    "sign:sun:9": {
+      "title": "Sol em Capricórnio",
+      "personal": "Assumir compromissos e construir algo que permaneça podem fazer parte da maneira como você se reconhece. Objetivos dão direção, mas sua identidade fica estreita quando todo descanso parece precisar de justificativa. Considerar desejos e necessidades presentes ajuda a escolher quais responsabilidades realmente fazem sentido manter.",
+      "professional": "Projetos com continuidade, responsabilidade definida e possibilidade de desenvolvimento gradual podem favorecer seu envolvimento. Você tende a valorizar competência construída pela prática e resultados verificáveis. Delegar, revisar metas e reconhecer etapas concluídas permitem sustentar a ambição sem fazer da sobrecarga uma medida de mérito profissional."
+    },
+    "sign:sun:10": {
+      "title": "Sol em Aquário",
+      "personal": "Questionar expectativas e encontrar uma forma própria de participar do coletivo podem orientar a construção da sua identidade. A independência intelectual favorece novas perspectivas, mas o distanciamento pode dificultar a expressão de necessidades íntimas. Pertencer a um grupo não exige concordância total nem renúncia à singularidade.",
+      "professional": "Você tende a se interessar por sistemas, redes de colaboração e propostas que alterem modos estabelecidos de trabalhar. Sua contribuição pode estar em perceber alternativas fora do consenso imediato. Testar ideias com quem será afetado por elas ajuda a aproximar inovação, utilidade e responsabilidade compartilhada."
+    },
+    "sign:sun:11": {
+      "title": "Sol em Peixes",
+      "personal": "Sua identidade pode se revelar de forma sensível às imagens, aos afetos e ao clima das relações. Essa abertura permite perceber nuances, mas pode tornar menos nítida a diferença entre o que sente e o que absorve do ambiente. Momentos de recolhimento ajudam a reconhecer desejos próprios.",
+      "professional": "Você pode se envolver com atividades que ofereçam espaço à imaginação, à escuta ou a uma finalidade humana reconhecível. Ambientes excessivamente rígidos podem limitar sua participação, enquanto falta de estrutura também dificulta a execução. Prazos claros e tarefas delimitadas dão sustentação concreta à sensibilidade que você mobiliza."
+    },
+    "house:sun:1": {
+      "title": "Sol na casa 1",
+      "personal": "A maneira como você se apresenta e começa as experiências pode ocupar lugar central na construção da identidade. Existe espaço para afirmar presença, mas também para perceber o efeito dessa presença sobre os demais. Conhecer a si inclui experimentar formas de agir além da imagem habitual.",
+      "professional": "Você pode se sentir mais envolvido quando sua participação tem autoria e permite decisões visíveis. Iniciativa pessoal e disposição para representar uma proposta tendem a ganhar relevância. Escutar o retorno de colegas e dividir responsabilidades ajudam a tornar sua presença uma contribuição que o grupo consegue sustentar."
+    },
+    "house:sun:2": {
+      "title": "Sol na casa 2",
+      "personal": "Seu senso de identidade pode se apoiar no que você sabe fazer, nos recursos que administra e nos valores que decide preservar. A segurança material importa, mas não resume seu valor pessoal. Reconhecer capacidades que não aparecem em posses ou renda amplia a relação com a própria autoestima.",
+      "professional": "Autonomia sobre recursos e reconhecimento pelo que produz podem ter especial importância na sua experiência de trabalho. Você tende a querer perceber continuidade entre esforço, qualidade e retorno. Explicitar seus critérios de valorização ajuda a negociar condições e a distinguir crescimento profissional de uma busca permanente por comprovação pessoal."
+    },
+    "house:sun:3": {
+      "title": "Sol na casa 3",
+      "personal": "Conversas, estudos e trocas do cotidiano podem ser lugares em que você se sente mais presente. Expressar suas ideias ajuda a conhecer a própria posição, embora nem toda discordância questione sua identidade. Escutar sem preparar imediatamente uma resposta amplia o que você aprende sobre si e sobre os vínculos.",
+      "professional": "Você pode encontrar envolvimento em tarefas que pedem comunicação, circulação de informações ou aprendizagem contínua. Sua participação tende a ganhar força quando consegue explicar uma ideia com voz própria. Conferir fontes, ajustar a linguagem ao público e acompanhar a compreensão tornam essa expressão mais útil no trabalho coletivo."
+    },
+    "house:sun:4": {
+      "title": "Sol na casa 4",
+      "personal": "A vida privada e o sentido de pertencimento podem ocupar um lugar importante na sua identidade. Você pode precisar de um espaço em que não tenha de representar nenhum papel público. Rever referências familiares permite escolher o que deseja manter e o que precisa ganhar outra forma.",
+      "professional": "Uma base pessoal estável pode influenciar bastante sua disponibilidade para o trabalho. Você tende a valorizar continuidade e condições que respeitem o espaço privado, ainda que sua atuação seja pública. Organizar limites entre casa e profissão ajuda a sustentar compromissos sem fazer uma esfera absorver a outra."
+    },
+    "house:sun:5": {
+      "title": "Sol na casa 5",
+      "personal": "Criar, brincar e demonstrar afeto podem oferecer contato direto com sua vitalidade. Você pode querer que aquilo que produz expresse algo reconhecível de si, tornando a exposição mais carregada de expectativa. Reservar experiências sem avaliação externa ajuda a recuperar espontaneidade e prazer na própria participação.",
+      "professional": "Projetos com autoria, experimentação e espaço de apresentação podem favorecer seu envolvimento profissional. O desejo de reconhecimento pode estimular dedicação, mas também tornar revisões difíceis de receber. Tratar a proposta como algo em desenvolvimento permite aprimorá-la sem interpretar cada ajuste como julgamento pessoal."
+    },
+    "house:sun:6": {
+      "title": "Sol na casa 6",
+      "personal": "Você pode reconhecer seu valor na forma como cuida das tarefas, aprende habilidades e participa da vida diária. Ser útil oferece satisfação, mas pode se tornar uma exigência constante. Uma rotina que inclua descanso e interesses próprios permite que a dedicação não ocupe toda a sua identidade.",
+      "professional": "O trabalho cotidiano pode ter forte participação na maneira como você se percebe. Você tende a querer fazer bem o que assume e compreender a utilidade de sua função. Distribuição clara de tarefas e critérios realistas de qualidade ajudam a evitar que toda falha do processo se torne responsabilidade pessoal."
+    },
+    "house:sun:7": {
+      "title": "Sol na casa 7",
+      "personal": "Parcerias podem ajudar você a reconhecer desejos, escolhas e características que sozinho percebe com menos clareza. O encontro oferece referência, mas também pode tornar a aprovação alheia central demais. Preservar decisões próprias permite construir reciprocidade entre duas pessoas que continuam tendo interesses e limites distintos.",
+      "professional": "Colaboração, atendimento e negociação direta podem oferecer espaço para você desenvolver sua atuação. A qualidade das parcerias tende a influenciar seu envolvimento e sua percepção de competência. Explicitar responsabilidades e espaço de decisão ajuda a trabalhar em conjunto sem transferir a outra pessoa a direção da sua trajetória."
+    },
+    "house:sun:8": {
+      "title": "Sol na casa 8",
+      "personal": "Confiança, intimidade e partilha podem mobilizar perguntas importantes sobre quem você é. Você pode buscar relações em que seja possível lidar com assuntos difíceis sem ficar na superfície. A entrega se torna mais sustentável quando inclui limites e quando a intensidade não precisa servir como prova de vínculo.",
+      "professional": "Você pode se interessar por processos de transformação, investigação ou gestão de recursos compartilhados. Tarefas com consequências profundas pedem clareza sobre responsabilidades e acesso às informações. Sua participação tende a ganhar consistência quando combina envolvimento com procedimentos que permitam acompanhamento, transparência e revisão das decisões tomadas em conjunto."
+    },
+    "house:sun:9": {
+      "title": "Sol na casa 9",
+      "personal": "Você pode construir sua identidade ao estudar, ampliar referências e encontrar um sentido para as experiências. Convicções oferecem direção, mas podem ficar estreitas quando precisam explicar tudo. Manter contato com perspectivas diferentes ajuda a distinguir uma orientação pessoal de uma verdade que você espera que todos compartilhem.",
+      "professional": "Você tende a se envolver com aprendizagem ampla, ensino e projetos cuja finalidade consegue compreender. O interesse pelo panorama geral pode apoiar planejamento e transmissão de conhecimento. Verificar como as ideias funcionam em situações concretas permite sustentar sua visão sem perder as necessidades de quem participa da execução."
+    },
+    "house:sun:10": {
+      "title": "Sol na casa 10",
+      "personal": "O lugar que você ocupa socialmente pode ter peso na forma como reconhece a própria identidade. Realizações e responsabilidade pública podem trazer satisfação, sem precisar definir todo o seu valor. Preservar vínculos e interesses fora do desempenho ajuda a escolher objetivos mais próximos dos seus desejos.",
+      "professional": "Uma trajetória com responsabilidade e reconhecimento da sua contribuição pode despertar seu interesse. A relação com autoridade, reputação e direção profissional tende a pedir escolhas conscientes. Definir critérios próprios de realização ajuda a avaliar oportunidades sem depender apenas de prestígio, títulos ou expectativas colocadas por outras pessoas."
+    },
+    "house:sun:11": {
+      "title": "Sol na casa 11",
+      "personal": "Amizades, grupos e projetos de futuro podem oferecer espaço para você reconhecer o que deseja construir. Participar de algo coletivo pode fortalecer sua identidade, mas a concordância do grupo não precisa confirmar cada escolha. Manter voz própria permite uma participação mais livre e uma convivência menos dependente de afinidade total.",
+      "professional": "Você pode se envolver com redes de colaboração e objetivos que ultrapassam uma entrega individual. Sua contribuição tende a aparecer quando articula pessoas em torno de uma direção compartilhada. Definir como decisões e responsabilidades serão distribuídas ajuda a transformar identificação com a proposta em trabalho coletivo que realmente avança."
+    },
+    "house:sun:12": {
+      "title": "Sol na casa 12",
+      "personal": "Você pode precisar de recolhimento para reconhecer desejos que se tornam menos claros sob muita exposição. A vida interior e a atenção ao que costuma passar despercebido podem alimentar seu senso de identidade. Ter privacidade não exige desaparecer dos vínculos nem abrir mão de dizer o que necessita.",
+      "professional": "Atividades de bastidores, pesquisa ou escuta podem oferecer condições favoráveis ao seu envolvimento. Você pode contribuir mesmo quando sua atuação não recebe destaque imediato, mas isso não elimina a necessidade de reconhecimento justo. Tornar entregas e limites visíveis ajuda a evitar que disponibilidade seja confundida com ausência de necessidades."
+    },
+    "sign:moon:0": {
+      "title": "Lua em Áries",
+      "personal": "Quando uma necessidade emocional pede espaço, sua reação pode ser rápida, com preferência pela ação diante de uma espera indefinida. A autonomia ajuda a recuperar equilíbrio, mas a urgência do sentimento nem sempre indica a melhor decisão. Dar nome ao incômodo antes de responder abre outras possibilidades.",
+      "professional": "Seu ritmo emocional pode se beneficiar de tarefas com início claro e margem de iniciativa. Esperas sem explicação ou supervisão excessiva podem gerar impaciência. Combinar autonomia com pausas para avaliar o ambiente ajuda a participar das decisões sem transformar todo desconforto momentâneo em confronto profissional."
+    },
+    "sign:moon:1": {
+      "title": "Lua em Touro",
+      "personal": "A continuidade dos afetos, os hábitos conhecidos e o conforto sensorial podem oferecer segurança emocional para você. A previsibilidade ajuda a se regular, mas mudanças podem parecer maiores quando ameaçam essas referências. Introduzir novidades aos poucos permite conservar apoio emocional sem precisar manter tudo exatamente como está.",
+      "professional": "Ambientes estáveis, acordos consistentes e um ritmo sustentável podem favorecer sua disponibilidade emocional para trabalhar. Você tende a perceber quando pressões desorganizam necessidades básicas ou comprometem a qualidade. Negociar mudanças com antecedência ajuda a se adaptar, enquanto alguma flexibilidade evita que rotina se torne resistência automática."
+    },
+    "sign:moon:2": {
+      "title": "Lua em Gêmeos",
+      "personal": "Conversar pode ajudar você a descobrir o que sente e a tornar uma experiência emocional mais compreensível. A variedade de perspectivas traz alívio, embora explicar demais possa afastar do sentimento presente. Um pouco de silêncio também permite perceber aquilo que ainda não encontrou uma formulação.",
+      "professional": "Você pode precisar de trocas frequentes e estímulo intelectual para manter envolvimento no trabalho. Nomear dúvidas e receber informações reduz incertezas que poderiam consumir sua atenção. Limitar interrupções e registrar prioridades ajuda a equilibrar essa necessidade de circulação com a concentração exigida pelas tarefas em andamento."
+    },
+    "sign:moon:3": {
+      "title": "Lua em Câncer",
+      "personal": "O clima dos vínculos pode despertar respostas intensas em você, tornando a confiança uma referência importante de segurança. Cuidar aproxima, mas também exige reconhecer quando sua necessidade de acolhimento fica em segundo plano. Pedir apoio de forma direta evita que o outro precise adivinhar o que você espera.",
+      "professional": "A qualidade humana do ambiente pode influenciar seu ritmo e sua disposição para colaborar. Você tende a perceber necessidades e mudanças de clima entre as pessoas, oferecendo atenção ao cotidiano da equipe. Delimitar sua função ajuda a acolher sem assumir a responsabilidade por todas as emoções do grupo."
+    },
+    "sign:moon:4": {
+      "title": "Lua em Leão",
+      "personal": "Ser recebido com calor e perceber interesse pelo que você expressa pode alimentar sua segurança emocional. A necessidade de reconhecimento merece lugar, embora o silêncio alheio nem sempre signifique rejeição. Demonstrar afeto sem depender de uma resposta específica amplia a liberdade e a espontaneidade dos vínculos.",
+      "professional": "Você pode se envolver mais quando seu esforço é percebido e há espaço para participação criativa. Um retorno impessoal pode pesar emocionalmente, mesmo quando a avaliação é favorável. Pedir comentários concretos sobre o trabalho ajuda a distinguir reconhecimento profissional de confirmação afetiva e a aproveitar melhor as revisões."
+    },
+    "sign:moon:5": {
+      "title": "Lua em Virgem",
+      "personal": "Organizar, compreender detalhes e fazer algo concreto diante de um incômodo podem ser suas maneiras de buscar alívio emocional. Esse cuidado prático oferece apoio, mas nem todo sentimento pede correção imediata. Aceitar necessidades que ainda não têm solução permite uma relação menos exigente com você e com quem está próximo.",
+      "professional": "Rotinas claras e tarefas bem definidas podem ajudar você a trabalhar com maior tranquilidade. Você tende a notar problemas pequenos antes que cresçam, mas a vigilância contínua pode consumir energia. Estabelecer limites de revisão e dividir cuidados operacionais favorece qualidade sem manter sua atenção em alerta permanente."
+    },
+    "sign:moon:6": {
+      "title": "Lua em Libra",
+      "personal": "A troca respeitosa e a sensação de que há espaço para os dois lados podem favorecer sua segurança emocional. Desentendimentos podem mobilizar sua atenção, levando a concessões antes de reconhecer o que sente. Uma conversa franca pode sustentar a proximidade melhor que uma concordância apressada.",
+      "professional": "A convivência da equipe pode afetar sua concentração e sua disponibilidade para produzir. Você tende a perceber tensões e pode contribuir para acordos, desde que não assuma sozinho a tarefa de harmonizar o ambiente. Nomear divergências com critérios claros ajuda a manter cooperação sem apagar posições legítimas."
+    },
+    "sign:moon:7": {
+      "title": "Lua em Escorpião",
+      "personal": "Profundidade e confiança podem ser necessárias para que você mostre sentimentos que não aparecem à primeira vista. A atenção aos sinais do outro pode proteger sua intimidade, mas também alimentar interpretações ainda não confirmadas. Perguntar e observar a resposta concreta permite construir segurança com menos antecipação defensiva.",
+      "professional": "Você pode captar tensões e interesses implícitos no ambiente de trabalho, especialmente quando há disputas por confiança ou recursos. Essa percepção merece verificação antes de orientar decisões. Ter interlocutores definidos e acordos transparentes ajuda a usar sua sensibilidade sem permanecer emocionalmente envolvido em toda ambiguidade do grupo."
+    },
+    "sign:moon:8": {
+      "title": "Lua em Sagitário",
+      "personal": "Ampliar a perspectiva, aprender algo ou imaginar possibilidades além do problema imediato pode ajudar você a recuperar equilíbrio. O horizonte traz alívio, mas pode também apressar a passagem por sentimentos difíceis. Reconhecer uma decepção sem precisar extrair dela uma lição permite uma confiança mais próxima da experiência.",
+      "professional": "Autonomia para aprender e compreender o sentido das tarefas pode favorecer seu bem-estar no trabalho. Você tende a precisar de alguma abertura para explorar alternativas, sobretudo em rotinas muito fechadas. Vincular essa busca a prioridades concretas ajuda a manter entusiasmo sem abandonar o que pede continuidade."
+    },
+    "sign:moon:9": {
+      "title": "Lua em Capricórnio",
+      "personal": "Manter controle sobre compromissos e sentir que consegue lidar com as exigências da vida podem oferecer segurança a você. Essa capacidade de sustentação não elimina a necessidade de apoio. Permitir que necessidades apareçam antes de se tornarem urgentes torna os vínculos menos dependentes de sua constante disponibilidade.",
+      "professional": "Responsabilidades claras e previsibilidade podem ajudar você a se sentir mais seguro no trabalho. Você tende a conter reações para cumprir o que foi combinado, mas isso pode esconder sobrecarga. Comunicar limites e solicitar recursos permite preservar a confiabilidade sem fazer do autocontrole uma obrigação permanente."
+    },
+    "sign:moon:10": {
+      "title": "Lua em Aquário",
+      "personal": "Alguma distância e conversas com pessoas que respeitam sua individualidade podem ajudar você a compreender os próprios sentimentos. Liberdade e amizade podem participar da sensação de segurança. Trazer a experiência para o corpo e para palavras pessoais ajuda a não permanecer apenas na explicação geral do que sente.",
+      "professional": "Relações profissionais que respeitem diferenças e ofereçam margem de autonomia podem favorecer sua estabilidade emocional. Você tende a se sentir melhor quando entende as regras e pode questioná-las. Reconhecer necessidades particulares dentro da equipe ajuda a conciliar princípios coletivos com situações humanas que não cabem em um padrão único."
+    },
+    "sign:moon:11": {
+      "title": "Lua em Peixes",
+      "personal": "Nuances emocionais e atmosferas podem despertar respostas intensas em você, mesmo antes de uma explicação clara do que aconteceu. Imaginação, silêncio e experiências estéticas podem ajudar a elaborar sentimentos, desde que também haja espaço para reconhecer o que é seu. Estabelecer limites nos vínculos permite acolher sem absorver toda demanda como responsabilidade pessoal.",
+      "professional": "O ambiente pode influenciar bastante sua concentração, especialmente quando há pressão emocional pouco nomeada. Você pode contribuir por meio da escuta e da percepção de necessidades sutis. Rotinas simples, pausas e acordos explícitos ajudam a sustentar essa sensibilidade e a distinguir uma tarefa concreta de expectativas indefinidas."
+    },
+    "house:moon:1": {
+      "title": "Lua na casa 1",
+      "personal": "Suas emoções podem aparecer com facilidade no modo de chegar, responder e ocupar um ambiente. Você tende a perceber mudanças internas enquanto age, o que torna útil respeitar o próprio ritmo. Uma reação imediata revela uma necessidade presente, mas não precisa definir toda a imagem que você faz de si.",
+      "professional": "Seu estado emocional pode participar diretamente da forma como se apresenta e interage no trabalho. Perceber esse movimento ajuda a escolher quando conversar, decidir ou fazer uma pausa. Preparar transições entre atividades e pedir tempo diante de pressão pode preservar espontaneidade sem exigir respostas instantâneas a todas as demandas."
+    },
+    "house:moon:2": {
+      "title": "Lua na casa 2",
+      "personal": "Você pode associar segurança emocional à disponibilidade de recursos e à continuidade do que considera familiar. Pequenas variações materiais podem mobilizar sentimentos maiores do que o valor envolvido. Reconhecer essa ligação ajuda a cuidar de necessidades concretas sem fazer das posses a única forma de apoio.",
+      "professional": "Previsibilidade de condições e reconhecimento do esforço podem influenciar sua tranquilidade profissional. Você tende a perceber o impacto emocional de mudanças na remuneração ou nos recursos disponíveis. Organizar informações e conversar sobre expectativas ajuda a avaliar a situação com mais clareza, separando necessidade imediata de receios ainda sem confirmação."
+    },
+    "house:moon:3": {
+      "title": "Lua na casa 3",
+      "personal": "Você pode elaborar sentimentos ao contar o que aconteceu e receber uma resposta atenta. O tom de uma conversa tende a importar tanto quanto seu conteúdo, o que pode tornar ambiguidades mais sensíveis. Conferir o que a outra pessoa quis dizer ajuda a diminuir interpretações precipitadas.",
+      "professional": "No trabalho, acesso a informações e qualidade das trocas cotidianas podem afetar diretamente seu conforto. Você pode contribuir ao perceber como uma mensagem será recebida e adaptar a comunicação. Registrar combinados importantes ajuda a manter clareza quando emoções, mudanças de contexto ou lembranças diferentes interferem na compreensão."
+    },
+    "house:moon:4": {
+      "title": "Lua na casa 4",
+      "personal": "Privacidade, referências afetivas e um lugar de recolhimento podem ter grande importância para seu equilíbrio. Você pode procurar continuidade no que chama de lar, sem que isso exija repetir modelos recebidos. Reconhecer suas necessidades atuais permite construir pertencimento com escolhas próprias e vínculos que possam mudar.",
+      "professional": "A relação entre vida privada e trabalho pode influenciar sua disponibilidade emocional de maneira significativa. Você tende a precisar de condições que permitam recompor energia e preservar intimidade. Acordos sobre horários e acesso ajudam a sustentar o compromisso profissional sem manter você permanentemente disponível fora de sua função."
+    },
+    "house:moon:5": {
+      "title": "Lua na casa 5",
+      "personal": "Expressar afeto, criar e brincar podem ajudar você a dar forma ao que sente. A receptividade dos outros pode tocar necessidades de reconhecimento, tornando a exposição emocionalmente intensa. Experiências criativas sem competição permitem prazer e elaboração, mesmo quando o resultado não recebe uma resposta imediata.",
+      "professional": "Você pode se envolver emocionalmente em trabalhos que permitam criação e expressão pessoal. Essa proximidade favorece dedicação, mas pode tornar críticas ao resultado difíceis de separar de avaliações sobre você. Combinar critérios de revisão antes da entrega ajuda a proteger a espontaneidade e a tornar o retorno mais aproveitável."
+    },
+    "house:moon:6": {
+      "title": "Lua na casa 6",
+      "personal": "Seu equilíbrio emocional pode se relacionar com a forma como o cotidiano está organizado. Cuidar de pequenas tarefas pode oferecer apoio, embora ocupar todo o tempo também possa adiar a percepção de sentimentos. Uma rotina flexível permite atender necessidades que mudam sem tratar cada variação como falha.",
+      "professional": "O clima diário, a distribuição de tarefas e a previsibilidade dos processos podem influenciar bastante seu envolvimento profissional. Você tende a perceber necessidades práticas de colegas e pode assumir cuidados espontaneamente. Tornar essa contribuição explícita ajuda a evitar acúmulo invisível e permite que o trabalho seja dividido com justiça."
+    },
+    "house:moon:7": {
+      "title": "Lua na casa 7",
+      "personal": "Você pode encontrar segurança emocional na parceria e na disponibilidade de alguém com quem compartilhar o cotidiano. A receptividade do outro tende a ter peso, mas não precisa regular sozinha seu estado interno. Cultivar referências próprias torna mais simples pedir presença sem exigir sintonia em todos os momentos.",
+      "professional": "A confiança na pessoa com quem coopera diretamente pode favorecer seu envolvimento no trabalho. Sua atenção às reações alheias favorece escuta e atendimento, mas também pode levar a adaptações excessivas. Definir expectativas e autonomia de decisão ajuda a manter uma colaboração acolhedora sem depender de aprovação constante."
+    },
+    "house:moon:8": {
+      "title": "Lua na casa 8",
+      "personal": "Confiança, intimidade e dependência mútua podem despertar respostas emocionais intensas. Você pode precisar conhecer melhor os acordos de um vínculo antes de se sentir seguro para compartilhar. Conversar sobre limites e receios permite aprofundar a relação sem usar silêncio, vigilância ou entrega total como testes de lealdade.",
+      "professional": "Recursos compartilhados e decisões com impacto sobre outras pessoas podem mobilizar sua sensibilidade profissional. Você tende a perceber o componente emocional de negociações que parecem apenas práticas. Procedimentos claros e conversas reservadas ajudam a lidar com esses temas sem confundir compromisso com a obrigação de absorver toda tensão envolvida."
+    },
+    "house:moon:9": {
+      "title": "Lua na casa 9",
+      "personal": "Aprender, mudar de perspectiva e encontrar sentido podem ajudar você a elaborar sentimentos. Convicções podem oferecer abrigo emocional, mas ficam mais flexíveis quando não precisam justificar toda experiência. Permitir dúvidas mantém aberta a possibilidade de rever uma crença sem sentir que perdeu todas as suas referências.",
+      "professional": "Compreender a finalidade do trabalho pode ser necessário para que você se envolva emocionalmente com ele. Estudos e contato com perspectivas diferentes tendem a renovar sua disposição. Relacionar essa visão ampla às necessidades concretas do projeto ajuda a evitar que desânimos pontuais sejam interpretados como ausência completa de sentido profissional."
+    },
+    "house:moon:10": {
+      "title": "Lua na casa 10",
+      "personal": "Reconhecimento social e percepção de utilidade podem tocar necessidades emocionais importantes. Você pode ser sensível à imagem que transmite, sobretudo quando sente que outras pessoas contam com sua atuação. Preservar espaços de intimidade ajuda a não fazer da resposta pública a principal medida de acolhimento ou pertencimento.",
+      "professional": "O clima das relações com liderança e público pode influenciar sua segurança no trabalho. Você tende a perceber expectativas e a ajustar sua participação, o que favorece responsividade, mas pode gerar desgaste. Definir critérios próprios de desempenho ajuda a lidar com retornos variáveis sem abandonar sua direção profissional."
+    },
+    "house:moon:11": {
+      "title": "Lua na casa 11",
+      "personal": "Amizades e participação em grupos podem oferecer apoio emocional e um sentido de pertencimento. Você pode perceber mudanças no clima coletivo antes de conseguir explicá-las, tornando a inclusão especialmente importante. Manter vínculos individuais e interesses próprios ajuda a atravessar divergências sem sentir que todo o apoio desapareceu.",
+      "professional": "A sensação de fazer parte da equipe pode influenciar sua disposição para colaborar. Você tende a cuidar da convivência e perceber quem precisa de acolhimento, mas não precisa responder por todas as relações do grupo. Acordos de participação ajudam a combinar solidariedade com responsabilidades que possam ser sustentadas."
+    },
+    "house:moon:12": {
+      "title": "Lua na casa 12",
+      "personal": "Você pode precisar de tempo reservado para reconhecer sentimentos que não se tornam claros durante a interação. Sonhos, imagens e impressões podem oferecer material de reflexão, sem exigir uma interpretação definitiva. Respeitar o recolhimento e manter canais de apoio permite intimidade consigo sem transformar necessidade de pausa em isolamento.",
+      "professional": "Demandas emocionais pouco explícitas podem afetar sua disponibilidade no trabalho, mesmo quando você não identifica de imediato a origem do cansaço. Atividades de bastidores podem oferecer concentração, desde que não escondam necessidades legítimas. Pausas e limites de disponibilidade ajudam a preservar a escuta e a reconhecer sobrecarga antes de acumulá-la."
+    },
+    "sign:mercury:0": {
+      "title": "Mercúrio em Áries",
+      "personal": "Testar uma ideia e receber uma resposta direta pode ajudar você a organizar o pensamento. A rapidez mental favorece decisões iniciais, mas também pode levar a concluir antes de ouvir toda a questão. Formular uma pergunta a mais ajuda a preservar a franqueza e ampliar a compreensão.",
+      "professional": "Você tende a comunicar propostas com objetividade e pode destravar conversas que ficaram excessivamente abstratas. A iniciativa intelectual funciona melhor quando há espaço para revisão. Conferir premissas antes de apresentar uma conclusão reduz retrabalho e permite que sua agilidade contribua para decisões compartilhadas com mais clareza."
+    },
+    "sign:mercury:1": {
+      "title": "Mercúrio em Touro",
+      "personal": "Para considerar uma ideia, você pode precisar de tempo e de referências que a aproximem da experiência concreta. Uma vez formada, sua opinião tende a ganhar estabilidade, o que favorece coerência e pode dificultar revisões. Examinar exemplos novos permite mudar de perspectiva sem sentir que perdeu toda a base.",
+      "professional": "Informações práticas, demonstrações e critérios consistentes podem favorecer seu aprendizado profissional. Você tende a preferir explicações que mostrem como algo funciona e quais consequências produz. Reservar tempo para assimilar mudanças ajuda a responder com precisão, enquanto comparar alternativas evita que um método conhecido se torne a única possibilidade."
+    },
+    "sign:mercury:2": {
+      "title": "Mercúrio em Gêmeos",
+      "personal": "Associações, conversas e comparação entre versões de uma história podem alimentar sua maneira de aprender. A facilidade para mudar de foco amplia repertório, mas pode deixar experiências pouco assimiladas. Escolher quais perguntas merecem continuidade permite transformar curiosidade em compreensão, sem precisar acompanhar todos os assuntos ao mesmo tempo.",
+      "professional": "Sua comunicação pode se adaptar bem a diferentes públicos e formatos, especialmente quando há circulação de informações. Você tende a perceber conexões e possibilidades de explicação rapidamente. Verificar fontes e registrar conclusões ajuda a preservar qualidade quando a variedade de demandas torna fácil trocar profundidade por velocidade."
+    },
+    "sign:mercury:3": {
+      "title": "Mercúrio em Câncer",
+      "personal": "Lembranças, imagens e significados afetivos podem participar bastante da sua maneira de pensar. O tom das palavras tende a participar da compreensão, favorecendo sensibilidade e também leituras muito pessoais. Diferenciar o que foi dito do que a fala despertou ajuda a conversar com mais liberdade.",
+      "professional": "Você pode comunicar melhor quando compreende as pessoas envolvidas e a história de uma situação. Sua atenção ao contexto favorece mensagens cuidadosas e continuidade nas relações. Registrar fatos e confirmar interpretações ajuda a equilibrar memória afetiva com informações verificáveis, sobretudo em conversas que envolvem expectativas diferentes."
+    },
+    "sign:mercury:4": {
+      "title": "Mercúrio em Leão",
+      "personal": "Dar forma pessoal ao que pensa pode fazer parte do seu interesse por apresentar ideias de maneira expressiva. Defender uma posição pode se misturar ao desejo de ser ouvido com respeito. Separar a qualidade de um argumento do seu valor como pessoa facilita aprender com discordâncias.",
+      "professional": "Apresentações, narrativas e propostas com direção clara podem mobilizar sua comunicação profissional. Você tende a se envolver ao transmitir uma visão na qual acredita, mas convém abrir espaço para contribuições. Perguntas específicas e revisões compartilhadas ajudam a manter força de expressão sem fazer da conversa uma apresentação unilateral."
+    },
+    "sign:mercury:5": {
+      "title": "Mercúrio em Virgem",
+      "personal": "Separar uma questão em partes e observar diferenças pequenas pode tornar o assunto mais compreensível para você. Essa precisão favorece discernimento, mas pode prolongar dúvidas quando nenhum detalhe parece dispensável. Identificar o que realmente muda uma decisão permite usar seu critério sem transformar toda escolha em uma revisão interminável.",
+      "professional": "Análise, organização de informações e melhoria de processos podem favorecer sua participação profissional. Você tende a notar inconsistências e formular perguntas úteis para a execução. Ajustar o nível de detalhe ao objetivo da tarefa ajuda a comunicar com clareza e a entregar no tempo necessário, sem revisar tudo igualmente."
+    },
+    "sign:mercury:6": {
+      "title": "Mercúrio em Libra",
+      "personal": "A comparação entre argumentos de lados diferentes pode organizar sua maneira de compreender uma situação. Essa abertura favorece diálogo, mas também pode adiar a expressão do que você concluiu. Aceitar que uma decisão pode ser revista permite assumir uma posição sem exigir equilíbrio perfeito entre todas as possibilidades.",
+      "professional": "Você tende a contribuir em negociações, revisão de critérios e construção de mensagens adequadas a interlocutores distintos. Sua atenção à forma pode facilitar acordos, desde que não suavize diferenças que precisam ser discutidas. Explicitar prioridades ajuda a concluir conversas preservando respeito e clareza sobre o que foi decidido."
+    },
+    "sign:mercury:7": {
+      "title": "Mercúrio em Escorpião",
+      "personal": "Aquilo que ficou implícito em uma conversa pode despertar sua atenção e o desejo de investigar os motivos de uma fala. A concentração permite aprofundar questões, mas suspeitas podem ganhar força quando faltam informações. Fazer perguntas abertas e aceitar respostas ainda incompletas ajuda a conhecer o outro sem antecipar um significado oculto para tudo.",
+      "professional": "Você pode se envolver com pesquisa, análise de problemas complexos e informações que exigem discrição. Sua atenção ao que não encaixa favorece investigação, desde que hipóteses continuem sendo tratadas como hipóteses. Compartilhar o raciocínio e conferir evidências torna suas conclusões mais úteis para decisões que dependem de outras pessoas."
+    },
+    "sign:mercury:8": {
+      "title": "Mercúrio em Sagitário",
+      "personal": "A ideia geral de uma experiência e sua relação com questões mais amplas podem orientar seu pensamento. A franqueza facilita expressão, mas às vezes deixa de fora nuances que importam ao interlocutor. Aproximar princípios de exemplos concretos ajuda a perceber onde sua explicação esclarece e onde precisa ser ajustada.",
+      "professional": "Você tende a comunicar melhor quando compreende a finalidade de um projeto e pode situá-lo em um panorama amplo. Ensino e síntese de conceitos podem despertar interesse. Conferir detalhes e explicitar limites de uma conclusão ajuda a transformar visão geral em orientação confiável para quem precisa executar tarefas específicas."
+    },
+    "sign:mercury:9": {
+      "title": "Mercúrio em Capricórnio",
+      "personal": "Consequências, prioridades e viabilidade podem ser referências importantes na organização do seu pensamento. A prudência favorece decisões refletidas, mas pode restringir ideias antes que tenham espaço para amadurecer. Separar a etapa de imaginar da etapa de avaliar permite conservar seu critério sem interromper possibilidades ainda pouco desenvolvidas.",
+      "professional": "Planejamento, definição de responsabilidades e comunicação objetiva podem favorecer sua atuação profissional. Você tende a valorizar informações que ajudam a decidir e acompanhar compromissos. Explicar o raciocínio por trás de uma orientação facilita a colaboração, especialmente quando a concisão poderia ser recebida como rigidez ou falta de abertura."
+    },
+    "sign:mercury:10": {
+      "title": "Mercúrio em Aquário",
+      "personal": "Identificar padrões e questionar premissas aceitas sem discussão podem ser caminhos de compreensão para você. A independência intelectual favorece novas leituras, mas conceitos gerais podem afastar você de particularidades afetivas. Escutar como uma ideia é vivida por alguém amplia sua análise sem exigir que abandone o pensamento crítico.",
+      "professional": "Você tende a se interessar por modelos, sistemas e soluções que reorganizem informações de um modo diferente. Sua contribuição pode estar em perceber alternativas além dos procedimentos habituais. Traduzir o raciocínio para exemplos acessíveis e testar pressupostos com a equipe ajuda a tornar propostas originais compreensíveis e aplicáveis."
+    },
+    "sign:mercury:11": {
+      "title": "Mercúrio em Peixes",
+      "personal": "Imagens, associações e impressões podem chegar ao seu pensamento antes de uma explicação linear. Essa abertura favorece imaginação e compreensão de nuances, mas pode deixar mensagens pouco delimitadas. Encontrar palavras concretas para uma percepção ajuda a compartilhá-la sem reduzir a riqueza do que você percebe.",
+      "professional": "Você pode contribuir em tarefas que pedem criação, escuta e interpretação de contextos pouco estruturados. Ideias podem surgir de conexões inesperadas, embora sua comunicação precise de organização para ser acompanhada. Anotar etapas, conferir instruções e resumir acordos ajuda a transformar intuições em propostas que outras pessoas conseguem executar."
+    },
+    "house:mercury:1": {
+      "title": "Mercúrio na casa 1",
+      "personal": "Pensar em voz alta e trocar impressões pode participar diretamente da maneira como você se apresenta. Você pode experimentar versões de si por meio das palavras, sem que cada opinião precise ser definitiva. Dar tempo à escuta permite perceber sentimentos e necessidades que a resposta rápida poderia encobrir.",
+      "professional": "Sua comunicação pode ser parte importante da primeira impressão que oferece no trabalho. Você tende a participar por meio de perguntas, explicações e articulação de ideias. Ajustar o ritmo ao interlocutor e reconhecer o que ainda está investigando ajuda a apresentar segurança sem precisar ter uma resposta imediata para tudo."
+    },
+    "house:mercury:2": {
+      "title": "Mercúrio na casa 2",
+      "personal": "Você pode refletir bastante sobre recursos, escolhas práticas e o valor das próprias habilidades. Nomear critérios ajuda a reconhecer o que considera suficiente, sem deixar toda decisão dependente de comparação. Sua relação com segurança pode ficar mais clara quando distingue uma necessidade concreta de uma possibilidade apenas imaginada.",
+      "professional": "Você tende a se interessar por informações que ajudem a organizar recursos e avaliar o uso de suas competências. Negociações e planejamento podem se beneficiar de critérios bem formulados. Explicitar o que está sendo valorizado em uma proposta ajuda a discutir condições sem reduzir sua identidade profissional ao retorno imediato."
+    },
+    "house:mercury:3": {
+      "title": "Mercúrio na casa 3",
+      "personal": "A troca cotidiana pode alimentar sua curiosidade e oferecer espaço para compreender experiências. Você pode precisar falar, escrever ou perguntar para organizar o pensamento, especialmente diante de novidade. Selecionar fontes e reservar tempo de assimilação permite que a circulação de informações resulte em entendimento, em vez de apenas acumulação.",
+      "professional": "Na sua atuação, comunicação, aprendizagem e organização de informações podem ocupar um lugar importante. Você tende a contribuir ao conectar pessoas e tornar uma mensagem mais compreensível. Definir o que precisa ser comunicado e para quem ajuda a evitar excesso de mensagens, ruídos e interrupções que dispersam o trabalho."
+    },
+    "house:mercury:4": {
+      "title": "Mercúrio na casa 4",
+      "personal": "Você pode compreender a própria experiência ao revisitar lembranças e conversar sobre referências familiares. Investigar histórias ajuda a distinguir o que recebeu do que hoje pensa por conta própria. Memórias oferecem perspectivas, mas não são registros completos; permitir versões diferentes amplia sua relação com o passado e com o pertencimento.",
+      "professional": "Você pode precisar de um ambiente reservado para organizar ideias e se concentrar. Questões de continuidade, memória e contexto podem influenciar a forma como aprende e comunica. Estabelecer condições claras para interrupções e trocas ajuda a preservar foco sem fazer do recolhimento uma barreira à colaboração profissional."
+    },
+    "house:mercury:5": {
+      "title": "Mercúrio na casa 5",
+      "personal": "Você pode encontrar prazer em brincar com palavras, contar histórias e experimentar ideias de forma pessoal. A comunicação pode aproximar você de desejos que ainda estavam pouco definidos. Permitir rascunhos e conversas sem desempenho ajuda a preservar curiosidade, sem exigir que toda expressão seja interessante ou receba aprovação.",
+      "professional": "Criação, narrativa e apresentação podem despertar seu interesse intelectual pelo trabalho. Você tende a querer experimentar modos de comunicar que tenham sua marca. Separar a fase de exploração da revisão ajuda a produzir alternativas, enquanto critérios claros permitem escolher o que melhor atende ao público e ao objetivo."
+    },
+    "house:mercury:6": {
+      "title": "Mercúrio na casa 6",
+      "personal": "Você pode organizar o cotidiano por meio de listas, observação e pequenas soluções práticas. Compreender como uma rotina funciona pode trazer tranquilidade, mas pensar continuamente no que falta fazer pode ocupar espaço demais. Reservar momentos sem tarefa definida permite que o pensamento também descanse e encontre outras associações.",
+      "professional": "Você tende a contribuir ao esclarecer procedimentos, identificar erros e organizar informações necessárias à execução. O detalhe pode ser um recurso, desde que esteja ligado à prioridade da tarefa. Documentar o que se repete e delimitar revisões ajuda a reduzir esforço mental e a compartilhar conhecimento com a equipe."
+    },
+    "house:mercury:7": {
+      "title": "Mercúrio na casa 7",
+      "personal": "Você pode conhecer melhor suas opiniões ao conversar com alguém que apresente outra perspectiva. O diálogo participa da intimidade, mas discutir indefinidamente uma relação pode afastar da experiência de estar nela. Alternar conversa e ação permite verificar se os acordos realmente correspondem às necessidades de ambos.",
+      "professional": "Negociação e troca direta podem ocupar papel importante no seu trabalho. Você tende a elaborar propostas em diálogo e perceber alternativas quando escuta objeções. Registrar responsabilidades, prazos e critérios ajuda a preservar o que foi compreendido, especialmente quando a facilidade de conversar poderia deixar compromissos apenas implícitos."
+    },
+    "house:mercury:8": {
+      "title": "Mercúrio na casa 8",
+      "personal": "Você pode querer compreender assuntos que envolvem confiança, intimidade e aquilo que costuma ser difícil de dizer. A investigação ajuda a dar nome a receios, mas pode se tornar excessiva quando procura certeza absoluta. Respeitar o tempo de cada conversa permite aprofundar sem transformar proximidade em interrogatório.",
+      "professional": "Você pode se interessar por análise aprofundada, informações reservadas e decisões sobre recursos compartilhados. Seu raciocínio tende a buscar o que está por trás de um problema aparente. Distinguir evidência, hipótese e confidencialidade ajuda a produzir conclusões claras sem expor pessoas ou atribuir intenções que ainda não foram verificadas."
+    },
+    "house:mercury:9": {
+      "title": "Mercúrio na casa 9",
+      "personal": "Você pode organizar a experiência por meio de estudos, comparações culturais e perguntas sobre sentido. Conhecer outros modos de pensar permite revisar referências pessoais, desde que a busca não vire acúmulo de explicações. Relacionar o que aprende à vida concreta ajuda a perceber quais ideias realmente orientam suas escolhas.",
+      "professional": "Aprendizagem ampla, transmissão de conhecimento e contextualização podem estimular seu envolvimento profissional. A capacidade de relacionar conceitos pode apoiar planejamento e comunicação. Explicitar as etapas do raciocínio e conferir fontes ajuda a tornar uma visão abrangente acessível a quem não compartilha das mesmas referências."
+    },
+    "house:mercury:10": {
+      "title": "Mercúrio na casa 10",
+      "personal": "A maneira como você é ouvido publicamente pode participar da construção da sua identidade. Você pode dedicar atenção à coerência das próprias ideias e à imagem de competência que transmite. Permitir mudanças de opinião torna possível aprender sem tratar toda revisão como ameaça à credibilidade pessoal.",
+      "professional": "Comunicar, organizar informação e formular decisões podem ter destaque na sua trajetória profissional. Você tende a perceber a importância das palavras para a reputação e para a coordenação do trabalho. Dizer com clareza o que sabe e o que ainda precisa verificar favorece confiança sem exigir certeza permanente."
+    },
+    "house:mercury:11": {
+      "title": "Mercúrio na casa 11",
+      "personal": "Amizades e grupos podem oferecer estímulo intelectual e espaço para testar ideias de futuro. Você pode valorizar vínculos em que a conversa amplia perspectivas, mas afinidade de pensamento não precisa eliminar diferenças. Escutar experiências particulares ajuda a evitar que debates gerais substituam a atenção à pessoa que está presente.",
+      "professional": "Conectar informações e facilitar discussões podem ser formas de você traduzir objetivos coletivos em propostas compreensíveis. Redes de colaboração tendem a ampliar suas referências. Definir canais de comunicação e registrar decisões ajuda a transformar circulação de ideias em ação, especialmente quando muitas pessoas participam com prioridades e linguagens diferentes."
+    },
+    "house:mercury:12": {
+      "title": "Mercúrio na casa 12",
+      "personal": "Você pode precisar de silêncio para organizar pensamentos que surgem de forma indireta ou ainda fragmentada. Escrever para si e observar associações pode tornar mais claro o que deseja comunicar. Conferir interpretações com outras pessoas ajuda a distinguir uma percepção fértil de uma preocupação que se alimenta sozinha.",
+      "professional": "Pesquisa reservada e tarefas que pedem escuta ou concentração podem favorecer sua participação. Você pode notar aspectos que ainda não ganharam palavras, mas precisará de critérios para comunicá-los. Registrar o raciocínio e reservar momentos de alinhamento ajuda a evitar que um trabalho cuidadoso permaneça invisível ou seja compreendido apenas parcialmente."
+    },
+    "sign:venus:0": {
+      "title": "Vênus em Áries",
+      "personal": "O interesse afetivo pode nascer da iniciativa, da franqueza e da sensação de descobrir alguém. Você tende a valorizar vínculos em que o desejo tenha espaço para aparecer sem muitos rodeios. A continuidade pede atenção aos ritmos de cada pessoa, inclusive quando a novidade deixa de conduzir o encontro.",
+      "professional": "Você pode preferir relações profissionais diretas e propostas que permitam imprimir uma escolha pessoal. O entusiasmo favorece aproximações, mas convém observar o que sustenta a colaboração depois do primeiro impulso. Explicitar condições e ouvir contrapropostas permite negociar com iniciativa, preservando a autonomia das pessoas envolvidas."
+    },
+    "sign:venus:1": {
+      "title": "Vênus em Touro",
+      "personal": "Presença, cuidado concreto e continuidade podem ser formas pelas quais você demonstra afeto. Prazer e segurança tendem a caminhar juntos, embora a necessidade de estabilidade possa dificultar admitir que desejos mudaram. Um vínculo confiável também comporta conversas sobre novas necessidades e formas diferentes de estar perto.",
+      "professional": "Qualidade, consistência e atenção à experiência concreta podem orientar seus critérios profissionais. Você tende a valorizar relações construídas com tempo e acordos que respeitem o esforço investido. Rever condições periodicamente permite preservar o que funciona sem manter uma parceria apenas porque já existe ou parece difícil de substituir."
+    },
+    "sign:venus:2": {
+      "title": "Vênus em Gêmeos",
+      "personal": "Conversas, humor e curiosidade podem participar de como você se aproxima afetivamente. Conhecer diferentes aspectos de alguém tende a alimentar o interesse, enquanto relações muito previsíveis podem parecer pouco estimulantes. Aprofundar um vínculo também oferece novidade quando há escuta para mudanças sutis e espaço para falar com sinceridade.",
+      "professional": "Você pode criar afinidade profissional pela troca de ideias e pela facilidade de circular entre interlocutores. Essa abertura favorece colaboração e apresentação de propostas. Para que o interesse se transforme em confiança, vale acompanhar os acordos iniciados e dar continuidade às conversas que dependem de uma resposta concreta."
+    },
+    "sign:venus:3": {
+      "title": "Vênus em Câncer",
+      "personal": "Você pode associar afeto à atenção, ao acolhimento e à construção de intimidade ao longo do tempo. Gestos pequenos tendem a carregar significado, mas o cuidado pode virar expectativa silenciosa de retribuição. Expressar o que deseja receber permite que a proximidade seja escolhida, sem depender de adivinhação.",
+      "professional": "Relações de confiança e atenção à experiência das pessoas podem orientar suas escolhas no trabalho. Você pode contribuir criando continuidade no atendimento e cuidado nas trocas. Negociar limites explicitamente evita que o vínculo pessoal torne difícil discutir condições, recusar demandas ou reconhecer quando a colaboração deixou de ser recíproca."
+    },
+    "sign:venus:4": {
+      "title": "Vênus em Leão",
+      "personal": "Generosidade, entusiasmo e atenção pessoal podem estar presentes na sua maneira de demonstrar afeto. Sentir que o outro reconhece sua singularidade tende a alimentar o vínculo, mas a necessidade de resposta pode tornar gestos mais carregados de expectativa. Receber carinho em linguagens diferentes amplia as formas de perceber reciprocidade.",
+      "professional": "Você pode valorizar trabalhos com expressão estética, autoria e relações em que as contribuições sejam reconhecidas. Sua disposição para apresentar e celebrar pode favorecer o ambiente. Dividir crédito e separar gosto pessoal de necessidades do projeto permite colaborar com presença, sem fazer da preferência alheia uma avaliação do seu valor."
+    },
+    "sign:venus:5": {
+      "title": "Vênus em Virgem",
+      "personal": "Perceber necessidades e oferecer cuidados práticos pode ser uma forma importante de você expressar afeto. A atenção ao detalhe revela interesse, embora corrigir o outro nem sempre seja recebido como carinho. Deixar espaço para imperfeições e dizer diretamente o que aprecia torna mais visível o afeto que acompanha sua dedicação.",
+      "professional": "Você tende a valorizar qualidade, atenção e relações em que os compromissos sejam cumpridos. Seu critério pode aprimorar resultados e tornar a experiência de trabalho mais cuidadosa. Explicitar o que já está bom, além do que precisa mudar, favorece cooperação e evita que sua contribuição seja percebida apenas como cobrança."
+    },
+    "sign:venus:6": {
+      "title": "Vênus em Libra",
+      "personal": "Reciprocidade, delicadeza e possibilidade de construir acordos podem ter valor especial nos seus vínculos. A atenção à experiência do outro favorece convivência, mas pode dificultar mostrar preferências que gerem desacordo. Relações mais equilibradas surgem quando seu desejo participa da conversa com a mesma legitimidade que o desejo alheio.",
+      "professional": "Você pode contribuir ao negociar, cuidar da apresentação e perceber como uma proposta afeta diferentes participantes. A busca de equilíbrio favorece acordos quando também admite diferenças reais. Definir critérios de escolha evita concessões sucessivas e permite sustentar relações profissionais agradáveis sem sacrificar condições necessárias para o trabalho."
+    },
+    "sign:venus:7": {
+      "title": "Vênus em Escorpião",
+      "personal": "Profundidade, confiança e disposição para lidar com sentimentos difíceis podem fazer parte do que você deseja em um vínculo. A intimidade tende a ter valor quando permite presença inteira, mas pode ficar pesada se exigir provas constantes. Conversar sobre limites preserva o encontro e deixa espaço para a liberdade de cada pessoa.",
+      "professional": "Confiança e coerência podem pesar bastante na sua avaliação de parcerias profissionais. Você tende a investir onde percebe compromisso, evitando trocas que parecem superficiais. Tornar expectativas e condições explícitas permite aprofundar a colaboração sem depender de lealdades presumidas ou de acordos que ninguém chegou a formular claramente."
+    },
+    "sign:venus:8": {
+      "title": "Vênus em Sagitário",
+      "personal": "Humor, curiosidade e descobertas compartilhadas podem favorecer sua aproximação afetiva. A liberdade tende a favorecer o afeto, especialmente quando o vínculo permite aprender e mudar de perspectiva. Sustentar combinados concretos torna possível explorar sem deixar a outra pessoa sem referência sobre a relação.",
+      "professional": "Você pode valorizar parcerias que ampliem repertório e propostas cuja finalidade desperte interesse. A troca com pessoas de diferentes referências tende a enriquecer seus critérios. Esclarecer compromissos e limites antes de aceitar uma oportunidade ajuda a combinar entusiasmo com condições que permitam uma colaboração consistente."
+    },
+    "sign:venus:9": {
+      "title": "Vênus em Capricórnio",
+      "personal": "Continuidade, compromisso e construção conjunta podem expressar o afeto que você oferece. Confiança tende a crescer com atitudes observáveis, embora cautela excessiva possa esconder seu desejo. Permitir prazer e espontaneidade sem exigir garantias completas torna a relação menos dependente de desempenho e comprovação.",
+      "professional": "Você tende a valorizar relações profissionais confiáveis, reconhecimento coerente e propostas com continuidade. Seu critério pode favorecer acordos sustentáveis, desde que o prestígio não substitua a avaliação da experiência real. Discutir condições com clareza permite cuidar da trajetória sem aceitar responsabilidades apenas para corresponder a uma imagem de competência."
+    },
+    "sign:venus:10": {
+      "title": "Vênus em Aquário",
+      "personal": "Amizade, afinidade de ideias e respeito às diferenças podem abrir espaço para o afeto na sua vida. Vínculos que deixam espaço para individualidade tendem a favorecer sua aproximação. A liberdade ganha consistência quando inclui conversas sobre necessidades concretas, inclusive aquelas que parecem pouco racionais ou que pedem presença mais próxima.",
+      "professional": "Você pode preferir parcerias baseadas em autonomia, troca horizontal e abertura a propostas incomuns. Sua atenção à diversidade de perspectivas pode enriquecer critérios coletivos. Considerar o efeito das decisões sobre pessoas específicas permite combinar princípios de igualdade com ajustes que respeitem necessidades e condições diferentes dentro da equipe."
+    },
+    "sign:venus:11": {
+      "title": "Vênus em Peixes",
+      "personal": "Sensibilidade e imaginação podem aproximar você de alguém, com atenção à beleza de aspectos pouco evidentes. A abertura afetiva favorece compreensão, mas pode preencher lacunas com uma imagem desejada do outro. Observar atitudes e nomear limites permite que ternura e reciprocidade tenham apoio na experiência.",
+      "professional": "Você pode valorizar atividades e relações profissionais que comportem imaginação, cuidado e sensibilidade estética. Sua receptividade pode favorecer criação e escuta, desde que não torne condições de trabalho vagas. Definir entregas, reconhecimento e limites de disponibilidade permite preservar a generosidade sem aceitar responsabilidades que não foram combinadas."
+    },
+    "house:venus:1": {
+      "title": "Vênus na casa 1",
+      "personal": "A maneira de se apresentar pode expressar seu gosto, sua busca de aproximação e a atenção à resposta alheia. Você pode desejar ser recebido de forma agradável, mas não precisa tornar toda presença confortável para os outros. Assumir preferências próprias permite um encontro mais sincero com quem se aproxima.",
+      "professional": "Você pode facilitar contatos pela forma de acolher, apresentar uma ideia e cuidar da experiência inicial. Essa atenção favorece relações profissionais, desde que não exija concordância constante. Sustentar uma condição ou uma recusa com clareza permite que sua presença continue respeitosa sem apagar necessidades importantes para o trabalho."
+    },
+    "house:venus:2": {
+      "title": "Vênus na casa 2",
+      "personal": "Prazer, recursos e autoestima podem se aproximar na forma como você reconhece o que tem valor. Você pode apreciar conforto e objetos com significado, sem que isso defina sua capacidade de receber afeto. Distinguir desejo, necessidade e comparação torna suas escolhas mais próximas do que realmente aprecia.",
+      "professional": "Qualidade do que produz e condições de valorização podem pesar bastante na sua avaliação do trabalho. Negociar pode tocar questões de merecimento, tornando útil explicitar critérios concretos. Reconhecer competências e custos reais permite conversar sobre retorno sem esperar que o reconhecimento aconteça apenas por afinidade pessoal."
+    },
+    "house:venus:3": {
+      "title": "Vênus na casa 3",
+      "personal": "A troca de palavras pode ser uma forma importante de demonstrar interesse e construir proximidade. Você pode apreciar conversas cuidadosas, humor e pequenos sinais de atenção no cotidiano. Dizer algo difícil com respeito preserva o vínculo melhor que suavizar tanto uma mensagem a ponto de esconder sua necessidade.",
+      "professional": "Sua atenção à linguagem e ao interlocutor pode favorecer comunicação, apresentação e relações de trabalho. Você tende a perceber como pequenas escolhas de palavras alteram a recepção de uma ideia. Conferir clareza e conteúdo junto com a forma evita que uma mensagem agradável deixe condições importantes sem definição."
+    },
+    "house:venus:4": {
+      "title": "Vênus na casa 4",
+      "personal": "Você pode encontrar prazer ao criar um espaço íntimo acolhedor e cultivar vínculos com continuidade. A convivência doméstica tende a ter valor afetivo, embora preservar uma atmosfera agradável não exija evitar todas as divergências. Conversar sobre preferências e responsabilidades permite que o cuidado com o lar seja compartilhado.",
+      "professional": "Condições de trabalho que respeitem a vida privada e ofereçam um ambiente agradável podem pesar nas suas escolhas. Você pode contribuir com atenção ao acolhimento e à continuidade das relações. Definir limites entre cordialidade e disponibilidade ajuda a preservar a qualidade da convivência sem assumir cuidados que excedem sua função."
+    },
+    "house:venus:5": {
+      "title": "Vênus na casa 5",
+      "personal": "O prazer de criar, brincar e expressar desejo pode ocupar um lugar importante nos seus vínculos. Você pode se aproximar quando há espaço para espontaneidade e admiração mútua. Permitir que o encontro tenha momentos comuns, sem precisar ser sempre especial, amplia a intimidade para além da expectativa de encantamento.",
+      "professional": "Expressão estética, autoria e contato com o público podem dar satisfação à sua participação em projetos. A satisfação com o processo tende a influenciar seu envolvimento. Separar preferência pessoal dos critérios da entrega ajuda a aproveitar sua sensibilidade criativa e a receber ajustes sem perder o prazer de participar."
+    },
+    "house:venus:6": {
+      "title": "Vênus na casa 6",
+      "personal": "Você pode demonstrar afeto no cuidado cotidiano, na atenção às necessidades e no desejo de tornar a convivência mais agradável. Pequenos gestos ganham importância, mas não precisam substituir conversas explícitas. Reconhecer o que gosta de oferecer e o que espera receber evita que dedicação se transforme em obrigação silenciosa.",
+      "professional": "Relações cordiais e processos que respeitem as pessoas podem favorecer sua satisfação profissional. Você tende a contribuir para uma rotina mais cuidadosa, percebendo detalhes da experiência da equipe. Distribuir tarefas de apoio e reconhecer esse trabalho permite que a busca de boa convivência não recaia sempre sobre você."
+    },
+    "house:venus:7": {
+      "title": "Vênus na casa 7",
+      "personal": "Parcerias podem ocupar um lugar importante na maneira como você vive afeto, prazer e reciprocidade. Você pode investir na qualidade do encontro, às vezes cedendo antes de saber o que deseja. Ter interesses próprios torna a relação mais equilibrada e permite negociar diferenças sem sentir que a proximidade está ameaçada.",
+      "professional": "Colaboração direta, atendimento e construção de acordos podem oferecer satisfação no trabalho. A percepção das necessidades do interlocutor favorece negociação, desde que as suas condições também estejam claras. Estabelecer critérios e responsabilidades permite que afinidade e cordialidade acompanhem uma parceria profissional com compromissos verificáveis e espaço para divergência."
+    },
+    "house:venus:8": {
+      "title": "Vênus na casa 8",
+      "personal": "Afeto e confiança podem se aprofundar quando você consegue compartilhar vulnerabilidades e conversar sobre dependência mútua. O desejo de intimidade pode tornar difícil perceber onde termina a escolha e começa a obrigação. Preservar autonomia nas decisões permite que a partilha expresse vínculo, sem exigir entrega irrestrita.",
+      "professional": "Você pode valorizar parcerias que envolvam confiança, cooperação profunda e responsabilidade sobre recursos comuns. A qualidade da relação tende a influenciar negociações sensíveis. Registrar condições e discutir possíveis divergências permite preservar a confiança sem deixar decisões importantes dependentes de afinidade, silêncio ou expectativas que não foram compartilhadas."
+    },
+    "house:venus:9": {
+      "title": "Vênus na casa 9",
+      "personal": "Você pode sentir afinidade por pessoas e experiências que ampliam seu repertório e despertam curiosidade. Compartilhar valores tende a favorecer proximidade, mas diferenças também podem enriquecer o vínculo. Observar como convicções aparecem nas atitudes permite distinguir afinidade real da atração por uma imagem idealizada de determinada visão de mundo.",
+      "professional": "Aprendizagem, intercâmbio de perspectivas e uma finalidade relevante podem orientar suas preferências profissionais. Relações profissionais podem se fortalecer pela troca de referências. Traduzir valores amplos em critérios concretos de trabalho ajuda a avaliar propostas sem depender apenas do discurso inspirador ou do prestígio de quem as apresenta."
+    },
+    "house:venus:10": {
+      "title": "Vênus na casa 10",
+      "personal": "A maneira como você é reconhecido socialmente pode se relacionar com seu gosto e com o desejo de ser apreciado. Você pode cuidar da imagem pública, sem precisar torná-la a principal medida de valor pessoal. Espaços de afeto fora da avaliação social permitem experimentar preferências com mais liberdade.",
+      "professional": "Você pode dar atenção à reputação, à qualidade das relações e à apresentação do que produz. Sua capacidade de construir afinidade pode favorecer colaboração, mas não substitui critérios de trabalho. Sustentar limites e tornar sua contribuição visível ajuda a combinar cordialidade com reconhecimento profissional que corresponda ao esforço realizado."
+    },
+    "house:venus:11": {
+      "title": "Vênus na casa 11",
+      "personal": "Amizade, afinidade e projetos compartilhados podem participar da maneira como você vive o afeto. Você pode apreciar vínculos que permitem pertencimento sem proximidade constante. Reconhecer diferenças de desejo e de disponibilidade evita que a identificação com o grupo esconda necessidades particulares ou expectativas que cada pessoa interpreta de modo distinto.",
+      "professional": "Redes de colaboração e projetos construídos em conjunto podem trazer satisfação à sua experiência de trabalho. Sua atenção à convivência pode aproximar pessoas e facilitar participação. Definir critérios de reconhecimento e distribuição de trabalho ajuda a preservar relações agradáveis quando surgem prioridades diferentes, evitando que a afinidade substitua acordos claros."
+    },
+    "house:venus:12": {
+      "title": "Vênus na casa 12",
+      "personal": "Você pode viver afetos de maneira reservada e encontrar prazer em experiências íntimas, imaginativas ou pouco expostas. A sensibilidade favorece compreensão, mas pode manter desejos apenas no plano da fantasia. Dar palavras ao que espera permite que o vínculo seja compartilhado, em vez de existir principalmente na sua interpretação.",
+      "professional": "Você pode se envolver com criação e cuidado nos bastidores, especialmente quando há espaço para sensibilidade e concentração. A discrição não elimina a necessidade de valorização. Explicitar autoria, condições e limites ajuda a evitar que sua contribuição se torne invisível ou que afinidade seja tomada como disponibilidade sem medida."
+    },
+    "sign:mars:0": {
+      "title": "Marte em Áries",
+      "personal": "Seu impulso de agir pode aparecer com rapidez quando algo desperta desejo ou contrariedade. A ação direta permite afirmar necessidades, mas nem toda situação pede uma resposta imediata. Reconhecer o que você quer preservar antes de entrar em confronto oferece direção à força que mobiliza.",
+      "professional": "Você pode se sentir estimulado por desafios que permitem iniciativa e decisões rápidas. O interesse tende a crescer quando existe margem para testar uma proposta na prática. Dividir o trabalho em etapas e prever revisões permite aproveitar esse impulso sem fazer da pressa o ritmo permanente da equipe."
+    },
+    "sign:mars:1": {
+      "title": "Marte em Touro",
+      "personal": "Reconhecer um desejo como seu pode levar algum tempo, mas tende a dar continuidade ao esforço que você investe. Mudanças impostas podem provocar resistência, sobretudo quando desorganizam referências concretas. Perceber o incômodo antes que se acumule permite defender limites sem precisar chegar ao ponto de ruptura.",
+      "professional": "Você pode sustentar tarefas que exigem persistência e atenção ao resultado material. Seu ritmo tende a funcionar melhor com prioridades estáveis e condições previsíveis. Revisar o método quando o contexto muda permite que a constância continue produtiva, sem gastar esforço apenas para manter uma decisão anterior."
+    },
+    "sign:mars:2": {
+      "title": "Marte em Gêmeos",
+      "personal": "O desejo pode ganhar movimento por meio de ideias, conversas e novas possibilidades. Você pode defender posições com agilidade, mas discussões podem se prolongar quando responder se torna mais importante que compreender. Escolher onde investir atenção permite que a energia mental encontre uma direção que faça sentido.",
+      "professional": "Você pode agir bem em situações que pedem adaptação, argumentação e respostas a demandas variadas. A mobilidade favorece soluções rápidas, embora muitas frentes abertas possam dispersar esforço. Definir uma próxima ação concreta para cada prioridade ajuda a transformar ideias em entregas e a evitar conflitos por mensagens apressadas."
+    },
+    "sign:mars:3": {
+      "title": "Marte em Câncer",
+      "personal": "Proteger um vínculo, um espaço íntimo ou uma necessidade afetiva pode mobilizar sua força de ação. A contrariedade talvez apareça primeiro de modo indireto, tornando difícil ao outro compreender o limite. Expressar o pedido antes que o ressentimento cresça permite cuidar da relação com mais clareza.",
+      "professional": "Seu empenho pode aumentar quando você reconhece quem será beneficiado pelo trabalho e sente compromisso com a equipe. A disposição de proteger pode levar a assumir conflitos alheios. Definir responsabilidades e dizer diretamente o que precisa mudar torna sua atuação mais eficaz e reduz o desgaste de tensões implícitas."
+    },
+    "sign:mars:4": {
+      "title": "Marte em Leão",
+      "personal": "Espaço para expressão pessoal e reconhecimento do que deseja pode despertar seu entusiasmo para agir. Defender uma escolha pode ganhar intensidade quando parece estar em jogo sua dignidade. Separar discordância de desvalorização permite sustentar sua posição sem transformar toda conversa difícil em uma disputa por respeito.",
+      "professional": "Você pode mobilizar energia em projetos que permitam autoria, apresentação ou liderança. O envolvimento tende a crescer quando percebe espaço para deixar sua marca. Compartilhar decisões e reconhecer contribuições específicas ajuda a dirigir esse impulso para o resultado coletivo, sem precisar manter todo o protagonismo da execução."
+    },
+    "sign:mars:5": {
+      "title": "Marte em Virgem",
+      "personal": "Resolver problemas, organizar tarefas e aprimorar o que considera importante podem concentrar sua energia. A irritação tende a crescer quando percebe descuido ou ineficiência, mas nem toda diferença de método é uma falha. Escolher o que realmente precisa de intervenção permite agir com precisão e menos desgaste.",
+      "professional": "Você pode se envolver intensamente na execução e encontrar satisfação ao corrigir o que dificulta o trabalho. Seu esforço favorece qualidade quando os critérios estão claros. Limitar revisões e combinar prioridades com a equipe evita que detalhes secundários consumam a energia necessária para concluir as entregas principais."
+    },
+    "sign:mars:6": {
+      "title": "Marte em Libra",
+      "personal": "O efeito de uma ação sobre os vínculos pode pesar na maneira como você afirma seus desejos. Essa atenção favorece negociação, mas pode adiar decisões e tornar a contrariedade indireta. Assumir uma preferência sem exigir concordância imediata permite lidar com conflitos de modo mais claro e preservar a reciprocidade na relação.",
+      "professional": "Você pode mobilizar energia em negociações e na defesa de critérios que considera justos. A cooperação favorece sua atuação, desde que não dependa de consenso absoluto. Definir quem decide e em qual prazo permite que o cuidado com diferentes perspectivas resulte em ação, sem prolongar indefinidamente o impasse."
+    },
+    "sign:mars:7": {
+      "title": "Marte em Escorpião",
+      "personal": "Seu desejo pode ganhar força quando existe envolvimento profundo e uma direção que considera significativa. Você pode concentrar energia por bastante tempo, mas também guardar contrariedades até que fiquem difíceis de conversar. Reconhecer limites cedo permite agir com firmeza sem usar controle ou silêncio para proteger sua posição.",
+      "professional": "Você pode se dedicar a problemas complexos e tarefas que pedem investigação, estratégia e persistência. A intensidade favorece foco, desde que os objetivos continuem abertos à revisão. Compartilhar informações necessárias e explicitar divergências ajuda a evitar disputas implícitas e permite que o esforço seja organizado em conjunto."
+    },
+    "sign:mars:8": {
+      "title": "Marte em Sagitário",
+      "personal": "Experiências que ampliam a liberdade ou correspondem a uma convicção importante podem mobilizar seu entusiasmo. A defesa de princípios tende a mobilizar energia, mas pode tornar difícil escutar nuances. Distinguir o valor que deseja preservar da forma escolhida para defendê-lo abre alternativas de ação.",
+      "professional": "Você pode se envolver com projetos que oferecem aprendizagem, autonomia e um horizonte mais amplo. A disposição para avançar pode estimular outras pessoas, mas exige atenção ao que é viável. Conferir recursos e compromissos antes de ampliar o escopo permite que o entusiasmo não se converta em pressão sobre a equipe."
+    },
+    "sign:mars:9": {
+      "title": "Marte em Capricórnio",
+      "personal": "Objetivos definidos podem orientar sua energia e tornar aceitável o esforço gradual para alcançar o que deseja. O autocontrole favorece continuidade, mas pode tornar difícil reconhecer cansaço ou mudar de direção. Rever uma meta à luz das necessidades presentes também é uma forma de agir com responsabilidade.",
+      "professional": "Você pode sustentar projetos que exigem planejamento, disciplina e acompanhamento de etapas. A disposição para assumir responsabilidade favorece execução, desde que inclua recursos e autoridade compatíveis. Delegar e negociar prazos permite manter qualidade sem transformar sua capacidade de suportar pressão na principal solução para problemas de organização."
+    },
+    "sign:mars:10": {
+      "title": "Marte em Aquário",
+      "personal": "Perceber uma alternativa ao que parece imposto ou ultrapassado pode despertar sua vontade de agir. A autonomia e a defesa de ideias coletivas tendem a mobilizar seu desejo, mas contrariar expectativas pode se tornar um objetivo por si só. Escolher o que deseja construir dá direção à vontade de mudar.",
+      "professional": "Você pode investir energia em inovação, reorganização de processos e projetos que ofereçam liberdade de método. Questionar procedimentos favorece alternativas quando vem acompanhado de escuta. Testar uma mudança em escala limitada e observar seus efeitos permite conciliar iniciativa com a continuidade do trabalho realizado por outras pessoas."
+    },
+    "sign:mars:11": {
+      "title": "Marte em Peixes",
+      "personal": "Seu impulso de agir pode depender do sentido afetivo ou imaginativo de uma experiência. Você pode perceber caminhos indiretos, mas ter dificuldade para nomear o que quer quando há muitas demandas ao redor. Dar uma forma concreta ao desejo permite avançar sem esperar que toda ambivalência desapareça.",
+      "professional": "Você pode se mobilizar por criação, cuidado e projetos cuja finalidade humana consegue reconhecer. A energia tende a variar conforme o ambiente e a clareza da tarefa. Dividir objetivos em ações pequenas e explicitar limites ajuda a transformar inspiração em trabalho, sem assumir que disponibilidade emocional significa capacidade ilimitada."
+    },
+    "house:mars:1": {
+      "title": "Marte na casa 1",
+      "personal": "Você pode responder às situações com prontidão e sentir necessidade de afirmar presença por meio da ação. Essa iniciativa oferece autonomia, mas também pode anteceder a compreensão do que está em jogo. Perceber seu ritmo e a reação do outro amplia as formas de defender espaço sem confronto automático.",
+      "professional": "Você pode assumir iniciativa com facilidade quando há um problema visível ou uma decisão pendente. Sua presença tende a ser percebida pela ação, o que torna relevante comunicar intenções. Alinhar prioridades antes de avançar permite que sua disposição contribua para a equipe sem antecipar decisões que precisariam ser compartilhadas."
+    },
+    "house:mars:2": {
+      "title": "Marte na casa 2",
+      "personal": "Você pode direcionar energia para conquistar autonomia e proteger aquilo que considera seu. Questões materiais podem despertar firmeza, mas também intensificar comparações ou receios de perda. Reconhecer o valor que está tentando defender permite escolher ações proporcionais, sem fazer de cada negociação uma disputa sobre sua autoestima.",
+      "professional": "Tornar suas habilidades úteis e conquistar condições de trabalho mais autônomas podem mobilizar seu empenho. A iniciativa favorece negociação quando está apoiada em critérios concretos. Identificar prioridades e custos antes de assumir um compromisso ajuda a direcionar esforço sem entrar em competição por reconhecimento que pouco corresponde aos seus objetivos."
+    },
+    "house:mars:3": {
+      "title": "Marte na casa 3",
+      "personal": "Você pode afirmar desejos por meio da fala, do debate e de perguntas diretas. A agilidade favorece expressão, mas pode transformar conversas comuns em disputas quando há irritação acumulada. Escutar até o fim e nomear o pedido concreto permite manter firmeza sem exigir que o outro responda no seu ritmo.",
+      "professional": "Você pode agir bem em tarefas que pedem comunicação rápida, defesa de propostas e resolução de questões imediatas. O cuidado está em distinguir urgência real de impulso para responder. Revisar mensagens sensíveis e registrar decisões ajuda a reduzir conflitos e a preservar energia para o conteúdo do trabalho."
+    },
+    "house:mars:4": {
+      "title": "Marte na casa 4",
+      "personal": "Você pode investir energia na construção de um espaço próprio e na defesa da sua privacidade. Questões de convivência tendem a mobilizar necessidades fortes, especialmente quando limites permanecem implícitos. Conversar sobre uso do espaço e responsabilidades permite exercer autonomia sem transformar a vida íntima em um território de disputa.",
+      "professional": "A necessidade de uma base protegida pode influenciar sua forma de trabalhar e sua reação a interrupções. Você pode se empenhar em criar condições próprias de execução. Acordos sobre horários, ambiente e disponibilidade ajudam a preservar foco, evitando que tensões profissionais sejam descarregadas nas relações mais próximas."
+    },
+    "house:mars:5": {
+      "title": "Marte na casa 5",
+      "personal": "Você pode viver desejo e criatividade com impulso para experimentar, mostrar e participar. Competição e conquista podem estimular, mas nem toda experiência prazerosa precisa comprovar sua capacidade. Reservar espaço para brincar sem comparação permite conhecer o que você realmente quer fazer quando o resultado deixa de ser uma prova.",
+      "professional": "Autoria, apresentação e desafios criativos podem mobilizar sua disposição para trabalhar. A vontade de fazer acontecer favorece protótipos e experimentação, desde que também comporte revisão. Estabelecer critérios de escolha e dividir o reconhecimento ajuda a manter a energia criativa sem transformar colaboração em competição constante por destaque."
+    },
+    "house:mars:6": {
+      "title": "Marte na casa 6",
+      "personal": "Você pode direcionar energia para tarefas, aperfeiçoamento de habilidades e organização do cotidiano. Resolver o que está pendente pode trazer satisfação, mas a lista de obrigações tende a crescer se todo intervalo precisa ser produtivo. Escolher prioridades e reconhecer sinais de cansaço permite uma rotina mais sustentável.",
+      "professional": "Você pode agir com disposição na execução e perceber rapidamente o que impede uma tarefa de avançar. A exigência por eficiência pode gerar atritos quando os ritmos são diferentes. Combinar processos, recursos e critérios de qualidade permite corrigir problemas sem responsabilizar pessoas por falhas que pertencem à organização do trabalho."
+    },
+    "house:mars:7": {
+      "title": "Marte na casa 7",
+      "personal": "Parcerias podem tornar mais visíveis seus desejos e sua maneira de lidar com diferenças. Você pode descobrir o que quer ao encontrar a posição do outro, mas oposição não precisa ser prova de incompatibilidade. Aprender a discordar com pedidos claros permite preservar autonomia e construir acordos que tenham participação de ambos.",
+      "professional": "Você pode mobilizar energia em colaboração direta, negociação e defesa de interesses. A troca tende a produzir movimento quando há espaço para divergência, mas exige atenção a disputas de controle. Definir responsabilidades e critérios de decisão permite que posições fortes contribuam para o projeto sem paralisar a parceria."
+    },
+    "house:mars:8": {
+      "title": "Marte na casa 8",
+      "personal": "Intimidade e partilha podem despertar desejo de envolvimento profundo e também necessidade de proteger sua autonomia. Você pode reagir com força quando acordos parecem ameaçar essa liberdade. Falar sobre limites e consentimento permite reconhecer o que deseja compartilhar, sem tratar a entrega como obrigação ou demonstração de confiança.",
+      "professional": "Problemas complexos e decisões sobre recursos de várias pessoas podem concentrar sua energia profissional. A disposição para enfrentar assuntos difíceis favorece avanços quando há transparência. Estabelecer autoridade, responsabilidades e formas de revisão ajuda a evitar disputas implícitas e a manter o esforço proporcional ao que foi acordado."
+    },
+    "house:mars:9": {
+      "title": "Marte na casa 9",
+      "personal": "Você pode se mobilizar por estudos, experiências novas e defesa de convicções. O desejo de ampliar horizontes traz movimento, mas uma discussão pode ganhar intensidade quando parece questionar seus princípios. Escutar uma diferença sem precisar vencê-la permite que a busca de sentido continue aberta ao aprendizado.",
+      "professional": "Você pode agir com entusiasmo quando o trabalho oferece uma finalidade clara e espaço para explorar. Defender uma visão pode organizar iniciativas, desde que não dispense avaliação de detalhes. Relacionar princípios a etapas concretas e aceitar revisão ajuda a manter direção sem transformar divergências de método em conflitos de valores."
+    },
+    "house:mars:10": {
+      "title": "Marte na casa 10",
+      "personal": "Objetivos públicos e a possibilidade de assumir direção podem mobilizar sua energia. Você pode desejar que a própria ação tenha consequências visíveis, mas a necessidade de provar capacidade pode dificultar pausas. Escolher critérios pessoais de realização permite que a ambição conviva com outras necessidades e relações da sua vida.",
+      "professional": "Assumir desafios e influenciar a direção do trabalho pode corresponder à sua necessidade de autonomia. Relações com autoridade tendem a exigir clareza sobre espaço de decisão e responsabilidade. Negociar expectativas e tornar prioridades explícitas permite sustentar iniciativa sem transformar todo limite institucional em um confronto que consome sua energia."
+    },
+    "house:mars:11": {
+      "title": "Marte na casa 11",
+      "personal": "Você pode investir energia em amizades, grupos e projetos de futuro que despertam seu desejo de participação. Divergências coletivas podem mobilizar firmeza, especialmente quando envolvem valores importantes. Reconhecer a autonomia de cada integrante permite defender uma proposta sem exigir que a afinidade implique concordância ou disponibilidade total.",
+      "professional": "Você pode impulsionar projetos coletivos e trazer iniciativa quando uma equipe precisa sair da discussão para a ação. Sua participação ganha consistência com atribuições claras. Combinar prioridades e ritmos ajuda a evitar disputas por direção e permite que o empenho individual se transforme em compromisso compartilhado pelo grupo."
+    },
+    "house:mars:12": {
+      "title": "Marte na casa 12",
+      "personal": "Você pode levar tempo para reconhecer desejos e irritações que não aparecem de forma direta. A energia pode encontrar saída em atividades reservadas, mas necessidades pouco nomeadas tendem a permanecer sem resposta. Perceber o que provoca resistência e formular pequenos pedidos permite agir sem esperar que o incômodo se acumule.",
+      "professional": "Você pode investir bastante esforço nos bastidores, especialmente em tarefas que exigem concentração e discrição. A dificuldade pode estar em tornar esse trabalho e seus limites visíveis. Registrar entregas, pedir alinhamento e reservar pausas ajuda a evitar sobrecarga silenciosa e a dar direção a uma energia que nem sempre se expressa publicamente."
+    },
+    "sign:jupiter:0": {
+      "title": "Júpiter em Áries",
+      "personal": "Começar algo por iniciativa própria pode ampliar sua confiança e a percepção do que consegue aprender. Experimentar oferece aprendizado, mas a expectativa de avançar rapidamente pode tornar limites difíceis de aceitar. Reconhecer o que cada tentativa ensina permite sustentar coragem sem precisar interpretar todo obstáculo como desafio à sua capacidade.",
+      "professional": "Sua disposição para iniciar pode abrir espaço para aprendizagem e desenvolvimento profissional. Você tende a enxergar possibilidades quando há autonomia para testar uma proposta. Antes de ampliar o compromisso, conferir recursos e ouvir quem conhece a execução ajuda a transformar confiança em um projeto com condições reais de continuidade."
+    },
+    "sign:jupiter:1": {
+      "title": "Júpiter em Touro",
+      "personal": "Construir, cuidar e perceber resultados ao longo do tempo pode fortalecer sua confiança na própria experiência. A expansão tende a fazer sentido quando melhora concretamente a vida, embora conforto possa dificultar novas experiências. Avaliar o que já é suficiente permite crescer sem fazer do acúmulo a única referência de segurança.",
+      "professional": "Você pode reconhecer oportunidades ao perceber qualidade, continuidade e uso consistente de recursos. O desenvolvimento profissional tende a se beneficiar de aprendizagem aplicada e metas graduais. Rever a relação entre esforço e retorno ajuda a escolher expansões que façam sentido, sem assumir que aumentar volume sempre melhora a experiência de trabalho."
+    },
+    "sign:jupiter:2": {
+      "title": "Júpiter em Gêmeos",
+      "personal": "Conversar, estudar assuntos diversos e aproximar referências diferentes podem ampliar sua visão das possibilidades. A curiosidade oferece confiança na possibilidade de aprender, mas muitas opções podem dificultar uma escolha. Aprofundar algumas perguntas permite que o repertório se transforme em compreensão, sem exigir que você abandone outros interesses definitivamente.",
+      "professional": "Você pode encontrar desenvolvimento profissional na circulação de conhecimento e na conexão entre pessoas ou áreas. A variedade favorece novas possibilidades quando há critérios para selecionar. Escolher quais ideias merecem investigação e acompanhar suas consequências ajuda a evitar promessas amplas demais ou projetos que permanecem apenas na conversa."
+    },
+    "sign:jupiter:3": {
+      "title": "Júpiter em Câncer",
+      "personal": "Apoio, pertencimento e continuidade nos vínculos podem participar da maneira como você desenvolve confiança. Oferecer cuidado pode ampliar sua sensação de sentido, desde que também haja espaço para receber. Diferenciar generosidade de proteção excessiva permite que as pessoas próximas cresçam sem precisar permanecer dentro de uma forma conhecida de relação.",
+      "professional": "Você pode se envolver com projetos que valorizem cuidado, memória e necessidades humanas concretas. A atenção ao contexto favorece relações duradouras, mas não garante que toda expansão seja sustentável. Definir recursos e responsabilidades permite acolher novas demandas sem depender apenas da boa vontade ou do vínculo pessoal entre participantes."
+    },
+    "sign:jupiter:4": {
+      "title": "Júpiter em Leão",
+      "personal": "Criar, se apresentar e compartilhar algo que considera valioso pode fortalecer sua confiança para participar. O entusiasmo favorece expressão, mas pode crescer junto com a expectativa de reconhecimento. Apreciar o processo e receber contribuições permite desenvolver sua presença sem fazer da admiração alheia a principal confirmação de valor.",
+      "professional": "Você pode se interessar por oportunidades que permitam autoria, liderança e transmissão de uma visão. Sua confiança pode estimular participação quando também oferece espaço para outras vozes. Ajustar a dimensão da proposta aos recursos disponíveis ajuda a transformar entusiasmo em trabalho consistente, sem depender de exposição ou aprovação imediata."
+    },
+    "sign:jupiter:5": {
+      "title": "Júpiter em Virgem",
+      "personal": "Aprender habilidades e perceber que consegue melhorar situações concretas pode ampliar sua confiança. A busca de sentido passa pelo cuidado com o que é feito, mas pode ficar estreita quando toda experiência precisa ser útil. Permitir curiosidade sem aplicação imediata amplia seu repertório e reduz a obrigação de aperfeiçoamento constante.",
+      "professional": "Você pode reconhecer possibilidades de desenvolvimento ao analisar processos e tornar o trabalho mais bem organizado. Melhorias pequenas podem produzir aprendizado importante quando são acompanhadas e compartilhadas. Definir prioridades evita que o desejo de aprimorar tudo amplie demais o escopo ou faça você assumir tarefas além dos recursos disponíveis."
+    },
+    "sign:jupiter:6": {
+      "title": "Júpiter em Libra",
+      "personal": "Outras perspectivas e relações baseadas em reciprocidade podem ampliar sua visão de si e do mundo. A confiança tende a crescer no encontro, mas acordos agradáveis nem sempre resolvem diferenças de fundo. Incluir suas necessidades na negociação permite que a busca de equilíbrio produza aprendizado e vínculos com participação real dos dois lados.",
+      "professional": "Você pode encontrar desenvolvimento profissional em parcerias, negociação e comparação de alternativas. A capacidade de perceber diferentes interesses favorece acordos quando também há critérios claros. Avaliar responsabilidades e condições concretas permite escolher colaborações promissoras sem confundir afinidade, reputação ou boa intenção com garantia de continuidade do projeto."
+    },
+    "sign:jupiter:7": {
+      "title": "Júpiter em Escorpião",
+      "personal": "Investigar questões difíceis e compreender mudanças nos vínculos podem oferecer sentido à sua experiência. A confiança pode crescer quando reconhece que consegue atravessar ambivalências, sem precisar eliminar toda incerteza. Aprofundar também inclui aceitar limites de conhecimento e respeitar o que ainda não pode ser compartilhado.",
+      "professional": "Você pode se desenvolver em tarefas que envolvam investigação, revisão profunda ou responsabilidade sobre recursos comuns. O interesse pela complexidade favorece aprendizado quando há transparência. Examinar condições e distribuir poder de decisão evita que a confiança em uma estratégia se transforme em controle excessivo ou em compromissos difíceis de rever."
+    },
+    "sign:jupiter:8": {
+      "title": "Júpiter em Sagitário",
+      "personal": "Estudo, exploração e um horizonte de sentido podem alimentar sua confiança nas possibilidades da vida. A disposição para aprender favorece abertura, mas convicções fortes podem encerrar perguntas cedo demais. Permitir que uma experiência contradiga sua explicação mantém viva a curiosidade que sustenta sua busca por compreensão.",
+      "professional": "Você pode se envolver com projetos de ensino, aprendizagem ou expansão de perspectivas, independentemente da profissão escolhida. Uma visão ampla pode orientar decisões, desde que considere condições de execução. Conferir prazos, recursos e necessidades do público ajuda a sustentar propostas ambiciosas sem prometer mais do que a equipe consegue realizar."
+    },
+    "sign:jupiter:9": {
+      "title": "Júpiter em Capricórnio",
+      "personal": "Metas e avanços construídos por compromisso continuado podem ser referências importantes para sua confiança. A prudência oferece direção, mas pode tornar difícil reconhecer possibilidades que ainda não possuem garantias. Considerar experiências pequenas e reversíveis permite ampliar seu mundo sem exigir certeza antes de cada novo passo.",
+      "professional": "Você pode enxergar desenvolvimento em estruturas bem organizadas e projetos com continuidade. A expansão tende a fazer sentido quando pode ser planejada e acompanhada, embora cautela excessiva restrinja experimentação. Definir etapas de teste permite avaliar oportunidades com critério, sem fazer da responsabilidade uma razão para recusar toda mudança."
+    },
+    "sign:jupiter:10": {
+      "title": "Júpiter em Aquário",
+      "personal": "Ideias que ampliam a liberdade e formas de participação coletiva podem oferecer sentido à sua experiência. A confiança cresce ao perceber alternativas ao que parecia fixo. Observar como princípios gerais afetam pessoas concretas ajuda a desenvolver uma visão de futuro que comporte diferenças e necessidades particulares.",
+      "professional": "Você pode se desenvolver em redes de colaboração e projetos que reorganizam métodos ou relações de trabalho. A abertura para experimentar favorece aprendizagem coletiva quando os efeitos são avaliados. Compartilhar critérios e incluir quem será afetado pelas mudanças permite que a proposta cresça com participação, em vez de depender apenas de adesão intelectual."
+    },
+    "sign:jupiter:11": {
+      "title": "Júpiter em Peixes",
+      "personal": "Imaginação, escuta e experiências que não cabem em explicações rígidas podem ampliar sua visão de mundo. A confiança pode nascer do vínculo e do sentido que atribui à vida. Manter discernimento sobre limites e atitudes concretas permite que a abertura não dependa de idealizar pessoas ou situações.",
+      "professional": "Você pode se envolver com propostas que expressem cuidado, criação e atenção ao contexto humano. A receptividade favorece novas possibilidades, mas pede critérios para avaliar o que pode ser sustentado. Traduzir uma intenção ampla em entregas e responsabilidades definidas permite preservar o sentido do projeto sem deixar sua execução vaga."
+    },
+    "house:jupiter:1": {
+      "title": "Júpiter na casa 1",
+      "personal": "Você pode experimentar crescimento ao ampliar a forma como se apresenta e se permite participar das situações. Confiança e disposição para aprender podem estimular novas experiências, mas não precisam eliminar a dúvida. Reconhecer limites pessoais permite ocupar espaço com liberdade, sem sentir que precisa estar sempre disponível ou otimista.",
+      "professional": "Você pode trazer entusiasmo a novos projetos e se apresentar com disposição para assumir desafios. Essa abertura pode ampliar aprendizagem quando acompanhada de avaliação concreta. Dizer o que consegue oferecer e o que ainda precisa desenvolver ajuda a construir credibilidade sem depender de promessas maiores que suas condições atuais."
+    },
+    "house:jupiter:2": {
+      "title": "Júpiter na casa 2",
+      "personal": "Você pode buscar crescimento por meio das habilidades, dos recursos e daquilo que considera valioso. A confiança em sua capacidade de construir pode favorecer autonomia, mas também ampliar expectativas sobre o que precisa ter. Reconhecer suficiência permite usar recursos a favor da vida que deseja, sem comparação permanente.",
+      "professional": "Desenvolver competências e ampliar autonomia podem ser objetivos importantes na sua experiência profissional. Avaliar o valor da própria contribuição pode abrir conversas relevantes sobre reconhecimento. Relacionar ambição a critérios concretos de esforço e recursos ajuda a evitar compromissos excessivos assumidos apenas pela expectativa de retorno futuro."
+    },
+    "house:jupiter:3": {
+      "title": "Júpiter na casa 3",
+      "personal": "Aprender e trocar ideias pode ampliar sua sensação de possibilidade no cotidiano. Você pode encontrar sentido em conversas, leituras e conexões entre assuntos, embora o excesso de informação dificulte assimilar o que importa. Escolher perguntas que merecem continuidade permite que a curiosidade produza uma compreensão mais pessoal.",
+      "professional": "Você pode se desenvolver ao comunicar conhecimento e aproximar referências que estavam separadas. Sua contribuição tende a crescer quando traduz o panorama geral para necessidades específicas. Conferir fontes e ajustar a extensão das explicações permite compartilhar repertório sem sobrecarregar o interlocutor nem tratar uma hipótese interessante como conclusão estabelecida."
+    },
+    "house:jupiter:4": {
+      "title": "Júpiter na casa 4",
+      "personal": "Você pode encontrar confiança na construção de uma base íntima e na possibilidade de ampliar o sentido de pertencimento. A vida privada pode ser espaço de aprendizagem, sem exigir que relações familiares sejam idealizadas. Escolher referências que acolham suas necessidades atuais permite crescer conservando aquilo que continua fazendo sentido.",
+      "professional": "Você pode valorizar condições profissionais que contribuam para uma vida privada com espaço e continuidade. Sua disposição para acolher pode favorecer equipes e projetos duradouros. Delimitar responsabilidades e preservar tempo pessoal ajuda a desenvolver o trabalho sem supor que a expansão profissional beneficia automaticamente todas as outras áreas da vida."
+    },
+    "house:jupiter:5": {
+      "title": "Júpiter na casa 5",
+      "personal": "Você pode ampliar a confiança por meio da criação, do prazer e da disposição para se mostrar. Experimentar favorece descoberta, mas o entusiasmo pode elevar a expectativa sobre o resultado. Permitir experiências pequenas, lúdicas e sem avaliação amplia a liberdade de expressar o que deseja sem precisar impressionar.",
+      "professional": "Projetos com autoria, experimentação e contato com o público podem despertar seu interesse por desenvolvimento. A confiança favorece propostas criativas quando há critérios de escolha. Testar versões e avaliar recursos antes de ampliar a produção permite aproveitar o entusiasmo sem comprometer a equipe com um escopo difícil de sustentar."
+    },
+    "house:jupiter:6": {
+      "title": "Júpiter na casa 6",
+      "personal": "Você pode encontrar sentido ao aprender habilidades e tornar o cotidiano mais habitável. A disposição para ajudar pode ampliar sua participação, mas também criar uma rotina em que sempre cabe mais uma obrigação. Distinguir contribuição escolhida de disponibilidade automática permite crescer sem ocupar todo o espaço com tarefas.",
+      "professional": "Você pode se desenvolver por meio da prática e da melhoria de processos. O desejo de contribuir favorece aprendizagem, desde que venha acompanhado de recursos e limites. Avaliar o que precisa ser simplificado antes de acrescentar novas atividades ajuda a evitar que uma proposta de melhoria produza mais sobrecarga que benefício."
+    },
+    "house:jupiter:7": {
+      "title": "Júpiter na casa 7",
+      "personal": "Você pode ampliar sua visão por meio de parcerias e encontrar confiança na troca com alguém diferente de você. O vínculo pode oferecer aprendizagem, mas idealizar a outra pessoa tende a concentrar nela expectativas demais. Preservar autonomia permite receber contribuições sem entregar ao parceiro a direção de suas escolhas.",
+      "professional": "Colaborações e negociações podem oferecer oportunidades de desenvolvimento profissional. Você pode reconhecer possibilidades quando escuta outra perspectiva, mas afinidade não substitui avaliação das condições. Conversar sobre responsabilidades, critérios e limites permite construir parcerias em que o entusiasmo inicial tenha apoio em compromissos que ambas as partes conseguem manter."
+    },
+    "house:jupiter:8": {
+      "title": "Júpiter na casa 8",
+      "personal": "Você pode encontrar crescimento ao compreender intimidade, confiança e formas de compartilhar que respeitem a autonomia. A abertura para assuntos complexos favorece aprendizagem, mas não exige ultrapassar seus limites para provar disponibilidade. Examinar expectativas permite distinguir uma troca enriquecedora de uma dependência que passou a restringir suas escolhas.",
+      "professional": "Recursos compartilhados, investigação e reorganização profunda podem oferecer contextos de aprendizagem para você no trabalho. A visão de possibilidades pode contribuir para negociações, desde que as condições sejam verificadas. Transparência e responsabilidades definidas permitem avaliar a expansão sem assumir que a confiança pessoal resolve todas as diferenças de interesse."
+    },
+    "house:jupiter:9": {
+      "title": "Júpiter na casa 9",
+      "personal": "A busca de sentido pode se alimentar de estudos, experiências culturais e contato com perspectivas diferentes. Você pode encontrar confiança ao reconhecer que existem outras formas de viver e compreender. Sustentar perguntas sem uma resposta final permite ampliar suas referências sem transformar uma visão inspiradora em explicação obrigatória para tudo.",
+      "professional": "Você pode se envolver com aprendizagem ampla e transmissão de conhecimento, mesmo em funções que não sejam formalmente educativas. Sua visão de conjunto pode orientar projetos quando considera detalhes de aplicação. Verificar fontes e ouvir experiências divergentes ajuda a ensinar, planejar e argumentar com abertura para revisão."
+    },
+    "house:jupiter:10": {
+      "title": "Júpiter na casa 10",
+      "personal": "Você pode atribuir sentido à contribuição pública e à possibilidade de assumir responsabilidades mais amplas. O reconhecimento pode estimular confiança, mas não precisa confirmar sozinho seu valor. Escolher objetivos coerentes com suas convicções permite desenvolver uma presença social que também respeite necessidades privadas e limites pessoais.",
+      "professional": "Ampliar sua atuação e participar das decisões pode ser parte do que você busca no trabalho. A confiança favorece novos compromissos quando vem acompanhada de preparação e recursos. Avaliar expectativas e consequências permite assumir responsabilidade sem confundir crescimento de posição com garantia de satisfação ou competência em todas as áreas."
+    },
+    "house:jupiter:11": {
+      "title": "Júpiter na casa 11",
+      "personal": "Você pode ampliar horizontes por meio de amizades, grupos e projetos compartilhados. A participação coletiva favorece confiança quando há espaço para diferenças, sem exigir identificação total com uma causa. Perceber quais compromissos consegue sustentar permite contribuir com entusiasmo e preservar vínculos que também tenham lugar para a vida particular.",
+      "professional": "Você pode encontrar desenvolvimento em redes de colaboração e objetivos de longo prazo. A capacidade de enxergar possibilidades coletivas pode aproximar pessoas, desde que as promessas sejam proporcionais aos recursos. Definir etapas e formas de participação ajuda a transformar uma visão compartilhada em trabalho que não dependa apenas de entusiasmo inicial."
+    },
+    "house:jupiter:12": {
+      "title": "Júpiter na casa 12",
+      "personal": "Você pode encontrar sentido em recolhimento, imaginação e formas discretas de participação. A reflexão amplia perspectivas quando permite reconhecer o que sua experiência realmente sustenta, sem exigir uma explicação total. Compartilhar algumas perguntas com pessoas de confiança ajuda a aproximar a vida interior dos vínculos e escolhas do cotidiano.",
+      "professional": "Você pode se desenvolver em atividades de bastidores, pesquisa ou cuidado que não recebem visibilidade imediata. A percepção do contexto amplo pode favorecer contribuições discretas, mas valiosas. Tornar responsabilidades e resultados claros permite reconhecer esse trabalho e evitar que uma finalidade generosa justifique condições vagas ou dedicação sem limite."
+    },
+    "sign:saturn:0": {
+      "title": "Saturno em Áries",
+      "personal": "Afirmar seus desejos pode envolver uma tensão entre agir e avaliar se tem legitimidade para ocupar espaço. Você pode conter impulsos ou sentir que precisa provar independência. Praticar decisões pequenas, aceitando revisão, permite construir firmeza sem exigir certeza completa nem transformar autonomia em obrigação de resolver tudo sozinho.",
+      "professional": "Você pode levar a sério a responsabilidade de iniciar e decidir, tornando a preparação importante. A cautela favorece consistência quando não paralisa a primeira tentativa. Delimitar riscos, recursos e etapas permite desenvolver iniciativa com experiência, sem depender de pressão extrema para finalmente autorizar a própria ação."
+    },
+    "sign:saturn:1": {
+      "title": "Saturno em Touro",
+      "personal": "A relação com segurança pode pedir atenção ao que você considera suficiente e ao receio de perder estabilidade. Você pode valorizar controle sobre recursos, mas a vida também exige adaptações. Construir apoios diversos permite manter prudência sem depender de uma única condição material ou de uma rotina imutável.",
+      "professional": "Você pode trabalhar com persistência quando percebe condições estáveis e critérios claros de valorização. A responsabilidade com recursos favorece continuidade, embora receio de mudança possa limitar escolhas. Avaliar custos reais e experimentar ajustes graduais permite atualizar métodos sem abandonar o cuidado com aquilo que já foi construído."
+    },
+    "sign:saturn:2": {
+      "title": "Saturno em Gêmeos",
+      "personal": "Expressar ideias pode vir acompanhado de exigência por precisão ou receio de não compreender o bastante. Você pode revisar muito antes de falar, reduzindo a espontaneidade da troca. Distinguir uma conversa exploratória de uma afirmação definitiva permite aprender em público sem precisar dominar um assunto inteiro para participar.",
+      "professional": "Você pode levar a sério comunicação, estudo e organização de informações. Essa atenção favorece consistência, mas pode prolongar tarefas quando toda frase precisa parecer completa. Definir o nível de precisão exigido e verificar pontos relevantes permite entregar com clareza, sem transformar cada mensagem em uma prova de competência."
+    },
+    "sign:saturn:3": {
+      "title": "Saturno em Câncer",
+      "personal": "Necessidades de acolhimento podem se encontrar com uma exigência de autocontrole ou responsabilidade afetiva. Você pode cuidar com constância e, ao mesmo tempo, hesitar em pedir apoio. Reconhecer que vínculos comportam dependência mútua permite receber cuidado sem interpretar essa necessidade como perda de autonomia ou maturidade.",
+      "professional": "Você pode assumir responsabilidade pela continuidade das relações e pelo cuidado com o ambiente de trabalho. A dedicação favorece confiança, mas precisa de limites para não virar obrigação emocional. Dividir tarefas de apoio e explicitar necessidades permite colaborar sem fazer da sua disponibilidade a sustentação invisível de toda a equipe."
+    },
+    "sign:saturn:4": {
+      "title": "Saturno em Leão",
+      "personal": "A expressão pessoal pode ser acompanhada de receio de exposição ou de exigência por um resultado digno de reconhecimento. Você pode preparar muito antes de se mostrar, restringindo experiências espontâneas. Criar sem avaliação imediata permite desenvolver confiança e perceber que seu valor não depende de uma apresentação impecável.",
+      "professional": "Você pode tratar autoria e liderança com seriedade, buscando consistência antes de assumir visibilidade. Essa preparação favorece responsabilidade quando não adia indefinidamente a participação. Apresentar versões em desenvolvimento e compartilhar decisões permite construir presença profissional por experiência, sem precisar sustentar uma imagem de controle ou excelência permanente."
+    },
+    "sign:saturn:5": {
+      "title": "Saturno em Virgem",
+      "personal": "Você pode encontrar segurança em critérios claros, competência e atenção ao que precisa ser corrigido. A exigência favorece cuidado, mas pode transformar pequenas falhas em motivos de autocrítica prolongada. Reconhecer o que já atende à necessidade permite usar discernimento sem fazer do aperfeiçoamento uma condição para descansar ou receber afeto.",
+      "professional": "Você pode assumir com seriedade a qualidade dos processos e a confiabilidade das entregas. O detalhe ajuda quando está ligado a consequências relevantes, mas revisões sem limite podem consumir recursos. Definir critérios de conclusão e repartir verificações permite preservar rigor sem concentrar em você toda a responsabilidade pelo funcionamento do trabalho."
+    },
+    "sign:saturn:6": {
+      "title": "Saturno em Libra",
+      "personal": "Parcerias podem mobilizar uma necessidade de compromisso, justiça e clareza sobre o que cada pessoa oferece. Você pode levar os acordos a sério, mas recear conflitos que coloquem o vínculo em dúvida. Aceitar negociação contínua permite construir relações responsáveis sem exigir equilíbrio perfeito ou garantias definitivas de reciprocidade.",
+      "professional": "Você pode contribuir com critérios consistentes e atenção às responsabilidades de cada parte. A prudência em negociações favorece acordos claros, desde que não torne toda divergência um impedimento. Definir condições de revisão permite decidir com responsabilidade e ajustar a parceria conforme a experiência, sem esperar consenso completo antes de começar."
+    },
+    "sign:saturn:7": {
+      "title": "Saturno em Escorpião",
+      "personal": "Confiança e intimidade podem pedir tempo, limites e uma percepção clara do que você deseja compartilhar. A cautela protege, mas pode restringir vínculos quando tenta eliminar toda vulnerabilidade. Construir acordos graduais permite experimentar proximidade sem exigir acesso completo ao outro nem assumir sozinho o controle da relação.",
+      "professional": "Você pode levar a sério confidencialidade, recursos compartilhados e decisões com consequências profundas. Sua atenção favorece responsabilidade quando distingue riscos concretos de desconfiança generalizada. Procedimentos transparentes e revisão independente permitem sustentar compromissos delicados sem concentrar informação ou poder de decisão como única forma de segurança."
+    },
+    "sign:saturn:8": {
+      "title": "Saturno em Sagitário",
+      "personal": "Você pode buscar convicções consistentes e sentir necessidade de justificar suas escolhas com princípios claros. Essa seriedade favorece reflexão, mas pode tornar a dúvida desconfortável. Permitir perguntas sem resposta imediata ajuda a construir uma visão de mundo capaz de orientar sua vida e continuar aprendendo com a experiência.",
+      "professional": "Você pode valorizar formação, coerência e responsabilidade ao transmitir conhecimento. O cuidado com fundamentos favorece credibilidade, desde que não transforme uma referência em regra absoluta. Confrontar ideias com situações concretas e acolher perguntas permite orientar projetos com consistência, mantendo espaço para revisão quando o contexto exige outra resposta."
+    },
+    "sign:saturn:9": {
+      "title": "Saturno em Capricórnio",
+      "personal": "Você pode se orientar por responsabilidade, planejamento e capacidade de sustentar compromissos. A exigência pode oferecer direção, mas também fazer parecer que seu valor depende do que consegue suportar. Rever obrigações e reconhecer limites permite escolher responsabilidades próprias, em vez de carregar expectativas apenas porque você é capaz de atendê-las.",
+      "professional": "Você pode desenvolver competência por continuidade, organização e atenção às consequências das decisões. A disposição para assumir responsabilidade precisa vir acompanhada de autoridade e recursos proporcionais. Delegar e avaliar processos permite sustentar resultados sem fazer da sobrecarga individual a resposta habitual para problemas que exigem mudanças na estrutura do trabalho."
+    },
+    "sign:saturn:10": {
+      "title": "Saturno em Aquário",
+      "personal": "Você pode tratar autonomia e participação coletiva como questões que pedem coerência e reflexão. A necessidade de pertencer pode conviver com receio de perder singularidade. Construir vínculos que comportem diferenças permite participar sem concordar com tudo, enquanto reconhecer necessidades afetivas evita que princípios substituam a experiência concreta de convivência.",
+      "professional": "Você pode contribuir ao organizar redes, revisar sistemas e transformar uma ideia coletiva em responsabilidades definidas. A busca de coerência favorece estrutura quando também considera exceções. Ouvir quem utiliza os processos e testar mudanças permite combinar critérios comuns com flexibilidade, evitando que a proposta de igualdade produza novas formas de rigidez."
+    },
+    "sign:saturn:11": {
+      "title": "Saturno em Peixes",
+      "personal": "Você pode sentir necessidade de dar forma a experiências internas que parecem difusas ou difíceis de explicar. Limites podem oscilar entre rigidez e abertura excessiva, tornando útil reconhecer necessidades concretas. Práticas simples de reflexão e escolhas graduais permitem sustentar sensibilidade sem exigir controle completo sobre aquilo que sente.",
+      "professional": "Você pode assumir com seriedade tarefas de cuidado, criação ou escuta, mas precisa distinguir responsabilidade de disponibilidade irrestrita. A falta de definição pode tornar difícil saber quando uma entrega está concluída. Estabelecer escopo, horários e critérios permite dar sustentação ao trabalho sensível sem deixá-lo dependente de sacrifício pessoal."
+    },
+    "house:saturn:1": {
+      "title": "Saturno na casa 1",
+      "personal": "Você pode se apresentar com reserva e atenção ao efeito das próprias atitudes. A necessidade de agir corretamente pode fortalecer responsabilidade, mas também restringir espontaneidade. Permitir tentativas e reconhecer capacidades em desenvolvimento ajuda a construir uma presença segura sem exigir que você esteja pronto para toda situação antes de participar.",
+      "professional": "Você pode transmitir seriedade e assumir com cuidado aquilo que representa. Essa postura favorece confiança quando não impede perguntas ou pedidos de apoio. Tornar explícitos recursos e limites permite exercer responsabilidade sem fazer da imagem de competência uma obrigação de resolver sozinho problemas que dependem de outras pessoas."
+    },
+    "house:saturn:2": {
+      "title": "Saturno na casa 2",
+      "personal": "Segurança e valor pessoal podem ser temas que pedem construção gradual e critérios próprios. Você pode se cobrar para demonstrar autonomia, tornando difícil reconhecer recursos que já possui. Distinguir necessidades reais de uma exigência permanente de proteção permite cuidar da estabilidade sem adiar indefinidamente prazer, descanso ou escolhas significativas.",
+      "professional": "Você pode administrar recursos e desenvolver habilidades com atenção à continuidade. A prudência favorece decisões sustentáveis, mas pode levar a subestimar sua contribuição ou aceitar condições por receio de instabilidade. Explicitar competências, custos e expectativas ajuda a negociar com critérios concretos, sem depender apenas da sensação de precisar garantir tudo."
+    },
+    "house:saturn:3": {
+      "title": "Saturno na casa 3",
+      "personal": "Você pode levar a comunicação e o aprendizado a sério, às vezes exigindo de si uma precisão que dificulta participar espontaneamente. Organizar ideias oferece apoio, mas não precisa preceder toda conversa. Fazer perguntas e admitir dúvidas permite aprender sem transformar o desconhecimento momentâneo em uma avaliação negativa de sua capacidade.",
+      "professional": "Documentação, análise cuidadosa e clareza dos compromissos podem ser contribuições importantes da sua atuação. A revisão favorece confiabilidade quando segue a importância de cada informação. Definir o que precisa ser formalizado e o que pode ser discutido em desenvolvimento evita que o cuidado se converta em lentidão ou excesso de controle comunicativo."
+    },
+    "house:saturn:4": {
+      "title": "Saturno na casa 4",
+      "personal": "Construir uma base íntima pode envolver responsabilidade e reflexão sobre o que faz você se sentir em casa. Você pode levar compromissos privados a sério, sem que isso indique uma história familiar específica. Rever obrigações e permitir apoio compartilhado torna possível criar pertencimento com limites compatíveis com sua vida atual.",
+      "professional": "Você pode precisar de condições estáveis na vida privada para sustentar sua atuação profissional. A responsabilidade por essa base tende a influenciar escolhas, mas não precisa impedir desenvolvimento. Negociar horários e distribuir compromissos permite considerar necessidades concretas sem assumir que toda mudança profissional ameaça aquilo que você deseja preservar."
+    },
+    "house:saturn:5": {
+      "title": "Saturno na casa 5",
+      "personal": "Prazer e expressão pessoal podem se encontrar com uma exigência de fazer bem ou de evitar exposição. Você pode dedicar tempo a desenvolver habilidades, mas também adiar experiências por receio do resultado. Reservar espaço para criação sem avaliação permite que a espontaneidade cresça junto com a competência, sem depender dela.",
+      "professional": "Você pode tratar projetos criativos com disciplina e atenção à qualidade. A preparação favorece consistência, desde que não elimine a fase de experimentação. Trabalhar com rascunhos, critérios de revisão e prazos possíveis permite desenvolver autoria sem exigir que a primeira versão já corresponda à imagem final do trabalho."
+    },
+    "house:saturn:6": {
+      "title": "Saturno na casa 6",
+      "personal": "Você pode assumir tarefas cotidianas com seriedade e sentir necessidade de manter tudo funcionando. A responsabilidade oferece estrutura, mas pode tornar difícil perceber quando a rotina excede suas condições. Escolher o que realmente precisa ser feito e aceitar divisão de cuidados permite preservar continuidade sem transformar cada dia em uma prova.",
+      "professional": "Sustentar processos, acompanhar detalhes e cumprir compromissos com regularidade podem mobilizar sua responsabilidade profissional. A dedicação favorece confiabilidade quando existe distribuição justa de tarefas. Revisar recursos, prioridades e carga de trabalho ajuda a distinguir responsabilidade pessoal de falhas organizacionais, evitando que sua capacidade de suportar pressão substitua melhorias necessárias no funcionamento da equipe."
+    },
+    "house:saturn:7": {
+      "title": "Saturno na casa 7",
+      "personal": "Você pode buscar vínculos com continuidade, clareza e compromisso, dedicando tempo à construção da confiança. Essa seriedade pode favorecer parceria, mas também elevar as exigências antes de permitir proximidade. Acordos que possam ser revistos ajudam a conciliar responsabilidade afetiva com a realidade de duas pessoas que mudam e aprendem.",
+      "professional": "Você pode avaliar colaborações com atenção a responsabilidades e consequências de longo prazo. O cuidado favorece acordos consistentes quando não depende de garantias impossíveis. Definir entregas, espaço de decisão e condições de revisão permite construir confiança pela experiência, sem concentrar toda a segurança em formalidades ou em uma única pessoa."
+    },
+    "house:saturn:8": {
+      "title": "Saturno na casa 8",
+      "personal": "Compartilhar intimidade e recursos pode exigir confiança construída gradualmente e limites bem reconhecidos. Você pode preferir manter controle para reduzir incerteza, mas proximidade sempre comporta alguma vulnerabilidade. Conversar sobre o que consegue oferecer permite experimentar reciprocidade sem assumir obrigações silenciosas nem pedir garantias completas sobre o futuro do vínculo.",
+      "professional": "Você pode tratar recursos comuns, confidencialidade e mudanças profundas com atenção às consequências. Essa prudência favorece responsabilidade quando os procedimentos são transparentes. Distribuir autoridade e estabelecer formas de acompanhamento permite sustentar compromissos sensíveis sem depender de vigilância permanente ou de uma concentração de decisões que dificulte a colaboração."
+    },
+    "house:saturn:9": {
+      "title": "Saturno na casa 9",
+      "personal": "Você pode buscar referências sólidas para orientar escolhas e compreender sua experiência. Estudos e convicções podem oferecer estrutura, mas a necessidade de certeza tende a tornar dúvidas mais pesadas. Permitir revisão e reconhecer os limites de uma explicação ajuda a desenvolver uma orientação pessoal que continue aberta à aprendizagem.",
+      "professional": "Formação consistente, coerência de princípios e cuidado ao orientar podem ser critérios importantes para você no trabalho. O rigor favorece credibilidade quando admite diferenças de contexto. Relacionar fundamentos a aplicações concretas e revisar pressupostos permite trabalhar com seriedade sem transformar uma abordagem conhecida na única maneira legítima de compreender um problema."
+    },
+    "house:saturn:10": {
+      "title": "Saturno na casa 10",
+      "personal": "Responsabilidade pública e trajetória podem ter peso na sua avaliação de si. Você pode levar objetivos a sério, mas também sentir que precisa demonstrar competência continuamente. Definir critérios próprios de realização permite reconhecer conquistas e limites, sem depender apenas de títulos, aprovação de autoridades ou capacidade de suportar exigências.",
+      "professional": "Você pode se dedicar a construir uma atuação consistente e assumir compromissos de longo prazo. A responsabilidade favorece desenvolvimento quando acompanha recursos e autonomia. Negociar expectativas, delegar e revisar metas permite sustentar uma trajetória profissional sem tratar todo atraso ou limite institucional como falha pessoal de esforço ou preparação."
+    },
+    "house:saturn:11": {
+      "title": "Saturno na casa 11",
+      "personal": "Você pode selecionar amizades e grupos com cuidado, valorizando continuidade e compromisso. A participação coletiva pode trazer responsabilidade, mas também receio de não corresponder ao que esperam. Reconhecer formas diferentes de contribuir permite pertencer sem provar utilidade o tempo todo nem assumir sozinho a sustentação dos vínculos.",
+      "professional": "Organizar projetos coletivos e tornar objetivos amplos acompanháveis podem mobilizar seu compromisso profissional. Sua atenção à continuidade favorece equipes quando o trabalho é distribuído. Definir participação, recursos e limites ajuda a evitar que a responsabilidade pelo futuro do projeto se concentre em quem demonstra maior disposição para mantê-lo funcionando."
+    },
+    "house:saturn:12": {
+      "title": "Saturno na casa 12",
+      "personal": "Você pode manter exigências internas que nem sempre ficam claras durante o cotidiano. O recolhimento pode oferecer reflexão, mas também prolongar preocupações quando não há possibilidade de compartilhá-las. Dar forma às demandas e conversar com alguém de confiança permite distinguir responsabilidades reais de cobranças que você assumiu sem examinar.",
+      "professional": "Você pode assumir tarefas discretas com seriedade e manter compromissos mesmo sem reconhecimento imediato. Essa constância precisa de visibilidade suficiente para que limites sejam respeitados. Registrar entregas e discutir prioridades permite evitar acúmulo silencioso, especialmente quando o trabalho de bastidores recebe novas demandas sem revisão das condições existentes."
+    },
+    "sign:uranus:0": {
+      "title": "Urano em Áries",
+      "personal": "Esta posição geracional associa a busca por mudança à iniciativa e à afirmação da autonomia. Se esse tema ganha destaque nas suas experiências, você pode investigar como diferencia coragem de reação imediata, reconhecendo que agir por vontade própria também inclui escolher quando ouvir, esperar e sustentar um compromisso.",
+      "professional": "Urano em Áries oferece um pano de fundo coletivo para questionar quem pode iniciar mudanças e assumir decisões. Na sua atuação, esse tema pode aparecer como interesse por experimentação e independência. A casa e os aspectos ajudam a situá-lo, enquanto testes delimitados permitem avaliar propostas antes de ampliar seu alcance."
+    },
+    "sign:uranus:1": {
+      "title": "Urano em Touro",
+      "personal": "Compartilhada por uma geração, esta posição aproxima mudança de temas como estabilidade, recursos e relação com o corpo. Você pode reconhecer esse pano de fundo ao questionar o que considera seguro, percebendo quais hábitos oferecem apoio e quais permanecem apenas porque imaginar outra forma de viver causa desconforto.",
+      "professional": "Esta posição geracional convida a examinar maneiras de produzir, preservar recursos e reconhecer valor no trabalho. Conforme seu contexto e as demais posições do mapa, você pode se interessar por alternativas a métodos estabelecidos. Comparar qualidade, continuidade e efeitos concretos ajuda a avaliar mudanças sem confundir novidade com melhoria."
+    },
+    "sign:uranus:2": {
+      "title": "Urano em Gêmeos",
+      "personal": "Urano em Gêmeos reúne temas geracionais de mudança na comunicação, na aprendizagem e na circulação de ideias. Se você reconhece essa orientação, pode explorar perspectivas pouco habituais sem exigir que toda conversa traga novidade. Dar continuidade a uma pergunta ajuda a perceber o que uma associação inesperada realmente acrescenta.",
+      "professional": "Esta posição oferece um contexto coletivo para experimentar linguagens e questionar formas tradicionais de compartilhar conhecimento. Na sua atuação, a expressão depende das casas, dos aspectos e das experiências reais. Explicar raciocínios e conferir informações ajuda a transformar conexões novas em propostas que outras pessoas consigam compreender e utilizar."
+    },
+    "sign:uranus:3": {
+      "title": "Urano em Câncer",
+      "personal": "Este tema geracional aproxima a necessidade de mudança das referências de família, intimidade e pertencimento. Você pode reconhecê-lo quando procura formas próprias de construir uma base afetiva. Preservar vínculos e rever expectativas podem fazer parte do mesmo movimento, sem que autonomia exija romper com todas as referências conhecidas.",
+      "professional": "Urano em Câncer apresenta um pano de fundo coletivo para rever maneiras de organizar cuidado, proteção e continuidade. Se o tema participa da sua atuação, você pode questionar práticas que confundem confiança com dependência. Conversar sobre responsabilidades ajuda a experimentar outros arranjos sem desconsiderar as necessidades de apoio da equipe."
+    },
+    "sign:uranus:4": {
+      "title": "Urano em Leão",
+      "personal": "Compartilhada por uma geração, esta posição relaciona mudança à expressão pessoal, à criatividade e ao desejo de ocupar um lugar próprio. Você pode investigar quais diferenças deseja mostrar e quais surgem para provocar uma resposta. A liberdade criativa também comporta experiências discretas, sem exigência de surpreender ou conquistar atenção.",
+      "professional": "Esta posição geracional oferece perguntas sobre autoria, visibilidade e novas formas de criar. Na sua experiência profissional, pode se expressar como interesse em propostas que escapem dos modelos habituais, conforme o restante do mapa. Testar ideias com interlocutores permite preservar originalidade enquanto você reconhece limites e contribuições do trabalho coletivo."
+    },
+    "sign:uranus:5": {
+      "title": "Urano em Virgem",
+      "personal": "Urano em Virgem apresenta um tema geracional de revisão dos hábitos, dos procedimentos e das maneiras de organizar o cotidiano. Você pode reconhecer esse impulso quando procura alternativas para uma rotina pouco funcional. Experimentar ajustes proporcionais ajuda a distinguir mudanças úteis da necessidade de corrigir continuamente algo que já funciona.",
+      "professional": "Esta posição oferece um pano de fundo coletivo para questionar métodos de trabalho e relações entre técnica, utilidade e autonomia. Se você se identifica com esse tema, pode contribuir ao revisar procedimentos. Observar o efeito de cada mudança sobre quem executa as tarefas ajuda a avaliar resultados além da eficiência anunciada."
+    },
+    "sign:uranus:6": {
+      "title": "Urano em Libra",
+      "personal": "Esta posição geracional aproxima a busca por autonomia das formas de relacionamento e dos critérios de reciprocidade. Você pode explorar acordos que respeitem diferenças, caso esse tema encontre expressão na sua vida. A liberdade ganha contornos mais claros quando desejos e limites são conversados, em vez de presumidos a partir da proximidade.",
+      "professional": "Urano em Libra oferece um contexto coletivo para questionar modelos de parceria, representação e decisão compartilhada. Na sua atuação, isso pode aparecer no interesse por negociações menos rígidas. A casa e os aspectos acrescentam especificidade, enquanto acordos explícitos ajudam a verificar se uma proposta de igualdade também funciona na prática."
+    },
+    "sign:uranus:7": {
+      "title": "Urano em Escorpião",
+      "personal": "Compartilhada por uma geração, esta posição relaciona mudanças a intimidade, controle e assuntos que costumam permanecer reservados. Você pode reconhecer esse tema ao questionar regras silenciosas dos vínculos. Conversar sobre consentimento e privacidade permite experimentar outras formas de confiança sem transformar exposição ou ruptura em provas obrigatórias de liberdade.",
+      "professional": "Esta posição geracional oferece perguntas sobre acesso à informação, distribuição de influência e revisão de recursos compartilhados. Se esses temas participam do seu trabalho, você pode se interessar por mudanças estruturais. Definir critérios e respeitar limites de intervenção ajuda a avaliar se uma alteração amplia escolhas para as pessoas envolvidas."
+    },
+    "sign:uranus:8": {
+      "title": "Urano em Sagitário",
+      "personal": "Urano em Sagitário apresenta um tema geracional de questionamento das crenças, das referências culturais e das explicações consideradas universais. Você pode encontrar espaço para rever convicções, conforme sua experiência. Conhecer perspectivas diferentes se torna mais fértil quando a vontade de contestar também permite escutar argumentos que não confirmam sua posição.",
+      "professional": "Esta posição oferece um contexto coletivo para experimentar outras maneiras de aprender, ensinar e conectar visões de mundo. Na sua atuação, pode mobilizar interesse por projetos que ampliem referências. Conferir fontes e testar ideias em situações concretas ajuda a distinguir uma proposta esclarecedora de uma generalização atraente, mas pouco sustentada."
+    },
+    "sign:uranus:9": {
+      "title": "Urano em Capricórnio",
+      "personal": "Esta posição geracional aproxima mudança das estruturas de autoridade, responsabilidade e reconhecimento social. Você pode reconhecer o tema ao avaliar quais regras oferecem sustentação e quais limitam escolhas sem razão atual. Construir autonomia pode envolver rever compromissos por etapas, preservando referências úteis enquanto experimenta uma relação diferente com as exigências.",
+      "professional": "Urano em Capricórnio oferece um pano de fundo coletivo para questionar hierarquias e formas estabelecidas de organizar o trabalho. Se esse tema ganha expressão na sua carreira, você pode procurar mudanças com sustentação prática. Planejar transições e distribuir responsabilidades ajuda a renovar processos sem depender apenas da intenção de romper com o anterior."
+    },
+    "sign:uranus:10": {
+      "title": "Urano em Aquário",
+      "personal": "Compartilhada por uma geração, esta posição relaciona autonomia a redes, ideias coletivas e possibilidades de organização social. Você pode reconhecer esse interesse ao procurar grupos que comportem diferenças. A convivência permite testar ideais de liberdade, sobretudo quando é preciso escutar necessidades particulares que não se encaixam no projeto imaginado.",
+      "professional": "Esta posição geracional oferece perguntas sobre colaboração, tecnologia e participação nas decisões. Na sua atuação, pode aparecer como disposição para experimentar modelos de trabalho, dependendo do contexto e das demais conexões do mapa. Incluir quem será afetado pela mudança ajuda a avaliar utilidade, acesso e responsabilidade além do entusiasmo inicial."
+    },
+    "sign:uranus:11": {
+      "title": "Urano em Peixes",
+      "personal": "Urano em Peixes apresenta um tema geracional de abertura a formas incomuns de imaginar, sentir e atribuir significado às experiências. Se você reconhece esse impulso, pode explorar referências sem precisar fixar uma explicação definitiva. Dar contorno às próprias preferências ajuda a distinguir liberdade interior de adaptação constante ao ambiente.",
+      "professional": "Esta posição oferece um pano de fundo coletivo para experimentar linguagens e questionar fronteiras entre áreas de criação ou cuidado. Na sua experiência profissional, a expressão depende de outros fatores do mapa. Traduzir intuições em propostas compreensíveis permite compartilhar descobertas e avaliar os efeitos de mudanças inicialmente difíceis de definir."
+    },
+    "house:uranus:1": {
+      "title": "Urano na casa 1",
+      "personal": "A autonomia pode ganhar destaque na maneira como você se apresenta e inicia experiências. Você pode desejar liberdade para mudar de postura ou experimentar formas diferentes de ocupar espaço. Observar quando uma diferença expressa vontade própria e quando reage à expectativa alheia ajuda a construir presença sem depender de oposição constante.",
+      "professional": "Você pode preferir situações em que exista margem para propor um caminho próprio desde o início. Sua participação tende a se tornar mais compreensível quando você explica o que deseja mudar e por quê. Conhecer o funcionamento do ambiente ajuda a testar alternativas sem exigir que toda regra seja descartada."
+    },
+    "house:uranus:2": {
+      "title": "Urano na casa 2",
+      "personal": "Sua relação com segurança e valor pessoal pode incluir a necessidade de preservar liberdade de escolha. Você pode questionar critérios convencionais de posse, conforto ou reconhecimento, procurando formas próprias de sustentação. Distinguir experimentação de instabilidade desejada permite rever hábitos sem fazer da mudança uma exigência permanente para sentir autonomia.",
+      "professional": "Você pode se interessar por maneiras alternativas de utilizar habilidades e organizar recursos profissionais. A necessidade de independência pede condições concretas para ser sustentada, incluindo acordos claros e conhecimento dos custos envolvidos. Avaliar uma proposta por seus efeitos reais ajuda a separar flexibilidade útil de uma promessa vaga de liberdade."
+    },
+    "house:uranus:3": {
+      "title": "Urano na casa 3",
+      "personal": "Você pode encontrar autonomia ao questionar explicações habituais e construir conexões próprias entre assuntos. Conversas e estudos oferecem espaço para experimentar ideias, embora o desejo de novidade possa interromper uma investigação antes de aprofundá-la. Escutar o raciocínio completo de outra pessoa amplia o repertório que alimenta suas associações.",
+      "professional": "Sua participação profissional pode incluir reformular perguntas, propor linguagens diferentes ou perceber alternativas de comunicação. Para compartilhar essas ideias, ajuda apresentar as etapas que levaram à conclusão, especialmente quando você percebe uma conexão rapidamente. Conferir dados e testar a compreensão dos interlocutores permite transformar uma hipótese original em contribuição utilizável."
+    },
+    "house:uranus:4": {
+      "title": "Urano na casa 4",
+      "personal": "Você pode precisar construir um espaço íntimo que comporte liberdade e escolhas próprias. Referências familiares podem ser revistas conforme você distingue pertencimento de obrigação, sem que isso determine afastamento ou ruptura. Conversar sobre privacidade, convivência e mudanças de rotina ajuda a preservar vínculos enquanto você experimenta outras maneiras de se sentir em casa.",
+      "professional": "As condições da vida privada podem participar da sua necessidade de flexibilidade no trabalho. Você pode valorizar arranjos que permitam organizar uma base própria e revisar hábitos que interferem na disponibilidade. Acordos explícitos de horário e comunicação ajudam a conciliar autonomia cotidiana com a continuidade necessária aos compromissos profissionais."
+    },
+    "house:uranus:5": {
+      "title": "Urano na casa 5",
+      "personal": "Criatividade, prazer e expressão afetiva podem despertar sua vontade de experimentar sem seguir um roteiro fixo. Você pode se interessar pelo inesperado e desejar que os vínculos comportem espontaneidade. Reconhecer preferências e conversar sobre expectativas ajuda a aproveitar essa abertura sem depender de novidade contínua para manter o envolvimento.",
+      "professional": "Você pode contribuir com propostas criativas que questionam formatos conhecidos ou combinam referências de maneira incomum. Reservar espaço para ensaios e avaliar a resposta do público ajuda a desenvolver essas ideias. A autonomia de criação se sustenta melhor quando existem critérios sobre o que pode mudar e o que precisa ser entregue."
+    },
+    "house:uranus:6": {
+      "title": "Urano na casa 6",
+      "personal": "Sua relação com o cotidiano pode incluir resistência a hábitos que parecem limitar escolhas sem oferecer utilidade. Você pode precisar experimentar maneiras diferentes de distribuir tarefas e tempo, reconhecendo também a função de algumas referências estáveis. Uma rotina flexível ganha sustentação quando permite perceber o que ajuda e o que apenas dispersa atenção.",
+      "professional": "Você pode se interessar por revisar procedimentos e encontrar soluções que ampliem autonomia na execução. Antes de alterar um processo, compreender sua função ajuda a preservar o que ainda atende às necessidades do trabalho. Testes delimitados e escuta de quem usa o método permitem avaliar mudanças com critérios compartilhados."
+    },
+    "house:uranus:7": {
+      "title": "Urano na casa 7",
+      "personal": "Parcerias podem despertar perguntas sobre liberdade, diferença e o espaço necessário para continuar reconhecendo desejos próprios. Você pode desejar vínculos que comportem mudanças de interesse e formas singulares de convivência. Acordos conversados ajudam a tornar essa autonomia recíproca, sem presumir que a outra pessoa tenha as mesmas expectativas de proximidade.",
+      "professional": "Você pode valorizar parceiros que ofereçam perspectivas diferentes e aceitem rever maneiras estabelecidas de colaborar. Definir como decisões e mudanças serão negociadas ajuda a preservar liberdade com continuidade. A clareza sobre responsabilidades permite experimentar novos arranjos sem deixar a outra parte dependente de informações que só você conhece."
+    },
+    "house:uranus:8": {
+      "title": "Urano na casa 8",
+      "personal": "Intimidade e partilha podem despertar a necessidade de revisar acordos sobre confiança, privacidade e autonomia. Você pode questionar expectativas de entrega que parecem eliminar escolhas pessoais. Reconhecer o que deseja compartilhar e o que precisa preservar ajuda a construir proximidade sem tornar independência ou exposição completa condições obrigatórias do vínculo.",
+      "professional": "Você pode se interessar por alternativas para administrar informações, influência ou recursos compartilhados. Mudanças nessa área exigem clareza sobre quem decide e quem será afetado. Tornar critérios e possibilidades de revisão acessíveis ajuda a distinguir uma inovação que amplia participação de uma alteração que apenas desloca o controle para outras mãos."
+    },
+    "house:uranus:9": {
+      "title": "Urano na casa 9",
+      "personal": "Sua busca por conhecimento pode envolver questionar convicções e conhecer referências que desafiem explicações familiares. Você pode valorizar liberdade para formular uma visão própria, sem se comprometer de imediato com um sistema fechado. Sustentar perguntas e estudar argumentos contrários ajuda a distinguir independência de pensamento de contestação por hábito.",
+      "professional": "Você pode contribuir ao rever pressupostos de ensino, planejamento ou transmissão de conhecimento. Perspectivas diferentes oferecem recursos quando você consegue relacioná-las ao problema concreto de quem participa do trabalho. Explicitar hipóteses e avaliar seus efeitos permite inovar sem exigir que uma proposta explique tudo ou substitua imediatamente o modelo anterior."
+    },
+    "house:uranus:10": {
+      "title": "Urano na casa 10",
+      "personal": "Sua direção de vida pode pedir espaço para escolhas que não correspondam inteiramente às expectativas sociais mais próximas. Você pode rever referências de realização e desejar uma posição pública que comporte autonomia. Examinar o que cada mudança oferece ajuda a construir uma trajetória própria sem fazer da descontinuidade um valor em si.",
+      "professional": "Você pode procurar liberdade para questionar processos, experimentar funções ou participar de projetos em transformação. Essa orientação não determina uma carreira específica nem mudanças inevitáveis. Planejar transições, desenvolver competências e conversar sobre expectativas ajuda a sustentar autonomia profissional com condições que permitam acompanhar os efeitos das escolhas realizadas."
+    },
+    "house:uranus:11": {
+      "title": "Urano na casa 11",
+      "personal": "Amizades e grupos podem oferecer espaço para experimentar outras formas de pertencimento e de imaginar o futuro. Você pode valorizar afinidades que comportem diferença, questionando regras silenciosas de participação. Reconhecer necessidades particulares dentro do coletivo ajuda a construir relações em que liberdade não dependa de distanciamento emocional permanente.",
+      "professional": "Você pode se interessar por redes e projetos que experimentem maneiras menos centralizadas de colaborar. A proposta ganha consistência quando decisões, responsabilidades e acesso à informação são discutidos. Ouvir quem encontra dificuldades de participação ajuda a avaliar se a autonomia anunciada existe para toda a equipe ou apenas para algumas pessoas."
+    },
+    "house:uranus:12": {
+      "title": "Urano na casa 12",
+      "personal": "Sua necessidade de liberdade pode aparecer primeiro como inquietação interna, antes de encontrar uma escolha ou explicação clara. Momentos de recolhimento podem ajudar a reconhecer ideias que o convívio cotidiano deixa em segundo plano. Dar forma a essas percepções permite experimentar mudanças pequenas sem esperar que tudo se torne evidente de uma vez.",
+      "professional": "Você pode encontrar espaço para questionar métodos em pesquisa, elaboração reservada ou atividades de bastidores. Registrar ideias e escolher momentos de compartilhamento ajuda a transformar essa reflexão em contribuição visível. Preservar autonomia não exige trabalhar sem apoio, especialmente quando a proposta precisa de interlocutores para ser desenvolvida e avaliada."
+    },
+    "sign:neptune:0": {
+      "title": "Netuno em Áries",
+      "personal": "Esta posição geracional relaciona imaginação e idealismo à iniciativa, à coragem e ao desejo de abrir caminhos. Se você reconhece esse tema, pode examinar quais imagens de independência orientam suas escolhas. Admitir dúvida e necessidade de apoio permite desejar autonomia sem exigir de si a postura de quem sempre sabe avançar.",
+      "professional": "Netuno em Áries oferece um pano de fundo coletivo para idealizar ação, liderança e capacidade de começar. Na sua atuação, esse tema depende das casas e dos aspectos. Conferir o que uma proposta exige na prática ajuda a distinguir uma iniciativa com sentido de uma imagem atraente de protagonismo."
+    },
+    "sign:neptune:1": {
+      "title": "Netuno em Touro",
+      "personal": "Compartilhada por uma geração, esta posição aproxima ideais de segurança, beleza e conforto material. Você pode reconhecer esse pano de fundo nas imagens de vida tranquila que considera desejáveis. Observar necessidades concretas permite apreciar prazer e estabilidade sem esperar que uma condição externa elimine todas as incertezas dos vínculos.",
+      "professional": "Esta posição geracional oferece perguntas sobre o que torna um trabalho valioso, belo ou capaz de proporcionar segurança. Se o tema participa das suas escolhas, você pode se interessar por qualidade sensorial e continuidade. Examinar materiais, condições e entregas ajuda a aproximar uma imagem desejada da experiência concreta de produção."
+    },
+    "sign:neptune:2": {
+      "title": "Netuno em Gêmeos",
+      "personal": "Netuno em Gêmeos apresenta um tema geracional de imaginação associada às palavras, às narrativas e à circulação de informações. Você pode explorar imagens que ampliem sua compreensão, conforme a posição se articula ao restante do mapa. Distinguir uma história convincente de uma informação confirmada preserva abertura sem dispensar discernimento.",
+      "professional": "Esta posição oferece um contexto coletivo para criar linguagens e atribuir significado ao que é comunicado. Na sua atuação, pode aparecer no interesse por histórias e formas expressivas de apresentar ideias. Explicitar fontes, hipóteses e objetivos ajuda a compartilhar imaginação sem confundir interpretação com aquilo que foi efetivamente observado."
+    },
+    "sign:neptune:3": {
+      "title": "Netuno em Câncer",
+      "personal": "Esta posição geracional aproxima idealização de pertencimento, proteção e imagens de família ou de lar. Você pode reconhecer esse tema ao perceber o que espera de um vínculo íntimo. Conhecer as pessoas além desses ideais permite construir acolhimento possível, sem exigir que a convivência corresponda a uma lembrança ou imagem perfeita.",
+      "professional": "Netuno em Câncer oferece um pano de fundo coletivo para imaginar instituições e trabalhos como espaços de cuidado. Se essa orientação participa da sua atuação, você pode valorizar acolhimento e continuidade. Definir responsabilidades ajuda a verificar como essa intenção se realiza, evitando depender apenas da promessa de que o ambiente seria uma família."
+    },
+    "sign:neptune:4": {
+      "title": "Netuno em Leão",
+      "personal": "Compartilhada por uma geração, esta posição relaciona imaginação à expressão pessoal, ao encantamento e às imagens de reconhecimento. Você pode investigar modelos de criatividade ou de presença que despertam identificação. Reservar espaço para criar sem uma resposta ideal do público ajuda a conhecer o próprio prazer de participar.",
+      "professional": "Esta posição geracional oferece perguntas sobre autoria, representação e o poder das imagens na construção de reconhecimento. Na sua experiência profissional, o tema depende do contexto e das demais posições. Separar qualidade da entrega, visibilidade e expectativas de admiração permite desenvolver uma expressão que não precise corresponder a um personagem impecável."
+    },
+    "sign:neptune:5": {
+      "title": "Netuno em Virgem",
+      "personal": "Netuno em Virgem apresenta um tema geracional de idealização da utilidade, do cuidado e do aperfeiçoamento cotidiano. Você pode reconhecer esse impulso quando imagina que uma organização melhor resolveria todo desconforto. Preservar sensibilidade também envolve admitir limites, aceitar tarefas suficientes e perceber o que não pode ser corrigido por um procedimento.",
+      "professional": "Esta posição oferece um pano de fundo coletivo para relacionar serviço, precisão e ideais de dedicação. Se o tema participa do seu trabalho, você pode buscar métodos que acolham necessidades humanas. Critérios realistas de qualidade e delimitação de funções ajudam a concretizar essa intenção sem transformar disponibilidade em exigência sem fim."
+    },
+    "sign:neptune:6": {
+      "title": "Netuno em Libra",
+      "personal": "Esta posição geracional aproxima imaginação e idealismo das relações, da beleza e das expectativas de harmonia. Você pode reconhecer esse tema ao perceber quais imagens de parceria orientam seus desejos. Conhecer diferenças reais e conversar sobre desacordos permite que o vínculo se desenvolva sem depender de uma sintonia presumida.",
+      "professional": "Netuno em Libra oferece um contexto coletivo para idealizar colaboração, equilíbrio e entendimento entre partes. Na sua atuação, essa orientação pode apoiar criação e negociação, conforme o restante do mapa. Tornar interesses e responsabilidades explícitos ajuda a verificar se a atmosfera cordial corresponde a condições de participação efetivamente recíprocas."
+    },
+    "sign:neptune:7": {
+      "title": "Netuno em Escorpião",
+      "personal": "Compartilhada por uma geração, esta posição relaciona imaginação a intimidade, mistério e experiências de envolvimento intenso. Você pode observar quais expectativas tornam uma relação especialmente atraente e o que ainda precisa conhecer sobre ela. Dar espaço à privacidade e ao consentimento permite aproximar desejo e realidade sem exigir entrega absoluta.",
+      "professional": "Esta posição geracional oferece perguntas sobre imagens de poder, influência e capacidade de transformar situações. Se esses temas participam da sua atuação, você pode se interessar pelo que permanece fora das explicações mais visíveis. Verificar informações e delimitar intervenções ajuda a distinguir percepção de uma hipótese tomada prematuramente como certeza."
+    },
+    "sign:neptune:8": {
+      "title": "Netuno em Sagitário",
+      "personal": "Netuno em Sagitário apresenta um tema geracional de idealização da liberdade, do conhecimento e das explicações que prometem sentido amplo. Você pode reconhecer essa busca em referências culturais ou espirituais que o mobilizam. Manter espaço para dúvida e experiência concreta permite aprender sem exigir que uma visão resolva todas as perguntas.",
+      "professional": "Esta posição oferece um pano de fundo coletivo para imaginar o trabalho como transmissão de conhecimento ou participação em uma finalidade maior. Na sua atuação, a expressão depende do contexto e dos demais fatores do mapa. Comparar discursos com práticas observáveis ajuda a escolher projetos sem depender exclusivamente da força inspiradora de sua proposta."
+    },
+    "sign:neptune:9": {
+      "title": "Netuno em Capricórnio",
+      "personal": "Esta posição geracional aproxima ideais das imagens de competência, realização e estabilidade institucional. Você pode reconhecer o tema nas expectativas que deposita em cargos, autoridades ou trajetórias consideradas bem-sucedidas. Observar o cotidiano por trás dessas imagens ajuda a construir referências próprias, incluindo necessidades que não aparecem nas medidas públicas de desempenho.",
+      "professional": "Netuno em Capricórnio oferece perguntas coletivas sobre o sentido atribuído a instituições e critérios de sucesso. Se o tema participa das suas escolhas, você pode desejar dar forma concreta a uma visão. Avaliar condições, práticas e responsabilidades permite distinguir compromisso real de uma promessa de prestígio ou segurança absoluta."
+    },
+    "sign:neptune:10": {
+      "title": "Netuno em Aquário",
+      "personal": "Compartilhada por uma geração, esta posição relaciona imaginação a projetos coletivos, redes e imagens de futuro. Você pode reconhecer o tema ao se identificar com propostas de liberdade ou pertencimento amplo. Conhecer diferenças e necessidades concretas dentro de um grupo ajuda a preservar esperança sem exigir que a comunidade corresponda a um ideal.",
+      "professional": "Esta posição geracional oferece um pano de fundo para imaginar outras formas de colaboração e de uso da tecnologia. Na sua atuação, esse interesse depende de contexto e dos demais fatores do mapa. Examinar quem participa das decisões e quem recebe os benefícios ajuda a avaliar promessas de acesso, inovação e igualdade."
+    },
+    "sign:neptune:11": {
+      "title": "Netuno em Peixes",
+      "personal": "Netuno em Peixes apresenta um tema geracional de imaginação, sensibilidade e busca por experiências de conexão que ultrapassem explicações habituais. Você pode explorar essas referências sem precisar considerá-las uma descrição completa de si. Reconhecer limites e preferências próprias permite acolher o que sente sem absorver todas as expectativas do ambiente.",
+      "professional": "Esta posição oferece um contexto coletivo para valorizar criação, cuidado e formas de significado difíceis de medir. Se o tema participa da sua atuação, você pode procurar trabalhos que comportem sensibilidade. Delimitar funções e observar efeitos concretos ajuda a transformar boas intenções em uma contribuição que as pessoas consigam reconhecer e utilizar."
+    },
+    "house:neptune:1": {
+      "title": "Netuno na casa 1",
+      "personal": "Sua maneira de se apresentar pode ser sensível ao clima dos encontros e às imagens que outras pessoas parecem esperar. Você pode perceber diferentes facetas de si em cada ambiente, sem precisar escolher uma identidade rígida. Nomear preferências e limites ajuda a distinguir adaptação espontânea de uma postura que deixa seus desejos pouco visíveis.",
+      "professional": "Você pode chegar a situações profissionais com disposição para observar, imaginar e ajustar sua participação ao contexto. Tornar competências e responsabilidades claras ajuda a dar contorno a essa abertura. A imagem que você transmite ganha consistência quando interlocutores conseguem relacioná-la ao que oferece e às condições necessárias para realizar o trabalho."
+    },
+    "house:neptune:2": {
+      "title": "Netuno na casa 2",
+      "personal": "Sua relação com valor pessoal e segurança pode envolver imagens do que seria uma vida mais confortável, bela ou significativa. Você pode desejar recursos que permitam criar e acolher, mas nem sempre reconhecer com clareza o que já possui. Distinguir necessidades, desejos e expectativas ajuda a avaliar o que realmente oferece sustentação.",
+      "professional": "Você pode buscar correspondência entre o valor do seu trabalho e os ideais que deseja preservar. Tornar custos, critérios e formas de reconhecimento explícitos ajuda a conversar sobre essa correspondência com outras pessoas. A sensibilidade ao sentido de uma atividade ganha apoio quando suas condições materiais também podem ser examinadas."
+    },
+    "house:neptune:3": {
+      "title": "Netuno na casa 3",
+      "personal": "Palavras e imagens podem se combinar na maneira como você percebe e narra o cotidiano. Você pode compreender nuances por associações, mas uma impressão nem sempre esclarece a intenção de outra pessoa. Perguntar, conferir o que foi dito e admitir ambiguidades ajuda a preservar imaginação sem deixar que ela substitua a conversa.",
+      "professional": "Sua comunicação pode encontrar recursos em imagens, histórias e leituras sensíveis do contexto. Para transformar essa expressão em trabalho compartilhado, ajuda distinguir fatos, hipóteses e propostas criativas. Registrar decisões e verificar como os interlocutores entenderam a mensagem permite que uma linguagem evocativa conviva com a clareza necessária à execução."
+    },
+    "house:neptune:4": {
+      "title": "Netuno na casa 4",
+      "personal": "Sua vida íntima pode se relacionar com imagens de acolhimento, lembranças e expectativas sobre o que significa ter um lar. Você pode precisar de recolhimento para reconhecer sentimentos que permanecem pouco definidos. Diferenciar o vínculo vivido da imagem desejada ajuda a construir pertencimento com espaço para limites, escolhas próprias e imperfeições da convivência.",
+      "professional": "O sentido de abrigo e a possibilidade de preservar espaço interno podem influenciar sua disponibilidade profissional. Você pode precisar de condições que respeitem períodos de elaboração e privacidade. Definir fronteiras entre demandas de trabalho e vida íntima ajuda a sustentar compromissos sem depender de uma separação que existe apenas na intenção."
+    },
+    "house:neptune:5": {
+      "title": "Netuno na casa 5",
+      "personal": "Imaginação, afeto e prazer podem se encontrar na maneira como você cria e se envolve. Você pode se encantar com possibilidades de uma relação ou de um projeto antes de conhecer seus contornos reais. Dar tempo à experiência permite preservar inspiração enquanto você distingue o que deseja do que está sendo efetivamente compartilhado.",
+      "professional": "Você pode se envolver com criação, imagens ou formas de apresentação que despertem sensibilidade no público. A elaboração ganha consistência quando você transforma referências em escolhas concretas e permite revisão. Separar a resposta à obra da avaliação de si ajuda a experimentar sem exigir que cada projeto realize uma imagem ideal de expressão pessoal."
+    },
+    "house:neptune:6": {
+      "title": "Netuno na casa 6",
+      "personal": "Sua disponibilidade para cuidar e participar pode precisar de contornos na organização do cotidiano. Você pode perceber necessidades do ambiente e adaptar sua rotina a elas, sem sempre notar o custo dessa adaptação. Delimitar tarefas e reservar pausas permite acolher o que acontece sem assumir que todo pedido exige sua participação.",
+      "professional": "Você pode procurar sentido humano nas tarefas e desejar que procedimentos comportem sensibilidade às pessoas. Acordos explícitos de função, prioridade e prazo ajudam a transformar essa intenção em trabalho sustentável. Verificar o que foi solicitado evita que disposição para ajudar seja confundida com responsabilidade por tudo o que permanece indefinido."
+    },
+    "house:neptune:7": {
+      "title": "Netuno na casa 7",
+      "personal": "Parcerias podem despertar imaginação, empatia e expectativas de entendimento que parecem dispensar explicação. Você pode se aproximar daquilo que uma pessoa representa, enquanto ainda está conhecendo suas escolhas reais. Perguntar, nomear limites e acolher diferenças permite que o vínculo se desenvolva sem depender de uma imagem de sintonia completa.",
+      "professional": "Você pode valorizar relações profissionais em que exista identificação com a proposta e sensibilidade no trato. Essa afinidade precisa ser acompanhada de clareza sobre entregas, decisões e condições de colaboração. Conhecer como a outra parte trabalha permite avaliar uma parceria para além da impressão inicial ou da intenção compartilhada."
+    },
+    "house:neptune:8": {
+      "title": "Netuno na casa 8",
+      "personal": "Intimidade e partilha podem envolver o desejo de uma proximidade que ultrapasse o que costuma ser dito. Você pode perceber nuances do vínculo e, ao mesmo tempo, precisar esclarecer expectativas sobre confiança e disponibilidade. Consentimento, privacidade e acordos explícitos oferecem base para aprofundar relações sem presumir que entrega implique ausência de limites.",
+      "professional": "Você pode lidar com informações ou recursos compartilhados cuja compreensão depende de conversas cuidadosas. Sensibilidade ao contexto ajuda, mas não substitui definições sobre acesso, responsabilidade e critérios de uso. Tornar esses pontos verificáveis permite participar de processos complexos sem depender apenas da confiança pessoal ou de intenções que ainda não foram discutidas."
+    },
+    "house:neptune:9": {
+      "title": "Netuno na casa 9",
+      "personal": "Sua busca por sentido pode se apoiar em imagens, ideias e referências que ampliam a experiência para além do cotidiano imediato. Você pode encontrar inspiração em estudo, arte ou espiritualidade, conforme seus interesses reais. Preservar perguntas e examinar fontes ajuda a desenvolver uma visão própria sem exigir certeza absoluta nem aderir a uma explicação total.",
+      "professional": "Você pode desejar que aprendizagem e trabalho se relacionem com uma finalidade significativa. Essa orientação ganha consistência quando ideias amplas são traduzidas para o contexto de quem precisa utilizá-las. Comparar a proposta de uma instituição com suas práticas permite escolher envolvimentos que preservem inspiração e também comportem avaliação crítica."
+    },
+    "house:neptune:10": {
+      "title": "Netuno na casa 10",
+      "personal": "Sua direção de vida pode ser influenciada por imagens de vocação, reconhecimento ou contribuição que despertam identificação. Você pode precisar experimentar possibilidades antes de reconhecer o que deseja sustentar. Conhecer a realidade de cada papel ajuda a distinguir uma escolha própria da expectativa de realizar um ideal através da posição que ocupa.",
+      "professional": "Você pode procurar uma atuação em que criação, sensibilidade ou cuidado tenham lugar. Delimitar funções e acompanhar entregas ajuda a dar forma a uma direção que começa como impressão ou desejo. A identidade profissional pode se desenvolver por aproximações sucessivas, sem exigir que exista uma vocação inteiramente definida antes das primeiras experiências."
+    },
+    "house:neptune:11": {
+      "title": "Netuno na casa 11",
+      "personal": "Amizades e grupos podem despertar identificação com ideais de pertencimento, solidariedade e futuro compartilhado. Você pode se envolver com o que uma comunidade representa, enquanto ainda conhece suas relações concretas. Preservar diferenças e conversar sobre expectativas permite participar sem exigir afinidade total nem assumir necessidades que o grupo não chegou a discutir.",
+      "professional": "Você pode se interessar por projetos coletivos que prometem produzir uma contribuição social ou cultural significativa. A intenção precisa encontrar formas de decisão, distribuição de tarefas e avaliação dos resultados. Conhecer essas práticas ajuda a sustentar colaboração sem depender apenas da linguagem inspiradora que reúne as pessoas em torno da proposta."
+    },
+    "house:neptune:12": {
+      "title": "Netuno na casa 12",
+      "personal": "Seu espaço interno pode acolher imagens, sentimentos e impressões que pedem tempo antes de encontrar palavras. Você pode se beneficiar de recolhimento, criação ou contemplação, conforme seus próprios interesses. Reconhecer quando precisa de privacidade e quando deseja apoio ajuda a preservar essa sensibilidade sem desaparecer das relações que também oferecem sustentação.",
+      "professional": "Atividades de elaboração, pesquisa ou criação em ambientes reservados podem favorecer sua participação. A contribuição ganha contorno quando você registra avanços e comunica condições necessárias para continuar. Trabalhar nos bastidores não elimina a necessidade de limites e reconhecimento, especialmente quando parte do esforço permanece pouco visível para quem acompanha apenas a entrega final."
+    },
+    "sign:pluto:0": {
+      "title": "Plutão em Áries",
+      "personal": "Esta posição geracional relaciona transformação e poder à iniciativa, à afirmação da vontade e às imagens de independência. Você pode reconhecer esse tema ao examinar o que significa ter autonomia. Considerar os efeitos das escolhas sobre outras pessoas ajuda a distinguir capacidade de agir de uma necessidade de impor direção a todo encontro.",
+      "professional": "Plutão em Áries oferece perguntas coletivas sobre quem inicia mudanças e como conquista espaço para decidir. Na sua atuação, o tema depende das casas, dos aspectos e do contexto vivido. Definir responsabilidades e admitir contestação permite exercer iniciativa sem tomar a força de uma convicção como autorização para agir por todos."
+    },
+    "sign:pluto:1": {
+      "title": "Plutão em Touro",
+      "personal": "Compartilhada por uma geração, esta posição aproxima relações de poder de recursos, estabilidade e critérios de valor. Você pode reconhecer o tema na intensidade com que procura preservar alguma segurança. Examinar o que realmente oferece sustentação ajuda a distinguir cuidado com o que possui de uma tentativa de evitar qualquer mudança.",
+      "professional": "Esta posição geracional oferece um pano de fundo para questionar quem administra recursos e como o valor do trabalho é reconhecido. Se o tema participa da sua atuação, você pode observar relações de dependência e preservação de interesses. Critérios transparentes ajudam a avaliar mudanças sem reduzir toda decisão à manutenção do controle existente."
+    },
+    "sign:pluto:2": {
+      "title": "Plutão em Gêmeos",
+      "personal": "Plutão em Gêmeos apresenta um tema geracional de poder associado à linguagem, à informação e à maneira como os acontecimentos são explicados. Você pode investigar quais narrativas orientam suas escolhas, caso essa posição encontre expressão pessoal. Escutar outras formulações ajuda a reconhecer limites de uma interpretação que parecia dar conta de tudo.",
+      "professional": "Esta posição oferece perguntas coletivas sobre acesso ao conhecimento e influência exercida por meio da comunicação. Na sua experiência profissional, a expressão depende de contexto e dos demais fatores do mapa. Verificar fontes e tornar argumentos discutíveis permite usar informações com responsabilidade, sem transformar domínio do assunto em controle sobre a conversa."
+    },
+    "sign:pluto:3": {
+      "title": "Plutão em Câncer",
+      "personal": "Esta posição geracional aproxima transformação de pertencimento, memória e referências de proteção. Você pode reconhecer o tema ao examinar quais vínculos deseja preservar e o que espera deles. Respeitar escolhas distintas dentro de uma relação ajuda a construir continuidade sem fazer do pertencimento uma obrigação de manter todos os acordos anteriores.",
+      "professional": "Plutão em Câncer oferece um pano de fundo coletivo para questionar relações entre cuidado, autoridade e dependência. Se esses temas participam do seu trabalho, você pode perceber o peso de lealdades e referências compartilhadas. Tornar decisões e responsabilidades explícitas ajuda a avaliar quando a proteção amplia participação e quando restringe autonomia."
+    },
+    "sign:pluto:4": {
+      "title": "Plutão em Leão",
+      "personal": "Compartilhada por uma geração, esta posição relaciona poder a expressão pessoal, reconhecimento e imagens de autoridade. Você pode investigar o que significa ser visto e ter influência, conforme o tema se articula à sua experiência. Permitir que outras pessoas ocupem espaço ajuda a separar presença própria da necessidade de centralizar atenção.",
+      "professional": "Esta posição geracional oferece perguntas sobre liderança, autoria e distribuição de reconhecimento. Na sua atuação, pode aparecer como interesse pelas condições que tornam uma contribuição visível, dependendo das demais posições. Dar crédito e permitir revisão das decisões ajuda a exercer influência sem confundir identificação com o projeto e propriedade sobre todo o trabalho."
+    },
+    "sign:pluto:5": {
+      "title": "Plutão em Virgem",
+      "personal": "Plutão em Virgem apresenta um tema geracional de transformação dos critérios de utilidade, competência e aperfeiçoamento. Você pode reconhecer esse pano de fundo quando investe atenção intensa em corrigir algo. Observar o limite entre cuidado e controle permite aprimorar o cotidiano sem exigir que toda imperfeição seja eliminada para que exista tranquilidade.",
+      "professional": "Esta posição oferece perguntas coletivas sobre quem define qualidade e como procedimentos distribuem autonomia ou controle. Se o tema participa da sua atuação, você pode investigar processos com profundidade. Rever critérios junto a quem executa o trabalho ajuda a distinguir melhoria concreta de uma exigência crescente de precisão que pouco acrescenta ao resultado."
+    },
+    "sign:pluto:6": {
+      "title": "Plutão em Libra",
+      "personal": "Esta posição geracional aproxima relações de poder dos acordos, dos vínculos e das ideias de equilíbrio. Você pode reconhecer o tema ao perceber o que sustenta uma aparente harmonia. Conversar sobre interesses, escolhas e limites permite construir reciprocidade sem pressupor que uma relação equilibrada seja aquela em que ninguém expressa discordância.",
+      "professional": "Plutão em Libra oferece um pano de fundo coletivo para examinar contratos, representação e influência nas parcerias. Na sua atuação, a expressão depende das casas e dos aspectos. Tornar condições de negociação acessíveis ajuda a verificar se existe espaço real de escolha para cada parte, além de uma linguagem formal de igualdade."
+    },
+    "sign:pluto:7": {
+      "title": "Plutão em Escorpião",
+      "personal": "Compartilhada por uma geração, esta posição relaciona transformação a intimidade, privacidade e experiências que exigem confiança. Você pode observar como preserva autonomia quando compartilha aspectos importantes da vida. Reconhecer limites e respeitar o que permanece desconhecido ajuda a aprofundar vínculos sem transformar intensidade ou acesso irrestrito em provas de proximidade.",
+      "professional": "Esta posição geracional oferece perguntas sobre recursos compartilhados, informações reservadas e capacidade de intervir em situações complexas. Se o tema participa do seu trabalho, você pode desejar compreender seus mecanismos. Métodos verificáveis e responsabilidade sobre o uso de informações permitem investigar sem presumir que toda suspeita corresponda a um fato oculto."
+    },
+    "sign:pluto:8": {
+      "title": "Plutão em Sagitário",
+      "personal": "Plutão em Sagitário apresenta um tema geracional de poder associado às crenças, ao conhecimento e às explicações sobre o sentido da vida. Você pode reconhecer a intensidade que uma convicção adquire, conforme sua experiência. Confrontar ideias com outras perspectivas permite sustentar referências próprias sem exigir que elas orientem também as escolhas alheias.",
+      "professional": "Esta posição oferece perguntas coletivas sobre quem legitima conhecimentos e como certas ideias conquistam influência. Na sua atuação, pode aparecer como interesse por educação, narrativas ou alcance de projetos, conforme o restante do mapa. Admitir revisão e explicitar pressupostos ajuda a distinguir uma visão consistente da tentativa de apresentar uma interpretação como verdade incontestável."
+    },
+    "sign:pluto:9": {
+      "title": "Plutão em Capricórnio",
+      "personal": "Esta posição geracional aproxima transformação das estruturas de autoridade, das exigências de desempenho e das referências de estabilidade. Você pode examinar como essas imagens participam das suas escolhas. Reconhecer limites de instituições e papéis sociais permite construir responsabilidade própria sem tomar toda cobrança como legítima apenas porque vem de uma posição reconhecida.",
+      "professional": "Plutão em Capricórnio oferece um pano de fundo coletivo para investigar hierarquias e formas de administrar responsabilidades. Se o tema participa da sua atuação, você pode questionar estruturas aparentemente definitivas. Clareza sobre critérios, acesso à informação e revisão de decisões ajuda a avaliar mudanças pelo efeito concreto sobre quem realiza o trabalho."
+    },
+    "sign:pluto:10": {
+      "title": "Plutão em Aquário",
+      "personal": "Compartilhada por uma geração, esta posição relaciona transformação a grupos, sistemas de conhecimento e imagens de participação coletiva. Você pode reconhecer o tema ao observar como pertencimento e autonomia se combinam. Admitir diferenças internas ajuda a avaliar quem tem voz em uma comunidade, mesmo quando ela se apresenta como aberta e igualitária.",
+      "professional": "Esta posição geracional oferece perguntas sobre redes, tecnologia e concentração de influência em projetos coletivos. Na sua atuação, a expressão depende do contexto e das demais posições do mapa. Examinar quem define regras e controla informações permite avaliar propostas de inovação para além da linguagem de colaboração usada para apresentá-las."
+    },
+    "sign:pluto:11": {
+      "title": "Plutão em Peixes",
+      "personal": "Plutão em Peixes apresenta um tema geracional de transformação das imagens de conexão, transcendência e pertencimento amplo. Você pode investigar quais ideais mobilizam envolvimento intenso, caso esse tema ganhe expressão pessoal. Preservar discernimento e limites permite explorar experiências significativas sem entregar a uma referência externa toda a autoridade sobre o que sente.",
+      "professional": "Esta posição oferece perguntas coletivas sobre a influência exercida por imagens, crenças e promessas de cuidado ou união. Se o tema participa da sua atuação, você pode observar como intenções mobilizam grupos. Comparar discursos e práticas ajuda a distinguir contribuição compartilhada de uma identificação que dificulta questionar decisões e responsabilidades."
+    },
+    "house:pluto:1": {
+      "title": "Plutão na casa 1",
+      "personal": "Sua maneira de se apresentar pode envolver atenção ao que revela e ao espaço que consegue preservar nos encontros. Você pode desejar controlar a impressão que causa para se sentir mais seguro. Reconhecer o que depende de você permite ocupar seu lugar sem precisar antecipar todas as interpretações ou respostas de quem está perto.",
+      "professional": "Você pode entrar em situações profissionais com concentração e interesse em compreender as relações de influência do ambiente. Sua participação se torna mais clara quando critérios e intenções podem ser conversados. Compartilhar informações pertinentes e aceitar abordagens diferentes ajuda a transformar presença firme em colaboração, sem exigir controle sobre cada etapa do trabalho."
+    },
+    "house:pluto:2": {
+      "title": "Plutão na casa 2",
+      "personal": "Segurança e valor pessoal podem mobilizar envolvimento intenso na maneira como você organiza recursos e reconhece capacidades. Você pode perceber que preservar algo traz também o receio de depender dele. Ampliar referências de valor ajuda a apreciar o que construiu sem exigir que posses ou reconhecimento ofereçam uma garantia completa sobre o futuro.",
+      "professional": "Você pode prestar atenção a como competências e recursos determinam autonomia dentro do trabalho. Negociar critérios de valorização e conhecer as condições de cada acordo ajuda a tornar essa relação mais consciente. Sua contribuição não precisa ser medida apenas pelo que consegue reter ou controlar, especialmente quando a cooperação amplia as possibilidades de atuação."
+    },
+    "house:pluto:3": {
+      "title": "Plutão na casa 3",
+      "personal": "Você pode se envolver intensamente com perguntas e procurar o que uma explicação inicial deixa de fora. A investigação ganha profundidade quando também admite respostas provisórias e interpretações diferentes. Nas conversas, observar o desejo de convencer ajuda a usar palavras para compreender uma relação, em vez de controlar seu sentido sozinho.",
+      "professional": "Sua participação pode incluir pesquisa, análise e atenção às consequências de uma informação. Conferir fontes e tornar o raciocínio verificável ajuda a sustentar argumentos sem depender apenas de convicção. Perguntas abertas permitem que colegas acrescentem elementos que uma hipótese muito consolidada poderia deixar de reconhecer ou tratar como irrelevantes."
+    },
+    "house:pluto:4": {
+      "title": "Plutão na casa 4",
+      "personal": "Sua vida privada pode despertar perguntas intensas sobre confiança, pertencimento e o que precisa permanecer protegido. Você pode querer compreender referências íntimas com profundidade, sem que o mapa determine como elas se formaram. Escolher o que preservar e o que renegociar ajuda a construir uma base própria com espaço para mudanças e limites.",
+      "professional": "As condições da sua base pessoal podem influenciar quanto espaço você deseja conceder ao trabalho. Tornar limites de disponibilidade explícitos ajuda a preservar privacidade sem depender de controle permanente sobre o ambiente. Rever referências herdadas de responsabilidade também permite escolher compromissos profissionais pela relação que têm com sua vida atual."
+    },
+    "house:pluto:5": {
+      "title": "Plutão na casa 5",
+      "personal": "Criação, prazer e expressão afetiva podem mobilizar grande intensidade e desejo de envolvimento. Você pode investir muito na resposta recebida por aquilo que oferece, tornando a exposição carregada de expectativa. Permitir experiências que não precisam provar seu valor ajuda a recuperar espaço para brincar, experimentar e conhecer as escolhas da outra pessoa.",
+      "professional": "Você pode se concentrar em projetos de autoria e desejar que expressem algo que considera relevante. Receber revisões pode exigir distinguir a proposta da identidade que investiu nela. Compartilhar decisões e reconhecer contribuições permite desenvolver o trabalho sem fazer da intensidade do seu envolvimento uma justificativa para centralizar toda a criação."
+    },
+    "house:pluto:6": {
+      "title": "Plutão na casa 6",
+      "personal": "Seu envolvimento com o cotidiano pode aparecer na vontade de compreender e transformar hábitos em profundidade. Você pode dedicar muita atenção ao que precisa ser corrigido, deixando pouco espaço para reconhecer o que já funciona. Limites de tempo e critérios suficientes ajudam a cuidar das tarefas sem fazer delas uma exigência de controle completo.",
+      "professional": "Você pode perceber falhas estruturais em processos e desejar intervir para melhorar a execução. A contribuição ganha consistência quando mudanças são discutidas com quem realiza as tarefas e seus efeitos podem ser acompanhados. Distribuir responsabilidades ajuda a evitar que concentração e competência se convertam na obrigação de supervisionar todos os detalhes."
+    },
+    "house:pluto:7": {
+      "title": "Plutão na casa 7",
+      "personal": "Parcerias podem tornar mais visíveis suas questões sobre confiança, influência e disposição para compartilhar decisões. Você pode desejar vínculos intensos, observando quando a proximidade oferece troca e quando desperta necessidade de garantir a resposta alheia. Acordos claros e espaço para discordância permitem aprofundar a relação sem reduzir a autonomia de nenhuma das partes.",
+      "professional": "Você pode se envolver fortemente em colaborações e perceber relações de influência que outras pessoas deixam implícitas. Conversar sobre interesses, acesso à informação e formas de decisão ajuda a construir confiança. A possibilidade de renegociar condições permite distinguir compromisso profissional de uma permanência sustentada apenas pelo receio de perder a parceria."
+    },
+    "house:pluto:8": {
+      "title": "Plutão na casa 8",
+      "personal": "Intimidade, confiança e partilha podem despertar seu desejo de compreender o que torna um vínculo profundo. Você pode investigar necessidades que raramente aparecem nas conversas mais leves, preservando o direito de cada pessoa à privacidade. A entrega ganha sustentação quando inclui consentimento e limites, sem depender de acesso completo à experiência alheia.",
+      "professional": "Você pode se interessar por investigação, mudanças complexas ou decisões que envolvam recursos compartilhados. Responsabilidade sobre informações e clareza quanto aos limites da sua intervenção são partes concretas desse trabalho. Permitir acompanhamento e revisão ajuda a usar concentração sem fazer da dificuldade do processo uma razão para centralizar todas as decisões."
+    },
+    "house:pluto:9": {
+      "title": "Plutão na casa 9",
+      "personal": "Sua busca por sentido pode envolver estudo intenso e desejo de compreender o que sustenta uma visão de mundo. Você pode se identificar fortemente com ideias que organizam a experiência. Aceitar perguntas e perspectivas diferentes permite aprofundar convicções sem transformar uma referência pessoal na medida obrigatória para avaliar a vida de outras pessoas.",
+      "professional": "Você pode se dedicar a conhecimentos ou projetos cuja finalidade considera decisiva. O envolvimento ganha rigor quando pressupostos, métodos e limites da interpretação permanecem acessíveis à discussão. Reconhecer outras tradições de pensamento e experiências concretas ajuda a transmitir uma visão sem usar autoridade intelectual para encerrar perguntas antes de examiná-las."
+    },
+    "house:pluto:10": {
+      "title": "Plutão na casa 10",
+      "personal": "Objetivos e reconhecimento público podem mobilizar perguntas sobre influência, controle e o lugar que você deseja ocupar. Você pode investir intensamente em uma direção, tornando difícil separar mudança de posição e valor pessoal. Preservar vínculos e interesses fora do desempenho amplia as referências disponíveis quando suas prioridades precisam ser revistas.",
+      "professional": "Você pode desejar compreender ou modificar estruturas que definem o rumo do trabalho. Exercer autoridade pede critérios explícitos, abertura à contestação e atenção a quem será afetado pelas decisões. Dividir informação e responsabilidade permite produzir mudanças sem fazer da centralização uma condição para acreditar que o resultado será consistente."
+    },
+    "house:pluto:11": {
+      "title": "Plutão na casa 11",
+      "personal": "Amizades e grupos podem tornar visíveis questões de confiança, influência e pertencimento. Você pode se envolver profundamente com uma finalidade compartilhada, observando o peso que a concordância adquire na relação. Preservar espaço para diferenças permite participar com intensidade sem exigir lealdade completa nem interpretar toda discordância como ameaça ao vínculo.",
+      "professional": "Você pode se interessar por projetos coletivos capazes de alterar práticas ou estruturas. A intenção de produzir mudança precisa de critérios sobre representação, circulação de informações e distribuição de poder. Examinar quem pode discordar e revisar decisões ajuda a avaliar se o grupo oferece participação real ou apenas identificação com uma proposta convincente."
+    },
+    "house:pluto:12": {
+      "title": "Plutão na casa 12",
+      "personal": "Algumas questões sobre controle, privacidade e mudança podem pedir elaboração reservada antes de se tornarem claras para você. O recolhimento pode ajudar a observar reações sem precisar explicá-las imediatamente. Compartilhar o que deseja com pessoas de confiança permite que a vida interna encontre apoio, sem presumir que intensidade esconda uma experiência específica do passado.",
+      "professional": "Você pode contribuir em pesquisa, análise ou processos de bastidores que exigem concentração e cuidado com informações. Tornar o alcance da sua atuação claro ajuda a preservar privacidade sem deixar responsabilidades indefinidas. Reconhecer limites e compartilhar decisões pertinentes permite sustentar esse trabalho sem assumir sozinho tudo o que permanece pouco visível para a equipe."
+    }
+  }
+}

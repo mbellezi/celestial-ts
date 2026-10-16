@@ -48,6 +48,12 @@ def main():
                         help="Current main audit; include every Pluto disagreement witness")
     args = parser.parse_args()
     audit_path = Path(args.audit)
+    # Serialized provenance must not expose a developer's home directory.
+    # The content hash identifies external inputs without retaining their path.
+    try:
+        audit_reference = audit_path.resolve().relative_to(Path(__file__).resolve().parents[2]).as_posix()
+    except ValueError:
+        audit_reference = 'external-audit'
     audit = json.loads(audit_path.read_text())
     audit_dates = {w["jdUT"] for w in audit["disagreementWitnesses"]
                    if w["body"]["name"] == "Pluto"}
@@ -105,7 +111,7 @@ def main():
     }
     result = {
         "schemaVersion": 2,
-        "auditInput": {"path": str(audit_path), "sha256": hashlib.sha256(audit_path.read_bytes()).hexdigest()},
+        "auditInput": {"path": audit_reference, "sha256": hashlib.sha256(audit_path.read_bytes()).hexdigest()},
         "summary": summary,
         "description": "Swiss Pluto SPEED versus central derivatives of Swiss positions; flags isolate the missing obliquity rotation derivative in ecliptic speed conversion.",
         "pythonVersion": platform.python_version(),

@@ -20,6 +20,8 @@ copiado para um repositório próprio sem arquivos do diretório pai.
   seis temas, paletas light/dark/personalizadas e componentes SVG independentes.
 - `celestial-wasm/reports`: relatórios coletivos em pt-BR para 2026–2035, eventos temporais, catálogo estático composto e JSON com cache.
 - `celestial-wasm/wasm`: arquivo binário para resolução explícita de URL ou bytes.
+- `celestial-wasm/locations`: busca de cidades no Open-Meteo e conversão de
+  nascimento local para UTC entre 1930 e 2040, com histórico IANA de horário de verão.
 
 ## Instalar a partir do código-fonte
 
@@ -41,7 +43,7 @@ npm test
 
 `npm ci` instala somente ferramentas de desenvolvimento, com versões fixadas em
 `package-lock.json`. `npm run build` gera JavaScript, WebAssembly, declarações
-TypeScript e os módulos de gráficos e relatórios em `pkg/`. O core mantém seu
+TypeScript e os módulos de gráficos, relatórios e localização em `pkg/`. O core mantém seu
 `Cargo.lock`.
 
 ## Instalar em uma aplicação
@@ -116,6 +118,31 @@ Um instante ISO exige `Z` ou offset explícito. Data/hora local exige fuso IANA.
 Horas inexistentes ou ambíguas durante mudanças de horário são rejeitadas; um
 instante com offset explícito permite escolher a ocorrência desejada. Coordenadas
 não são usadas para descobrir automaticamente o fuso.
+
+## Busca de cidade natal e conversão para UTC
+
+O módulo `celestial-wasm/locations` funciona sem inicializar o WASM. A busca
+retorna possibilidades para o usuário selecionar; a conversão usa uma base IANA
+versionada e embutida, incluindo registros históricos anteriores a 1970.
+
+```ts
+import { createCitySearchClient, resolveBirthTime } from 'celestial-wasm/locations';
+
+const cities = createCitySearchClient();
+const candidates = await cities.search('São Pau', { countryCode: 'BR' });
+// Exiba os rótulos e IDs. Exemplo após o usuário escolher São Paulo:
+const city = await cities.get(3448439);
+const birth = resolveBirthTime({ date: '1990-01-15', time: '10:30', location: city });
+// birth.instant === '1990-01-15T12:30:00.000Z' (horário de verão nessa data)
+// Com um calculator inicializado: calculator.natal(birth).
+```
+
+A faixa de datas locais é **1930-01-01 a 2040-12-31**. Horários repetidos exigem
+escolha explícita entre `earlier` e `later`; horários inexistentes são rejeitados.
+Datas futuras seguem as regras previstas na versão IANA incluída. O serviço
+gratuito do Open-Meteo é destinado a uso não comercial; o cliente também aceita
+endpoint e chave de uma assinatura comercial. Consulte o
+[guia de cidades, UTC, erros e atualização dos fusos](locations/README.md).
 
 ## Uso em Node.js
 
@@ -283,11 +310,23 @@ existentes para [HTML completo](reports/examples/february-2026.html) e
 [Markdown completo](reports/examples/february-2026.md), além das leituras compacta
 e astro, sem repetir o cálculo astronômico.
 
+## Interpretações do mapa natal
+
+O módulo `celestial-wasm/reports` também oferece
+`createNatalReportGenerator(core)` para mapas natais de **1930 a 2040**.
+As interpretações usam lente psicológica, com textos de Astra revisados pelo
+skill `humanizar-pt-br`. Um único objeto calculado fornece **JSON, texto puro,
+Markdown e HTML simples**, mantendo o mesmo conteúdo entre apresentações.
+O catálogo local possui 380 entradas editoriais e 971 combinações rastreáveis,
+sem chamadas a modelos ou à rede durante a geração. Consulte a
+[API natal, as convenções e os exemplos](reports/README.md#interpretação-psicológica-do-mapa-natal).
+
 ## Documentação e comandos
 
 - [Guia de mapas, funções, temas, paletas, dados e erros](charts/README.md).
 - [Guia de relatórios coletivos, intervalos, catálogo e cache](reports/README.md).
 - [Referência completa gerada das APIs TypeScript](docs/api-reference.md).
+- [Cidades, coordenadas e horário de nascimento em UTC](locations/README.md).
 - [Contratos do binding WASM](wasm/README.md).
 - [Arquitetura](docs/architecture.md), [portabilidade e baseline dos testes](docs/portability.md).
 - [Origem e avisos da distribuição](NOTICE), [licença](LICENSE), [limites herdados](TODO.md).
@@ -295,14 +334,17 @@ e astro, sem repetir o cálculo astronômico.
 
 | Comando | Ação |
 | --- | --- |
-| `npm run build` | Compila Rust/WASM, bindings, charts e reports |
+| `npm run build` | Compila Rust/WASM, bindings, charts, reports e locations |
 | `npm run build:charts` | Recompila somente TypeScript, após existir o build WASM |
-| `npm test` | Core WASM, bindings, gráficos, relatórios, referência API e avisos de licença |
+| `npm test` | Core WASM, bindings, gráficos, relatórios, cidades/UTC, referência API e avisos de licença |
 | `npm run test:core` | Testes unitários, integração e Rustdoc em WASM |
 | `npm run test:bindings` | Build e testes TypeScript sobre o WASM real |
 | `npm run build:reports` | Compila somente relatórios TypeScript, após existir o build WASM |
 | `npm run test:reports` | Build, validação temporal, catálogo, eventos e caches de relatórios |
 | `npm run test:charts` | Build, tipos, testes SVG/worker e mutações dirigidas |
+| `npm run build:locations` | Compila a API de cidades e UTC, sem exigir WASM |
+| `npm run test:locations` | Verifica busca de cidades, seleção e conversão histórica para UTC |
+| `npm run timezones:check` | Reproduz e verifica offline os dados IANA embutidos |
 | `npm run gallery` | Gera SVGs, galeria interativa e catálogo visual de todos os componentes |
 | `npm run docs` | Regenera a referência a partir das declarações compiladas |
 | `npm run docs:check` | Detecta referência API desatualizada |

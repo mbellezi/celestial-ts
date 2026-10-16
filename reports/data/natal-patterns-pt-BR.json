@@ -1,0 +1,737 @@
+{
+  "version": "1.0.0",
+  "authorship": {
+    "model": "gpt-6-astra",
+    "skill": "humanizar-pt-br",
+    "reference": "Estrutura editorial do relatório natal World of Wisdom fornecido pelo usuário. Textos originais, sem reprodução de suas interpretações."
+  },
+  "entries": {
+    "ascendant:0": {
+      "title": "Ascendente em Áries",
+      "personal": "Você pode se apresentar com franqueza e descobrir o que quer enquanto toma a iniciativa. A regência de Marte convida a observar como você sustenta suas escolhas depois do primeiro impulso, dando espaço para que as pessoas próximas expressem seus próprios ritmos e vontades.",
+      "professional": "Ao entrar em um ambiente de trabalho, você pode preferir experimentar uma solução a esperar por todas as garantias. Marte, regente do Ascendente, acrescenta informações sobre seu modo de agir; a iniciativa rende mais quando vem acompanhada de escuta, prioridades claras e continuidade."
+    },
+    "ascendant:1": {
+      "title": "Ascendente em Touro",
+      "personal": "Você pode precisar de tempo para conhecer pessoas e sentir que tem um lugar seguro antes de se abrir. Vênus, regente deste Ascendente, ajuda a compreender suas escolhas afetivas e sensoriais; cultivar estabilidade também envolve perceber quando uma situação conhecida já pede alguma mudança.",
+      "professional": "Sua apresentação profissional pode transmitir constância, cuidado com os recursos e atenção à qualidade do que entrega. A posição de Vênus amplia essa leitura, especialmente sobre valores e relações; acordar prazos realistas ajuda a preservar seu ritmo sem transformar cautela em resistência a qualquer novidade."
+    },
+    "ascendant:2": {
+      "title": "Ascendente em Gêmeos",
+      "personal": "Você pode se aproximar das pessoas por perguntas, histórias e interesses compartilhados, deixando diferentes facetas suas aparecerem na conversa. Mercúrio, regente deste Ascendente, esclarece seu modo de perceber e comunicar; sustentar uma conversa difícil pode aprofundar vínculos que começaram pela curiosidade e pela leveza.",
+      "professional": "Em situações novas de trabalho, você pode aprender observando conexões e conversando com quem conhece o assunto. Mercúrio acrescenta nuances à sua comunicação; registrar decisões e concluir etapas oferece continuidade a uma atuação que pode encontrar possibilidades em muitos caminhos ao mesmo tempo."
+    },
+    "ascendant:3": {
+      "title": "Ascendente em Câncer",
+      "personal": "Você pode observar o clima de um encontro antes de mostrar o que sente, procurando sinais de acolhimento e confiança. A Lua rege este Ascendente e detalha suas necessidades emocionais; reconhecer essas necessidades permite cuidar dos vínculos sem assumir a responsabilidade por tudo o que os outros sentem.",
+      "professional": "Você pode perceber mudanças de disposição na equipe e valorizar ambientes em que existe cuidado nas relações cotidianas. A posição da Lua ajuda a entender essa sensibilidade; definir responsabilidades torna mais sustentável sua disponibilidade para acolher pessoas, preservar a memória do trabalho e dar continuidade aos processos."
+    },
+    "ascendant:4": {
+      "title": "Ascendente em Leão",
+      "personal": "Você pode desejar que sua presença tenha uma marca própria, mostrando afeto, criatividade ou convicção de maneira perceptível. O Sol rege este Ascendente e esclarece o que alimenta sua expressão; relações próximas ganham espaço quando o reconhecimento circula e você também pode aparecer sem precisar impressionar.",
+      "professional": "Sua maneira de entrar em projetos pode envolver assumir uma posição, apresentar ideias e dar rosto ao trabalho coletivo. A posição do Sol amplia essa leitura; compartilhar os créditos e admitir dúvidas permite exercer visibilidade sem transformar cada avaliação do trabalho em um julgamento sobre seu valor."
+    },
+    "ascendant:5": {
+      "title": "Ascendente em Virgem",
+      "personal": "Você pode se orientar pelo que observa no cotidiano, percebendo detalhes e buscando maneiras práticas de participar. Mercúrio, regente deste Ascendente, ajuda a compreender seus critérios; deixar espaço para o improviso e para as imperfeições do convívio evita que o cuidado se torne vigilância constante.",
+      "professional": "Você pode conquistar espaço pela atenção aos procedimentos, pela organização e pela disposição para resolver problemas concretos. A posição de Mercúrio mostra nuances desse funcionamento; combinar critérios de qualidade com limites de tempo ajuda a escolher o que merece revisão e o que já pode ser entregue."
+    },
+    "ascendant:6": {
+      "title": "Ascendente em Libra",
+      "personal": "Você pode perceber sua própria posição com mais clareza quando conversa, compara perspectivas e considera a resposta de outra pessoa. Vênus rege este Ascendente e esclarece seus valores relacionais; dizer o que prefere desde o início oferece uma base mais honesta para a reciprocidade que procura.",
+      "professional": "Você pode iniciar relações profissionais com atenção ao tom da conversa, à apresentação e aos interesses envolvidos. A posição de Vênus amplia sua maneira de negociar; formular critérios e tomar decisões no momento adequado ajuda a conciliar pessoas sem deixar os impasses se prolongarem indefinidamente."
+    },
+    "ascendant:7": {
+      "title": "Ascendente em Escorpião",
+      "personal": "Você pode preferir observar com atenção antes de confiar, revelando aspectos pessoais conforme percebe consistência na relação. Marte, na regência tradicional, e Plutão, na moderna, acrescentam nuances a essa postura; intimidade pode crescer quando você explicita limites e perguntas, em vez de depender apenas de sinais indiretos.",
+      "professional": "Sua presença profissional pode se apoiar em discrição, concentração e interesse pelo que sustenta um problema além da aparência. Consulte Marte e Plutão para ampliar essa leitura; tornar critérios e responsabilidades visíveis favorece a confiança necessária para investigar, negociar e lidar com assuntos complexos."
+    },
+    "ascendant:8": {
+      "title": "Ascendente em Sagitário",
+      "personal": "Você pode se apresentar por suas ideias, seu humor e sua vontade de conhecer experiências diferentes das habituais. Júpiter rege este Ascendente e esclarece como você atribui sentido à vida; a abertura ao mundo se aprofunda quando a curiosidade inclui ouvir histórias que desafiam suas próprias certezas.",
+      "professional": "Em novos contextos profissionais, você pode procurar a finalidade do trabalho e as possibilidades que ele abre para aprender. A posição de Júpiter detalha essa busca; transformar uma visão ampla em compromissos viáveis permite compartilhar entusiasmo sem prometer mais do que os recursos disponíveis comportam."
+    },
+    "ascendant:9": {
+      "title": "Ascendente em Capricórnio",
+      "personal": "Você pode se apresentar com reserva e preferir que a confiança se forme pela consistência de suas atitudes. Saturno, regente deste Ascendente, ajuda a compreender sua relação com exigências e limites; permitir aproximações que não dependam de desempenho abre espaço para receber apoio e demonstrar afeto.",
+      "professional": "Você pode entrar em um ambiente profissional atento às responsabilidades, à hierarquia e ao que precisa ser sustentado ao longo do tempo. A posição de Saturno amplia esses temas; negociar o alcance do seu papel evita que a seriedade se converta em assumir tarefas que deveriam ser divididas."
+    },
+    "ascendant:10": {
+      "title": "Ascendente em Aquário",
+      "personal": "Você pode se aproximar das pessoas por afinidades de pensamento e pela liberdade de manter uma perspectiva própria. Saturno, regente tradicional, e Urano, regente moderno, detalham essa combinação; a convivência se beneficia quando a autonomia inclui disponibilidade para os sentimentos e necessidades particulares de quem está perto.",
+      "professional": "Você pode chegar ao trabalho questionando hábitos e percebendo maneiras alternativas de organizar a colaboração. Consulte Saturno e Urano para entender como estrutura e mudança se relacionam no mapa; testar propostas com as pessoas envolvidas dá sustentação prática a ideias que ainda precisam encontrar seu lugar."
+    },
+    "ascendant:11": {
+      "title": "Ascendente em Peixes",
+      "personal": "Você pode perceber o ambiente por impressões, imagens e mudanças sutis no modo como as pessoas se relacionam. Júpiter, na regência tradicional, e Netuno, na moderna, ampliam essa leitura; nomear suas preferências ajuda a preservar a sensibilidade sem perder de vista o que você deseja para si.",
+      "professional": "Sua apresentação profissional pode ser receptiva, imaginativa e atenta a aspectos que uma descrição estritamente técnica deixa escapar. As posições de Júpiter e Netuno acrescentam contexto; combinar essa percepção com acordos explícitos de prazo e responsabilidade facilita sua participação sem depender de expectativas que ninguém chegou a conversar."
+    },
+    "midheaven:0": {
+      "title": "Meio do Céu em Áries",
+      "personal": "Construir uma direção própria pode envolver reconhecer que algumas escolhas precisam partir de você, mesmo quando não há consenso. Marte rege este Meio do Céu e amplia a leitura da iniciativa; distinguir vontade pessoal de urgência ajuda a perseguir objetivos sem transformar toda resistência em confronto.",
+      "professional": "Você pode desejar autonomia para começar projetos, decidir rumos e responder diretamente pelos resultados das suas iniciativas. A posição de Marte esclarece como mobiliza esforço; uma direção profissional consistente também precisa de critérios para escolher batalhas, concluir tarefas e cooperar com pessoas que trabalham em outro ritmo."
+    },
+    "midheaven:1": {
+      "title": "Meio do Céu em Touro",
+      "personal": "Você pode avaliar seus objetivos pelo quanto eles oferecem continuidade, conforto e a possibilidade de construir algo que permaneça. Vênus rege este Meio do Céu e acrescenta informações sobre seus valores; reconhecer mudanças de desejo permite preservar o que importa sem ficar preso a uma escolha antiga.",
+      "professional": "Sua direção profissional pode privilegiar qualidade, resultados concretos e uma relação sustentável com tempo e recursos. A posição de Vênus detalha essa orientação; desenvolver competência com constância pode ser mais satisfatório quando você também revê métodos e percebe quais formas de estabilidade ainda fazem sentido."
+    },
+    "midheaven:2": {
+      "title": "Meio do Céu em Gêmeos",
+      "personal": "Você pode precisar de circulação de ideias e oportunidades de aprender para sentir que seus objetivos continuam vivos. Mercúrio rege este Meio do Céu e esclarece como você organiza possibilidades; aceitar interesses diversos fica mais fácil quando existe um fio que conecta suas escolhas e compromissos.",
+      "professional": "Você pode construir uma atuação profissional em torno de comunicação, aprendizagem ou articulação entre pessoas e informações. A posição de Mercúrio amplia essa leitura; escolher um foco para cada etapa ajuda a transformar versatilidade em trabalho reconhecível, mesmo quando sua trajetória reúne atividades diferentes entre si."
+    },
+    "midheaven:3": {
+      "title": "Meio do Céu em Câncer",
+      "personal": "Você pode querer que suas realizações preservem vínculos, lembranças ou um sentido de pertencimento. A Lua rege este Meio do Céu e ajuda a compreender o que oferece segurança; observar suas necessidades atuais evita organizar toda a direção de vida em torno de expectativas herdadas.",
+      "professional": "Você pode valorizar um trabalho cuja continuidade depende de confiança, cuidado ou conhecimento das necessidades de um público. A posição da Lua acrescenta contexto; estabelecer limites para a disponibilidade permite conciliar responsabilidade com as pessoas e decisões profissionais que nem sempre agradam a todos os envolvidos."
+    },
+    "midheaven:4": {
+      "title": "Meio do Céu em Leão",
+      "personal": "Você pode desejar que seus objetivos expressem algo que reconhece como seu, com espaço para criar e assumir escolhas. O Sol rege este Meio do Céu e detalha essa busca; avaliar suas realizações por critérios próprios reduz a dependência de aplauso para decidir o próximo passo.",
+      "professional": "Sua direção profissional pode incluir autoria, visibilidade ou a responsabilidade de representar um projeto diante de outras pessoas. A posição do Sol amplia essa interpretação; desenvolver uma contribuição reconhecível, dar crédito à equipe e acolher avaliações específicas sustenta uma presença pública menos dependente de aprovação constante."
+    },
+    "midheaven:5": {
+      "title": "Meio do Céu em Virgem",
+      "personal": "Você pode encontrar sentido em aprimorar alguma coisa e perceber que sua participação produz uma diferença concreta. Mercúrio rege este Meio do Céu e esclarece seus critérios de avaliação; reconhecer limites de tempo e energia ajuda a construir objetivos que não exigem uma versão impecável de você.",
+      "professional": "Você pode orientar sua carreira pelo domínio de procedimentos, pela análise e pela qualidade de um serviço ou produto. A posição de Mercúrio acrescenta nuances; definir quais problemas realmente precisam da sua atenção permite desenvolver competência sem assumir que cada falha do processo é uma responsabilidade pessoal."
+    },
+    "midheaven:6": {
+      "title": "Meio do Céu em Libra",
+      "personal": "Você pode procurar uma direção de vida que combine seus valores com a possibilidade de construir boas relações. Vênus rege este Meio do Céu e esclarece o que você considera justo e desejável; uma escolha compartilhada ganha consistência quando sua própria preferência também está presente na conversa.",
+      "professional": "Sua direção profissional pode envolver negociação, composição de interesses ou atenção à forma como uma proposta é apresentada. A posição de Vênus amplia esses temas; sustentar critérios e decidir diante de discordâncias permite que a busca por equilíbrio produza encaminhamentos, em vez de adiar indefinidamente as definições."
+    },
+    "midheaven:7": {
+      "title": "Meio do Céu em Escorpião",
+      "personal": "Você pode desejar objetivos que mereçam envolvimento intenso e permitam compreender assuntos que costumam ficar fora das conversas comuns. Marte e Plutão, regentes tradicional e moderno, acrescentam contexto; escolher onde investir essa atenção ajuda a preservar sua vida pessoal de exigências profissionais que ocupam espaço demais.",
+      "professional": "Você pode se interessar por trabalho que envolve investigação, mudanças difíceis ou administração de recursos compartilhados. As posições de Marte e Plutão detalham essa orientação; uma atuação responsável pede clareza sobre poder, acesso à informação e limites de intervenção, especialmente quando outras pessoas dependem das suas decisões."
+    },
+    "midheaven:8": {
+      "title": "Meio do Céu em Sagitário",
+      "personal": "Você pode desejar que seus objetivos ampliem sua visão de mundo e tenham relação com algo em que acredita. Júpiter rege este Meio do Céu e ajuda a compreender suas referências; permitir que a experiência revise suas convicções mantém sua direção aberta ao aprendizado e às circunstâncias.",
+      "professional": "Sua direção profissional pode envolver transmitir conhecimento, conectar contextos ou desenvolver projetos de alcance mais amplo. A posição de Júpiter acrescenta nuances; combinar uma finalidade clara com avaliação dos recursos disponíveis ajuda a transformar perspectivas promissoras em etapas que possam ser executadas, acompanhadas e corrigidas quando necessário."
+    },
+    "midheaven:9": {
+      "title": "Meio do Céu em Capricórnio",
+      "personal": "Você pode levar seus objetivos a sério e desejar que suas realizações tenham continuidade para além da satisfação imediata. Saturno rege este Meio do Céu e esclarece sua relação com responsabilidade; reconhecer o valor de descanso e apoio permite construir uma direção que também comporte sua vida cotidiana.",
+      "professional": "Você pode preferir uma trajetória em que competência, responsabilidade e autonomia sejam construídas ao longo do tempo. A posição de Saturno amplia essa leitura; estabelecer marcos realistas e discutir o alcance das cobranças ajuda a sustentar ambições sem aceitar como inevitável toda exigência vinda de uma autoridade."
+    },
+    "midheaven:10": {
+      "title": "Meio do Céu em Aquário",
+      "personal": "Você pode desejar objetivos que preservem independência e tenham alguma relação com o mundo que gostaria de ajudar a construir. Saturno e Urano, regentes tradicional e moderno, ampliam essa leitura; transformar ideias em participação concreta permite descobrir quais diferenças você realmente quer sustentar no cotidiano.",
+      "professional": "Sua direção profissional pode favorecer experimentação, redes de colaboração ou revisão de estruturas que já não atendem às necessidades presentes. Consulte Saturno e Urano para detalhar essa combinação; envolver quem executa o trabalho e avaliar os efeitos das mudanças oferece sustentação a propostas que questionam práticas estabelecidas."
+    },
+    "midheaven:11": {
+      "title": "Meio do Céu em Peixes",
+      "personal": "Você pode precisar de imaginação, significado e abertura ao que ainda não está definido para reconhecer uma direção de vida. Júpiter e Netuno, regentes tradicional e moderno, acrescentam contexto; traduzir essas percepções em escolhas pequenas permite explorar possibilidades sem exigir uma vocação inteiramente clara desde o início.",
+      "professional": "Você pode valorizar trabalhos em que sensibilidade, criação ou cuidado tenham espaço para orientar a atuação. As posições de Júpiter e Netuno aprofundam essa leitura; definir o que será entregue, para quem e em quais condições ajuda a dar forma profissional a intenções que começam como imagens e intuições."
+    },
+    "nodeSign:0": {
+      "title": "Nodo Norte em Áries e Nodo Sul em Libra",
+      "personal": "Este eixo propõe explorar a diferença entre considerar outra pessoa e depender da concordância dela para escolher. Você pode desenvolver iniciativa sem perder a capacidade de dialogar, reconhecendo que um vínculo comporta vontades distintas e que expressar a sua não precisa romper a relação.",
+      "professional": "Você pode examinar quando a busca por consenso contribui para o trabalho e quando adia uma decisão que cabe a você. A proposta de desenvolvimento combina capacidade de negociação com autoria, permitindo que você assuma uma posição clara e depois a coloque em diálogo com a equipe."
+    },
+    "nodeSign:1": {
+      "title": "Nodo Norte em Touro e Nodo Sul em Escorpião",
+      "personal": "Este eixo convida a construir referências próprias de segurança, prazer e valor, acolhendo sua capacidade de reconhecer a complexidade das relações. Você pode investigar quando a intensidade ajuda a aprofundar um vínculo e quando dificulta apreciar a constância, os acordos simples e o que já está disponível.",
+      "professional": "Você pode desenvolver uma relação mais estável com seus recursos e critérios de valor, usando sua percepção de riscos sem depender de situações urgentes para se mobilizar. Planejar continuidade, reconhecer limites e acompanhar resultados concretos oferece uma base para lidar com processos complexos sem tornar a tensão permanente."
+    },
+    "nodeSign:2": {
+      "title": "Nodo Norte em Gêmeos e Nodo Sul em Sagitário",
+      "personal": "Este eixo valoriza a curiosidade que permite rever uma explicação ampla à luz de uma conversa ou de um detalhe inesperado. Você pode preservar suas convicções e, ao mesmo tempo, experimentar perguntas que deixem espaço para respostas diferentes, aproximando conhecimento e experiência cotidiana sem exigir uma conclusão definitiva.",
+      "professional": "Você pode ampliar sua atuação ao trocar certezas gerais por perguntas específicas sobre o problema que precisa resolver. Sua capacidade de perceber uma finalidade ganha precisão quando você consulta informações, ouve quem executa o trabalho e comunica o que sabe de maneira compreensível para diferentes interlocutores."
+    },
+    "nodeSign:3": {
+      "title": "Nodo Norte em Câncer e Nodo Sul em Capricórnio",
+      "personal": "Este eixo propõe reconhecer necessidades emocionais sem tratar vulnerabilidade como uma falha a ser corrigida. Você pode aproveitar sua capacidade de assumir responsabilidades enquanto aprende a pedir apoio, demonstrar afeto e perceber o que deseja preservar na intimidade, para além do que consegue sustentar ou realizar.",
+      "professional": "Você pode examinar como responsabilidade e cuidado participam das suas decisões profissionais, incluindo os efeitos das cobranças sobre as pessoas. A capacidade de organizar e cumprir compromissos ganha alcance quando você também considera condições de trabalho, pertencimento e formas de apoio que tornem a continuidade possível."
+    },
+    "nodeSign:4": {
+      "title": "Nodo Norte em Leão e Nodo Sul em Aquário",
+      "personal": "Este eixo convida a expressar desejos e criações pessoais mesmo quando você consegue enxergar muitas perspectivas sobre uma situação. Participar de grupos pode continuar sendo valioso, enquanto você experimenta ocupar um lugar próprio, recebe atenção e reconhece sentimentos que uma análise mais distanciada não resolve sozinha.",
+      "professional": "Você pode desenvolver autoria dentro das redes e equipes de que participa, deixando mais claro o que propõe e o que deseja criar. Sua visão coletiva pode apoiar uma contribuição pessoal reconhecível, desde que a busca por impessoalidade não esconda decisões que precisam de alguém disposto a assumi-las."
+    },
+    "nodeSign:5": {
+      "title": "Nodo Norte em Virgem e Nodo Sul em Peixes",
+      "personal": "Este eixo aproxima sensibilidade e discernimento, convidando você a dar forma cotidiana ao que percebe ou imagina. Reconhecer limites, distinguir responsabilidades e cuidar de pequenas tarefas pode preservar sua disponibilidade afetiva, sem exigir que você abandone a abertura ao mistério ou tente explicar tudo o que sente.",
+      "professional": "Você pode transformar uma percepção ampla do ambiente em procedimentos, prioridades e entregas que outras pessoas consigam acompanhar. A imaginação e a empatia encontram sustentação quando você define critérios de qualidade, delimita sua função e verifica os efeitos reais de um trabalho concebido com boas intenções."
+    },
+    "nodeSign:6": {
+      "title": "Nodo Norte em Libra e Nodo Sul em Áries",
+      "personal": "Este eixo propõe ampliar a capacidade de considerar outra pessoa sem abrir mão de iniciativa ou vontade própria. Você pode experimentar acordos em que a decisão emerge da troca, percebendo quando agir imediatamente ajuda e quando escutar mais um pouco permite construir uma relação com maior reciprocidade.",
+      "professional": "Você pode usar sua iniciativa para abrir negociações e construir decisões compartilhadas, em vez de concentrar toda a execução em suas próprias mãos. O desenvolvimento proposto envolve reconhecer competências diferentes, explicitar interesses e sustentar acordos, preservando a coragem de agir quando a conversa já produziu uma direção viável."
+    },
+    "nodeSign:7": {
+      "title": "Nodo Norte em Escorpião e Nodo Sul em Touro",
+      "personal": "Este eixo convida a reconhecer que segurança também pode envolver atravessar mudanças, dividir recursos e conversar sobre o que costuma ficar protegido. Você pode levar sua capacidade de constância para vínculos mais profundos, sem exigir que intimidade signifique perder autonomia ou manter tudo exatamente como estava antes.",
+      "professional": "Você pode explorar trabalhos e responsabilidades que pedem negociação de interesses, revisão de estruturas ou uso compartilhado de recursos. Sua capacidade de construir continuidade oferece uma base para essas mudanças, desde que preservar o conhecido não impeça examinar custos, dependências e acordos que já precisam ser revistos."
+    },
+    "nodeSign:8": {
+      "title": "Nodo Norte em Sagitário e Nodo Sul em Gêmeos",
+      "personal": "Este eixo propõe reunir informações em uma compreensão que ajude você a escolher como quer viver. Sua curiosidade pode continuar abrindo caminhos, enquanto você experimenta sustentar uma convicção provisória, reconhecendo que tomar posição não elimina a possibilidade de aprender com perguntas, encontros e experiências posteriores.",
+      "professional": "Você pode desenvolver uma direção para conhecimentos e habilidades que, isoladamente, oferecem muitas possibilidades de atuação. Relacionar tarefas a uma finalidade e escolher critérios de decisão ajuda a transformar versatilidade em contribuição consistente, sem perder a disposição para consultar dados e rever uma interpretação quando necessário."
+    },
+    "nodeSign:9": {
+      "title": "Nodo Norte em Capricórnio e Nodo Sul em Câncer",
+      "personal": "Este eixo convida a construir autonomia com respeito pelas necessidades emocionais e pelos vínculos que oferecem pertencimento. Você pode assumir escolhas e limites próprios sem precisar negar o afeto, percebendo a diferença entre cuidar de uma relação e deixar que ela decida toda a organização da sua vida.",
+      "professional": "Você pode transformar cuidado e percepção das necessidades humanas em compromissos com escopo, prazo e responsabilidade definidos. O desenvolvimento proposto inclui sustentar decisões difíceis e avaliar resultados, preservando a sensibilidade que ajuda a reconhecer como essas decisões afetam as pessoas e a continuidade do trabalho."
+    },
+    "nodeSign:10": {
+      "title": "Nodo Norte em Aquário e Nodo Sul em Leão",
+      "personal": "Este eixo propõe ampliar a participação em relações nas quais diferentes pessoas têm voz e podem contribuir para uma finalidade comum. Você pode oferecer criatividade e presença sem precisar ocupar o centro, enquanto aprende a reconhecer vínculos de amizade e colaboração que também comportam sua expressão particular.",
+      "professional": "Você pode colocar sua autoria a serviço de projetos que dependem de colaboração, circulação de conhecimento e decisões compartilhadas. A proposta não exige apagar sua contribuição, mas reconhecer como ela ganha alcance quando outras pessoas conseguem participar, adaptar ideias e dar continuidade ao trabalho sem depender da sua presença."
+    },
+    "nodeSign:11": {
+      "title": "Nodo Norte em Peixes e Nodo Sul em Virgem",
+      "personal": "Este eixo convida a admitir experiências que não se deixam organizar completamente por análise, rotina ou explicação. Você pode preservar o discernimento enquanto oferece espaço à imaginação, ao descanso e à incerteza, reconhecendo que uma relação não precisa estar inteiramente resolvida para ser vivida com cuidado.",
+      "professional": "Você pode ampliar sua atuação ao relacionar precisão e sensibilidade ao contexto, percebendo o que um procedimento deixa de contemplar. O desenvolvimento proposto envolve tolerar etapas de exploração e resultados ainda incompletos, usando sua capacidade de organização para apoiar a criação, em vez de encerrá-la antes do tempo."
+    },
+    "nodeHouse:1": {
+      "title": "Nodo Norte na casa 1 e Nodo Sul na casa 7",
+      "personal": "Este eixo convida você a perceber o que quer e como deseja se apresentar, mesmo quando uma relação ocupa muito espaço na sua atenção. A experiência de parceria pode apoiar esse movimento, desde que negociar com outra pessoa também inclua reconhecer suas preferências, seus limites e sua iniciativa.",
+      "professional": "Você pode desenvolver mais clareza sobre a contribuição que deseja oferecer e as decisões que está disposto a assumir. A capacidade de colaborar continua disponível, enquanto você observa quando consulta parceiros para enriquecer uma escolha e quando espera que eles definam uma direção que precisa partir de você."
+    },
+    "nodeHouse:2": {
+      "title": "Nodo Norte na casa 2 e Nodo Sul na casa 8",
+      "personal": "Este eixo propõe construir uma relação própria com recursos, valores e fontes de estabilidade, sem apagar a importância das trocas profundas. Você pode observar o que consegue sustentar por conta própria e o que prefere compartilhar, tornando mais claros os acordos que envolvem dependência, confiança e reciprocidade.",
+      "professional": "Você pode dar atenção ao reconhecimento das suas competências e à organização dos recursos que estão sob sua responsabilidade. Sua percepção de interesses compartilhados ganha base quando existe clareza sobre o valor do seu trabalho, os limites de cada contribuição e as condições concretas de uma parceria."
+    },
+    "nodeHouse:3": {
+      "title": "Nodo Norte na casa 3 e Nodo Sul na casa 9",
+      "personal": "Este eixo convida você a aproximar ideias amplas das conversas e experiências que acontecem ao seu redor. Sua busca por sentido pode se beneficiar de perguntas simples, escuta e observação, permitindo que pessoas próximas e situações cotidianas acrescentem nuances às explicações que você já considera convincentes.",
+      "professional": "Você pode desenvolver a capacidade de traduzir conhecimentos para interlocutores específicos e verificar como uma ideia funciona na prática. A visão de conjunto continua útil, enquanto pequenas trocas, registros e perguntas sobre o cotidiano ajudam a corrigir pressupostos e a tornar sua comunicação mais precisa e acessível."
+    },
+    "nodeHouse:4": {
+      "title": "Nodo Norte na casa 4 e Nodo Sul na casa 10",
+      "personal": "Este eixo propõe dar atenção à vida íntima e às referências que permitem sentir que você tem um lugar próprio. Objetivos e responsabilidades públicas podem continuar importantes, enquanto você percebe quais escolhas oferecem descanso, pertencimento e liberdade para existir sem estar sempre respondendo a uma expectativa de desempenho.",
+      "professional": "Você pode examinar a relação entre sua direção profissional e a base cotidiana que permite sustentá-la. Desenvolver limites de disponibilidade, preservar relações pessoais e reconhecer necessidades de recolhimento ajuda a avaliar ambições por critérios que incluam sua vida, além da posição que ocupa diante dos outros."
+    },
+    "nodeHouse:5": {
+      "title": "Nodo Norte na casa 5 e Nodo Sul na casa 11",
+      "personal": "Este eixo convida a experimentar prazer, criatividade e expressão pessoal sem exigir que cada escolha tenha uma utilidade para o grupo. Suas afinidades coletivas podem continuar oferecendo apoio, enquanto você reconhece o que deseja criar, quais experiências despertam interesse e como prefere participar afetivamente das relações.",
+      "professional": "Você pode desenvolver projetos em que sua autoria apareça com mais clareza, usando a experiência de colaboração para apoiar o que deseja experimentar. Reservar espaço para ensaios e escolhas criativas ajuda a perceber sua contribuição particular, mesmo quando o trabalho se organiza em torno de uma finalidade coletiva."
+    },
+    "nodeHouse:6": {
+      "title": "Nodo Norte na casa 6 e Nodo Sul na casa 12",
+      "personal": "Este eixo propõe transformar percepção e imaginação em cuidados concretos com o cotidiano, incluindo limites para o que você consegue assumir. Você pode descobrir formas de organizar tarefas que preservem espaço interno, reconhecendo que uma rotina viável também comporta descanso, imprevistos e períodos de menor disponibilidade.",
+      "professional": "Você pode desenvolver clareza sobre procedimentos, funções e condições necessárias para realizar um trabalho de maneira sustentável. Sua sensibilidade ao que acontece nos bastidores oferece contexto, enquanto acordos explícitos e acompanhamento das tarefas ajudam a converter disponibilidade em uma contribuição que outras pessoas possam compreender e utilizar."
+    },
+    "nodeHouse:7": {
+      "title": "Nodo Norte na casa 7 e Nodo Sul na casa 1",
+      "personal": "Este eixo convida a descobrir como uma relação pode ampliar sua maneira de escolher sem apagar sua autonomia. Você pode usar o conhecimento das próprias vontades para negociar com mais honestidade, aprendendo a considerar propostas, limites e desejos que não surgem da sua experiência individual.",
+      "professional": "Você pode desenvolver parcerias em que responsabilidades e decisões sejam efetivamente compartilhadas, aproveitando sua capacidade de agir por iniciativa própria. O trabalho conjunto ganha consistência quando você explicita o que oferece, escuta o que a outra pessoa precisa e aceita que o resultado possa diferir da sua ideia inicial."
+    },
+    "nodeHouse:8": {
+      "title": "Nodo Norte na casa 8 e Nodo Sul na casa 2",
+      "personal": "Este eixo propõe aprofundar a confiança necessária para compartilhar recursos, sentimentos e decisões que ultrapassam o controle individual. Você pode levar seus valores e sua capacidade de sustentação para essas trocas, percebendo quando preservar autonomia ajuda a relação e quando impede conversar sobre necessidades mútuas.",
+      "professional": "Você pode desenvolver mais habilidade para negociar recursos coletivos, interesses divergentes e responsabilidades que dependem de várias pessoas. O conhecimento do que você possui e sabe fazer oferece uma base, enquanto contratos claros e acesso às informações permitem compartilhar decisões sem perder de vista os limites de cada participante."
+    },
+    "nodeHouse:9": {
+      "title": "Nodo Norte na casa 9 e Nodo Sul na casa 3",
+      "personal": "Este eixo convida a relacionar experiências e informações a uma compreensão mais ampla do que orienta suas escolhas. A curiosidade cotidiana pode alimentar esse processo, enquanto você experimenta estudar um assunto com continuidade, conhecer perspectivas diferentes e formular convicções que permaneçam abertas à revisão pela experiência.",
+      "professional": "Você pode desenvolver uma direção para habilidades de comunicação e aprendizagem, identificando que finalidade deseja dar ao conhecimento acumulado. Articular informações em uma proposta coerente ajuda a orientar projetos e decisões, desde que a busca por visão de conjunto continue apoiada na escuta de detalhes e situações concretas."
+    },
+    "nodeHouse:10": {
+      "title": "Nodo Norte na casa 10 e Nodo Sul na casa 4",
+      "personal": "Este eixo propõe explorar como você deseja participar do mundo para além dos espaços em que já se sente pertencente. Sua base afetiva pode acompanhar esse movimento, enquanto você assume escolhas visíveis e percebe que construir uma direção própria não exige desconsiderar suas necessidades de intimidade.",
+      "professional": "Você pode desenvolver uma posição profissional mais definida, assumindo responsabilidades compatíveis com o que deseja construir. Referências pessoais e vínculos de confiança oferecem apoio, enquanto critérios explícitos ajudam a distinguir decisões de trabalho das expectativas familiares ou afetivas que eventualmente estejam presentes na maneira como avalia suas opções."
+    },
+    "nodeHouse:11": {
+      "title": "Nodo Norte na casa 11 e Nodo Sul na casa 5",
+      "personal": "Este eixo convida a descobrir formas de pertencimento que envolvam amizade, colaboração e participação em objetivos compartilhados. Você pode oferecer sua criatividade sem depender de atenção exclusiva, percebendo como uma contribuição pessoal ganha outras possibilidades quando encontra pessoas com interesses próprios e disposição para construir algo em conjunto.",
+      "professional": "Você pode desenvolver redes de colaboração em que sua autoria participe de uma realização mais ampla. Dividir decisões, compartilhar conhecimentos e reconhecer contribuições diferentes permite que uma ideia circule e amadureça, sem exigir que você abandone o prazer de criar ou deixe de responder pelo que propõe."
+    },
+    "nodeHouse:12": {
+      "title": "Nodo Norte na casa 12 e Nodo Sul na casa 6",
+      "personal": "Este eixo propõe reservar espaço para descanso, imaginação e experiências que não precisam se justificar por uma tarefa concluída. Sua capacidade de cuidar do cotidiano pode sustentar esse espaço, enquanto você aprende a reconhecer os limites do controle e a conviver com perguntas que permanecem abertas.",
+      "professional": "Você pode desenvolver uma visão do trabalho que inclua processos de elaboração, pausas e aspectos que escapam aos indicadores mais imediatos. Sua atenção às tarefas continua valiosa, enquanto momentos de distanciamento ajudam a revisar prioridades e perceber quando eficiência deixou de corresponder ao sentido da atividade."
+    },
+    "retrograde:mercury": {
+      "title": "Mercúrio retrógrado",
+      "personal": "Na leitura psicológica, essa retrogradação pode simbolizar um pensamento que precisa retornar às próprias perguntas antes de encontrar uma formulação satisfatória. Você pode aproveitar essa elaboração reservando tempo para escrever e conversar, sem tomar um ritmo diferente de comunicação como sinal de incapacidade.",
+      "professional": "Você pode preferir revisar ideias antes de apresentá-las ou precisar reformular uma questão para compreender o que está sendo pedido. Explicitar o tempo necessário e registrar decisões ajuda a transformar essa elaboração em clareza, especialmente quando o ambiente exige respostas rápidas."
+    },
+    "retrograde:venus": {
+      "title": "Vênus retrógrada",
+      "personal": "Esta retrogradação pode simbolizar a necessidade de reconhecer com mais cuidado o que você valoriza e deseja em um vínculo. Você pode questionar expectativas de afeto e pertencimento, permitindo que suas escolhas sejam revistas sem presumir que relações difíceis ou afastamentos façam parte do seu destino.",
+      "professional": "Você pode precisar examinar seus próprios critérios de reconhecimento antes de aceitar avaliações ou recompensas oferecidas por um ambiente profissional. Conversar sobre preferências, condições de colaboração e valor do trabalho torna esses critérios mais visíveis e permite negociar sem depender apenas de aprovação externa."
+    },
+    "retrograde:mars": {
+      "title": "Marte retrógrado",
+      "personal": "Esta retrogradação pode representar uma elaboração mais interna da vontade, da iniciativa e da maneira de lidar com contrariedades. Você pode observar quando precisa de tempo para reconhecer um desejo e quando adia sua expressão, buscando formas diretas de agir que respeitem seus limites.",
+      "professional": "Você pode precisar esclarecer o que mobiliza seu esforço antes de aderir ao ritmo de uma equipe ou de um projeto. Definir prioridades e formas de encaminhar discordâncias ajuda a dar continuidade à ação, sem tratar hesitação ou revisão como ausência de iniciativa."
+    },
+    "retrograde:jupiter": {
+      "title": "Júpiter retrógrado",
+      "personal": "Esta retrogradação pode simbolizar uma busca de sentido que pede verificação pessoal, mesmo quando existem respostas socialmente aceitas. Você pode revisar crenças, expectativas e referências de confiança, construindo uma perspectiva que comporte dúvida sem perder a disposição para conhecer outras experiências.",
+      "professional": "Você pode questionar definições prontas de crescimento e reconhecimento, procurando critérios profissionais que façam sentido para você. Rever metas à luz da experiência ajuda a distinguir uma oportunidade desejável de uma expansão que acrescenta compromissos sem corresponder às suas prioridades."
+    },
+    "retrograde:saturn": {
+      "title": "Saturno retrógrado",
+      "personal": "Esta retrogradação pode representar uma atenção voltada aos critérios internos de responsabilidade, limite e suficiência. Você pode examinar quais cobranças ainda são úteis e quais se mantêm por hábito, construindo compromissos que respeitem suas condições reais sem depender de uma exigência permanente consigo.",
+      "professional": "Você pode precisar rever sua relação com autoridade e com os critérios que utiliza para avaliar o próprio desempenho. Tornar expectativas verificáveis e negociar responsabilidades ajuda a separar o que o trabalho exige de cobranças pessoais que continuam crescendo mesmo depois de uma entrega adequada."
+    },
+    "retrograde:uranus": {
+      "title": "Urano retrógrado",
+      "personal": "Compartilhada por muitas pessoas, esta retrogradação pode servir como símbolo para refletir sobre autonomia e mudança a partir de critérios próprios. Você pode distinguir a vontade de experimentar do impulso de se afastar, observando quais diferenças deseja sustentar de maneira concreta nas relações.",
+      "professional": "Você pode elaborar questionamentos antes de propor mudanças publicamente, avaliando o espaço disponível para experimentar outra forma de trabalhar. A posição por casa e os aspectos acrescentam contexto, pois a retrogradação isolada não permite concluir como você responderá a regras, inovação ou trabalho coletivo."
+    },
+    "retrograde:neptune": {
+      "title": "Netuno retrógrado",
+      "personal": "Esta retrogradação, comum a muitas pessoas, pode orientar uma reflexão sobre imagens, expectativas e ideais que você cultiva internamente. Você pode observar como essas referências participam dos vínculos, dando forma à imaginação sem tomar uma impressão subjetiva como conhecimento definitivo sobre outra pessoa.",
+      "professional": "Você pode precisar examinar o significado que atribui a um projeto e as expectativas que deposita em instituições ou lideranças. Comparar intenções com práticas observáveis ajuda a preservar a inspiração, enquanto casa e aspectos oferecem informações mais específicas do que a retrogradação considerada sozinha."
+    },
+    "retrograde:pluto": {
+      "title": "Plutão retrógrado",
+      "personal": "Compartilhada por muitas pessoas, esta retrogradação pode servir como ponto de reflexão sobre controle, privacidade e disposição para rever padrões. Você pode observar o que tenta preservar quando resiste a uma mudança, sem deduzir experiências traumáticas ou uma história de perdas a partir desse símbolo.",
+      "professional": "Você pode examinar sua relação com influência, acesso à informação e decisões que afetam outras pessoas. A casa e os aspectos de Plutão contextualizam esse tema, permitindo refletir sobre formas responsáveis de exercer poder sem atribuir um perfil profissional fixo à retrogradação."
+    },
+    "pair:sun:moon": {
+      "title": "Sol e Lua",
+      "personal": "Sua vontade de se expressar e suas necessidades de acolhimento participam de uma mesma conversa interna. Você pode observar em quais situações o que escolhe conscientemente corresponde ao que sente, e quando precisa reconhecer uma necessidade emocional antes de decidir como deseja agir em uma relação.",
+      "professional": "Sua maneira de assumir um papel profissional se relaciona com as condições emocionais de que você precisa para sustentá-lo. Examinar o ritmo cotidiano, o sentimento de pertencimento e a possibilidade de reconhecer suas necessidades ajuda a construir uma atuação que comporte responsabilidade e participação pessoal."
+    },
+    "pair:sun:mercury": {
+      "title": "Sol e Mercúrio",
+      "personal": "A maneira como você pensa e comunica suas ideias participa diretamente da imagem que constrói de si. Você pode observar quando uma discordância é recebida como discussão de um assunto e quando parece questionar seu valor, abrindo espaço para mudar de opinião sem perder a própria voz.",
+      "professional": "Você pode investir identidade nas ideias que apresenta e desejar que sua contribuição intelectual seja reconhecida. Separar a avaliação de uma proposta da avaliação pessoal ajuda a ouvir sugestões, explicar critérios e revisar argumentos, preservando a autoria sem precisar defender cada formulação como se fosse definitiva."
+    },
+    "pair:sun:venus": {
+      "title": "Sol e Vênus",
+      "personal": "Sua expressão pessoal se relaciona com o que você aprecia e com a maneira como procura reconhecimento nos vínculos. Você pode investigar quais escolhas traduzem seus valores e quais respondem principalmente ao desejo de agradar, permitindo que afeto e autenticidade coexistam mesmo quando as preferências são diferentes.",
+      "professional": "Sua presença profissional pode reunir desejo de autoria, cuidado com relações e atenção à qualidade da apresentação. Tornar seus valores explícitos ajuda a escolher colaborações e avaliar propostas, enquanto critérios claros permitem receber reconhecimento sem fazer da aprovação de colegas a única medida do seu trabalho."
+    },
+    "pair:sun:mars": {
+      "title": "Sol e Marte",
+      "personal": "Sua percepção de quem é se relaciona com a maneira como deseja, toma iniciativa e enfrenta impedimentos. Você pode reconhecer o que merece esforço e observar quando precisa agir para afirmar sua presença, escolhendo formas de expressão que incluam firmeza sem transformar toda diferença em uma disputa.",
+      "professional": "Você pode vincular realização pessoal à possibilidade de agir e produzir resultados pelos quais responde diretamente. Definir prioridades e distinguir urgência de importância ajuda a direcionar esforço, enquanto a colaboração pede reconhecer que a iniciativa de outras pessoas também pode contribuir para um projeto que você considera seu."
+    },
+    "pair:sun:jupiter": {
+      "title": "Sol e Júpiter",
+      "personal": "Sua expressão pessoal se encontra com a busca por sentido, confiança e possibilidades de crescimento. Você pode observar quais experiências ampliam sua visão de si e quais expectativas exigem uma versão grandiosa demais, preservando entusiasmo enquanto reconhece dúvidas, limites e desejos que não precisam impressionar ninguém.",
+      "professional": "Você pode desejar que seu trabalho tenha alcance e esteja ligado a ideias em que acredita. Relacionar essa visão a recursos, competências e compromissos verificáveis ajuda a construir propostas consistentes, enquanto abertura à avaliação permite que a confiança nas próprias capacidades continue acompanhada de aprendizado."
+    },
+    "pair:sun:saturn": {
+      "title": "Sol e Saturno",
+      "personal": "Sua vontade de se expressar se relaciona com critérios internos de responsabilidade, merecimento e reconhecimento. Você pode examinar quando a disciplina sustenta uma escolha e quando adia a possibilidade de participar, permitindo que sua presença tenha valor mesmo durante etapas em que ainda está aprendendo ou precisa de apoio.",
+      "professional": "Você pode relacionar realização profissional a competência, continuidade e capacidade de responder pelo que assume. Definir expectativas proporcionais à tarefa ajuda a usar disciplina sem tornar cada entrega uma prova do seu valor, enquanto delegar e negociar limites oferece sustentação para responsabilidades que precisam ser mantidas."
+    },
+    "pair:sun:uranus": {
+      "title": "Sol e Urano",
+      "personal": "Sua expressão pessoal se relaciona com a necessidade de autonomia e com a liberdade de experimentar formas diferentes de viver. Você pode observar quais mudanças correspondem a um desejo próprio e quais surgem da reação a expectativas alheias, construindo uma individualidade que também comporte continuidade e vínculo.",
+      "professional": "Você pode desejar espaço para propor caminhos próprios e questionar maneiras estabelecidas de realizar o trabalho. Apresentar razões, testar alternativas e compartilhar resultados ajuda a tornar sua contribuição compreensível, sem exigir que toda ideia seja inédita ou que trabalhar em equipe signifique abrir mão da autonomia."
+    },
+    "pair:sun:neptune": {
+      "title": "Sol e Netuno",
+      "personal": "Sua imagem de si se relaciona com ideais, imaginação e sensibilidade ao que acontece ao redor. Você pode perceber quais imagens inspiram escolhas e quais tornam difícil reconhecer desejos concretos, cultivando formas de expressão que acolham a ambiguidade sem depender de corresponder a uma figura idealizada.",
+      "professional": "Você pode procurar um trabalho em que criação, significado ou disponibilidade às pessoas tenham lugar. Traduzir suas intenções em entregas e acordos claros ajuda a sustentar essa participação, enquanto observar a diferença entre uma proposta inspiradora e suas condições reais permite escolher com mais discernimento."
+    },
+    "pair:sun:pluto": {
+      "title": "Sol e Plutão",
+      "personal": "Sua expressão pessoal se relaciona com questões de intensidade, controle e capacidade de rever a própria posição. Você pode observar quando deseja ser reconhecido pelo que é e quando tenta garantir esse reconhecimento controlando a resposta alheia, abrindo espaço para relações em que firmeza e vulnerabilidade coexistam.",
+      "professional": "Você pode investir fortemente em projetos que considera relevantes e desejar compreender as decisões que afetam sua atuação. Clareza sobre autoridade, acesso à informação e responsabilidade ajuda a direcionar esse envolvimento, enquanto aceitar revisões permite preservar a contribuição pessoal sem transformar discordâncias em disputas pelo controle."
+    },
+    "pair:moon:mercury": {
+      "title": "Lua e Mercúrio",
+      "personal": "O que você sente e a maneira como organiza pensamentos se influenciam mutuamente. Você pode observar como nomeia necessidades, interpreta lembranças e escuta outras pessoas, distinguindo a legitimidade de uma emoção das conclusões que tira a partir dela sobre o que alguém quis dizer ou fazer.",
+      "professional": "Sua percepção do clima de trabalho participa da forma como você recebe e transmite informações. Registrar decisões e esclarecer o sentido de comentários ajuda a separar fatos de impressões, enquanto uma comunicação atenta às necessidades da equipe pode facilitar conversas que envolvem mudanças, dúvidas e expectativas."
+    },
+    "pair:moon:venus": {
+      "title": "Lua e Vênus",
+      "personal": "Suas necessidades de segurança emocional se relacionam com a maneira como oferece afeto e reconhece prazer na companhia de alguém. Você pode perceber quais gestos acolhem de fato suas necessidades e quais procuram manter uma atmosfera agradável, permitindo que o vínculo comporte também preferências e sentimentos menos confortáveis.",
+      "professional": "Você pode valorizar relações de trabalho em que exista cordialidade e consideração pelas necessidades cotidianas. A atenção ao convívio ganha consistência quando você consegue conversar sobre desacordos e avaliar entregas com critérios explícitos, evitando que o desejo de preservar a boa relação esconda problemas que precisam de encaminhamento."
+    },
+    "pair:moon:mars": {
+      "title": "Lua e Marte",
+      "personal": "Suas reações emocionais se relacionam com a maneira como defende necessidades, expressa contrariedade e toma iniciativa. Você pode observar o intervalo entre sentir e agir, reconhecendo quando precisa proteger um limite e quando uma pausa permitiria comunicar o que deseja com mais precisão para a outra pessoa.",
+      "professional": "Você pode mobilizar esforço quando percebe uma necessidade imediata ou sente que algo importante está sendo ameaçado no trabalho. Identificar o problema antes de responder ajuda a direcionar essa energia, enquanto acordos sobre urgências e responsabilidades reduzem decisões tomadas apenas sob o impacto do clima emocional."
+    },
+    "pair:moon:jupiter": {
+      "title": "Lua e Júpiter",
+      "personal": "Sua busca por acolhimento se relaciona com confiança, generosidade e expectativas sobre o que a vida pode oferecer. Você pode reconhecer como ideias e crenças ajudam a lidar com sentimentos, sem exigir que otimismo substitua a escuta de necessidades concretas ou a expressão de uma decepção.",
+      "professional": "Você pode contribuir para um ambiente em que pessoas se sintam encorajadas a aprender e participar. Essa disponibilidade ganha sustentação quando promessas de apoio correspondem ao tempo e aos recursos existentes, permitindo reconhecer dificuldades reais sem reduzir o trabalho de acolhimento a mensagens de confiança e entusiasmo."
+    },
+    "pair:moon:saturn": {
+      "title": "Lua e Saturno",
+      "personal": "Suas necessidades emocionais se relacionam com a maneira como você administra limites, compromissos e disponibilidade para depender de alguém. Você pode observar quando a reserva oferece proteção e quando dificulta pedir o que precisa, permitindo que cuidado e responsabilidade incluam receber apoio, além de oferecê-lo.",
+      "professional": "Você pode procurar previsibilidade e levar a sério a continuidade dos compromissos assumidos com a equipe. Definir o alcance das responsabilidades e tornar necessidades conversáveis ajuda a construir confiança, enquanto reconhecer limites de disponibilidade evita que a preocupação com estabilidade concentre tarefas e cuidados em você."
+    },
+    "pair:moon:uranus": {
+      "title": "Lua e Urano",
+      "personal": "Sua necessidade de segurança se relaciona com o desejo de liberdade e com mudanças na maneira de viver a proximidade. Você pode experimentar ritmos de convivência que incluam espaço próprio, conversando sobre o que precisa para que autonomia e constância não dependam de afastamentos que a outra pessoa desconhece.",
+      "professional": "Você pode precisar de flexibilidade para responder ao ambiente sem perder a sensação de ter escolhas sobre o próprio cotidiano. Combinar autonomia com referências estáveis de comunicação ajuda a lidar com mudanças, permitindo que a equipe compreenda seu ritmo e que você reconheça necessidades coletivas de continuidade."
+    },
+    "pair:moon:neptune": {
+      "title": "Lua e Netuno",
+      "personal": "Sua percepção emocional se relaciona com imaginação, expectativas e sensibilidade ao clima dos vínculos. Você pode acolher o que sente enquanto verifica o que pertence à experiência de outra pessoa, distinguindo empatia de suposição e reconhecendo quando precisa de silêncio, descanso ou uma conversa mais explícita.",
+      "professional": "Você pode perceber nuances do ambiente e responder a necessidades que ainda não foram formuladas claramente. Confirmar essas impressões com as pessoas envolvidas ajuda a transformar sensibilidade em cuidado adequado, enquanto limites de disponibilidade evitam assumir tarefas ou preocupações que ninguém chegou a atribuir a você."
+    },
+    "pair:moon:pluto": {
+      "title": "Lua e Plutão",
+      "personal": "Suas necessidades emocionais se relacionam com temas de confiança, privacidade e intensidade nos vínculos. Você pode observar o que deseja proteger quando procura garantias, aprendendo a expressar receios e limites sem precisar controlar cada resposta de quem está perto ou interpretar toda mudança como ameaça à relação.",
+      "professional": "Você pode prestar atenção ao que acontece nos bastidores e às mudanças de confiança dentro de uma equipe. Usar essa percepção com cuidado exige verificar informações e respeitar privacidade, enquanto responsabilidades claras ajudam a lidar com situações intensas sem transformar preocupação emocional em vigilância permanente sobre o trabalho alheio."
+    },
+    "pair:mercury:venus": {
+      "title": "Mercúrio e Vênus",
+      "personal": "Sua maneira de pensar e conversar se relaciona com o que você valoriza e com o cuidado dedicado aos vínculos. Você pode procurar palavras que aproximem, observando quando a delicadeza expressa consideração e quando esconde uma preferência que precisaria ser dita para que exista reciprocidade na relação.",
+      "professional": "Você pode unir comunicação e atenção à apresentação, à negociação ou à experiência de quem recebe uma proposta. Explicitar critérios ajuda a combinar clareza e tato, permitindo discutir custos, limites e divergências sem sacrificar informações necessárias apenas para que a conversa permaneça agradável e sem atrito."
+    },
+    "pair:mercury:mars": {
+      "title": "Mercúrio e Marte",
+      "personal": "Seu pensamento se relaciona com a maneira como afirma desejos, enfrenta discordâncias e decide agir. Você pode observar a velocidade com que transforma uma interpretação em resposta, usando a franqueza para esclarecer posições enquanto reserva espaço para ouvir uma informação que possa mudar o sentido da conversa.",
+      "professional": "Você pode mobilizar argumentos rapidamente e desejar que discussões levem a encaminhamentos concretos. Verificar pressupostos antes de responder ajuda a dar precisão à iniciativa, enquanto distinguir debate de competição permite defender uma proposta sem fazer de cada objeção um obstáculo pessoal que precisa ser vencido."
+    },
+    "pair:mercury:jupiter": {
+      "title": "Mercúrio e Júpiter",
+      "personal": "Sua atenção aos fatos se relaciona com a busca por explicações amplas e significados que orientem escolhas. Você pode alternar perguntas específicas e visão de conjunto, observando quando uma ideia ajuda a compreender a experiência e quando generaliza demais aquilo que ainda precisa ser conhecido com mais cuidado.",
+      "professional": "Você pode reunir informações em propostas de maior alcance ou traduzir uma visão ampla em argumentos compreensíveis. Conferir dados, explicitar hipóteses e ajustar a linguagem ao público ajuda a comunicar possibilidades com rigor, especialmente quando o entusiasmo por uma ideia faz parecer dispensável a verificação dos detalhes."
+    },
+    "pair:mercury:saturn": {
+      "title": "Mercúrio e Saturno",
+      "personal": "Seu pensamento se relaciona com critérios de consistência, responsabilidade e receio de afirmar algo sem suficiente sustentação. Você pode reconhecer o valor da análise cuidadosa enquanto permite perguntas e formulações provisórias, para que a busca por precisão não impeça uma conversa antes de ela ter começado.",
+      "professional": "Você pode dedicar atenção à estrutura de argumentos, registros e decisões que precisam resistir ao tempo. Definir o grau de precisão exigido em cada etapa ajuda a usar esse cuidado de maneira produtiva, permitindo apresentar versões preliminares e receber contribuições antes de concluir toda a elaboração sozinho."
+    },
+    "pair:mercury:uranus": {
+      "title": "Mercúrio e Urano",
+      "personal": "Seu pensamento se relaciona com a busca por alternativas e com a capacidade de questionar associações habituais. Você pode encontrar perspectivas inesperadas, observando como comunicá-las para quem ainda não percorreu o mesmo raciocínio e permitindo que uma ideia seja examinada sem perder sua abertura para experimentar.",
+      "professional": "Você pode contribuir com conexões novas ou perceber que um problema foi formulado de maneira restrita demais. Registrar o raciocínio, testar hipóteses e explicar etapas ajuda a transformar essas percepções em propostas utilizáveis, enquanto a troca com colegas oferece informações que uma solução concebida rapidamente pode deixar de fora."
+    },
+    "pair:mercury:neptune": {
+      "title": "Mercúrio e Netuno",
+      "personal": "Seu pensamento se relaciona com imagens, associações e sentidos que nem sempre cabem em uma explicação direta. Você pode usar esse repertório para compreender e criar, enquanto distingue lembrança, impressão e informação verificável, especialmente quando precisa conversar sobre algo que envolve expectativas ou sentimentos difíceis de nomear.",
+      "professional": "Você pode encontrar recursos expressivos em metáforas, imagens ou leituras sensíveis de um contexto. Para transformar essa elaboração em trabalho compartilhado, ajuda explicitar o que é hipótese, proposta e informação confirmada, permitindo que a imaginação contribua sem deixar colegas dependentes de intenções que ainda não foram formuladas."
+    },
+    "pair:mercury:pluto": {
+      "title": "Mercúrio e Plutão",
+      "personal": "Seu pensamento se relaciona com o desejo de compreender motivações e examinar o que não aparece na primeira explicação. Você pode aprofundar perguntas e reconhecer contradições, observando quando a investigação oferece compreensão e quando passa a procurar uma certeza sobre o outro que nenhuma conversa poderia garantir.",
+      "professional": "Você pode se envolver com pesquisa, análise de problemas complexos ou revisão de pressupostos que orientam decisões. Formular perguntas abertas e tornar métodos verificáveis ajuda a usar essa concentração com rigor, enquanto respeito à privacidade e disposição para rever hipóteses impedem que uma interpretação seja tratada como prova."
+    },
+    "pair:venus:mars": {
+      "title": "Vênus e Marte",
+      "personal": "Sua maneira de se vincular se relaciona com a forma como expressa desejo e toma iniciativa. Você pode perceber como aproximação, autonomia e reciprocidade participam de uma relação, conversando sobre preferências para que a busca por intensidade ou harmonia não substitua o reconhecimento da vontade de cada pessoa.",
+      "professional": "Você pode combinar atenção às relações com disposição para negociar, decidir e colocar projetos em andamento. Explicitar interesses e limites ajuda a integrar cooperação e iniciativa, permitindo que a busca por um bom acordo inclua conversas firmes sobre condições, responsabilidades e aquilo que cada participante espera receber."
+    },
+    "pair:venus:jupiter": {
+      "title": "Vênus e Júpiter",
+      "personal": "Seus valores e vínculos se relacionam com expectativas de crescimento, prazer e generosidade. Você pode apreciar experiências que ampliem o convívio, observando quando oferecer mais expressa um desejo e quando cria compromissos difíceis de sustentar, para que afeto também comporte limites e diferenças de expectativa.",
+      "professional": "Você pode investir em relações profissionais que ofereçam troca, aprendizagem e possibilidades de ampliar seu trabalho. Avaliar condições concretas ajuda a combinar abertura e discernimento, especialmente quando uma parceria parece promissora e a boa disposição entre as pessoas pode levar a compromissos maiores do que o planejamento permite."
+    },
+    "pair:venus:saturn": {
+      "title": "Vênus e Saturno",
+      "personal": "Sua maneira de oferecer e receber afeto se relaciona com critérios de confiança, compromisso e continuidade. Você pode observar como reconhece cuidado no cotidiano e quais condições coloca para se sentir digno dele, permitindo que vínculos estáveis incluam prazer, espontaneidade e pedidos que não precisem ser previamente justificados.",
+      "professional": "Você pode valorizar parcerias consistentes e levar a sério a qualidade do que entrega em troca de reconhecimento. Tornar critérios e expectativas explícitos ajuda a construir relações duráveis, enquanto avaliar seu trabalho sem reduzir tudo a aprovação ou desempenho preserva espaço para preferências, criatividade e negociação."
+    },
+    "pair:venus:uranus": {
+      "title": "Vênus e Urano",
+      "personal": "Seus vínculos e valores se relacionam com a necessidade de autonomia e com a liberdade de experimentar formas de convivência. Você pode reconhecer o que deseja compartilhar e o que precisa preservar como escolha própria, construindo acordos que aceitem diferenças sem depender de expectativas silenciosas sobre proximidade e disponibilidade.",
+      "professional": "Você pode se interessar por colaborações que ofereçam liberdade criativa ou questionem maneiras habituais de apresentar e valorizar um trabalho. Definir expectativas e possibilidades de revisão ajuda a sustentar essas parcerias, permitindo experimentar sem presumir que todas as pessoas envolvidas tenham a mesma tolerância a mudanças."
+    },
+    "pair:venus:neptune": {
+      "title": "Vênus e Netuno",
+      "personal": "Seu modo de se vincular se relaciona com imaginação, idealização e sensibilidade ao que considera belo ou desejável. Você pode acolher a inspiração de um encontro enquanto conhece a pessoa concreta, distinguindo o que foi conversado daquilo que espera encontrar, sem exigir que o vínculo realize uma imagem perfeita.",
+      "professional": "Você pode buscar significado estético ou humano nas relações e nos projetos que escolhe. Transformar essa inspiração em critérios, referências e acordos explícitos ajuda a preservar a criação, enquanto avaliar condições reais evita que uma colaboração seja sustentada apenas pela imagem atraente do que poderia vir a ser."
+    },
+    "pair:venus:pluto": {
+      "title": "Vênus e Plutão",
+      "personal": "Seus vínculos se relacionam com intensidade, confiança e questões sobre o que você está disposto a compartilhar. Você pode observar como desejo e necessidade de segurança participam das escolhas afetivas, expressando limites e expectativas para que proximidade não dependa de controlar a disponibilidade ou as preferências de outra pessoa.",
+      "professional": "Você pode investir intensamente em parcerias e em trabalhos que correspondam aos seus valores. Conversar sobre recursos, influência e critérios de reconhecimento torna essas relações mais claras, enquanto a possibilidade de discordar e renegociar ajuda a distinguir compromisso de uma obrigação sustentada pelo receio de perder o vínculo."
+    },
+    "pair:mars:jupiter": {
+      "title": "Marte e Júpiter",
+      "personal": "Sua maneira de agir se relaciona com convicções, entusiasmo e expectativas sobre o alcance das suas escolhas. Você pode reconhecer o que lhe dá coragem para começar, observando quando uma causa amplia sua iniciativa e quando a certeza de estar certo diminui a escuta de limites e diferenças.",
+      "professional": "Você pode mobilizar esforço em torno de objetivos amplos e desejar que o trabalho avance com ritmo e propósito. Relacionar ambição a capacidade de execução ajuda a escolher prioridades, enquanto avaliar riscos e ouvir objeções permite que a confiança impulsione projetos sem dispensar planejamento e revisão."
+    },
+    "pair:mars:saturn": {
+      "title": "Marte e Saturno",
+      "personal": "Sua vontade de agir se relaciona com limites, disciplina e critérios sobre o que pode ou deve ser feito. Você pode observar quando conter um impulso favorece uma escolha e quando paralisa sua expressão, buscando formas graduais de afirmar desejos que não dependam de eliminar toda possibilidade de erro.",
+      "professional": "Você pode se dedicar a tarefas que exigem esforço continuado, planejamento e respeito a condições concretas. Definir etapas, reconhecer impedimentos e revisar o ritmo ajuda a combinar iniciativa com sustentação, enquanto negociar prioridades evita que a pressão por produzir transforme cada limite em uma prova de resistência pessoal."
+    },
+    "pair:mars:uranus": {
+      "title": "Marte e Urano",
+      "personal": "Sua iniciativa se relaciona com autonomia e com o desejo de responder rapidamente quando percebe uma possibilidade de mudança. Você pode distinguir um impulso que abre espaço para algo desejado de uma reação à sensação de estar limitado, escolhendo como agir sem deixar de considerar os efeitos sobre seus vínculos.",
+      "professional": "Você pode se mobilizar para experimentar soluções e alterar procedimentos que parecem restringir o trabalho. Testes delimitados, critérios de segurança e comunicação prévia ajudam a transformar urgência em inovação utilizável, permitindo que a equipe acompanhe a mudança e que você avalie o que realmente melhorou depois dela."
+    },
+    "pair:mars:neptune": {
+      "title": "Marte e Netuno",
+      "personal": "Sua capacidade de agir se relaciona com imaginação, ideais e percepções que nem sempre produzem uma direção imediata. Você pode observar quais imagens despertam vontade e quais tornam o desejo pouco definido, encontrando ações pequenas que permitam experimentar uma intenção antes de exigir certeza sobre todo o caminho.",
+      "professional": "Você pode mobilizar esforço por uma visão criativa ou por um trabalho que considere significativo para outras pessoas. Definir tarefas, prazos e limites ajuda a dar forma a essa motivação, enquanto verificar prioridades evita dispersar energia em pedidos cuja relação com a finalidade do projeto permanece pouco clara."
+    },
+    "pair:mars:pluto": {
+      "title": "Marte e Plutão",
+      "personal": "Sua maneira de agir se relaciona com intensidade, persistência e desejo de interferir no que considera decisivo. Você pode observar quando a determinação sustenta um limite e quando se torna necessidade de vencer, escolhendo formas de expressar contrariedade que preservem a autonomia de todas as pessoas envolvidas.",
+      "professional": "Você pode concentrar esforço em problemas difíceis e desejar participar das decisões que definem o rumo do trabalho. Acordar responsabilidades e critérios de intervenção ajuda a direcionar essa disposição, enquanto reconhecer quando interromper, delegar ou renegociar evita transformar persistência em desgaste ou disputa permanente por controle."
+    },
+    "pair:jupiter:saturn": {
+      "title": "Júpiter e Saturno",
+      "personal": "Sua confiança em ampliar possibilidades se relaciona com a necessidade de avaliar limites e construir continuidade. Você pode perceber como esperança e prudência participam de uma decisão, buscando compromissos que comportem crescimento sem exigir garantias completas nem tratar toda restrição como sinal de que deve desistir.",
+      "professional": "Você pode avaliar oportunidades considerando tanto o potencial de expansão quanto as condições para sustentá-las. Dividir metas em etapas, explicitar recursos e revisar resultados ajuda a combinar visão e responsabilidade, evitando que otimismo dispense preparação ou que a preocupação com limites impeça experiências proporcionais ao momento."
+    },
+    "pair:jupiter:uranus": {
+      "title": "Júpiter e Urano",
+      "personal": "Sua busca por sentido se relaciona com liberdade de pensamento e abertura a perspectivas que questionam explicações habituais. Você pode experimentar crenças e possibilidades diferentes, observando quais mudanças ampliam sua compreensão e quais apenas substituem uma certeza por outra, sem espaço para avaliar a experiência com cuidado.",
+      "professional": "Você pode se interessar por propostas que ampliem o alcance do trabalho e revisem modelos estabelecidos. Testar a utilidade de uma ideia em contexto ajuda a combinar visão e experimentação, enquanto compartilhar critérios permite distinguir uma oportunidade consistente do entusiasmo provocado apenas pela novidade ou pela promessa de ruptura."
+    },
+    "pair:jupiter:neptune": {
+      "title": "Júpiter e Netuno",
+      "personal": "Sua busca por sentido se relaciona com imaginação, idealismo e disposição para acreditar em possibilidades ainda pouco definidas. Você pode explorar referências espirituais, artísticas ou filosóficas que lhe interessem, mantendo espaço para dúvida e verificação, sem exigir que uma visão explique toda experiência ou resolva qualquer incerteza.",
+      "professional": "Você pode desejar que o trabalho corresponda a uma finalidade mais ampla e ofereça espaço para imaginação ou cuidado. Traduzir essa intenção em práticas observáveis ajuda a avaliar projetos e instituições, permitindo que o entusiasmo por uma missão conviva com perguntas sobre recursos, responsabilidades e efeitos concretos."
+    },
+    "pair:jupiter:pluto": {
+      "title": "Júpiter e Plutão",
+      "personal": "Suas convicções se relacionam com a maneira como você percebe influência, transformação e capacidade de ampliar seu alcance. Você pode investigar o que faz uma ideia parecer incontestável, reconhecendo a força de suas crenças sem usá-las para decidir sozinho o que seria melhor para outra pessoa.",
+      "professional": "Você pode se envolver com objetivos que exigem articulação de recursos, negociação de influência ou revisão de estruturas. Tornar critérios de decisão discutíveis e acompanhar os efeitos das escolhas ajuda a combinar ambição e responsabilidade, especialmente quando uma proposta convincente concentra poder em poucas mãos."
+    },
+    "pair:saturn:uranus": {
+      "title": "Saturno e Urano",
+      "personal": "Sua necessidade de continuidade se relaciona com o desejo de autonomia e revisão das regras que organizam a vida. Você pode perceber quais limites oferecem apoio e quais já não correspondem às suas necessidades, experimentando mudanças graduais sem exigir que preservar um compromisso signifique manter todos os seus termos.",
+      "professional": "Você pode lidar com a relação entre estruturas estabelecidas e propostas de mudança, reconhecendo tanto o valor dos processos quanto seus limites. Planejar transições, envolver quem executa o trabalho e definir critérios de avaliação permite experimentar alternativas sem depender de rigidez ou de ruptura como respostas automáticas."
+    },
+    "pair:saturn:neptune": {
+      "title": "Saturno e Netuno",
+      "personal": "Sua relação com limites se encontra com imaginação, sensibilidade e ideais que nem sempre têm contornos definidos. Você pode experimentar formas de dar sustentação ao que considera significativo, distinguindo uma responsabilidade concreta de uma obrigação difusa e permitindo que descanso e incerteza também tenham lugar no cotidiano.",
+      "professional": "Você pode se interessar por dar forma prática a propostas criativas ou voltadas ao cuidado. Definir escopo, recursos e critérios de acompanhamento ajuda a aproximar intenção e execução, enquanto ouvir o que não cabe nos procedimentos permite revisar estruturas sem abandonar a responsabilidade pelas entregas assumidas."
+    },
+    "pair:saturn:pluto": {
+      "title": "Saturno e Plutão",
+      "personal": "Sua relação com responsabilidade se encontra com temas de controle, permanência e revisão de estruturas profundas. Você pode observar quais compromissos ainda sustentam sua vida e quais se mantêm pelo receio de perder referências, buscando mudanças que reconheçam limites reais sem transformar dificuldade em obrigação de suportar tudo.",
+      "professional": "Você pode se envolver com decisões que exigem continuidade, concentração e disposição para revisar processos estabelecidos. Distribuir autoridade, documentar critérios e permitir revisão ajuda a lidar com responsabilidades intensas, enquanto distinguir o que precisa ser preservado do que pode mudar evita que controle se confunda com competência."
+    },
+    "pair:uranus:neptune": {
+      "title": "Urano e Netuno",
+      "personal": "Autonomia e imaginação participam aqui de um tema compartilhado por muitas pessoas da mesma geração. Você pode refletir sobre como novas formas de viver se relacionam com seus ideais, mas a expressão pessoal dessa combinação depende também das casas e das conexões com outros fatores do mapa.",
+      "professional": "Você pode examinar como mudanças de linguagem, tecnologia ou organização alteram aquilo que um grupo considera possível e desejável. Esta combinação geracional ganha expressão profissional conforme seu contexto e os demais fatores do mapa, oferecendo perguntas sobre a relação entre experimentação, imaginação e condições concretas de participação."
+    },
+    "pair:uranus:pluto": {
+      "title": "Urano e Plutão",
+      "personal": "Mudança e relações de poder se encontram em um tema que alcança muitas pessoas da mesma geração. Você pode observar como reage a estruturas que restringem autonomia e o que deseja transformar, considerando que sua expressão particular depende das casas, dos outros aspectos e das experiências que efetivamente vive.",
+      "professional": "Você pode refletir sobre mudanças que redistribuem influência, modificam processos ou questionam quem participa das decisões. Esta combinação não determina sua atuação profissional; casas e outros aspectos ajudam a situar o tema, enquanto seu contexto permite avaliar quando uma proposta de ruptura amplia escolhas ou concentra poder de outra forma."
+    },
+    "pair:neptune:pluto": {
+      "title": "Netuno e Plutão",
+      "personal": "Ideais e mudanças profundas aparecem aqui como uma relação compartilhada por muitas pessoas, cuja expressão individual precisa de contexto no mapa. Você pode refletir sobre imagens coletivas de pertencimento, desejo e poder, sem tomar essa combinação isolada como indicação de uma sensibilidade excepcional ou de experiências pessoais específicas.",
+      "professional": "Você pode examinar como narrativas, expectativas e valores coletivos influenciam decisões dentro de instituições e grupos. O significado profissional dessa combinação depende das casas e de suas demais conexões, permitindo observar a relação entre imagens mobilizadoras e interesses concretos sem atribuir uma vocação fixa a um aspecto geracional."
+    },
+    "pair:sun:trueNode": {
+      "title": "Sol e Nodo Norte",
+      "personal": "Sua expressão pessoal participa das perguntas sobre desenvolvimento representadas pelo eixo nodal. Você pode observar como o desejo de reconhecimento apoia escolhas novas ou mantém uma imagem conhecida de si, experimentando formas de autoria que preservem recursos já construídos e permitam descobrir interesses ainda pouco explorados.",
+      "professional": "Você pode relacionar sua direção profissional ao que deseja expressar com mais autonomia e consciência. Reconhecer padrões de busca por aprovação ajuda a escolher responsabilidades que ofereçam desenvolvimento, sem exigir que cada mudança de trabalho represente uma missão ou que exista uma única trajetória adequada para você."
+    },
+    "pair:moon:trueNode": {
+      "title": "Lua e Nodo Norte",
+      "personal": "Suas necessidades emocionais participam da relação entre modos conhecidos de buscar segurança e possibilidades de desenvolvimento. Você pode observar como vínculos, hábitos e lembranças influenciam suas escolhas, preservando fontes de acolhimento enquanto experimenta respostas que incluam necessidades atuais e não dependam apenas do que já lhe parece familiar.",
+      "professional": "Você pode examinar como segurança e pertencimento influenciam as oportunidades que aceita ou evita no trabalho. Reconhecer condições de apoio ajuda a experimentar outras responsabilidades sem desconsiderar seu ritmo, enquanto distinguir um ambiente conhecido de um ambiente adequado amplia os critérios usados para escolher onde investir esforço."
+    },
+    "pair:mercury:trueNode": {
+      "title": "Mercúrio e Nodo Norte",
+      "personal": "Sua maneira de pensar e comunicar participa das possibilidades de desenvolvimento simbolizadas pelo eixo nodal. Você pode reconhecer explicações habituais sobre si e experimentar perguntas que ampliem essa compreensão, usando conversas, leitura e observação para revisar conclusões sem precisar abandonar todo conhecimento que já construiu.",
+      "professional": "Você pode desenvolver sua atuação ao examinar como aprende, compartilha informações e interpreta situações profissionais. Experimentar formas diferentes de perguntar e apresentar ideias ajuda a ampliar repertório, enquanto reconhecer pressupostos habituais permite distinguir uma dificuldade concreta de uma conclusão antiga que continua orientando suas decisões."
+    },
+    "pair:venus:trueNode": {
+      "title": "Vênus e Nodo Norte",
+      "personal": "Seus valores e vínculos participam das escolhas de desenvolvimento representadas pelo eixo nodal. Você pode observar quais formas de buscar afeto parecem familiares e quais deseja experimentar, preservando a capacidade de se relacionar enquanto revê critérios de reciprocidade, reconhecimento e prazer que já não correspondem inteiramente às suas necessidades.",
+      "professional": "Você pode examinar como preferências, busca por aprovação e expectativas de reconhecimento influenciam suas parcerias profissionais. Tornar seus critérios de valor mais claros ajuda a escolher colaborações que permitam desenvolvimento, sem precisar repetir acordos apenas porque são conhecidos ou abandonar relações que ainda oferecem troca e continuidade."
+    },
+    "pair:mars:trueNode": {
+      "title": "Marte e Nodo Norte",
+      "personal": "Sua iniciativa participa da relação entre respostas habituais e possibilidades de desenvolvimento. Você pode observar como age diante de desejo, contrariedade ou disputa, experimentando maneiras de afirmar limites que ampliem suas escolhas sem transformar toda mudança em confronto ou exigir que você abandone a capacidade de defender o que importa.",
+      "professional": "Você pode desenvolver sua atuação ao reconhecer o que mobiliza esforço e como responde a impedimentos. Escolher iniciativas proporcionais ao momento e conversar sobre discordâncias ajuda a sair de padrões repetitivos de ação, preservando coragem e determinação sem tomar urgência como única indicação de que deve avançar."
+    },
+    "pair:jupiter:trueNode": {
+      "title": "Júpiter e Nodo Norte",
+      "personal": "Suas crenças e expectativas de crescimento participam das perguntas de desenvolvimento simbolizadas pelo eixo nodal. Você pode observar quais ideias oferecem confiança e quais restringem sua experiência, preservando referências úteis enquanto amplia sua disposição para aprender com pessoas, estudos e situações que apresentam outras maneiras de compreender a vida.",
+      "professional": "Você pode examinar como define crescimento profissional e quais oportunidades correspondem ao que deseja desenvolver. Rever metas e critérios de reconhecimento ajuda a escolher caminhos com mais consciência, sem tomar expansão, visibilidade ou aumento de responsabilidades como provas automáticas de que uma experiência será adequada para você."
+    },
+    "pair:saturn:trueNode": {
+      "title": "Saturno e Nodo Norte",
+      "personal": "Sua relação com limites e responsabilidades participa das possibilidades de desenvolvimento representadas pelo eixo nodal. Você pode reconhecer compromissos que oferecem sustentação e cobranças que se repetem sem avaliação, construindo formas de responsabilidade que incluam sua experiência atual e permitam aprender sem exigir domínio completo desde o começo.",
+      "professional": "Você pode desenvolver uma relação mais consciente com autoridade, competência e continuidade no trabalho. Examinar quais exigências pertencem à função e quais se mantêm por hábito ajuda a assumir responsabilidades proporcionais, enquanto compromissos claros permitem experimentar novos papéis sem depender apenas de reconhecimento formal ou de garantias antecipadas."
+    },
+    "pair:uranus:trueNode": {
+      "title": "Urano e Nodo Norte",
+      "personal": "Sua necessidade de autonomia participa da relação entre hábitos conhecidos e possibilidades de desenvolvimento. Você pode observar quando uma mudança amplia escolhas e quando apenas interrompe uma situação incômoda, experimentando diferenças que tenham sentido para você e que possam ser conversadas com as pessoas afetadas por elas.",
+      "professional": "Você pode examinar como a vontade de inovar influencia os caminhos profissionais que considera. Testar alternativas e observar seus efeitos ajuda a transformar questionamento em desenvolvimento, preservando o que ainda funciona e evitando tratar qualquer novidade como avanço ou toda continuidade como ausência de liberdade."
+    },
+    "pair:neptune:trueNode": {
+      "title": "Netuno e Nodo Norte",
+      "personal": "Sua imaginação e seus ideais participam das possibilidades de desenvolvimento simbolizadas pelo eixo nodal. Você pode observar quais imagens orientam seus desejos e quais expectativas dificultam reconhecer o presente, dando espaço à sensibilidade enquanto verifica o que precisa ser conversado, delimitado ou experimentado de maneira concreta.",
+      "professional": "Você pode desenvolver discernimento sobre projetos que mobilizam inspiração, identificação ou desejo de contribuir. Comparar a finalidade anunciada com as práticas do trabalho ajuda a escolher envolvimentos mais conscientes, permitindo que significado e criação encontrem sustentação sem depender de promessas vagas sobre aquilo que o projeto poderá oferecer."
+    },
+    "pair:pluto:trueNode": {
+      "title": "Plutão e Nodo Norte",
+      "personal": "Sua relação com controle, confiança e mudança participa das perguntas de desenvolvimento representadas pelo eixo nodal. Você pode observar quais formas de se proteger continuam úteis e quais restringem vínculos ou escolhas, experimentando maneiras de compartilhar decisões sem precisar interpretar toda transformação como perda de autonomia.",
+      "professional": "Você pode examinar como influência, concentração de responsabilidades e acesso à informação participam da sua trajetória profissional. Reconhecer padrões de controle ajuda a escolher formas mais conscientes de exercer poder, enquanto critérios compartilhados permitem rever estruturas sem supor que intensidade ou conflito sejam condições necessárias para seu desenvolvimento."
+    },
+    "pair:sun:ascendant": {
+      "title": "Sol e Ascendente",
+      "personal": "Sua expressão pessoal se relaciona com a maneira como você se apresenta e inicia contato com o mundo. Você pode observar quanto a imagem oferecida aos outros corresponde ao que deseja expressar, reconhecendo ajustes possíveis entre espontaneidade, proteção e a necessidade de encontrar um lugar próprio nas relações.",
+      "professional": "Sua contribuição profissional se relaciona com a impressão que você transmite ao entrar em uma equipe ou apresentar um projeto. Tornar intenções e responsabilidades claras ajuda a aproximar presença e atuação, permitindo que colegas conheçam seu trabalho além da imagem inicial que sua postura pode despertar."
+    },
+    "pair:moon:ascendant": {
+      "title": "Lua e Ascendente",
+      "personal": "Suas necessidades emocionais se relacionam com a maneira como você chega aos ambientes e responde às primeiras aproximações. Você pode perceber o quanto seu estado interno aparece na postura ou modifica sua disponibilidade, construindo formas de acolher o que sente sem depender de que as outras pessoas adivinhem suas necessidades.",
+      "professional": "Sua percepção do ambiente participa da forma como você se apresenta profissionalmente e inicia relações de trabalho. Nomear condições que favorecem sua participação ajuda a estabelecer confiança, enquanto distinguir impressões iniciais de informações confirmadas permite avaliar pessoas e situações sem depender apenas do clima percebido no primeiro contato."
+    },
+    "pair:mercury:ascendant": {
+      "title": "Mercúrio e Ascendente",
+      "personal": "Sua maneira de pensar e conversar participa diretamente de como você se apresenta nas relações. Você pode perceber quais perguntas, explicações e histórias usa para estabelecer contato, observando quando a fala aproxima e quando ocupa o espaço necessário para escutar o que a outra pessoa tenta comunicar.",
+      "professional": "Sua comunicação contribui para a impressão que você transmite ao iniciar contatos profissionais. Ajustar a linguagem ao contexto e verificar a compreensão dos interlocutores ajuda a apresentar ideias com clareza, enquanto espaço para perguntas permite que sua participação seja conhecida por uma troca real, além de uma boa exposição inicial."
+    },
+    "pair:venus:ascendant": {
+      "title": "Vênus e Ascendente",
+      "personal": "Sua maneira de se vincular e o que você aprecia participam da imagem que apresenta ao mundo. Você pode perceber como cordialidade, aparência e atenção à resposta alheia influenciam suas aproximações, preservando o prazer de conviver enquanto deixa suas preferências e seus limites aparecerem com mais clareza.",
+      "professional": "Sua apresentação profissional pode envolver atenção às relações, à forma e ao efeito que provoca nos interlocutores. Usar esse cuidado para facilitar o diálogo ajuda a construir colaboração, desde que a busca por boa recepção também permita expressar critérios, discordâncias e condições necessárias para realizar o trabalho."
+    },
+    "pair:mars:ascendant": {
+      "title": "Marte e Ascendente",
+      "personal": "Sua vontade de agir participa da maneira como você ocupa espaço e responde a aproximações. Você pode observar como iniciativa, firmeza e disposição para defender limites aparecem nos encontros, escolhendo um ritmo que permita expressar o que quer e também perceber a resposta de quem está diante de você.",
+      "professional": "Sua maneira de entrar em situações profissionais pode tornar visíveis sua iniciativa e disposição para enfrentar problemas. Explicitar o que pretende fazer e ouvir quem já participa do processo ajuda a direcionar essa presença, permitindo agir com firmeza sem pressupor que todos compartilhem a mesma urgência."
+    },
+    "pair:jupiter:ascendant": {
+      "title": "Júpiter e Ascendente",
+      "personal": "Sua busca por sentido e possibilidades de crescimento participa da maneira como você se apresenta às pessoas. Você pode observar como entusiasmo, convicções e expectativas influenciam os encontros, oferecendo sua perspectiva enquanto reserva espaço para conhecer experiências que não confirmam aquilo em que você já acredita.",
+      "professional": "Sua apresentação profissional pode transmitir abertura a possibilidades e interesse pela finalidade do trabalho. Relacionar essa visão a exemplos e compromissos concretos ajuda a tornar sua contribuição compreensível, enquanto reconhecer limites e incertezas permite que a confiança seja acompanhada de informações úteis para quem decide colaborar."
+    },
+    "pair:saturn:ascendant": {
+      "title": "Saturno e Ascendente",
+      "personal": "Sua relação com responsabilidade e limites participa da maneira como você se apresenta e permite aproximações. Você pode perceber quando a reserva oferece tempo para construir confiança e quando se torna exigência de estar sempre preparado, deixando espaço para demonstrar interesse mesmo sem controlar a impressão que irá causar.",
+      "professional": "Sua postura profissional pode tornar visíveis o cuidado com compromissos e a atenção ao que se espera de você. Esclarecer responsabilidades ajuda a usar essa seriedade de maneira sustentável, enquanto permitir perguntas e versões preliminares evita que a imagem de competência exija aparentar certeza em todas as situações."
+    },
+    "pair:uranus:ascendant": {
+      "title": "Urano e Ascendente",
+      "personal": "Sua necessidade de autonomia participa da maneira como você se apresenta e estabelece contato. Você pode experimentar formas próprias de ocupar espaço, observando quais diferenças expressam uma escolha e quais surgem como reação às expectativas alheias, para que a liberdade também inclua decidir quando deseja se aproximar.",
+      "professional": "Sua presença profissional pode tornar perceptível a disposição para questionar hábitos e experimentar alternativas. Explicar o propósito das propostas ajuda a construir interlocução, enquanto conhecer as condições do ambiente permite exercer autonomia de maneira que colegas consigam compreender, avaliar e eventualmente incorporar o que você traz."
+    },
+    "pair:neptune:ascendant": {
+      "title": "Netuno e Ascendente",
+      "personal": "Sua imaginação e sensibilidade ao ambiente participam da maneira como você se apresenta às pessoas. Você pode perceber que sua postura muda conforme o encontro, observando quais adaptações ampliam a troca e quais deixam suas próprias preferências pouco visíveis, especialmente quando os outros esperam algo que você ainda não definiu.",
+      "professional": "Sua apresentação profissional pode abrir espaço para escuta, criação e percepção de nuances do contexto. Tornar seu papel e suas entregas explícitos ajuda a dar contorno a essa disponibilidade, permitindo que a impressão causada nos interlocutores seja acompanhada de acordos claros sobre o que podem esperar de você."
+    },
+    "pair:pluto:ascendant": {
+      "title": "Plutão e Ascendente",
+      "personal": "Sua relação com confiança, controle e privacidade participa da maneira como você se apresenta e permite aproximações. Você pode observar o que escolhe revelar e o que prefere resguardar, construindo contato por acordos e conversa direta sem depender de antecipar todas as intenções ou respostas de outra pessoa.",
+      "professional": "Sua presença profissional pode envolver reserva, concentração e atenção às relações de influência do ambiente. Tornar critérios e responsabilidades verificáveis ajuda a construir confiança, enquanto respeitar diferenças de abordagem permite participar de decisões complexas sem precisar controlar o modo como cada interlocutor percebe ou executa o trabalho."
+    },
+    "pair:sun:midheaven": {
+      "title": "Sol e Meio do Céu",
+      "personal": "Sua expressão pessoal se relaciona com a direção que deseja construir e com a forma como quer ser reconhecido publicamente. Você pode observar quais objetivos correspondem aos seus interesses e quais sustentam uma imagem esperada, permitindo que sua identidade inclua também experiências que não dependem de realização profissional.",
+      "professional": "Sua autoria participa diretamente da maneira como você define objetivos e assume uma posição diante do trabalho. Desenvolver critérios próprios de contribuição ajuda a escolher responsabilidades, enquanto distinguir sua pessoa do cargo que ocupa permite rever a trajetória sem sentir que toda mudança exige abandonar quem você é."
+    },
+    "pair:moon:midheaven": {
+      "title": "Lua e Meio do Céu",
+      "personal": "Suas necessidades de segurança e pertencimento se relacionam com a direção que procura dar à vida. Você pode observar como escolhas públicas afetam sua disponibilidade emocional e suas relações próximas, procurando objetivos que comportem mudanças de necessidade sem exigir uma separação rígida entre o que sente e o que realiza.",
+      "professional": "Sua direção profissional se relaciona com o ambiente emocional de que você precisa para trabalhar e com sua sensibilidade às necessidades das pessoas. Considerar ritmo, condições de apoio e limites de disponibilidade ajuda a avaliar papéis e responsabilidades para além do reconhecimento associado a uma posição."
+    },
+    "pair:mercury:midheaven": {
+      "title": "Mercúrio e Meio do Céu",
+      "personal": "Sua maneira de pensar e comunicar participa da construção de objetivos e da imagem pública que deseja sustentar. Você pode usar estudo e conversa para revisar sua direção, observando como explica suas escolhas sem precisar reduzir uma trajetória em elaboração a uma história inteiramente coerente desde o início.",
+      "professional": "Sua direção profissional pode dar espaço à comunicação, à análise ou à articulação de conhecimentos entre pessoas. Tornar sua contribuição clara e desenvolver competências específicas ajuda a transformar interesses em atuação reconhecível, enquanto disposição para aprender permite rever objetivos conforme o trabalho apresenta questões que você ainda não conhecia."
+    },
+    "pair:venus:midheaven": {
+      "title": "Vênus e Meio do Céu",
+      "personal": "Seus valores e sua maneira de se relacionar participam dos objetivos que você deseja tornar visíveis no mundo. Você pode examinar como reconhecimento e aprovação influenciam suas escolhas, construindo uma direção que corresponda ao que aprecia e que permita manter vínculos sem depender de agradar a todos.",
+      "professional": "Sua direção profissional se relaciona com critérios de qualidade, colaboração e reconhecimento do valor do trabalho. Definir o que deseja oferecer e em quais condições ajuda a escolher parcerias, enquanto atenção à apresentação e às relações pode favorecer negociações sem substituir a avaliação concreta das responsabilidades envolvidas."
+    },
+    "pair:mars:midheaven": {
+      "title": "Marte e Meio do Céu",
+      "personal": "Sua iniciativa se relaciona com a maneira como você escolhe objetivos e deseja interferir no rumo da própria vida. Você pode observar quando agir afirma uma vontade e quando responde à pressão de provar capacidade, buscando realizações que comportem esforço sem ocupar todo o espaço dos seus vínculos e interesses.",
+      "professional": "Sua direção profissional se relaciona com autonomia para agir e disposição para assumir desafios. Escolher prioridades, negociar autoridade e estabelecer critérios de conclusão ajuda a transformar iniciativa em continuidade, enquanto reconhecer o trabalho de outras pessoas permite construir resultados sem fazer de toda decisão uma disputa por protagonismo."
+    },
+    "pair:jupiter:midheaven": {
+      "title": "Júpiter e Meio do Céu",
+      "personal": "Sua busca por sentido se relaciona com a direção que deseja dar à vida e com as referências de realização que utiliza. Você pode examinar o que entende por crescimento, distinguindo objetivos que ampliam sua experiência de expectativas de grandeza que dificultam reconhecer o valor de escolhas mais delimitadas.",
+      "professional": "Sua direção profissional pode se relacionar com aprendizagem, transmissão de conhecimento ou projetos de alcance amplo. Conectar visão e condições de execução ajuda a avaliar oportunidades, enquanto explicitar critérios de responsabilidade permite que o desejo de expansão seja acompanhado de atenção às pessoas e aos recursos envolvidos."
+    },
+    "pair:saturn:midheaven": {
+      "title": "Saturno e Meio do Céu",
+      "personal": "Sua relação com responsabilidade se encontra com os objetivos e papéis públicos que deseja sustentar. Você pode perceber quais ambições são suas e quais parecem exigências difíceis de questionar, construindo critérios de realização que reconheçam continuidade e esforço sem deixar de incluir descanso, apoio e possibilidades de mudança.",
+      "professional": "Sua direção profissional se relaciona com construção de competência, responsabilidade e reconhecimento ao longo do tempo. Estabelecer metas proporcionais e discutir o alcance das funções ajuda a sustentar compromissos, enquanto separar autoridade de valor pessoal permite avaliar cargos e exigências com mais liberdade para aceitar, recusar ou renegociar."
+    },
+    "pair:uranus:midheaven": {
+      "title": "Urano e Meio do Céu",
+      "personal": "Sua necessidade de autonomia se relaciona com os objetivos e papéis públicos que você considera possíveis para si. Você pode observar quais mudanças de direção expressam interesses atuais e quais respondem à sensação de estar limitado, reconhecendo que uma trajetória própria também pode incluir compromissos e períodos de continuidade.",
+      "professional": "Sua direção profissional pode envolver experimentar formas de atuação ou questionar estruturas que já não respondem ao trabalho. Planejar transições e testar alternativas ajuda a preservar autonomia com condições concretas de continuidade, enquanto conversar sobre expectativas permite que a liberdade desejada seja compreendida por parceiros e equipes."
+    },
+    "pair:neptune:midheaven": {
+      "title": "Netuno e Meio do Céu",
+      "personal": "Sua imaginação e seus ideais se relacionam com a direção que deseja construir e com imagens de realização que o atraem. Você pode reconhecer o que inspira suas escolhas sem exigir uma vocação totalmente definida, explorando experiências concretas para distinguir interesse próprio de expectativas depositadas em uma profissão ou posição.",
+      "professional": "Sua direção profissional pode abrir espaço para criação, sensibilidade ou envolvimento com uma finalidade que considere significativa. Traduzir inspiração em funções, prazos e critérios de entrega ajuda a conhecer o trabalho real, permitindo avaliar se as práticas de um projeto correspondem à imagem que inicialmente despertou seu interesse."
+    },
+    "pair:pluto:midheaven": {
+      "title": "Plutão e Meio do Céu",
+      "personal": "Sua relação com influência e mudança se encontra com os objetivos e papéis públicos que deseja assumir. Você pode observar o que procura preservar ao investir intensamente em uma realização, permitindo que rever metas ou dividir responsabilidades seja uma escolha possível, sem transformar toda mudança de posição em perda de valor.",
+      "professional": "Sua direção profissional pode envolver decisões de impacto, investigação ou revisão de estruturas e recursos compartilhados. Tornar autoridade e critérios de decisão claros ajuda a exercer influência com responsabilidade, enquanto abertura à contestação permite transformar processos sem concentrar em você todas as informações, funções e possibilidades de intervenção."
+    },
+    "aspect:0": {
+      "title": "Conjunção",
+      "personal": "Na conjunção, {first} e {second} concentram seus temas em uma mesma experiência. Você pode reconhecê-los como necessidades inseparáveis, e diferenciá-los ajuda a perceber qual delas está orientando uma escolha ou reação.",
+      "professional": "A conjunção aproxima os temas de {first} e {second} na sua atuação. Identificar a contribuição de cada um ajuda a usar essa concentração sem esperar que uma única tarefa satisfaça todas as necessidades envolvidas."
+    },
+    "aspect:30": {
+      "title": "Semissextil",
+      "personal": "O semissextil sugere uma relação discreta entre {first} e {second}, que pode pedir atenção a diferenças pequenas. Você pode explorar ajustes cotidianos sem tratar esse aspecto menor como explicação central dos seus vínculos.",
+      "professional": "O semissextil pode aparecer como necessidade de conciliar modos distintos de realizar pequenas tarefas. Observe onde os temas de {first} e {second} pedem ajustes locais, considerando o contexto dos aspectos mais marcantes."
+    },
+    "aspect:45": {
+      "title": "Semiquadratura",
+      "personal": "A semiquadratura entre {first} e {second} pode simbolizar um incômodo recorrente, nem sempre reconhecido de imediato. Observar pequenas reações permite nomear necessidades antes que a irritação se acumule, sem ampliar indevidamente o peso desse aspecto menor.",
+      "professional": "A semiquadratura pode apontar pequenos atritos entre os temas de {first} e {second}. Rever hábitos, expectativas e formas de responder às contrariedades ajuda a encaminhar dificuldades proporcionais, sem transformar cada desconforto em um conflito central."
+    },
+    "aspect:60": {
+      "title": "Sextil",
+      "personal": "O sextil sugere uma possibilidade de cooperação entre {first} e {second} que ganha expressão com participação consciente. Você pode experimentar escolhas que aproximem essas necessidades, reconhecendo recursos disponíveis sem presumir que se desenvolverão por conta própria.",
+      "professional": "No sextil, os temas de {first} e {second} podem se apoiar quando você cria oportunidades concretas de colaboração. Prática, conversa e iniciativas delimitadas ajudam a transformar essa possibilidade em recursos úteis para o trabalho."
+    },
+    "aspect:90": {
+      "title": "Quadratura",
+      "personal": "A quadratura coloca {first} e {second} em uma relação de tensão, na qual atender uma necessidade pode dificultar a outra. Você pode construir respostas mais amplas ao reconhecer ambas, em vez de escolher sempre o mesmo lado.",
+      "professional": "A quadratura pode tornar visíveis exigências concorrentes ligadas a {first} e {second}. Rever prioridades e negociar formas de execução ajuda a trabalhar esse conflito, sem pressupor que tensão impeça competência ou realização profissional."
+    },
+    "aspect:120": {
+      "title": "Trígono",
+      "personal": "O trígono sugere circulação relativamente fluida entre {first} e {second}, permitindo que seus temas se apoiem. Você pode reconhecer essa facilidade e cultivá-la conscientemente, observando também hábitos que permanecem pouco questionados justamente por parecerem naturais.",
+      "professional": "No trígono, os temas de {first} e {second} podem cooperar com menor esforço de conciliação. Dar finalidade e continuidade a essa facilidade ajuda a desenvolvê-la, sem presumir desempenho excepcional ou reconhecimento garantido."
+    },
+    "aspect:135": {
+      "title": "Sesquiquadratura",
+      "personal": "A sesquiquadratura pode simbolizar tensão indireta entre {first} e {second}, percebida quando pequenas exigências se acumulam. Você pode observar como responde à pressão e distinguir o incômodo imediato das necessidades que ainda não conseguiu expressar.",
+      "professional": "A sesquiquadratura pode aparecer em atritos secundários entre os temas de {first} e {second}. Identificar expectativas pouco discutidas e rever respostas habituais ajuda a evitar acúmulo de tensão, considerando o peso relativo desse aspecto no mapa."
+    },
+    "aspect:150": {
+      "title": "Quincúncio",
+      "personal": "O quincúncio aproxima necessidades de {first} e {second} que podem funcionar com referências difíceis de conciliar. Você pode experimentar ajustes sucessivos de ritmo e expectativa, sem exigir uma solução única que elimine toda diferença entre elas.",
+      "professional": "O quincúncio pode pedir adaptações entre modos distintos de atuar associados a {first} e {second}. Rever escopo, ritmo e critérios de cada tarefa ajuda a acomodar diferenças que nem sempre se resolvem por um acordo definitivo."
+    },
+    "aspect:180": {
+      "title": "Oposição",
+      "personal": "A oposição destaca uma polaridade entre {first} e {second}, que pode aparecer na relação com outras pessoas. Você pode reconhecer em si as duas necessidades, ampliando escolhas que antes pareciam depender de alguém assumir o lado oposto.",
+      "professional": "A oposição pode tornar visíveis perspectivas concorrentes ligadas a {first} e {second}. Escutar posições diferentes e reconhecer sua participação no impasse ajuda a construir acordos, sem reduzir uma necessidade legítima a um obstáculo representado por outra pessoa."
+    }
+  },
+  "labels": {
+    "title": "Leitura do mapa natal",
+    "sectionTitles": {
+      "ascendant": "Ascendente e maneira de se apresentar",
+      "midheaven": "Meio do Céu e direção profissional",
+      "sun": "Sol e expressão pessoal",
+      "moon": "Lua e necessidades emocionais",
+      "mercury": "Mercúrio e pensamento",
+      "venus": "Vênus e vínculos",
+      "mars": "Marte e iniciativa",
+      "jupiter": "Júpiter e ampliação de horizontes",
+      "saturn": "Saturno e construção de limites",
+      "uranus": "Urano e autonomia",
+      "neptune": "Netuno e imaginação",
+      "pluto": "Plutão e relações de poder",
+      "nodes": "Nodos lunares e desenvolvimento",
+      "aspects": "Aspectos e relações entre os fatores do mapa"
+    },
+    "personal": "Vida pessoal",
+    "professional": "Vida profissional",
+    "overview": "Visão geral",
+    "introduction": "Esta leitura reúne símbolos do mapa natal para explorar maneiras de sentir, escolher e se relacionar. As interpretações apresentam possibilidades de reflexão, que você pode confrontar com sua experiência e com as condições concretas da sua vida.",
+    "methodology": "A leitura adota uma lente psicológica da astrologia e combina textos previamente redigidos para posições, casas, regências e relações entre fatores do mapa. Nos aspectos, a interpretação do par é complementada pelo tipo de relação angular; os códigos de origem identificam cada trecho utilizado. Necessidades, conflitos e recursos simbólicos são apresentados como possibilidades de reflexão, sem deduzir biografia ou destino.",
+    "disclaimer": "A astrologia é apresentada como linguagem simbólica, sem validação científica para descrever personalidade ou prever acontecimentos. Esta leitura não determina sua história nem substitui decisões fundamentadas nas suas circunstâncias.",
+    "regency": "Regências e conexões do mapa",
+    "rulerReference": "Consulte também a posição, a casa e os aspectos do planeta regente."
+  }
+}

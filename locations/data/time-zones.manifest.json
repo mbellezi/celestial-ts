@@ -1,0 +1,41 @@
+{
+  "version": "2026e",
+  "sources": {
+    "data": {
+      "file": "tzdata2026e.tar.gz",
+      "url": "https://data.iana.org/time-zones/releases/tzdata2026e.tar.gz",
+      "sha256": "b26882805f26aac59d5b222978e6580484b834ccdc98be89df2f05a6dc53a652"
+    },
+    "code": {
+      "file": "tzcode2026e.tar.gz",
+      "url": "https://data.iana.org/time-zones/releases/tzcode2026e.tar.gz",
+      "sha256": "cc3d27ca2a0d8399504551b920970d80af83bfb9c216e8082a15491921935d54"
+    }
+  },
+  "coverage": {
+    "start": "1929-12-30T00:00:00Z",
+    "endExclusive": "2041-01-03T00:00:00Z",
+    "startEpochSeconds": -1262476800,
+    "endEpochSeconds": 2240784000
+  },
+  "build": {
+    "compiler": "IANA zic from the pinned tzcode archive",
+    "makeArguments": [
+      "zic",
+      "tzdata.zi",
+      "PACKRATDATA=backzone",
+      "PACKRATLIST="
+    ],
+    "zicArguments": [
+      "-b",
+      "fat",
+      "-r",
+      "@-1262476800/@2240784000"
+    ],
+    "leapSeconds": false
+  },
+  "zoneCount": 599,
+  "distinctPeriodSets": 397,
+  "generatedFile": "locations/src/time-zone-data.ts",
+  "generatedSha256": "ed22125d38a51134b3078239e5a98c48de19c5901d9bc7fec35916e43c49e0ba"
+}

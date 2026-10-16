@@ -4,7 +4,7 @@
 Baseado na biblioteca original [Celestial](https://github.com/geraldo-netto/celestial), de [geraldo-netto](https://github.com/geraldo-netto). Agradecemos ao autor por disponibilizar o motor de efemérides que fundamenta esta distribuição.
 
 Gerada das declarações emitidas pelo build com a AST do TypeScript. Inclui todos os
-exports dos três entrypoints do pacote, suas assinaturas completas, campos e JSDoc
+exports dos quatro entrypoints do pacote, suas assinaturas completas, campos e JSDoc
 disponível. Os blocos preservam os tipos emitidos; não substituem a documentação
 matemática do core Rust. Membros privados/protegidos das classes ficam fora da API.
 
@@ -14,8 +14,9 @@ Para atualizar: `npm run build` e `npm run docs`. Para verificar: `npm run docs:
 A geração não executa cálculos nem modifica o pacote compilado.
 
 - [Core WASM](#core-wasm): 410 exports.
-- [Relatórios coletivos](#relatórios-coletivos): 40 exports e 0 tipos de apoio.
+- [Relatórios coletivos e natais](#relatórios-coletivos-e-natais): 70 exports e 0 tipos de apoio.
 - [Gráficos SVG](#gráficos-svg): 51 exports e 7 tipos de apoio.
+- [Cidades e horário de nascimento](#cidades-e-horário-de-nascimento): 17 exports e 0 tipos de apoio.
 
 `InitOutput` descreve o ABI bruto retornado pela inicialização; os cálculos de
 aplicação usam as funções/classes tipadas do módulo, e não esses ponteiros internos.
@@ -6643,22 +6644,22 @@ export type SyncInitInput = BufferSource | WebAssembly.Module;
 
 
 
-## Relatórios coletivos
+## Relatórios coletivos e natais
 
-Importação: `celestial-wasm/reports`. **40 exports públicos**.
+Importação: `celestial-wasm/reports`. **70 exports públicos**.
 
 | Categoria | Exports |
 | --- | ---: |
-| Funções | 14 |
+| Funções | 24 |
 | Classes | 0 |
-| Interfaces | 14 |
-| Aliases de tipos | 5 |
-| Constantes e variáveis | 7 |
+| Interfaces | 23 |
+| Aliases de tipos | 11 |
+| Constantes e variáveis | 12 |
 | Enumerações | 0 |
 
-### Funções (14)
+### Funções (24)
 
-[`astroReport`](#reports-astroReport) · [`compactReport`](#reports-compactReport) · [`createReportGenerator`](#reports-createReportGenerator) · [`getCatalog`](#reports-getCatalog) · [`renderAstroReportHTML`](#reports-renderAstroReportHTML) · [`renderAstroReportMarkdown`](#reports-renderAstroReportMarkdown) · [`renderAstroReportText`](#reports-renderAstroReportText) · [`renderCompactReportHTML`](#reports-renderCompactReportHTML) · [`renderCompactReportMarkdown`](#reports-renderCompactReportMarkdown) · [`renderCompactReportText`](#reports-renderCompactReportText) · [`renderReportHTML`](#reports-renderReportHTML) · [`renderReportMarkdown`](#reports-renderReportMarkdown) · [`renderReportText`](#reports-renderReportText) · [`resolveInterpretation`](#reports-resolveInterpretation)
+[`astroReport`](#reports-astroReport) · [`compactReport`](#reports-compactReport) · [`createNatalReportGenerator`](#reports-createNatalReportGenerator) · [`createReportGenerator`](#reports-createReportGenerator) · [`getCatalog`](#reports-getCatalog) · [`getNatalCatalog`](#reports-getNatalCatalog) · [`getNatalCatalogInfo`](#reports-getNatalCatalogInfo) · [`interpretNatalChart`](#reports-interpretNatalChart) · [`normalizeNatalOptions`](#reports-normalizeNatalOptions) · [`renderAstroReportHTML`](#reports-renderAstroReportHTML) · [`renderAstroReportMarkdown`](#reports-renderAstroReportMarkdown) · [`renderAstroReportText`](#reports-renderAstroReportText) · [`renderCompactReportHTML`](#reports-renderCompactReportHTML) · [`renderCompactReportMarkdown`](#reports-renderCompactReportMarkdown) · [`renderCompactReportText`](#reports-renderCompactReportText) · [`renderNatalReportHTML`](#reports-renderNatalReportHTML) · [`renderNatalReportJSON`](#reports-renderNatalReportJSON) · [`renderNatalReportMarkdown`](#reports-renderNatalReportMarkdown) · [`renderNatalReportText`](#reports-renderNatalReportText) · [`renderReportHTML`](#reports-renderReportHTML) · [`renderReportMarkdown`](#reports-renderReportMarkdown) · [`renderReportText`](#reports-renderReportText) · [`resolveInterpretation`](#reports-resolveInterpretation) · [`resolveNatalInterpretation`](#reports-resolveNatalInterpretation)
 
 <a id="reports-astroReport"></a>
 
@@ -6680,6 +6681,36 @@ Declaração: [pkg/reports/compact.d.ts](../pkg/reports/compact.d.ts).
 ```typescript
 /** A small editorial view of an existing report; full events remain available in the source report. */
 export declare function compactReport(report: AstrologyReport, options?: CompactReportOptions): CompactAstrologyReport;
+```
+
+<a id="reports-createNatalReportGenerator"></a>
+
+#### `createNatalReportGenerator`
+
+Declaração: [pkg/reports/natal.d.ts](../pkg/reports/natal.d.ts).
+
+```typescript
+/** Caches belong to one WASM instance. Clear them after changing its calculation configuration. */
+export declare function createNatalReportGenerator(core: NatalWasmApi, options?: {
+    cacheSize?: number;
+}): {
+    report: (input: NatalReportInput, interpretationOptions?: NatalReportOptions) => NatalReport;
+    reportJSON(input: NatalReportInput, options?: NatalReportOptions, space?: number): string;
+    reportText(input: NatalReportInput, options?: NatalReportOptions, renderOptions?: NatalRenderOptions): string;
+    reportMarkdown(input: NatalReportInput, options?: NatalReportOptions, renderOptions?: NatalRenderOptions): string;
+    reportHTML(input: NatalReportInput, options?: NatalReportOptions, renderOptions?: NatalRenderOptions): string;
+    clearCache(): void;
+    readonly cacheStats: {
+        reports: {
+            size: number;
+            capacity: number;
+            hits: number;
+            misses: number;
+            bytes: number;
+            maxBytes: number;
+        };
+    };
+};
 ```
 
 <a id="reports-createReportGenerator"></a>
@@ -6795,6 +6826,75 @@ Declaração: [pkg/reports/catalog.d.ts](../pkg/reports/catalog.d.ts).
 export declare function getCatalog(): ResolvedInterpretation[];
 ```
 
+<a id="reports-getNatalCatalog"></a>
+
+#### `getNatalCatalog`
+
+Declaração: [pkg/reports/natal-catalog.d.ts](../pkg/reports/natal-catalog.d.ts).
+
+```typescript
+/** All 971 theoretical combinations. Their presence does not imply astronomical occurrence. */
+export declare function getNatalCatalog(): NatalInterpretation[];
+```
+
+<a id="reports-getNatalCatalogInfo"></a>
+
+#### `getNatalCatalogInfo`
+
+Declaração: [pkg/reports/natal-catalog.d.ts](../pkg/reports/natal-catalog.d.ts).
+
+```typescript
+export declare function getNatalCatalogInfo(): {
+    version: string;
+    editorialEntryCount: number;
+    resolvedEntryCount: number;
+    categories: {
+        planetSigns: number;
+        planetHouses: number;
+        ascendants: number;
+        midheavens: number;
+        nodeSigns: number;
+        nodeHouses: number;
+        retrogradeBodies: number;
+        aspectPairs: number;
+        aspectAngles: 9;
+        resolvedAspects: number;
+    };
+    authorship: {
+        model: string;
+        skill: string;
+    };
+    usesLLMAtRuntime: boolean;
+    composition: string;
+};
+```
+
+<a id="reports-interpretNatalChart"></a>
+
+#### `interpretNatalChart`
+
+Declaração: [pkg/reports/natal.d.ts](../pkg/reports/natal.d.ts).
+
+```typescript
+/** Interpret a complete calculated natal chart without consulting or modifying a WASM instance. */
+export declare function interpretNatalChart(chart: ChartData, options?: NatalReportOptions & {
+    name?: string;
+}): NatalReport;
+```
+
+<a id="reports-normalizeNatalOptions"></a>
+
+#### `normalizeNatalOptions`
+
+Declaração: [pkg/reports/natal.d.ts](../pkg/reports/natal.d.ts).
+
+```typescript
+export declare function normalizeNatalOptions(options?: NatalReportOptions): {
+    includeMinorAspects: boolean;
+    orbs: Record<NatalAspectAngle, number>;
+};
+```
+
 <a id="reports-renderAstroReportHTML"></a>
 
 #### `renderAstroReportHTML`
@@ -6855,6 +6955,48 @@ Declaração: [pkg/reports/compact.d.ts](../pkg/reports/compact.d.ts).
 export declare function renderCompactReportText(report: CompactAstrologyReport): string;
 ```
 
+<a id="reports-renderNatalReportHTML"></a>
+
+#### `renderNatalReportHTML`
+
+Declaração: [pkg/reports/natal-render.d.ts](../pkg/reports/natal-render.d.ts).
+
+```typescript
+/** Simple semantic HTML fragment; no scripts, styles, links or external resources. */
+export declare function renderNatalReportHTML(report: NatalReport, options?: NatalRenderOptions): string;
+```
+
+<a id="reports-renderNatalReportJSON"></a>
+
+#### `renderNatalReportJSON`
+
+Declaração: [pkg/reports/natal-render.d.ts](../pkg/reports/natal-render.d.ts).
+
+```typescript
+/** Serialize the canonical report without recalculating or rewriting interpretations. */
+export declare function renderNatalReportJSON(report: NatalReport, space?: number): string;
+```
+
+<a id="reports-renderNatalReportMarkdown"></a>
+
+#### `renderNatalReportMarkdown`
+
+Declaração: [pkg/reports/natal-render.d.ts](../pkg/reports/natal-render.d.ts).
+
+```typescript
+export declare function renderNatalReportMarkdown(report: NatalReport, options?: NatalRenderOptions): string;
+```
+
+<a id="reports-renderNatalReportText"></a>
+
+#### `renderNatalReportText`
+
+Declaração: [pkg/reports/natal-render.d.ts](../pkg/reports/natal-render.d.ts).
+
+```typescript
+export declare function renderNatalReportText(report: NatalReport, options?: NatalRenderOptions): string;
+```
+
 <a id="reports-renderReportHTML"></a>
 
 #### `renderReportHTML`
@@ -6898,10 +7040,21 @@ Declaração: [pkg/reports/catalog.d.ts](../pkg/reports/catalog.d.ts).
 export declare function resolveInterpretation(key: string): ResolvedInterpretation;
 ```
 
+<a id="reports-resolveNatalInterpretation"></a>
 
-### Interfaces (14)
+#### `resolveNatalInterpretation`
 
-[`AstroPassage`](#reports-AstroPassage) · [`AstroReport`](#reports-AstroReport) · [`AstroReportOptions`](#reports-AstroReportOptions) · [`AstrologyReport`](#reports-AstrologyReport) · [`CompactAstrologyReport`](#reports-CompactAstrologyReport) · [`CompactHighlight`](#reports-CompactHighlight) · [`CompactReportOptions`](#reports-CompactReportOptions) · [`DetectionRequest`](#reports-DetectionRequest) · [`DomainSummary`](#reports-DomainSummary) · [`ReportEntry`](#reports-ReportEntry) · [`ReportEvent`](#reports-ReportEvent) · [`ReportInput`](#reports-ReportInput) · [`ReportTextOptions`](#reports-ReportTextOptions) · [`ResolvedInterpretation`](#reports-ResolvedInterpretation)
+Declaração: [pkg/reports/natal-catalog.d.ts](../pkg/reports/natal-catalog.d.ts).
+
+```typescript
+/** Complete paragraphs authored by Astra; aspects compose one pair entry and one angular entry. */
+export declare function resolveNatalInterpretation(key: string): NatalInterpretation;
+```
+
+
+### Interfaces (23)
+
+[`AstroPassage`](#reports-AstroPassage) · [`AstroReport`](#reports-AstroReport) · [`AstroReportOptions`](#reports-AstroReportOptions) · [`AstrologyReport`](#reports-AstrologyReport) · [`CompactAstrologyReport`](#reports-CompactAstrologyReport) · [`CompactHighlight`](#reports-CompactHighlight) · [`CompactReportOptions`](#reports-CompactReportOptions) · [`DetectionRequest`](#reports-DetectionRequest) · [`DomainSummary`](#reports-DomainSummary) · [`NatalAspect`](#reports-NatalAspect) · [`NatalEvidence`](#reports-NatalEvidence) · [`NatalInterpretation`](#reports-NatalInterpretation) · [`NatalReading`](#reports-NatalReading) · [`NatalRegent`](#reports-NatalRegent) · [`NatalRenderOptions`](#reports-NatalRenderOptions) · [`NatalReport`](#reports-NatalReport) · [`NatalReportOptions`](#reports-NatalReportOptions) · [`NatalSection`](#reports-NatalSection) · [`ReportEntry`](#reports-ReportEntry) · [`ReportEvent`](#reports-ReportEvent) · [`ReportInput`](#reports-ReportInput) · [`ReportTextOptions`](#reports-ReportTextOptions) · [`ResolvedInterpretation`](#reports-ResolvedInterpretation)
 
 <a id="reports-AstroPassage"></a>
 
@@ -7101,6 +7254,190 @@ export interface DomainSummary {
 }
 ```
 
+<a id="reports-NatalAspect"></a>
+
+#### `NatalAspect`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export interface NatalAspect {
+    id: string;
+    first: NatalPoint;
+    second: NatalPoint;
+    angle: NatalAspectAngle;
+    separation: number;
+    orb: number;
+    maxOrb: number;
+    /** Angular distance within the configured orb, not a measure of influence. */
+    relativeOrb: number;
+    interpretationKey: string;
+}
+```
+
+<a id="reports-NatalEvidence"></a>
+
+#### `NatalEvidence`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export interface NatalEvidence {
+    points: NatalPoint[];
+    longitude?: number;
+    sign?: number;
+    house?: number;
+    speedLongitude?: number;
+    retrograde?: boolean;
+    southNodeLongitude?: number;
+    southNodeSign?: number;
+    southNodeHouse?: number;
+    aspectId?: string;
+}
+```
+
+<a id="reports-NatalInterpretation"></a>
+
+#### `NatalInterpretation`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export interface NatalInterpretation {
+    key: string;
+    sourceKeys: string[];
+    title: string;
+    personal: string[];
+    professional: string[];
+}
+```
+
+<a id="reports-NatalReading"></a>
+
+#### `NatalReading`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export interface NatalReading {
+    id: string;
+    kind: 'ascendant' | 'midheaven' | 'sign' | 'house' | 'retrograde' | 'nodeSign' | 'nodeHouse' | 'aspect';
+    interpretationKey: string;
+    evidence: NatalEvidence;
+}
+```
+
+<a id="reports-NatalRegent"></a>
+
+#### `NatalRegent`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export interface NatalRegent {
+    point: 'ascendant' | 'midheaven';
+    sign: number;
+    traditional: NatalBody;
+    modern?: NatalBody;
+    readingIds: string[];
+}
+```
+
+<a id="reports-NatalRenderOptions"></a>
+
+#### `NatalRenderOptions`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export interface NatalRenderOptions {
+    /** Both perspectives by default, in personal/professional order. */
+    perspectives?: readonly NatalPerspective[];
+}
+```
+
+<a id="reports-NatalReport"></a>
+
+#### `NatalReport`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export interface NatalReport {
+    version: string;
+    catalogVersion: string;
+    locale: 'pt-BR';
+    reference: 'western-tropical-geocentric';
+    scope: 'natal-psychological';
+    name?: string;
+    title: string;
+    introduction: string;
+    methodology: string;
+    disclaimer: string;
+    authorship: {
+        model: 'gpt-6-astra';
+        skill: 'humanizar-pt-br';
+        generation: 'static-editorial-catalog';
+    };
+    chart: Pick<ChartData, 'instant' | 'timeZone' | 'displayDateTime' | 'julianDay' | 'bodies' | 'elements'> & {
+        kind: 'natal';
+        houses: ChartHouses;
+        location: ChartLocation;
+    };
+    calculation: {
+        supportedYears: [
+            1930,
+            2040
+        ];
+        includeMinorAspects: boolean;
+        orbs: Record<NatalAspectAngle, number>;
+        houseAssignment: 'ecliptic-longitude';
+        node: 'true';
+    };
+    coverage: {
+        nodesIncluded: boolean;
+        unsupportedBodies: string[];
+        readingCount: number;
+        aspectCount: number;
+    };
+    regents: NatalRegent[];
+    aspects: NatalAspect[];
+    sections: NatalSection[];
+    readings: NatalReading[];
+    interpretations: Record<string, NatalInterpretation>;
+}
+```
+
+<a id="reports-NatalReportOptions"></a>
+
+#### `NatalReportOptions`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export interface NatalReportOptions {
+    /** Minor aspects (30, 45, 135, 150 degrees) are included by default. */
+    includeMinorAspects?: boolean;
+    /** Absolute angular orbs, in degrees; zero requires an exact aspect. */
+    orbs?: Partial<Record<NatalAspectAngle, number>>;
+}
+```
+
+<a id="reports-NatalSection"></a>
+
+#### `NatalSection`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export interface NatalSection {
+    id: NatalBody | 'ascendant' | 'midheaven' | 'nodes' | 'aspects';
+    title: string;
+    readingIds: string[];
+    relatedAspectIds: string[];
+}
+```
+
 <a id="reports-ReportEntry"></a>
 
 #### `ReportEntry`
@@ -7183,9 +7520,9 @@ export interface ResolvedInterpretation extends DomainText {
 }
 ```
 
-### Aliases de tipos (5)
+### Aliases de tipos (11)
 
-[`AspectAngle`](#reports-AspectAngle) · [`DomainText`](#reports-DomainText) · [`ReportBody`](#reports-ReportBody) · [`ReportDomain`](#reports-ReportDomain) · [`ReportWasmApi`](#reports-ReportWasmApi)
+[`AspectAngle`](#reports-AspectAngle) · [`DomainText`](#reports-DomainText) · [`NatalAspectAngle`](#reports-NatalAspectAngle) · [`NatalBody`](#reports-NatalBody) · [`NatalPerspective`](#reports-NatalPerspective) · [`NatalPoint`](#reports-NatalPoint) · [`NatalReportInput`](#reports-NatalReportInput) · [`NatalWasmApi`](#reports-NatalWasmApi) · [`ReportBody`](#reports-ReportBody) · [`ReportDomain`](#reports-ReportDomain) · [`ReportWasmApi`](#reports-ReportWasmApi)
 
 <a id="reports-AspectAngle"></a>
 
@@ -7205,6 +7542,70 @@ Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
 
 ```typescript
 export type DomainText = Record<ReportDomain, string>;
+```
+
+<a id="reports-NatalAspectAngle"></a>
+
+#### `NatalAspectAngle`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export type NatalAspectAngle = typeof NATAL_ASPECT_ANGLES[number];
+```
+
+<a id="reports-NatalBody"></a>
+
+#### `NatalBody`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export type NatalBody = typeof NATAL_BODIES[number];
+```
+
+<a id="reports-NatalPerspective"></a>
+
+#### `NatalPerspective`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export type NatalPerspective = 'personal' | 'professional';
+```
+
+<a id="reports-NatalPoint"></a>
+
+#### `NatalPoint`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export type NatalPoint = NatalBody | 'trueNode' | 'ascendant' | 'midheaven';
+```
+
+<a id="reports-NatalReportInput"></a>
+
+#### `NatalReportInput`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export type NatalReportInput = DateTimeInput & {
+    location: ChartLocation;
+    houseSystem?: HouseSystem;
+    name?: string;
+};
+```
+
+<a id="reports-NatalWasmApi"></a>
+
+#### `NatalWasmApi`
+
+Declaração: [pkg/reports/natal.d.ts](../pkg/reports/natal.d.ts).
+
+```typescript
+export type NatalWasmApi = Parameters<typeof createChartCalculator>[0];
 ```
 
 <a id="reports-ReportBody"></a>
@@ -7237,9 +7638,9 @@ Declaração: [pkg/reports/events.d.ts](../pkg/reports/events.d.ts).
 export type ReportWasmApi = Pick<typeof import('../celestial_wasm.js'), 'constants' | 'calcUtMany' | 'setDeltaTUserdef'>;
 ```
 
-### Constantes e variáveis (7)
+### Constantes e variáveis (12)
 
-[`ASTRO_REPORT_VERSION`](#reports-ASTRO_REPORT_VERSION) · [`CATALOG_VERSION`](#reports-CATALOG_VERSION) · [`COMPACT_REPORT_VERSION`](#reports-COMPACT_REPORT_VERSION) · [`DEFAULT_ORBS`](#reports-DEFAULT_ORBS) · [`REPORT_BODIES`](#reports-REPORT_BODIES) · [`REPORT_DOMAINS`](#reports-REPORT_DOMAINS) · [`REPORT_VERSION`](#reports-REPORT_VERSION)
+[`ASTRO_REPORT_VERSION`](#reports-ASTRO_REPORT_VERSION) · [`CATALOG_VERSION`](#reports-CATALOG_VERSION) · [`COMPACT_REPORT_VERSION`](#reports-COMPACT_REPORT_VERSION) · [`DEFAULT_NATAL_ORBS`](#reports-DEFAULT_NATAL_ORBS) · [`DEFAULT_ORBS`](#reports-DEFAULT_ORBS) · [`NATAL_ASPECT_ANGLES`](#reports-NATAL_ASPECT_ANGLES) · [`NATAL_BODIES`](#reports-NATAL_BODIES) · [`NATAL_CATALOG_VERSION`](#reports-NATAL_CATALOG_VERSION) · [`NATAL_REPORT_VERSION`](#reports-NATAL_REPORT_VERSION) · [`REPORT_BODIES`](#reports-REPORT_BODIES) · [`REPORT_DOMAINS`](#reports-REPORT_DOMAINS) · [`REPORT_VERSION`](#reports-REPORT_VERSION)
 
 <a id="reports-ASTRO_REPORT_VERSION"></a>
 
@@ -7271,6 +7672,16 @@ Declaração: [pkg/reports/compact.d.ts](../pkg/reports/compact.d.ts).
 export declare const COMPACT_REPORT_VERSION = "1.0.0";
 ```
 
+<a id="reports-DEFAULT_NATAL_ORBS"></a>
+
+#### `DEFAULT_NATAL_ORBS`
+
+Declaração: [pkg/reports/natal.d.ts](../pkg/reports/natal.d.ts).
+
+```typescript
+export declare const DEFAULT_NATAL_ORBS: Readonly<Record<NatalAspectAngle, number>>;
+```
+
 <a id="reports-DEFAULT_ORBS"></a>
 
 #### `DEFAULT_ORBS`
@@ -7279,6 +7690,67 @@ Declaração: [pkg/reports/range.d.ts](../pkg/reports/range.d.ts).
 
 ```typescript
 export declare const DEFAULT_ORBS: Readonly<Record<AspectAngle, number>>;
+```
+
+<a id="reports-NATAL_ASPECT_ANGLES"></a>
+
+#### `NATAL_ASPECT_ANGLES`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export declare const NATAL_ASPECT_ANGLES: readonly [
+    0,
+    30,
+    45,
+    60,
+    90,
+    120,
+    135,
+    150,
+    180
+];
+```
+
+<a id="reports-NATAL_BODIES"></a>
+
+#### `NATAL_BODIES`
+
+Declaração: [pkg/reports/natal-types.d.ts](../pkg/reports/natal-types.d.ts).
+
+```typescript
+export declare const NATAL_BODIES: readonly [
+    "sun",
+    "moon",
+    "mercury",
+    "venus",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+    "pluto"
+];
+```
+
+<a id="reports-NATAL_CATALOG_VERSION"></a>
+
+#### `NATAL_CATALOG_VERSION`
+
+Declaração: [pkg/reports/natal-catalog.d.ts](../pkg/reports/natal-catalog.d.ts).
+
+```typescript
+export declare const NATAL_CATALOG_VERSION = "1.0.0";
+```
+
+<a id="reports-NATAL_REPORT_VERSION"></a>
+
+#### `NATAL_REPORT_VERSION`
+
+Declaração: [pkg/reports/natal.d.ts](../pkg/reports/natal.d.ts).
+
+```typescript
+export declare const NATAL_REPORT_VERSION = "1.0.0";
 ```
 
 <a id="reports-REPORT_BODIES"></a>
@@ -8114,3 +8586,296 @@ interface ThemeMetadata {
 }
 ```
 
+## Cidades e horário de nascimento
+
+Importação: `celestial-wasm/locations`. **17 exports públicos**.
+
+| Categoria | Exports |
+| --- | ---: |
+| Funções | 2 |
+| Classes | 2 |
+| Interfaces | 9 |
+| Aliases de tipos | 3 |
+| Constantes e variáveis | 1 |
+| Enumerações | 0 |
+
+### Funções (2)
+
+[`createCitySearchClient`](#locations-createCitySearchClient) · [`resolveBirthTime`](#locations-resolveBirthTime)
+
+<a id="locations-createCitySearchClient"></a>
+
+#### `createCitySearchClient`
+
+Declaração: [pkg/locations/geocoding.d.ts](../pkg/locations/geocoding.d.ts).
+
+```typescript
+/** Uses native fetch and has no runtime dependencies. No candidate is selected automatically. */
+export declare function createCitySearchClient(options?: CitySearchClientOptions): CitySearchClient;
+```
+
+<a id="locations-resolveBirthTime"></a>
+
+#### `resolveBirthTime`
+
+Declaração: [pkg/locations/birth-time.d.ts](../pkg/locations/birth-time.d.ts).
+
+```typescript
+/**
+ * Resolve a local birth date/time using bundled IANA transitions for 1930–2040.
+ * No network, WASM initialization, Intl or host time-zone database is required.
+ * Repeated clock readings require an explicit choice; skipped readings always throw.
+ * Future dates use the rules predicted by tzdbVersion, which may change in later releases.
+ */
+export declare function resolveBirthTime(input: BirthTimeInput): BirthTimeResult;
+```
+
+### Classes (2)
+
+[`BirthTimeError`](#locations-BirthTimeError) · [`CitySearchError`](#locations-CitySearchError)
+
+<a id="locations-BirthTimeError"></a>
+
+#### `BirthTimeError`
+
+Declaração: [pkg/locations/birth-time.d.ts](../pkg/locations/birth-time.d.ts).
+
+```typescript
+export declare class BirthTimeError extends Error {
+    readonly code: BirthTimeErrorCode;
+    /** Possible UTC instants in chronological order when code is ambiguous_time. */
+    readonly candidates: readonly BirthTimeCandidate[];
+    constructor(code: BirthTimeErrorCode, candidates?: readonly BirthTimeCandidate[]);
+}
+```
+
+<a id="locations-CitySearchError"></a>
+
+#### `CitySearchError`
+
+Declaração: [pkg/locations/geocoding.d.ts](../pkg/locations/geocoding.d.ts).
+
+```typescript
+export declare class CitySearchError extends Error {
+    readonly code: CitySearchErrorCode;
+    readonly status?: number;
+    constructor(code: CitySearchErrorCode, message: string, options?: {
+        status?: number;
+        cause?: unknown;
+    });
+}
+```
+
+### Interfaces (9)
+
+[`BirthLocation`](#locations-BirthLocation) · [`BirthTimeCandidate`](#locations-BirthTimeCandidate) · [`BirthTimeInput`](#locations-BirthTimeInput) · [`BirthTimeResult`](#locations-BirthTimeResult) · [`City`](#locations-City) · [`CityRequestOptions`](#locations-CityRequestOptions) · [`CitySearchClient`](#locations-CitySearchClient) · [`CitySearchClientOptions`](#locations-CitySearchClientOptions) · [`CitySearchOptions`](#locations-CitySearchOptions)
+
+<a id="locations-BirthLocation"></a>
+
+#### `BirthLocation`
+
+Declaração: [pkg/locations/birth-time.d.ts](../pkg/locations/birth-time.d.ts).
+
+```typescript
+/** A selected city from Open-Meteo is structurally compatible with this input. */
+export interface BirthLocation {
+    latitude: number;
+    longitude: number;
+    /** IANA identifier. Coordinates alone do not determine historical civil time. */
+    timeZone: string;
+    label?: string;
+}
+```
+
+<a id="locations-BirthTimeCandidate"></a>
+
+#### `BirthTimeCandidate`
+
+Declaração: [pkg/locations/birth-time.d.ts](../pkg/locations/birth-time.d.ts).
+
+```typescript
+export interface BirthTimeCandidate {
+    /** UTC ISO 8601 instant, compatible with the chart calculator. */
+    instant: string;
+    /** Unix milliseconds, without leap-second accounting, like JavaScript Date. */
+    timestamp: number;
+    /** Seconds east of UTC at this instant. Preserves historical second-level offsets. */
+    utcOffsetSeconds: number;
+}
+```
+
+<a id="locations-BirthTimeInput"></a>
+
+#### `BirthTimeInput`
+
+Declaração: [pkg/locations/birth-time.d.ts](../pkg/locations/birth-time.d.ts).
+
+```typescript
+export interface BirthTimeInput {
+    /** Gregorian local date, YYYY-MM-DD, from 1930 through 2040 inclusive. */
+    date: string;
+    /** Local clock time, HH:mm, HH:mm:ss or HH:mm:ss.SSS (1–3 fractional digits). */
+    time: string;
+    location: BirthLocation;
+    /** Select an occurrence of a repeated time. Nonexistent times always fail. Default: reject. */
+    disambiguation?: 'reject' | 'earlier' | 'later';
+}
+```
+
+<a id="locations-BirthTimeResult"></a>
+
+#### `BirthTimeResult`
+
+Declaração: [pkg/locations/birth-time.d.ts](../pkg/locations/birth-time.d.ts).
+
+```typescript
+export interface BirthTimeResult extends BirthTimeCandidate {
+    /** Original local clock reading, normalized with seconds and milliseconds. */
+    localDateTime: string;
+    timeZone: string;
+    location: BirthLocation;
+    /** Version of the bundled IANA database, including its supplementary backzone data. */
+    tzdbVersion: string;
+    resolution: 'unique' | 'earlier' | 'later';
+}
+```
+
+<a id="locations-City"></a>
+
+#### `City`
+
+Declaração: [pkg/locations/geocoding.d.ts](../pkg/locations/geocoding.d.ts).
+
+```typescript
+/** A location selected from Open-Meteo's GeoNames search results. */
+export interface City {
+    id: number;
+    name: string;
+    latitude: number;
+    longitude: number;
+    timeZone: string;
+    label: string;
+    countryCode?: string;
+    country?: string;
+    admin1?: string;
+    admin2?: string;
+    admin3?: string;
+    admin4?: string;
+    elevation?: number;
+    population?: number;
+    featureCode?: string;
+    postcodes?: string[];
+}
+```
+
+<a id="locations-CityRequestOptions"></a>
+
+#### `CityRequestOptions`
+
+Declaração: [pkg/locations/geocoding.d.ts](../pkg/locations/geocoding.d.ts).
+
+```typescript
+export interface CityRequestOptions {
+    language?: string;
+    signal?: AbortSignal;
+}
+```
+
+<a id="locations-CitySearchClient"></a>
+
+#### `CitySearchClient`
+
+Declaração: [pkg/locations/geocoding.d.ts](../pkg/locations/geocoding.d.ts).
+
+```typescript
+export interface CitySearchClient {
+    /** Returns every candidate supplied by the API; the caller chooses a city by ID. */
+    search(name: string, options?: CitySearchOptions): Promise<City[]>;
+    get(id: number, options?: CityRequestOptions): Promise<City>;
+}
+```
+
+<a id="locations-CitySearchClientOptions"></a>
+
+#### `CitySearchClientOptions`
+
+Declaração: [pkg/locations/geocoding.d.ts](../pkg/locations/geocoding.d.ts).
+
+```typescript
+export interface CitySearchClientOptions {
+    /** Base URL including /v1/. Use the customer endpoint with a commercial API key. */
+    endpoint?: string | URL;
+    apiKey?: string;
+    fetch?: CitySearchFetch;
+    /** Defaults to pt. */
+    language?: string;
+    /** Defaults to 10; must be between 1 and 100. */
+    count?: number;
+}
+```
+
+<a id="locations-CitySearchOptions"></a>
+
+#### `CitySearchOptions`
+
+Declaração: [pkg/locations/geocoding.d.ts](../pkg/locations/geocoding.d.ts).
+
+```typescript
+export interface CitySearchOptions extends CityRequestOptions {
+    count?: number;
+    /** Optional ISO 3166-1 alpha-2 country filter. */
+    countryCode?: string;
+}
+```
+
+### Aliases de tipos (3)
+
+[`BirthTimeErrorCode`](#locations-BirthTimeErrorCode) · [`CitySearchErrorCode`](#locations-CitySearchErrorCode) · [`CitySearchFetch`](#locations-CitySearchFetch)
+
+<a id="locations-BirthTimeErrorCode"></a>
+
+#### `BirthTimeErrorCode`
+
+Declaração: [pkg/locations/birth-time.d.ts](../pkg/locations/birth-time.d.ts).
+
+```typescript
+export type BirthTimeErrorCode = 'invalid_input' | 'invalid_date' | 'invalid_time' | 'out_of_range' | 'invalid_location' | 'unknown_time_zone' | 'ambiguous_time' | 'nonexistent_time' | 'invalid_disambiguation';
+```
+
+<a id="locations-CitySearchErrorCode"></a>
+
+#### `CitySearchErrorCode`
+
+Declaração: [pkg/locations/geocoding.d.ts](../pkg/locations/geocoding.d.ts).
+
+```typescript
+export type CitySearchErrorCode = 'invalid_input' | 'network' | 'aborted' | 'http' | 'api' | 'invalid_response' | 'not_found';
+```
+
+<a id="locations-CitySearchFetch"></a>
+
+#### `CitySearchFetch`
+
+Declaração: [pkg/locations/geocoding.d.ts](../pkg/locations/geocoding.d.ts).
+
+```typescript
+export type CitySearchFetch = (url: URL, init?: RequestInit) => Promise<Response>;
+```
+
+### Constantes e variáveis (1)
+
+[`BIRTH_DATE_RANGE`](#locations-BIRTH_DATE_RANGE)
+
+<a id="locations-BIRTH_DATE_RANGE"></a>
+
+#### `BIRTH_DATE_RANGE`
+
+Declaração: [pkg/locations/birth-time.d.ts](../pkg/locations/birth-time.d.ts).
+
+```typescript
+/** Inclusive range of local birth dates, in the Gregorian calendar. */
+export declare const BIRTH_DATE_RANGE: Readonly<{
+    readonly start: "1930-01-01";
+    readonly end: "2040-12-31";
+}>;
+```

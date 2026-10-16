@@ -22,6 +22,10 @@
     "./reports": {
       "types": "./pkg/reports/index.d.ts",
       "default": "./pkg/reports/index.js"
+    },
+    "./locations": {
+      "types": "./pkg/locations/index.d.ts",
+      "default": "./pkg/locations/index.js"
     }
   },
   "files": [
@@ -51,12 +55,17 @@
     "reports/tsconfig.json",
     "reports/README.md",
     "reports/scripts/",
-    "reports/examples/"
+    "reports/examples/",
+    "locations/src/",
+    "locations/tests/",
+    "locations/data/",
+    "locations/tsconfig.json",
+    "locations/README.md"
   ],
   "scripts": {
     "build": "node scripts/wasm.mjs build",
     "build:charts": "node scripts/charts.mjs build",
-    "test": "npm run test:core && npm run test:bindings && npm run test:charts && npm run test:reports && npm run docs:check && npm run licenses:check",
+    "test": "npm run test:core && npm run test:bindings && npm run test:charts && npm run test:reports && npm run test:locations && npm run docs:check && npm run licenses:check",
     "test:core": "node scripts/wasm.mjs core",
     "test:bindings": "node scripts/wasm.mjs bindings",
     "test:charts": "node scripts/charts.mjs test",
@@ -69,7 +78,10 @@
     "postpack": "node scripts/package.mjs clean",
     "pack": "npm pack",
     "build:reports": "node scripts/reports.mjs build",
-    "test:reports": "node scripts/reports.mjs test"
+    "test:reports": "node scripts/reports.mjs test",
+    "build:locations": "node scripts/locations.mjs build",
+    "test:locations": "node scripts/locations.mjs test",
+    "timezones:check": "python3 scripts/generate-time-zones.py --check"
   },
   "devDependencies": {
     "@types/node": "22.19.13",

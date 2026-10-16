@@ -1,6 +1,8 @@
-# Relatórios coletivos
+# Relatórios coletivos e natais
 
-`celestial-wasm/reports` fornece relatórios em JSON, texto, HTML e Markdown em português para intervalos entre 2026 e 2035. A referência é ocidental, tropical e geocêntrica; a leitura é coletiva e psicológica, sem mapa natal ou previsão individual.
+`celestial-wasm/reports` fornece relatórios em JSON, texto puro, HTML simples e Markdown em português. Os relatórios coletivos cobrem intervalos entre 2026 e 2035; os [relatórios natais](#interpretação-psicológica-do-mapa-natal) aceitam nascimentos de 1930 a 2040. Ambos adotam uma lente psicológica e referência ocidental, tropical e geocêntrica.
+
+## Relatórios coletivos
 
 ```ts
 import init, * as core from 'celestial-wasm';
@@ -169,3 +171,165 @@ WASM, e gera estes pares de arquivos:
 | Completa de fevereiro de 2026 | [february-2026.html](examples/february-2026.html) | [february-2026.md](examples/february-2026.md) |
 | Compacta de fevereiro de 2026 | [february-2026-compact.html](examples/february-2026-compact.html) | [february-2026-compact.md](examples/february-2026-compact.md) |
 | Astro de outubro de 2026 | [october-2026-astro.html](examples/october-2026-astro.html) | [october-2026-astro.md](examples/october-2026-astro.md) |
+
+## Interpretação psicológica do mapa natal
+
+`createNatalReportGenerator(core)` calcula o mapa com o mesmo núcleo auditado e
+monta as interpretações a partir de um catálogo local. A organização segue o
+relatório PDF fornecido como referência: ascendente e regências, meio do céu,
+planetas em signos e casas, retrogradações, nodos e aspectos, com leituras da
+vida pessoal e profissional. Os textos são originais, redigidos por **Astra**
+com o skill **humanizar-pt-br**. O conteúdo adota uma lente psicológica, conforme
+as regras editoriais do projeto.
+
+```ts
+import init, * as core from 'celestial-wasm';
+import {
+  createNatalReportGenerator,
+  renderNatalReportJSON,
+  renderNatalReportText,
+  renderNatalReportMarkdown,
+  renderNatalReportHTML,
+} from 'celestial-wasm/reports';
+
+await init();
+const natal = createNatalReportGenerator(core, { cacheSize: 128 });
+const input = {
+  name: 'Pessoa Exemplo',
+  date: '1972-05-28',
+  time: '01:00:00',
+  timeZone: 'America/Sao_Paulo',
+  location: {
+    label: 'Ribeirão Preto, SP, Brasil',
+    latitude: -(21 + 10 / 60),
+    longitude: -(47 + 48 / 60),
+  },
+};
+
+// Uma única base calculada e interpretada, quatro apresentações.
+const report = natal.report(input);
+const json = renderNatalReportJSON(report, 2);
+const text = renderNatalReportText(report);
+const markdown = renderNatalReportMarkdown(report);
+const html = renderNatalReportHTML(report);
+```
+
+As quatro saídas usam o mesmo `NatalReport`. Os renderizadores não calculam
+novamente o céu nem reescrevem os parágrafos. Texto puro, Markdown e HTML
+percorrem uma estrutura de apresentação comum, na mesma ordem, com os mesmos
+títulos, dados e interpretações. O JSON preserva também números com precisão
+completa e referências de auditoria. O HTML é um fragmento `<article lang="pt-BR">`
+com títulos, parágrafos e tabelas, sem CSS, scripts ou recursos externos. HTML e
+Markdown escapam conteúdo literal, inclusive nome e local informados pelo usuário.
+
+| Saída direta do gerador | A partir do objeto existente |
+| --- | --- |
+| `natal.reportJSON(input, options?, space?)` | `renderNatalReportJSON(report, space?)` |
+| `natal.reportText(input, options?, renderOptions?)` | `renderNatalReportText(report, renderOptions?)` |
+| `natal.reportMarkdown(input, options?, renderOptions?)` | `renderNatalReportMarkdown(report, renderOptions?)` |
+| `natal.reportHTML(input, options?, renderOptions?)` | `renderNatalReportHTML(report, renderOptions?)` |
+
+Por padrão, ambas as perspectivas aparecem. `renderOptions.perspectives` aceita
+`['personal']`, `['professional']`, ambas ou `[]`, preservando a base do relatório.
+Para interpretar um mapa previamente calculado, use
+`interpretNatalChart(chart, { name?, includeMinorAspects?, orbs? })`. São
+necessários os dez corpos principais, casas e localização válidos; valores
+derivados inconsistentes são rejeitados. O nodo verdadeiro é opcional nessa
+entrada, com a ausência registrada em `coverage.nodesIncluded`. Quíron pode
+constar dos dados, mas não recebe interpretação neste catálogo e aparece em
+`coverage.unsupportedBodies`.
+
+### Datas e convenções de cálculo
+
+O intervalo aceito, depois da conversão do fuso, é
+`1930-01-01T00:00:00Z <= instant < 2041-01-01T00:00:00Z`. A entrada pode conter
+data, hora e fuso IANA ou um `instant` ISO com `Z` ou deslocamento explícito.
+Horas locais inexistentes ou duplicadas na mudança de horário de verão são
+rejeitadas; um instante com deslocamento explícito resolve a ambiguidade.
+
+O gerador calcula os dez planetas de Sol a Plutão e o nodo verdadeiro, com ΔT
+automático. Usa Placidus por padrão; `houseSystem: 'E'` seleciona casas iguais e
+`'W'`, signos inteiros. Placidus em regiões onde o método é indefinido produz
+erro. As casas dos planetas seguem intervalos de longitude entre cúspides, sem
+antecipar um planeta para a casa seguinte. O nodo Sul é derivado da longitude
+oposta ao Norte; sua casa é determinada pelas cúspides efetivas.
+
+As posições do PDF não são copiadas para a saída. No exemplo de 1972, a posição
+do nodo impressa na referência coincide com o nodo médio; este gerador usa o
+nodo verdadeiro, identificado em `calculation.node`. Os orbes da referência
+também não são inferidos de sua descrição “Weak Orbes”. Essas convenções podem
+alterar os aspectos incluídos, embora a organização editorial seja semelhante.
+
+Os nove aspectos e seus orbes padrão são:
+
+| Ângulo | Aspecto | Orbe |
+| ---: | --- | ---: |
+| 0° | Conjunção | 8° |
+| 30° | Semissextil | 2° |
+| 45° | Semiquadratura | 2° |
+| 60° | Sextil | 5° |
+| 90° | Quadratura | 6° |
+| 120° | Trígono | 6° |
+| 135° | Sesquiquadratura | 2° |
+| 150° | Quincúncio | 3° |
+| 180° | Oposição | 8° |
+
+`{ includeMinorAspects: false }` mantém somente 0°, 60°, 90°, 120° e 180°.
+`{ orbs: { 0: 10, 90: 5 } }` substitui limites; são aceitos valores finitos de
+0° a 12°. Zero exige igualdade angular exata. Se limites personalizados se
+sobrepõem, é escolhido o aspecto com menor erro angular absoluto; no empate,
+o menor ângulo. Cada par aparece uma vez na seção de aspectos, e as seções dos
+corpos mantêm referências em `relatedAspectIds`. Não se usa o orbe para afirmar
+intensidade psicológica. Aspectos de nodos com ângulos e ASC–MC não integram o
+catálogo. Não há inferência de aspecto aplicativo ou separativo dos ângulos.
+
+### Catálogo, dados e cache
+
+O catálogo tem **380 entradas editoriais**, com dois campos de texto cada,
+redigidos por Astra. Ele resolve **971 combinações teóricas**:
+
+| Família | Entradas resolvidas |
+| --- | ---: |
+| Dez planetas em doze signos | 120 |
+| Dez planetas em doze casas | 120 |
+| Ascendente e meio do céu em signos | 24 |
+| Eixo nodal em signos e casas | 24 |
+| Retrogradação de Mercúrio a Plutão | 8 |
+| 75 pares × nove aspectos | 675 |
+| **Total** | **971** |
+
+As 675 leituras de aspectos combinam 75 textos específicos de pares com nove
+textos de relação angular. Portanto, as 971 combinações não são 971 ensaios
+independentes, nem todas ocorrem astronomicamente. `sourceKeys` registra a
+composição de cada leitura. O catálogo não cresce com a quantidade de datas:
+o mapa calculado escolhe as entradas correspondentes. Não há chamada a LLM ou
+rede durante a geração.
+
+`getNatalCatalog()` retorna todas as combinações, `getNatalCatalogInfo()` expõe
+contagens e autoria, e `resolveNatalInterpretation(key)` resolve uma chave
+canônica. Os arquivos de origem são `data/natal-positions-pt-BR.json` e
+`data/natal-patterns-pt-BR.json`. O relatório preserva `chart`, `calculation`,
+`regents`, `aspects`, `readings`, `sections` e `interpretations`; as seções e
+leituras apontam para fatos e fontes, sem reproduzir um aspecto nas duas
+seções planetárias.
+
+O cache por gerador tem limite de entradas e orçamento estimado de 8 MiB.
+As chaves incluem versões, instante, fuso, nome, localização, sistema de casas e
+opções normalizadas. Resultados retornados são cópias independentes.
+`cacheStats` expõe uso e acertos; `clearCache()` limpa o cache. Reutilize o mesmo
+gerador para os quatro formatos e limpe seu cache após mudanças externas de
+configuração no núcleo. A formatação pode ser feita diretamente sobre um
+objeto já recebido, sem inicializar o WASM.
+
+Para reproduzir o exemplo com os dados de nascimento da referência:
+
+```sh
+npm run build:reports
+node reports/examples/generate-natal.ts
+```
+
+O script calcula uma única vez e salva [JSON](examples/natal-1972.json),
+[texto puro](examples/natal-1972.txt), [Markdown](examples/natal-1972.md) e
+[HTML simples](examples/natal-1972.html). A precisão astronômica e suas
+limitações permanecem documentadas na
+[auditoria de 1930 a 2040](../docs/validation/precision-1930-2040.txt).

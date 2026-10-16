@@ -41,6 +41,19 @@ fundo da página hospedeira. Glifos são vetoriais próprios e os textos têm lo
 pt-BR/en, com galeria de exemplos reais reproduzíveis. Validar TypeScript, SVG, integração WASM,
 execução em worker e regressões de geometria no escopo isolado da biblioteca.
 
+Disponibilizar `celestial-wasm/locations` como módulo TypeScript independente do
+WASM. O cliente Open-Meteo pesquisa nomes e recupera a cidade escolhida por ID,
+preservando coordenadas e fuso IANA. Endpoint, transporte e cancelamento são
+configuráveis; a interface da aplicação controla a seleção e o ritmo das buscas.
+
+Converter nascimentos de 1930 a 2040 com transições IANA versionadas e embutidas,
+incluindo `backzone`, em vez de depender do histórico disponível no `Intl` do
+ambiente. O resultado fornece o instante UTC consumido pelo calculador de mapas.
+Horários repetidos exigem escolha explícita; horários inexistentes são rejeitados.
+Fontes oficiais, hashes e gerador offline acompanham o pacote. Mudanças futuras
+nas regras civis exigem atualizar esses dados; a cobertura histórica conserva as
+limitações da IANA. Veja o [contrato e a manutenção dos fusos](../locations/README.md).
+
 ## Consequências
 
 - Rust é ferramenta de build deste componente; Node e TypeScript permanecem os

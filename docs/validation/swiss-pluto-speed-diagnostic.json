@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "auditInput": {
-    "path": "/Users/marcosbellezi/Projetos/celestial-ts/docs/validation/swiss-1930-2040.json",
+    "path": "docs/validation/swiss-1930-2040.json",
     "sha256": "fddd69ded86f0a18f3af02ec6ef1f8a4d7d909f566140fbff73a765d8c2b61d3"
   },
   "summary": {
@@ -14,7 +14,7 @@
   "pythonVersion": "3.14.5",
   "wrapperVersion": 20230604,
   "swissVersion": "2.10.03",
-  "scriptSha256": "0c43991d8d9e1c57c8d926c0c966e33ced97b4c59341c5fd3ecf3995e93e117e",
+  "scriptSha256": "7e4c6d26705baad6b00341b74e17363100697c0206dc6d0ef99657e0947c5908",
   "ephemerisFiles": [
     {
       "name": "seas_18.se1",

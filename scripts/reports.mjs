@@ -8,6 +8,8 @@ function run(args) {
   if (result.status !== 0) process.exit(result.status ?? 1);
 }
 async function build() {
+  // Natal reports share the chart calculator and its date/location validation.
+  run(['scripts/charts.mjs', 'build']);
   await rm(`${directory}/pkg/reports`, { recursive: true, force: true });
   run(['node_modules/typescript/bin/tsc', '-p', 'reports/tsconfig.json']);
   const output = `${directory}/pkg/reports`;
@@ -20,6 +22,7 @@ async function build() {
     }
     await writeFile(`${output}/${name}`, content
       .replaceAll('../../pkg/celestial_wasm.js', '../celestial_wasm.js')
+      .replaceAll('../../pkg/charts/', '../charts/')
       .replaceAll('../data/', './data/'));
   }
   await rm(`${output}/src`, { recursive: true });

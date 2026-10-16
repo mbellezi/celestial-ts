@@ -1,0 +1,2268 @@
+{
+  "version": "1.0.0",
+  "catalogVersion": "1.0.0",
+  "locale": "pt-BR",
+  "reference": "western-tropical-geocentric",
+  "scope": "natal-psychological",
+  "name": "Pessoa Exemplo",
+  "title": "Leitura do mapa natal",
+  "introduction": "Esta leitura reúne símbolos do mapa natal para explorar maneiras de sentir, escolher e se relacionar. As interpretações apresentam possibilidades de reflexão, que você pode confrontar com sua experiência e com as condições concretas da sua vida.",
+  "methodology": "A leitura adota uma lente psicológica da astrologia e combina textos previamente redigidos para posições, casas, regências e relações entre fatores do mapa. Nos aspectos, a interpretação do par é complementada pelo tipo de relação angular; os códigos de origem identificam cada trecho utilizado. Necessidades, conflitos e recursos simbólicos são apresentados como possibilidades de reflexão, sem deduzir biografia ou destino.",
+  "disclaimer": "A astrologia é apresentada como linguagem simbólica, sem validação científica para descrever personalidade ou prever acontecimentos. Esta leitura não determina sua história nem substitui decisões fundamentadas nas suas circunstâncias.",
+  "authorship": {
+    "model": "gpt-6-astra",
+    "skill": "humanizar-pt-br",
+    "generation": "static-editorial-catalog"
+  },
+  "chart": {
+    "kind": "natal",
+    "instant": "1972-05-28T04:00:00.000Z",
+    "timeZone": "America/Sao_Paulo",
+    "displayDateTime": "28 de mai. de 1972, 01:00:00",
+    "julianDay": 2441465.6666666665,
+    "location": {
+      "latitude": -21.166666666666668,
+      "longitude": -47.8,
+      "label": "Ribeirão Preto, SP, Brasil"
+    },
+    "houses": {
+      "system": "P",
+      "cusps": [
+        0,
+        348.8108755184631,
+        17.57694691678595,
+        48.15721199830281,
+        78.96139301537005,
+        109.40296819113247,
+        139.53757237379983,
+        168.81087551846304,
+        197.57694691678594,
+        228.1572119983028,
+        258.96139301537005,
+        289.40296819113246,
+        319.53757237379983
+      ],
+      "ascendant": 348.8108755184631,
+      "midheaven": 258.96139301537005
+    },
+    "bodies": [
+      {
+        "id": 0,
+        "key": "sun",
+        "longitude": 66.92268354027487,
+        "latitude": -0.00009421253430149793,
+        "distance": 1.0135017178796617,
+        "speedLongitude": 0.9590428658404997,
+        "retrograde": false,
+        "sign": 2,
+        "degreeInSign": 6.922683540274875,
+        "house": 3
+      },
+      {
+        "id": 1,
+        "key": "moon",
+        "longitude": 246.71109209999642,
+        "latitude": -3.9319483369546275,
+        "distance": 0.002698941719244686,
+        "speedLongitude": 11.998928561125279,
+        "retrograde": false,
+        "sign": 8,
+        "degreeInSign": 6.711092099996421,
+        "house": 9
+      },
+      {
+        "id": 2,
+        "key": "mercury",
+        "longitude": 57.669528218402206,
+        "latitude": -0.6204235103184232,
+        "distance": 1.2835310592024902,
+        "speedLongitude": 2.0744832737859236,
+        "retrograde": false,
+        "sign": 1,
+        "degreeInSign": 27.669528218402206,
+        "house": 3
+      },
+      {
+        "id": 3,
+        "key": "venus",
+        "longitude": 94.72276703886295,
+        "latitude": 2.7001721314917173,
+        "distance": 0.34823555348078367,
+        "speedLongitude": -0.04083581958153787,
+        "retrograde": true,
+        "sign": 3,
+        "degreeInSign": 4.722767038862955,
+        "house": 4
+      },
+      {
+        "id": 4,
+        "key": "mars",
+        "longitude": 99.98455384844613,
+        "latitude": 1.193209444035718,
+        "distance": 2.3868956393215686,
+        "speedLongitude": 0.6376227162964201,
+        "retrograde": false,
+        "sign": 3,
+        "degreeInSign": 9.984553848446126,
+        "house": 4
+      },
+      {
+        "id": 5,
+        "key": "jupiter",
+        "longitude": 276.6730402567746,
+        "latitude": 0.24695149194699068,
+        "distance": 4.342205378974589,
+        "speedLongitude": -0.09454183500153741,
+        "retrograde": true,
+        "sign": 9,
+        "degreeInSign": 6.673040256774584,
+        "house": 10
+      },
+      {
+        "id": 6,
+        "key": "saturn",
+        "longitude": 69.54388963814347,
+        "latitude": -1.5443602405520214,
+        "distance": 10.061829919942493,
+        "speedLongitude": 0.12989360260715194,
+        "retrograde": false,
+        "sign": 2,
+        "degreeInSign": 9.543889638143469,
+        "house": 3
+      },
+      {
+        "id": 7,
+        "key": "uranus",
+        "longitude": 194.45209327206825,
+        "latitude": 0.6709571580709199,
+        "distance": 17.736613102939994,
+        "speedLongitude": -0.020572074662620548,
+        "retrograde": true,
+        "sign": 6,
+        "degreeInSign": 14.452093272068254,
+        "house": 7
+      },
+      {
+        "id": 8,
+        "key": "neptune",
+        "longitude": 243.80274382459518,
+        "latitude": 1.694994409884336,
+        "distance": 29.30563575871882,
+        "speedLongitude": -0.026988968019710895,
+        "retrograde": true,
+        "sign": 8,
+        "degreeInSign": 3.802743824595183,
+        "house": 9
+      },
+      {
+        "id": 9,
+        "key": "pluto",
+        "longitude": 179.3511088068712,
+        "latitude": 16.48642571291261,
+        "distance": 30.85655013264812,
+        "speedLongitude": -0.006428991362477765,
+        "retrograde": true,
+        "sign": 5,
+        "degreeInSign": 29.351108806871196,
+        "house": 7
+      },
+      {
+        "id": 11,
+        "key": "trueNode",
+        "longitude": 297.044256191429,
+        "latitude": 0,
+        "distance": 0.0026143602972918778,
+        "speedLongitude": -0.13704240523202715,
+        "retrograde": true,
+        "sign": 9,
+        "degreeInSign": 27.044256191428985,
+        "house": 11
+      }
+    ],
+    "elements": {
+      "fire": 2,
+      "earth": 4,
+      "air": 3,
+      "water": 2
+    }
+  },
+  "calculation": {
+    "supportedYears": [
+      1930,
+      2040
+    ],
+    "includeMinorAspects": true,
+    "orbs": {
+      "0": 8,
+      "30": 2,
+      "45": 2,
+      "60": 5,
+      "90": 6,
+      "120": 6,
+      "135": 2,
+      "150": 3,
+      "180": 8
+    },
+    "houseAssignment": "ecliptic-longitude",
+    "node": "true"
+  },
+  "coverage": {
+    "nodesIncluded": true,
+    "unsupportedBodies": [],
+    "readingCount": 54,
+    "aspectCount": 25
+  },
+  "regents": [
+    {
+      "point": "ascendant",
+      "sign": 11,
+      "traditional": "jupiter",
+      "modern": "neptune",
+      "readingIds": [
+        "sign:jupiter:9",
+        "house:jupiter:10",
+        "retrograde:jupiter",
+        "sign:neptune:8",
+        "house:neptune:9",
+        "retrograde:neptune",
+        "aspect:sun:jupiter:150",
+        "aspect:sun:neptune:180",
+        "aspect:moon:jupiter:30",
+        "aspect:moon:neptune:0",
+        "aspect:mercury:neptune:180",
+        "aspect:venus:jupiter:180",
+        "aspect:venus:neptune:150",
+        "aspect:mars:jupiter:180",
+        "aspect:jupiter:saturn:150",
+        "aspect:saturn:neptune:180",
+        "aspect:neptune:pluto:60"
+      ]
+    },
+    {
+      "point": "midheaven",
+      "sign": 8,
+      "traditional": "jupiter",
+      "readingIds": [
+        "sign:jupiter:9",
+        "house:jupiter:10",
+        "retrograde:jupiter",
+        "aspect:sun:jupiter:150",
+        "aspect:moon:jupiter:30",
+        "aspect:venus:jupiter:180",
+        "aspect:mars:jupiter:180",
+        "aspect:jupiter:saturn:150"
+      ]
+    }
+  ],
+  "aspects": [
+    {
+      "id": "aspect:sun:moon:180",
+      "first": "sun",
+      "second": "moon",
+      "angle": 180,
+      "separation": 179.78840855972155,
+      "orb": 0.211591440278454,
+      "maxOrb": 8,
+      "relativeOrb": 0.02644893003480675,
+      "interpretationKey": "aspect:sun:moon:180"
+    },
+    {
+      "id": "aspect:sun:jupiter:150",
+      "first": "sun",
+      "second": "jupiter",
+      "angle": 150,
+      "separation": 150.2496432835003,
+      "orb": 0.24964328350029064,
+      "maxOrb": 3,
+      "relativeOrb": 0.08321442783343021,
+      "interpretationKey": "aspect:sun:jupiter:150"
+    },
+    {
+      "id": "aspect:sun:saturn:0",
+      "first": "sun",
+      "second": "saturn",
+      "angle": 0,
+      "separation": 2.621206097868594,
+      "orb": 2.621206097868594,
+      "maxOrb": 8,
+      "relativeOrb": 0.32765076223357426,
+      "interpretationKey": "aspect:sun:saturn:0"
+    },
+    {
+      "id": "aspect:sun:neptune:180",
+      "first": "sun",
+      "second": "neptune",
+      "angle": 180,
+      "separation": 176.8800602843203,
+      "orb": 3.119939715679692,
+      "maxOrb": 8,
+      "relativeOrb": 0.3899924644599615,
+      "interpretationKey": "aspect:sun:neptune:180"
+    },
+    {
+      "id": "aspect:moon:venus:150",
+      "first": "moon",
+      "second": "venus",
+      "angle": 150,
+      "separation": 151.98832506113348,
+      "orb": 1.9883250611334802,
+      "maxOrb": 3,
+      "relativeOrb": 0.6627750203778268,
+      "interpretationKey": "aspect:moon:venus:150"
+    },
+    {
+      "id": "aspect:moon:jupiter:30",
+      "first": "moon",
+      "second": "jupiter",
+      "angle": 30,
+      "separation": 29.961948156778163,
+      "orb": 0.038051843221836634,
+      "maxOrb": 2,
+      "relativeOrb": 0.019025921610918317,
+      "interpretationKey": "aspect:moon:jupiter:30"
+    },
+    {
+      "id": "aspect:moon:saturn:180",
+      "first": "moon",
+      "second": "saturn",
+      "angle": 180,
+      "separation": 177.16720246185295,
+      "orb": 2.832797538147048,
+      "maxOrb": 8,
+      "relativeOrb": 0.354099692268381,
+      "interpretationKey": "aspect:moon:saturn:180"
+    },
+    {
+      "id": "aspect:moon:neptune:0",
+      "first": "moon",
+      "second": "neptune",
+      "angle": 0,
+      "separation": 2.908348275401238,
+      "orb": 2.908348275401238,
+      "maxOrb": 8,
+      "relativeOrb": 0.36354353442515475,
+      "interpretationKey": "aspect:moon:neptune:0"
+    },
+    {
+      "id": "aspect:mercury:uranus:135",
+      "first": "mercury",
+      "second": "uranus",
+      "angle": 135,
+      "separation": 136.78256505366605,
+      "orb": 1.7825650536660476,
+      "maxOrb": 2,
+      "relativeOrb": 0.8912825268330238,
+      "interpretationKey": "aspect:mercury:uranus:135"
+    },
+    {
+      "id": "aspect:mercury:neptune:180",
+      "first": "mercury",
+      "second": "neptune",
+      "angle": 180,
+      "separation": 173.86678439380702,
+      "orb": 6.133215606192977,
+      "maxOrb": 8,
+      "relativeOrb": 0.7666519507741221,
+      "interpretationKey": "aspect:mercury:neptune:180"
+    },
+    {
+      "id": "aspect:mercury:pluto:120",
+      "first": "mercury",
+      "second": "pluto",
+      "angle": 120,
+      "separation": 121.68158058846899,
+      "orb": 1.6815805884689894,
+      "maxOrb": 6,
+      "relativeOrb": 0.28026343141149823,
+      "interpretationKey": "aspect:mercury:pluto:120"
+    },
+    {
+      "id": "aspect:mercury:trueNode:120",
+      "first": "mercury",
+      "second": "trueNode",
+      "angle": 120,
+      "separation": 120.62527202697322,
+      "orb": 0.6252720269732208,
+      "maxOrb": 6,
+      "relativeOrb": 0.1042120044955368,
+      "interpretationKey": "aspect:mercury:trueNode:120"
+    },
+    {
+      "id": "aspect:venus:mars:0",
+      "first": "venus",
+      "second": "mars",
+      "angle": 0,
+      "separation": 5.261786809583171,
+      "orb": 5.261786809583171,
+      "maxOrb": 8,
+      "relativeOrb": 0.6577233511978964,
+      "interpretationKey": "aspect:venus:mars:0"
+    },
+    {
+      "id": "aspect:venus:jupiter:180",
+      "first": "venus",
+      "second": "jupiter",
+      "angle": 180,
+      "separation": 178.04972678208838,
+      "orb": 1.9502732179116151,
+      "maxOrb": 8,
+      "relativeOrb": 0.2437841522389519,
+      "interpretationKey": "aspect:venus:jupiter:180"
+    },
+    {
+      "id": "aspect:venus:neptune:150",
+      "first": "venus",
+      "second": "neptune",
+      "angle": 150,
+      "separation": 149.07997678573224,
+      "orb": 0.9200232142677578,
+      "maxOrb": 3,
+      "relativeOrb": 0.3066744047559193,
+      "interpretationKey": "aspect:venus:neptune:150"
+    },
+    {
+      "id": "aspect:venus:pluto:90",
+      "first": "venus",
+      "second": "pluto",
+      "angle": 90,
+      "separation": 84.62834176800824,
+      "orb": 5.371658231991759,
+      "maxOrb": 6,
+      "relativeOrb": 0.8952763719986265,
+      "interpretationKey": "aspect:venus:pluto:90"
+    },
+    {
+      "id": "aspect:mars:jupiter:180",
+      "first": "mars",
+      "second": "jupiter",
+      "angle": 180,
+      "separation": 176.68848640832846,
+      "orb": 3.3115135916715417,
+      "maxOrb": 8,
+      "relativeOrb": 0.4139391989589427,
+      "interpretationKey": "aspect:mars:jupiter:180"
+    },
+    {
+      "id": "aspect:mars:saturn:30",
+      "first": "mars",
+      "second": "saturn",
+      "angle": 30,
+      "separation": 30.440664210302657,
+      "orb": 0.440664210302657,
+      "maxOrb": 2,
+      "relativeOrb": 0.2203321051513285,
+      "interpretationKey": "aspect:mars:saturn:30"
+    },
+    {
+      "id": "aspect:mars:uranus:90",
+      "first": "mars",
+      "second": "uranus",
+      "angle": 90,
+      "separation": 94.46753942362213,
+      "orb": 4.467539423622128,
+      "maxOrb": 6,
+      "relativeOrb": 0.7445899039370213,
+      "interpretationKey": "aspect:mars:uranus:90"
+    },
+    {
+      "id": "aspect:jupiter:saturn:150",
+      "first": "jupiter",
+      "second": "saturn",
+      "angle": 150,
+      "separation": 152.87084938136888,
+      "orb": 2.8708493813688847,
+      "maxOrb": 3,
+      "relativeOrb": 0.9569497937896282,
+      "interpretationKey": "aspect:jupiter:saturn:150"
+    },
+    {
+      "id": "aspect:saturn:uranus:120",
+      "first": "saturn",
+      "second": "uranus",
+      "angle": 120,
+      "separation": 124.90820363392478,
+      "orb": 4.908203633924785,
+      "maxOrb": 6,
+      "relativeOrb": 0.8180339389874641,
+      "interpretationKey": "aspect:saturn:uranus:120"
+    },
+    {
+      "id": "aspect:saturn:neptune:180",
+      "first": "saturn",
+      "second": "neptune",
+      "angle": 180,
+      "separation": 174.2588541864517,
+      "orb": 5.741145813548286,
+      "maxOrb": 8,
+      "relativeOrb": 0.7176432266935358,
+      "interpretationKey": "aspect:saturn:neptune:180"
+    },
+    {
+      "id": "aspect:uranus:midheaven:60",
+      "first": "uranus",
+      "second": "midheaven",
+      "angle": 60,
+      "separation": 64.5092997433018,
+      "orb": 4.509299743301796,
+      "maxOrb": 5,
+      "relativeOrb": 0.9018599486603591,
+      "interpretationKey": "aspect:uranus:midheaven:60"
+    },
+    {
+      "id": "aspect:neptune:pluto:60",
+      "first": "neptune",
+      "second": "pluto",
+      "angle": 60,
+      "separation": 64.45163501772399,
+      "orb": 4.451635017723987,
+      "maxOrb": 5,
+      "relativeOrb": 0.8903270035447974,
+      "interpretationKey": "aspect:neptune:pluto:60"
+    },
+    {
+      "id": "aspect:pluto:trueNode:120",
+      "first": "pluto",
+      "second": "trueNode",
+      "angle": 120,
+      "separation": 117.69314738455779,
+      "orb": 2.30685261544221,
+      "maxOrb": 6,
+      "relativeOrb": 0.38447543590703503,
+      "interpretationKey": "aspect:pluto:trueNode:120"
+    }
+  ],
+  "sections": [
+    {
+      "id": "ascendant",
+      "title": "Ascendente e maneira de se apresentar",
+      "readingIds": [
+        "ascendant:11"
+      ],
+      "relatedAspectIds": []
+    },
+    {
+      "id": "midheaven",
+      "title": "Meio do Céu e direção profissional",
+      "readingIds": [
+        "midheaven:8"
+      ],
+      "relatedAspectIds": [
+        "aspect:uranus:midheaven:60"
+      ]
+    },
+    {
+      "id": "sun",
+      "title": "Sol e expressão pessoal",
+      "readingIds": [
+        "sign:sun:2",
+        "house:sun:3"
+      ],
+      "relatedAspectIds": [
+        "aspect:sun:moon:180",
+        "aspect:sun:jupiter:150",
+        "aspect:sun:saturn:0",
+        "aspect:sun:neptune:180"
+      ]
+    },
+    {
+      "id": "moon",
+      "title": "Lua e necessidades emocionais",
+      "readingIds": [
+        "sign:moon:8",
+        "house:moon:9"
+      ],
+      "relatedAspectIds": [
+        "aspect:sun:moon:180",
+        "aspect:moon:venus:150",
+        "aspect:moon:jupiter:30",
+        "aspect:moon:saturn:180",
+        "aspect:moon:neptune:0"
+      ]
+    },
+    {
+      "id": "mercury",
+      "title": "Mercúrio e pensamento",
+      "readingIds": [
+        "sign:mercury:1",
+        "house:mercury:3"
+      ],
+      "relatedAspectIds": [
+        "aspect:mercury:uranus:135",
+        "aspect:mercury:neptune:180",
+        "aspect:mercury:pluto:120",
+        "aspect:mercury:trueNode:120"
+      ]
+    },
+    {
+      "id": "venus",
+      "title": "Vênus e vínculos",
+      "readingIds": [
+        "sign:venus:3",
+        "house:venus:4",
+        "retrograde:venus"
+      ],
+      "relatedAspectIds": [
+        "aspect:moon:venus:150",
+        "aspect:venus:mars:0",
+        "aspect:venus:jupiter:180",
+        "aspect:venus:neptune:150",
+        "aspect:venus:pluto:90"
+      ]
+    },
+    {
+      "id": "mars",
+      "title": "Marte e iniciativa",
+      "readingIds": [
+        "sign:mars:3",
+        "house:mars:4"
+      ],
+      "relatedAspectIds": [
+        "aspect:venus:mars:0",
+        "aspect:mars:jupiter:180",
+        "aspect:mars:saturn:30",
+        "aspect:mars:uranus:90"
+      ]
+    },
+    {
+      "id": "jupiter",
+      "title": "Júpiter e ampliação de horizontes",
+      "readingIds": [
+        "sign:jupiter:9",
+        "house:jupiter:10",
+        "retrograde:jupiter"
+      ],
+      "relatedAspectIds": [
+        "aspect:sun:jupiter:150",
+        "aspect:moon:jupiter:30",
+        "aspect:venus:jupiter:180",
+        "aspect:mars:jupiter:180",
+        "aspect:jupiter:saturn:150"
+      ]
+    },
+    {
+      "id": "saturn",
+      "title": "Saturno e construção de limites",
+      "readingIds": [
+        "sign:saturn:2",
+        "house:saturn:3"
+      ],
+      "relatedAspectIds": [
+        "aspect:sun:saturn:0",
+        "aspect:moon:saturn:180",
+        "aspect:mars:saturn:30",
+        "aspect:jupiter:saturn:150",
+        "aspect:saturn:uranus:120",
+        "aspect:saturn:neptune:180"
+      ]
+    },
+    {
+      "id": "uranus",
+      "title": "Urano e autonomia",
+      "readingIds": [
+        "sign:uranus:6",
+        "house:uranus:7",
+        "retrograde:uranus"
+      ],
+      "relatedAspectIds": [
+        "aspect:mercury:uranus:135",
+        "aspect:mars:uranus:90",
+        "aspect:saturn:uranus:120",
+        "aspect:uranus:midheaven:60"
+      ]
+    },
+    {
+      "id": "neptune",
+      "title": "Netuno e imaginação",
+      "readingIds": [
+        "sign:neptune:8",
+        "house:neptune:9",
+        "retrograde:neptune"
+      ],
+      "relatedAspectIds": [
+        "aspect:sun:neptune:180",
+        "aspect:moon:neptune:0",
+        "aspect:mercury:neptune:180",
+        "aspect:venus:neptune:150",
+        "aspect:saturn:neptune:180",
+        "aspect:neptune:pluto:60"
+      ]
+    },
+    {
+      "id": "pluto",
+      "title": "Plutão e relações de poder",
+      "readingIds": [
+        "sign:pluto:5",
+        "house:pluto:7",
+        "retrograde:pluto"
+      ],
+      "relatedAspectIds": [
+        "aspect:mercury:pluto:120",
+        "aspect:venus:pluto:90",
+        "aspect:neptune:pluto:60",
+        "aspect:pluto:trueNode:120"
+      ]
+    },
+    {
+      "id": "nodes",
+      "title": "Nodos lunares e desenvolvimento",
+      "readingIds": [
+        "nodeSign:9",
+        "nodeHouse:11"
+      ],
+      "relatedAspectIds": [
+        "aspect:mercury:trueNode:120",
+        "aspect:pluto:trueNode:120"
+      ]
+    },
+    {
+      "id": "aspects",
+      "title": "Aspectos e relações entre os fatores do mapa",
+      "readingIds": [
+        "aspect:sun:moon:180",
+        "aspect:sun:jupiter:150",
+        "aspect:sun:saturn:0",
+        "aspect:sun:neptune:180",
+        "aspect:moon:venus:150",
+        "aspect:moon:jupiter:30",
+        "aspect:moon:saturn:180",
+        "aspect:moon:neptune:0",
+        "aspect:mercury:uranus:135",
+        "aspect:mercury:neptune:180",
+        "aspect:mercury:pluto:120",
+        "aspect:mercury:trueNode:120",
+        "aspect:venus:mars:0",
+        "aspect:venus:jupiter:180",
+        "aspect:venus:neptune:150",
+        "aspect:venus:pluto:90",
+        "aspect:mars:jupiter:180",
+        "aspect:mars:saturn:30",
+        "aspect:mars:uranus:90",
+        "aspect:jupiter:saturn:150",
+        "aspect:saturn:uranus:120",
+        "aspect:saturn:neptune:180",
+        "aspect:uranus:midheaven:60",
+        "aspect:neptune:pluto:60",
+        "aspect:pluto:trueNode:120"
+      ],
+      "relatedAspectIds": []
+    }
+  ],
+  "readings": [
+    {
+      "id": "ascendant:11",
+      "kind": "ascendant",
+      "interpretationKey": "ascendant:11",
+      "evidence": {
+        "points": [
+          "ascendant"
+        ],
+        "longitude": 348.8108755184631,
+        "sign": 11,
+        "house": 1
+      }
+    },
+    {
+      "id": "midheaven:8",
+      "kind": "midheaven",
+      "interpretationKey": "midheaven:8",
+      "evidence": {
+        "points": [
+          "midheaven"
+        ],
+        "longitude": 258.96139301537005,
+        "sign": 8,
+        "house": 10
+      }
+    },
+    {
+      "id": "sign:sun:2",
+      "kind": "sign",
+      "interpretationKey": "sign:sun:2",
+      "evidence": {
+        "points": [
+          "sun"
+        ],
+        "longitude": 66.92268354027487,
+        "sign": 2,
+        "house": 3,
+        "speedLongitude": 0.9590428658404997,
+        "retrograde": false
+      }
+    },
+    {
+      "id": "house:sun:3",
+      "kind": "house",
+      "interpretationKey": "house:sun:3",
+      "evidence": {
+        "points": [
+          "sun"
+        ],
+        "longitude": 66.92268354027487,
+        "sign": 2,
+        "house": 3,
+        "speedLongitude": 0.9590428658404997,
+        "retrograde": false
+      }
+    },
+    {
+      "id": "sign:moon:8",
+      "kind": "sign",
+      "interpretationKey": "sign:moon:8",
+      "evidence": {
+        "points": [
+          "moon"
+        ],
+        "longitude": 246.71109209999642,
+        "sign": 8,
+        "house": 9,
+        "speedLongitude": 11.998928561125279,
+        "retrograde": false
+      }
+    },
+    {
+      "id": "house:moon:9",
+      "kind": "house",
+      "interpretationKey": "house:moon:9",
+      "evidence": {
+        "points": [
+          "moon"
+        ],
+        "longitude": 246.71109209999642,
+        "sign": 8,
+        "house": 9,
+        "speedLongitude": 11.998928561125279,
+        "retrograde": false
+      }
+    },
+    {
+      "id": "sign:mercury:1",
+      "kind": "sign",
+      "interpretationKey": "sign:mercury:1",
+      "evidence": {
+        "points": [
+          "mercury"
+        ],
+        "longitude": 57.669528218402206,
+        "sign": 1,
+        "house": 3,
+        "speedLongitude": 2.0744832737859236,
+        "retrograde": false
+      }
+    },
+    {
+      "id": "house:mercury:3",
+      "kind": "house",
+      "interpretationKey": "house:mercury:3",
+      "evidence": {
+        "points": [
+          "mercury"
+        ],
+        "longitude": 57.669528218402206,
+        "sign": 1,
+        "house": 3,
+        "speedLongitude": 2.0744832737859236,
+        "retrograde": false
+      }
+    },
+    {
+      "id": "sign:venus:3",
+      "kind": "sign",
+      "interpretationKey": "sign:venus:3",
+      "evidence": {
+        "points": [
+          "venus"
+        ],
+        "longitude": 94.72276703886295,
+        "sign": 3,
+        "house": 4,
+        "speedLongitude": -0.04083581958153787,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "house:venus:4",
+      "kind": "house",
+      "interpretationKey": "house:venus:4",
+      "evidence": {
+        "points": [
+          "venus"
+        ],
+        "longitude": 94.72276703886295,
+        "sign": 3,
+        "house": 4,
+        "speedLongitude": -0.04083581958153787,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "retrograde:venus",
+      "kind": "retrograde",
+      "interpretationKey": "retrograde:venus",
+      "evidence": {
+        "points": [
+          "venus"
+        ],
+        "longitude": 94.72276703886295,
+        "sign": 3,
+        "house": 4,
+        "speedLongitude": -0.04083581958153787,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "sign:mars:3",
+      "kind": "sign",
+      "interpretationKey": "sign:mars:3",
+      "evidence": {
+        "points": [
+          "mars"
+        ],
+        "longitude": 99.98455384844613,
+        "sign": 3,
+        "house": 4,
+        "speedLongitude": 0.6376227162964201,
+        "retrograde": false
+      }
+    },
+    {
+      "id": "house:mars:4",
+      "kind": "house",
+      "interpretationKey": "house:mars:4",
+      "evidence": {
+        "points": [
+          "mars"
+        ],
+        "longitude": 99.98455384844613,
+        "sign": 3,
+        "house": 4,
+        "speedLongitude": 0.6376227162964201,
+        "retrograde": false
+      }
+    },
+    {
+      "id": "sign:jupiter:9",
+      "kind": "sign",
+      "interpretationKey": "sign:jupiter:9",
+      "evidence": {
+        "points": [
+          "jupiter"
+        ],
+        "longitude": 276.6730402567746,
+        "sign": 9,
+        "house": 10,
+        "speedLongitude": -0.09454183500153741,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "house:jupiter:10",
+      "kind": "house",
+      "interpretationKey": "house:jupiter:10",
+      "evidence": {
+        "points": [
+          "jupiter"
+        ],
+        "longitude": 276.6730402567746,
+        "sign": 9,
+        "house": 10,
+        "speedLongitude": -0.09454183500153741,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "retrograde:jupiter",
+      "kind": "retrograde",
+      "interpretationKey": "retrograde:jupiter",
+      "evidence": {
+        "points": [
+          "jupiter"
+        ],
+        "longitude": 276.6730402567746,
+        "sign": 9,
+        "house": 10,
+        "speedLongitude": -0.09454183500153741,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "sign:saturn:2",
+      "kind": "sign",
+      "interpretationKey": "sign:saturn:2",
+      "evidence": {
+        "points": [
+          "saturn"
+        ],
+        "longitude": 69.54388963814347,
+        "sign": 2,
+        "house": 3,
+        "speedLongitude": 0.12989360260715194,
+        "retrograde": false
+      }
+    },
+    {
+      "id": "house:saturn:3",
+      "kind": "house",
+      "interpretationKey": "house:saturn:3",
+      "evidence": {
+        "points": [
+          "saturn"
+        ],
+        "longitude": 69.54388963814347,
+        "sign": 2,
+        "house": 3,
+        "speedLongitude": 0.12989360260715194,
+        "retrograde": false
+      }
+    },
+    {
+      "id": "sign:uranus:6",
+      "kind": "sign",
+      "interpretationKey": "sign:uranus:6",
+      "evidence": {
+        "points": [
+          "uranus"
+        ],
+        "longitude": 194.45209327206825,
+        "sign": 6,
+        "house": 7,
+        "speedLongitude": -0.020572074662620548,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "house:uranus:7",
+      "kind": "house",
+      "interpretationKey": "house:uranus:7",
+      "evidence": {
+        "points": [
+          "uranus"
+        ],
+        "longitude": 194.45209327206825,
+        "sign": 6,
+        "house": 7,
+        "speedLongitude": -0.020572074662620548,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "retrograde:uranus",
+      "kind": "retrograde",
+      "interpretationKey": "retrograde:uranus",
+      "evidence": {
+        "points": [
+          "uranus"
+        ],
+        "longitude": 194.45209327206825,
+        "sign": 6,
+        "house": 7,
+        "speedLongitude": -0.020572074662620548,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "sign:neptune:8",
+      "kind": "sign",
+      "interpretationKey": "sign:neptune:8",
+      "evidence": {
+        "points": [
+          "neptune"
+        ],
+        "longitude": 243.80274382459518,
+        "sign": 8,
+        "house": 9,
+        "speedLongitude": -0.026988968019710895,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "house:neptune:9",
+      "kind": "house",
+      "interpretationKey": "house:neptune:9",
+      "evidence": {
+        "points": [
+          "neptune"
+        ],
+        "longitude": 243.80274382459518,
+        "sign": 8,
+        "house": 9,
+        "speedLongitude": -0.026988968019710895,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "retrograde:neptune",
+      "kind": "retrograde",
+      "interpretationKey": "retrograde:neptune",
+      "evidence": {
+        "points": [
+          "neptune"
+        ],
+        "longitude": 243.80274382459518,
+        "sign": 8,
+        "house": 9,
+        "speedLongitude": -0.026988968019710895,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "sign:pluto:5",
+      "kind": "sign",
+      "interpretationKey": "sign:pluto:5",
+      "evidence": {
+        "points": [
+          "pluto"
+        ],
+        "longitude": 179.3511088068712,
+        "sign": 5,
+        "house": 7,
+        "speedLongitude": -0.006428991362477765,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "house:pluto:7",
+      "kind": "house",
+      "interpretationKey": "house:pluto:7",
+      "evidence": {
+        "points": [
+          "pluto"
+        ],
+        "longitude": 179.3511088068712,
+        "sign": 5,
+        "house": 7,
+        "speedLongitude": -0.006428991362477765,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "retrograde:pluto",
+      "kind": "retrograde",
+      "interpretationKey": "retrograde:pluto",
+      "evidence": {
+        "points": [
+          "pluto"
+        ],
+        "longitude": 179.3511088068712,
+        "sign": 5,
+        "house": 7,
+        "speedLongitude": -0.006428991362477765,
+        "retrograde": true
+      }
+    },
+    {
+      "id": "nodeSign:9",
+      "kind": "nodeSign",
+      "interpretationKey": "nodeSign:9",
+      "evidence": {
+        "points": [
+          "trueNode"
+        ],
+        "longitude": 297.044256191429,
+        "sign": 9,
+        "house": 11,
+        "speedLongitude": -0.13704240523202715,
+        "retrograde": true,
+        "southNodeLongitude": 117.04425619142899,
+        "southNodeSign": 3,
+        "southNodeHouse": 5
+      }
+    },
+    {
+      "id": "nodeHouse:11",
+      "kind": "nodeHouse",
+      "interpretationKey": "nodeHouse:11",
+      "evidence": {
+        "points": [
+          "trueNode"
+        ],
+        "longitude": 297.044256191429,
+        "sign": 9,
+        "house": 11,
+        "speedLongitude": -0.13704240523202715,
+        "retrograde": true,
+        "southNodeLongitude": 117.04425619142899,
+        "southNodeSign": 3,
+        "southNodeHouse": 5
+      }
+    },
+    {
+      "id": "aspect:sun:moon:180",
+      "kind": "aspect",
+      "interpretationKey": "aspect:sun:moon:180",
+      "evidence": {
+        "points": [
+          "sun",
+          "moon"
+        ],
+        "aspectId": "aspect:sun:moon:180"
+      }
+    },
+    {
+      "id": "aspect:sun:jupiter:150",
+      "kind": "aspect",
+      "interpretationKey": "aspect:sun:jupiter:150",
+      "evidence": {
+        "points": [
+          "sun",
+          "jupiter"
+        ],
+        "aspectId": "aspect:sun:jupiter:150"
+      }
+    },
+    {
+      "id": "aspect:sun:saturn:0",
+      "kind": "aspect",
+      "interpretationKey": "aspect:sun:saturn:0",
+      "evidence": {
+        "points": [
+          "sun",
+          "saturn"
+        ],
+        "aspectId": "aspect:sun:saturn:0"
+      }
+    },
+    {
+      "id": "aspect:sun:neptune:180",
+      "kind": "aspect",
+      "interpretationKey": "aspect:sun:neptune:180",
+      "evidence": {
+        "points": [
+          "sun",
+          "neptune"
+        ],
+        "aspectId": "aspect:sun:neptune:180"
+      }
+    },
+    {
+      "id": "aspect:moon:venus:150",
+      "kind": "aspect",
+      "interpretationKey": "aspect:moon:venus:150",
+      "evidence": {
+        "points": [
+          "moon",
+          "venus"
+        ],
+        "aspectId": "aspect:moon:venus:150"
+      }
+    },
+    {
+      "id": "aspect:moon:jupiter:30",
+      "kind": "aspect",
+      "interpretationKey": "aspect:moon:jupiter:30",
+      "evidence": {
+        "points": [
+          "moon",
+          "jupiter"
+        ],
+        "aspectId": "aspect:moon:jupiter:30"
+      }
+    },
+    {
+      "id": "aspect:moon:saturn:180",
+      "kind": "aspect",
+      "interpretationKey": "aspect:moon:saturn:180",
+      "evidence": {
+        "points": [
+          "moon",
+          "saturn"
+        ],
+        "aspectId": "aspect:moon:saturn:180"
+      }
+    },
+    {
+      "id": "aspect:moon:neptune:0",
+      "kind": "aspect",
+      "interpretationKey": "aspect:moon:neptune:0",
+      "evidence": {
+        "points": [
+          "moon",
+          "neptune"
+        ],
+        "aspectId": "aspect:moon:neptune:0"
+      }
+    },
+    {
+      "id": "aspect:mercury:uranus:135",
+      "kind": "aspect",
+      "interpretationKey": "aspect:mercury:uranus:135",
+      "evidence": {
+        "points": [
+          "mercury",
+          "uranus"
+        ],
+        "aspectId": "aspect:mercury:uranus:135"
+      }
+    },
+    {
+      "id": "aspect:mercury:neptune:180",
+      "kind": "aspect",
+      "interpretationKey": "aspect:mercury:neptune:180",
+      "evidence": {
+        "points": [
+          "mercury",
+          "neptune"
+        ],
+        "aspectId": "aspect:mercury:neptune:180"
+      }
+    },
+    {
+      "id": "aspect:mercury:pluto:120",
+      "kind": "aspect",
+      "interpretationKey": "aspect:mercury:pluto:120",
+      "evidence": {
+        "points": [
+          "mercury",
+          "pluto"
+        ],
+        "aspectId": "aspect:mercury:pluto:120"
+      }
+    },
+    {
+      "id": "aspect:mercury:trueNode:120",
+      "kind": "aspect",
+      "interpretationKey": "aspect:mercury:trueNode:120",
+      "evidence": {
+        "points": [
+          "mercury",
+          "trueNode"
+        ],
+        "aspectId": "aspect:mercury:trueNode:120"
+      }
+    },
+    {
+      "id": "aspect:venus:mars:0",
+      "kind": "aspect",
+      "interpretationKey": "aspect:venus:mars:0",
+      "evidence": {
+        "points": [
+          "venus",
+          "mars"
+        ],
+        "aspectId": "aspect:venus:mars:0"
+      }
+    },
+    {
+      "id": "aspect:venus:jupiter:180",
+      "kind": "aspect",
+      "interpretationKey": "aspect:venus:jupiter:180",
+      "evidence": {
+        "points": [
+          "venus",
+          "jupiter"
+        ],
+        "aspectId": "aspect:venus:jupiter:180"
+      }
+    },
+    {
+      "id": "aspect:venus:neptune:150",
+      "kind": "aspect",
+      "interpretationKey": "aspect:venus:neptune:150",
+      "evidence": {
+        "points": [
+          "venus",
+          "neptune"
+        ],
+        "aspectId": "aspect:venus:neptune:150"
+      }
+    },
+    {
+      "id": "aspect:venus:pluto:90",
+      "kind": "aspect",
+      "interpretationKey": "aspect:venus:pluto:90",
+      "evidence": {
+        "points": [
+          "venus",
+          "pluto"
+        ],
+        "aspectId": "aspect:venus:pluto:90"
+      }
+    },
+    {
+      "id": "aspect:mars:jupiter:180",
+      "kind": "aspect",
+      "interpretationKey": "aspect:mars:jupiter:180",
+      "evidence": {
+        "points": [
+          "mars",
+          "jupiter"
+        ],
+        "aspectId": "aspect:mars:jupiter:180"
+      }
+    },
+    {
+      "id": "aspect:mars:saturn:30",
+      "kind": "aspect",
+      "interpretationKey": "aspect:mars:saturn:30",
+      "evidence": {
+        "points": [
+          "mars",
+          "saturn"
+        ],
+        "aspectId": "aspect:mars:saturn:30"
+      }
+    },
+    {
+      "id": "aspect:mars:uranus:90",
+      "kind": "aspect",
+      "interpretationKey": "aspect:mars:uranus:90",
+      "evidence": {
+        "points": [
+          "mars",
+          "uranus"
+        ],
+        "aspectId": "aspect:mars:uranus:90"
+      }
+    },
+    {
+      "id": "aspect:jupiter:saturn:150",
+      "kind": "aspect",
+      "interpretationKey": "aspect:jupiter:saturn:150",
+      "evidence": {
+        "points": [
+          "jupiter",
+          "saturn"
+        ],
+        "aspectId": "aspect:jupiter:saturn:150"
+      }
+    },
+    {
+      "id": "aspect:saturn:uranus:120",
+      "kind": "aspect",
+      "interpretationKey": "aspect:saturn:uranus:120",
+      "evidence": {
+        "points": [
+          "saturn",
+          "uranus"
+        ],
+        "aspectId": "aspect:saturn:uranus:120"
+      }
+    },
+    {
+      "id": "aspect:saturn:neptune:180",
+      "kind": "aspect",
+      "interpretationKey": "aspect:saturn:neptune:180",
+      "evidence": {
+        "points": [
+          "saturn",
+          "neptune"
+        ],
+        "aspectId": "aspect:saturn:neptune:180"
+      }
+    },
+    {
+      "id": "aspect:uranus:midheaven:60",
+      "kind": "aspect",
+      "interpretationKey": "aspect:uranus:midheaven:60",
+      "evidence": {
+        "points": [
+          "uranus",
+          "midheaven"
+        ],
+        "aspectId": "aspect:uranus:midheaven:60"
+      }
+    },
+    {
+      "id": "aspect:neptune:pluto:60",
+      "kind": "aspect",
+      "interpretationKey": "aspect:neptune:pluto:60",
+      "evidence": {
+        "points": [
+          "neptune",
+          "pluto"
+        ],
+        "aspectId": "aspect:neptune:pluto:60"
+      }
+    },
+    {
+      "id": "aspect:pluto:trueNode:120",
+      "kind": "aspect",
+      "interpretationKey": "aspect:pluto:trueNode:120",
+      "evidence": {
+        "points": [
+          "pluto",
+          "trueNode"
+        ],
+        "aspectId": "aspect:pluto:trueNode:120"
+      }
+    }
+  ],
+  "interpretations": {
+    "ascendant:11": {
+      "key": "ascendant:11",
+      "sourceKeys": [
+        "ascendant:11"
+      ],
+      "title": "Ascendente em Peixes",
+      "personal": [
+        "Você pode perceber o ambiente por impressões, imagens e mudanças sutis no modo como as pessoas se relacionam. Júpiter, na regência tradicional, e Netuno, na moderna, ampliam essa leitura; nomear suas preferências ajuda a preservar a sensibilidade sem perder de vista o que você deseja para si."
+      ],
+      "professional": [
+        "Sua apresentação profissional pode ser receptiva, imaginativa e atenta a aspectos que uma descrição estritamente técnica deixa escapar. As posições de Júpiter e Netuno acrescentam contexto; combinar essa percepção com acordos explícitos de prazo e responsabilidade facilita sua participação sem depender de expectativas que ninguém chegou a conversar."
+      ]
+    },
+    "midheaven:8": {
+      "key": "midheaven:8",
+      "sourceKeys": [
+        "midheaven:8"
+      ],
+      "title": "Meio do Céu em Sagitário",
+      "personal": [
+        "Você pode desejar que seus objetivos ampliem sua visão de mundo e tenham relação com algo em que acredita. Júpiter rege este Meio do Céu e ajuda a compreender suas referências; permitir que a experiência revise suas convicções mantém sua direção aberta ao aprendizado e às circunstâncias."
+      ],
+      "professional": [
+        "Sua direção profissional pode envolver transmitir conhecimento, conectar contextos ou desenvolver projetos de alcance mais amplo. A posição de Júpiter acrescenta nuances; combinar uma finalidade clara com avaliação dos recursos disponíveis ajuda a transformar perspectivas promissoras em etapas que possam ser executadas, acompanhadas e corrigidas quando necessário."
+      ]
+    },
+    "sign:sun:2": {
+      "key": "sign:sun:2",
+      "sourceKeys": [
+        "sign:sun:2"
+      ],
+      "title": "Sol em Gêmeos",
+      "personal": [
+        "Conversas, estudos e diferentes interpretações de uma situação podem revelar a você aspectos da própria identidade. Essa mobilidade favorece a curiosidade, mas também pode tornar difícil permanecer com uma experiência sem explicá-la imediatamente. Nem toda dúvida precisa ser resolvida com mais informação."
+      ],
+      "professional": [
+        "Ambientes com circulação de ideias e tarefas variadas podem favorecer seu envolvimento profissional. Você tende a se interessar por conexões entre assuntos e pela tradução de informações para públicos diferentes. Escolher prioridades e concluir uma investigação antes de abrir outra permite dar profundidade ao que comunica."
+      ]
+    },
+    "house:sun:3": {
+      "key": "house:sun:3",
+      "sourceKeys": [
+        "house:sun:3"
+      ],
+      "title": "Sol na casa 3",
+      "personal": [
+        "Conversas, estudos e trocas do cotidiano podem ser lugares em que você se sente mais presente. Expressar suas ideias ajuda a conhecer a própria posição, embora nem toda discordância questione sua identidade. Escutar sem preparar imediatamente uma resposta amplia o que você aprende sobre si e sobre os vínculos."
+      ],
+      "professional": [
+        "Você pode encontrar envolvimento em tarefas que pedem comunicação, circulação de informações ou aprendizagem contínua. Sua participação tende a ganhar força quando consegue explicar uma ideia com voz própria. Conferir fontes, ajustar a linguagem ao público e acompanhar a compreensão tornam essa expressão mais útil no trabalho coletivo."
+      ]
+    },
+    "sign:moon:8": {
+      "key": "sign:moon:8",
+      "sourceKeys": [
+        "sign:moon:8"
+      ],
+      "title": "Lua em Sagitário",
+      "personal": [
+        "Ampliar a perspectiva, aprender algo ou imaginar possibilidades além do problema imediato pode ajudar você a recuperar equilíbrio. O horizonte traz alívio, mas pode também apressar a passagem por sentimentos difíceis. Reconhecer uma decepção sem precisar extrair dela uma lição permite uma confiança mais próxima da experiência."
+      ],
+      "professional": [
+        "Autonomia para aprender e compreender o sentido das tarefas pode favorecer seu bem-estar no trabalho. Você tende a precisar de alguma abertura para explorar alternativas, sobretudo em rotinas muito fechadas. Vincular essa busca a prioridades concretas ajuda a manter entusiasmo sem abandonar o que pede continuidade."
+      ]
+    },
+    "house:moon:9": {
+      "key": "house:moon:9",
+      "sourceKeys": [
+        "house:moon:9"
+      ],
+      "title": "Lua na casa 9",
+      "personal": [
+        "Aprender, mudar de perspectiva e encontrar sentido podem ajudar você a elaborar sentimentos. Convicções podem oferecer abrigo emocional, mas ficam mais flexíveis quando não precisam justificar toda experiência. Permitir dúvidas mantém aberta a possibilidade de rever uma crença sem sentir que perdeu todas as suas referências."
+      ],
+      "professional": [
+        "Compreender a finalidade do trabalho pode ser necessário para que você se envolva emocionalmente com ele. Estudos e contato com perspectivas diferentes tendem a renovar sua disposição. Relacionar essa visão ampla às necessidades concretas do projeto ajuda a evitar que desânimos pontuais sejam interpretados como ausência completa de sentido profissional."
+      ]
+    },
+    "sign:mercury:1": {
+      "key": "sign:mercury:1",
+      "sourceKeys": [
+        "sign:mercury:1"
+      ],
+      "title": "Mercúrio em Touro",
+      "personal": [
+        "Para considerar uma ideia, você pode precisar de tempo e de referências que a aproximem da experiência concreta. Uma vez formada, sua opinião tende a ganhar estabilidade, o que favorece coerência e pode dificultar revisões. Examinar exemplos novos permite mudar de perspectiva sem sentir que perdeu toda a base."
+      ],
+      "professional": [
+        "Informações práticas, demonstrações e critérios consistentes podem favorecer seu aprendizado profissional. Você tende a preferir explicações que mostrem como algo funciona e quais consequências produz. Reservar tempo para assimilar mudanças ajuda a responder com precisão, enquanto comparar alternativas evita que um método conhecido se torne a única possibilidade."
+      ]
+    },
+    "house:mercury:3": {
+      "key": "house:mercury:3",
+      "sourceKeys": [
+        "house:mercury:3"
+      ],
+      "title": "Mercúrio na casa 3",
+      "personal": [
+        "A troca cotidiana pode alimentar sua curiosidade e oferecer espaço para compreender experiências. Você pode precisar falar, escrever ou perguntar para organizar o pensamento, especialmente diante de novidade. Selecionar fontes e reservar tempo de assimilação permite que a circulação de informações resulte em entendimento, em vez de apenas acumulação."
+      ],
+      "professional": [
+        "Na sua atuação, comunicação, aprendizagem e organização de informações podem ocupar um lugar importante. Você tende a contribuir ao conectar pessoas e tornar uma mensagem mais compreensível. Definir o que precisa ser comunicado e para quem ajuda a evitar excesso de mensagens, ruídos e interrupções que dispersam o trabalho."
+      ]
+    },
+    "sign:venus:3": {
+      "key": "sign:venus:3",
+      "sourceKeys": [
+        "sign:venus:3"
+      ],
+      "title": "Vênus em Câncer",
+      "personal": [
+        "Você pode associar afeto à atenção, ao acolhimento e à construção de intimidade ao longo do tempo. Gestos pequenos tendem a carregar significado, mas o cuidado pode virar expectativa silenciosa de retribuição. Expressar o que deseja receber permite que a proximidade seja escolhida, sem depender de adivinhação."
+      ],
+      "professional": [
+        "Relações de confiança e atenção à experiência das pessoas podem orientar suas escolhas no trabalho. Você pode contribuir criando continuidade no atendimento e cuidado nas trocas. Negociar limites explicitamente evita que o vínculo pessoal torne difícil discutir condições, recusar demandas ou reconhecer quando a colaboração deixou de ser recíproca."
+      ]
+    },
+    "house:venus:4": {
+      "key": "house:venus:4",
+      "sourceKeys": [
+        "house:venus:4"
+      ],
+      "title": "Vênus na casa 4",
+      "personal": [
+        "Você pode encontrar prazer ao criar um espaço íntimo acolhedor e cultivar vínculos com continuidade. A convivência doméstica tende a ter valor afetivo, embora preservar uma atmosfera agradável não exija evitar todas as divergências. Conversar sobre preferências e responsabilidades permite que o cuidado com o lar seja compartilhado."
+      ],
+      "professional": [
+        "Condições de trabalho que respeitem a vida privada e ofereçam um ambiente agradável podem pesar nas suas escolhas. Você pode contribuir com atenção ao acolhimento e à continuidade das relações. Definir limites entre cordialidade e disponibilidade ajuda a preservar a qualidade da convivência sem assumir cuidados que excedem sua função."
+      ]
+    },
+    "retrograde:venus": {
+      "key": "retrograde:venus",
+      "sourceKeys": [
+        "retrograde:venus"
+      ],
+      "title": "Vênus retrógrada",
+      "personal": [
+        "Esta retrogradação pode simbolizar a necessidade de reconhecer com mais cuidado o que você valoriza e deseja em um vínculo. Você pode questionar expectativas de afeto e pertencimento, permitindo que suas escolhas sejam revistas sem presumir que relações difíceis ou afastamentos façam parte do seu destino."
+      ],
+      "professional": [
+        "Você pode precisar examinar seus próprios critérios de reconhecimento antes de aceitar avaliações ou recompensas oferecidas por um ambiente profissional. Conversar sobre preferências, condições de colaboração e valor do trabalho torna esses critérios mais visíveis e permite negociar sem depender apenas de aprovação externa."
+      ]
+    },
+    "sign:mars:3": {
+      "key": "sign:mars:3",
+      "sourceKeys": [
+        "sign:mars:3"
+      ],
+      "title": "Marte em Câncer",
+      "personal": [
+        "Proteger um vínculo, um espaço íntimo ou uma necessidade afetiva pode mobilizar sua força de ação. A contrariedade talvez apareça primeiro de modo indireto, tornando difícil ao outro compreender o limite. Expressar o pedido antes que o ressentimento cresça permite cuidar da relação com mais clareza."
+      ],
+      "professional": [
+        "Seu empenho pode aumentar quando você reconhece quem será beneficiado pelo trabalho e sente compromisso com a equipe. A disposição de proteger pode levar a assumir conflitos alheios. Definir responsabilidades e dizer diretamente o que precisa mudar torna sua atuação mais eficaz e reduz o desgaste de tensões implícitas."
+      ]
+    },
+    "house:mars:4": {
+      "key": "house:mars:4",
+      "sourceKeys": [
+        "house:mars:4"
+      ],
+      "title": "Marte na casa 4",
+      "personal": [
+        "Você pode investir energia na construção de um espaço próprio e na defesa da sua privacidade. Questões de convivência tendem a mobilizar necessidades fortes, especialmente quando limites permanecem implícitos. Conversar sobre uso do espaço e responsabilidades permite exercer autonomia sem transformar a vida íntima em um território de disputa."
+      ],
+      "professional": [
+        "A necessidade de uma base protegida pode influenciar sua forma de trabalhar e sua reação a interrupções. Você pode se empenhar em criar condições próprias de execução. Acordos sobre horários, ambiente e disponibilidade ajudam a preservar foco, evitando que tensões profissionais sejam descarregadas nas relações mais próximas."
+      ]
+    },
+    "sign:jupiter:9": {
+      "key": "sign:jupiter:9",
+      "sourceKeys": [
+        "sign:jupiter:9"
+      ],
+      "title": "Júpiter em Capricórnio",
+      "personal": [
+        "Metas e avanços construídos por compromisso continuado podem ser referências importantes para sua confiança. A prudência oferece direção, mas pode tornar difícil reconhecer possibilidades que ainda não possuem garantias. Considerar experiências pequenas e reversíveis permite ampliar seu mundo sem exigir certeza antes de cada novo passo."
+      ],
+      "professional": [
+        "Você pode enxergar desenvolvimento em estruturas bem organizadas e projetos com continuidade. A expansão tende a fazer sentido quando pode ser planejada e acompanhada, embora cautela excessiva restrinja experimentação. Definir etapas de teste permite avaliar oportunidades com critério, sem fazer da responsabilidade uma razão para recusar toda mudança."
+      ]
+    },
+    "house:jupiter:10": {
+      "key": "house:jupiter:10",
+      "sourceKeys": [
+        "house:jupiter:10"
+      ],
+      "title": "Júpiter na casa 10",
+      "personal": [
+        "Você pode atribuir sentido à contribuição pública e à possibilidade de assumir responsabilidades mais amplas. O reconhecimento pode estimular confiança, mas não precisa confirmar sozinho seu valor. Escolher objetivos coerentes com suas convicções permite desenvolver uma presença social que também respeite necessidades privadas e limites pessoais."
+      ],
+      "professional": [
+        "Ampliar sua atuação e participar das decisões pode ser parte do que você busca no trabalho. A confiança favorece novos compromissos quando vem acompanhada de preparação e recursos. Avaliar expectativas e consequências permite assumir responsabilidade sem confundir crescimento de posição com garantia de satisfação ou competência em todas as áreas."
+      ]
+    },
+    "retrograde:jupiter": {
+      "key": "retrograde:jupiter",
+      "sourceKeys": [
+        "retrograde:jupiter"
+      ],
+      "title": "Júpiter retrógrado",
+      "personal": [
+        "Esta retrogradação pode simbolizar uma busca de sentido que pede verificação pessoal, mesmo quando existem respostas socialmente aceitas. Você pode revisar crenças, expectativas e referências de confiança, construindo uma perspectiva que comporte dúvida sem perder a disposição para conhecer outras experiências."
+      ],
+      "professional": [
+        "Você pode questionar definições prontas de crescimento e reconhecimento, procurando critérios profissionais que façam sentido para você. Rever metas à luz da experiência ajuda a distinguir uma oportunidade desejável de uma expansão que acrescenta compromissos sem corresponder às suas prioridades."
+      ]
+    },
+    "sign:saturn:2": {
+      "key": "sign:saturn:2",
+      "sourceKeys": [
+        "sign:saturn:2"
+      ],
+      "title": "Saturno em Gêmeos",
+      "personal": [
+        "Expressar ideias pode vir acompanhado de exigência por precisão ou receio de não compreender o bastante. Você pode revisar muito antes de falar, reduzindo a espontaneidade da troca. Distinguir uma conversa exploratória de uma afirmação definitiva permite aprender em público sem precisar dominar um assunto inteiro para participar."
+      ],
+      "professional": [
+        "Você pode levar a sério comunicação, estudo e organização de informações. Essa atenção favorece consistência, mas pode prolongar tarefas quando toda frase precisa parecer completa. Definir o nível de precisão exigido e verificar pontos relevantes permite entregar com clareza, sem transformar cada mensagem em uma prova de competência."
+      ]
+    },
+    "house:saturn:3": {
+      "key": "house:saturn:3",
+      "sourceKeys": [
+        "house:saturn:3"
+      ],
+      "title": "Saturno na casa 3",
+      "personal": [
+        "Você pode levar a comunicação e o aprendizado a sério, às vezes exigindo de si uma precisão que dificulta participar espontaneamente. Organizar ideias oferece apoio, mas não precisa preceder toda conversa. Fazer perguntas e admitir dúvidas permite aprender sem transformar o desconhecimento momentâneo em uma avaliação negativa de sua capacidade."
+      ],
+      "professional": [
+        "Documentação, análise cuidadosa e clareza dos compromissos podem ser contribuições importantes da sua atuação. A revisão favorece confiabilidade quando segue a importância de cada informação. Definir o que precisa ser formalizado e o que pode ser discutido em desenvolvimento evita que o cuidado se converta em lentidão ou excesso de controle comunicativo."
+      ]
+    },
+    "sign:uranus:6": {
+      "key": "sign:uranus:6",
+      "sourceKeys": [
+        "sign:uranus:6"
+      ],
+      "title": "Urano em Libra",
+      "personal": [
+        "Esta posição geracional aproxima a busca por autonomia das formas de relacionamento e dos critérios de reciprocidade. Você pode explorar acordos que respeitem diferenças, caso esse tema encontre expressão na sua vida. A liberdade ganha contornos mais claros quando desejos e limites são conversados, em vez de presumidos a partir da proximidade."
+      ],
+      "professional": [
+        "Urano em Libra oferece um contexto coletivo para questionar modelos de parceria, representação e decisão compartilhada. Na sua atuação, isso pode aparecer no interesse por negociações menos rígidas. A casa e os aspectos acrescentam especificidade, enquanto acordos explícitos ajudam a verificar se uma proposta de igualdade também funciona na prática."
+      ]
+    },
+    "house:uranus:7": {
+      "key": "house:uranus:7",
+      "sourceKeys": [
+        "house:uranus:7"
+      ],
+      "title": "Urano na casa 7",
+      "personal": [
+        "Parcerias podem despertar perguntas sobre liberdade, diferença e o espaço necessário para continuar reconhecendo desejos próprios. Você pode desejar vínculos que comportem mudanças de interesse e formas singulares de convivência. Acordos conversados ajudam a tornar essa autonomia recíproca, sem presumir que a outra pessoa tenha as mesmas expectativas de proximidade."
+      ],
+      "professional": [
+        "Você pode valorizar parceiros que ofereçam perspectivas diferentes e aceitem rever maneiras estabelecidas de colaborar. Definir como decisões e mudanças serão negociadas ajuda a preservar liberdade com continuidade. A clareza sobre responsabilidades permite experimentar novos arranjos sem deixar a outra parte dependente de informações que só você conhece."
+      ]
+    },
+    "retrograde:uranus": {
+      "key": "retrograde:uranus",
+      "sourceKeys": [
+        "retrograde:uranus"
+      ],
+      "title": "Urano retrógrado",
+      "personal": [
+        "Compartilhada por muitas pessoas, esta retrogradação pode servir como símbolo para refletir sobre autonomia e mudança a partir de critérios próprios. Você pode distinguir a vontade de experimentar do impulso de se afastar, observando quais diferenças deseja sustentar de maneira concreta nas relações."
+      ],
+      "professional": [
+        "Você pode elaborar questionamentos antes de propor mudanças publicamente, avaliando o espaço disponível para experimentar outra forma de trabalhar. A posição por casa e os aspectos acrescentam contexto, pois a retrogradação isolada não permite concluir como você responderá a regras, inovação ou trabalho coletivo."
+      ]
+    },
+    "sign:neptune:8": {
+      "key": "sign:neptune:8",
+      "sourceKeys": [
+        "sign:neptune:8"
+      ],
+      "title": "Netuno em Sagitário",
+      "personal": [
+        "Netuno em Sagitário apresenta um tema geracional de idealização da liberdade, do conhecimento e das explicações que prometem sentido amplo. Você pode reconhecer essa busca em referências culturais ou espirituais que o mobilizam. Manter espaço para dúvida e experiência concreta permite aprender sem exigir que uma visão resolva todas as perguntas."
+      ],
+      "professional": [
+        "Esta posição oferece um pano de fundo coletivo para imaginar o trabalho como transmissão de conhecimento ou participação em uma finalidade maior. Na sua atuação, a expressão depende do contexto e dos demais fatores do mapa. Comparar discursos com práticas observáveis ajuda a escolher projetos sem depender exclusivamente da força inspiradora de sua proposta."
+      ]
+    },
+    "house:neptune:9": {
+      "key": "house:neptune:9",
+      "sourceKeys": [
+        "house:neptune:9"
+      ],
+      "title": "Netuno na casa 9",
+      "personal": [
+        "Sua busca por sentido pode se apoiar em imagens, ideias e referências que ampliam a experiência para além do cotidiano imediato. Você pode encontrar inspiração em estudo, arte ou espiritualidade, conforme seus interesses reais. Preservar perguntas e examinar fontes ajuda a desenvolver uma visão própria sem exigir certeza absoluta nem aderir a uma explicação total."
+      ],
+      "professional": [
+        "Você pode desejar que aprendizagem e trabalho se relacionem com uma finalidade significativa. Essa orientação ganha consistência quando ideias amplas são traduzidas para o contexto de quem precisa utilizá-las. Comparar a proposta de uma instituição com suas práticas permite escolher envolvimentos que preservem inspiração e também comportem avaliação crítica."
+      ]
+    },
+    "retrograde:neptune": {
+      "key": "retrograde:neptune",
+      "sourceKeys": [
+        "retrograde:neptune"
+      ],
+      "title": "Netuno retrógrado",
+      "personal": [
+        "Esta retrogradação, comum a muitas pessoas, pode orientar uma reflexão sobre imagens, expectativas e ideais que você cultiva internamente. Você pode observar como essas referências participam dos vínculos, dando forma à imaginação sem tomar uma impressão subjetiva como conhecimento definitivo sobre outra pessoa."
+      ],
+      "professional": [
+        "Você pode precisar examinar o significado que atribui a um projeto e as expectativas que deposita em instituições ou lideranças. Comparar intenções com práticas observáveis ajuda a preservar a inspiração, enquanto casa e aspectos oferecem informações mais específicas do que a retrogradação considerada sozinha."
+      ]
+    },
+    "sign:pluto:5": {
+      "key": "sign:pluto:5",
+      "sourceKeys": [
+        "sign:pluto:5"
+      ],
+      "title": "Plutão em Virgem",
+      "personal": [
+        "Plutão em Virgem apresenta um tema geracional de transformação dos critérios de utilidade, competência e aperfeiçoamento. Você pode reconhecer esse pano de fundo quando investe atenção intensa em corrigir algo. Observar o limite entre cuidado e controle permite aprimorar o cotidiano sem exigir que toda imperfeição seja eliminada para que exista tranquilidade."
+      ],
+      "professional": [
+        "Esta posição oferece perguntas coletivas sobre quem define qualidade e como procedimentos distribuem autonomia ou controle. Se o tema participa da sua atuação, você pode investigar processos com profundidade. Rever critérios junto a quem executa o trabalho ajuda a distinguir melhoria concreta de uma exigência crescente de precisão que pouco acrescenta ao resultado."
+      ]
+    },
+    "house:pluto:7": {
+      "key": "house:pluto:7",
+      "sourceKeys": [
+        "house:pluto:7"
+      ],
+      "title": "Plutão na casa 7",
+      "personal": [
+        "Parcerias podem tornar mais visíveis suas questões sobre confiança, influência e disposição para compartilhar decisões. Você pode desejar vínculos intensos, observando quando a proximidade oferece troca e quando desperta necessidade de garantir a resposta alheia. Acordos claros e espaço para discordância permitem aprofundar a relação sem reduzir a autonomia de nenhuma das partes."
+      ],
+      "professional": [
+        "Você pode se envolver fortemente em colaborações e perceber relações de influência que outras pessoas deixam implícitas. Conversar sobre interesses, acesso à informação e formas de decisão ajuda a construir confiança. A possibilidade de renegociar condições permite distinguir compromisso profissional de uma permanência sustentada apenas pelo receio de perder a parceria."
+      ]
+    },
+    "retrograde:pluto": {
+      "key": "retrograde:pluto",
+      "sourceKeys": [
+        "retrograde:pluto"
+      ],
+      "title": "Plutão retrógrado",
+      "personal": [
+        "Compartilhada por muitas pessoas, esta retrogradação pode servir como ponto de reflexão sobre controle, privacidade e disposição para rever padrões. Você pode observar o que tenta preservar quando resiste a uma mudança, sem deduzir experiências traumáticas ou uma história de perdas a partir desse símbolo."
+      ],
+      "professional": [
+        "Você pode examinar sua relação com influência, acesso à informação e decisões que afetam outras pessoas. A casa e os aspectos de Plutão contextualizam esse tema, permitindo refletir sobre formas responsáveis de exercer poder sem atribuir um perfil profissional fixo à retrogradação."
+      ]
+    },
+    "nodeSign:9": {
+      "key": "nodeSign:9",
+      "sourceKeys": [
+        "nodeSign:9"
+      ],
+      "title": "Nodo Norte em Capricórnio e Nodo Sul em Câncer",
+      "personal": [
+        "Este eixo convida a construir autonomia com respeito pelas necessidades emocionais e pelos vínculos que oferecem pertencimento. Você pode assumir escolhas e limites próprios sem precisar negar o afeto, percebendo a diferença entre cuidar de uma relação e deixar que ela decida toda a organização da sua vida."
+      ],
+      "professional": [
+        "Você pode transformar cuidado e percepção das necessidades humanas em compromissos com escopo, prazo e responsabilidade definidos. O desenvolvimento proposto inclui sustentar decisões difíceis e avaliar resultados, preservando a sensibilidade que ajuda a reconhecer como essas decisões afetam as pessoas e a continuidade do trabalho."
+      ]
+    },
+    "nodeHouse:11": {
+      "key": "nodeHouse:11",
+      "sourceKeys": [
+        "nodeHouse:11"
+      ],
+      "title": "Nodo Norte na casa 11 e Nodo Sul na casa 5",
+      "personal": [
+        "Este eixo convida a descobrir formas de pertencimento que envolvam amizade, colaboração e participação em objetivos compartilhados. Você pode oferecer sua criatividade sem depender de atenção exclusiva, percebendo como uma contribuição pessoal ganha outras possibilidades quando encontra pessoas com interesses próprios e disposição para construir algo em conjunto."
+      ],
+      "professional": [
+        "Você pode desenvolver redes de colaboração em que sua autoria participe de uma realização mais ampla. Dividir decisões, compartilhar conhecimentos e reconhecer contribuições diferentes permite que uma ideia circule e amadureça, sem exigir que você abandone o prazer de criar ou deixe de responder pelo que propõe."
+      ]
+    },
+    "aspect:sun:moon:180": {
+      "key": "aspect:sun:moon:180",
+      "sourceKeys": [
+        "pair:sun:moon",
+        "aspect:180"
+      ],
+      "title": "Sol: oposição com Lua",
+      "personal": [
+        "Sua vontade de se expressar e suas necessidades de acolhimento participam de uma mesma conversa interna. Você pode observar em quais situações o que escolhe conscientemente corresponde ao que sente, e quando precisa reconhecer uma necessidade emocional antes de decidir como deseja agir em uma relação.",
+        "A oposição destaca uma polaridade entre Sol e Lua, que pode aparecer na relação com outras pessoas. Você pode reconhecer em si as duas necessidades, ampliando escolhas que antes pareciam depender de alguém assumir o lado oposto."
+      ],
+      "professional": [
+        "Sua maneira de assumir um papel profissional se relaciona com as condições emocionais de que você precisa para sustentá-lo. Examinar o ritmo cotidiano, o sentimento de pertencimento e a possibilidade de reconhecer suas necessidades ajuda a construir uma atuação que comporte responsabilidade e participação pessoal.",
+        "A oposição pode tornar visíveis perspectivas concorrentes ligadas a Sol e Lua. Escutar posições diferentes e reconhecer sua participação no impasse ajuda a construir acordos, sem reduzir uma necessidade legítima a um obstáculo representado por outra pessoa."
+      ]
+    },
+    "aspect:sun:jupiter:150": {
+      "key": "aspect:sun:jupiter:150",
+      "sourceKeys": [
+        "pair:sun:jupiter",
+        "aspect:150"
+      ],
+      "title": "Sol: quincúncio com Júpiter",
+      "personal": [
+        "Sua expressão pessoal se encontra com a busca por sentido, confiança e possibilidades de crescimento. Você pode observar quais experiências ampliam sua visão de si e quais expectativas exigem uma versão grandiosa demais, preservando entusiasmo enquanto reconhece dúvidas, limites e desejos que não precisam impressionar ninguém.",
+        "O quincúncio aproxima necessidades de Sol e Júpiter que podem funcionar com referências difíceis de conciliar. Você pode experimentar ajustes sucessivos de ritmo e expectativa, sem exigir uma solução única que elimine toda diferença entre elas."
+      ],
+      "professional": [
+        "Você pode desejar que seu trabalho tenha alcance e esteja ligado a ideias em que acredita. Relacionar essa visão a recursos, competências e compromissos verificáveis ajuda a construir propostas consistentes, enquanto abertura à avaliação permite que a confiança nas próprias capacidades continue acompanhada de aprendizado.",
+        "O quincúncio pode pedir adaptações entre modos distintos de atuar associados a Sol e Júpiter. Rever escopo, ritmo e critérios de cada tarefa ajuda a acomodar diferenças que nem sempre se resolvem por um acordo definitivo."
+      ]
+    },
+    "aspect:sun:saturn:0": {
+      "key": "aspect:sun:saturn:0",
+      "sourceKeys": [
+        "pair:sun:saturn",
+        "aspect:0"
+      ],
+      "title": "Sol: conjunção com Saturno",
+      "personal": [
+        "Sua vontade de se expressar se relaciona com critérios internos de responsabilidade, merecimento e reconhecimento. Você pode examinar quando a disciplina sustenta uma escolha e quando adia a possibilidade de participar, permitindo que sua presença tenha valor mesmo durante etapas em que ainda está aprendendo ou precisa de apoio.",
+        "Na conjunção, Sol e Saturno concentram seus temas em uma mesma experiência. Você pode reconhecê-los como necessidades inseparáveis, e diferenciá-los ajuda a perceber qual delas está orientando uma escolha ou reação."
+      ],
+      "professional": [
+        "Você pode relacionar realização profissional a competência, continuidade e capacidade de responder pelo que assume. Definir expectativas proporcionais à tarefa ajuda a usar disciplina sem tornar cada entrega uma prova do seu valor, enquanto delegar e negociar limites oferece sustentação para responsabilidades que precisam ser mantidas.",
+        "A conjunção aproxima os temas de Sol e Saturno na sua atuação. Identificar a contribuição de cada um ajuda a usar essa concentração sem esperar que uma única tarefa satisfaça todas as necessidades envolvidas."
+      ]
+    },
+    "aspect:sun:neptune:180": {
+      "key": "aspect:sun:neptune:180",
+      "sourceKeys": [
+        "pair:sun:neptune",
+        "aspect:180"
+      ],
+      "title": "Sol: oposição com Netuno",
+      "personal": [
+        "Sua imagem de si se relaciona com ideais, imaginação e sensibilidade ao que acontece ao redor. Você pode perceber quais imagens inspiram escolhas e quais tornam difícil reconhecer desejos concretos, cultivando formas de expressão que acolham a ambiguidade sem depender de corresponder a uma figura idealizada.",
+        "A oposição destaca uma polaridade entre Sol e Netuno, que pode aparecer na relação com outras pessoas. Você pode reconhecer em si as duas necessidades, ampliando escolhas que antes pareciam depender de alguém assumir o lado oposto."
+      ],
+      "professional": [
+        "Você pode procurar um trabalho em que criação, significado ou disponibilidade às pessoas tenham lugar. Traduzir suas intenções em entregas e acordos claros ajuda a sustentar essa participação, enquanto observar a diferença entre uma proposta inspiradora e suas condições reais permite escolher com mais discernimento.",
+        "A oposição pode tornar visíveis perspectivas concorrentes ligadas a Sol e Netuno. Escutar posições diferentes e reconhecer sua participação no impasse ajuda a construir acordos, sem reduzir uma necessidade legítima a um obstáculo representado por outra pessoa."
+      ]
+    },
+    "aspect:moon:venus:150": {
+      "key": "aspect:moon:venus:150",
+      "sourceKeys": [
+        "pair:moon:venus",
+        "aspect:150"
+      ],
+      "title": "Lua: quincúncio com Vênus",
+      "personal": [
+        "Suas necessidades de segurança emocional se relacionam com a maneira como oferece afeto e reconhece prazer na companhia de alguém. Você pode perceber quais gestos acolhem de fato suas necessidades e quais procuram manter uma atmosfera agradável, permitindo que o vínculo comporte também preferências e sentimentos menos confortáveis.",
+        "O quincúncio aproxima necessidades de Lua e Vênus que podem funcionar com referências difíceis de conciliar. Você pode experimentar ajustes sucessivos de ritmo e expectativa, sem exigir uma solução única que elimine toda diferença entre elas."
+      ],
+      "professional": [
+        "Você pode valorizar relações de trabalho em que exista cordialidade e consideração pelas necessidades cotidianas. A atenção ao convívio ganha consistência quando você consegue conversar sobre desacordos e avaliar entregas com critérios explícitos, evitando que o desejo de preservar a boa relação esconda problemas que precisam de encaminhamento.",
+        "O quincúncio pode pedir adaptações entre modos distintos de atuar associados a Lua e Vênus. Rever escopo, ritmo e critérios de cada tarefa ajuda a acomodar diferenças que nem sempre se resolvem por um acordo definitivo."
+      ]
+    },
+    "aspect:moon:jupiter:30": {
+      "key": "aspect:moon:jupiter:30",
+      "sourceKeys": [
+        "pair:moon:jupiter",
+        "aspect:30"
+      ],
+      "title": "Lua: semissextil com Júpiter",
+      "personal": [
+        "Sua busca por acolhimento se relaciona com confiança, generosidade e expectativas sobre o que a vida pode oferecer. Você pode reconhecer como ideias e crenças ajudam a lidar com sentimentos, sem exigir que otimismo substitua a escuta de necessidades concretas ou a expressão de uma decepção.",
+        "O semissextil sugere uma relação discreta entre Lua e Júpiter, que pode pedir atenção a diferenças pequenas. Você pode explorar ajustes cotidianos sem tratar esse aspecto menor como explicação central dos seus vínculos."
+      ],
+      "professional": [
+        "Você pode contribuir para um ambiente em que pessoas se sintam encorajadas a aprender e participar. Essa disponibilidade ganha sustentação quando promessas de apoio correspondem ao tempo e aos recursos existentes, permitindo reconhecer dificuldades reais sem reduzir o trabalho de acolhimento a mensagens de confiança e entusiasmo.",
+        "O semissextil pode aparecer como necessidade de conciliar modos distintos de realizar pequenas tarefas. Observe onde os temas de Lua e Júpiter pedem ajustes locais, considerando o contexto dos aspectos mais marcantes."
+      ]
+    },
+    "aspect:moon:saturn:180": {
+      "key": "aspect:moon:saturn:180",
+      "sourceKeys": [
+        "pair:moon:saturn",
+        "aspect:180"
+      ],
+      "title": "Lua: oposição com Saturno",
+      "personal": [
+        "Suas necessidades emocionais se relacionam com a maneira como você administra limites, compromissos e disponibilidade para depender de alguém. Você pode observar quando a reserva oferece proteção e quando dificulta pedir o que precisa, permitindo que cuidado e responsabilidade incluam receber apoio, além de oferecê-lo.",
+        "A oposição destaca uma polaridade entre Lua e Saturno, que pode aparecer na relação com outras pessoas. Você pode reconhecer em si as duas necessidades, ampliando escolhas que antes pareciam depender de alguém assumir o lado oposto."
+      ],
+      "professional": [
+        "Você pode procurar previsibilidade e levar a sério a continuidade dos compromissos assumidos com a equipe. Definir o alcance das responsabilidades e tornar necessidades conversáveis ajuda a construir confiança, enquanto reconhecer limites de disponibilidade evita que a preocupação com estabilidade concentre tarefas e cuidados em você.",
+        "A oposição pode tornar visíveis perspectivas concorrentes ligadas a Lua e Saturno. Escutar posições diferentes e reconhecer sua participação no impasse ajuda a construir acordos, sem reduzir uma necessidade legítima a um obstáculo representado por outra pessoa."
+      ]
+    },
+    "aspect:moon:neptune:0": {
+      "key": "aspect:moon:neptune:0",
+      "sourceKeys": [
+        "pair:moon:neptune",
+        "aspect:0"
+      ],
+      "title": "Lua: conjunção com Netuno",
+      "personal": [
+        "Sua percepção emocional se relaciona com imaginação, expectativas e sensibilidade ao clima dos vínculos. Você pode acolher o que sente enquanto verifica o que pertence à experiência de outra pessoa, distinguindo empatia de suposição e reconhecendo quando precisa de silêncio, descanso ou uma conversa mais explícita.",
+        "Na conjunção, Lua e Netuno concentram seus temas em uma mesma experiência. Você pode reconhecê-los como necessidades inseparáveis, e diferenciá-los ajuda a perceber qual delas está orientando uma escolha ou reação."
+      ],
+      "professional": [
+        "Você pode perceber nuances do ambiente e responder a necessidades que ainda não foram formuladas claramente. Confirmar essas impressões com as pessoas envolvidas ajuda a transformar sensibilidade em cuidado adequado, enquanto limites de disponibilidade evitam assumir tarefas ou preocupações que ninguém chegou a atribuir a você.",
+        "A conjunção aproxima os temas de Lua e Netuno na sua atuação. Identificar a contribuição de cada um ajuda a usar essa concentração sem esperar que uma única tarefa satisfaça todas as necessidades envolvidas."
+      ]
+    },
+    "aspect:mercury:uranus:135": {
+      "key": "aspect:mercury:uranus:135",
+      "sourceKeys": [
+        "pair:mercury:uranus",
+        "aspect:135"
+      ],
+      "title": "Mercúrio: sesquiquadratura com Urano",
+      "personal": [
+        "Seu pensamento se relaciona com a busca por alternativas e com a capacidade de questionar associações habituais. Você pode encontrar perspectivas inesperadas, observando como comunicá-las para quem ainda não percorreu o mesmo raciocínio e permitindo que uma ideia seja examinada sem perder sua abertura para experimentar.",
+        "A sesquiquadratura pode simbolizar tensão indireta entre Mercúrio e Urano, percebida quando pequenas exigências se acumulam. Você pode observar como responde à pressão e distinguir o incômodo imediato das necessidades que ainda não conseguiu expressar."
+      ],
+      "professional": [
+        "Você pode contribuir com conexões novas ou perceber que um problema foi formulado de maneira restrita demais. Registrar o raciocínio, testar hipóteses e explicar etapas ajuda a transformar essas percepções em propostas utilizáveis, enquanto a troca com colegas oferece informações que uma solução concebida rapidamente pode deixar de fora.",
+        "A sesquiquadratura pode aparecer em atritos secundários entre os temas de Mercúrio e Urano. Identificar expectativas pouco discutidas e rever respostas habituais ajuda a evitar acúmulo de tensão, considerando o peso relativo desse aspecto no mapa."
+      ]
+    },
+    "aspect:mercury:neptune:180": {
+      "key": "aspect:mercury:neptune:180",
+      "sourceKeys": [
+        "pair:mercury:neptune",
+        "aspect:180"
+      ],
+      "title": "Mercúrio: oposição com Netuno",
+      "personal": [
+        "Seu pensamento se relaciona com imagens, associações e sentidos que nem sempre cabem em uma explicação direta. Você pode usar esse repertório para compreender e criar, enquanto distingue lembrança, impressão e informação verificável, especialmente quando precisa conversar sobre algo que envolve expectativas ou sentimentos difíceis de nomear.",
+        "A oposição destaca uma polaridade entre Mercúrio e Netuno, que pode aparecer na relação com outras pessoas. Você pode reconhecer em si as duas necessidades, ampliando escolhas que antes pareciam depender de alguém assumir o lado oposto."
+      ],
+      "professional": [
+        "Você pode encontrar recursos expressivos em metáforas, imagens ou leituras sensíveis de um contexto. Para transformar essa elaboração em trabalho compartilhado, ajuda explicitar o que é hipótese, proposta e informação confirmada, permitindo que a imaginação contribua sem deixar colegas dependentes de intenções que ainda não foram formuladas.",
+        "A oposição pode tornar visíveis perspectivas concorrentes ligadas a Mercúrio e Netuno. Escutar posições diferentes e reconhecer sua participação no impasse ajuda a construir acordos, sem reduzir uma necessidade legítima a um obstáculo representado por outra pessoa."
+      ]
+    },
+    "aspect:mercury:pluto:120": {
+      "key": "aspect:mercury:pluto:120",
+      "sourceKeys": [
+        "pair:mercury:pluto",
+        "aspect:120"
+      ],
+      "title": "Mercúrio: trígono com Plutão",
+      "personal": [
+        "Seu pensamento se relaciona com o desejo de compreender motivações e examinar o que não aparece na primeira explicação. Você pode aprofundar perguntas e reconhecer contradições, observando quando a investigação oferece compreensão e quando passa a procurar uma certeza sobre o outro que nenhuma conversa poderia garantir.",
+        "O trígono sugere circulação relativamente fluida entre Mercúrio e Plutão, permitindo que seus temas se apoiem. Você pode reconhecer essa facilidade e cultivá-la conscientemente, observando também hábitos que permanecem pouco questionados justamente por parecerem naturais."
+      ],
+      "professional": [
+        "Você pode se envolver com pesquisa, análise de problemas complexos ou revisão de pressupostos que orientam decisões. Formular perguntas abertas e tornar métodos verificáveis ajuda a usar essa concentração com rigor, enquanto respeito à privacidade e disposição para rever hipóteses impedem que uma interpretação seja tratada como prova.",
+        "No trígono, os temas de Mercúrio e Plutão podem cooperar com menor esforço de conciliação. Dar finalidade e continuidade a essa facilidade ajuda a desenvolvê-la, sem presumir desempenho excepcional ou reconhecimento garantido."
+      ]
+    },
+    "aspect:mercury:trueNode:120": {
+      "key": "aspect:mercury:trueNode:120",
+      "sourceKeys": [
+        "pair:mercury:trueNode",
+        "aspect:120"
+      ],
+      "title": "Mercúrio: trígono com Nodo Norte",
+      "personal": [
+        "Sua maneira de pensar e comunicar participa das possibilidades de desenvolvimento simbolizadas pelo eixo nodal. Você pode reconhecer explicações habituais sobre si e experimentar perguntas que ampliem essa compreensão, usando conversas, leitura e observação para revisar conclusões sem precisar abandonar todo conhecimento que já construiu.",
+        "O trígono sugere circulação relativamente fluida entre Mercúrio e Nodo Norte, permitindo que seus temas se apoiem. Você pode reconhecer essa facilidade e cultivá-la conscientemente, observando também hábitos que permanecem pouco questionados justamente por parecerem naturais."
+      ],
+      "professional": [
+        "Você pode desenvolver sua atuação ao examinar como aprende, compartilha informações e interpreta situações profissionais. Experimentar formas diferentes de perguntar e apresentar ideias ajuda a ampliar repertório, enquanto reconhecer pressupostos habituais permite distinguir uma dificuldade concreta de uma conclusão antiga que continua orientando suas decisões.",
+        "No trígono, os temas de Mercúrio e Nodo Norte podem cooperar com menor esforço de conciliação. Dar finalidade e continuidade a essa facilidade ajuda a desenvolvê-la, sem presumir desempenho excepcional ou reconhecimento garantido."
+      ]
+    },
+    "aspect:venus:mars:0": {
+      "key": "aspect:venus:mars:0",
+      "sourceKeys": [
+        "pair:venus:mars",
+        "aspect:0"
+      ],
+      "title": "Vênus: conjunção com Marte",
+      "personal": [
+        "Sua maneira de se vincular se relaciona com a forma como expressa desejo e toma iniciativa. Você pode perceber como aproximação, autonomia e reciprocidade participam de uma relação, conversando sobre preferências para que a busca por intensidade ou harmonia não substitua o reconhecimento da vontade de cada pessoa.",
+        "Na conjunção, Vênus e Marte concentram seus temas em uma mesma experiência. Você pode reconhecê-los como necessidades inseparáveis, e diferenciá-los ajuda a perceber qual delas está orientando uma escolha ou reação."
+      ],
+      "professional": [
+        "Você pode combinar atenção às relações com disposição para negociar, decidir e colocar projetos em andamento. Explicitar interesses e limites ajuda a integrar cooperação e iniciativa, permitindo que a busca por um bom acordo inclua conversas firmes sobre condições, responsabilidades e aquilo que cada participante espera receber.",
+        "A conjunção aproxima os temas de Vênus e Marte na sua atuação. Identificar a contribuição de cada um ajuda a usar essa concentração sem esperar que uma única tarefa satisfaça todas as necessidades envolvidas."
+      ]
+    },
+    "aspect:venus:jupiter:180": {
+      "key": "aspect:venus:jupiter:180",
+      "sourceKeys": [
+        "pair:venus:jupiter",
+        "aspect:180"
+      ],
+      "title": "Vênus: oposição com Júpiter",
+      "personal": [
+        "Seus valores e vínculos se relacionam com expectativas de crescimento, prazer e generosidade. Você pode apreciar experiências que ampliem o convívio, observando quando oferecer mais expressa um desejo e quando cria compromissos difíceis de sustentar, para que afeto também comporte limites e diferenças de expectativa.",
+        "A oposição destaca uma polaridade entre Vênus e Júpiter, que pode aparecer na relação com outras pessoas. Você pode reconhecer em si as duas necessidades, ampliando escolhas que antes pareciam depender de alguém assumir o lado oposto."
+      ],
+      "professional": [
+        "Você pode investir em relações profissionais que ofereçam troca, aprendizagem e possibilidades de ampliar seu trabalho. Avaliar condições concretas ajuda a combinar abertura e discernimento, especialmente quando uma parceria parece promissora e a boa disposição entre as pessoas pode levar a compromissos maiores do que o planejamento permite.",
+        "A oposição pode tornar visíveis perspectivas concorrentes ligadas a Vênus e Júpiter. Escutar posições diferentes e reconhecer sua participação no impasse ajuda a construir acordos, sem reduzir uma necessidade legítima a um obstáculo representado por outra pessoa."
+      ]
+    },
+    "aspect:venus:neptune:150": {
+      "key": "aspect:venus:neptune:150",
+      "sourceKeys": [
+        "pair:venus:neptune",
+        "aspect:150"
+      ],
+      "title": "Vênus: quincúncio com Netuno",
+      "personal": [
+        "Seu modo de se vincular se relaciona com imaginação, idealização e sensibilidade ao que considera belo ou desejável. Você pode acolher a inspiração de um encontro enquanto conhece a pessoa concreta, distinguindo o que foi conversado daquilo que espera encontrar, sem exigir que o vínculo realize uma imagem perfeita.",
+        "O quincúncio aproxima necessidades de Vênus e Netuno que podem funcionar com referências difíceis de conciliar. Você pode experimentar ajustes sucessivos de ritmo e expectativa, sem exigir uma solução única que elimine toda diferença entre elas."
+      ],
+      "professional": [
+        "Você pode buscar significado estético ou humano nas relações e nos projetos que escolhe. Transformar essa inspiração em critérios, referências e acordos explícitos ajuda a preservar a criação, enquanto avaliar condições reais evita que uma colaboração seja sustentada apenas pela imagem atraente do que poderia vir a ser.",
+        "O quincúncio pode pedir adaptações entre modos distintos de atuar associados a Vênus e Netuno. Rever escopo, ritmo e critérios de cada tarefa ajuda a acomodar diferenças que nem sempre se resolvem por um acordo definitivo."
+      ]
+    },
+    "aspect:venus:pluto:90": {
+      "key": "aspect:venus:pluto:90",
+      "sourceKeys": [
+        "pair:venus:pluto",
+        "aspect:90"
+      ],
+      "title": "Vênus: quadratura com Plutão",
+      "personal": [
+        "Seus vínculos se relacionam com intensidade, confiança e questões sobre o que você está disposto a compartilhar. Você pode observar como desejo e necessidade de segurança participam das escolhas afetivas, expressando limites e expectativas para que proximidade não dependa de controlar a disponibilidade ou as preferências de outra pessoa.",
+        "A quadratura coloca Vênus e Plutão em uma relação de tensão, na qual atender uma necessidade pode dificultar a outra. Você pode construir respostas mais amplas ao reconhecer ambas, em vez de escolher sempre o mesmo lado."
+      ],
+      "professional": [
+        "Você pode investir intensamente em parcerias e em trabalhos que correspondam aos seus valores. Conversar sobre recursos, influência e critérios de reconhecimento torna essas relações mais claras, enquanto a possibilidade de discordar e renegociar ajuda a distinguir compromisso de uma obrigação sustentada pelo receio de perder o vínculo.",
+        "A quadratura pode tornar visíveis exigências concorrentes ligadas a Vênus e Plutão. Rever prioridades e negociar formas de execução ajuda a trabalhar esse conflito, sem pressupor que tensão impeça competência ou realização profissional."
+      ]
+    },
+    "aspect:mars:jupiter:180": {
+      "key": "aspect:mars:jupiter:180",
+      "sourceKeys": [
+        "pair:mars:jupiter",
+        "aspect:180"
+      ],
+      "title": "Marte: oposição com Júpiter",
+      "personal": [
+        "Sua maneira de agir se relaciona com convicções, entusiasmo e expectativas sobre o alcance das suas escolhas. Você pode reconhecer o que lhe dá coragem para começar, observando quando uma causa amplia sua iniciativa e quando a certeza de estar certo diminui a escuta de limites e diferenças.",
+        "A oposição destaca uma polaridade entre Marte e Júpiter, que pode aparecer na relação com outras pessoas. Você pode reconhecer em si as duas necessidades, ampliando escolhas que antes pareciam depender de alguém assumir o lado oposto."
+      ],
+      "professional": [
+        "Você pode mobilizar esforço em torno de objetivos amplos e desejar que o trabalho avance com ritmo e propósito. Relacionar ambição a capacidade de execução ajuda a escolher prioridades, enquanto avaliar riscos e ouvir objeções permite que a confiança impulsione projetos sem dispensar planejamento e revisão.",
+        "A oposição pode tornar visíveis perspectivas concorrentes ligadas a Marte e Júpiter. Escutar posições diferentes e reconhecer sua participação no impasse ajuda a construir acordos, sem reduzir uma necessidade legítima a um obstáculo representado por outra pessoa."
+      ]
+    },
+    "aspect:mars:saturn:30": {
+      "key": "aspect:mars:saturn:30",
+      "sourceKeys": [
+        "pair:mars:saturn",
+        "aspect:30"
+      ],
+      "title": "Marte: semissextil com Saturno",
+      "personal": [
+        "Sua vontade de agir se relaciona com limites, disciplina e critérios sobre o que pode ou deve ser feito. Você pode observar quando conter um impulso favorece uma escolha e quando paralisa sua expressão, buscando formas graduais de afirmar desejos que não dependam de eliminar toda possibilidade de erro.",
+        "O semissextil sugere uma relação discreta entre Marte e Saturno, que pode pedir atenção a diferenças pequenas. Você pode explorar ajustes cotidianos sem tratar esse aspecto menor como explicação central dos seus vínculos."
+      ],
+      "professional": [
+        "Você pode se dedicar a tarefas que exigem esforço continuado, planejamento e respeito a condições concretas. Definir etapas, reconhecer impedimentos e revisar o ritmo ajuda a combinar iniciativa com sustentação, enquanto negociar prioridades evita que a pressão por produzir transforme cada limite em uma prova de resistência pessoal.",
+        "O semissextil pode aparecer como necessidade de conciliar modos distintos de realizar pequenas tarefas. Observe onde os temas de Marte e Saturno pedem ajustes locais, considerando o contexto dos aspectos mais marcantes."
+      ]
+    },
+    "aspect:mars:uranus:90": {
+      "key": "aspect:mars:uranus:90",
+      "sourceKeys": [
+        "pair:mars:uranus",
+        "aspect:90"
+      ],
+      "title": "Marte: quadratura com Urano",
+      "personal": [
+        "Sua iniciativa se relaciona com autonomia e com o desejo de responder rapidamente quando percebe uma possibilidade de mudança. Você pode distinguir um impulso que abre espaço para algo desejado de uma reação à sensação de estar limitado, escolhendo como agir sem deixar de considerar os efeitos sobre seus vínculos.",
+        "A quadratura coloca Marte e Urano em uma relação de tensão, na qual atender uma necessidade pode dificultar a outra. Você pode construir respostas mais amplas ao reconhecer ambas, em vez de escolher sempre o mesmo lado."
+      ],
+      "professional": [
+        "Você pode se mobilizar para experimentar soluções e alterar procedimentos que parecem restringir o trabalho. Testes delimitados, critérios de segurança e comunicação prévia ajudam a transformar urgência em inovação utilizável, permitindo que a equipe acompanhe a mudança e que você avalie o que realmente melhorou depois dela.",
+        "A quadratura pode tornar visíveis exigências concorrentes ligadas a Marte e Urano. Rever prioridades e negociar formas de execução ajuda a trabalhar esse conflito, sem pressupor que tensão impeça competência ou realização profissional."
+      ]
+    },
+    "aspect:jupiter:saturn:150": {
+      "key": "aspect:jupiter:saturn:150",
+      "sourceKeys": [
+        "pair:jupiter:saturn",
+        "aspect:150"
+      ],
+      "title": "Júpiter: quincúncio com Saturno",
+      "personal": [
+        "Sua confiança em ampliar possibilidades se relaciona com a necessidade de avaliar limites e construir continuidade. Você pode perceber como esperança e prudência participam de uma decisão, buscando compromissos que comportem crescimento sem exigir garantias completas nem tratar toda restrição como sinal de que deve desistir.",
+        "O quincúncio aproxima necessidades de Júpiter e Saturno que podem funcionar com referências difíceis de conciliar. Você pode experimentar ajustes sucessivos de ritmo e expectativa, sem exigir uma solução única que elimine toda diferença entre elas."
+      ],
+      "professional": [
+        "Você pode avaliar oportunidades considerando tanto o potencial de expansão quanto as condições para sustentá-las. Dividir metas em etapas, explicitar recursos e revisar resultados ajuda a combinar visão e responsabilidade, evitando que otimismo dispense preparação ou que a preocupação com limites impeça experiências proporcionais ao momento.",
+        "O quincúncio pode pedir adaptações entre modos distintos de atuar associados a Júpiter e Saturno. Rever escopo, ritmo e critérios de cada tarefa ajuda a acomodar diferenças que nem sempre se resolvem por um acordo definitivo."
+      ]
+    },
+    "aspect:saturn:uranus:120": {
+      "key": "aspect:saturn:uranus:120",
+      "sourceKeys": [
+        "pair:saturn:uranus",
+        "aspect:120"
+      ],
+      "title": "Saturno: trígono com Urano",
+      "personal": [
+        "Sua necessidade de continuidade se relaciona com o desejo de autonomia e revisão das regras que organizam a vida. Você pode perceber quais limites oferecem apoio e quais já não correspondem às suas necessidades, experimentando mudanças graduais sem exigir que preservar um compromisso signifique manter todos os seus termos.",
+        "O trígono sugere circulação relativamente fluida entre Saturno e Urano, permitindo que seus temas se apoiem. Você pode reconhecer essa facilidade e cultivá-la conscientemente, observando também hábitos que permanecem pouco questionados justamente por parecerem naturais."
+      ],
+      "professional": [
+        "Você pode lidar com a relação entre estruturas estabelecidas e propostas de mudança, reconhecendo tanto o valor dos processos quanto seus limites. Planejar transições, envolver quem executa o trabalho e definir critérios de avaliação permite experimentar alternativas sem depender de rigidez ou de ruptura como respostas automáticas.",
+        "No trígono, os temas de Saturno e Urano podem cooperar com menor esforço de conciliação. Dar finalidade e continuidade a essa facilidade ajuda a desenvolvê-la, sem presumir desempenho excepcional ou reconhecimento garantido."
+      ]
+    },
+    "aspect:saturn:neptune:180": {
+      "key": "aspect:saturn:neptune:180",
+      "sourceKeys": [
+        "pair:saturn:neptune",
+        "aspect:180"
+      ],
+      "title": "Saturno: oposição com Netuno",
+      "personal": [
+        "Sua relação com limites se encontra com imaginação, sensibilidade e ideais que nem sempre têm contornos definidos. Você pode experimentar formas de dar sustentação ao que considera significativo, distinguindo uma responsabilidade concreta de uma obrigação difusa e permitindo que descanso e incerteza também tenham lugar no cotidiano.",
+        "A oposição destaca uma polaridade entre Saturno e Netuno, que pode aparecer na relação com outras pessoas. Você pode reconhecer em si as duas necessidades, ampliando escolhas que antes pareciam depender de alguém assumir o lado oposto."
+      ],
+      "professional": [
+        "Você pode se interessar por dar forma prática a propostas criativas ou voltadas ao cuidado. Definir escopo, recursos e critérios de acompanhamento ajuda a aproximar intenção e execução, enquanto ouvir o que não cabe nos procedimentos permite revisar estruturas sem abandonar a responsabilidade pelas entregas assumidas.",
+        "A oposição pode tornar visíveis perspectivas concorrentes ligadas a Saturno e Netuno. Escutar posições diferentes e reconhecer sua participação no impasse ajuda a construir acordos, sem reduzir uma necessidade legítima a um obstáculo representado por outra pessoa."
+      ]
+    },
+    "aspect:uranus:midheaven:60": {
+      "key": "aspect:uranus:midheaven:60",
+      "sourceKeys": [
+        "pair:uranus:midheaven",
+        "aspect:60"
+      ],
+      "title": "Urano: sextil com Meio do Céu",
+      "personal": [
+        "Sua necessidade de autonomia se relaciona com os objetivos e papéis públicos que você considera possíveis para si. Você pode observar quais mudanças de direção expressam interesses atuais e quais respondem à sensação de estar limitado, reconhecendo que uma trajetória própria também pode incluir compromissos e períodos de continuidade.",
+        "O sextil sugere uma possibilidade de cooperação entre Urano e Meio do Céu que ganha expressão com participação consciente. Você pode experimentar escolhas que aproximem essas necessidades, reconhecendo recursos disponíveis sem presumir que se desenvolverão por conta própria."
+      ],
+      "professional": [
+        "Sua direção profissional pode envolver experimentar formas de atuação ou questionar estruturas que já não respondem ao trabalho. Planejar transições e testar alternativas ajuda a preservar autonomia com condições concretas de continuidade, enquanto conversar sobre expectativas permite que a liberdade desejada seja compreendida por parceiros e equipes.",
+        "No sextil, os temas de Urano e Meio do Céu podem se apoiar quando você cria oportunidades concretas de colaboração. Prática, conversa e iniciativas delimitadas ajudam a transformar essa possibilidade em recursos úteis para o trabalho."
+      ]
+    },
+    "aspect:neptune:pluto:60": {
+      "key": "aspect:neptune:pluto:60",
+      "sourceKeys": [
+        "pair:neptune:pluto",
+        "aspect:60"
+      ],
+      "title": "Netuno: sextil com Plutão",
+      "personal": [
+        "Ideais e mudanças profundas aparecem aqui como uma relação compartilhada por muitas pessoas, cuja expressão individual precisa de contexto no mapa. Você pode refletir sobre imagens coletivas de pertencimento, desejo e poder, sem tomar essa combinação isolada como indicação de uma sensibilidade excepcional ou de experiências pessoais específicas.",
+        "O sextil sugere uma possibilidade de cooperação entre Netuno e Plutão que ganha expressão com participação consciente. Você pode experimentar escolhas que aproximem essas necessidades, reconhecendo recursos disponíveis sem presumir que se desenvolverão por conta própria."
+      ],
+      "professional": [
+        "Você pode examinar como narrativas, expectativas e valores coletivos influenciam decisões dentro de instituições e grupos. O significado profissional dessa combinação depende das casas e de suas demais conexões, permitindo observar a relação entre imagens mobilizadoras e interesses concretos sem atribuir uma vocação fixa a um aspecto geracional.",
+        "No sextil, os temas de Netuno e Plutão podem se apoiar quando você cria oportunidades concretas de colaboração. Prática, conversa e iniciativas delimitadas ajudam a transformar essa possibilidade em recursos úteis para o trabalho."
+      ]
+    },
+    "aspect:pluto:trueNode:120": {
+      "key": "aspect:pluto:trueNode:120",
+      "sourceKeys": [
+        "pair:pluto:trueNode",
+        "aspect:120"
+      ],
+      "title": "Plutão: trígono com Nodo Norte",
+      "personal": [
+        "Sua relação com controle, confiança e mudança participa das perguntas de desenvolvimento representadas pelo eixo nodal. Você pode observar quais formas de se proteger continuam úteis e quais restringem vínculos ou escolhas, experimentando maneiras de compartilhar decisões sem precisar interpretar toda transformação como perda de autonomia.",
+        "O trígono sugere circulação relativamente fluida entre Plutão e Nodo Norte, permitindo que seus temas se apoiem. Você pode reconhecer essa facilidade e cultivá-la conscientemente, observando também hábitos que permanecem pouco questionados justamente por parecerem naturais."
+      ],
+      "professional": [
+        "Você pode examinar como influência, concentração de responsabilidades e acesso à informação participam da sua trajetória profissional. Reconhecer padrões de controle ajuda a escolher formas mais conscientes de exercer poder, enquanto critérios compartilhados permitem rever estruturas sem supor que intensidade ou conflito sejam condições necessárias para seu desenvolvimento.",
+        "No trígono, os temas de Plutão e Nodo Norte podem cooperar com menor esforço de conciliação. Dar finalidade e continuidade a essa facilidade ajuda a desenvolvê-la, sem presumir desempenho excepcional ou reconhecimento garantido."
+      ]
+    }
+  }
+}

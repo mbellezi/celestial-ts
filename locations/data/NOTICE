@@ -1,0 +1,35 @@
+IANA Time Zone Database (tzdb) 2026e
+
+Source: https://www.iana.org/time-zones
+Release: https://www.iana.org/time-zones/releases/2026e
+Archives and SHA-256 pins: time-zones.manifest.json
+
+The embedded locations/src/time-zone-data.ts is derived from the official IANA
+tzdata release with all backzone histories and backward compatibility links.
+The original tzdata and tzcode archives are retained here for offline generation.
+Their LICENSE files state:
+
+    Unless specified below, all files in the tz code and data (including
+    this LICENSE file) are in the public domain.
+
+    If the files date.c, newstrftime.3, and strftime.c are present, they
+    contain material derived from BSD and use the BSD 3-clause license.
+
+The generated offset data is public domain. The listed BSD files are retained
+unmodified in the upstream tzcode source archive, with their original notices;
+they are not compiled into or required by the JavaScript runtime. Only zic is
+built temporarily to generate the data.
+
+Reproduce or verify offline (Python 3, make and a C compiler required):
+    python3 scripts/generate-time-zones.py
+    python3 scripts/generate-time-zones.py --check
+Restore a missing pinned archive by adding --download. Adopt a new release with:
+    python3 scripts/generate-time-zones.py --update VERSION --download
+
+Coverage: 1929-12-30T00:00:00Z <= UTC < 2041-01-03T00:00:00Z.
+Offsets retain seconds; transition instants are integer Unix seconds.
+zic uses POSIX time without leap seconds and materializes recurring future rules
+through the upper bound. Zone names are preserved; data is shared only when all
+offset periods in the supported interval are identical. Historical observations
+in tzdb can be incomplete or approximate, especially before 1970. Future rules
+represent the laws known by this release and can change in a later IANA release.

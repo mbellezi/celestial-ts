@@ -18,7 +18,7 @@ library. UPSTREAM-README.md preserves the original project description.
 Existing source notices and original author metadata remain in place.
 
 Corresponding source for this distribution is included alongside the built
-JavaScript, WebAssembly and TypeScript declarations: core/, wasm/, charts/,
+JavaScript, WebAssembly and TypeScript declarations: core/, wasm/, charts/, locations/,
 tests/, scripts/, Cargo.toml, Cargo.lock and rust-toolchain.toml. Development
 tools are pinned in package.json and the source checkout's package-lock.json.
 The npm archive carries the identical lock as npm-shrinkwrap.json, npm's
@@ -39,3 +39,10 @@ Source: https://github.com/aloistr/swisseph
 The table manifests under core/data/ and core/src/astronomy/ record input
 hashes, versions, generation flags and interpolation validation. Reproducible
 generators are included under scripts/. Runtime interpolation is local.
+
+The locations module embeds offsets derived from the public-domain IANA Time
+Zone Database, including supplementary backzone histories. Original source
+archives, release version, SHA-256 hashes, and upstream license information
+are included in locations/data/. See locations/data/NOTICE and the reproducible
+generator scripts/generate-time-zones.py. Open-Meteo/GeoNames location results
+are fetched on demand, under their service terms and data attribution requirements.
