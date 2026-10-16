@@ -1,0 +1,424 @@
+{
+  "instant": "2026-10-16T00:04:57Z",
+  "location": {
+    "label": "São Paulo",
+    "latitude": -23.55052,
+    "longitude": -46.633308
+  },
+  "timeZone": "America/Sao_Paulo",
+  "natal": {
+    "kind": "natal",
+    "instant": "2026-10-16T00:04:57.000Z",
+    "displayDateTime": "15 de out. de 2026, 21:04:57",
+    "timeZone": "America/Sao_Paulo",
+    "julianDay": 2461329.5034375,
+    "bodies": [
+      {
+        "id": 0,
+        "key": "sun",
+        "longitude": 202.65498078563286,
+        "latitude": -0.0001307383860773143,
+        "distance": 0.9970715961838492,
+        "speedLongitude": 0.9914699800438029,
+        "retrograde": false,
+        "sign": 6,
+        "degreeInSign": 22.65498078563286,
+        "house": 5
+      },
+      {
+        "id": 1,
+        "key": "moon",
+        "longitude": 263.6325105787886,
+        "latitude": -4.6069156829724385,
+        "distance": 0.0027011632522640616,
+        "speedLongitude": 11.905458466274183,
+        "retrograde": false,
+        "sign": 8,
+        "degreeInSign": 23.632510578788583,
+        "house": 7
+      },
+      {
+        "id": 2,
+        "key": "mercury",
+        "longitude": 227.29999935925116,
+        "latitude": -3.10822332638134,
+        "distance": 0.9390636782574122,
+        "speedLongitude": 0.7896887534371047,
+        "retrograde": false,
+        "sign": 7,
+        "degreeInSign": 17.29999935925116,
+        "house": 6
+      },
+      {
+        "id": 3,
+        "key": "venus",
+        "longitude": 215.35432553975335,
+        "latitude": -7.4466043632168955,
+        "distance": 0.2846572096441833,
+        "speedLongitude": -0.4765057882708277,
+        "retrograde": true,
+        "sign": 7,
+        "degreeInSign": 5.354325539753347,
+        "house": 5
+      },
+      {
+        "id": 4,
+        "key": "mars",
+        "longitude": 130.24038999918227,
+        "latitude": 1.286970667935493,
+        "distance": 1.5579238999084535,
+        "speedLongitude": 0.5479114982031206,
+        "retrograde": false,
+        "sign": 4,
+        "degreeInSign": 10.24038999918227,
+        "house": 3
+      },
+      {
+        "id": 5,
+        "key": "jupiter",
+        "longitude": 142.01809030510404,
+        "latitude": 0.6411377986254705,
+        "distance": 5.727316689625212,
+        "speedLongitude": 0.1561637552406978,
+        "retrograde": false,
+        "sign": 4,
+        "degreeInSign": 22.01809030510404,
+        "house": 3
+      },
+      {
+        "id": 6,
+        "key": "saturn",
+        "longitude": 10.552056387525996,
+        "latitude": -2.7121121421043903,
+        "distance": 8.432039993034696,
+        "speedLongitude": -0.07602334019119361,
+        "retrograde": true,
+        "sign": 0,
+        "degreeInSign": 10.552056387525996,
+        "house": 11
+      },
+      {
+        "id": 7,
+        "key": "uranus",
+        "longitude": 65.31571208505963,
+        "latitude": -0.08226836692062893,
+        "distance": 18.67324862871534,
+        "speedLongitude": -0.027534858069515167,
+        "retrograde": true,
+        "sign": 2,
+        "degreeInSign": 5.31571208505963,
+        "house": 1
+      },
+      {
+        "id": 8,
+        "key": "neptune",
+        "longitude": 2.4381829036340537,
+        "latitude": -1.412762609872705,
+        "distance": 28.93779440702374,
+        "speedLongitude": -0.02547183688921173,
+        "retrograde": true,
+        "sign": 0,
+        "degreeInSign": 2.4381829036340537,
+        "house": 10
+      },
+      {
+        "id": 9,
+        "key": "pluto",
+        "longitude": 302.6703113118368,
+        "latitude": -4.267321517929239,
+        "distance": 35.43913382713608,
+        "speedLongitude": 0.0002021191442622694,
+        "retrograde": false,
+        "sign": 10,
+        "degreeInSign": 2.6703113118368265,
+        "house": 8
+      }
+    ],
+    "aspects": [
+      {
+        "body1": 8,
+        "body2": 9,
+        "angle": 60,
+        "orb": 0.2321284082027546,
+        "applying": false
+      },
+      {
+        "body1": 4,
+        "body2": 6,
+        "angle": 120,
+        "orb": 0.31166638834372407,
+        "applying": true
+      },
+      {
+        "body1": 0,
+        "body2": 5,
+        "angle": 60,
+        "orb": 0.6368904805288196,
+        "applying": false
+      },
+      {
+        "body1": 0,
+        "body2": 1,
+        "angle": 60,
+        "orb": 0.9775297931557247,
+        "applying": false
+      },
+      {
+        "body1": 1,
+        "body2": 5,
+        "angle": 120,
+        "orb": 1.6144202736845443,
+        "applying": false
+      },
+      {
+        "body1": 7,
+        "body2": 9,
+        "angle": 120,
+        "orb": 2.6454007732228035,
+        "applying": true
+      },
+      {
+        "body1": 3,
+        "body2": 9,
+        "angle": 90,
+        "orb": 2.6840142279165207,
+        "applying": true
+      },
+      {
+        "body1": 2,
+        "body2": 5,
+        "angle": 90,
+        "orb": 4.718090945852879,
+        "applying": true
+      },
+      {
+        "body1": 3,
+        "body2": 4,
+        "angle": 90,
+        "orb": 4.886064459428923,
+        "applying": false
+      }
+    ],
+    "elements": {
+      "fire": 5,
+      "earth": 0,
+      "air": 3,
+      "water": 2
+    },
+    "location": {
+      "label": "São Paulo",
+      "latitude": -23.55052,
+      "longitude": -46.633308
+    },
+    "houses": {
+      "cusps": [
+        0,
+        61.84436986646128,
+        91.72535390354832,
+        123.89567165121636,
+        157.4424161728009,
+        189.35731868423417,
+        217.33966961859406,
+        241.84436986646128,
+        271.72535390354835,
+        303.8956716512164,
+        337.44241617280085,
+        9.357318684234164,
+        37.33966961859405
+      ],
+      "ascendant": 61.84436986646128,
+      "midheaven": 337.44241617280085,
+      "system": "P"
+    }
+  },
+  "planetary": {
+    "kind": "planetary",
+    "instant": "2026-10-16T00:04:57.000Z",
+    "displayDateTime": "15 de out. de 2026, 21:04:57",
+    "timeZone": "America/Sao_Paulo",
+    "julianDay": 2461329.5034375,
+    "bodies": [
+      {
+        "id": 0,
+        "key": "sun",
+        "longitude": 202.65498078563286,
+        "latitude": -0.0001307383860773143,
+        "distance": 0.9970715961838492,
+        "speedLongitude": 0.9914699800438029,
+        "retrograde": false,
+        "sign": 6,
+        "degreeInSign": 22.65498078563286
+      },
+      {
+        "id": 1,
+        "key": "moon",
+        "longitude": 263.6325105787886,
+        "latitude": -4.6069156829724385,
+        "distance": 0.0027011632522640616,
+        "speedLongitude": 11.905458466274183,
+        "retrograde": false,
+        "sign": 8,
+        "degreeInSign": 23.632510578788583
+      },
+      {
+        "id": 2,
+        "key": "mercury",
+        "longitude": 227.29999935925116,
+        "latitude": -3.10822332638134,
+        "distance": 0.9390636782574122,
+        "speedLongitude": 0.7896887534371047,
+        "retrograde": false,
+        "sign": 7,
+        "degreeInSign": 17.29999935925116
+      },
+      {
+        "id": 3,
+        "key": "venus",
+        "longitude": 215.35432553975335,
+        "latitude": -7.4466043632168955,
+        "distance": 0.2846572096441833,
+        "speedLongitude": -0.4765057882708277,
+        "retrograde": true,
+        "sign": 7,
+        "degreeInSign": 5.354325539753347
+      },
+      {
+        "id": 4,
+        "key": "mars",
+        "longitude": 130.24038999918227,
+        "latitude": 1.286970667935493,
+        "distance": 1.5579238999084535,
+        "speedLongitude": 0.5479114982031206,
+        "retrograde": false,
+        "sign": 4,
+        "degreeInSign": 10.24038999918227
+      },
+      {
+        "id": 5,
+        "key": "jupiter",
+        "longitude": 142.01809030510404,
+        "latitude": 0.6411377986254705,
+        "distance": 5.727316689625212,
+        "speedLongitude": 0.1561637552406978,
+        "retrograde": false,
+        "sign": 4,
+        "degreeInSign": 22.01809030510404
+      },
+      {
+        "id": 6,
+        "key": "saturn",
+        "longitude": 10.552056387525996,
+        "latitude": -2.7121121421043903,
+        "distance": 8.432039993034696,
+        "speedLongitude": -0.07602334019119361,
+        "retrograde": true,
+        "sign": 0,
+        "degreeInSign": 10.552056387525996
+      },
+      {
+        "id": 7,
+        "key": "uranus",
+        "longitude": 65.31571208505963,
+        "latitude": -0.08226836692062893,
+        "distance": 18.67324862871534,
+        "speedLongitude": -0.027534858069515167,
+        "retrograde": true,
+        "sign": 2,
+        "degreeInSign": 5.31571208505963
+      },
+      {
+        "id": 8,
+        "key": "neptune",
+        "longitude": 2.4381829036340537,
+        "latitude": -1.412762609872705,
+        "distance": 28.93779440702374,
+        "speedLongitude": -0.02547183688921173,
+        "retrograde": true,
+        "sign": 0,
+        "degreeInSign": 2.4381829036340537
+      },
+      {
+        "id": 9,
+        "key": "pluto",
+        "longitude": 302.6703113118368,
+        "latitude": -4.267321517929239,
+        "distance": 35.43913382713608,
+        "speedLongitude": 0.0002021191442622694,
+        "retrograde": false,
+        "sign": 10,
+        "degreeInSign": 2.6703113118368265
+      }
+    ],
+    "aspects": [
+      {
+        "body1": 8,
+        "body2": 9,
+        "angle": 60,
+        "orb": 0.2321284082027546,
+        "applying": false
+      },
+      {
+        "body1": 4,
+        "body2": 6,
+        "angle": 120,
+        "orb": 0.31166638834372407,
+        "applying": true
+      },
+      {
+        "body1": 0,
+        "body2": 5,
+        "angle": 60,
+        "orb": 0.6368904805288196,
+        "applying": false
+      },
+      {
+        "body1": 0,
+        "body2": 1,
+        "angle": 60,
+        "orb": 0.9775297931557247,
+        "applying": false
+      },
+      {
+        "body1": 1,
+        "body2": 5,
+        "angle": 120,
+        "orb": 1.6144202736845443,
+        "applying": false
+      },
+      {
+        "body1": 7,
+        "body2": 9,
+        "angle": 120,
+        "orb": 2.6454007732228035,
+        "applying": true
+      },
+      {
+        "body1": 3,
+        "body2": 9,
+        "angle": 90,
+        "orb": 2.6840142279165207,
+        "applying": true
+      },
+      {
+        "body1": 2,
+        "body2": 5,
+        "angle": 90,
+        "orb": 4.718090945852879,
+        "applying": true
+      },
+      {
+        "body1": 3,
+        "body2": 4,
+        "angle": 90,
+        "orb": 4.886064459428923,
+        "applying": false
+      }
+    ],
+    "elements": {
+      "fire": 5,
+      "earth": 0,
+      "air": 3,
+      "water": 2
+    }
+  }
+}

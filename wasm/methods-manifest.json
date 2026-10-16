@@ -1,0 +1,547 @@
+{
+  "methods": [
+    {
+      "core": "AspectOrbs::check",
+      "signature": "pub fn check( &self, pos0: f64, speed0: f64, pos1: f64, speed1: f64, aspect: f64, ) -> AspectMatch",
+      "kind": "method",
+      "export": "AspectOrbs",
+      "member": "check",
+      "static": false
+    },
+    {
+      "core": "AspectOrbs::check_simple",
+      "signature": "pub fn check_simple( &self, pos0: f64, speed0: f64, pos1: f64, speed1: f64, aspect: f64, ) -> AspectMatch",
+      "kind": "method",
+      "export": "AspectOrbs",
+      "member": "checkSimple",
+      "static": false
+    },
+    {
+      "core": "AspectOrbs::def_orb",
+      "signature": "pub fn def_orb(mut self, orb: f64) -> Self",
+      "kind": "method",
+      "export": "AspectOrbs",
+      "member": "defOrb",
+      "static": false
+    },
+    {
+      "core": "AspectOrbs::new",
+      "signature": "pub fn new(app_orb: f64, sep_orb: f64) -> Self",
+      "kind": "constructor",
+      "export": "AspectOrbs",
+      "member": "constructor",
+      "static": false
+    },
+    {
+      "core": "Body::as_raw",
+      "signature": "pub const fn as_raw(self) -> i32",
+      "kind": "function",
+      "export": "bodyAsRaw"
+    },
+    {
+      "core": "Body::from_raw",
+      "signature": "pub const fn from_raw(n: i32) -> Self",
+      "kind": "function",
+      "export": "bodyFromRaw"
+    },
+    {
+      "core": "Body::ingress_search_window",
+      "signature": "pub fn ingress_search_window(self) -> f64",
+      "kind": "function",
+      "export": "bodyIngressSearchWindow"
+    },
+    {
+      "core": "Body::is_known_id",
+      "signature": "pub const fn is_known_id(n: i32) -> bool",
+      "kind": "function",
+      "export": "bodyIsKnownId"
+    },
+    {
+      "core": "Body::is_node",
+      "signature": "pub fn is_node(self) -> bool",
+      "kind": "function",
+      "export": "bodyIsNode"
+    },
+    {
+      "core": "Body::is_planet",
+      "signature": "pub fn is_planet(self) -> bool",
+      "kind": "function",
+      "export": "bodyIsPlanet"
+    },
+    {
+      "core": "Body::name",
+      "signature": "pub fn name(self) -> &'static str",
+      "kind": "function",
+      "export": "bodyName"
+    },
+    {
+      "core": "Body::orb_weight",
+      "signature": "pub fn orb_weight(self) -> f64",
+      "kind": "function",
+      "export": "bodyOrbWeight"
+    },
+    {
+      "core": "Body::retrograde_search_window",
+      "signature": "pub fn retrograde_search_window(self) -> f64",
+      "kind": "function",
+      "export": "bodyRetrogradeSearchWindow"
+    },
+    {
+      "core": "Body::try_from_raw",
+      "signature": "pub const fn try_from_raw(n: i32) -> Result<Self, BodyError>",
+      "kind": "function",
+      "export": "bodyTryFromRaw"
+    },
+    {
+      "core": "CalcFlags::as_raw",
+      "signature": "pub const fn as_raw(self) -> i32",
+      "kind": "function",
+      "export": "calcFlagsAsRaw"
+    },
+    {
+      "core": "CalcFlags::is_sidereal",
+      "signature": "pub fn is_sidereal(self) -> bool",
+      "kind": "function",
+      "export": "calcFlagsIsSidereal"
+    },
+    {
+      "core": "CalcFlags::is_speed",
+      "signature": "pub fn is_speed(self) -> bool",
+      "kind": "function",
+      "export": "calcFlagsIsSpeed"
+    },
+    {
+      "core": "CalcOptions::bodies",
+      "signature": "pub fn bodies(self, bodies: &[Body]) -> MultiCalc<'_>",
+      "kind": "method",
+      "export": "CalcOptions",
+      "member": "bodies",
+      "static": false
+    },
+    {
+      "core": "CalcOptions::body",
+      "signature": "pub fn body(self, body: Body) -> SingleCalc",
+      "kind": "method",
+      "export": "CalcOptions",
+      "member": "body",
+      "static": false
+    },
+    {
+      "core": "CalcOptions::strategy",
+      "signature": "pub fn strategy(mut self, s: CalcStrategy) -> Self",
+      "kind": "method",
+      "export": "CalcOptions",
+      "member": "strategy",
+      "static": false
+    },
+    {
+      "core": "CalcOptions::tt",
+      "signature": "pub fn tt(jd_et: JulianDay, flags: CalcFlags) -> Self",
+      "kind": "method",
+      "export": "CalcOptions",
+      "member": "tt",
+      "static": true
+    },
+    {
+      "core": "CalcOptions::ut",
+      "signature": "pub fn ut(jd_ut: JulianDay, flags: CalcFlags) -> Self",
+      "kind": "method",
+      "export": "CalcOptions",
+      "member": "ut",
+      "static": true
+    },
+    {
+      "core": "Calendar::as_raw",
+      "signature": "pub const fn as_raw(self) -> i32",
+      "kind": "function",
+      "export": "calendarAsRaw"
+    },
+    {
+      "core": "Degrees::get",
+      "signature": "pub const fn get(self) -> f64",
+      "kind": "function",
+      "export": "degreesGet"
+    },
+    {
+      "core": "Degrees::new",
+      "signature": "pub const fn new(v: f64) -> Self",
+      "kind": "function",
+      "export": "degreesNew"
+    },
+    {
+      "core": "EsbatName::alt_names",
+      "signature": "pub fn alt_names(self) -> &'static [&'static str]",
+      "kind": "function",
+      "export": "esbatAltNames"
+    },
+    {
+      "core": "EsbatName::display_name",
+      "signature": "pub fn display_name(self) -> &'static str",
+      "kind": "function",
+      "export": "esbatDisplayName"
+    },
+    {
+      "core": "GrandSolarEpoch::name",
+      "signature": "pub fn name(self) -> &'static str",
+      "kind": "function",
+      "export": "grandSolarEpochName"
+    },
+    {
+      "core": "HouseSystem::as_raw",
+      "signature": "pub const fn as_raw(self) -> u8",
+      "kind": "function",
+      "export": "houseSystemAsRaw"
+    },
+    {
+      "core": "HouseSystem::name",
+      "signature": "pub fn name(self) -> &'static str",
+      "kind": "function",
+      "export": "houseSystemName"
+    },
+    {
+      "core": "JulianDay::get",
+      "signature": "pub const fn get(self) -> f64",
+      "kind": "function",
+      "export": "julianDayGet"
+    },
+    {
+      "core": "JulianDay::new",
+      "signature": "pub const fn new(v: f64) -> Self",
+      "kind": "function",
+      "export": "julianDayNew"
+    },
+    {
+      "core": "Latitude::get",
+      "signature": "pub const fn get(self) -> f64",
+      "kind": "function",
+      "export": "latitudeGet"
+    },
+    {
+      "core": "Latitude::new",
+      "signature": "pub const fn new(v: f64) -> Self",
+      "kind": "function",
+      "export": "latitudeNew"
+    },
+    {
+      "core": "Longitude::get",
+      "signature": "pub const fn get(self) -> f64",
+      "kind": "function",
+      "export": "longitudeGet"
+    },
+    {
+      "core": "Longitude::new",
+      "signature": "pub const fn new(v: f64) -> Self",
+      "kind": "function",
+      "export": "longitudeNew"
+    },
+    {
+      "core": "MoonPhase::name",
+      "signature": "pub fn name(&self) -> &'static str",
+      "kind": "function",
+      "export": "moonPhaseName"
+    },
+    {
+      "core": "MoonPhase::target_elongation",
+      "signature": "pub fn target_elongation(&self) -> f64",
+      "kind": "function",
+      "export": "moonPhaseTargetElongation"
+    },
+    {
+      "core": "MultiCalc::get_many",
+      "signature": "pub fn get_many(self) -> Vec<Result<PlanetPos>>",
+      "kind": "method",
+      "export": "MultiCalc",
+      "member": "getMany",
+      "static": false
+    },
+    {
+      "core": "PrincipalPhase::elongation_target",
+      "signature": "pub fn elongation_target(self) -> f64",
+      "kind": "function",
+      "export": "principalPhaseElongationTarget"
+    },
+    {
+      "core": "PrincipalPhase::name",
+      "signature": "pub fn name(self) -> &'static str",
+      "kind": "function",
+      "export": "principalPhaseName"
+    },
+    {
+      "core": "RiseTransOptions::atmosphere",
+      "signature": "pub fn atmosphere(mut self, pressure_mb: f64, temp_c: f64) -> Self",
+      "kind": "method",
+      "export": "RiseTransOptions",
+      "member": "atmosphere",
+      "static": false
+    },
+    {
+      "core": "RiseTransOptions::event",
+      "signature": "pub fn event(mut self, event_type: i32) -> Self",
+      "kind": "method",
+      "export": "RiseTransOptions",
+      "member": "event",
+      "static": false
+    },
+    {
+      "core": "RiseTransOptions::flags",
+      "signature": "pub fn flags(mut self, flags: CalcFlags) -> Self",
+      "kind": "method",
+      "export": "RiseTransOptions",
+      "member": "flags",
+      "static": false
+    },
+    {
+      "core": "RiseTransOptions::horizon_height",
+      "signature": "pub fn horizon_height(mut self, horhgt: f64) -> Self",
+      "kind": "method",
+      "export": "RiseTransOptions",
+      "member": "horizonHeight",
+      "static": false
+    },
+    {
+      "core": "RiseTransOptions::new",
+      "signature": "pub fn new(jd_ut: JulianDay, planet: Body, geopos: [f64; 3]) -> Self",
+      "kind": "constructor",
+      "export": "RiseTransOptions",
+      "member": "constructor",
+      "static": false
+    },
+    {
+      "core": "RiseTransOptions::search",
+      "signature": "pub fn search(self) -> crate::Result<RiseTransResult>",
+      "kind": "method",
+      "export": "RiseTransOptions",
+      "member": "search",
+      "static": false
+    },
+    {
+      "core": "RiseTransOptions::star",
+      "signature": "pub fn star(mut self, name: impl Into<String>) -> Self",
+      "kind": "method",
+      "export": "RiseTransOptions",
+      "member": "star",
+      "static": false
+    },
+    {
+      "core": "SabbatKind::all_by_longitude",
+      "signature": "pub fn all_by_longitude() -> [Self; 8]",
+      "kind": "function",
+      "export": "sabbatAllByLongitude"
+    },
+    {
+      "core": "SabbatKind::alt_names",
+      "signature": "pub fn alt_names(self) -> &'static [&'static str]",
+      "kind": "function",
+      "export": "sabbatAltNames"
+    },
+    {
+      "core": "SabbatKind::is_cross_quarter",
+      "signature": "pub fn is_cross_quarter(self) -> bool",
+      "kind": "function",
+      "export": "sabbatIsCrossQuarter"
+    },
+    {
+      "core": "SabbatKind::is_quarter_day",
+      "signature": "pub fn is_quarter_day(self) -> bool",
+      "kind": "function",
+      "export": "sabbatIsQuarterDay"
+    },
+    {
+      "core": "SabbatKind::name",
+      "signature": "pub fn name(self) -> &'static str",
+      "kind": "function",
+      "export": "sabbatName"
+    },
+    {
+      "core": "SabbatKind::solar_longitude",
+      "signature": "pub fn solar_longitude(self) -> f64",
+      "kind": "function",
+      "export": "sabbatSolarLongitude"
+    },
+    {
+      "core": "SearchOptions::aspect",
+      "signature": "pub fn aspect(mut self, degrees: f64) -> Self",
+      "kind": "method",
+      "export": "SearchOptions",
+      "member": "aspect",
+      "static": false
+    },
+    {
+      "core": "SearchOptions::backward",
+      "signature": "pub fn backward(mut self, back: bool) -> Self",
+      "kind": "method",
+      "export": "SearchOptions",
+      "member": "backward",
+      "static": false
+    },
+    {
+      "core": "SearchOptions::cusp",
+      "signature": "pub fn cusp(mut self, cusp: usize, lat: f64, lon: f64, hsys: HouseSystem) -> Self",
+      "kind": "method",
+      "export": "SearchOptions",
+      "member": "cusp",
+      "static": false
+    },
+    {
+      "core": "SearchOptions::flags",
+      "signature": "pub fn flags(mut self, flags: CalcFlags) -> Self",
+      "kind": "method",
+      "export": "SearchOptions",
+      "member": "flags",
+      "static": false
+    },
+    {
+      "core": "SearchOptions::natal_chart",
+      "signature": "pub fn natal_chart(mut self, jd_natal: f64, lat: f64, lon: f64, hsys: HouseSystem) -> Self",
+      "kind": "method",
+      "export": "SearchOptions",
+      "member": "natalChart",
+      "static": false
+    },
+    {
+      "core": "SearchOptions::new",
+      "signature": "pub fn new(body: Body, jd_start: f64) -> Self",
+      "kind": "constructor",
+      "export": "SearchOptions",
+      "member": "constructor",
+      "static": false
+    },
+    {
+      "core": "SearchOptions::search_asc_transit",
+      "signature": "pub fn search_asc_transit(self) -> crate::Result<f64>",
+      "kind": "method",
+      "export": "SearchOptions",
+      "member": "searchAscTransit",
+      "static": false
+    },
+    {
+      "core": "SearchOptions::search_cusp",
+      "signature": "pub fn search_cusp(self) -> Option<AspectCuspResult>",
+      "kind": "method",
+      "export": "SearchOptions",
+      "member": "searchCusp",
+      "static": false
+    },
+    {
+      "core": "SearchOptions::search_dsc_transit",
+      "signature": "pub fn search_dsc_transit(self) -> crate::Result<f64>",
+      "kind": "method",
+      "export": "SearchOptions",
+      "member": "searchDscTransit",
+      "static": false
+    },
+    {
+      "core": "SearchOptions::search_ic_transit",
+      "signature": "pub fn search_ic_transit(self) -> crate::Result<f64>",
+      "kind": "method",
+      "export": "SearchOptions",
+      "member": "searchIcTransit",
+      "static": false
+    },
+    {
+      "core": "SearchOptions::search_mc_transit",
+      "signature": "pub fn search_mc_transit(self) -> crate::Result<f64>",
+      "kind": "method",
+      "export": "SearchOptions",
+      "member": "searchMcTransit",
+      "static": false
+    },
+    {
+      "core": "SiderealMode::as_raw",
+      "signature": "pub const fn as_raw(self) -> i32",
+      "kind": "function",
+      "export": "siderealModeAsRaw"
+    },
+    {
+      "core": "SiderealMode::name",
+      "signature": "pub fn name(self) -> &'static str",
+      "kind": "function",
+      "export": "siderealModeName"
+    },
+    {
+      "core": "SingleCalc::get",
+      "signature": "pub fn get(self) -> Result<PlanetPos>",
+      "kind": "method",
+      "export": "SingleCalc",
+      "member": "get",
+      "static": false
+    },
+    {
+      "core": "SolarCyclePhase::name",
+      "signature": "pub fn name(self) -> &'static str",
+      "kind": "function",
+      "export": "solarCyclePhaseName"
+    }
+  ],
+  "representations": {
+    "Body": "number (i32)",
+    "CalcFlags": "number (i32)",
+    "HouseSystem": "number (u8)",
+    "SiderealMode": "number (i32)",
+    "Calendar": "number (0=Julian,1=Gregorian)",
+    "JulianDay": "number (f64)",
+    "Latitude": "number (f64)",
+    "Longitude": "number (f64)",
+    "Degrees": "number (f64)"
+  },
+  "strategy": [
+    "Auto",
+    "Sequential",
+    "Parallel"
+  ],
+  "enums": {
+    "EsbatName": [
+      "Wolf",
+      "Snow",
+      "Worm",
+      "Pink",
+      "Flower",
+      "Strawberry",
+      "Buck",
+      "Sturgeon",
+      "Harvest",
+      "Hunter",
+      "Beaver",
+      "Cold",
+      "Blue"
+    ],
+    "SabbatKind": [
+      "Yule",
+      "Imbolc",
+      "Ostara",
+      "Beltane",
+      "Litha",
+      "Lughnasadh",
+      "Mabon",
+      "Samhain"
+    ],
+    "MoonPhase": [
+      "NewMoon",
+      "WaxingCrescent",
+      "FirstQuarter",
+      "WaxingGibbous",
+      "FullMoon",
+      "WaningGibbous",
+      "LastQuarter",
+      "WaningCrescent"
+    ],
+    "PrincipalPhase": [
+      "NewMoon",
+      "FirstQuarter",
+      "FullMoon",
+      "LastQuarter"
+    ],
+    "SolarCyclePhase": [
+      "Minimum",
+      "Rising",
+      "Maximum",
+      "Declining"
+    ],
+    "GrandSolarEpoch": [
+      "SporerMinimum",
+      "MaunderMinimum",
+      "DaltonMinimum",
+      "ModernMaximum"
+    ]
+  }
+}

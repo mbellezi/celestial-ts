@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Celestial — estudo de estilos</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#ebece8;color:#28343b;font:15px Arial,Helvetica,sans-serif}main{max-width:1460px;margin:auto;padding:44px 36px 70px}.eyebrow{font-size:11px;letter-spacing:3px;color:#64777a}h1{font:42px Georgia,serif;margin:12px 0}header p{color:#627176;line-height:1.6;margin:8px 0 26px}nav{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}.style{padding:13px 18px;text-align:left;background:#f8f9f5;border:1px solid #cdd5d2;border-radius:8px;color:inherit;cursor:pointer;min-width:150px}.style b{display:block;font-size:14px;font-weight:500}.style span{display:flex;gap:4px;margin-top:10px}.style i{height:5px;width:24px;border-radius:3px;background:var(--swatch)}button[aria-pressed="true"]{outline:2px solid #426a71;outline-offset:2px}.toolbar{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:18px 0;border-top:1px solid #cbd3d0}.toolbar label{font-size:12px;color:#596c70;display:flex;align-items:center;gap:8px}select,a.download{font:13px Arial,sans-serif;background:#fafbf8;color:#324e58;border:1px solid #cbd3d0;border-radius:5px;padding:10px 14px}.download{margin-left:auto;text-decoration:none}.stage{background:#dce1de;padding:24px;min-height:300px;display:flex;justify-content:center;align-items:flex-start;border-radius:10px}.stage img{display:block;max-width:1100px;width:100%;height:auto;box-shadow:0 10px 40px #20303312}.description{margin:0 0 16px;color:#586d72}.references{margin-top:32px;color:#61767a;font-size:12px;line-height:1.7}.references a{color:inherit}footer{margin-top:14px;font-size:12px;color:#687a7f}.choice{display:flex;align-items:center;gap:8px;font-size:13px;color:#405e65}#selection{font-size:13px;color:#405e65;min-height:20px}@media(max-width:680px){main{padding:24px 14px}h1{font-size:32px}.stage{padding:0}.style{flex:1;min-width:130px}.download{margin-left:0}}
+.stage{background:var(--stage-bg,#faf8f2)}.stage img{background:transparent}.toolbar input[type="color"]{width:42px;height:34px;padding:2px;border:1px solid #cbd3d0;border-radius:5px}
+</style>
+</head>
+<body><main>
+<header><div class="eyebrow">CELESTIAL / ESTUDO DE COMPOSIÇÃO</div><h1>Seis maneiras de ver o mesmo céu.</h1><p>São Paulo · 15 de outubro de 2026, 21:04:57 · America/Sao_Paulo<br>16 de outubro de 2026, 00:04:57 UTC · zodíaco tropical · cálculos reais da biblioteca.</p></header>
+<nav aria-label="Estilos de apresentação">%%STYLE_BUTTONS%%</nav>
+<div class="toolbar"><label>Mapa <select id="kind"><option value="natal">Natal · São Paulo · Placidus</option><option value="planetary">Planetário · geocêntrico · sem casas</option></select></label><label>Cores <select id="mode"><option value="light">Light</option><option value="dark">Dark</option></select></label><label>Fundo da página <input id="page-background" type="color" value="#faf8f2"></label><label>Visualizar <select id="view"><option value="chart">Composição completa</option><option value="wheel">Roda</option><option value="tables">Todas as tabelas</option><option value="positions">Posições</option><option value="aspects">Matriz de aspectos</option><option value="aspectList">Lista de aspectos</option><option value="houses">Casas</option></select></label><a class="download" id="download" download>Baixar SVG</a></div>
+<p id="description" class="description"></p><div class="stage"><img id="preview" alt="Mapa astrológico calculado pela biblioteca Celestial"></div>
+<div class="toolbar"><label class="choice"><input type="checkbox" id="choose"> Marcar este estilo como favorito</label><span id="selection" aria-live="polite"></span></div>
+<div class="references">Referências de composição: <a href="https://www.astro-charts.com/">Astro Charts</a> · <a href="https://www.astrogold.io/AG-MacOS-Help/wheels.html">Astro Gold</a> · <a href="https://astrology.co.uk/EQCalcs.htm">Equinox</a> · <a href="https://www.astro.com/faq/fq_fh_owstyle_e.htm">Astrodienst</a>. Desenhos e símbolos próprios. Nenhum gráfico de terceiros foi reutilizado.</div>
+<footer>SVG com fundo transparente; a cor da página serve apenas para pré-visualização. Superfícies e faixas usam a paleta escolhida. R indica movimento retrógrado. O mapa planetário não utiliza localização ou casas.</footer>
+</main>
+<script>
+const styles=%%STYLE_DATA%%;
+let theme=styles[0].id;
+const favorites=new Set();
+const preview=document.getElementById('preview');
+const kind=document.getElementById('kind');
+const mode=document.getElementById('mode');
+const pageBackground=document.getElementById('page-background');
+const view=document.getElementById('view');
+const choose=document.getElementById('choose');
+function render(resetBackground=false){
+  if(kind.value==='planetary'&&view.value==='houses')view.value='tables';
+  view.querySelector('option[value="houses"]').disabled=kind.value==='planetary';
+  const item=styles.find(s=>s.id===theme);
+  const source=theme+'-'+mode.value+'-'+kind.value+'-'+view.value+'.svg';
+  if(resetBackground)pageBackground.value=item.palettes[mode.value].background;
+  document.querySelector('.stage').style.setProperty('--stage-bg',pageBackground.value);
+  preview.src=source;
+  preview.alt=item.label['pt-BR']+' · '+mode.value+' — '+kind.options[kind.selectedIndex].text+' — '+view.options[view.selectedIndex].text;
+  document.getElementById('download').href=source;
+  document.getElementById('description').textContent=item.description['pt-BR'];
+  document.querySelectorAll('.style').forEach(b=>{b.setAttribute('aria-pressed',String(b.dataset.theme===theme));const palette=styles.find(s=>s.id===b.dataset.theme).palettes[mode.value];b.querySelectorAll('i').forEach((swatch,index)=>swatch.style.setProperty('--swatch',palette.elements[index]))});
+  choose.checked=favorites.has(theme);
+  document.getElementById('selection').textContent=[...favorites].map(id=>styles.find(s=>s.id===id).label['pt-BR']).join(' · ');
+}
+document.querySelectorAll('.style').forEach(b=>b.addEventListener('click',()=>{theme=b.dataset.theme;render(true)}));
+kind.addEventListener('change',()=>render());view.addEventListener('change',()=>render());
+mode.addEventListener('change',()=>render(true));pageBackground.addEventListener('input',()=>render());
+choose.addEventListener('change',()=>{choose.checked?favorites.add(theme):favorites.delete(theme);render()});
+render(true);
+</script></body></html>

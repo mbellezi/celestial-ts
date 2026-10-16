@@ -1,0 +1,32 @@
+Celestial — upstream source and local adaptations
+
+Upstream: https://github.com/geraldo-netto/celestial
+Pinned revision: 0e2bb383bc7b1b20112bd9ef6b01e7548bf09eb2
+Original author, as declared by the upstream Cargo workspace: geraldo-netto
+
+The original Cargo workspace and core manifests declare AGPL-3.0-or-later.
+The original README describes the project as AGPL-3.0. The pinned upstream
+tree does not contain a separate LICENSE file. The LICENSE included here
+contains the unmodified GNU Affero General Public License, version 3 text.
+This distribution preserves the original licensing; it does not relicense
+the upstream work or claim ownership of its authors' contributions.
+
+The core source and its public APIs originate in that upstream revision.
+Local changes add a complete wasm-bindgen interface, standalone build and
+test tooling, WASM-compatible test execution, and a TypeScript vector chart
+library. UPSTREAM-README.md preserves the original project description.
+Existing source notices and original author metadata remain in place.
+
+Corresponding source for this distribution is included alongside the built
+JavaScript, WebAssembly and TypeScript declarations: core/, wasm/, charts/,
+tests/, scripts/, Cargo.toml, Cargo.lock and rust-toolchain.toml. Development
+tools are pinned in package.json and the source checkout's package-lock.json.
+The npm archive carries the identical lock as npm-shrinkwrap.json, npm's
+supported lockfile format for distributions.
+The runtime package has no JavaScript dependencies. Third-party development
+tools and Rust crates retain their respective licenses and are identified
+in the npm and Cargo lockfiles.
+THIRD-PARTY-NOTICES.txt reproduces the original license and copyright texts
+for the locked registry crates in the WASM release dependency graph, with
+their declared licenses, versions and source repositories. Regenerate it
+with npm run licenses after updating those dependencies.
