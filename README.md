@@ -131,9 +131,9 @@ await writeFile('mapa.svg', renderChartSvg(sky, { theme: 'minimal', colors: 'dar
 
 ## Temas, cores e transparência
 
-[<img src="docs/images/editorial-light-natal-chart.png" alt="Mapa natal no tema Editorial, paleta clara" width="220">](charts/examples/gallery/index.html)
-[<img src="docs/images/midnight-dark-natal-chart.png" alt="Mapa natal no tema Observatório, paleta escura" width="220">](charts/examples/gallery/index.html)
-[<img src="docs/images/prism-light-natal-chart.png" alt="Mapa natal no tema Prisma, paleta clara" width="220">](charts/examples/gallery/index.html)
+[<img src="docs/images/editorial-light-natal-chart.png" alt="Mapa natal no tema Editorial, paleta clara" width="220">](docs/themes.md)
+[<img src="docs/images/midnight-dark-natal-chart.png" alt="Mapa natal no tema Observatório, paleta escura" width="220">](docs/themes.md)
+[<img src="docs/images/prism-light-natal-chart.png" alt="Mapa natal no tema Prisma, paleta clara" width="220">](docs/themes.md)
 
 Veja o [catálogo visual completo](docs/themes.md): os seis temas em light e dark,
 com mapas natais, planetários e cada roda/tabela individual, gerados pela biblioteca.
