@@ -60,12 +60,13 @@
     "locations/tests/",
     "locations/data/",
     "locations/tsconfig.json",
-    "locations/README.md"
+    "locations/README.md",
+    "examples/app/"
   ],
   "scripts": {
     "build": "node scripts/wasm.mjs build",
     "build:charts": "node scripts/charts.mjs build",
-    "test": "npm run test:core && npm run test:bindings && npm run test:charts && npm run test:reports && npm run test:locations && npm run docs:check && npm run licenses:check",
+    "test": "npm run test:core && npm run test:bindings && npm run test:charts && npm run test:reports && npm run test:locations && npm run test:example && npm run docs:check && npm run licenses:check",
     "test:core": "node scripts/wasm.mjs core",
     "test:bindings": "node scripts/wasm.mjs bindings",
     "test:charts": "node scripts/charts.mjs test",
@@ -81,7 +82,10 @@
     "test:reports": "node scripts/reports.mjs test",
     "build:locations": "node scripts/locations.mjs build",
     "test:locations": "node scripts/locations.mjs test",
-    "timezones:check": "python3 scripts/generate-time-zones.py --check"
+    "timezones:check": "python3 scripts/generate-time-zones.py --check",
+    "example": "node scripts/example.mjs",
+    "example:build": "node scripts/example.mjs export",
+    "test:example": "node --test examples/app/tests/*.test.mjs"
   },
   "devDependencies": {
     "@types/node": "22.19.13",

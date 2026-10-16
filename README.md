@@ -321,6 +321,31 @@ O catálogo local possui 380 entradas editoriais e 971 combinações rastreávei
 sem chamadas a modelos ou à rede durante a geração. Consulte a
 [API natal, as convenções e os exemplos](reports/README.md#interpretação-psicológica-do-mapa-natal).
 
+## Aplicação de exemplo
+
+A aplicação em [`examples/app/`](examples/app/README.md) reúne a leitura Astro
+do dia, a leitura Astro do mês e o mapa natal completo em uma interface em
+HTML, CSS e JavaScript, sem framework. A página inicial tem cards em tons
+pastéis e ilustrações SVG; os formulários incluem seletores de data, busca de
+cidade e confirmação explícita de horários repetidos na mudança do relógio.
+
+```sh
+npm run build
+npm run example
+# Abra http://127.0.0.1:4173/
+```
+
+O shell aparece imediatamente. Um loader acompanha o carregamento do WASM,
+e um worker executa os cálculos para manter a interface responsiva. Os
+relatórios podem ser baixados em JSON, texto puro, Markdown e HTML; os gráficos
+natais também podem ser baixados individualmente em SVG. As leituras coletivas
+cobrem 2026–2035 e o natal cobre 1930–2040. A conversão histórica usa a base
+IANA da biblioteca; apenas a busca de cidades exige um serviço externo.
+
+`npm run example:build` exporta os assets locais e as fontes correspondentes
+para `dist/example-app/`, prontos para um servidor HTTP estático. Veja as
+[instruções, requisitos e testes do exemplo](examples/app/README.md).
+
 ## Documentação e comandos
 
 - [Guia de mapas, funções, temas, paletas, dados e erros](charts/README.md).
@@ -336,7 +361,7 @@ sem chamadas a modelos ou à rede durante a geração. Consulte a
 | --- | --- |
 | `npm run build` | Compila Rust/WASM, bindings, charts, reports e locations |
 | `npm run build:charts` | Recompila somente TypeScript, após existir o build WASM |
-| `npm test` | Core WASM, bindings, gráficos, relatórios, cidades/UTC, referência API e avisos de licença |
+| `npm test` | Core WASM, bindings, gráficos, relatórios, cidades/UTC, aplicação, referência API e avisos de licença |
 | `npm run test:core` | Testes unitários, integração e Rustdoc em WASM |
 | `npm run test:bindings` | Build e testes TypeScript sobre o WASM real |
 | `npm run build:reports` | Compila somente relatórios TypeScript, após existir o build WASM |
@@ -345,6 +370,9 @@ sem chamadas a modelos ou à rede durante a geração. Consulte a
 | `npm run build:locations` | Compila a API de cidades e UTC, sem exigir WASM |
 | `npm run test:locations` | Verifica busca de cidades, seleção e conversão histórica para UTC |
 | `npm run timezones:check` | Reproduz e verifica offline os dados IANA embutidos |
+| `npm run example` | Abre o servidor local da aplicação em 127.0.0.1:4173 |
+| `npm run example:build` | Exporta a aplicação estática autocontida para dist/example-app |
+| `npm run test:example` | Verifica servidor, exportação e integração real da aplicação |
 | `npm run gallery` | Gera SVGs, galeria interativa e catálogo visual de todos os componentes |
 | `npm run docs` | Regenera a referência a partir das declarações compiladas |
 | `npm run docs:check` | Detecta referência API desatualizada |

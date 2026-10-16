@@ -5,3 +5,4 @@
 /npm-shrinkwrap.json
 __pycache__/
 *.py[cod]
+/dist/
