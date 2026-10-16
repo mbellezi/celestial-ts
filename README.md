@@ -351,6 +351,7 @@ para `dist/example-app/`, prontos para um servidor HTTP estático. Veja as
 - [Guia de mapas, funções, temas, paletas, dados e erros](charts/README.md).
 - [Guia de relatórios coletivos, intervalos, catálogo e cache](reports/README.md).
 - [Referência completa gerada das APIs TypeScript](docs/api-reference.md).
+- [Relatório técnico das correções e orientação para backport no upstream](docs/backport-correcoes-celestial.md).
 - [Cidades, coordenadas e horário de nascimento em UTC](locations/README.md).
 - [Contratos do binding WASM](wasm/README.md).
 - [Arquitetura](docs/architecture.md), [portabilidade e baseline dos testes](docs/portability.md).
