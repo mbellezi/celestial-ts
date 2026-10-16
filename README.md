@@ -7,7 +7,7 @@ sua camada de gráficos TypeScript.
 
 Biblioteca de efemérides em Rust/WebAssembly com bindings TypeScript completos,
 mapas astrológicos e tabelas em SVG, além de relatórios em português com saídas
-estruturadas e em texto. Funciona em Node.js e em workers de módulo do navegador.
+estruturadas, em texto, HTML e Markdown. Funciona em Node.js e em workers de módulo do navegador.
 O runtime não depende de DOM, canvas, N-API ou pacotes JavaScript externos.
 
 Este diretório é a raiz independente da biblioteca: código, configurações,
@@ -212,8 +212,16 @@ geocêntrica, com enfoque psicológico: traz um panorama geral e cinco áreas,
 | `report(input)` | Objeto TypeScript com todos os eventos, durações e interpretações |
 | `reportJSON(input)` | Relatório completo serializado em JSON |
 | `reportText(input, options?)` | Parágrafos cronológicos completos; permite escolher as áreas |
+| `reportHTML(input, options?)` | Relatório completo em fragmento HTML |
+| `reportMarkdown(input, options?)` | Relatório completo em Markdown |
 | `reportCompact(input, options?)` | Objeto com panorama, destaques e frases por área |
 | `reportCompactText(input, options?)` | Versão compacta em parágrafos prontos para exibição |
+| `reportCompactHTML(input, options?)` | Versão compacta em fragmento HTML |
+| `reportCompactMarkdown(input, options?)` | Versão compacta em Markdown |
+| `reportAstro(input, options?)` | Leitura editorial com título, panorama e passagens cronológicas rastreáveis |
+| `reportAstroText(input, options?)` | Leitura astro em prosa, com datas e reflexões práticas |
+| `reportAstroHTML(input, options?)` | Leitura astro em fragmento HTML |
+| `reportAstroMarkdown(input, options?)` | Leitura astro em Markdown |
 
 Exemplo no navegador ou em worker (para Node.js, use a
 [inicialização com os bytes do WASM](#uso-em-nodejs)):
@@ -233,6 +241,7 @@ const period = {
 const fullReport = generator.report(period);
 const compactReport = generator.reportCompact(period);
 const monthText = generator.reportCompactText(period);
+const astroText = generator.reportAstroText(period);
 const dayText = generator.reportCompactText({
   start: '2026-02-17',
   end: '2026-02-17',
@@ -246,11 +255,33 @@ para o mês e três para o dia, além das cinco áreas. O catálogo de interpret
 é estático e local. Reutilize o gerador para aproveitar os caches de cálculos,
 relatórios, JSON e textos.
 
+A leitura `astro` desenvolve os eventos selecionados em prosa, com título
+temático, panorama e a seção “O MOMENTO ATUAL”. Usa um corpus editorial local e
+versionado, sem chamadas a modelos de linguagem ou serviços externos. O padrão
+seleciona até quatro eventos no dia e dezoito no mês ou período;
+`{ maxEvents: 8 }` ajusta esse limite, entre 1 e 32. O JSON preserva as fontes de
+cada passagem e informa quantos eventos ficaram fora da seleção.
+
+HTML e Markdown estão disponíveis para as três leituras, com as mesmas opções
+dos respectivos métodos de texto. O HTML contém um `<article lang="pt-BR">`
+com títulos, seções e parágrafos, sem estilos ou scripts. Os renderizadores
+`renderReportHTML`, `renderReportMarkdown`, `renderCompactReportHTML`,
+`renderCompactReportMarkdown`, `renderAstroReportHTML` e `renderAstroReportMarkdown`
+reaproveitam objetos já calculados. Conteúdo textual é escapado em ambos os
+formatos, inclusive quando contém marcação fornecida pelo consumidor.
+
 Consulte a **[documentação detalhada dos relatórios](reports/README.md)** para
 formatos de entrada e saída, durações, fusos, opções, critérios de seleção e
 limites da leitura. Há exemplos completos em [JSON](reports/examples/february-2026.json)
 e [texto](reports/examples/february-2026.txt), além das versões compactas de
 [mês](reports/examples/february-2026-compact.txt) e [dia](reports/examples/2026-02-17-compact.txt).
+O comando `npm run build:reports && node reports/examples/generate-astro.ts`
+gera as leituras astro de outubro de 2026 e de 16 de outubro em JSON e texto,
+no diretório `reports/examples/`.
+O comando `node reports/examples/generate-markup.ts` converte os exemplos JSON
+existentes para [HTML completo](reports/examples/february-2026.html) e
+[Markdown completo](reports/examples/february-2026.md), além das leituras compacta
+e astro, sem repetir o cálculo astronômico.
 
 ## Documentação e comandos
 
@@ -295,6 +326,10 @@ autoria, revisão e alterações. O [README original](UPSTREAM-README.md) també
 foi preservado. As dependências mantêm suas próprias licenças, com textos e avisos
 em [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
 
-O motor usa efemérides embutidas e conserva as aproximações do core original.
-Os testes de regressão não demonstram equivalência de precisão com Swiss
-Ephemeris/JPL.
+O motor combina séries VSOP87D com dados Swiss versionados e embutidos para
+Lua, Mercúrio, Netuno, Plutão, Quíron, nodo verdadeiro e ΔT no intervalo natal
+de 1930 a 2040. O runtime Rust/WASM não exige Swiss instalada. Fora das tabelas,
+usa aproximações analíticas cuja precisão não é coberta pela auditoria.
+A [auditoria de precisão](docs/validation/precision-1930-2040.txt) registra a
+amostragem, os resíduos e as diferenças de convenção. Nos corpos tabulados,
+a comparação mede fidelidade à Swiss, não valida uma teoria física independente.

@@ -572,10 +572,17 @@ mod cov_tests {
     }
 
     #[test]
-    fn helio_cross_returns_some_for_mars_j2000() {
+    fn helio_cross_reaches_mercury_target_at_j2000() {
         let jd = JulianDay::new(2_451_545.0);
         let crossing = helio_cross(2, 90.0, jd, FLG_BUILTIN as i32, true).unwrap();
-        assert_eq!(crossing, 2_451_592.263_018_415);
+        let position = calc_ut(
+            JulianDay::new(crossing),
+            2,
+            FLG_BUILTIN as i32 | crate::astronomy::flag::FLG_HELCTR as i32,
+        )
+        .unwrap();
+        assert!(signed_angular_distance(90.0, position.lon).abs() < 1e-7);
+        assert!(crossing > 2_451_545.0 && crossing < 2_451_633.0);
         let heliocentric = FLG_BUILTIN as i32 | crate::astronomy::flag::FLG_HELCTR as i32;
         assert_eq!(helio_cross(2, 90.0, jd, heliocentric, true), Some(crossing));
     }
@@ -584,8 +591,8 @@ mod cov_tests {
     fn mooncross_node_within_draconic_month() {
         let jd = JulianDay::new(2_451_545.0);
         let crossing = mooncross_node(jd, FLG_BUILTIN as i32).unwrap();
-        assert_eq!(crossing.jd_cross, 2_451_564.912_438_109_5);
-        assert_eq!(crossing.xlon, 123.678_251_251_218_46);
+        assert_eq!(crossing.jd_cross, 2_451_564.912_843_257);
+        assert_eq!(crossing.xlon, 123.685_152_673_136_27);
     }
 
     #[test]
@@ -594,12 +601,16 @@ mod cov_tests {
         let flags = FLG_BUILTIN as i32;
         let forward = find_crossing(0, 90.0, jd, true, flags).unwrap();
         let backward = find_crossing(0, 90.0, jd, false, flags).unwrap();
-        assert_eq!(forward, 2_451_716.569_027_677_6);
-        assert_eq!(backward, 2_451_351.320_080_211);
+        assert!(backward < 2_451_545.0 && forward > 2_451_545.0);
+        assert!((forward - backward - 365.25).abs() < 0.1);
+        for crossing in [forward, backward] {
+            let position = calc_ut(JulianDay::new(crossing), 0, flags).unwrap();
+            assert!(signed_angular_distance(90.0, position.lon).abs() < 1e-7);
+        }
         assert_eq!(solcross(90.0, jd, flags), Some(forward));
         assert_eq!(solcross_ut(90.0, jd, flags), Some(forward));
 
-        let moon = Some(2_451_562.667_374_155);
+        let moon = Some(2_451_562.667_305_295);
         assert_eq!(mooncross(90.0, jd, flags), moon);
         assert_eq!(mooncross_ut(90.0, jd, flags), moon);
     }
@@ -607,10 +618,10 @@ mod cov_tests {
     #[test]
     fn crossing_window_matches_regression_and_limit() {
         let flags = FLG_BUILTIN as i32;
-        assert_eq!(
-            find_crossing_window(6, 90.0, 2_451_545.0, true, flags, 4_000.0),
-            Some(2_452_798.481_687_132)
-        );
+        let crossing = find_crossing_window(6, 90.0, 2_451_545.0, true, flags, 4_000.0).unwrap();
+        assert!(crossing > 2_451_545.0 && crossing < 2_455_545.0);
+        let position = calc_ut(JulianDay::new(crossing), 6, flags).unwrap();
+        assert!(signed_angular_distance(90.0, position.lon).abs() < 1e-7);
         assert_eq!(
             find_crossing_window(6, 90.0, 2_451_545.0, false, flags, 4_000.0),
             None

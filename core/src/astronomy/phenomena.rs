@@ -148,25 +148,10 @@ mod tests {
     use wasm_bindgen_test::wasm_bindgen_test as test;
 
     use super::*;
-    use crate::astronomy::test_support::f64_fingerprint;
-
-    fn phenomena_fingerprint(cases: &[(i32, f64, f64, f64, f64, f64)]) -> u64 {
-        f64_fingerprint(cases.iter().flat_map(
-            |&(body, lon, lat, distance, sun_distance, sun_lon)| {
-                let value = compute_phenomena(body, lon, lat, distance, sun_distance, sun_lon);
-                [
-                    value.phase_angle,
-                    value.phase_frac,
-                    value.elongation,
-                    value.ang_diameter,
-                    value.magnitude,
-                ]
-            },
-        ))
-    }
+    use crate::astronomy::test_support::assert_close;
 
     #[test]
-    fn all_body_models_match_regression_fingerprint() {
+    fn all_body_models_match_regression_vectors() {
         let cases = [
             (0, 5.0, -1.0, 1.0, 1.1, 355.0),
             (1, 30.0, 3.0, 0.00257, 1.0, 250.0),
@@ -180,7 +165,90 @@ mod tests {
             (9, 350.0, 2.0, 34.0, 39.5, 170.0),
             (42, 180.0, 4.0, 2.0, 2.5, 15.0),
         ];
-        assert_eq!(phenomena_fingerprint(&cases), 0xa663_06f9_1131_60da);
+        // Compare numerical fields rather than a hash of floating-point bits:
+        // native and WASM transcendental functions can differ by one ulp.
+        let expected = [
+            [
+                56.632987030768255,
+                0.7749999999999999,
+                10.0,
+                1919.2688863562075,
+                -26.74,
+            ],
+            [
+                89.9263749030633,
+                0.5006425000000039,
+                140.0,
+                1864.2040810687151,
+                -10.140331962450293,
+            ],
+            [
+                108.20995686428299,
+                0.3437500000000001,
+                20.0,
+                8.409615814995236,
+                -19.40557112640017,
+            ],
+            [
+                108.76374780368215,
+                0.3391666666666666,
+                70.0,
+                33.37676788797853,
+                -4.724278985931598,
+            ],
+            [
+                36.681009202944026,
+                0.9009868421052631,
+                80.0,
+                11.683564701091745,
+                -0.5199572826719475,
+            ],
+            [
+                8.466325731840879,
+                0.9945512820512821,
+                170.0,
+                43.810140712652185,
+                -2.5065890842900798,
+            ],
+            [
+                4.134879781449764,
+                0.9986985364112329,
+                165.0,
+                18.885732062968337,
+                0.9243649290533633,
+            ],
+            [
+                2.825006170158489,
+                0.9993923611111111,
+                115.0,
+                3.6144228853650566,
+                5.764589217606782,
+            ],
+            [
+                1.5382658798107152,
+                0.9998198096739681,
+                105.0,
+                2.314880071464239,
+                7.748249447967256,
+            ],
+            [0.0, 1.0, 180.0, 0.09637777522639414, 14.640380063343578],
+            [22.331645009221504, 0.9625, 165.0, 0.0, 99.9],
+        ];
+        for ((body, lon, lat, distance, sun_distance, sun_lon), expected) in
+            cases.into_iter().zip(expected)
+        {
+            let p = compute_phenomena(body, lon, lat, distance, sun_distance, sun_lon);
+            assert_close(
+                [
+                    p.phase_angle,
+                    p.phase_frac,
+                    p.elongation,
+                    p.ang_diameter,
+                    p.magnitude,
+                ],
+                expected,
+            );
+        }
     }
 
     #[test]

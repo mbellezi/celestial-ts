@@ -96,3 +96,33 @@ export interface CompactAstrologyReport {
   selection: { totalEvents: number; selectedEvents: number; omittedEvents: number; maxHighlights: number; policy: string };
   disclaimer: string;
 }
+
+export interface AstroReportOptions {
+  /** Source events to select: 1–32; defaults to four for a day and eighteen otherwise. */
+  maxEvents?: number;
+}
+export interface AstroPassage {
+  /** Chronological anchor, not a claim that an influence begins here. */
+  at: string;
+  background: boolean;
+  eventIds: string[];
+  interpretationKeys: string[];
+  sourceKeys: string[];
+  exact: string[];
+  paragraphs: string[];
+}
+export interface AstroReport {
+  version: string;
+  editorialVersion: string;
+  sourceReportVersion: string;
+  catalogVersion: string;
+  locale: 'pt-BR';
+  style: 'astro';
+  kind: 'day' | 'month' | 'period';
+  range: AstrologyReport['range'];
+  title: string;
+  overview: string;
+  passages: AstroPassage[];
+  selection: { totalEvents: number; selectedEvents: number; omittedEvents: number; maxEvents: number; policy: string };
+  disclaimer: string;
+}

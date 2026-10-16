@@ -67,7 +67,7 @@ test('glyphs escape attributes and reject invalid geometry or unsupported symbol
 test('positions preserve calculated signs, arcseconds, houses and retrograde markers', () => {
   const table = renderPositionsTable(natal, { theme, x: 12, y: 34, width: 360 });
   assert.match(table.svg, /translate\(12 34\)/);
-  assert.match(table.svg, /10°22′32″/);
+  assert.match(table.svg, /10°22′08″/);
   assert.match(table.svg, /13°19′25″/);
   assert.match(table.svg, /Capricórnio/);
   assert.equal(count(table.svg, 'data-glyph="body:'), natal.bodies.length);

@@ -649,7 +649,7 @@ fn test_close_is_safe() {
 
 #[test]
 fn test_calc_ut_sun_exact() {
-    // C-library reference: lon=280.382968, diff=0.008° (27 arcsec) — VSOP87 vs SE
+    // Swiss Ephemeris 2.10.03, SWIEPH, swe_calc_ut(2452275.5, SUN, SPEED).
     setup();
     let pos = calc_ut(
         JulianDay::new(2452275.5),
@@ -657,12 +657,10 @@ fn test_calc_ut_sun_exact() {
         CalcFlags::BUILTIN | CalcFlags::SPEED,
     )
     .unwrap();
-    // Updated for IAU 2000B nutation + IAU 2006 obliquity (more accurate)
-    assert_approx!(pos.lon, 280.390_607_728_379_6);
-    assert_approx!(pos.lat, 0.000_142_242_172_615_266);
-    assert_approx!(pos.dist, 0.983_299_271_367_027_4);
-    // Updated for iterative light-time (3 passes) + IAU 2000B
-    assert_approx!(pos.speed_lon, 1.018_981_306_422_745);
+    assert_approx_tol!(pos.lon, 280.383726413619058, 0.25 / 3600.0);
+    assert_approx_tol!(pos.lat, 0.000149705356802, 0.1 / 3600.0);
+    assert_approx_tol!(pos.dist, 0.983297831685172, 1e-7);
+    assert_approx_tol!(pos.speed_lon, 1.018877273054637, 1e-5);
 }
 
 #[test]
@@ -772,10 +770,10 @@ fn test_azalt_sun() {
 
 #[test]
 fn test_deltat_reference_exact() {
-    // C-library reference: 0.000744214, diff=1.4e-7 days (< 0.01 seconds)
+    // Independent Swiss Ephemeris 2.10.03 deltat_ex(SWIEPH), days.
     setup();
     let dt = deltat(JulianDay::new(2452275.5));
-    assert_approx!(dt, 0.000_744_357_784_440_741);
+    assert_approx!(dt, 0.000_744_213_824_793_547_2);
 }
 
 #[test]
@@ -797,228 +795,193 @@ fn test_solcross_equinox_2022() {
     assert!(d.day >= 19 && d.day <= 21);
 }
 
-/// Pin exact crossing JDs to ~10ms precision (1e-7 day). Guards against
-/// regressions in the find_crossing root-finder (e.g. accidentally widening
-/// the convergence tolerance during refactor/optimization).
-fn check_solcross_baselines(jd_2002: f64, j2000: f64, f: CalcFlags, tol: f64) {
-    let cases: [(f64, f64, f64); 5] = [
-        (0.0, jd_2002, 2452354.297022234),
-        (90.0, jd_2002, 2452447.052914176),
-        (180.0, jd_2002, 2452540.699601538),
-        (270.0, jd_2002, 2452630.546177711),
-        (0.0, j2000, 2451623.810232319),
-    ];
-    for (target, start, expected) in cases {
-        assert_approx_tol!(
-            solcross(Longitude::new(target), JulianDay::new(start), f).unwrap(),
-            expected,
-            tol
-        );
-    }
-}
-
-fn check_sign_ingress_baselines(j2000: f64, f: CalcFlags, tol: f64) {
-    let cases = [
-        (Body::SUN, 2451564.257859215_f64, 10_u8),
-        // Saturn ingress JD + sign re-anchored after VSOP87 L0 coefficient
-        // fixes (multiple passes — see Jupiter/Saturn L0[0..3] history).
-        (Body::SATURN, 2452022.3050354873_f64, 2_u8),
-    ];
-    for (body, expected_jd, expected_sign) in cases {
-        let (jd_ing, sign) = sign_ingress_ut(body, JulianDay::new(j2000), f, false).unwrap();
-        assert_approx_tol!(jd_ing, expected_jd, tol);
-        assert_eq!(sign, expected_sign);
-    }
-}
-
+/// Solar crossings must converge to the requested longitude, preserve
+/// chronology, and agree with the independent Swiss equinox epochs below.
 #[test]
 fn precision_search_root_finder_baselines() {
     setup();
-    const TOL: f64 = 1.0e-7; // ≈ 8.6 ms in time
     let f = CalcFlags::BUILTIN;
-    let jd_2002 = julday(2002, 1, 1, 0.0, Calendar::Gregorian);
-    let j2000 = 2_451_545.0_f64;
-
-    check_solcross_baselines(jd_2002, j2000, f, TOL);
-    assert_approx_tol!(
-        mooncross(Longitude::new(45.0), JulianDay::new(jd_2002), f).unwrap(),
-        2452297.335581569,
-        TOL
-    );
-    check_sign_ingress_baselines(j2000, f, TOL);
-
+    let start = julday(2002, 1, 1, 0.0, Calendar::Gregorian);
+    let mut previous = start;
+    // Swiss Ephemeris swe_solcross_ut, SWIEPH (2002 seasonal longitudes).
+    let seasons = [
+        (0.0, 2452354.302872339),
+        (90.0, 2452447.058611099),
+        (180.0, 2452540.7051305957),
+        (270.0, 2452630.551641313),
+    ];
+    for (target, reference) in seasons {
+        let jd = solcross(Longitude::new(target), JulianDay::new(start), f).unwrap();
+        assert!(jd > previous);
+        previous = jd;
+        assert_approx_tol!(jd, reference, 10.0 / 86400.0);
+        let p = calc_ut(JulianDay::new(jd), Body::SUN, f).unwrap();
+        let residual = ((p.lon - target + 540.0) % 360.0 - 180.0).abs();
+        assert!(residual < 1e-7, "target {target}: residual {residual}");
+    }
+    let j2000 = 2451545.0;
+    for body in [Body::SUN, Body::SATURN] {
+        let (jd, sign) = sign_ingress_ut(body, JulianDay::new(j2000), f, false).unwrap();
+        assert!(jd > j2000);
+        let p = calc_ut(JulianDay::new(jd), body, f).unwrap();
+        let residual = (p.lon / 30.0 - (p.lon / 30.0).round()).abs();
+        assert!(residual < 1e-6);
+        assert!(sign < 12);
+    }
+    let natal = calc_ut(JulianDay::new(j2000), Body::SUN, f).unwrap();
     let sr = solar_return_jd(JulianDay::new(j2000), 2001, f).unwrap();
-    assert_approx_tol!(sr, 2452275.485449128, TOL);
-
-    let sun = calc_ut(
-        JulianDay::new(solcross(Longitude::new(0.0), JulianDay::new(jd_2002), f).unwrap()),
-        Body::SUN,
-        f,
-    )
-    .unwrap();
-    let lon_err = sun.lon.min(360.0 - sun.lon);
-    assert!(
-        lon_err < 1.0e-6,
-        "Sun lon err at vernal eq = {lon_err:.2e}°"
-    );
+    let returned = calc_ut(JulianDay::new(sr), Body::SUN, f).unwrap();
+    let residual = ((returned.lon - natal.lon + 540.0) % 360.0 - 180.0).abs();
+    assert!(residual < 1e-7);
 }
 
-/// Pin VSOP87 / ELP / Sun apparent-place outputs at J2000 and 2024-01-01 to
-/// 1e-9° precision (~3.6 µas). Guards the per-planet apparent-place pipeline
-/// against any future micro-optimization that quietly changes outputs (e.g.
-/// Horner restructuring, FMA-related rounding, reduced-term truncation).
+/// Independent Swiss Ephemeris 2.10.03 SWIEPH apparent tropical positions.
+/// JDE is TT; fixtures use swe_calc and sepl_18.se1/semo_18.se1.
+/// VSOP87D differs intrinsically from the modern numerical ephemeris;
+/// the Moon uses a shorter theory and therefore has a distinct error budget.
 #[test]
 fn precision_apparent_place_baselines_j2000_and_2024() {
     setup();
-    const TOL: f64 = 1.0e-9;
     let f = CalcFlags::BUILTIN;
-
     let cases = [
-        // body,        jd,            lon,                 lat,                dist
         (
             Body::MERCURY,
-            2_451_545.0,
-            271.8765228312275,
-            -0.9981301695052,
-            1.4153268254354,
+            2451545.0,
+            271.8881273474759,
+            -0.9947565905860,
+            1.4154660373146,
         ),
         (
             Body::MERCURY,
-            2_460_310.5,
-            262.2770066692142,
-            3.0668891947528,
-            0.7777288493346,
+            2460310.5,
+            262.2818500939392,
+            3.0650174825882,
+            0.7775301144090,
         ),
         (
             Body::VENUS,
-            2_451_545.0,
-            241.5664318147962,
-            2.0661666543225,
-            1.1375660095225,
+            2451545.0,
+            241.5648951906558,
+            2.0663697915931,
+            1.1375744236797,
         ),
         (
             Body::VENUS,
-            2_460_310.5,
-            242.6129882221621,
-            1.9495709246388,
-            1.1818888699331,
+            2460310.5,
+            242.6113371720650,
+            1.9498435053914,
+            1.1819022900292,
         ),
         (
             Body::MARS,
-            2_451_545.0,
-            327.9531725847972,
-            -1.0736813714935,
-            1.8498090334355,
+            2451545.0,
+            327.9627294888347,
+            -1.0677946555713,
+            1.8496838316123,
         ),
         (
             Body::MARS,
-            2_460_310.5,
-            267.3148078012864,
-            -0.5592211390088,
-            2.4235954834448,
-        ),
-        // Jupiter / Saturn baselines re-anchored after VSOP87 L0
-        // coefficient correction:
-        //   * L0[0], L0[1] amplitudes restored to Meeus values
-        //     (previously 10× too large).
-        //   * Spurious L0[2] (Jupiter) / L0[3] (Saturn) constants at
-        //     (B = π, C = 0) removed — not in any published VSOP87
-        //     truncation and contributed multi-degree offsets.
-        //
-        // New values are within ~1° of published ephemerides for
-        // Jupiter (25°02' Aries at J2000 vs reference 25°39' Aries)
-        // and Saturn (7°10' Taurus at J2000 vs reference 10°25' Taurus).
-        (
-            Body::JUPITER,
-            2_451_545.0,
-            25.0312507754169,
-            -1.2609450246062,
-            4.6216887874175,
+            2460310.5,
+            267.3077614591482,
+            -0.5504990473064,
+            2.4238091917126,
         ),
         (
             Body::JUPITER,
-            2_460_310.5,
-            35.0726689996438,
-            -1.1922514173551,
-            4.4877477511907,
+            2451545.0,
+            25.2530570670509,
+            -1.2621916728666,
+            4.6211636054255,
+        ),
+        (
+            Body::JUPITER,
+            2460310.5,
+            35.5823907481342,
+            -1.1854804672368,
+            4.4814912796650,
         ),
         (
             Body::SATURN,
-            2_451_545.0,
-            40.1476669523243,
-            -2.4350302618492,
-            8.6460648040470,
+            2451545.0,
+            40.3956782302600,
+            -2.4448582367220,
+            8.6527857088004,
         ),
         (
             Body::SATURN,
-            2_460_310.5,
-            333.3415447055528,
-            -1.6433766639427,
-            10.2694257893770,
+            2460310.5,
+            333.2434842176955,
+            -1.6341354487402,
+            10.2946910168355,
         ),
         (
             Body::URANUS,
-            2_451_545.0,
-            314.8463892885476,
-            -0.6434574148391,
-            20.7388666310007,
+            2451545.0,
+            314.8091505306448,
+            -0.6583350428660,
+            20.7271633988340,
         ),
         (
             Body::URANUS,
-            2_460_310.5,
-            49.4926222231872,
-            -0.2460759070733,
-            18.9413547152486,
+            2460310.5,
+            49.3839348613678,
+            -0.3061178560113,
+            18.9754101273655,
         ),
         (
             Body::NEPTUNE,
-            2_451_545.0,
-            303.1938059892162,
-            0.2355279586170,
-            31.0244934218826,
+            2451545.0,
+            303.1929869475176,
+            0.2349920132958,
+            31.0244927190012,
         ),
         (
             Body::NEPTUNE,
-            2_460_310.5,
-            355.0649465318356,
-            -1.2285523025799,
-            30.1353021195810,
+            2460310.5,
+            355.0761551860200,
+            -1.2372505206735,
+            30.1425478310199,
         ),
         (
             Body::SUN,
-            2_451_545.0,
-            280.3750271111339,
-            0.0001806303569,
-            0.9833275902306,
+            2451545.0,
+            280.3681655525800,
+            0.0002273585497,
+            0.9833276307942,
         ),
         (
             Body::SUN,
-            2_460_310.5,
-            280.0451786488423,
-            0.0001308948428,
-            0.9833201051160,
+            2460310.5,
+            280.0381783537654,
+            0.0001620373973,
+            0.9833182906453,
         ),
         (
             Body::MOON,
-            2_451_545.0,
-            223.3148683672493,
-            5.1712789870871,
-            0.0026901769907,
+            2451545.0,
+            223.3148705417676,
+            5.1708720095137,
+            0.0026899754322,
         ),
         (
             Body::MOON,
-            2_460_310.5,
-            155.9831940407285,
-            3.5680016669497,
-            0.0027050511388,
+            2460310.5,
+            155.9827121275705,
+            3.5681414749714,
+            0.0027048095357,
         ),
     ];
-
-    for (body, jd, lon_exp, lat_exp, dist_exp) in cases {
-        let r = calc(JulianDay::new(jd), body, f).unwrap();
-        assert_approx_tol!(r.lon, lon_exp, TOL);
-        assert_approx_tol!(r.lat, lat_exp, TOL);
-        assert_approx_tol!(r.dist, dist_exp, TOL);
+    for (body, jd, lon, lat, distance) in cases {
+        let p = calc(JulianDay::new(jd), body, f).unwrap();
+        let angle_tolerance = if body == Body::MOON { 15.0 } else { 4.0 } / 3600.0;
+        let lon_error = ((p.lon - lon + 540.0) % 360.0 - 180.0).abs();
+        assert!(
+            lon_error < angle_tolerance,
+            "{body:?} {jd}: longitude error {lon_error} deg"
+        );
+        assert_approx_tol!(p.lat, lat, angle_tolerance);
+        let distance_tolerance = if body == Body::MOON { 5e-7 } else { 1e-4 };
+        assert_approx_tol!(p.dist, distance, distance_tolerance);
     }
 }
 

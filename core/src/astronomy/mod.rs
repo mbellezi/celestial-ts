@@ -36,11 +36,13 @@
 pub mod ayanamsa;
 pub mod constants;
 pub mod delta_t;
+pub(crate) mod deflection;
 pub mod engine;
 pub mod houses;
 pub mod moon;
 pub mod nutation;
 pub mod planetary;
+pub(crate) mod precision_ephemeris;
 pub(crate) mod pluto;
 pub mod rise_set;
 pub mod vsop87;

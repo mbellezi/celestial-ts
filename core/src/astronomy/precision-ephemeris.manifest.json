@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "description": "Full geocentric Cartesian states in the mean ecliptic/equinox of date, AU, time argument TT. Moon includes Swiss apparent light-time/aberration semantics except nutation. Other bodies retain light time but disable aberration and gravitational deflection. No residual fitting or case-specific adjustment.",
+  "license": "AGPL-3.0-or-later",
+  "upstream": "https://github.com/aloistr/swisseph",
+  "wrapperVersion": "2.10.3.2",
+  "swissVersion": "2.10.03",
+  "ephemerisManifest": {
+    "upstreamCommit": "c113653fe37fe5cdbfcc030a6e341de03ef018d2",
+    "files": [
+      {
+        "name": "sepl_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/sepl_18.se1",
+        "bytes": 484061,
+        "sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+      },
+      {
+        "name": "semo_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/semo_18.se1",
+        "bytes": 1304771,
+        "sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+      },
+      {
+        "name": "seas_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/seas_18.se1",
+        "bytes": 223004,
+        "sha256": "a2cd8fc33807c78ca9a700c91c2e042258b12fc4796519e00781440b5ad8b2e2"
+      }
+    ]
+  },
+  "degree": 18,
+  "startInclusiveJD": 2425960.5,
+  "layout": "little-endian f64, body then segment then axis XYZ then Chebyshev coefficient k=0..degree; c0 is unhalved",
+  "binaryBytes": 8099928,
+  "binarySha256": "b5b8c76376957e84517e225de3f61c98e5aef6a84a56d2f54eb763efe1b645c5",
+  "generatorSha256": "a56772d80c0cc1fb3ca44ce27a1f9a531749be1aae2053b78a299a1a77d1e6b8",
+  "validationSeed": 14852404390717825088,
+  "validationDescription": "10000 pseudorandom off-grid holdouts per body with a seed distinct from the full audit; also every internal junction and +/-1e-6 day. Angular bound is Cartesian vector error / reference radius, covering longitude and latitude jointly except spherical-coordinate pole singularities.",
+  "bodies": [
+    {
+      "id": 1,
+      "name": "Moon",
+      "stepDays": 4,
+      "segments": 10150,
+      "byteOffset": 0,
+      "flags": 4162,
+      "endInclusiveJD": 2466560.5,
+      "validation": {
+        "randomHoldouts": 10000,
+        "junctionAndAdjacentHoldouts": 30447,
+        "maxVectorErrorAU": 1.2666078541695101e-11,
+        "maxAngularVectorErrorArcsec": 0.0010819685887064612,
+        "worstJDTT": 2459387.683854643,
+        "maxCentralDerivativeDifferenceArcsecPerDay": 0.06314293323067574,
+        "derivativeStepDays": 0.01
+      }
+    },
+    {
+      "id": 2,
+      "name": "Mercury",
+      "stepDays": 8,
+      "segments": 5075,
+      "byteOffset": 4628400,
+      "flags": 5698,
+      "endInclusiveJD": 2466560.5,
+      "validation": {
+        "randomHoldouts": 10000,
+        "junctionAndAdjacentHoldouts": 15222,
+        "maxVectorErrorAU": 3.730052391323793e-09,
+        "maxAngularVectorErrorArcsec": 0.000856437590616733,
+        "worstJDTT": 2455565.426178452,
+        "maxCentralDerivativeDifferenceArcsecPerDay": 0.01971184656388244,
+        "derivativeStepDays": 0.01
+      }
+    },
+    {
+      "id": 8,
+      "name": "Neptune",
+      "stepDays": 32,
+      "segments": 1269,
+      "byteOffset": 6942600,
+      "flags": 5698,
+      "endInclusiveJD": 2466568.5,
+      "validation": {
+        "randomHoldouts": 10000,
+        "junctionAndAdjacentHoldouts": 3804,
+        "maxVectorErrorAU": 7.021406125855724e-08,
+        "maxAngularVectorErrorArcsec": 0.0004842902942183385,
+        "worstJDTT": 2442497.10197839,
+        "maxCentralDerivativeDifferenceArcsecPerDay": 0.0016232648755303185,
+        "derivativeStepDays": 0.01
+      }
+    },
+    {
+      "id": 9,
+      "name": "Pluto",
+      "stepDays": 32,
+      "segments": 1269,
+      "byteOffset": 7521264,
+      "flags": 5698,
+      "endInclusiveJD": 2466568.5,
+      "validation": {
+        "randomHoldouts": 10000,
+        "junctionAndAdjacentHoldouts": 3804,
+        "maxVectorErrorAU": 5.285384046141522e-08,
+        "maxAngularVectorErrorArcsec": 0.0003628452265371011,
+        "worstJDTT": 2450497.4333536397,
+        "maxCentralDerivativeDifferenceArcsecPerDay": 0.002792703992662051,
+        "derivativeStepDays": 0.01
+      }
+    }
+  ]
+}

@@ -14,7 +14,7 @@ Para atualizar: `npm run build` e `npm run docs`. Para verificar: `npm run docs:
 A geração não executa cálculos nem modifica o pacote compilado.
 
 - [Core WASM](#core-wasm): 410 exports.
-- [Relatórios coletivos](#relatórios-coletivos): 28 exports e 0 tipos de apoio.
+- [Relatórios coletivos](#relatórios-coletivos): 40 exports e 0 tipos de apoio.
 - [Gráficos SVG](#gráficos-svg): 51 exports e 7 tipos de apoio.
 
 `InitOutput` descreve o ABI bruto retornado pela inicialização; os cálculos de
@@ -6645,20 +6645,31 @@ export type SyncInitInput = BufferSource | WebAssembly.Module;
 
 ## Relatórios coletivos
 
-Importação: `celestial-wasm/reports`. **28 exports públicos**.
+Importação: `celestial-wasm/reports`. **40 exports públicos**.
 
 | Categoria | Exports |
 | --- | ---: |
-| Funções | 6 |
+| Funções | 14 |
 | Classes | 0 |
-| Interfaces | 11 |
+| Interfaces | 14 |
 | Aliases de tipos | 5 |
-| Constantes e variáveis | 6 |
+| Constantes e variáveis | 7 |
 | Enumerações | 0 |
 
-### Funções (6)
+### Funções (14)
 
-[`compactReport`](#reports-compactReport) · [`createReportGenerator`](#reports-createReportGenerator) · [`getCatalog`](#reports-getCatalog) · [`renderCompactReportText`](#reports-renderCompactReportText) · [`renderReportText`](#reports-renderReportText) · [`resolveInterpretation`](#reports-resolveInterpretation)
+[`astroReport`](#reports-astroReport) · [`compactReport`](#reports-compactReport) · [`createReportGenerator`](#reports-createReportGenerator) · [`getCatalog`](#reports-getCatalog) · [`renderAstroReportHTML`](#reports-renderAstroReportHTML) · [`renderAstroReportMarkdown`](#reports-renderAstroReportMarkdown) · [`renderAstroReportText`](#reports-renderAstroReportText) · [`renderCompactReportHTML`](#reports-renderCompactReportHTML) · [`renderCompactReportMarkdown`](#reports-renderCompactReportMarkdown) · [`renderCompactReportText`](#reports-renderCompactReportText) · [`renderReportHTML`](#reports-renderReportHTML) · [`renderReportMarkdown`](#reports-renderReportMarkdown) · [`renderReportText`](#reports-renderReportText) · [`resolveInterpretation`](#reports-resolveInterpretation)
+
+<a id="reports-astroReport"></a>
+
+#### `astroReport`
+
+Declaração: [pkg/reports/astro.d.ts](../pkg/reports/astro.d.ts).
+
+```typescript
+/** Versioned prose composed locally from selected calculated events, without a language-model service. */
+export declare function astroReport(report: AstrologyReport, options?: AstroReportOptions): AstroReport;
+```
 
 <a id="reports-compactReport"></a>
 
@@ -6684,11 +6695,35 @@ export declare function createReportGenerator(core: ReportWasmApi, options?: {
 }): {
     report: (input: ReportInput) => AstrologyReport;
     reportCompact: (input: ReportInput, options?: CompactReportOptions) => CompactAstrologyReport;
+    reportAstro: (input: ReportInput, options?: AstroReportOptions) => AstroReport;
+    reportAstroText(input: ReportInput, options?: AstroReportOptions): string;
+    reportAstroHTML(input: ReportInput, options?: AstroReportOptions): string;
+    reportAstroMarkdown(input: ReportInput, options?: AstroReportOptions): string;
     reportCompactText(input: ReportInput, options?: CompactReportOptions): string;
+    reportCompactHTML(input: ReportInput, options?: CompactReportOptions): string;
+    reportCompactMarkdown(input: ReportInput, options?: CompactReportOptions): string;
     reportText(input: ReportInput, textOptions?: ReportTextOptions): string;
+    reportHTML(input: ReportInput, options?: ReportTextOptions): string;
+    reportMarkdown(input: ReportInput, options?: ReportTextOptions): string;
     reportJSON(input: ReportInput, space?: number): string;
     clearCache(): void;
     readonly cacheStats: {
+        astro: {
+            size: number;
+            capacity: number;
+            hits: number;
+            misses: number;
+            bytes: number;
+            maxBytes: number;
+        };
+        astroRendered: {
+            size: number;
+            capacity: number;
+            hits: number;
+            misses: number;
+            bytes: number;
+            maxBytes: number;
+        };
         compact: {
             size: number;
             capacity: number;
@@ -6760,6 +6795,56 @@ Declaração: [pkg/reports/catalog.d.ts](../pkg/reports/catalog.d.ts).
 export declare function getCatalog(): ResolvedInterpretation[];
 ```
 
+<a id="reports-renderAstroReportHTML"></a>
+
+#### `renderAstroReportHTML`
+
+Declaração: [pkg/reports/markup.d.ts](../pkg/reports/markup.d.ts).
+
+```typescript
+export declare function renderAstroReportHTML(report: AstroReport): string;
+```
+
+<a id="reports-renderAstroReportMarkdown"></a>
+
+#### `renderAstroReportMarkdown`
+
+Declaração: [pkg/reports/markup.d.ts](../pkg/reports/markup.d.ts).
+
+```typescript
+export declare function renderAstroReportMarkdown(report: AstroReport): string;
+```
+
+<a id="reports-renderAstroReportText"></a>
+
+#### `renderAstroReportText`
+
+Declaração: [pkg/reports/astro.d.ts](../pkg/reports/astro.d.ts).
+
+```typescript
+export declare function renderAstroReportText(report: AstroReport): string;
+```
+
+<a id="reports-renderCompactReportHTML"></a>
+
+#### `renderCompactReportHTML`
+
+Declaração: [pkg/reports/markup.d.ts](../pkg/reports/markup.d.ts).
+
+```typescript
+export declare function renderCompactReportHTML(report: CompactAstrologyReport): string;
+```
+
+<a id="reports-renderCompactReportMarkdown"></a>
+
+#### `renderCompactReportMarkdown`
+
+Declaração: [pkg/reports/markup.d.ts](../pkg/reports/markup.d.ts).
+
+```typescript
+export declare function renderCompactReportMarkdown(report: CompactAstrologyReport): string;
+```
+
 <a id="reports-renderCompactReportText"></a>
 
 #### `renderCompactReportText`
@@ -6768,6 +6853,28 @@ Declaração: [pkg/reports/compact.d.ts](../pkg/reports/compact.d.ts).
 
 ```typescript
 export declare function renderCompactReportText(report: CompactAstrologyReport): string;
+```
+
+<a id="reports-renderReportHTML"></a>
+
+#### `renderReportHTML`
+
+Declaração: [pkg/reports/markup.d.ts](../pkg/reports/markup.d.ts).
+
+```typescript
+/** Basic HTML fragment with sections and escaped text, without styles or scripts. */
+export declare function renderReportHTML(report: AstrologyReport, options?: ReportTextOptions): string;
+```
+
+<a id="reports-renderReportMarkdown"></a>
+
+#### `renderReportMarkdown`
+
+Declaração: [pkg/reports/markup.d.ts](../pkg/reports/markup.d.ts).
+
+```typescript
+/** Markdown headings and paragraphs; report contents are treated as literal text. */
+export declare function renderReportMarkdown(report: AstrologyReport, options?: ReportTextOptions): string;
 ```
 
 <a id="reports-renderReportText"></a>
@@ -6792,9 +6899,71 @@ export declare function resolveInterpretation(key: string): ResolvedInterpretati
 ```
 
 
-### Interfaces (11)
+### Interfaces (14)
 
-[`AstrologyReport`](#reports-AstrologyReport) · [`CompactAstrologyReport`](#reports-CompactAstrologyReport) · [`CompactHighlight`](#reports-CompactHighlight) · [`CompactReportOptions`](#reports-CompactReportOptions) · [`DetectionRequest`](#reports-DetectionRequest) · [`DomainSummary`](#reports-DomainSummary) · [`ReportEntry`](#reports-ReportEntry) · [`ReportEvent`](#reports-ReportEvent) · [`ReportInput`](#reports-ReportInput) · [`ReportTextOptions`](#reports-ReportTextOptions) · [`ResolvedInterpretation`](#reports-ResolvedInterpretation)
+[`AstroPassage`](#reports-AstroPassage) · [`AstroReport`](#reports-AstroReport) · [`AstroReportOptions`](#reports-AstroReportOptions) · [`AstrologyReport`](#reports-AstrologyReport) · [`CompactAstrologyReport`](#reports-CompactAstrologyReport) · [`CompactHighlight`](#reports-CompactHighlight) · [`CompactReportOptions`](#reports-CompactReportOptions) · [`DetectionRequest`](#reports-DetectionRequest) · [`DomainSummary`](#reports-DomainSummary) · [`ReportEntry`](#reports-ReportEntry) · [`ReportEvent`](#reports-ReportEvent) · [`ReportInput`](#reports-ReportInput) · [`ReportTextOptions`](#reports-ReportTextOptions) · [`ResolvedInterpretation`](#reports-ResolvedInterpretation)
+
+<a id="reports-AstroPassage"></a>
+
+#### `AstroPassage`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface AstroPassage {
+    /** Chronological anchor, not a claim that an influence begins here. */
+    at: string;
+    background: boolean;
+    eventIds: string[];
+    interpretationKeys: string[];
+    sourceKeys: string[];
+    exact: string[];
+    paragraphs: string[];
+}
+```
+
+<a id="reports-AstroReport"></a>
+
+#### `AstroReport`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface AstroReport {
+    version: string;
+    editorialVersion: string;
+    sourceReportVersion: string;
+    catalogVersion: string;
+    locale: 'pt-BR';
+    style: 'astro';
+    kind: 'day' | 'month' | 'period';
+    range: AstrologyReport['range'];
+    title: string;
+    overview: string;
+    passages: AstroPassage[];
+    selection: {
+        totalEvents: number;
+        selectedEvents: number;
+        omittedEvents: number;
+        maxEvents: number;
+        policy: string;
+    };
+    disclaimer: string;
+}
+```
+
+<a id="reports-AstroReportOptions"></a>
+
+#### `AstroReportOptions`
+
+Declaração: [pkg/reports/types.d.ts](../pkg/reports/types.d.ts).
+
+```typescript
+export interface AstroReportOptions {
+    /** Source events to select: 1–32; defaults to four for a day and eighteen otherwise. */
+    maxEvents?: number;
+}
+```
 
 <a id="reports-AstrologyReport"></a>
 
@@ -7068,9 +7237,19 @@ Declaração: [pkg/reports/events.d.ts](../pkg/reports/events.d.ts).
 export type ReportWasmApi = Pick<typeof import('../celestial_wasm.js'), 'constants' | 'calcUtMany' | 'setDeltaTUserdef'>;
 ```
 
-### Constantes e variáveis (6)
+### Constantes e variáveis (7)
 
-[`CATALOG_VERSION`](#reports-CATALOG_VERSION) · [`COMPACT_REPORT_VERSION`](#reports-COMPACT_REPORT_VERSION) · [`DEFAULT_ORBS`](#reports-DEFAULT_ORBS) · [`REPORT_BODIES`](#reports-REPORT_BODIES) · [`REPORT_DOMAINS`](#reports-REPORT_DOMAINS) · [`REPORT_VERSION`](#reports-REPORT_VERSION)
+[`ASTRO_REPORT_VERSION`](#reports-ASTRO_REPORT_VERSION) · [`CATALOG_VERSION`](#reports-CATALOG_VERSION) · [`COMPACT_REPORT_VERSION`](#reports-COMPACT_REPORT_VERSION) · [`DEFAULT_ORBS`](#reports-DEFAULT_ORBS) · [`REPORT_BODIES`](#reports-REPORT_BODIES) · [`REPORT_DOMAINS`](#reports-REPORT_DOMAINS) · [`REPORT_VERSION`](#reports-REPORT_VERSION)
+
+<a id="reports-ASTRO_REPORT_VERSION"></a>
+
+#### `ASTRO_REPORT_VERSION`
+
+Declaração: [pkg/reports/astro.d.ts](../pkg/reports/astro.d.ts).
+
+```typescript
+export declare const ASTRO_REPORT_VERSION = "1.0.0";
+```
 
 <a id="reports-CATALOG_VERSION"></a>
 

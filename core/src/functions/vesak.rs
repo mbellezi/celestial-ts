@@ -188,6 +188,9 @@ pub fn uposatha_days(year: i32) -> Vec<Uposatha> {
 
 // ─── Tests ────────────────────────────────────────────────────────────────────
 
+// Wrapper regression vectors follow the corrected VSOP87D/apparent models;
+// external model anchors and measured residuals are in astronomy tests and
+// docs/validation/pluto-nodes-model.md. Preserve strict wrapper tolerances.
 #[cfg(test)]
 mod tests {
     #[cfg(target_arch = "wasm32")]
@@ -204,10 +207,10 @@ mod tests {
     fn phase_search_regressions() {
         let start = julday(2025, 1, 1, 0.0, Calendar::Gregorian);
         let cases = [
-            (0.0, 2460705.0256086336),
-            (90.0, 2460682.4979206445),
-            (180.0, 2460689.43604228),
-            (270.0, 2460697.3555077435),
+            (0.0, 2460705.0249908576),
+            (90.0, 2460682.4974298337),
+            (180.0, 2460689.4353567036),
+            (270.0, 2460697.3547196435),
         ];
         for (target, expected) in cases {
             assert_close(find_phase(start, target), expected);
@@ -270,9 +273,9 @@ mod tests {
     #[test]
     fn vesak_regressions() {
         for (year, expected) in [
-            (2021, 2459360.968251149),
-            (2024, 2460454.0787673993),
-            (2025, 2460808.2057218654),
+            (2021, 2459360.967973795),
+            (2024, 2460454.078573269),
+            (2025, 2460808.205516778),
         ] {
             assert_close(vesak_jd(year), expected);
         }
@@ -281,9 +284,9 @@ mod tests {
     #[test]
     fn uposatha_regressions() {
         let cases = [
-            (2021, 49, 2459220.901330012, 2459575.6003538957),
-            (2024, 50, 2460313.646782997, 2460675.435761745),
-            (2025, 49, 2460682.4979206445, 2461037.2989227148),
+            (2021, 49, 2459220.9008495575, 2459575.59983127),
+            (2024, 50, 2460313.64614891, 2460675.435280434),
+            (2025, 49, 2460682.4974298337, 2461037.298515898),
         ];
         for (year, count, first, last) in cases {
             let days = uposatha_days(year);

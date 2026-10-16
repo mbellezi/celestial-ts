@@ -45,7 +45,42 @@ test('the requested São Paulo instant uses real geocentric tropical positions a
   assert.deepEqual([sun.longitude, sun.latitude, sun.distance, sun.speedLongitude],
     [reference.lon, reference.lat, reference.dist, reference.speedLon]);
   assert.equal(chart.bodies.find(body => body.key === 'venus')?.retrograde, true);
-  assert.equal(chart.bodies.find(body => body.key === 'pluto')?.retrograde, false);
+  assert.equal(chart.bodies.find(body => body.key === 'pluto')?.retrograde, true);
+  // Independent Swiss Ephemeris 2.10.03 SWIEPH|SPEED calc_ut, with
+  // pinned sepl_18.se1/semo_18.se1. Tropical apparent geocentric, same UT.
+  const swiss = [
+    [202.6515714801919, 0.991527578259526],
+    [263.63155924250816, 11.902365945412424],
+    [227.29857143808456, 0.7897394901106303],
+    [215.35392211194093, -0.4768170705390478],
+    [130.18910583768238, 0.5489036090645378],
+    [142.10393644877854, 0.15472529781863908],
+    [10.409072430311157, -0.0758349245520308],
+    [65.19152190155644, -0.027541969008671723],
+    [2.459546036780446, -0.02559883921676439],
+    [303.06861875910835, -0.00005155549817378235],
+  ];
+  const signed = (angle: number) => ((angle + 540) % 360) - 180;
+  chart.bodies.forEach((body, index) => {
+    const [longitude, speed] = swiss[index]!;
+    assert.ok(Math.abs(signed(body.longitude - longitude!)) * 3600 < 4, body.key);
+    assert.equal(body.retrograde, speed! < 0, body.key);
+  });
+  for (const aspect of chart.aspects) {
+    const a = swiss[aspect.body1]!, b = swiss[aspect.body2]!;
+    const separation = signed(a[0]! - b[0]!);
+    const orb = Math.abs(Math.abs(separation) - aspect.angle);
+    assert.ok(Math.abs(aspect.orb - orb) * 3600 < 8);
+    assert.equal(aspect.applying,
+      (a[1]! - b[1]!) * separation * (Math.abs(separation) - aspect.angle) < 0);
+  }
+  const swissCusps = [61.8438824927685, 91.72459720453195, 123.89490016934106,
+    157.4420604894965, 189.35739687785, 217.33970686150934, 241.8438824927685,
+    271.72459720453196, 303.89490016934104, 337.4420604894965, 9.357396877850004,
+    37.33970686150935];
+  swissCusps.forEach((cusp, index) => {
+    assert.ok(Math.abs(signed(chart.houses!.cusps[index + 1]! - cusp)) * 3600 < 1);
+  });
   assert.equal(Object.values(chart.elements).reduce((sum, count) => sum + count, 0), 10);
 });
 

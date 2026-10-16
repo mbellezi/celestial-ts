@@ -1,0 +1,200 @@
+{
+  "status": "historical_pre_correction_diagnostic",
+  "statusNote": "Historical measurements from the pre-correction implementation. These values are preserved and do not describe the current engine.",
+  "currentValidation": "swiss-1930-2040.json",
+  "schemaVersion": 1,
+  "methodology": "Independent Python evaluation of Rust literal terms (amplitudes multiplied by 10 exactly as eval_vsop) and final three fields of original IMCCE VSOP87D rows. Difference is local minus official. Annual scope uses 111 Jan 1 UT dates 1930 through 2040. Example uses JD directly as dynamical date for diagnostic isolation, without delta T; full apparent place is separately tested by compare-swiss.py. Geocentric experiment fixes local Earth and iterates light time three times, replacing only Jupiter series. No FK5, nutation or aberration applied. VSOP87D uses heliocentric ecliptic and equinox of date, not J2000.",
+  "limitation": "Sampled coefficient diagnostic, not a continuous accuracy certificate. Official VSOP87D and Swiss are distinct reference theories.",
+  "sourceRust": {
+    "path": "core/src/astronomy/vsop87.rs",
+    "sha256": "9952b922397a2478353f7d6033c5b2fc082f09e44703a4641be6b73b3b5ef574"
+  },
+  "auditScriptSha256": "7254d5cd088568b9eed4bdde8c803127ccbf059fae7e54dce9e127a58b1caec9",
+  "officialSources": [
+    {
+      "file": "VSOP87D.mer",
+      "sha256": "f468481b5a05080a943ad4746ff7ea7e0ff6652b71a46d83c9c636cb69485e34",
+      "bytes": 910385,
+      "url": "https://ftp.imcce.fr/pub/ephem/planets/vsop87/VSOP87D.mer"
+    },
+    {
+      "file": "VSOP87D.ven",
+      "sha256": "cb2f3a738289ed45f69fec1845e480baf4b32d481eccc21b8629a2d0d10e8261",
+      "bytes": 226100,
+      "url": "https://ftp.imcce.fr/pub/ephem/planets/vsop87/VSOP87D.ven"
+    },
+    {
+      "file": "VSOP87D.ear",
+      "sha256": "8b160c859136d467f2be7fc29efa8a9652e95516dfbde00e4c739d7ddc90ca91",
+      "bytes": 324786,
+      "url": "https://ftp.imcce.fr/pub/ephem/planets/vsop87/VSOP87D.ear"
+    },
+    {
+      "file": "VSOP87D.mar",
+      "sha256": "b1184df9553d85ffcf904c16bd437ab668804fa98859f27fe2e7bf6cfa6bc07e",
+      "bytes": 731633,
+      "url": "https://ftp.imcce.fr/pub/ephem/planets/vsop87/VSOP87D.mar"
+    },
+    {
+      "file": "VSOP87D.jup",
+      "sha256": "3f3dfbc7d117ecad2b2dadf2fc626b260a3cd5efa98e7d4c6b26cd682fc48090",
+      "bytes": 465633,
+      "url": "https://ftp.imcce.fr/pub/ephem/planets/vsop87/VSOP87D.jup"
+    },
+    {
+      "file": "VSOP87D.sat",
+      "sha256": "2e49e19396f24c17298f0b667e7763ee5c28b60d549c89d72a17dfd5f8d46b05",
+      "bytes": 768341,
+      "url": "https://ftp.imcce.fr/pub/ephem/planets/vsop87/VSOP87D.sat"
+    },
+    {
+      "file": "VSOP87D.ura",
+      "sha256": "80eb3a778d53f450066d9b13f17e15b979e253437d22f33ec5a4604cdb2872a7",
+      "bytes": 532665,
+      "url": "https://ftp.imcce.fr/pub/ephem/planets/vsop87/VSOP87D.ura"
+    },
+    {
+      "file": "VSOP87D.nep",
+      "sha256": "3ff65a5cabc04c411f975888f77268b89e336ece0b75d198a3935090fdde3ae6",
+      "bytes": 258818,
+      "url": "https://ftp.imcce.fr/pub/ephem/planets/vsop87/VSOP87D.nep"
+    }
+  ],
+  "example": {
+    "jd": 2441465.6666666665,
+    "utCalendarLabel": "1972-05-28T04:00:00",
+    "deltaLocalMinusOfficial": {
+      "MERCURY": {
+        "L": 0.04501394193816174,
+        "B": -0.008039487312071388,
+        "R": -2.544651229746675e-05
+      },
+      "VENUS": {
+        "L": 0.0017328440137999363,
+        "B": -0.0024210112291106777,
+        "R": -4.637610222624211e-06
+      },
+      "EARTH": {
+        "L": 0.00020522884632534518,
+        "B": -1.962945503305141e-05,
+        "R": 3.6557973501771812e-06
+      },
+      "MARS": {
+        "L": -0.07492814160734318,
+        "B": 0.01937341646130344,
+        "R": 0.00035733251718617076
+      },
+      "JUPITER": {
+        "L": -0.9103978190051575,
+        "B": -3.459887870954579e-05,
+        "R": -0.000546346904204853
+      },
+      "SATURN": {
+        "L": -0.12402290285746008,
+        "B": 0.010183991448065293,
+        "R": 0.015512326397146836
+      },
+      "URANUS": {
+        "L": 0.021646177257470887,
+        "B": 0.008079887295874192,
+        "R": -0.014654536966769882
+      },
+      "NEPTUNE": {
+        "L": -0.08963244905993525,
+        "B": -0.0140556838756202,
+        "R": 0.009366146569419698
+      }
+    },
+    "units": {
+      "L": "degrees",
+      "B": "degrees",
+      "R": "AU"
+    },
+    "geocentricJupiter": {
+      "local": {
+        "longitudeDegrees": 275.5690245819135,
+        "distanceAU": 4.3338052453886355
+      },
+      "officialJupiterSameLocalEarth": {
+        "longitudeDegrees": 276.6643928695847,
+        "distanceAU": 4.342204453678198
+      }
+    },
+    "changeDegrees": 1.0953682876711923
+  },
+  "annualHeliocentricLongitude": [
+    {
+      "planet": "MERCURY",
+      "maxAbsLongitudeDegrees": 0.06101429417198145,
+      "year": 2033,
+      "signedDifferenceDegrees": -0.06101429417198145
+    },
+    {
+      "planet": "VENUS",
+      "maxAbsLongitudeDegrees": 0.004364278214622815,
+      "year": 1984,
+      "signedDifferenceDegrees": -0.004364278214622815
+    },
+    {
+      "planet": "EARTH",
+      "maxAbsLongitudeDegrees": 0.0003951427679849291,
+      "year": 2008,
+      "signedDifferenceDegrees": 0.0003951427679849291
+    },
+    {
+      "planet": "MARS",
+      "maxAbsLongitudeDegrees": 0.1372584879491871,
+      "year": 1980,
+      "signedDifferenceDegrees": -0.1372584879491871
+    },
+    {
+      "planet": "JUPITER",
+      "maxAbsLongitudeDegrees": 0.9987573532681115,
+      "year": 2017,
+      "signedDifferenceDegrees": 0.9987573532681115
+    },
+    {
+      "planet": "SATURN",
+      "maxAbsLongitudeDegrees": 1.2788587374900584,
+      "year": 1936,
+      "signedDifferenceDegrees": -1.2788587374900584
+    },
+    {
+      "planet": "URANUS",
+      "maxAbsLongitudeDegrees": 0.18609588172465868,
+      "year": 2035,
+      "signedDifferenceDegrees": 0.18609588172465868
+    },
+    {
+      "planet": "NEPTUNE",
+      "maxAbsLongitudeDegrees": 0.09538989617054747,
+      "year": 1974,
+      "signedDifferenceDegrees": -0.09538989617054747
+    }
+  ],
+  "identifiedJupiterErrors": [
+    {
+      "rustLine": 873,
+      "issue": "Dominant official 7.113547 term absent although local comment says it exists later.",
+      "officialTerm": [
+        0.00573610145,
+        1.44406205976,
+        7.1135470008
+      ]
+    },
+    {
+      "rustLine": 879,
+      "issue": "Wrong amplitude and phase for frequency 1059.382.",
+      "localTermAfterScaling": [
+        0.00728898,
+        1.1421,
+        1059.382
+      ],
+      "officialTerm": [
+        0.0030638918,
+        5.41734729976,
+        1059.3819301892
+      ]
+    }
+  ]
+}

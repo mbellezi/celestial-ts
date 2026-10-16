@@ -1,0 +1,1668 @@
+{
+  "wrapperVersion": "2.10.3.2",
+  "swissVersion": "2.10.03",
+  "swissFlagsRequested": 258,
+  "ephemerisManifest": {
+    "upstreamCommit": "c113653fe37fe5cdbfcc030a6e341de03ef018d2",
+    "files": [
+      {
+        "name": "sepl_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/sepl_18.se1",
+        "bytes": 484061,
+        "sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+      },
+      {
+        "name": "semo_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/semo_18.se1",
+        "bytes": 1304771,
+        "sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+      },
+      {
+        "name": "seas_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/seas_18.se1",
+        "bytes": 223004,
+        "sha256": "a2cd8fc33807c78ca9a700c91c2e042258b12fc4796519e00781440b5ad8b2e2"
+      }
+    ]
+  },
+  "coreManifest": {
+    "schemaVersion": 1,
+    "format": "headerless little-endian IEEE754 float64 records",
+    "recordDoubles": 80,
+    "recordLayout": [
+      "jdUT",
+      "deltaTDays",
+      "Sun.lon",
+      "Sun.lat",
+      "Sun.dist",
+      "Sun.speedLon",
+      "Sun.speedLat",
+      "Sun.speedDist",
+      "Moon.lon",
+      "Moon.lat",
+      "Moon.dist",
+      "Moon.speedLon",
+      "Moon.speedLat",
+      "Moon.speedDist",
+      "Mercury.lon",
+      "Mercury.lat",
+      "Mercury.dist",
+      "Mercury.speedLon",
+      "Mercury.speedLat",
+      "Mercury.speedDist",
+      "Venus.lon",
+      "Venus.lat",
+      "Venus.dist",
+      "Venus.speedLon",
+      "Venus.speedLat",
+      "Venus.speedDist",
+      "Mars.lon",
+      "Mars.lat",
+      "Mars.dist",
+      "Mars.speedLon",
+      "Mars.speedLat",
+      "Mars.speedDist",
+      "Jupiter.lon",
+      "Jupiter.lat",
+      "Jupiter.dist",
+      "Jupiter.speedLon",
+      "Jupiter.speedLat",
+      "Jupiter.speedDist",
+      "Saturn.lon",
+      "Saturn.lat",
+      "Saturn.dist",
+      "Saturn.speedLon",
+      "Saturn.speedLat",
+      "Saturn.speedDist",
+      "Uranus.lon",
+      "Uranus.lat",
+      "Uranus.dist",
+      "Uranus.speedLon",
+      "Uranus.speedLat",
+      "Uranus.speedDist",
+      "Neptune.lon",
+      "Neptune.lat",
+      "Neptune.dist",
+      "Neptune.speedLon",
+      "Neptune.speedLat",
+      "Neptune.speedDist",
+      "Pluto.lon",
+      "Pluto.lat",
+      "Pluto.dist",
+      "Pluto.speedLon",
+      "Pluto.speedLat",
+      "Pluto.speedDist",
+      "MeanNode.lon",
+      "MeanNode.lat",
+      "MeanNode.dist",
+      "MeanNode.speedLon",
+      "MeanNode.speedLat",
+      "MeanNode.speedDist",
+      "TrueNode.lon",
+      "TrueNode.lat",
+      "TrueNode.dist",
+      "TrueNode.speedLon",
+      "TrueNode.speedLat",
+      "TrueNode.speedDist",
+      "Chiron.lon",
+      "Chiron.lat",
+      "Chiron.dist",
+      "Chiron.speedLon",
+      "Chiron.speedLat",
+      "Chiron.speedDist"
+    ],
+    "units": {
+      "lon": "degrees",
+      "lat": "degrees",
+      "dist": "AU",
+      "speedLon": "degrees/day",
+      "speedLat": "degrees/day",
+      "speedDist": "AU/day"
+    },
+    "bodies": [
+      {
+        "id": 0,
+        "name": "Sun"
+      },
+      {
+        "id": 1,
+        "name": "Moon"
+      },
+      {
+        "id": 2,
+        "name": "Mercury"
+      },
+      {
+        "id": 3,
+        "name": "Venus"
+      },
+      {
+        "id": 4,
+        "name": "Mars"
+      },
+      {
+        "id": 5,
+        "name": "Jupiter"
+      },
+      {
+        "id": 6,
+        "name": "Saturn"
+      },
+      {
+        "id": 7,
+        "name": "Uranus"
+      },
+      {
+        "id": 8,
+        "name": "Neptune"
+      },
+      {
+        "id": 9,
+        "name": "Pluto"
+      },
+      {
+        "id": 10,
+        "name": "MeanNode"
+      },
+      {
+        "id": 11,
+        "name": "TrueNode"
+      },
+      {
+        "id": 15,
+        "name": "Chiron"
+      }
+    ],
+    "flags": 258,
+    "sampling": {
+      "startInclusiveJD": 2425977.5,
+      "endExclusiveJD": 2466520.5,
+      "gridStepDays": 0.25,
+      "gridCount": 162172,
+      "randomCount": 10000,
+      "randomGenerator": "xorshift32 unsigned / 2^32",
+      "seed": 422584384,
+      "extraJD": [
+        2466520.499988426,
+        2441465.6666666665
+      ]
+    },
+    "records": 172174,
+    "binarySha256": "8e0cfe272f26c7685839f739107f9d60a7da0ad55498310fca6f6ec752f92943",
+    "hashes": {
+      "core/Cargo.toml": "e66ad7973d47004dfacd3b17cc8095632b8bade2a215e37462cea8050552ecda",
+      "core/benches/celestial_bench.rs": "d76c829be116f6b5432a0d9ca6512011bb3e53eb0102cbc1b63fea467565dc3d",
+      "core/build.rs": "1bbbddd657edd63e6634439db5c66b4735a8b2860ef3b1f131229e01d614ed72",
+      "core/src/astronomy/ayanamsa.rs": "72b9845047bf08579ef5cba45e0e86294df08496c4cf01acec6b6d462029d51b",
+      "core/src/astronomy/chiron.rs": "d1ae36067564dafddc64222794a7b051863a8581e1c271ce19c5b649b55d7478",
+      "core/src/astronomy/chiron_ephemeris.rs": "c2e27ff47b6df79e984f045a4fe9eb396db3fbf4af20616032c12e82205b9477",
+      "core/src/astronomy/constants.rs": "34eb0569cb10fa85b9067e34234c490960e97a8377da1bca0feeca2284602fd0",
+      "core/src/astronomy/crossings.rs": "c458c6b62428d4effbdbe3d8a025fc0e911ae1f52e805aa30c6008308132ace8",
+      "core/src/astronomy/delta_t.rs": "317247f4b3d3881231c48019ed6153b9c3e6fc38752be7602518e9aef04e677e",
+      "core/src/astronomy/eclipses.rs": "a2405d8451711b36b80eadf4d90732a5935645c75484f3378d97ce0523e8e660",
+      "core/src/astronomy/engine.rs": "ce155fe59a9835348083c56ecc1d6c09ec4405de39134647050408a77838faf8",
+      "core/src/astronomy/fixstars.rs": "219b72ba3bb1cf56d476b2386fea88fbe67cdc4ec6271c205979348dbba545d4",
+      "core/src/astronomy/heliacal.rs": "960365a9ee2e680a73356042d354ca89deb2015c3d291d60f1cc54165092688a",
+      "core/src/astronomy/houses.rs": "f5708b6a08c08543cbd5cd4ca0fe0826a15ba5d0d9635b1680ff585ad06e6bd1",
+      "core/src/astronomy/mod.rs": "846bcd8553c7b0a37981f50efbe436ebe8c72f02240194815329668a3e81d9b1",
+      "core/src/astronomy/moon.rs": "23b6fd10cc9beafcd081c9f76ba50ee4009a6c637cce33ae0bd50333ee8757f4",
+      "core/src/astronomy/nodes.rs": "9ab1f57a6fdcfa572ce1ad22f60825ff42662ec488c3248655b61760cd9b0496",
+      "core/src/astronomy/nutation.rs": "43892151a2f470376c4374ae615840dd7efbbd752f3f8dac5bd417e2671122dd",
+      "core/src/astronomy/phenomena.rs": "aced8956526ceed38b5f15dc89d63514615e74e1775b7364fe0bbbe03bd20b58",
+      "core/src/astronomy/planetary.rs": "85b0583f1d307ce0444218fab93738e8cd0793264a61c773a19de70721a3d30d",
+      "core/src/astronomy/pluto.rs": "27affbefbded51001af5035e62b71c00c5948034195d2ed55687aa33d0f7a94a",
+      "core/src/astronomy/rise_set.rs": "d8eb8881699178a2b460038d34e0eb4e9ecd8888bab5438cd6f872c9e5d78bc5",
+      "core/src/astronomy/solar_cycle.rs": "057511cc277f085ffc4d017d29c41c81a00eda3528e135986be29ddd4fa8a8e2",
+      "core/src/astronomy/test_support.rs": "acea71791d4054642d6d330b3c934ada94adfabe386d96d5e36a652be5f16875",
+      "core/src/astronomy/vsop87.rs": "20567773406bb40242440934add7742dd78b851c57ee0bd3102d20b6c07965c1",
+      "core/src/astronomy/vsop87_data.rs": "b49eb04cf219145bc21d20e0328246a866a19f97ff5bd57318cd4814bf68e618",
+      "core/src/body/mod.rs": "4384306b20986e47cbc8500d9c9f17a3d47eac369bd88a483f41330c7ff0f293",
+      "core/src/calendar/buddhist/mod.rs": "7c83fddc6b6364caf4b75e0c4e4e6b32b06215314202aa0f273ec74ef1e98c96",
+      "core/src/calendar/celtic/mod.rs": "ab5e83a559d9a0696672babc3958e8594db1546647d1cd570f7b58c10e460d35",
+      "core/src/calendar/christian/mod.rs": "008d03c79ff46a82c5b6f393fff3eaf3503596cdbe81e8d9f8fdbf9d3b2c2b57",
+      "core/src/calendar/hebrew/calendar.rs": "62f4627812ecde7fe74b1e0bdffc51c51c2c7835a3e7ffcc96feba88e946a7c2",
+      "core/src/calendar/hebrew/mod.rs": "8a44186c07206a37721d9d0ed178daaade7a2c817fb22ef77dd5f2d1c3fe3ca1",
+      "core/src/calendar/hindu/mod.rs": "0a21973bcb46e3abc9b70eafc69768612bac7ee8125762a8dcbeaea20fa60eec",
+      "core/src/calendar/islamic/mod.rs": "4e75393a463b5ee9aff8485b1554af8cae47715586b2e1a40e7061577d4c45b9",
+      "core/src/calendar/mod.rs": "38264538a05f61099dad605631a84cb3a1ba56a36b167f9bf309b822d6af26dc",
+      "core/src/calendar/persian/mod.rs": "3fcf7c7c24896b086ff360b98569b5f633038d04ac38aabd55c1c24db9ff217b",
+      "core/src/chart.rs": "9d9c9b349d2a9c9afaa582c57bed8d3711856efdc2f8e19e88ac0dd59d690e22",
+      "core/src/constants.rs": "3fdcdb6978b7e310fb8982adf49a27635a2a7f638baf70d89423e633d8ada5d0",
+      "core/src/error.rs": "5ae13c0e3e9c011a8931d4798df25324a8526e16bccf14be01c2109081b194e7",
+      "core/src/functions/aspects.rs": "d3ae0dc1d68264b7577c12e302b6e972e00121c242f16b3730a468719e0d8fd9",
+      "core/src/functions/calc.rs": "cb5aa792968d71aa1418163b141b3e1c73cf7dace9b5a32a210d9ea86adcc28d",
+      "core/src/functions/chart.rs": "bdb205914edf807b6c60fbb796c89d6191d79cec6266c518958cb68a9750f0dc",
+      "core/src/functions/chinese.rs": "f7031fabcaf0106e4fc78de9bb0a9cd8baa928398bf681d291a21d22aeffbc2a",
+      "core/src/functions/config.rs": "a0cabf962be5a6b78b1b83233268db0eb37c2cc069ec67508171731cb6230ece",
+      "core/src/functions/coptic.rs": "a40152cde76b5508f342e08ebda220c47e4cf8e80dd224de2527dc70d87f2c00",
+      "core/src/functions/easter.rs": "6992df1985089cdb9e7733b1ddb9cd94db37a7ca16b3d537f0aeea5b8d2a4ec4",
+      "core/src/functions/eclipses.rs": "507a88664396c4ca9717ef611163561385549ef077d8f1c3855bbc52b6e455da",
+      "core/src/functions/esbats.rs": "c728519e0f44b595f337aab56e5779f77b58f06f4d0ab8ba768af4c41e609ef6",
+      "core/src/functions/geoformat.rs": "6160427397a2ef629d04f41166e88f0829e055fbd69317cbcedf3da0a8b89ff9",
+      "core/src/functions/hellenistic.rs": "2b6cacf3bd5854505ae74f524e559bbe5f99dc3660a4f13bde55b613602f4320",
+      "core/src/functions/houses.rs": "3d53c25711930cde309800b1cdead491767d7f2d6041f22ef2552e09fda0affb",
+      "core/src/functions/indigenous.rs": "310c82038b5a18ca430f487ab2f1a3700163f5e16f576023c1c6540f58c548e4",
+      "core/src/functions/islamic.rs": "cd039bdea85d771a56cdedba31e1acb05d4145d3d5e0dbacd51ec35009e14cad",
+      "core/src/functions/jewish.rs": "0888e132fb2d141787a379c617d0b45ff8f59228a8556f862d7dc600d3dbc4c8",
+      "core/src/functions/mesoamerican.rs": "759d3046d67929f3dba2e0eb1c02b4f6f0667bd8fa81790cd74ff36361953be9",
+      "core/src/functions/mod.rs": "59392f30fc516f429b387b876747e025abd2dfd9b76d992c3ebedbf03f9d8562",
+      "core/src/functions/moon_phases.rs": "b2ec4f3e277617a58aceacac2d2ac221385240bc85ce4314da0e51adc6d1181a",
+      "core/src/functions/motion.rs": "7a6f3228ea983dd053314337b7cf8beba12bf5aa17a5f74f6e459aefd9b141e5",
+      "core/src/functions/nowruz.rs": "8c7f564f3577cc768432d8008201270f8b70558ed9aa5641ecd229560bec0d98",
+      "core/src/functions/omer.rs": "4fb9d943e8f901c1ba2faca2ac56a49786a1dd0f47a6097382b892b08732b412",
+      "core/src/functions/panchanga.rs": "f5c952080167b096a3e75333390eb28be12a12ab30fbd20087b5a047efdaa781",
+      "core/src/functions/phenomena.rs": "5632b7b5eb0bf3c62c8c0e08ace648b2406692c921278fcd68ad79181548513d",
+      "core/src/functions/sabbats.rs": "f02536ebaed23859961d9bbb1a0a0d89dc4112a675b3d07471b03a9335917386",
+      "core/src/functions/searches.rs": "6ed18d00ce2f6bc33d366bd51310b53fe986a017d940a8a9891e1bc1fe8c6a42",
+      "core/src/functions/tibetan.rs": "d07be7d47611088857931996c774f808525aa931fd6c8a85ef596386f6fb8be4",
+      "core/src/functions/time.rs": "0bd3515238eccfb6539639105d1e071f3c90f6ee3f5f7c76093a3bb15c07e594",
+      "core/src/functions/timezone.rs": "83287bf60435600e1529b9d8bdb06de5f441b8fadc017fc6903c17fd95c459e0",
+      "core/src/functions/utils.rs": "985e31cf3ec6cb2b1bc2bb81cbcab94d71c3baa49ce499b5a37c1d5df04f600c",
+      "core/src/functions/vedic.rs": "bad0e706710375f067cf4a0434077b988f313735cec5d4bba1a7b700f5775a2a",
+      "core/src/functions/vesak.rs": "bbb1c9de3558598c895b7360b2b4b9a340fa8a410fc2225e5aeb5b35fa1626a1",
+      "core/src/functions/zoroastrian.rs": "e2d1d0b56172dc4d77590ff11edfeba6b6573e41823f279c2432b7075dcfa33d",
+      "core/src/geo.rs": "ba581d9224fc4cb445e78934e226d97c0728100bad1c0603eb63d4bfecfb499d",
+      "core/src/houses.rs": "ab65f3021ab7e96cc9751a9537eece3ae0a52e40d8c593dd423ca352ac0a43b0",
+      "core/src/lib.rs": "47d4b9e7a7001f53ef71a378308853c3a0f1eb27759d8f12b3e26c8239f6fcdb",
+      "core/src/moon.rs": "f24d5ec9549d7f32b53666619ca8177b2c8822b9a26a1af0cd8946d6ceef185d",
+      "core/src/motion.rs": "c7bb2e870881421e87e126903a688cc2464edf93f47f6d0386fc5474afa6ecac",
+      "core/src/position.rs": "4834339a38919276d9744e5727bf5ff1e6620a409234f4de901580aad60c5235",
+      "core/src/solar.rs": "21d799f53c393787b36debc15f9fd7bbc260c54ca7cfc4859e65dc3710a003d4",
+      "core/src/time.rs": "2376d7193c341008a053ca38cfa9b8d8e8c97c391d5998c7bf2cdbe540091475",
+      "core/src/types.rs": "9fa040095cffcd447e816fc69ca220c047524c857bc69625ae309c4b3cebeae9",
+      "core/src/units.rs": "405f362c173f18c3d9ac37e99ce010194033d81be7932b3765af37cdb7960435",
+      "core/src/vedic.rs": "c95bb174625d3bc8009407002cb5c8870b288cbcfe10e561a8fc402bcf4032cd",
+      "core/tests/bench_timing.rs": "fc0280e3d6c96c1559a4b8fe34949ba655d771f3c819d48990ff9bafb97d37a1",
+      "core/tests/binding_parity.rs": "b2207598ed4f0968f824183683d14188ff14343d4c03890f69fba3ffbeda6fe3",
+      "core/tests/chinese_test.rs": "82ccd2381d9b1e7d3eefe1dd3c975a26a8519ef63d7cff6e7181352e86677913",
+      "core/tests/external_reference.rs": "9ba1b287e9eeef2027d86dc0f12499a214a646a15b2deefd6386f94135acb720",
+      "core/tests/hellenistic_test.rs": "03ab743e2cd402e585af951b0400720a2b6692f889ad7807a0a0abbcf87c20a1",
+      "core/tests/helpers_test.rs": "f324b87436647b99754b0e2471ecc50720d0451eafd085955155792798cc3e1c",
+      "core/tests/indigenous_test.rs": "1cdfeb6d7656f3540203efbcc039198663a1f641050b67fb7c197b97c615c614",
+      "core/tests/integration_tests.rs": "370aca83c47f98890de0bc8a1ca632e4713a3724368251f653678370ff9cd451",
+      "core/tests/mesoamerican_test.rs": "9c094a048d4421e50e9c6d3eea7867ad8e91e98acdfa4c1a0f48be6661f564c8",
+      "core/tests/new_features_test.rs": "395516fb88fa8d194e345e26658b3574b9bef5dc9f40e97f95d453c2e256cfd2",
+      "core/tests/rel_clamps.rs": "4e7c01cea7bdfb2c990259c9af6257cca7a445e09e55fa5a096cc94899d71068",
+      "core/tests/sabbats_esbats_test.rs": "f911d5b5b89a459bbe7d2b1ad06d2bec00a87b1dee4dca25bd45f3729f43764e",
+      "core/tests/support/mod.rs": "9a402388904ddbe5459105e7712a384fb023753f01cd07c80220f7b7bb0bd011",
+      "core/tests/swephelp_test.rs": "0669a91d2224e5c11e5e5c901d9e848445ac5f98197e22ffd4cc3ba5dee893fa",
+      "core/tests/test_util_smoke.rs": "5c4e2a1f09a214db648c5eedfc92358e0c9374814a3d403efede5ad585e068d6",
+      "core/tests/timezone_test.rs": "e2228322718cf4255f5aa3a0aba6699dfa68be511f04724fa05991064f826724",
+      "core/tests/unit_tests.rs": "0a1bb2f259c608fe2511be7b49f9c79bdf20ee1bf2fa467920d3caa30c3e9bd4",
+      "core/tests/wheel_test.rs": "d9edff8fd092afc89291cce7ce05ed5c0de3fee5828c2eaf987560109d7e7fc2",
+      "pkg/celestial_wasm.js": "344d0efa2ac5be2d4f43d2773252afc09ded3d0df969329ea259424b98b7b0df",
+      "pkg/celestial_wasm_bg.wasm": "c647278698ade630de6140e8ccef0a2a2701739190933dc302789dcc004bd1db",
+      "wasm/src/additional.rs": "a3941e26b2ff4d87e55645998cc19d3983451a51e6e6bd63345e33a2ef2055f5",
+      "wasm/src/binding.rs": "cedff4072b5cf133b7f8bfebefe2e414b603680a9b2905ec3cef5c19a1100c84",
+      "wasm/src/exports.rs": "c289bff945921889bc74d6c898945079cff01e3983952a4dfeccdbb29ee3221c",
+      "wasm/src/lib.rs": "0d3b7a873fca01531fc03f76a26ce2638655963657fe255f66378e881633b7c6",
+      "wasm/src/methods.rs": "ecc76bebff8b9b95fc6ae6506a658ce513f0f6314d1c7263257fe7893aec908d",
+      "wasm/src/native.rs": "39e0d6f8b995fbe95a234c9c5a8ccfa047c06b5363af81d774214e7960f4d4e1"
+    },
+    "nodeVersion": "v24.18.0"
+  },
+  "records": 172174,
+  "auditScriptHashes": {
+    "scripts/validation/compare-swiss.py": "88cac31553d16d759f61503f5029b8aab8c2810f0da5c5409a3284147541ce1d",
+    "scripts/validation/export-core.mjs": "c6e7ff9038d7f70b1938873338c2b6f9d3598a549137d4b284aaf2cb2205f487"
+  },
+  "description": "Exact sign and retrograde disagreement witnesses before gravitational-deflection correction. Coordinates are longitude degrees, latitude degrees, distance AU and corresponding rates per day. Linear boundary offsets are local tangent estimates, not solved crossing times.",
+  "disagreementWitnesses": [
+    {
+      "jdUT": 2426677.5,
+      "utIso": "1931-12-02T00:00:00",
+      "body": {
+        "id": 2,
+        "name": "Mercury"
+      },
+      "deltaTCoreSeconds": 24.004927236401404,
+      "deltaTSwissSeconds": 24.38412033663114,
+      "core": {
+        "coordinates": [
+          269.9999512957492,
+          -2.321625855557196,
+          1.0388354553173127,
+          1.0915328488579235,
+          0.062119021273243646,
+          -0.02197140402987463
+        ],
+        "signIndex": 8,
+        "retrograde": false,
+        "nearestSignBoundaryDegrees": 270,
+        "signedDistanceToBoundaryArcsec": -0.1753353028334459,
+        "linearTimeToBoundarySeconds": 3.8551723591329417
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 1.091532770573167,
+            "0.01": 1.091532440887022,
+            "0.1": 1.091519824617535
+          },
+          "reference": {
+            "coordinates": [
+              270.0000140668815,
+              -2.3216360171407167,
+              1.0388353455513246,
+              1.0915327176390606,
+              0.06210869184069822,
+              -0.02196974217726046
+            ],
+            "signIndex": 9,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 270,
+            "signedDistanceToBoundaryArcsec": 0.050640773315535625,
+            "linearTimeToBoundarySeconds": -1.1134604945252284
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              270.0000129777286,
+              -2.321635903250673,
+              1.0388353455513246,
+              1.091532778344359,
+              0.062108679024227134,
+              -0.021969742207993973
+            ],
+            "signIndex": 9,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 270,
+            "signedDistanceToBoundaryArcsec": 0.04671982296713395,
+            "linearTimeToBoundarySeconds": -1.0272488132806878
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": -0.22597607614898152,
+          "longitudeCoreMinusNoDeflectionArcsec": -0.22205512580057984,
+          "speedCoreMinusReferenceDegreesPerDay": 1.3121886288658402e-07
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 1.0915330159377845,
+            "0.01": 1.0915326862146912,
+            "0.1": 1.091520072056369
+          },
+          "reference": {
+            "coordinates": [
+              270.0000092763172,
+              -2.321636289767147,
+              1.0388354419781334,
+              1.0915329634708695,
+              0.062108626812375924,
+              -0.021969739927573038
+            ],
+            "signIndex": 9,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 270,
+            "signedDistanceToBoundaryArcsec": 0.03339474192216585,
+            "linearTimeToBoundarySeconds": -0.734264408821374
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              270.0000081871641,
+              -2.3216361758770563,
+              1.0388354419781334,
+              1.0915330236780871,
+              0.06210861703676985,
+              -0.021969739720809105
+            ],
+            "signIndex": 9,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 270,
+            "signedDistanceToBoundaryArcsec": 0.029473790755218943,
+            "linearTimeToBoundarySeconds": -0.6480527503800665
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": -0.20873004475561174,
+          "longitudeCoreMinusNoDeflectionArcsec": -0.20480909358866484,
+          "speedCoreMinusReferenceDegreesPerDay": -1.1461294602277405e-07
+        }
+      }
+    },
+    {
+      "jdUT": 2437646.0,
+      "utIso": "1961-12-12T12:00:00",
+      "body": {
+        "id": 9,
+        "name": "Pluto"
+      },
+      "deltaTCoreSeconds": 33.96442758050891,
+      "deltaTSwissSeconds": 33.97803408457909,
+      "core": {
+        "coordinates": [
+          160.13121847225034,
+          13.105705751673906,
+          33.1898074252316,
+          -2.2755770601179393e-06,
+          0.00775147090283923,
+          -0.01728084002934338
+        ],
+        "signIndex": 5,
+        "retrograde": true,
+        "nearestSignBoundaryDegrees": 150,
+        "signedDistanceToBoundaryArcsec": 36472.38650010122,
+        "linearTimeToBoundarySeconds": 384666066178.8628
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -2.232965812254406e-06,
+            "0.01": -2.2333352944770013e-06,
+            "0.1": -2.230913906942078e-06
+          },
+          "reference": {
+            "coordinates": [
+              160.13110469996835,
+              13.105669134149968,
+              33.1898144498479,
+              4.0381561590394954e-07,
+              0.00775546390302671,
+              -0.017291062367410164
+            ],
+            "signIndex": 5,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 150,
+            "signedDistanceToBoundaryArcsec": 36471.97691988605,
+            "linearTimeToBoundarySeconds": -2167641397715.209
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              160.13110566273554,
+              13.105669172060566,
+              33.18981444984791,
+              3.8392818984705986e-07,
+              0.0077554652159077695,
+              -0.01729106703931441
+            ],
+            "signIndex": 5,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 150,
+            "signedDistanceToBoundaryArcsec": 36471.98038584793,
+            "linearTimeToBoundarySeconds": -2279925132898.01
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.4095802151709904,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.4061142532918893,
+          "speedCoreMinusReferenceDegreesPerDay": -2.679392676021889e-06
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -2.232880547126115e-06,
+            "0.01": -2.233247187177767e-06,
+            "0.1": -2.2308273628368624e-06
+          },
+          "reference": {
+            "coordinates": [
+              160.13110469996883,
+              13.105669132926362,
+              33.18981445257584,
+              4.0589612199602457e-07,
+              0.007755454174993768,
+              -0.017291058028342073
+            ],
+            "signIndex": 5,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 150,
+            "signedDistanceToBoundaryArcsec": 36471.97691988779,
+            "linearTimeToBoundarySeconds": -2156530695028.1235
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              160.131105662736,
+              13.105669170836956,
+              33.18981445257584,
+              3.8398834916894896e-07,
+              0.007755465270916112,
+              -0.01729106703565483
+            ],
+            "signIndex": 5,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 150,
+            "signedDistanceToBoundaryArcsec": 36471.980385849565,
+            "linearTimeToBoundarySeconds": -2279567937815.8916
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.4095802134315818,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.40611425165479886,
+          "speedCoreMinusReferenceDegreesPerDay": -2.681473182113964e-06
+        }
+      }
+    },
+    {
+      "jdUT": 2437672.0,
+      "utIso": "1962-01-07T12:00:00",
+      "body": {
+        "id": 1,
+        "name": "Moon"
+      },
+      "deltaTCoreSeconds": 33.997106245374574,
+      "deltaTSwissSeconds": 34.008316185815104,
+      "core": {
+        "coordinates": [
+          299.9996689578554,
+          1.6387818215403616,
+          0.002430511751444598,
+          14.705758188739537,
+          -1.2745777254317026,
+          -1.0976927209858586e-05
+        ],
+        "signIndex": 9,
+        "retrograde": false,
+        "nearestSignBoundaryDegrees": 300,
+        "signedDistanceToBoundaryArcsec": -1.1917517204892647,
+        "linearTimeToBoundarySeconds": 1.9449552294177834
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 14.705612601375151,
+            "0.01": 14.705590175930183,
+            "0.1": 14.705383438194986
+          },
+          "reference": {
+            "coordinates": [
+              300.0008011033584,
+              1.6387272028866062,
+              0.002430557223538223,
+              14.705609991122298,
+              -1.2745772942986098,
+              -1.0914044096997393e-05
+            ],
+            "signIndex": 10,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 300,
+            "signedDistanceToBoundaryArcsec": 2.8839720902851695,
+            "linearTimeToBoundarySeconds": -4.706729622819387
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              300.0008011033584,
+              1.6387272028866062,
+              0.002430557223538223,
+              14.705609991122298,
+              -1.2745772942986098,
+              -1.0914044096997393e-05
+            ],
+            "signIndex": 10,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 300,
+            "signedDistanceToBoundaryArcsec": 2.8839720902851695,
+            "linearTimeToBoundarySeconds": -4.706729622819387
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": -4.075723810774434,
+          "longitudeCoreMinusNoDeflectionArcsec": -4.075723810774434,
+          "speedCoreMinusReferenceDegreesPerDay": 0.00014819761723927627
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 14.705612587192718,
+            "0.01": 14.705589821099352,
+            "0.1": 14.705383219570649
+          },
+          "reference": {
+            "coordinates": [
+              300.0007991996636,
+              1.6387273678816248,
+              0.0024305572249514137,
+              14.705609977981174,
+              -1.2745772786798841,
+              -1.091404543024966e-05
+            ],
+            "signIndex": 10,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 300,
+            "signedDistanceToBoundaryArcsec": 2.87711878902428,
+            "linearTimeToBoundarySeconds": -4.695544832208463
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              300.0007991996636,
+              1.6387273678816248,
+              0.0024305572249514137,
+              14.705609977981174,
+              -1.2745772786798841,
+              -1.091404543024966e-05
+            ],
+            "signIndex": 10,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 300,
+            "signedDistanceToBoundaryArcsec": 2.87711878902428,
+            "linearTimeToBoundarySeconds": -4.695544832208463
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": -4.068870509513545,
+          "longitudeCoreMinusNoDeflectionArcsec": -4.068870509513545,
+          "speedCoreMinusReferenceDegreesPerDay": 0.000148210758363021
+        }
+      }
+    },
+    {
+      "jdUT": 2441477.75,
+      "utIso": "1972-06-09T06:00:00",
+      "body": {
+        "id": 9,
+        "name": "Pluto"
+      },
+      "deltaTCoreSeconds": 42.71385626730275,
+      "deltaTSwissSeconds": 42.725343721714026,
+      "core": {
+        "coordinates": [
+          179.31184708858817,
+          16.392002327256744,
+          31.037060492557583,
+          6.190218471147091e-06,
+          -0.008008346676291467,
+          0.015369491785754974
+        ],
+        "signIndex": 5,
+        "retrograde": false,
+        "nearestSignBoundaryDegrees": 180,
+        "signedDistanceToBoundaryArcsec": -2477.350481082601,
+        "linearTimeToBoundarySeconds": 9604897116.816095
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 6.24493168288609e-06,
+            "0.01": 6.244484040962561e-06,
+            "0.1": 6.243240591174981e-06
+          },
+          "reference": {
+            "coordinates": [
+              179.3117699695132,
+              16.39197460245808,
+              31.037052279260955,
+              -3.6275933813682145e-08,
+              -0.008008474198641053,
+              0.015359867962821176
+            ],
+            "signIndex": 5,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 180,
+            "signedDistanceToBoundaryArcsec": -2477.6281097525043,
+            "linearTimeToBoundarySeconds": -1639187978990.9775
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              179.31176903375132,
+              16.391974650841888,
+              31.037052279260944,
+              -5.0013270782122085e-08,
+              -0.008008476277332276,
+              0.015359864905188042
+            ],
+            "signIndex": 5,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 180,
+            "signedDistanceToBoundaryArcsec": -2477.6314784952547,
+            "linearTimeToBoundarySeconds": -1188947544401.3955
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.2776286699031516,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.2809974126535053,
+          "speedCoreMinusReferenceDegreesPerDay": 6.2264944049607734e-06
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 6.244860628612514e-06,
+            "0.01": 6.244408723432571e-06,
+            "0.1": 6.2431652736449905e-06
+          },
+          "reference": {
+            "coordinates": [
+              179.31176996951226,
+              16.39197460352087,
+              31.037052277221232,
+              -3.577066504038155e-08,
+              -0.008008467004476926,
+              0.01535986430651964
+            ],
+            "signIndex": 5,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 180,
+            "signedDistanceToBoundaryArcsec": -2477.628109755881,
+            "linearTimeToBoundarySeconds": -1662341881735.025
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              179.3117690337504,
+              16.3919746519047,
+              31.037052277221214,
+              -5.006496500670601e-08,
+              -0.008008476281647768,
+              0.015359864859741348
+            ],
+            "signIndex": 5,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 180,
+            "signedDistanceToBoundaryArcsec": -2477.631478498529,
+            "linearTimeToBoundarySeconds": -1187719905047.3687
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.2776286732796507,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.28099741592768623,
+          "speedCoreMinusReferenceDegreesPerDay": 6.225989136187473e-06
+        }
+      }
+    },
+    {
+      "jdUT": 2445366.75,
+      "utIso": "1983-02-01T06:00:00",
+      "body": {
+        "id": 9,
+        "name": "Pluto"
+      },
+      "deltaTCoreSeconds": 53.089125858900324,
+      "deltaTSwissSeconds": 53.03185373831761,
+      "core": {
+        "coordinates": [
+          209.52960661558092,
+          17.123514447732102,
+          29.69692416465175,
+          -3.0252394367380475e-06,
+          0.009384233879572434,
+          -0.016415774181410825
+        ],
+        "signIndex": 6,
+        "retrograde": true,
+        "nearestSignBoundaryDegrees": 210,
+        "signedDistanceToBoundaryArcsec": -1693.4161839086983,
+        "linearTimeToBoundarySeconds": -13434304709.987127
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -3.102982759628503e-06,
+            "0.01": -3.1025109592519584e-06,
+            "0.1": -3.087256317257925e-06
+          },
+          "reference": {
+            "coordinates": [
+              209.52955512159662,
+              17.123503727132995,
+              29.696908232855336,
+              1.4609548525527757e-07,
+              0.009378282594219967,
+              -0.016426039577997306
+            ],
+            "signIndex": 6,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": -1693.6015622521836,
+            "linearTimeToBoundarySeconds": 278218299648.54504
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              209.5295560652296,
+              17.123503784928555,
+              29.69690823285534,
+              1.3040504620192918e-07,
+              0.009378285595126991,
+              -0.01642604168538418
+            ],
+            "signIndex": 6,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": -1693.5981651734437,
+            "linearTimeToBoundarySeconds": 311693121915.10376
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.18537834348535398,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.18198126474544551,
+          "speedCoreMinusReferenceDegreesPerDay": -3.1713349219933252e-06
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -3.103394874415244e-06,
+            "0.01": -3.1029102842694556e-06,
+            "0.1": -3.087656494926705e-06
+          },
+          "reference": {
+            "coordinates": [
+              209.52955512159414,
+              17.123503733351328,
+              29.696908221977676,
+              1.3425373991311926e-07,
+              0.009378277220060823,
+              -0.01642603853626146
+            ],
+            "signIndex": 6,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": -1693.6015622610853,
+            "linearTimeToBoundarySeconds": 302758325545.1201
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              209.52955606522707,
+              17.12350379114689,
+              29.69690822197768,
+              1.299826760982048e-07,
+              0.00937828558694057,
+              -0.016426041694264086
+            ],
+            "signIndex": 6,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": -1693.59816518255,
+            "linearTimeToBoundarySeconds": 312705948088.5897
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.18537835238703337,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.18198127385176122,
+          "speedCoreMinusReferenceDegreesPerDay": -3.159493176651167e-06
+        }
+      }
+    },
+    {
+      "jdUT": 2445408.75,
+      "utIso": "1983-03-15T06:00:00",
+      "body": {
+        "id": 1,
+        "name": "Moon"
+      },
+      "deltaTCoreSeconds": 53.172763639078745,
+      "deltaTSwissSeconds": 53.13230241734103,
+      "core": {
+        "coordinates": [
+          0.0002583135325288843,
+          -4.998653297597637,
+          0.0026369247168729695,
+          12.6108818391657,
+          -0.003740711601096791,
+          -2.164427621974968e-05
+        ],
+        "signIndex": 0,
+        "retrograde": false,
+        "nearestSignBoundaryDegrees": 0,
+        "signedDistanceToBoundaryArcsec": 0.9299287170961179,
+        "linearTimeToBoundarySeconds": -1.769764358666241
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 12.611231946721091,
+            "0.01": 12.611176296621807,
+            "0.1": 12.611174144465735
+          },
+          "reference": {
+            "coordinates": [
+              359.9994113147784,
+              -4.9985722001790815,
+              0.002636930897001165,
+              12.611227388068281,
+              -0.0037424152760547084,
+              -2.1577484352517184e-05
+            ],
+            "signIndex": 11,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 0,
+            "signedDistanceToBoundaryArcsec": -2.1192667977629753,
+            "linearTimeToBoundarySeconds": 4.033104913676625
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              359.9994113147784,
+              -4.9985722001790815,
+              0.002636930897001165,
+              12.611227388068281,
+              -0.0037424152760547084,
+              -2.1577484352517184e-05
+            ],
+            "signIndex": 11,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 0,
+            "signedDistanceToBoundaryArcsec": -2.1192667977629753,
+            "linearTimeToBoundarySeconds": 4.033104913676625
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 3.0491955148590932,
+          "longitudeCoreMinusNoDeflectionArcsec": 3.0491955148590932,
+          "speedCoreMinusReferenceDegreesPerDay": -0.00034554890258142734
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 12.611229106710198,
+            "0.01": 12.611176097911425,
+            "0.1": 12.611173915901759
+          },
+          "reference": {
+            "coordinates": [
+              359.9994172167037,
+              -4.998572201930047,
+              0.002636930886901073,
+              12.611227482497748,
+              -0.003742300474934761,
+              -2.1577484857869485e-05
+            ],
+            "signIndex": 11,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 0,
+            "signedDistanceToBoundaryArcsec": -2.098019866662071,
+            "linearTimeToBoundarySeconds": 3.9926705683305155
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              359.9994172167037,
+              -4.998572201930047,
+              0.002636930886901073,
+              12.611227482497748,
+              -0.003742300474934761,
+              -2.1577484857869485e-05
+            ],
+            "signIndex": 11,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 0,
+            "signedDistanceToBoundaryArcsec": -2.098019866662071,
+            "linearTimeToBoundarySeconds": 3.9926705683305155
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 3.0279485837581888,
+          "longitudeCoreMinusNoDeflectionArcsec": 3.0279485837581888,
+          "speedCoreMinusReferenceDegreesPerDay": -0.00034564333204833986
+        }
+      }
+    },
+    {
+      "jdUT": 2446102.5,
+      "utIso": "1985-02-06T00:00:00",
+      "body": {
+        "id": 9,
+        "name": "Pluto"
+      },
+      "deltaTCoreSeconds": 54.39897026048794,
+      "deltaTSwissSeconds": 54.39741683883339,
+      "core": {
+        "coordinates": [
+          214.7486702626619,
+          16.868865039702133,
+          29.564220005886593,
+          -1.0185075893787143e-06,
+          0.009097599653529187,
+          -0.016364362197762716
+        ],
+        "signIndex": 7,
+        "retrograde": true,
+        "nearestSignBoundaryDegrees": 210,
+        "signedDistanceToBoundaryArcsec": 17095.212945582854,
+        "linearTimeToBoundarySeconds": 402829703943.8467
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -1.004522687253484e-06,
+            "0.01": -1.0046775855698797e-06,
+            "0.1": -1.0030368002844625e-06
+          },
+          "reference": {
+            "coordinates": [
+              214.74862698815915,
+              16.868849310161607,
+              29.564205660215404,
+              4.93085949362623e-06,
+              0.009084039165585683,
+              -0.01637478301308839
+            ],
+            "signIndex": 7,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": 17095.057157372925,
+            "linearTimeToBoundarySeconds": -83206867343.77478
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              214.74862792738514,
+              16.86884936752493,
+              29.564205660215396,
+              4.919946616606737e-06,
+              0.009084045799906128,
+              -0.016374784116431864
+            ],
+            "signIndex": 7,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": 17095.060538586516,
+            "linearTimeToBoundarySeconds": -83391444033.4
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.15578820992914189,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.15240699633523036,
+          "speedCoreMinusReferenceDegreesPerDay": -5.9493670830049444e-06
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -1.0045368981081992e-06,
+            "0.01": -1.004688954253652e-06,
+            "0.1": -1.0030480268596875e-06
+          },
+          "reference": {
+            "coordinates": [
+              214.7486269881591,
+              16.868849310326826,
+              29.564205659918198,
+              4.938310895875715e-06,
+              0.009084041906028757,
+              -0.01637478039690026
+            ],
+            "signIndex": 7,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": 17095.057157372717,
+            "linearTimeToBoundarySeconds": -83081316755.41049
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              214.7486279273851,
+              16.868849367690146,
+              29.56420565991821,
+              4.919904812717612e-06,
+              0.009084045790530158,
+              -0.016374784037415595
+            ],
+            "signIndex": 7,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": 17095.060538586313,
+            "linearTimeToBoundarySeconds": -83392152601.311
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.1557882101337782,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.15240699653986667,
+          "speedCoreMinusReferenceDegreesPerDay": -5.9568184852544295e-06
+        }
+      }
+    },
+    {
+      "jdUT": 2453125.0,
+      "utIso": "2004-04-29T12:00:00",
+      "body": {
+        "id": 1,
+        "name": "Moon"
+      },
+      "deltaTCoreSeconds": 64.58125717182087,
+      "deltaTSwissSeconds": 64.60805814268652,
+      "core": {
+        "coordinates": [
+          150.00029642961724,
+          5.011358876103223,
+          0.0025977850661861182,
+          12.86239102154525,
+          -0.3796295912373182,
+          -3.8201709861370066e-05
+        ],
+        "signIndex": 5,
+        "retrograde": false,
+        "nearestSignBoundaryDegrees": 150,
+        "signedDistanceToBoundaryArcsec": 1.0671466220514958,
+        "linearTimeToBoundarySeconds": -1.9911942411278836
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 12.862112824947758,
+            "0.01": 12.862107790029143,
+            "0.1": 12.862195984982918
+          },
+          "reference": {
+            "coordinates": [
+              149.99953834747612,
+              5.011190966257557,
+              0.0025979926971415267,
+              12.862076404005334,
+              -0.379786664119215,
+              -3.824004269988036e-05
+            ],
+            "signIndex": 4,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 150,
+            "signedDistanceToBoundaryArcsec": -1.6619490859739017,
+            "linearTimeToBoundarySeconds": 3.1011149996708647
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              149.99953834747612,
+              5.011190966257557,
+              0.0025979926971415267,
+              12.862076404005334,
+              -0.379786664119215,
+              -3.824004269988036e-05
+            ],
+            "signIndex": 4,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 150,
+            "signedDistanceToBoundaryArcsec": -1.6619490859739017,
+            "linearTimeToBoundarySeconds": 3.1011149996708647
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 2.7290957080253975,
+          "longitudeCoreMinusNoDeflectionArcsec": 2.7290957080253975,
+          "speedCoreMinusReferenceDegreesPerDay": 0.00031461753991557373
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 12.862112703075468,
+            "0.01": 12.862107672125944,
+            "0.1": 12.862195807299344
+          },
+          "reference": {
+            "coordinates": [
+              149.99953435855537,
+              5.011191084041766,
+              0.002597992709000677,
+              12.86207628616026,
+              -0.37978658260268,
+              -3.824004152409658e-05
+            ],
+            "signIndex": 4,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 150,
+            "signedDistanceToBoundaryArcsec": -1.6763092006840452,
+            "linearTimeToBoundarySeconds": 3.1279102939007246
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              149.99953435855537,
+              5.011191084041766,
+              0.002597992709000677,
+              12.86207628616026,
+              -0.37978658260268,
+              -3.824004152409658e-05
+            ],
+            "signIndex": 4,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 150,
+            "signedDistanceToBoundaryArcsec": -1.6763092006840452,
+            "linearTimeToBoundarySeconds": 3.1279102939007246
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 2.743455822735541,
+          "longitudeCoreMinusNoDeflectionArcsec": 2.743455822735541,
+          "speedCoreMinusReferenceDegreesPerDay": 0.0003147353849897172
+        }
+      }
+    },
+    {
+      "jdUT": 2460555.5,
+      "utIso": "2024-09-02T00:00:00",
+      "body": {
+        "id": 9,
+        "name": "Pluto"
+      },
+      "deltaTCoreSeconds": 74.2690929864527,
+      "deltaTSwissSeconds": 69.03419538195114,
+      "core": {
+        "coordinates": [
+          300.0001071670847,
+          -3.261900714706135,
+          34.31123684630939,
+          -0.01683740416069668,
+          -0.0003948998406277937,
+          0.011761454841519026
+        ],
+        "signIndex": 10,
+        "retrograde": true,
+        "nearestSignBoundaryDegrees": 300,
+        "signedDistanceToBoundaryArcsec": 0.38580150494453846,
+        "linearTimeToBoundarySeconds": 549.9206427723955
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -0.016837252047707807,
+            "0.01": -0.01683724843530854,
+            "0.1": -0.016837232581110584
+          },
+          "reference": {
+            "coordinates": [
+              299.9999796097442,
+              -3.2618682214353423,
+              34.311342079770704,
+              -0.01683667943584613,
+              -0.0004082336377841513,
+              0.011717114543862747
+            ],
+            "signIndex": 9,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 300,
+            "signedDistanceToBoundaryArcsec": -0.07340492097682727,
+            "linearTimeToBoundarySeconds": -104.63572167876931
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              299.99997921212616,
+              -3.261868248320768,
+              34.31134207977071,
+              -0.016836682190631586,
+              -0.0004082284550293688,
+              0.011717116554004077
+            ],
+            "signIndex": 9,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 300,
+            "signedDistanceToBoundaryArcsec": -0.0748363458114909,
+            "linearTimeToBoundarySeconds": -106.6761419583704
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.45920642592136574,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.46063785075602937,
+          "speedCoreMinusReferenceDegreesPerDay": -7.247248505481974e-07
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -0.016837233175692745,
+            "0.01": -0.01683722963150558,
+            "0.1": -0.016837213705116483
+          },
+          "reference": {
+            "coordinates": [
+              299.9999785895914,
+              -3.261868245361667,
+              34.311342792387805,
+              -0.016836633790129778,
+              -0.00040823583871778436,
+              0.011717125070133139
+            ],
+            "signIndex": 9,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 300,
+            "signedDistanceToBoundaryArcsec": -0.07707747088261385,
+            "linearTimeToBoundarySeconds": -109.87108968701241
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              299.9999781919728,
+              -3.2618682722470873,
+              34.3113427923878,
+              -0.016836663265369235,
+              -0.0004082269468824496,
+              0.01171713016918891
+            ],
+            "signIndex": 9,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 300,
+            "signedDistanceToBoundaryArcsec": -0.07850889796827687,
+            "linearTimeToBoundarySeconds": -111.91134024247074
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.4628789758271523,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.46431040291281533,
+          "speedCoreMinusReferenceDegreesPerDay": -7.703705669007133e-07
+        }
+      }
+    },
+    {
+      "jdUT": 2464166.75,
+      "utIso": "2034-07-23T06:00:00",
+      "body": {
+        "id": 1,
+        "name": "Moon"
+      },
+      "deltaTCoreSeconds": 80.72715886502446,
+      "deltaTSwissSeconds": 70.39603753961075,
+      "core": {
+        "coordinates": [
+          210.0014665605329,
+          2.901850530441723,
+          0.0026936366750751786,
+          11.895239774582933,
+          0.8773042147677046,
+          1.2460231531221007e-05
+        ],
+        "signIndex": 7,
+        "retrograde": false,
+        "nearestSignBoundaryDegrees": 210,
+        "signedDistanceToBoundaryArcsec": 5.279617918404256,
+        "linearTimeToBoundarySeconds": -10.652230004850392
+      },
+      "mismatchModes": [
+        "sameUT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 11.8949765958547,
+            "0.01": 11.89497695323496,
+            "0.1": 11.895120632339768
+          },
+          "reference": {
+            "coordinates": [
+              209.99894829201983,
+              2.9014774281096356,
+              0.002693887559039099,
+              11.89497612485079,
+              0.8774841160830857,
+              1.2439516582278538e-05
+            ],
+            "signIndex": 6,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": -3.7861487286022566,
+            "linearTimeToBoundarySeconds": 7.639155264600752
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              209.99894829201983,
+              2.9014774281096356,
+              0.002693887559039099,
+              11.89497612485079,
+              0.8774841160830857,
+              1.2439516582278538e-05
+            ],
+            "signIndex": 6,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": -3.7861487286022566,
+            "linearTimeToBoundarySeconds": 7.639155264600752
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 9.065766647006512,
+          "longitudeCoreMinusNoDeflectionArcsec": 9.065766647006512,
+          "speedCoreMinusReferenceDegreesPerDay": 0.00026364973214221266
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 11.894965626098042,
+            "0.01": 11.894965983735517,
+            "0.1": 11.89510951982399
+          },
+          "reference": {
+            "coordinates": [
+              210.0003706090152,
+              2.9015823503582623,
+              0.0026938890464018187,
+              11.894965156303721,
+              0.8774682193938533,
+              1.2438519227265809e-05
+            ],
+            "signIndex": 7,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": 1.334192454692129,
+            "linearTimeToBoundarySeconds": -2.69194726439714
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              210.0003706090152,
+              2.9015823503582623,
+              0.0026938890464018187,
+              11.894965156303721,
+              0.8774682193938533,
+              1.2438519227265809e-05
+            ],
+            "signIndex": 7,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": 1.334192454692129,
+            "linearTimeToBoundarySeconds": -2.69194726439714
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 3.9454254637121267,
+          "longitudeCoreMinusNoDeflectionArcsec": 3.9454254637121267,
+          "speedCoreMinusReferenceDegreesPerDay": 0.0002746182792119356
+        }
+      }
+    },
+    {
+      "jdUT": 2465565.5,
+      "utIso": "2038-05-22T00:00:00",
+      "body": {
+        "id": 8,
+        "name": "Neptune"
+      },
+      "deltaTCoreSeconds": 83.52215302954433,
+      "deltaTSwissSeconds": 71.37609221912737,
+      "core": {
+        "coordinates": [
+          30.000199142661696,
+          -1.6712276814761138,
+          30.682102100755788,
+          0.033419033171178114,
+          -0.0005050532341011049,
+          -0.00854248138111302
+        ],
+        "signIndex": 1,
+        "retrograde": false,
+        "nearestSignBoundaryDegrees": 30,
+        "signedDistanceToBoundaryArcsec": 0.7169135821186501,
+        "linearTimeToBoundarySeconds": -514.8540917601013
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 0.03341907347476081,
+            "0.01": 0.033419067682416426,
+            "0.1": 0.033419046001199604
+          },
+          "reference": {
+            "coordinates": [
+              29.999699521278462,
+              -1.67125116957526,
+              30.682151003803682,
+              0.03341898787749671,
+              -0.0005041636469439524,
+              -0.008498777389314326
+            ],
+            "signIndex": 0,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 30,
+            "signedDistanceToBoundaryArcsec": -1.0817233974989904,
+            "linearTimeToBoundarySeconds": 776.8446379986669
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              29.99970340628069,
+              -1.6712509812886145,
+              30.6821510038036,
+              0.0334188781517402,
+              -0.0005041792901265975,
+              -0.008498777798489055
+            ],
+            "signIndex": 0,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 30,
+            "signedDistanceToBoundaryArcsec": -1.0677373894736775,
+            "linearTimeToBoundarySeconds": 766.8030396177097
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 1.7986369796176405,
+          "longitudeCoreMinusNoDeflectionArcsec": 1.7846509715923276,
+          "speedCoreMinusReferenceDegreesPerDay": 4.529368140271384e-08
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 0.03341903652653855,
+            "0.01": 0.03341903009186353,
+            "0.1": 0.03341900881835613
+          },
+          "reference": {
+            "coordinates": [
+              29.999704219309248,
+              -1.6712512405736402,
+              30.68214980289127,
+              0.033418957582952054,
+              -0.0005041661333271835,
+              -0.008498809373734045
+            ],
+            "signIndex": 0,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 30,
+            "signedDistanceToBoundaryArcsec": -1.064810486695933,
+            "linearTimeToBoundarySeconds": 764.6992464462429
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              29.99970810429428,
+              -1.6712510522887873,
+              30.682149802891196,
+              0.03341884118606664,
+              -0.0005041807504777286,
+              -0.008498811170799342
+            ],
+            "signIndex": 0,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 30,
+            "signedDistanceToBoundaryArcsec": -1.0508245405731031,
+            "linearTimeToBoundarySeconds": 754.6577941867533
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 1.781724068814583,
+          "longitudeCoreMinusNoDeflectionArcsec": 1.7677381226917532,
+          "speedCoreMinusReferenceDegreesPerDay": 7.558822606029691e-08
+        }
+      }
+    },
+    {
+      "jdUT": 2465683.25,
+      "utIso": "2038-09-16T18:00:00",
+      "body": {
+        "id": 1,
+        "name": "Moon"
+      },
+      "deltaTCoreSeconds": 83.76492303664892,
+      "deltaTSwissSeconds": 71.46026908176592,
+      "core": {
+        "coordinates": [
+          30.00184136291736,
+          -4.614521369328769,
+          0.002707123168232696,
+          11.906268448096391,
+          0.40845353214593594,
+          6.6304554932009735e-06
+        ],
+        "signIndex": 1,
+        "retrograde": false,
+        "nearestSignBoundaryDegrees": 30,
+        "signedDistanceToBoundaryArcsec": 6.628906502498921,
+        "linearTimeToBoundarySeconds": -13.362184529394723
+      },
+      "mismatchModes": [
+        "sameUT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 11.906294215108915,
+            "0.01": 11.906278588467956,
+            "0.1": 11.906352086907077
+          },
+          "reference": {
+            "coordinates": [
+              29.999887606336443,
+              -4.614575788446684,
+              0.002706981588349158,
+              11.906291908687797,
+              0.40826636662234284,
+              6.581005340140011e-06
+            ],
+            "signIndex": 0,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 30,
+            "signedDistanceToBoundaryArcsec": -0.4046171888035133,
+            "linearTimeToBoundarySeconds": 0.8156034310059644
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              29.999887606336443,
+              -4.614575788446684,
+              0.002706981588349158,
+              11.906291908687797,
+              0.40826636662234284,
+              6.581005340140011e-06
+            ],
+            "signIndex": 0,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 30,
+            "signedDistanceToBoundaryArcsec": -0.4046171888035133,
+            "linearTimeToBoundarySeconds": 0.8156034310059644
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 7.033523691302435,
+          "longitudeCoreMinusNoDeflectionArcsec": 7.033523691302435,
+          "speedCoreMinusReferenceDegreesPerDay": -2.3460591405566333e-05
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 11.906280585577633,
+            "0.01": 11.906264681991274,
+            "0.1": 11.906338377709744
+          },
+          "reference": {
+            "coordinates": [
+              30.00158323508379,
+              -4.614517642966072,
+              0.0027069825260443324,
+              11.906278278921434,
+              0.4082947101724096,
+              6.580189263641515e-06
+            ],
+            "signIndex": 1,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 30,
+            "signedDistanceToBoundaryArcsec": 5.699646301627581,
+            "linearTimeToBoundarySeconds": -11.489023524776343
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              30.00158323508379,
+              -4.614517642966072,
+              0.0027069825260443324,
+              11.906278278921434,
+              0.4082947101724096,
+              6.580189263641515e-06
+            ],
+            "signIndex": 1,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 30,
+            "signedDistanceToBoundaryArcsec": 5.699646301627581,
+            "linearTimeToBoundarySeconds": -11.489023524776343
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.9292602008713402,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.9292602008713402,
+          "speedCoreMinusReferenceDegreesPerDay": -9.830825042911329e-06
+        }
+      }
+    }
+  ],
+  "witnessCount": 12,
+  "scope": "All eight sameUT sign disagreements and four Pluto retrograde disagreements in the fixed 172174-record baseline; complete all-body retrograde witnesses are emitted by compare-swiss.py."
+}

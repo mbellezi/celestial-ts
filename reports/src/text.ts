@@ -16,8 +16,14 @@ export function normalizeTextOptions(options: ReportTextOptions = {}): ReportDom
   return REPORT_DOMAINS.filter(domain => requested.includes(domain));
 }
 
-/** Render every report event in chronological order, with source-authored Portuguese templates. */
-export function renderReportText(report: AstrologyReport, options: ReportTextOptions = {}): string {
+export interface ReportNarrativeEvent {
+  title: string;
+  chronology: string;
+  readings: { domain: ReportDomain; title: string; text: string }[];
+}
+
+/** Resolve every report event into factual chronology and source-authored readings. */
+export function reportNarrativeEvents(report: AstrologyReport, options: ReportTextOptions = {}): ReportNarrativeEvent[] {
   const narrative = (editorial as unknown as { narrative: Narrative }).narrative;
   if (!narrative) throw new Error('Narrative catalog is unavailable');
   const domains = normalizeTextOptions(options);
@@ -32,7 +38,7 @@ export function renderReportText(report: AstrologyReport, options: ReportTextOpt
       return values[name];
     });
   };
-  const paragraphs: string[] = [];
+  const events: ReportNarrativeEvent[] = [];
   for (const entry of [...report.entries].sort((a, b) => a.event.start.localeCompare(b.event.start) || a.event.catalogKey.localeCompare(b.event.catalogKey))) {
     const event = entry.event;
     const [, first, second, third] = event.catalogKey.split(':');
@@ -68,10 +74,27 @@ export function renderReportText(report: AstrologyReport, options: ReportTextOpt
     if (event.boundary.startClipped) sentences.push(template('continuedBefore', values));
     if (event.boundary.endClipped) sentences.push(template('continuesAfter', values));
     if (event.kind === 'aspect' && event.exact.length) sentences.push(template('exactPassages', values));
-    paragraphs.push(sentences.join(' '));
     const interpretation = report.interpretations[entry.interpretationKey];
     if (!interpretation) throw new Error(`Missing report interpretation: ${entry.interpretationKey}`);
-    for (const domain of domains) paragraphs.push(domains.length === 1 && domain === 'general' ? interpretation[domain] : `${template('interpretationHeading', { ...values, domain: narrative.domains[domain] })}\n${interpretation[domain]}`);
+    events.push({
+      title: interpretation.title,
+      chronology: sentences.join(' '),
+      readings: domains.map(domain => ({
+        domain,
+        title: template('interpretationHeading', { ...values, domain: narrative.domains[domain] }),
+        text: interpretation[domain],
+      })),
+    });
   }
-  return paragraphs.join('\n\n');
+  return events;
+}
+
+/** Render every report event in chronological order, with source-authored Portuguese templates. */
+export function renderReportText(report: AstrologyReport, options: ReportTextOptions = {}): string {
+  return reportNarrativeEvents(report, options).flatMap(event => [
+    event.chronology,
+    ...event.readings.map(reading => event.readings.length === 1 && reading.domain === 'general'
+      ? reading.text
+      : `${reading.title}\n${reading.text}`),
+  ]).join('\n\n');
 }

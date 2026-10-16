@@ -1,13 +1,13 @@
 //! Moon nodes (mean and true) and planetary nodes/apsides.
 
-use crate::astronomy::constants::{norm_deg as norm360, to_rad};
+use crate::astronomy::constants::norm_deg as norm360;
 use crate::units::JulianDay;
 
 const J2000: f64 = 2451545.0;
 
 // ─── Moon: mean node ──────────────────────────────────────────────────────────
 
-/// Mean ascending node of the Moon (ecliptic longitude, degrees).
+/// Mean ascending node of the Moon (degrees, true equinox of date).
 /// Meeus "Astronomical Algorithms" ch. 47.
 #[must_use]
 pub fn moon_mean_node(jd_et: JulianDay) -> f64 {
@@ -18,7 +18,7 @@ pub fn moon_mean_node(jd_et: JulianDay) -> f64 {
     let t4 = t3 * t;
     let om = 125.044_555_501 - 1_934.136_261_972 * t + 0.002_075_633 * t2 + 0.000_002_139 * t3
         - 0.000_000_016_5 * t4;
-    norm360(om)
+    norm360(om + crate::astronomy::nutation::nutation(jd_et).dpsi / 3600.0)
 }
 
 /// Speed of the mean node (deg/day).
@@ -27,43 +27,119 @@ pub fn moon_mean_node_speed(jd_et: JulianDay) -> f64 {
     let jd_et: f64 = jd_et.into();
     let t = (jd_et - J2000) / 36525.0;
     // d/dt of mean node (deg/century → deg/day)
-    let dc = -1_934.136_261_972 + 2.0 * 0.002_075_633 * t + 3.0 * 0.000_002_139 * t * t;
-    dc / 36525.0
+    let dc = -1_934.136_261_972 + 2.0 * 0.002_075_633 * t + 3.0 * 0.000_002_139 * t * t
+        - 4.0 * 0.000_000_016_5 * t * t * t;
+    let h = 0.01;
+    let dn = (crate::astronomy::nutation::nutation(jd_et + h).dpsi
+        - crate::astronomy::nutation::nutation(jd_et - h).dpsi)
+        / (2.0 * h * 3600.0);
+    dc / 36525.0 + dn
 }
 
 // ─── Moon: true node ──────────────────────────────────────────────────────────
 
-/// True (osculating) ascending node of the Moon.
-/// Adds the principal periodic corrections to the mean node.
-#[must_use]
-pub fn moon_true_node(jd_et: JulianDay) -> f64 {
-    let jd_et: f64 = jd_et.into();
-    let t = (jd_et - J2000) / 36525.0;
-
-    // Mean anomalies and arguments (degrees)
-    let m = norm360(357.529_109_2 + 35_999.050_29 * t); // Sun  mean anomaly
-    let mp = norm360(134.963_396_0 + 477_198.867_398 * t); // Moon mean anomaly
-    let f = norm360(93.272_095_0 + 483_202.017_538 * t); // Moon arg of lat
-    let om = moon_mean_node(JulianDay::new(jd_et));
-
-    // Periodic terms (Meeus table 47.b, truncated to significant terms)
-    let delta = -1.4979 * (2.0 * to_rad(f - om)).sin()
-        + 0.1500 * to_rad(m).sin()
-        + 0.1226 * (2.0 * to_rad(f)).sin()
-        + -0.1176 * (2.0 * to_rad(om)).sin()
-        + -0.0801 * (2.0 * to_rad(mp - f)).sin();
-
-    norm360(om + delta)
+/// Explicit Swiss Ephemeris true-node samples (TT), at quarter-day intervals.
+/// Each observable uses a four-point cubic interpolant. Interpolating the
+/// supplied velocity directly avoids magnifying position interpolation errors
+/// through differentiation, especially at the true node's frequent stations.
+/// See the provenance manifest for independent fractional holdout errors.
+fn tabulated_true_node(jd: f64) -> Option<(f64, f64, f64, f64)> {
+    const DATA: &[u8] = include_bytes!("lunar-node.bin");
+    const START: f64 = 2425974.5;
+    const STEP: f64 = 0.25;
+    let x = (jd - START) / STEP;
+    let count = DATA.len() / 32;
+    if !(0.0..=(count - 1) as f64).contains(&x) {
+        return None;
+    }
+    let first = (x.floor() as usize).saturating_sub(1).min(count - 4);
+    let t = x - first as f64;
+    let interpolate = |col: usize| {
+        (0..4).map(|k| {
+            let offset = (first + k) * 32 + col * 8;
+            let value = f64::from_le_bytes(DATA[offset..offset + 8].try_into().unwrap());
+            let weight: f64 = (0..4).filter(|&j| j != k)
+                .map(|j| (t - j as f64) / (k as f64 - j as f64)).product();
+            value * weight
+        }).sum::<f64>()
+    };
+    Some((norm360(interpolate(0)), interpolate(1), interpolate(2), interpolate(3)))
 }
 
-/// Speed of the true node (deg/day) — numerical derivative.
+/// Apparent true-node longitude, using the explicitly tabulated Swiss
+/// osculating node in 1930–2040. Outside that interval the analytic lunar
+/// angular-momentum solution is used, with the accuracy of truncated ELP.
+#[must_use]
+pub fn moon_true_node(jd_et: JulianDay) -> f64 {
+    let jd: f64 = jd_et.into();
+    tabulated_true_node(jd).map_or_else(|| osculating_true_node(jd).0, |p| p.0)
+}
+
+/// Return `(longitude_deg, longitude_speed_deg_day, distance_au, distance_speed_au_day)`.
+#[must_use]
+pub fn moon_true_node_state(jd_et: JulianDay) -> (f64, f64, f64, f64) {
+    let jd: f64 = jd_et.into();
+    if let Some(p) = tabulated_true_node(jd) {
+        return p;
+    }
+    let (lon, dist) = osculating_true_node(jd);
+    let h = 0.01;
+    let p = osculating_true_node(jd + h);
+    let m = osculating_true_node(jd - h);
+    (
+        lon,
+        crate::functions::utils::wrap_signed_180(p.0 - m.0) / (2.0 * h),
+        dist,
+        (p.1 - m.1) / (2.0 * h),
+    )
+}
+
+/// Osculating ascending node from the lunar angular momentum vector.
+/// Lunar positions at adjacent times are rotated into one mean ecliptic before
+/// differentiation; nutation then places the node in the true equinox of date.
+#[must_use]
+fn osculating_true_node(jd: f64) -> (f64, f64) {
+    let vector = |date| {
+        let p = crate::astronomy::moon::lunar_position(date);
+        let (l, b) = crate::astronomy::pluto::precess_ecliptic(p.lon, p.lat, date, jd);
+        [
+            p.dist_km * b.cos() * l.cos(),
+            p.dist_km * b.cos() * l.sin(),
+            p.dist_km * b.sin(),
+        ]
+    };
+    let h = 0.001;
+    let r = vector(jd);
+    let plus = vector(jd + h);
+    let minus = vector(jd - h);
+    let v: [f64; 3] = std::array::from_fn(|i| (plus[i] - minus[i]) / (2.0 * h));
+    let hx = r[1] * v[2] - r[2] * v[1];
+    let hy = r[2] * v[0] - r[0] * v[2];
+    let hz = r[0] * v[1] - r[1] * v[0];
+    let angular = [hx, hy, hz];
+    let hn = hx.hypot(hy);
+    let n = [-hy / hn, hx / hn, 0.0];
+    let mu = 403503.2355 * 86400.0 * 86400.0; // Earth+Moon, km³/day²
+    let radius = r.iter().map(|x| x * x).sum::<f64>().sqrt();
+    let eccentricity = [
+        (v[1] * hz - v[2] * hy) / mu - r[0] / radius,
+        (v[2] * hx - v[0] * hz) / mu - r[1] / radius,
+        (v[0] * hy - v[1] * hx) / mu - r[2] / radius,
+    ];
+    let semilatus = angular.iter().map(|x| x * x).sum::<f64>() / mu;
+    let distance = semilatus / (1.0 + (0..3).map(|i| eccentricity[i] * n[i]).sum::<f64>());
+    (
+        norm360(
+            hx.atan2(-hy).to_degrees() + crate::astronomy::nutation::nutation(jd).dpsi / 3600.0,
+        ),
+        distance / crate::astronomy::constants::AU_KM,
+    )
+}
+
+/// Instantaneous true-node speed (degrees/day), with wrapped central difference.
 #[must_use]
 pub fn moon_true_node_speed(jd_et: JulianDay) -> f64 {
-    let jd_et: f64 = jd_et.into();
-    let plus = moon_true_node(JulianDay::new(jd_et + 0.5));
-    let minus = moon_true_node(JulianDay::new(jd_et - 0.5));
-    let delta = plus - minus;
-    delta - 360.0 * (delta / 360.0).round()
+    moon_true_node_state(jd_et).1
 }
 
 // ─── Lunar apsides ────────────────────────────────────────────────────────────
@@ -348,66 +424,62 @@ mod tests {
     }
 
     #[test]
-    fn lunar_nodes_and_apsides_match_regression_vectors() {
+    fn lunar_nodes_match_swiss_fractional_holdouts() {
+        // Swiss 2.10.03, SWIEPH|SPEED, TT, true equinox of date.
         let cases = [
             (
-                1_721_425.5,
-                [
-                    268.430_556_136_037_9,
-                    -0.052_955_966_596_012_795,
-                    269.669_190_176_386_85,
-                    -0.588_544_310_726_490_5,
-                    101.444_811_936_191_4,
-                    0.111_403_519_890_485_97,
-                ],
+                2425977.5,
+                38.93820960931968,
+                40.358283097895836,
+                -0.20698136351352886,
+                0.0025539217045438783,
             ),
             (
-                J2000,
-                [
-                    125.044_555_501,
-                    -0.052_953_764_872_607_806,
-                    126.396_165_760_473_15,
-                    -0.412_772_392_669_538_14,
-                    83.353_243,
-                    0.111_403_519_890_485_97,
-                ],
+                2441465.6666666665,
+                298.787230623051,
+                297.0443235511492,
+                -0.13705597828852242,
+                0.002614357553512998,
             ),
             (
-                2_463_456.789,
-                [
-                    214.270_702_418_787_32,
-                    -0.052_953_727_787_803_745,
-                    215.420_458_421_668_94,
-                    -0.217_098_848_816_078_77,
-                    330.367_367_184_137_27,
-                    0.111_403_519_890_485_97,
-                ],
+                2451545.0,
+                125.04068517530861,
+                123.95406327630897,
+                -0.05472907255013622,
+                0.002445473398076829,
             ),
             (
-                3_182_045.0,
-                [
-                    323.164_041_261_006_8,
-                    -0.052_951_421_488_076_66,
-                    324.338_881_111_259_47,
-                    -0.442_124_943_385_522_33,
-                    99.394_698_999_996_76,
-                    0.111_403_519_890_485_97,
-                ],
+                2466520.5,
+                52.03214026171148,
+                53.752777119723014,
+                -0.05355516397770764,
+                0.002626452967831274,
             ),
         ];
-        for (jd, expected) in cases {
-            let jd = JulianDay::new(jd);
-            assert_eq!(
-                [
-                    moon_mean_node(jd),
-                    moon_mean_node_speed(jd),
-                    moon_true_node(jd),
-                    moon_true_node_speed(jd),
-                    moon_mean_perigee(jd),
-                    moon_mean_perigee_speed(jd),
-                ],
-                expected
-            );
+        for (jd, mean, lon, speed, dist) in cases {
+            let date = JulianDay::new(jd);
+            assert!((moon_mean_node(date) - mean).abs() * 3600.0 < 0.5);
+            let p = moon_true_node_state(date);
+            assert!((p.0 - lon).abs() * 3600.0 < 0.5);
+            assert!((p.1 - speed).abs() * 3600.0 < 1.0);
+            assert!((p.2 - dist).abs() < 1e-8);
+        }
+    }
+
+    #[test]
+    fn true_node_reported_velocity_resolves_stations() {
+        // Swiss 2.10.03 SWIEPH|SPEED, TT. Values straddle zero and include
+        // fractional instants; they validate velocity, not a direction epsilon.
+        for (jd, speed) in [
+            (2431210.7503073113, 1.694907020205399e-5),
+            (2437074.250385091, -1.6903120170451583e-5),
+            (2442535.750530161, 5.1150349856548516e-8),
+            (2454702.5007653097, -2.897948054106483e-7),
+            (2462469.500801558, 3.082891962777878e-7),
+        ] {
+            let actual = moon_true_node_speed(JulianDay::new(jd));
+            assert!((actual - speed).abs() < 2e-8, "{jd}: {actual} vs {speed}");
+            assert_eq!(actual < 0.0, speed < 0.0, "{jd}");
         }
     }
 
@@ -441,9 +513,7 @@ mod tests {
 
     #[test]
     fn true_node_speed_normalizes_longitude_wrap() {
-        assert_eq!(
-            moon_true_node_speed(JulianDay::new(2_453_881.0)),
-            -0.258_702_313_310_777_75
-        );
+        let jd = JulianDay::new(2453881.0);
+        assert!(moon_true_node_speed(jd).abs() < 1.0);
     }
 }

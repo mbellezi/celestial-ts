@@ -377,7 +377,7 @@ test('angle and label geometry reject nonfinite or impossible input', () => {
 function crowdedChart(data: ChartData): ChartData {
   const longitude = data.bodies[0]!.longitude;
   const bodies = data.bodies.map((body, index) => {
-    const position = normalizeAngle(longitude + index * 0.01);
+    const position = index === 0 ? longitude : normalizeAngle(longitude + index * 0.01);
     return { ...body, longitude: position, sign: Math.floor(position / 30) as typeof body.sign,
       degreeInSign: position % 30 };
   });
@@ -395,6 +395,10 @@ test('moving labels in a crowded wheel preserves the exact planet anchors', () =
     const id = String(planetary.bodies[0]!.id);
     const a = element(original, 'data-body-id', id);
     const b = element(shifted, 'data-body-id', id);
+    assert.equal(a.attributes['data-longitude'], String(planetary.bodies[0]!.longitude));
+    const point = pointAt(planetary.bodies[0]!.longitude, 0, 400, 400, 302 * .812);
+    assert.equal(a.attributes['data-anchor-x'], String(Math.round(point.x * 1000) / 1000));
+    assert.equal(a.attributes['data-anchor-y'], String(Math.round(point.y * 1000) / 1000));
     assert.equal(a.attributes['data-longitude'], b.attributes['data-longitude']);
     assert.equal(a.attributes['data-anchor-x'], b.attributes['data-anchor-x']);
     assert.equal(a.attributes['data-anchor-y'], b.attributes['data-anchor-y']);

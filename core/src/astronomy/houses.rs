@@ -123,14 +123,16 @@ impl HouseSystem {
 /// - `geolon` — geographic longitude (degrees, E positive)
 /// - `hsys` — house system character (`b'P'` = Placidus, etc.)
 ///
-/// Uses sidereal time computed from JD.
+/// Uses apparent sidereal time and true obliquity evaluated at TT.
+/// Placidus at or beyond the polar circle falls back to Porphyry here;
+/// use `functions::houses` to receive an explicit error instead.
 pub fn houses(jd_ut: JulianDay, geolat: Latitude, geolon: Longitude, hsys: u8) -> HouseResult {
     let jd_ut: f64 = jd_ut.into();
     let geolat: f64 = geolat.into();
     let geolon: f64 = geolon.into();
     let armc = sidereal_time_deg(JulianDay::new(jd_ut)) + geolon;
     let armc = norm_deg(armc);
-    let eps = obliquity_simple(JulianDay::new(jd_ut));
+    let eps = house_obliquity(JulianDay::new(jd_ut));
     houses_armc(
         Degrees::new(armc),
         Latitude::new(geolat),
@@ -162,7 +164,7 @@ pub(crate) fn house_cusp(
     let geolat = geolat.get();
     let geolon = geolon.get();
     let armc = norm_deg(sidereal_time_deg(JulianDay::new(jd_ut)) + geolon);
-    let eps = obliquity_simple(JulianDay::new(jd_ut));
+    let eps = house_obliquity(JulianDay::new(jd_ut));
     let system = HouseSystem::from_char(hsys).unwrap_or(HouseSystem::Placidus);
     compute_house_cusp(armc, geolat, eps, system, cusp)
 }
@@ -174,6 +176,9 @@ fn compute_houses(armc: f64, lat: f64, eps: f64, sys: HouseSystem) -> HouseResul
     let mc = midheaven(Degrees::new(armc), Degrees::new(eps));
 
     let cusps = match sys {
+        // This infallible low-level API follows the Swiss Porphyry fallback.
+        // The fallible public functions reject undefined polar Placidus.
+        HouseSystem::Placidus if lat.abs() >= 90.0 - eps.abs() => porphyry(asc, mc),
         HouseSystem::Placidus => placidus(armc, lat, eps, asc, mc),
         HouseSystem::Koch => koch(armc, lat, eps, asc, mc),
         HouseSystem::Porphyrius => porphyry(asc, mc),
@@ -203,7 +208,7 @@ fn compute_houses(armc: f64, lat: f64, eps: f64, sys: HouseSystem) -> HouseResul
 }
 
 fn compute_house_cusp(armc: f64, lat: f64, eps: f64, sys: HouseSystem, cusp: usize) -> f64 {
-    if sys != HouseSystem::Placidus {
+    if sys != HouseSystem::Placidus || lat.abs() >= 90.0 - eps.abs() {
         return compute_houses(armc, lat, eps, sys).cusps[cusp];
     }
     let asc = ascendant(Degrees::new(armc), Latitude::new(lat), Degrees::new(eps));
@@ -231,7 +236,15 @@ pub fn ascendant(armc: Degrees, lat: Latitude, eps: Degrees) -> f64 {
     let (sin_eps, cos_eps) = eps_r.sin_cos();
     let y = -cos_armc;
     let x = lat_r.tan().mul_add(sin_eps, sin_armc * cos_eps);
-    opposite(to_deg(y.atan2(x)))
+    let asc = opposite(to_deg(y.atan2(x)));
+    // In polar regions the horizon intersection can be on the other half
+    // of the ecliptic. Keep the ascendant east of the meridian, as Swiss does.
+    let mc = midheaven(Degrees::new(armc), Degrees::new(eps));
+    if norm_deg(asc - mc) > 180.0 {
+        opposite(asc)
+    } else {
+        asc
+    }
 }
 
 /// Midheaven (MC) (degrees).
@@ -389,16 +402,14 @@ fn placidus_cusp_iter(armc: f64, lat_r: f64, eps_r: f64, f: f64, upper: bool) ->
         armc_r + std::f64::consts::FRAC_PI_2 + f * std::f64::consts::FRAC_PI_2
     };
 
-    for _ in 0..30 {
+    for _ in 0..300 {
         let sin_lon = lon_r.sin();
         let dec = (sin_eps * sin_lon).asin();
         let tan_dec = dec.tan();
 
-        // SDA, SNA for the current declination. |tan φ · tan δ| ≥ 1 means
-        // the cusp is circumpolar at this latitude (rare); clamp to keep
-        // the iteration finite — Placidus is conventionally undefined
-        // there but every astrology program returns *something*.
-        let cos_arg = (-tan_lat * tan_dec).clamp(-1.0, 1.0);
+        // Polar Placidus is handled explicitly by the dispatcher before
+        // iteration. At valid latitudes every ecliptic point rises and sets.
+        let cos_arg = -tan_lat * tan_dec;
         let sda = cos_arg.acos();
         let sna = std::f64::consts::PI - sda;
 
@@ -422,7 +433,7 @@ fn placidus_cusp_iter(armc: f64, lat_r: f64, eps_r: f64, f: f64, upper: bool) ->
         let delta = (lon_new_r - lon_r).rem_euclid(2.0 * std::f64::consts::PI);
         let delta = delta.min(2.0 * std::f64::consts::PI - delta);
         lon_r = lon_new_r;
-        if (0.0..1e-9).contains(&delta) {
+        if (0.0..1e-12).contains(&delta) {
             break;
         }
     }
@@ -806,12 +817,19 @@ pub fn sidereal_time_deg(jd_ut: JulianDay) -> f64 {
     let jd_ut: f64 = jd_ut.into();
     let gmst = mean_sidereal_time_deg(JulianDay::new(jd_ut));
     // Equation of the equinoxes: dpsi * cos(eps)
-    let nut = crate::astronomy::nutation::nutation(jd_ut);
+    let jde = jd_ut + crate::astronomy::delta_t::delta_t(JulianDay::new(jd_ut)) / 86_400.0;
+    let nut = crate::astronomy::nutation::nutation(jde);
     // PERF-7: reuse `nut` instead of re-running the 77-term series inside
     // true_obliquity. Byte-identical: true_obliquity == mean_obliquity + deps/3600.
-    let eps = crate::astronomy::nutation::mean_obliquity(jd_ut) + nut.deps / 3600.0;
+    let eps = crate::astronomy::nutation::mean_obliquity(jde) + nut.deps / 3600.0;
     let eq_eq = nut.dpsi / 3600.0 * eps.to_radians().cos(); // arcsec → degrees
     norm_deg(gmst + eq_eq)
+}
+
+/// True ecliptic obliquity at TT corresponding to the supplied UT.
+pub(crate) fn house_obliquity(jd_ut: JulianDay) -> f64 {
+    let jde = jd_ut.get() + crate::astronomy::delta_t::delta_t(jd_ut) / 86_400.0;
+    crate::astronomy::nutation::true_obliquity(jde)
 }
 
 /// Approximate obliquity of the ecliptic (degrees) for a UT Julian day.
@@ -848,6 +866,122 @@ mod tests {
 
     /// celestial reference: houses(2452275.499255786, 0, 0, b'P')
     /// cusps[0] == 191.0989364639854, ascmc[0] == 191.098...
+    // Independent pyswisseph 2.10 reference, tropical houses (UT).
+    #[test]
+    fn swiss_placidus_ut_reference() {
+        let cases = [
+            (
+                2451545.0,
+                45.0,
+                0.0,
+                [
+                    19.786563683189836,
+                    56.48426577405366,
+                    79.7474385351428,
+                    99.61108780028457,
+                    121.15635701561848,
+                    150.7980491782032,
+                    199.78656368318983,
+                    236.48426577405365,
+                    259.7474385351428,
+                    279.61108780028457,
+                    301.1563570156185,
+                    330.7980491782032,
+                ],
+            ),
+            (
+                2426000.0,
+                -23.55,
+                -46.6333,
+                [
+                    346.69608278474374,
+                    14.93105952138397,
+                    45.46200193775306,
+                    76.61889558482926,
+                    107.43549324603276,
+                    137.66023010974158,
+                    166.6960827847438,
+                    194.93105952138396,
+                    225.46200193775306,
+                    256.61889558482926,
+                    287.43549324603276,
+                    317.6602301097416,
+                ],
+            ),
+            (
+                2466000.0,
+                60.0,
+                151.2,
+                [
+                    36.362929490999264,
+                    70.41659750807123,
+                    85.71966918124002,
+                    98.44269737541089,
+                    113.04975341106592,
+                    137.47166345263167,
+                    216.36292949099925,
+                    250.41659750807122,
+                    265.71966918124,
+                    278.4426973754109,
+                    293.0497534110659,
+                    317.4716634526317,
+                ],
+            ),
+        ];
+        for (jd, lat, lon, expected) in cases {
+            let actual = houses(
+                JulianDay::new(jd),
+                Latitude::new(lat),
+                Longitude::new(lon),
+                b'P',
+            );
+            for (got, want) in actual.cusps[1..].iter().zip(expected) {
+                let error = (got - want + 180.0).rem_euclid(360.0) - 180.0;
+                assert!(error.abs() * 3600.0 < 1.0, "{jd} {lat}: {got} vs {want}");
+            }
+        }
+    }
+
+    #[test]
+    fn swiss_polar_ascendant_and_explicit_fallback() {
+        for (lat, expected) in [(80.0, 352.36246024774016), (-80.0, 3.2893096900124097)] {
+            let equal = houses(
+                JulianDay::new(2451545.0),
+                Latitude::new(lat),
+                Longitude::new(0.0),
+                b'E',
+            );
+            assert!((equal.ascmc[0] - expected).abs() * 3600.0 < 1.0);
+            let whole = houses(
+                JulianDay::new(2451545.0),
+                Latitude::new(lat),
+                Longitude::new(0.0),
+                b'W',
+            );
+            assert_eq!(whole.cusps[1], (expected / 30.0).floor() * 30.0);
+            let polar = houses_armc(
+                Degrees::new(280.0),
+                Latitude::new(lat),
+                Degrees::new(23.44),
+                b'P',
+            );
+            let fallback = houses_armc(
+                Degrees::new(280.0),
+                Latitude::new(lat),
+                Degrees::new(23.44),
+                b'O',
+            );
+            assert_eq!(polar, fallback);
+            assert!(crate::functions::houses::houses_armc(
+                Degrees::new(280.0),
+                Latitude::new(lat),
+                Degrees::new(23.44),
+                crate::body::HouseSystem::PLACIDUS
+            )
+            .is_err());
+        }
+    }
+
     #[test]
     fn placidus_equator_reference() {
         let result = houses(
@@ -927,18 +1061,18 @@ mod tests {
             b'K',
         );
         let expected = [
-            (1, 24.070_770),
-            (2, 61.683_707),
-            (3, 63.047_038),
-            (4, 99.518_744),
-            (5, 185.885_765),
-            (6, 265.274_225),
-            (7, 204.070_770),
-            (8, 241.683_707),
-            (9, 243.047_038),
-            (10, 279.518_744),
-            (11, 5.885_765),
-            (12, 85.274_225),
+            (1, 24.068462355409196),
+            (2, 61.680812135927624),
+            (3, 63.04764970350459),
+            (4, 99.51885794034564),
+            (5, 185.87987092827947),
+            (6, 265.27769526795225),
+            (7, 204.0684623554092),
+            (8, 241.68081213592762),
+            (9, 243.04764970350462),
+            (10, 279.51885794034564),
+            (11, 5.879870928279464),
+            (12, 85.27769526795224),
         ];
 
         for (idx, want) in expected {
@@ -1117,39 +1251,39 @@ mod tests {
                 123.456,
                 37.5,
                 [
-                    (1976.896549098444, 10898.997547275329),
-                    (1824.181447022317, 10866.414566620508),
+                    (1976.896549091337, 10898.997547192848),
+                    (1824.1814470223173, 10866.414566620508),
                     (2330.822673743074, 12972.295430513022),
-                    (1860.897755713735, 12031.161493853884),
-                    (2280.981039436872, 12582.293808815013),
-                    (2306.926571376990, 12805.022713950431),
-                    (1994.718776109159, 10955.672044709529),
+                    (1860.8977557137348, 12031.161493853884),
+                    (2280.9810394368724, 12582.293808815013),
+                    (2306.92657137699, 12805.022713950431),
+                    (1994.7187761091589, 10955.672044709529),
                     (1980.0, 10680.0),
-                    (2021.472000482036, 11153.120272741329),
-                    (2021.472000482036, 11645.811503355526),
-                    (2006.636036507226, 13567.293156975289),
-                    (1747.185100461455, 13203.933355564232),
-                    (2004.054160660289, 11089.100828208244),
-                    (2306.926571376990, 12805.022713950431),
+                    (2021.4720004820365, 11153.12027274133),
+                    (2021.4720004820363, 11645.81150335552),
+                    (2006.6360365072255, 13567.29315697529),
+                    (1747.1851004614546, 13203.933355564232),
+                    (2004.0541606531817, 11089.100828125764),
+                    (2306.92657137699, 12805.022713950431),
                 ],
             ),
             (
                 278.25,
                 -23.5,
                 [
-                    (2072.136892670314, 17773.149975194003),
-                    (2020.930712619910, 17351.964381196594),
-                    (2070.834810612188, 17750.473779196553),
-                    (2230.171008640630, 16838.497796937998),
-                    (2018.072833730365, 17405.351119418370),
+                    (2072.136892670024, 17773.149975171014),
+                    (2020.93071261991, 17351.964381196594),
+                    (2070.8348106121884, 17750.473779196553),
+                    (2230.1710086406306, 16838.497796937998),
+                    (2018.072833730365, 17405.35111941837),
                     (2070.739790177535, 17749.808636153975),
-                    (2070.929831046842, 17751.043901804471),
+                    (2070.9298310468416, 17751.04390180447),
                     (1980.0, 17160.0),
-                    (2079.000000718911, 17831.950078217484),
-                    (2079.000000718911, 12914.394505436165),
-                    (2076.275775060469, 12313.348535341509),
-                    (1161.444765963800, 5409.213527783048),
-                    (2056.436558581203, 17663.247636570228),
+                    (2079.0000007189105, 17831.950078217484),
+                    (2079.0000007189105, 12914.394505436165),
+                    (2076.2757750604687, 12313.348535341509),
+                    (1161.4447659638004, 5409.2135277830475),
+                    (2056.4365585809137, 17663.24763654724),
                     (2070.739790177535, 17749.808636153975),
                 ],
             ),
@@ -1157,20 +1291,20 @@ mod tests {
                 0.125,
                 66.0,
                 [
-                    (2241.543953459337, 13997.244678788917),
+                    (2241.544019998262, 13997.245011390984),
                     (2214.249256377891, 14189.310362960448),
-                    (2231.869985636032, 13812.037368246465),
-                    (2122.066021153656, 11576.837216647191),
-                    (2064.494047812414, 12857.852794950786),
-                    (2122.105062411519, 12323.682905674868),
-                    (1981.634908860545, 12310.626907593545),
+                    (2231.8699856360317, 13812.037368246465),
+                    (2122.0660211536556, 11576.83721664719),
+                    (2064.4940478124145, 12857.852794950786),
+                    (2122.1050624115187, 12323.682905674868),
+                    (1981.6349088605448, 12310.626907593545),
                     (1980.0, 11400.0),
-                    (1981.500000019053, 12283.874922392590),
-                    (1981.500000019053, 17195.252289850840),
-                    (2065.014346883100, 13419.998029749318),
-                    (2280.899495225645, 12849.896653896707),
-                    (2308.389243876957, 14465.161711712259),
-                    (2122.105062411519, 12323.682905674868),
+                    (1981.5000000190535, 12283.874922392592),
+                    (1981.5000000190535, 17195.252289850843),
+                    (2065.0143468830997, 13419.998029749318),
+                    (2280.8994952256453, 12849.896653896707),
+                    (2308.389310415882, 14465.162044314324),
+                    (2122.1050624115187, 12323.682905674868),
                 ],
             ),
         ];
@@ -1247,7 +1381,13 @@ mod tests {
                 sidereal_time_deg(JulianDay::new(jd)),
                 obliquity_simple(JulianDay::new(jd)),
             ];
-            assert_eq!(actual, expected);
+            assert_eq!(actual[0], expected[0]);
+            assert_eq!(actual[2], expected[2]);
+            let jde = jd + crate::astronomy::delta_t::delta_t(JulianDay::new(jd)) / 86_400.0;
+            let nut = crate::astronomy::nutation::nutation(jde);
+            let eps = crate::astronomy::nutation::true_obliquity(jde);
+            let apparent = norm_deg(actual[0] + nut.dpsi / 3600.0 * eps.to_radians().cos());
+            assert_eq!(actual[1], apparent);
         }
     }
 

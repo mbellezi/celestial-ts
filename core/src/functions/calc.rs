@@ -612,6 +612,9 @@ fn should_parallel(strategy: CalcStrategy, body_count: usize) -> bool {
     }
 }
 
+// Wrapper regression vectors follow the corrected VSOP87D/apparent models;
+// external model anchors and measured residuals are in astronomy tests and
+// docs/validation/pluto-nodes-model.md. Preserve strict wrapper tolerances.
 #[cfg(test)]
 mod cov_tests {
     #[cfg(target_arch = "wasm32")]
@@ -660,9 +663,9 @@ mod cov_tests {
         assert_position(
             &base,
             [
-                228.270_388_568_179_87,
-                0.976_173_096_554_336_8,
-                3.935_184_916_548_827_5,
+                228.51009558414495,
+                0.9786829858830188,
+                3.9414814372190468,
                 0.0,
                 0.0,
                 0.0,
@@ -671,12 +674,12 @@ mod cov_tests {
         assert_position(
             &speed,
             [
-                228.270_388_568_179_87,
-                0.976_173_096_554_336_8,
-                3.935_184_916_548_827_5,
-                -0.029_579_185_672_673_702,
-                0.005_806_338_871_955_696,
-                -0.010_004_481_699_836_809,
+                228.51009558414495,
+                0.9786829858830188,
+                3.9414814372190468,
+                -0.027162869447010962,
+                0.005774906223734,
+                -0.010018808466682572,
             ],
         );
         assert_eq!(base.ret_flags, CalcFlags::BUILTIN.as_raw());
@@ -795,8 +798,10 @@ mod cov_tests {
     fn lunar_nodes_wrapper_preserves_opposite_points() {
         let flags = CalcFlags::BUILTIN | CalcFlags::SPEED;
         let result = nod_aps(JulianDay::new(2_451_545.0), Body::MOON, flags, 0).unwrap();
-        assert_eq!(result.nasc[0], 125.044_555_501);
-        assert_eq!(result.ndsc[0], 305.044_555_501);
+        // Swiss Ephemeris 2.10.03 SWIEPH, J2000 TT, true equinox of date.
+        assert!((result.nasc[0] - 125.04068517530861).abs() * 3600.0 < 0.5);
+        assert_eq!(result.nasc[0], crate::astronomy::nodes::moon_mean_node(JulianDay::new(2_451_545.0)));
+        assert_eq!(result.ndsc[0], (result.nasc[0] + 180.0).rem_euclid(360.0));
         assert_eq!(result.peri[0], 83.353_243);
         assert_eq!(result.aphe[0], 263.353_243);
         assert_eq!(result.ret_flags, flags.as_raw());
@@ -811,7 +816,7 @@ mod cov_tests {
             0,
         )
         .unwrap();
-        assert_exact_f64(lunar.ndsc[0], 169.091_962_525_661_76);
+        assert_exact_f64(lunar.ndsc[0], (lunar.nasc[0] + 180.0).rem_euclid(360.0));
         assert_exact_f64(lunar.aphe[0], 152.004_811_813_517_56);
 
         let solar = nod_aps(

@@ -423,6 +423,9 @@ pub fn moon_phase_info(jd: JulianDay) -> Result<MoonPhaseInfo> {
 
 // ── Tests ─────────────────────────────────────────────────────────────────────
 
+// Wrapper regression vectors follow the corrected VSOP87D/apparent models;
+// external model anchors and measured residuals are in astronomy tests and
+// docs/validation/pluto-nodes-model.md. Preserve strict wrapper tolerances.
 #[cfg(test)]
 mod tests {
     #[cfg(target_arch = "wasm32")]
@@ -654,20 +657,20 @@ mod tests {
     #[test]
     fn phase_solver_regression() {
         let solved = bisect_phase(2_460_790.0, 2_460_796.0, 0.0).unwrap();
-        assert!((solved - 2_460_793.313_517_306_5).abs() < 1e-9);
+        assert!((solved - 2460793.313297207).abs() < 1e-9, "{solved} != {}", 2460793.313297207);
         let narrow = bisect_phase(2_460_793.0, 2_460_793.0, 0.0).unwrap();
-        assert!((narrow - 2_460_793.313_517_306_5).abs() < 1e-9);
+        assert!((narrow - 2460793.313297207).abs() < 1e-9, "{narrow} != {}", 2460793.313297207);
         let error = bisect_phase(2_460_790.0, 2_460_790.0, 180.0).unwrap_err();
         assert_eq!(
             error.to_string(),
-            "calculation error: phase bisection did not converge: target=180.0° got e=306.976°"
+            "calculation error: phase bisection did not converge: target=180.0° got e=306.980°"
         );
     }
 
     fn assert_event(event: &PhaseEvent, phase: PrincipalPhase, jd: f64, elongation: f64) {
         assert_eq!(event.phase, phase);
-        assert!((event.jd - jd).abs() < 1e-9);
-        assert!((event.elongation - elongation).abs() < 1e-9);
+        assert!((event.jd - jd).abs() < 1e-9, "{} != {jd}", event.jd);
+        assert!((event.elongation - elongation).abs() < 1e-9, "{} != {elongation}", event.elongation);
     }
 
     #[test]
@@ -676,23 +679,23 @@ mod tests {
         let cases = [
             (
                 PrincipalPhase::NewMoon,
-                2_460_793.313_521_910_5,
-                359.999_947_300_466_66,
+                2460793.313301807,
+                359.99994741995454,
             ),
             (
                 PrincipalPhase::FirstQuarter,
-                2_460_770.593_818_578,
-                89.999_984_408_317_16,
+                2460770.593533964,
+                89.9999843894655,
             ),
             (
                 PrincipalPhase::FullMoon,
-                2_460_778.515_784_968,
-                179.999_830_198_876_34,
+                2460778.5154466173,
+                179.99983097801484,
             ),
             (
                 PrincipalPhase::LastQuarter,
-                2_460_786.566_477_191_6,
-                269.999_951_107_115_46,
+                2460786.5663682427,
+                269.9999508544313,
             ),
         ];
         for (phase, expected_jd, expected_elongation) in cases {
@@ -707,15 +710,15 @@ mod tests {
         assert_event(
             &epoch_event,
             PrincipalPhase::NewMoon,
-            2_451_580.044_697_114,
-            359.999_862_741_248_2,
+            2451580.043924526,
+            359.99986297849824,
         );
     }
 
     #[test]
     fn phase_angle_matches_elongation_exactly() {
         let moment = JulianDay::new(jd(2025, 4, 15, 12.0));
-        assert_eq!(moon_phase_angle(moment).unwrap(), 206.978_274_435_081_32);
+        assert_eq!(moon_phase_angle(moment).unwrap(), 206.9812277240709);
         assert_eq!(moon_phase_angle(moment), moon_elongation(moment));
     }
 
@@ -723,7 +726,7 @@ mod tests {
         assert_eq!(events.len(), expected.len());
         for (event, &(phase, expected_jd)) in events.iter().zip(expected) {
             assert_eq!(event.phase, phase);
-            assert!((event.jd - expected_jd).abs() < 1e-9);
+            assert!((event.jd - expected_jd).abs() < 1e-9, "{} != {expected_jd}", event.jd);
         }
     }
 
@@ -731,27 +734,27 @@ mod tests {
     fn month_events_lock_order_and_year_rollover() {
         let april = moon_phases_for_month(2025, 4).unwrap();
         let april_expected = [
-            (PrincipalPhase::FirstQuarter, 2_460_770.593_818_578),
-            (PrincipalPhase::FullMoon, 2_460_778.515_784_968),
-            (PrincipalPhase::LastQuarter, 2_460_786.566_477_191_6),
-            (PrincipalPhase::NewMoon, 2_460_793.313_521_910_5),
+            (PrincipalPhase::FirstQuarter, 2460770.593533964),
+            (PrincipalPhase::FullMoon, 2460778.5154466173),
+            (PrincipalPhase::LastQuarter, 2460786.5663682427),
+            (PrincipalPhase::NewMoon, 2460793.313301807),
         ];
         let december = moon_phases_for_month(2025, 12).unwrap();
         let december_expected = [
-            (PrincipalPhase::FullMoon, 2_461_014.468_415_585),
-            (PrincipalPhase::LastQuarter, 2_461_021.369_594_891_6),
-            (PrincipalPhase::NewMoon, 2_461_029.572_088_549_4),
-            (PrincipalPhase::FirstQuarter, 2_461_037.298_939_582_4),
+            (PrincipalPhase::FullMoon, 2461014.4681169447),
+            (PrincipalPhase::LastQuarter, 2461021.3692402905),
+            (PrincipalPhase::NewMoon, 2461029.571760288),
+            (PrincipalPhase::FirstQuarter, 2461037.298532759),
         ];
         assert_month_events(&april, &april_expected);
         assert_month_events(&december, &december_expected);
         let august = moon_phases_for_month(2023, 8).unwrap();
         let august_expected = [
-            (PrincipalPhase::FullMoon, 2_460_158.272_602_341),
-            (PrincipalPhase::LastQuarter, 2_460_164.936_996_956_4),
-            (PrincipalPhase::NewMoon, 2_460_172.902_105_182_4),
-            (PrincipalPhase::FirstQuarter, 2_460_180.915_380_57),
-            (PrincipalPhase::FullMoon, 2_460_187.566_976_736_8),
+            (PrincipalPhase::FullMoon, 2460158.2719904296),
+            (PrincipalPhase::LastQuarter, 2460164.9364199163),
+            (PrincipalPhase::NewMoon, 2460172.901538249),
+            (PrincipalPhase::FirstQuarter, 2460180.914755841),
+            (PrincipalPhase::FullMoon, 2460187.5664185737),
         ];
         assert_month_events(&august, &august_expected);
     }
@@ -762,12 +765,14 @@ mod tests {
         let info = moon_phase_info(moment).unwrap();
         assert_eq!(info.phase, MoonPhase::WaningGibbous);
         assert_eq!(info.phase_name, "Waning Gibbous");
-        assert_eq!(info.elongation, 206.978_274_435_081_32);
-        assert_eq!(info.illumination, 0.945_589_302_723_051_3);
-        assert_eq!(info.prev_phase_jd, 2_460_778.515_784_968);
+        assert_eq!(info.elongation, 206.9812277240709);
+        // Native and WASM transcendental evaluation can differ by a few ULP.
+        let expected: f64 = 0.9455776104561172;
+        assert!((info.illumination - expected).abs() <= 4.0 * f64::EPSILON * expected.abs().max(1.0));
+        assert_eq!(info.prev_phase_jd, 2460778.5154466173);
         assert_eq!(info.prev_phase_name, "Full Moon");
-        assert_eq!(info.next_phase_jd, 2_460_786.566_477_191_6);
+        assert_eq!(info.next_phase_jd, 2460786.5663682427);
         assert_eq!(info.next_phase_name, "Last Quarter");
-        assert_eq!(info.age_days, 2.484_215_031_843_632_5);
+        assert_eq!(info.age_days, 2.484553382731974);
     }
 }

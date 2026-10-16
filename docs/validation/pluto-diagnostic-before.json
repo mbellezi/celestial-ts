@@ -1,0 +1,328 @@
+{
+  "swiss_version": "2.10.03",
+  "python_wrapper_version": "2.10.3.2",
+  "python_wrapper_sha256": "529e5eaa39d868690938c31bc8d5633d054170cd2ee5c89ef2b6bc676db22628",
+  "rust_source_sha256": {
+    "core/src/astronomy/pluto.rs": "28d41fba2448a24f3c957c322b896ceeb47ff49dbc1e3ea378993bab94d3bbe7",
+    "core/src/astronomy/vsop87.rs": "9952b922397a2478353f7d6033c5b2fc082f09e44703a4641be6b73b3b5ef574",
+    "core/src/astronomy/delta_t.rs": "c2b075be6e3b5bc6967bc7f9e5002cda4d83237ab70565dd63da5b9745a4866e"
+  },
+  "ephemeris_manifest": {
+    "upstreamCommit": "c113653fe37fe5cdbfcc030a6e341de03ef018d2",
+    "files": [
+      {
+        "name": "sepl_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/sepl_18.se1",
+        "bytes": 484061,
+        "sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+      },
+      {
+        "name": "semo_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/semo_18.se1",
+        "bytes": 1304771,
+        "sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+      },
+      {
+        "name": "seas_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/seas_18.se1",
+        "bytes": 223004,
+        "sha256": "a2cd8fc33807c78ca9a700c91c2e042258b12fc4796519e00781440b5ad8b2e2"
+      }
+    ]
+  },
+  "ephemeris_manifest_sha256": "ba502c7fb50f40756880cc112c5e360224144b778603a443519891fcd539249a",
+  "reference_url": "https://raw.githubusercontent.com/architest/pymeeus/master/pymeeus/Pluto.py",
+  "reference_sha256": "9a407bf676816845319340110b24b5bd693f350e748b7e3ddb3766985917a3cd",
+  "core_table_rows": 29,
+  "reference_table_rows": 43,
+  "notes": [
+    "core_geocentric is a Python reproduction of the Rust formulas, not a direct WASM execution.",
+    "Reference URL uses master; exact downloaded bytes are identified by reference_sha256.",
+    "Swiss TRUEPOS/NONUT heliocentric J2000 and of-date positions isolate frame mismatch without approximate precession.",
+    "Core delta T polynomial is evaluated at identical UT input.",
+    "Meeus diagnostic substitutes coefficient table only; it intentionally retains the mixed-frame pipeline.",
+    "Swiss flag 258 means SWIEPH|SPEED; 264 means SPEED|HELCTR, a different coordinate origin."
+  ],
+  "cases": [
+    {
+      "date": [
+        1930,
+        1,
+        1,
+        0
+      ],
+      "jd_ut": 2425977.5,
+      "core_delta_t_seconds": 24.1329,
+      "jd_tt": 2425977.5002793157,
+      "core_heliocentric": [
+        109.45149981032769,
+        -0.24970777243793663,
+        41.327020338602516
+      ],
+      "meeus_reference_heliocentric": [
+        109.48964055060509,
+        -0.2530659073401611,
+        41.3276189224481
+      ],
+      "swiss_true_heliocentric_j2000": [
+        109.48958075323785,
+        -0.25308263399769126,
+        41.32773079780806
+      ],
+      "swiss_true_heliocentric_date": [
+        108.51192668723216,
+        -0.2614060606556078,
+        41.32773079780805
+      ],
+      "core_geocentric": [
+        109.683955778834,
+        -0.25570624944031783,
+        40.35775980930333
+      ],
+      "meeus_mixed_frame_geocentric": [
+        109.72300877554576,
+        -0.259144227442425,
+        40.35847047487195
+      ],
+      "swiss_mixed_frame_geocentric": [
+        109.7229468839608,
+        -0.2591612815187111,
+        40.358582315480476
+      ],
+      "swiss_consistent_frame_geocentric": [
+        108.72178870985813,
+        -0.26770267473828663,
+        40.35585536762743
+      ],
+      "swiss_apparent_ut": [
+        108.72392601680895,
+        -0.26794574455848624,
+        40.35600248477879
+      ],
+      "swiss_return_flags": {
+        "apparent": 258,
+        "helio_j2000": 1658,
+        "helio_date": 1626,
+        "earth_j2000": 1658,
+        "earth_date": 1626
+      },
+      "longitude_differences_deg": {
+        "core_vs_apparent": 0.9600297620250444,
+        "table_helio": -0.03814074027741299,
+        "meeus_vs_swiss_j2000_helio": 5.979736724270879e-05,
+        "frame_isolated_swiss": 1.0011581741026703,
+        "core_earth_vs_swiss_date": 9.121751531893096e-07
+      }
+    },
+    {
+      "date": [
+        1972,
+        5,
+        28,
+        4
+      ],
+      "jd_ut": 2441465.6666666665,
+      "core_delta_t_seconds": 42.678820554455505,
+      "jd_tt": 2441465.6671606344,
+      "core_heliocentric": [
+        181.54220792752747,
+        16.29638329508245,
+        31.241201929821678
+      ],
+      "meeus_reference_heliocentric": [
+        181.52296348559204,
+        16.27589628666348,
+        31.241379627416165
+      ],
+      "swiss_true_heliocentric_j2000": [
+        181.52286170432797,
+        16.275868856077118,
+        31.241372107034394
+      ],
+      "swiss_true_heliocentric_date": [
+        181.13635884336892,
+        16.276281876467383,
+        31.241372107034394
+      ],
+      "core_geocentric": [
+        179.7571056621295,
+        16.508923493393556,
+        30.849968915129438
+      ],
+      "meeus_mixed_frame_geocentric": [
+        179.73780477635205,
+        16.48801103604891,
+        30.850404522636193
+      ],
+      "swiss_mixed_frame_geocentric": [
+        179.73771071146902,
+        16.487982812230175,
+        30.85039660800785
+      ],
+      "swiss_consistent_frame_geocentric": [
+        179.34611203727638,
+        16.485075058434706,
+        30.85644901277641
+      ],
+      "swiss_apparent_ut": [
+        179.3511094030903,
+        16.486425147127413,
+        30.856550132642994
+      ],
+      "swiss_return_flags": {
+        "apparent": 258,
+        "helio_j2000": 1658,
+        "helio_date": 1626,
+        "earth_j2000": 1658,
+        "earth_date": 1626
+      },
+      "longitude_differences_deg": {
+        "core_vs_apparent": 0.405996259039199,
+        "table_helio": 0.019244441935427403,
+        "meeus_vs_swiss_j2000_helio": 0.00010178126407822674,
+        "frame_isolated_swiss": 0.39159867419263605,
+        "core_earth_vs_swiss_date": 0.0002042235912256274
+      }
+    },
+    {
+      "date": [
+        2000,
+        1,
+        1,
+        12
+      ],
+      "jd_ut": 2451545.0,
+      "core_delta_t_seconds": 63.86,
+      "jd_tt": 2451545.0007391204,
+      "core_heliocentric": [
+        250.54246574242327,
+        11.185926344597625,
+        30.228469872644915
+      ],
+      "meeus_reference_heliocentric": [
+        250.54623737542295,
+        11.161456144288204,
+        30.22323029060299
+      ],
+      "swiss_true_heliocentric_j2000": [
+        250.54623157962527,
+        11.161446164803372,
+        30.223246379330906
+      ],
+      "swiss_true_heliocentric_date": [
+        250.54623160792386,
+        11.161446164285486,
+        30.22324637933091
+      ],
+      "core_geocentric": [
+        251.4612070880468,
+        10.879374208943428,
+        31.069547805525023
+      ],
+      "meeus_mixed_frame_geocentric": [
+        251.46495177074246,
+        10.855504219946784,
+        31.064408368162482
+      ],
+      "swiss_mixed_frame_geocentric": [
+        251.4649440237726,
+        10.855495668135289,
+        31.0644251209014
+      ],
+      "swiss_consistent_frame_geocentric": [
+        251.4649440512712,
+        10.85549566754987,
+        31.06442512113347
+      ],
+      "swiss_apparent_ut": [
+        251.45477929526984,
+        10.855231705106,
+        31.06436099692623
+      ],
+      "swiss_return_flags": {
+        "apparent": 258,
+        "helio_j2000": 1658,
+        "helio_date": 1626,
+        "earth_j2000": 1658,
+        "earth_date": 1626
+      },
+      "longitude_differences_deg": {
+        "core_vs_apparent": 0.006427792776946717,
+        "table_helio": -0.003771632999672647,
+        "meeus_vs_swiss_j2000_helio": 5.79579767645555e-06,
+        "frame_isolated_swiss": -2.7498600729813916e-08,
+        "core_earth_vs_swiss_date": 5.983253618069284e-05
+      }
+    },
+    {
+      "date": [
+        2040,
+        12,
+        31,
+        0
+      ],
+      "jd_ut": 2466519.5,
+      "core_delta_t_seconds": 85.52247641986932,
+      "jd_tt": 2466519.5009898436,
+      "core_heliocentric": [
+        325.9351107547338,
+        -10.195231634464218,
+        39.25278637735857
+      ],
+      "meeus_reference_heliocentric": [
+        325.9150134484737,
+        -10.184318686178173,
+        39.2486636497938
+      ],
+      "swiss_true_heliocentric_j2000": [
+        325.9147548971426,
+        -10.184250307844458,
+        39.24881877381278
+      ],
+      "swiss_true_heliocentric_date": [
+        326.48834383187557,
+        -10.186832994893349,
+        39.24881877381278
+      ],
+      "core_geocentric": [
+        324.9040766780174,
+        -10.020173674908767,
+        39.9313730635807
+      ],
+      "meeus_mixed_frame_geocentric": [
+        324.8842632245948,
+        -10.009367258754375,
+        39.92751370645675
+      ],
+      "swiss_mixed_frame_geocentric": [
+        324.88401463454466,
+        -10.009299322097364,
+        39.92767453051605
+      ],
+      "swiss_consistent_frame_geocentric": [
+        325.4474944874624,
+        -10.01358244547792,
+        39.920784697436176
+      ],
+      "swiss_apparent_ut": [
+        325.4388195358947,
+        -10.014086280261315,
+        39.92063572792329
+      ],
+      "swiss_return_flags": {
+        "apparent": 258,
+        "helio_j2000": 1658,
+        "helio_date": 1626,
+        "earth_j2000": 1658,
+        "earth_date": 1626
+      },
+      "longitude_differences_deg": {
+        "core_vs_apparent": -0.5347428578772906,
+        "table_helio": 0.02009730626008377,
+        "meeus_vs_swiss_j2000_helio": 0.00025855133111463147,
+        "frame_isolated_swiss": -0.5634798529177374,
+        "core_earth_vs_swiss_date": -0.00013730346785223446
+      }
+    }
+  ]
+}

@@ -6,3 +6,5 @@ export type * from './types.ts';
 export type { ReportWasmApi } from './events.ts';
 export { renderReportText } from './text.ts';
 export { compactReport, renderCompactReportText, COMPACT_REPORT_VERSION } from './compact.ts';
+export { astroReport, renderAstroReportText, ASTRO_REPORT_VERSION } from './astro.ts';
+export { renderReportHTML, renderReportMarkdown, renderCompactReportHTML, renderCompactReportMarkdown, renderAstroReportHTML, renderAstroReportMarkdown } from './markup.ts';

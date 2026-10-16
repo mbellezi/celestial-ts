@@ -18,6 +18,16 @@ pub fn house_name(hsys: HouseSystem) -> &'static str {
 
 // ─── Pure-Rust dispatch ───────────────────────────────────────────────────────
 
+fn validate_system(geolat: Latitude, eps: f64, hsys: HouseSystem) -> Result<()> {
+    if hsys.as_raw() == b'P' && geolat.get().abs() >= 90.0 - eps.abs() {
+        return Err(crate::error::Error::HouseSystemFailed {
+            system: hsys.as_raw(),
+            lat: geolat.get(),
+        });
+    }
+    Ok(())
+}
+
 /// Compute house cusps (UT) — pure-Rust engine.
 pub fn houses(
     jd_ut: JulianDay,
@@ -25,6 +35,11 @@ pub fn houses(
     geolon: Longitude,
     hsys: HouseSystem,
 ) -> Result<HouseResult> {
+    validate_system(
+        geolat,
+        crate::astronomy::houses::house_obliquity(jd_ut),
+        hsys,
+    )?;
     Ok(crate::astronomy::houses(
         jd_ut,
         geolat,
@@ -40,6 +55,11 @@ pub(crate) fn house_cusp(
     hsys: HouseSystem,
     cusp: usize,
 ) -> Result<f64> {
+    validate_system(
+        geolat,
+        crate::astronomy::houses::house_obliquity(jd_ut),
+        hsys,
+    )?;
     Ok(crate::astronomy::houses::house_cusp(
         jd_ut,
         geolat,
@@ -68,6 +88,11 @@ pub fn houses_ex2(
     geolon: Longitude,
     hsys: HouseSystem,
 ) -> Result<HouseResultEx2> {
+    validate_system(
+        geolat,
+        crate::astronomy::houses::house_obliquity(jd_ut),
+        hsys,
+    )?;
     let jd_ut = jd_ut.get();
     let geolat = geolat.get();
     let geolon = geolon.get();
@@ -120,6 +145,7 @@ pub fn houses_armc(
     eps: Degrees,
     hsys: HouseSystem,
 ) -> Result<HouseResult> {
+    validate_system(geolat, eps.get(), hsys)?;
     Ok(crate::astronomy::houses_armc(
         armc,
         geolat,
@@ -156,6 +182,7 @@ pub fn house_pos(
     hsys: HouseSystem,
     xpin: [f64; 2],
 ) -> Result<f64> {
+    validate_system(geolat, eps.get(), hsys)?;
     let armc: f64 = armc.into();
     let geolat: f64 = geolat.into();
     let eps: f64 = eps.into();

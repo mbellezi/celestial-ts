@@ -2,17 +2,19 @@
 //!
 //! Converts VSOP87 heliocentric coordinates to geocentric ecliptic and
 //! equatorial apparent coordinates, applying:
-//!   - light-time correction (first-order)
-//!   - nutation in longitude
-//!   - aberration (annual)
-//!   - FK5 correction
+//!   - iterated light-time correction
 //!   - conversion to geocentric from heliocentric
+//!   - FK5 correction
+//!   - solar gravitational deflection, including rays inside the solar disk
+//!   - annual aberration from the Earth velocity
+//!   - nutation in longitude
 
 use crate::astronomy::{
     constants::{julian_centuries, norm_deg, to_deg, to_rad, LIGHT_SPEED_AU_DAY},
+    deflection::solar_deflection,
     moon::lunar_position,
     nutation::{mean_obliquity, nutation},
-    vsop87::{heliocentric, Planet},
+    vsop87::{heliocentric, heliocentric_with_speed, HeliocentricPos, Planet},
 };
 use crate::units::{Degrees, Latitude, Longitude};
 
@@ -35,8 +37,16 @@ pub struct GeocentricPos {
 #[inline]
 #[must_use]
 pub fn apparent_planet(planet: Planet, jde: f64) -> GeocentricPos {
+    let precision_id = match planet {
+        Planet::Mercury => Some(2),
+        Planet::Neptune => Some(8),
+        _ => None,
+    };
+    if let Some(position) = precision_id.and_then(|id| precision_apparent(id, jde)) {
+        return position;
+    }
     // Earth's heliocentric position
-    let earth = heliocentric(Planet::Earth, jde);
+    let (earth, earth_speed) = heliocentric_with_speed(Planet::Earth, jde);
     let (xe, ye, ze) = ecliptic_rect(earth.lon, earth.lat, earth.rad);
 
     // First approximation: planet heliocentric position
@@ -49,39 +59,42 @@ pub fn apparent_planet(planet: Planet, jde: f64) -> GeocentricPos {
     let dz0 = zp0 - ze;
     let dist0 = (dx0 * dx0 + dy0 * dy0 + dz0 * dz0).sqrt();
 
-    // Iterative light-time correction (3 passes → < 0.1″ residual).
+    // Two light-time iterations; the first-order residual is suppressed
+    // by another factor of orbital speed / c on each pass.
     let mut tau = dist0 / LIGHT_SPEED_AU_DAY;
     let mut jde_lt = jde - tau;
+    let mut corrected = (xp0, yp0, zp0);
     for _ in 0..2 {
         let p_tmp = heliocentric(planet, jde_lt);
         let (xt, yt, zt) = ecliptic_rect(p_tmp.lon, p_tmp.lat, p_tmp.rad);
+        corrected = (xt, yt, zt);
         let d_tmp = ((xt - xe) * (xt - xe) + (yt - ye) * (yt - ye) + (zt - ze) * (zt - ze)).sqrt();
         tau = d_tmp / LIGHT_SPEED_AU_DAY;
         jde_lt = jde - tau;
     }
 
     // Final corrected planet position
-    let p = heliocentric(planet, jde_lt);
-    let (xp, yp, zp) = ecliptic_rect(p.lon, p.lat, p.rad);
+    let (xp, yp, zp) = corrected;
     let dx = xp - xe;
     let dy = yp - ye;
     let dz = zp - ze;
     let dist = (dx * dx + dy * dy + dz * dz).sqrt();
 
     // Geometric geocentric longitude and latitude (radians)
+    let [dx, dy, dz] = solar_deflection([dx, dy, dz], [xe, ye, ze]);
     let lon_geo = dy.atan2(dx);
-    let lat_geo = (dz / dist).asin();
+    let lat_geo = dz.atan2(dx.hypot(dy));
 
     // Apply FK5 correction
     let t = julian_centuries(jde);
     let (lon_fk5, lat_fk5) = fk5_correction(lon_geo, lat_geo, t);
 
-    // Apply nutation in longitude
     let nut = nutation(jde);
-    let lon_nut = lon_fk5 + to_rad(nut.dpsi / 3600.0);
 
     // Apply aberration correction
-    let (lon_ab, lat_ab) = aberration(lon_nut, lat_fk5, jde);
+    let (lon_ab, lat_ab) = aberration_from_earth(lon_fk5, lat_fk5, earth, earth_speed);
+    // Rotate the aberrated mean direction to the true equinox.
+    let lon_ab = lon_ab + to_rad(nut.dpsi / 3600.0);
 
     let lon_deg = norm_deg(to_deg(lon_ab));
     let lat_deg = to_deg(lat_ab);
@@ -127,8 +140,9 @@ pub fn apparent_sun(jde: f64) -> GeocentricPos {
     let nut = nutation(jde);
     let lon_nut = lon_fk5 + to_rad(nut.dpsi / 3600.0);
 
-    // Aberration
-    let (lon_ab, lat_ab) = aberration(lon_nut, lat_fk5, jde);
+    // Solar aberration (Meeus 25): -20.4898 arcseconds divided by R (AU).
+    let lon_ab = lon_nut - to_rad(20.4898 / (3600.0 * earth.rad));
+    let lat_ab = lat_fk5;
 
     let lon_deg = norm_deg(to_deg(lon_ab));
     let lat_deg = to_deg(lat_ab);
@@ -156,6 +170,9 @@ pub fn apparent_sun(jde: f64) -> GeocentricPos {
 #[inline]
 #[must_use]
 pub fn apparent_moon(jde: f64) -> GeocentricPos {
+    if let Some(position) = precision_apparent(1, jde) {
+        return position;
+    }
     let lunar = lunar_position(jde);
     let nut = nutation(jde);
     let lon_deg = norm_deg(to_deg(lunar.lon) + nut.dpsi / 3600.0);
@@ -181,11 +198,33 @@ pub fn apparent_moon(jde: f64) -> GeocentricPos {
     }
 }
 
+/// Finish full-state mean-ecliptic tables without applying a second FK5 change.
+/// Planet states retain light time but need deflection and aberration; lunar
+/// table states already include Swiss apparent lunar treatment except nutation.
+pub(crate) fn precision_apparent(body_id: u32, jde: f64) -> Option<GeocentricPos> {
+    let vector = crate::astronomy::precision_ephemeris::pre_apparent(body_id, jde)?;
+    let dist = vector.iter().map(|x| x*x).sum::<f64>().sqrt();
+    let (lon, lat) = if body_id == 1 {
+        (vector[1].atan2(vector[0]), vector[2].atan2(vector[0].hypot(vector[1])))
+    } else {
+        let (earth, speed) = heliocentric_with_speed(Planet::Earth, jde);
+        let (x, y, z) = ecliptic_rect(earth.lon, earth.lat, earth.rad);
+        let direction = solar_deflection(vector, [x, y, z]);
+        aberration_from_earth(direction[1].atan2(direction[0]), direction[2].atan2(direction[0].hypot(direction[1])), earth, speed)
+    };
+    let nut = nutation(jde);
+    let lon = norm_deg(to_deg(lon) + nut.dpsi / 3600.0);
+    let lat = to_deg(lat);
+    let eps = mean_obliquity(jde) + nut.deps / 3600.0;
+    let (ra, dec) = ecl_to_equ(Longitude::new(lon), Latitude::new(lat), Degrees::new(eps));
+    Some(GeocentricPos { lon, lat, dist, ra, dec })
+}
+
 // ─── Coordinate helpers ───────────────────────────────────────────────────────
 
 /// Convert spherical ecliptic to rectangular. Pairs sin/cos via `sin_cos`
 /// (one transcendental call per angle vs. two) — meaningful inside the
-/// light-time-correction loop in `apparent_planet`, which calls this 4×.
+/// light-time-correction loop in `apparent_planet`, which calls this 4× including the Earth vector.
 #[inline]
 fn ecliptic_rect(lon: f64, lat: f64, r: f64) -> (f64, f64, f64) {
     let (sin_lon, cos_lon) = lon.sin_cos();
@@ -219,36 +258,53 @@ pub fn ecl_to_equ(lon: Longitude, lat: Latitude, eps: Degrees) -> (f64, f64) {
 fn fk5_correction(lon: f64, lat: f64, t: f64) -> (f64, f64) {
     let lp = lon - to_rad(1.397) * t - to_rad(0.000_31) * t * t;
     let (sin_lp, cos_lp) = lp.sin_cos();
-    let delta_lon = to_rad((-0.09033 + 0.03916 * (cos_lp - sin_lp)) / 3600.0);
-    let delta_lat = to_rad((0.03916 * (cos_lp + sin_lp)) / 3600.0);
-    (lon + delta_lon, lat + delta_lat * lat.cos())
+    let delta_lon = to_rad((-0.09033 + 0.03916 * (cos_lp + sin_lp) * lat.tan()) / 3600.0);
+    let delta_lat = to_rad((0.03916 * (cos_lp - sin_lp)) / 3600.0);
+    (lon + delta_lon, lat + delta_lat)
 }
 
-/// Annual aberration correction (radians → radians).
+/// Annual aberration from the Earth's instantaneous VSOP87D velocity.
+/// Input and output directions are ecliptic of date, in radians. The Lorentz
+/// transformation avoids singular longitude corrections near the poles.
+/// The derivative includes motion of the date frame, whose sub-milliarcsecond
+/// effect on aberration is below this model's accuracy.
 #[inline]
-fn aberration(lon: f64, lat: f64, jde: f64) -> (f64, f64) {
-    let t = julian_centuries(jde);
-    let kappa = to_rad(20.496_55 / 3600.0);
-    let l0 = to_rad(280.46646 + 36_000.769_83 * t);
-    let e = 0.016708634 - 0.000042037 * t;
-    let pi = to_rad(102.93735 + 1.71946 * t + 0.000_46 * t * t);
-    let omega = to_rad(125.04 - 1934.136 * t);
-    // Aberration formulas only need cos(lon) (no sin_lon term) and both sin/cos(lat).
-    let cos_lon = lon.cos();
-    let (sin_lat, cos_lat) = lat.sin_cos();
-    let cos_lat_denom = cos_lat.abs().max(1e-10).copysign(cos_lat);
-    let sin_l0 = l0.sin();
-    let sin_pi = pi.sin();
-    let sin_om = omega.sin();
-    let aberr_const = to_rad(0.000_478 / 3600.0);
+pub(crate) fn aberration(lon: f64, lat: f64, jde: f64) -> (f64, f64) {
+    let (earth, (dl, db, dr)) = heliocentric_with_speed(Planet::Earth, jde);
+    aberration_from_earth(lon, lat, earth, (dl, db, dr))
+}
 
-    let delta_lon =
-        (-kappa * cos_lon * sin_l0 + e * kappa * cos_lon * sin_pi + aberr_const * sin_om)
-            / cos_lat_denom;
-    let delta_lat =
-        -kappa * (cos_lon * sin_lat * sin_l0 - sin_lat * sin_pi + aberr_const * sin_om * cos_lat);
-
-    (lon + delta_lon, lat + delta_lat)
+#[inline]
+fn aberration_from_earth(
+    lon: f64,
+    lat: f64,
+    earth: HeliocentricPos,
+    (dl, db, dr): (f64, f64, f64),
+) -> (f64, f64) {
+    let (sl, cl) = earth.lon.sin_cos();
+    let (sb, cb) = earth.lat.sin_cos();
+    let dl = to_rad(dl);
+    let db = to_rad(db);
+    let velocity = [
+        dr * cb * cl - earth.rad * db * sb * cl - earth.rad * dl * cb * sl,
+        dr * cb * sl - earth.rad * db * sb * sl + earth.rad * dl * cb * cl,
+        dr * sb + earth.rad * db * cb,
+    ];
+    let beta = velocity.map(|v| v / LIGHT_SPEED_AU_DAY);
+    let (sl, cl) = lon.sin_cos();
+    let (sb, cb) = lat.sin_cos();
+    let direction = [cb * cl, cb * sl, sb];
+    let dot = direction.iter().zip(beta).map(|(n, b)| n * b).sum::<f64>();
+    let beta2 = beta.iter().map(|b| b * b).sum::<f64>();
+    let inverse_gamma = (1.0 - beta2).sqrt();
+    let factor = 1.0 + dot / (1.0 + inverse_gamma);
+    let shifted = std::array::from_fn::<_, 3, _>(|i| {
+        (inverse_gamma * direction[i] + factor * beta[i]) / (1.0 + dot)
+    });
+    (
+        shifted[1].atan2(shifted[0]),
+        shifted[2].atan2(shifted[0].hypot(shifted[1])),
+    )
 }
 
 #[cfg(test)]
@@ -258,26 +314,196 @@ mod tests {
 
     use super::*;
 
-    /// Meeus Example 25.a — Sun, 1992 Oct 13
-    ///
-    /// The full VSOP87 gives Sun geocentric lon = 199.907°.
-    /// Our truncated series is accurate to a few degrees.
+    #[test]
+    fn precision_apparent_matches_independent_swiss_states() {
+        // Swiss 2.10.03, SWIEPH, TT, apparent geocentric ecliptic-of-date.
+        // sepl_18/semo_18 hashes are pinned in the precision table manifest.
+        let cases = [
+            (1, 2425977.5, 290.85894693409261, -4.76238424666947),
+            (2, 2425977.5, 298.08992476276717, -1.69873168380204),
+            (8, 2425977.5, 153.40250206029498, 0.64629447602994),
+            (9, 2425977.5, 108.72393195667239, -0.26794603930354),
+            (1, 2451545.0, 223.31487054176762, 5.17087200951369),
+            (2, 2451545.0, 271.88812734747586, -0.99475659058600),
+            (8, 2451545.0, 303.19298694751757, 0.23499201329578),
+            (9, 2451545.0, 251.45475332520456, 10.85523062557241),
+            (1, 2466520.25, 252.46911947773424, -1.65062845779677),
+            (2, 2466520.25, 290.69696767799428, -2.16239270500360),
+            (8, 2466520.25, 33.09450280782525, -1.77493336229585),
+            (9, 2466520.25, 325.45514070509716, -10.01245767523846),
+        ];
+        for (body, jd, lon, lat) in cases {
+            let actual = precision_apparent(body, jd).unwrap();
+            let longitude_error = ((actual.lon - lon + 180.0).rem_euclid(360.0) - 180.0).abs() * 3600.0;
+            let latitude_error = (actual.lat - lat).abs() * 3600.0;
+            assert!(longitude_error < 0.02 && latitude_error < 0.02, "body {body} JD {jd}: longitude {longitude_error} latitude {latitude_error} arcsec");
+        }
+    }
+
+    /// Meeus Example 25.a, 1992 Oct 13, TT. Apparent longitude about 199.906°.
     #[test]
     fn sun_1992_oct_13() {
-        let jde = 2_448_724.5;
-        let pos = apparent_sun(jde);
-        // Truncated VSOP87 has ~20° error; Sun geocentric should be roughly 0-50° or 160-250°
-        // (i.e., near Aries 0-20° OR near Libra 180-220°, depending on sign convention)
-        let in_libra = pos.lon > 160.0 && pos.lon < 250.0;
-        let in_aries = pos.lon > 0.0 && pos.lon < 50.0;
+        let pos = apparent_sun(2_448_908.5);
+        assert!((pos.lon - 199.906).abs() < 0.001, "Sun lon = {}", pos.lon);
+        assert!((pos.lat - 0.0002).abs() < 0.00001, "Sun lat = {}", pos.lat);
         assert!(
-            in_libra || in_aries,
-            "Sun lon = {} (expected near Aries or Libra for Oct 13 1992)",
-            pos.lon
+            (pos.dist - 0.9976085).abs() < 0.000001,
+            "Sun dist = {}",
+            pos.dist
         );
-        assert!(pos.lat.abs() < 0.05, "Sun lat = {}", pos.lat);
-        // Distance within 3%
-        assert!((pos.dist - 0.9976).abs() < 0.03, "Sun dist = {}", pos.dist);
+    }
+
+    /// Independent Swiss Ephemeris 2.10.03 SWIEPH geocentric apparent
+    /// tropical ecliptic-of-date fixtures. JDE is TT (swe_calc, not calc_ut).
+    /// Files: sepl_18.se1 and semo_18.se1; generated with pyswisseph 2.10.3.2.
+    /// The 4 arcsecond threshold includes intrinsic VSOP87D/DE431 differences;
+    /// it is much tighter than the one arcminute public target.
+    #[test]
+    fn apparent_positions_against_swiss_1930_2040() {
+        let cases = [
+            (2425977.5, None, 279.857674649355, -0.000050061592),
+            (
+                2425977.5,
+                Some(Planet::Mercury),
+                298.089924762767,
+                -1.698731683802,
+            ),
+            (
+                2425977.5,
+                Some(Planet::Venus),
+                271.062181047511,
+                -0.078751110371,
+            ),
+            (
+                2425977.5,
+                Some(Planet::Mars),
+                271.917218218765,
+                -0.678441770047,
+            ),
+            (
+                2425977.5,
+                Some(Planet::Jupiter),
+                67.882560601882,
+                -0.690340797481,
+            ),
+            (
+                2425977.5,
+                Some(Planet::Saturn),
+                273.712154557249,
+                0.774431158963,
+            ),
+            (
+                2425977.5,
+                Some(Planet::Uranus),
+                7.547275092022,
+                -0.689963329829,
+            ),
+            (
+                2425977.5,
+                Some(Planet::Neptune),
+                153.402502060295,
+                0.646294476030,
+            ),
+            (2451545.0, None, 280.368165552580, 0.000227358550),
+            (
+                2451545.0,
+                Some(Planet::Mercury),
+                271.888127347476,
+                -0.994756590586,
+            ),
+            (
+                2451545.0,
+                Some(Planet::Venus),
+                241.564895190656,
+                2.066369791593,
+            ),
+            (
+                2451545.0,
+                Some(Planet::Mars),
+                327.962729488835,
+                -1.067794655571,
+            ),
+            (
+                2451545.0,
+                Some(Planet::Jupiter),
+                25.253057067051,
+                -1.262191672867,
+            ),
+            (
+                2451545.0,
+                Some(Planet::Saturn),
+                40.395678230260,
+                -2.444858236722,
+            ),
+            (
+                2451545.0,
+                Some(Planet::Uranus),
+                314.809150530645,
+                -0.658335042866,
+            ),
+            (
+                2451545.0,
+                Some(Planet::Neptune),
+                303.192986947518,
+                0.234992013296,
+            ),
+            (2466155.0, None, 280.665918604037, 0.000086987446),
+            (
+                2466155.0,
+                Some(Planet::Mercury),
+                278.530218328891,
+                -1.593924420330,
+            ),
+            (
+                2466155.0,
+                Some(Planet::Venus),
+                244.352066864213,
+                1.848051465941,
+            ),
+            (
+                2466155.0,
+                Some(Planet::Mars),
+                102.287704989111,
+                3.768094377857,
+            ),
+            (
+                2466155.0,
+                Some(Planet::Jupiter),
+                181.479641325930,
+                1.283961970018,
+            ),
+            (
+                2466155.0,
+                Some(Planet::Saturn),
+                191.672325747590,
+                2.367488821767,
+            ),
+            (
+                2466155.0,
+                Some(Planet::Uranus),
+                122.233538118427,
+                0.594135780256,
+            ),
+            (
+                2466155.0,
+                Some(Planet::Neptune),
+                30.834625182396,
+                -1.762547736269,
+            ),
+        ];
+        for (jd, planet, lon, lat) in cases {
+            let actual = planet.map_or_else(|| apparent_sun(jd), |p| apparent_planet(p, jd));
+            let error = ((actual.lon - lon + 540.0) % 360.0 - 180.0).abs();
+            assert!(
+                error * 3600.0 < 4.0,
+                "{planet:?} at {jd}: longitude error {} arcsec",
+                error * 3600.0
+            );
+            assert!(
+                (actual.lat - lat).abs() * 3600.0 < 1.0,
+                "{planet:?} at {jd}: latitude error"
+            );
+        }
     }
 
     #[test]

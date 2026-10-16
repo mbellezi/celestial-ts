@@ -1,11 +1,17 @@
 import { compactReport, renderCompactReportText, normalizeCompactOptions, COMPACT_REPORT_VERSION } from './compact.ts';
+import { astroReport, renderAstroReportText, normalizeAstroOptions, ASTRO_REPORT_VERSION } from './astro.ts';
 import { renderReportText, normalizeTextOptions } from './text.ts';
+import { renderReportHTML, renderReportMarkdown, renderCompactReportHTML, renderCompactReportMarkdown, renderAstroReportHTML, renderAstroReportMarkdown } from './markup.ts';
 import { LruCache } from './cache.ts';
 import { CATALOG_VERSION, DISCLAIMER, METHODOLOGY, resolveInterpretation } from './catalog.ts';
 import { detectEvents, type ReportWasmApi } from './events.ts';
 import { normalizeRange } from './range.ts';
-import { REPORT_DOMAINS, type CompactAstrologyReport, type CompactReportOptions, type AstrologyReport, type DomainSummary, type ReportEvent, type ReportInput, type ReportTextOptions } from './types.ts';
+import { REPORT_DOMAINS, type AstroReport, type AstroReportOptions, type CompactAstrologyReport, type CompactReportOptions, type AstrologyReport, type DomainSummary, type ReportEvent, type ReportInput, type ReportTextOptions } from './types.ts';
 export const REPORT_VERSION = '1.0.0';
+type RenderFormat = 'text' | 'html' | 'markdown';
+const fullRenderers = { text: renderReportText, html: renderReportHTML, markdown: renderReportMarkdown };
+const compactRenderers = { text: renderCompactReportText, html: renderCompactReportHTML, markdown: renderCompactReportMarkdown };
+const astroRenderers = { text: renderAstroReportText, html: renderAstroReportHTML, markdown: renderAstroReportMarkdown };
 /** Own caches belong to one WASM instance; callers must clear after changing its calculation configuration. */
 export function createReportGenerator(core: ReportWasmApi, options: { cacheSize?: number } = {}) {
   const capacity = options.cacheSize ?? 128;
@@ -15,6 +21,8 @@ export function createReportGenerator(core: ReportWasmApi, options: { cacheSize?
   const rendered = new LruCache<string>(capacity, 8 * 1024 * 1024);
   const compact = new LruCache<CompactAstrologyReport>(capacity, 8 * 1024 * 1024);
   const compactRendered = new LruCache<string>(capacity, 8 * 1024 * 1024);
+  const astro = new LruCache<AstroReport>(capacity, 8 * 1024 * 1024);
+  const astroRendered = new LruCache<string>(capacity, 8 * 1024 * 1024);
   const samples = new LruCache<unknown>(capacity * 128, 8 * 1024 * 1024);
   function report(input: ReportInput): AstrologyReport {
     const range = normalizeRange(input);
@@ -64,22 +72,67 @@ export function createReportGenerator(core: ReportWasmApi, options: { cacheSize?
     compact.set(key, value, JSON.stringify(value).length * 2);
     return structuredClone(value);
   }
-  return { report, reportCompact,
+  function astroKey(input: ReportInput, options: AstroReportOptions): string {
+    const range = normalizeRange(input);
+    const editorialOptions = normalizeAstroOptions(options, {
+      start: new Date(range.startMs).toISOString(), endExclusive: new Date(range.endMs).toISOString(), timeZone: range.timeZone,
+    });
+    return JSON.stringify([ASTRO_REPORT_VERSION, REPORT_VERSION, CATALOG_VERSION, range, editorialOptions]);
+  }
+  function reportAstro(input: ReportInput, options: AstroReportOptions = {}): AstroReport {
+    const key = astroKey(input, options);
+    const existing = astro.get(key);
+    if (existing) return structuredClone(existing);
+    const value = astroReport(report(input), options);
+    astro.set(key, value, JSON.stringify(value).length * 2);
+    return structuredClone(value);
+  }
+  function cachedRendering(cache: LruCache<string>, key: string, render: () => string): string {
+    const existing = cache.get(key);
+    if (existing !== undefined) return existing;
+    const value = render();
+    cache.set(key, value, value.length * 2);
+    return value;
+  }
+  function fullOutput(input: ReportInput, options: ReportTextOptions, format: RenderFormat): string {
+    const key = JSON.stringify([REPORT_VERSION, CATALOG_VERSION, normalizeRange(input), normalizeTextOptions(options), format]);
+    return cachedRendering(rendered, key, () => fullRenderers[format](report(input), options));
+  }
+  function compactOutput(input: ReportInput, options: CompactReportOptions, format: RenderFormat): string {
+    const key = JSON.stringify([COMPACT_REPORT_VERSION, CATALOG_VERSION, normalizeRange(input), normalizeCompactOptions(options), format]);
+    return cachedRendering(compactRendered, key, () => compactRenderers[format](reportCompact(input, options)));
+  }
+  function astroOutput(input: ReportInput, options: AstroReportOptions, format: RenderFormat): string {
+    const key = JSON.stringify([astroKey(input, options), format]);
+    return cachedRendering(astroRendered, key, () => astroRenderers[format](reportAstro(input, options)));
+  }
+  return { report, reportCompact, reportAstro,
+    reportAstroText(input: ReportInput, options: AstroReportOptions = {}): string {
+      return astroOutput(input, options, 'text');
+    },
+    reportAstroHTML(input: ReportInput, options: AstroReportOptions = {}): string {
+      return astroOutput(input, options, 'html');
+    },
+    reportAstroMarkdown(input: ReportInput, options: AstroReportOptions = {}): string {
+      return astroOutput(input, options, 'markdown');
+    },
     reportCompactText(input: ReportInput, options: CompactReportOptions = {}): string {
-      const key = JSON.stringify([COMPACT_REPORT_VERSION, CATALOG_VERSION, normalizeRange(input), normalizeCompactOptions(options)]);
-      const existing = compactRendered.get(key);
-      if (existing !== undefined) return existing;
-      const value = renderCompactReportText(reportCompact(input, options));
-      compactRendered.set(key, value, value.length * 2);
-      return value;
+      return compactOutput(input, options, 'text');
+    },
+    reportCompactHTML(input: ReportInput, options: CompactReportOptions = {}): string {
+      return compactOutput(input, options, 'html');
+    },
+    reportCompactMarkdown(input: ReportInput, options: CompactReportOptions = {}): string {
+      return compactOutput(input, options, 'markdown');
     },
     reportText(input: ReportInput, textOptions: ReportTextOptions = {}): string {
-      const key = JSON.stringify([REPORT_VERSION, CATALOG_VERSION, normalizeRange(input), normalizeTextOptions(textOptions)]);
-      const existing = rendered.get(key);
-      if (existing !== undefined) return existing;
-      const value = renderReportText(report(input), textOptions);
-      rendered.set(key, value, value.length * 2);
-      return value;
+      return fullOutput(input, textOptions, 'text');
+    },
+    reportHTML(input: ReportInput, options: ReportTextOptions = {}): string {
+      return fullOutput(input, options, 'html');
+    },
+    reportMarkdown(input: ReportInput, options: ReportTextOptions = {}): string {
+      return fullOutput(input, options, 'markdown');
     },
     reportJSON(input: ReportInput, space?: number): string {
       if (space !== undefined && (!Number.isInteger(space) || space < 0 || space > 10)) throw new RangeError('space must be an integer from 0 to 10');
@@ -90,7 +143,7 @@ export function createReportGenerator(core: ReportWasmApi, options: { cacheSize?
       serialized.set(key, value, value.length * 2);
       return value;
     },
-    clearCache() { compact.clear(); compactRendered.clear(); reports.clear(); eventsCache.clear(); samples.clear(); serialized.clear(); rendered.clear(); },
-    get cacheStats() { return { compact: compact.stats, compactRendered: compactRendered.stats, reports: reports.stats, events: eventsCache.stats, samples: samples.stats, serialized: serialized.stats, rendered: rendered.stats }; },
+    clearCache() { astro.clear(); astroRendered.clear(); compact.clear(); compactRendered.clear(); reports.clear(); eventsCache.clear(); samples.clear(); serialized.clear(); rendered.clear(); },
+    get cacheStats() { return { astro: astro.stats, astroRendered: astroRendered.stats, compact: compact.stats, compactRendered: compactRendered.stats, reports: reports.stats, events: eventsCache.stats, samples: samples.stats, serialized: serialized.stats, rendered: rendered.stats }; },
   };
 }

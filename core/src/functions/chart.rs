@@ -1167,7 +1167,10 @@ mod cov_tests {
         let (backward_jd, backward_sign) =
             sign_ingress_ut(Body::SUN, JulianDay::new(2_451_545.0), flags, true).unwrap();
 
-        assert_eq!(forward_jd, 2_451_564.257_859_210_5);
+        // Independent Swiss Ephemeris 2.10.03 SWIEPH solar crossing at 300° UT.
+        assert!((forward_jd - 2451564.2659963286).abs() * 86400.0 < 1.0);
+        let at_crossing = calc_ut(JulianDay::new(forward_jd), Body::SUN, flags).unwrap();
+        assert!((at_crossing.lon - 300.0).abs() < 1e-7);
         assert_eq!(forward_sign, 10);
         assert_eq!(backward_sign, 9);
         assert!(backward_jd < 2_451_545.0);

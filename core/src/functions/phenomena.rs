@@ -248,12 +248,26 @@ pub fn best_time_method(jd_sunset: JulianDay, jd_moonset: JulianDay) -> f64 {
     jd_sunset + (4.0 / 9.0) * (jd_moonset - jd_sunset)
 }
 
+// Wrapper regression vectors follow the corrected VSOP87D/apparent models;
+// external model anchors and measured residuals are in astronomy tests and
+// docs/validation/pluto-nodes-model.md. Preserve strict wrapper tolerances.
 #[cfg(test)]
 mod yallop_tests {
     #[cfg(target_arch = "wasm32")]
     use wasm_bindgen_test::wasm_bindgen_test as test;
 
     use super::*;
+
+    // Keep snapshots strict while permitting native/WASM libm and FMA rounding.
+    fn assert_snapshot(actual: impl AsRef<[f64]>, expected: impl AsRef<[f64]>) {
+        let (actual, expected) = (actual.as_ref(), expected.as_ref());
+        assert_eq!(actual.len(), expected.len());
+        for (index, (&actual, &expected)) in actual.iter().zip(expected).enumerate() {
+            let bound = 4.0 * f64::EPSILON * expected.abs().max(1.0);
+            assert!((actual - expected).abs() <= bound, "field {index}: {actual} != {expected}; bound {bound}");
+        }
+    }
+
 
     #[test]
     fn phenomena_wrappers_are_exact() {
@@ -262,11 +276,11 @@ mod yallop_tests {
         assert_eq!(
             mars[..5],
             [
-                5.995783409870891,
-                0.9972647926390633,
-                9.93891467987703,
-                3.556211401202907,
-                1.7191613930080134,
+                5.962101221569792,
+                0.9972954095174871,
+                9.880877044941258,
+                3.55624998730773,
+                1.7180249480814294,
             ]
         );
         assert_eq!(mars[5..], [0.0; 15]);
@@ -275,10 +289,10 @@ mod yallop_tests {
         assert_eq!(
             sun[..5],
             [
-                59.1316840570739,
-                0.7565333356460056,
+                59.13167223986419,
+                0.7565334241628803,
                 0.0,
-                1894.0247653105225,
+                1894.0244210112069,
                 -26.74,
             ]
         );
@@ -318,13 +332,13 @@ mod yallop_tests {
             CalcFlags::BUILTIN,
         )
         .unwrap();
-        assert_eq!(
-            event[..4],
+        assert_snapshot(
+            &event[..4],
             [
-                2_451_647.692_935_799_7,
-                11.645_670_559_351_998,
+                2451647.6929290793,
+                11.643508255586113,
                 -6.0,
-                0.273_584_129_561_749_43,
+                0.27411520312727533,
             ]
         );
         assert_eq!(event[4..], [0.0; 46]);
@@ -339,17 +353,17 @@ mod yallop_tests {
             CalcFlags::BUILTIN,
         )
         .unwrap();
-        assert_eq!(
-            pheno[..10],
+        assert_snapshot(
+            &pheno[..10],
             [
-                153.857_907_271_980_08,
+                154.215367324071,
                 0.0,
-                293.997_262_096_252_1,
-                -0.509_432_053_720_327_2,
+                294.34668812619975,
+                -0.50423498677249,
                 -6.0,
                 8.5,
                 15.0,
-                4.199_116_747_226_824_5,
+                4.197720867053187,
                 1013.25,
                 15.0,
             ]
@@ -359,7 +373,7 @@ mod yallop_tests {
 
     #[test]
     fn visibility_wrapper_is_exact() {
-        assert_eq!(
+        assert_snapshot(
             vis_limit_mag(
                 JulianDay::new(2_463_456.789),
                 [12.5, 37.5, 0.0],
@@ -371,9 +385,9 @@ mod yallop_tests {
             .unwrap(),
             [
                 8.5,
-                -2.709_926_504_057_772,
+                -2.7106067835657157,
                 15.0,
-                153.857_907_271_980_08,
+                154.215367324071,
                 0.0,
                 -6.0,
                 1013.25,

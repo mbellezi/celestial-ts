@@ -1,0 +1,386 @@
+{
+  "sourceAuditSha256": "6065f88b9197b454502cd871629fcce57e52c3ea83e2aefa45b1af5799682a0a",
+  "swissVersion": "2.10.03",
+  "ephemerisManifest": {
+    "upstreamCommit": "c113653fe37fe5cdbfcc030a6e341de03ef018d2",
+    "files": [
+      {
+        "name": "sepl_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/sepl_18.se1",
+        "bytes": 484061,
+        "sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+      },
+      {
+        "name": "semo_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/semo_18.se1",
+        "bytes": 1304771,
+        "sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+      },
+      {
+        "name": "seas_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/seas_18.se1",
+        "bytes": 223004,
+        "sha256": "a2cd8fc33807c78ca9a700c91c2e042258b12fc4796519e00781440b5ad8b2e2"
+      }
+    ]
+  },
+  "scope": "Worst velocity samples from the full standard comparison, not a separate full-grid audit.",
+  "notes": [
+    "The engine includes light time, annual aberration and nutation; solar gravitational deflection is not implemented. Its rapidly varying derivative near conjunction can be large while its position contribution is only arcseconds.",
+    "The true-node Hermite table approximates positions and derivatives smoothly. At the sampled Swiss worst case, minute-scale finite differences and the returned speed differ strongly from 0.01-0.1 day finite differences. The table does not reproduce such short numerical features exactly.",
+    "Standard-comparison errors and sign/retrograde disagreement counts are retained in the main audit; no samples are excluded."
+  ],
+  "cases": [
+    {
+      "id": 0,
+      "body": "Sun",
+      "jdUT": 2452278.0,
+      "coreSpeedDegreesDay": 1.0190063037157415,
+      "swissStandardSpeedDegreesDay": 1.0190070386466474,
+      "swissNoDeflectionSpeedDegreesDay": 1.0190070386466474,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": 1.0190049937642698
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": 1.019006529176636
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": 1.0190067188773355
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": 1.019004820648206
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.0
+    },
+    {
+      "id": 1,
+      "body": "Moon",
+      "jdUT": 2438337.25,
+      "coreSpeedDegreesDay": 14.999374898852125,
+      "swissStandardSpeedDegreesDay": 14.996749329059933,
+      "swissNoDeflectionSpeedDegreesDay": 14.996749329059933,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": 14.99649748849805
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": 14.99669504142389
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": 14.99675195304917
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": 14.996724105742487
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.0
+    },
+    {
+      "id": 2,
+      "body": "Mercury",
+      "jdUT": 2431039.0,
+      "coreSpeedDegreesDay": 1.6046185804967195,
+      "swissStandardSpeedDegreesDay": 1.6119013366816648,
+      "swissNoDeflectionSpeedDegreesDay": 1.6046216219681915,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": 1.608344385995082
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": 1.6118184855656637
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": 1.611897705544152
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": 1.6118942509990575
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.07051628938370413
+    },
+    {
+      "id": 3,
+      "body": "Venus",
+      "jdUT": 2457546.5,
+      "coreSpeedDegreesDay": 1.228950144297869,
+      "swissStandardSpeedDegreesDay": 1.2317640713625704,
+      "swissNoDeflectionSpeedDegreesDay": 1.2289517435758643,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": 1.231748022783421
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": 1.2316431866992161
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": 1.2317613961556617
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": 1.2317587949439712
+        }
+      ],
+      "longitudeDeflectionArcsec": 1.2998115171967584
+    },
+    {
+      "id": 4,
+      "body": "Mars",
+      "jdUT": 2431409.25,
+      "coreSpeedDegreesDay": 0.7038966589689721,
+      "swissStandardSpeedDegreesDay": 0.7001978725661473,
+      "swissNoDeflectionSpeedDegreesDay": 0.7038970065086566,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": 0.700584807126603
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": 0.7002018233791318
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": 0.7001976833436174
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": 0.7001958250896223
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.2615319751612333
+    },
+    {
+      "id": 5,
+      "body": "Jupiter",
+      "jdUT": 2434924.25,
+      "coreSpeedDegreesDay": 0.227186751092745,
+      "swissStandardSpeedDegreesDay": 0.20889090103689947,
+      "swissNoDeflectionSpeedDegreesDay": 0.22718674384104012,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": 0.21802055211935567
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": 0.2090694288568784
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": 0.20889229234910545
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": 0.20889010983182743
+        }
+      ],
+      "longitudeDeflectionArcsec": -1.0278145102120106
+    },
+    {
+      "id": 6,
+      "body": "Saturn",
+      "jdUT": 2437310.75,
+      "coreSpeedDegreesDay": 0.11848900624613634,
+      "swissStandardSpeedDegreesDay": 0.10942552911127908,
+      "swissNoDeflectionSpeedDegreesDay": 0.1184889549820985,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": 0.11290656137106225
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": 0.10948058799442606
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": 0.10942612200892654
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": 0.10942537983282818
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.21801143561788194
+    },
+    {
+      "id": 7,
+      "body": "Uranus",
+      "jdUT": 2446040.25,
+      "coreSpeedDegreesDay": 0.061288504818435285,
+      "swissStandardSpeedDegreesDay": 0.013865920898857199,
+      "swissNoDeflectionSpeedDegreesDay": 0.06128838938529698,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": 0.05048672561329681
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": 0.023850962564608835
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": 0.015682622404256108
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": 0.013866716130905843
+        }
+      ],
+      "longitudeDeflectionArcsec": -0.36061731510699246
+    },
+    {
+      "id": 8,
+      "body": "Neptune",
+      "jdUT": 2452670.5,
+      "coreSpeedDegreesDay": 0.03804630262607134,
+      "swissStandardSpeedDegreesDay": 0.013793067923684328,
+      "swissNoDeflectionSpeedDegreesDay": 0.03804606918960248,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": 0.028186934092389038
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": 0.014059470865390722
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": 0.013794253078458496
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": 0.013792035815640702
+        }
+      ],
+      "longitudeDeflectionArcsec": -1.743523552067927
+    },
+    {
+      "id": 9,
+      "body": "Pluto",
+      "jdUT": 2426169.75,
+      "coreSpeedDegreesDay": 0.026313291393620375,
+      "swissStandardSpeedDegreesDay": 0.007494278015909313,
+      "swissNoDeflectionSpeedDegreesDay": 0.026312991304423532,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": 0.017885781835076386
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": 0.007712163406381478
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": 0.007496566055920084
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": 0.007494448936995468
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.16370483623404652
+    },
+    {
+      "id": 10,
+      "body": "MeanNode",
+      "jdUT": 2427449.5,
+      "coreSpeedDegreesDay": -0.052911550735499524,
+      "swissStandardSpeedDegreesDay": -0.052911750981089134,
+      "swissNoDeflectionSpeedDegreesDay": -0.052911750981089134,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": -0.05291163216014638
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": -0.052911624260332246
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": -0.05291165066978465
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": -0.05291161755849316
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.0
+    },
+    {
+      "id": 11,
+      "body": "TrueNode",
+      "jdUT": 2462308.5,
+      "coreSpeedDegreesDay": -0.0055153525515300155,
+      "swissStandardSpeedDegreesDay": 0.12825482032158175,
+      "swissNoDeflectionSpeedDegreesDay": 0.12825482032158175,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": -0.005506864945914458
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": -0.0043199742208344105
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": 0.007730796738769641
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": 0.12825479814182472
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.0
+    },
+    {
+      "id": 15,
+      "body": "Chiron",
+      "jdUT": 2461516.25,
+      "coreSpeedDegreesDay": 0.06096059183349212,
+      "swissStandardSpeedDegreesDay": 0.05710940171736231,
+      "swissNoDeflectionSpeedDegreesDay": 0.06096045235243711,
+      "swissPositionFiniteDifferences": [
+        {
+          "stepDays": 0.1,
+          "degreesPerDay": 0.05590076056023463
+        },
+        {
+          "stepDays": 0.01,
+          "degreesPerDay": 0.05711775970809185
+        },
+        {
+          "stepDays": 0.001,
+          "degreesPerDay": 0.057108762518964795
+        },
+        {
+          "stepDays": 0.0001,
+          "degreesPerDay": 0.057109137259203635
+        }
+      ],
+      "longitudeDeflectionArcsec": -2.3436849851691477
+    }
+  ]
+}

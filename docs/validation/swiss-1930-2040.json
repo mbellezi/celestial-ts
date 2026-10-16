@@ -1,0 +1,4357 @@
+{
+  "schemaVersion": 1,
+  "description": "Apparent tropical geocentric core WASM versus Swiss Ephemeris; sameUT uses independent delta T; sameTT uses core delta T for both. Absolute-error percentiles use linear interpolation. Thresholds are descriptive, not user requirements.",
+  "limitation": "Six-hour grid plus 10000 deterministic random instants and explicit samples is not continuous certification. No interpretations changed.",
+  "timeConvention": "jdUT and utIso use conventional UT1 Julian days rendered as calendar ISO labels; no UT1-to-UTC or leap-second conversion. Historical and future delta T values are models, not asserted observations.",
+  "wrapperVersion": "2.10.3.2",
+  "pythonVersion": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "auditScriptHashes": {
+    "scripts/validation/compare-swiss.py": "c53e0151a243bf875de412baf97ac91c7746a34b382525fcae7188090629dbdf",
+    "scripts/validation/export-core.mjs": "3c1084b942e00c85c53cb53e7fe00a49d4f1403b80f6d65ddc4e3dab0115e70f"
+  },
+  "swissVersion": "2.10.03",
+  "swissFlagsRequested": 258,
+  "swissEphemerisFlagVerifiedEveryCall": true,
+  "ephemerisManifest": {
+    "upstreamCommit": "c113653fe37fe5cdbfcc030a6e341de03ef018d2",
+    "files": [
+      {
+        "name": "sepl_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/sepl_18.se1",
+        "bytes": 484061,
+        "sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+      },
+      {
+        "name": "semo_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/semo_18.se1",
+        "bytes": 1304771,
+        "sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+      },
+      {
+        "name": "seas_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/seas_18.se1",
+        "bytes": 223004,
+        "sha256": "a2cd8fc33807c78ca9a700c91c2e042258b12fc4796519e00781440b5ad8b2e2"
+      }
+    ]
+  },
+  "coreManifest": {
+    "schemaVersion": 1,
+    "format": "headerless little-endian IEEE754 float64 records",
+    "recordDoubles": 80,
+    "recordLayout": [
+      "jdUT",
+      "deltaTDays",
+      "Sun.lon",
+      "Sun.lat",
+      "Sun.dist",
+      "Sun.speedLon",
+      "Sun.speedLat",
+      "Sun.speedDist",
+      "Moon.lon",
+      "Moon.lat",
+      "Moon.dist",
+      "Moon.speedLon",
+      "Moon.speedLat",
+      "Moon.speedDist",
+      "Mercury.lon",
+      "Mercury.lat",
+      "Mercury.dist",
+      "Mercury.speedLon",
+      "Mercury.speedLat",
+      "Mercury.speedDist",
+      "Venus.lon",
+      "Venus.lat",
+      "Venus.dist",
+      "Venus.speedLon",
+      "Venus.speedLat",
+      "Venus.speedDist",
+      "Mars.lon",
+      "Mars.lat",
+      "Mars.dist",
+      "Mars.speedLon",
+      "Mars.speedLat",
+      "Mars.speedDist",
+      "Jupiter.lon",
+      "Jupiter.lat",
+      "Jupiter.dist",
+      "Jupiter.speedLon",
+      "Jupiter.speedLat",
+      "Jupiter.speedDist",
+      "Saturn.lon",
+      "Saturn.lat",
+      "Saturn.dist",
+      "Saturn.speedLon",
+      "Saturn.speedLat",
+      "Saturn.speedDist",
+      "Uranus.lon",
+      "Uranus.lat",
+      "Uranus.dist",
+      "Uranus.speedLon",
+      "Uranus.speedLat",
+      "Uranus.speedDist",
+      "Neptune.lon",
+      "Neptune.lat",
+      "Neptune.dist",
+      "Neptune.speedLon",
+      "Neptune.speedLat",
+      "Neptune.speedDist",
+      "Pluto.lon",
+      "Pluto.lat",
+      "Pluto.dist",
+      "Pluto.speedLon",
+      "Pluto.speedLat",
+      "Pluto.speedDist",
+      "MeanNode.lon",
+      "MeanNode.lat",
+      "MeanNode.dist",
+      "MeanNode.speedLon",
+      "MeanNode.speedLat",
+      "MeanNode.speedDist",
+      "TrueNode.lon",
+      "TrueNode.lat",
+      "TrueNode.dist",
+      "TrueNode.speedLon",
+      "TrueNode.speedLat",
+      "TrueNode.speedDist",
+      "Chiron.lon",
+      "Chiron.lat",
+      "Chiron.dist",
+      "Chiron.speedLon",
+      "Chiron.speedLat",
+      "Chiron.speedDist"
+    ],
+    "units": {
+      "lon": "degrees",
+      "lat": "degrees",
+      "dist": "AU",
+      "speedLon": "degrees/day",
+      "speedLat": "degrees/day",
+      "speedDist": "AU/day"
+    },
+    "bodies": [
+      {
+        "id": 0,
+        "name": "Sun"
+      },
+      {
+        "id": 1,
+        "name": "Moon"
+      },
+      {
+        "id": 2,
+        "name": "Mercury"
+      },
+      {
+        "id": 3,
+        "name": "Venus"
+      },
+      {
+        "id": 4,
+        "name": "Mars"
+      },
+      {
+        "id": 5,
+        "name": "Jupiter"
+      },
+      {
+        "id": 6,
+        "name": "Saturn"
+      },
+      {
+        "id": 7,
+        "name": "Uranus"
+      },
+      {
+        "id": 8,
+        "name": "Neptune"
+      },
+      {
+        "id": 9,
+        "name": "Pluto"
+      },
+      {
+        "id": 10,
+        "name": "MeanNode"
+      },
+      {
+        "id": 11,
+        "name": "TrueNode"
+      },
+      {
+        "id": 15,
+        "name": "Chiron"
+      }
+    ],
+    "flags": 258,
+    "sampling": {
+      "startInclusiveJD": 2425977.5,
+      "endExclusiveJD": 2466520.5,
+      "gridStepDays": 0.25,
+      "gridCount": 162172,
+      "randomCount": 10000,
+      "randomGenerator": "xorshift32 unsigned / 2^32",
+      "seed": 422584384,
+      "extraJD": [
+        2466520.499988426,
+        2441465.6666666665
+      ]
+    },
+    "records": 172174,
+    "binarySha256": "05602bdc20c6dae02b513d887710b8c734172de06b4ca250c964052b5fa66853",
+    "sourceHashScope": "Rust/TOML sources plus BIN/JSON ephemeris assets under core/data and core/src/astronomy; wasm package artifacts",
+    "hashes": {
+      "core/Cargo.toml": "e66ad7973d47004dfacd3b17cc8095632b8bade2a215e37462cea8050552ecda",
+      "core/benches/celestial_bench.rs": "d76c829be116f6b5432a0d9ca6512011bb3e53eb0102cbc1b63fea467565dc3d",
+      "core/build.rs": "1bbbddd657edd63e6634439db5c66b4735a8b2860ef3b1f131229e01d614ed72",
+      "core/data/chiron-ephemeris.json": "a1fe1df53f9da1d82f286f9d649701039a4cd9610afb7e844fac9234a620add2",
+      "core/data/delta-t.bin": "3043835591b5e94ca36b49377db4c911b47165c8efd483bcedf34d438178f330",
+      "core/data/delta-t.json": "6de72b434c9de5dcafdd753a9905cd08faca1ce6f5c496e66f45435c8e346deb",
+      "core/src/astronomy/ayanamsa.rs": "72b9845047bf08579ef5cba45e0e86294df08496c4cf01acec6b6d462029d51b",
+      "core/src/astronomy/chiron.rs": "3a6c16f900b5dc84c4e31555ec61790b65e5e0c8247b374b6760a3305127eb03",
+      "core/src/astronomy/chiron_ephemeris.rs": "c2e27ff47b6df79e984f045a4fe9eb396db3fbf4af20616032c12e82205b9477",
+      "core/src/astronomy/constants.rs": "34eb0569cb10fa85b9067e34234c490960e97a8377da1bca0feeca2284602fd0",
+      "core/src/astronomy/crossings.rs": "482c42fa3dd18cd90449341df5061374643f6abd35dd5bdfcdf3386a3a7c0dbb",
+      "core/src/astronomy/deflection.rs": "21b191e80a41723d03ae3318538c9ab893c2278d8987657389f3cdfb0239e0cb",
+      "core/src/astronomy/delta_t.rs": "c8046955d4c9747b8a2b0b9a3ed09b9a7f59f3183856e99516afecf69e57c982",
+      "core/src/astronomy/eclipses.rs": "718c7fcbc300b639fa68a7c2be5512d3e53b4f0423f6ba77f00f7572b991f596",
+      "core/src/astronomy/engine.rs": "55d2e6079d3e5b6437bb89223dae41c1e1c77343bebd3b1583270530709af636",
+      "core/src/astronomy/fixstars.rs": "219b72ba3bb1cf56d476b2386fea88fbe67cdc4ec6271c205979348dbba545d4",
+      "core/src/astronomy/heliacal.rs": "2d845bcbb5e40670d833af9ed2e817a6e956b0089398e4c6a07b8dc87bf78816",
+      "core/src/astronomy/houses.rs": "f5708b6a08c08543cbd5cd4ca0fe0826a15ba5d0d9635b1680ff585ad06e6bd1",
+      "core/src/astronomy/lunar-node.bin": "c6743dc965c8c31b10a9d15104756ab0eaa922a9df08dcea5342b2f7ac48f03d",
+      "core/src/astronomy/lunar-node.manifest.json": "75b83b65cb7042f15f221639e25cd6349147f8eb0b6c73c9434b757a1aa4a374",
+      "core/src/astronomy/mod.rs": "56645e1d02ba98e1d35de5f91aa3f174c4c035913e3aba3f7746ecf6d4abbdb9",
+      "core/src/astronomy/moon.rs": "23b6fd10cc9beafcd081c9f76ba50ee4009a6c637cce33ae0bd50333ee8757f4",
+      "core/src/astronomy/nodes.rs": "864a7cf7c558054114417f2b2b4687e44380bc3c7c0eec6fa1f60a253810c29a",
+      "core/src/astronomy/nutation.rs": "43892151a2f470376c4374ae615840dd7efbbd752f3f8dac5bd417e2671122dd",
+      "core/src/astronomy/phenomena.rs": "aced8956526ceed38b5f15dc89d63514615e74e1775b7364fe0bbbe03bd20b58",
+      "core/src/astronomy/planetary.rs": "d19f2d15a73de04e4d848b72a4dd6c53168f6fcd901526debc09ce15366a97d0",
+      "core/src/astronomy/pluto.rs": "7332f1f1891a05b8897f7e068c406488b67a4c83908c5ea87b56ec9f33896084",
+      "core/src/astronomy/precision-ephemeris.bin": "b5b8c76376957e84517e225de3f61c98e5aef6a84a56d2f54eb763efe1b645c5",
+      "core/src/astronomy/precision-ephemeris.manifest.json": "583dbda751870b79b976c40125c88a6a3193f68d774a9a03e31bef9ef48383d4",
+      "core/src/astronomy/precision_ephemeris.rs": "9bcc45eeb1b1a03e30500957a8bbcf6a4e00bd27a3c4ca50abe13e9d8ebec75d",
+      "core/src/astronomy/rise_set.rs": "850660278ab0490724be8f57908c4feba2794a64033b266f3abb4ac7efdd3b23",
+      "core/src/astronomy/solar_cycle.rs": "057511cc277f085ffc4d017d29c41c81a00eda3528e135986be29ddd4fa8a8e2",
+      "core/src/astronomy/test_support.rs": "acea71791d4054642d6d330b3c934ada94adfabe386d96d5e36a652be5f16875",
+      "core/src/astronomy/vsop87.rs": "20567773406bb40242440934add7742dd78b851c57ee0bd3102d20b6c07965c1",
+      "core/src/astronomy/vsop87_data.rs": "b49eb04cf219145bc21d20e0328246a866a19f97ff5bd57318cd4814bf68e618",
+      "core/src/body/mod.rs": "4384306b20986e47cbc8500d9c9f17a3d47eac369bd88a483f41330c7ff0f293",
+      "core/src/calendar/buddhist/mod.rs": "7c83fddc6b6364caf4b75e0c4e4e6b32b06215314202aa0f273ec74ef1e98c96",
+      "core/src/calendar/celtic/mod.rs": "ab5e83a559d9a0696672babc3958e8594db1546647d1cd570f7b58c10e460d35",
+      "core/src/calendar/christian/mod.rs": "008d03c79ff46a82c5b6f393fff3eaf3503596cdbe81e8d9f8fdbf9d3b2c2b57",
+      "core/src/calendar/hebrew/calendar.rs": "62f4627812ecde7fe74b1e0bdffc51c51c2c7835a3e7ffcc96feba88e946a7c2",
+      "core/src/calendar/hebrew/mod.rs": "8a44186c07206a37721d9d0ed178daaade7a2c817fb22ef77dd5f2d1c3fe3ca1",
+      "core/src/calendar/hindu/mod.rs": "0a21973bcb46e3abc9b70eafc69768612bac7ee8125762a8dcbeaea20fa60eec",
+      "core/src/calendar/islamic/mod.rs": "4e75393a463b5ee9aff8485b1554af8cae47715586b2e1a40e7061577d4c45b9",
+      "core/src/calendar/mod.rs": "38264538a05f61099dad605631a84cb3a1ba56a36b167f9bf309b822d6af26dc",
+      "core/src/calendar/persian/mod.rs": "3fcf7c7c24896b086ff360b98569b5f633038d04ac38aabd55c1c24db9ff217b",
+      "core/src/chart.rs": "9d9c9b349d2a9c9afaa582c57bed8d3711856efdc2f8e19e88ac0dd59d690e22",
+      "core/src/constants.rs": "3fdcdb6978b7e310fb8982adf49a27635a2a7f638baf70d89423e633d8ada5d0",
+      "core/src/error.rs": "5ae13c0e3e9c011a8931d4798df25324a8526e16bccf14be01c2109081b194e7",
+      "core/src/functions/aspects.rs": "d3ae0dc1d68264b7577c12e302b6e972e00121c242f16b3730a468719e0d8fd9",
+      "core/src/functions/calc.rs": "beeb973d9aeabef41731da1264d212ec98ff95b3262735bfff44fd188b6341af",
+      "core/src/functions/chart.rs": "bdb205914edf807b6c60fbb796c89d6191d79cec6266c518958cb68a9750f0dc",
+      "core/src/functions/chinese.rs": "f7031fabcaf0106e4fc78de9bb0a9cd8baa928398bf681d291a21d22aeffbc2a",
+      "core/src/functions/config.rs": "a0cabf962be5a6b78b1b83233268db0eb37c2cc069ec67508171731cb6230ece",
+      "core/src/functions/coptic.rs": "a40152cde76b5508f342e08ebda220c47e4cf8e80dd224de2527dc70d87f2c00",
+      "core/src/functions/easter.rs": "6992df1985089cdb9e7733b1ddb9cd94db37a7ca16b3d537f0aeea5b8d2a4ec4",
+      "core/src/functions/eclipses.rs": "dfbc3f3c466eaf21785963a53d8ec7533ca88852aeafef4b80803d5298f14ee1",
+      "core/src/functions/esbats.rs": "807420f204d5a02a983c61bb2a17c50bf193257fe00afd6521bd50175c3a1844",
+      "core/src/functions/geoformat.rs": "6160427397a2ef629d04f41166e88f0829e055fbd69317cbcedf3da0a8b89ff9",
+      "core/src/functions/hellenistic.rs": "2b6cacf3bd5854505ae74f524e559bbe5f99dc3660a4f13bde55b613602f4320",
+      "core/src/functions/houses.rs": "3d53c25711930cde309800b1cdead491767d7f2d6041f22ef2552e09fda0affb",
+      "core/src/functions/indigenous.rs": "310c82038b5a18ca430f487ab2f1a3700163f5e16f576023c1c6540f58c548e4",
+      "core/src/functions/islamic.rs": "cd039bdea85d771a56cdedba31e1acb05d4145d3d5e0dbacd51ec35009e14cad",
+      "core/src/functions/jewish.rs": "0888e132fb2d141787a379c617d0b45ff8f59228a8556f862d7dc600d3dbc4c8",
+      "core/src/functions/mesoamerican.rs": "759d3046d67929f3dba2e0eb1c02b4f6f0667bd8fa81790cd74ff36361953be9",
+      "core/src/functions/mod.rs": "59392f30fc516f429b387b876747e025abd2dfd9b76d992c3ebedbf03f9d8562",
+      "core/src/functions/moon_phases.rs": "0b37a7b5923378f0ab281d7a494b2ac521824ce44432c5bea8dc94c5299bf774",
+      "core/src/functions/motion.rs": "7a6f3228ea983dd053314337b7cf8beba12bf5aa17a5f74f6e459aefd9b141e5",
+      "core/src/functions/nowruz.rs": "8c7f564f3577cc768432d8008201270f8b70558ed9aa5641ecd229560bec0d98",
+      "core/src/functions/omer.rs": "4fb9d943e8f901c1ba2faca2ac56a49786a1dd0f47a6097382b892b08732b412",
+      "core/src/functions/panchanga.rs": "f5c952080167b096a3e75333390eb28be12a12ab30fbd20087b5a047efdaa781",
+      "core/src/functions/phenomena.rs": "8fef36f86bf835e1ef5ff401c6970a3f3141c7bd5402a42d75ac901b7ef15291",
+      "core/src/functions/sabbats.rs": "f02536ebaed23859961d9bbb1a0a0d89dc4112a675b3d07471b03a9335917386",
+      "core/src/functions/searches.rs": "b9155357e914df7972edc927d843064c7e684aaf4868b2bc28bb3b40dc2f86bf",
+      "core/src/functions/tibetan.rs": "d07be7d47611088857931996c774f808525aa931fd6c8a85ef596386f6fb8be4",
+      "core/src/functions/time.rs": "d79e9aca781d5acd54833680a0f63b607d50f549e5c1493721a69bff48c47d83",
+      "core/src/functions/timezone.rs": "83287bf60435600e1529b9d8bdb06de5f441b8fadc017fc6903c17fd95c459e0",
+      "core/src/functions/utils.rs": "a84a8b39e106521584642913168e98e5d2dfb32c4f01df1e121c9a77485ea935",
+      "core/src/functions/vedic.rs": "a787a063ffcd3e2da37c0923fea142788135336764de262c1ce278c05bb25ec1",
+      "core/src/functions/vesak.rs": "e507218f12aeeed5cbdc7fddf21f913a843860061aecdeed0889b635bd25aa6c",
+      "core/src/functions/zoroastrian.rs": "e2d1d0b56172dc4d77590ff11edfeba6b6573e41823f279c2432b7075dcfa33d",
+      "core/src/geo.rs": "ba581d9224fc4cb445e78934e226d97c0728100bad1c0603eb63d4bfecfb499d",
+      "core/src/houses.rs": "ab65f3021ab7e96cc9751a9537eece3ae0a52e40d8c593dd423ca352ac0a43b0",
+      "core/src/lib.rs": "47d4b9e7a7001f53ef71a378308853c3a0f1eb27759d8f12b3e26c8239f6fcdb",
+      "core/src/moon.rs": "f24d5ec9549d7f32b53666619ca8177b2c8822b9a26a1af0cd8946d6ceef185d",
+      "core/src/motion.rs": "c7bb2e870881421e87e126903a688cc2464edf93f47f6d0386fc5474afa6ecac",
+      "core/src/position.rs": "4834339a38919276d9744e5727bf5ff1e6620a409234f4de901580aad60c5235",
+      "core/src/solar.rs": "21d799f53c393787b36debc15f9fd7bbc260c54ca7cfc4859e65dc3710a003d4",
+      "core/src/time.rs": "2376d7193c341008a053ca38cfa9b8d8e8c97c391d5998c7bf2cdbe540091475",
+      "core/src/types.rs": "9fa040095cffcd447e816fc69ca220c047524c857bc69625ae309c4b3cebeae9",
+      "core/src/units.rs": "405f362c173f18c3d9ac37e99ce010194033d81be7932b3765af37cdb7960435",
+      "core/src/vedic.rs": "c95bb174625d3bc8009407002cb5c8870b288cbcfe10e561a8fc402bcf4032cd",
+      "core/tests/bench_timing.rs": "fc0280e3d6c96c1559a4b8fe34949ba655d771f3c819d48990ff9bafb97d37a1",
+      "core/tests/binding_parity.rs": "b2207598ed4f0968f824183683d14188ff14343d4c03890f69fba3ffbeda6fe3",
+      "core/tests/chinese_test.rs": "82ccd2381d9b1e7d3eefe1dd3c975a26a8519ef63d7cff6e7181352e86677913",
+      "core/tests/external_reference.rs": "9ba1b287e9eeef2027d86dc0f12499a214a646a15b2deefd6386f94135acb720",
+      "core/tests/hellenistic_test.rs": "03ab743e2cd402e585af951b0400720a2b6692f889ad7807a0a0abbcf87c20a1",
+      "core/tests/helpers_test.rs": "f324b87436647b99754b0e2471ecc50720d0451eafd085955155792798cc3e1c",
+      "core/tests/indigenous_test.rs": "1cdfeb6d7656f3540203efbcc039198663a1f641050b67fb7c197b97c615c614",
+      "core/tests/integration_tests.rs": "9bf91fb7c5b423675d8b6a6ae8e188caab4333866727f896578a5dcab2e28306",
+      "core/tests/mesoamerican_test.rs": "9c094a048d4421e50e9c6d3eea7867ad8e91e98acdfa4c1a0f48be6661f564c8",
+      "core/tests/new_features_test.rs": "395516fb88fa8d194e345e26658b3574b9bef5dc9f40e97f95d453c2e256cfd2",
+      "core/tests/rel_clamps.rs": "4e7c01cea7bdfb2c990259c9af6257cca7a445e09e55fa5a096cc94899d71068",
+      "core/tests/sabbats_esbats_test.rs": "f911d5b5b89a459bbe7d2b1ad06d2bec00a87b1dee4dca25bd45f3729f43764e",
+      "core/tests/support/mod.rs": "9a402388904ddbe5459105e7712a384fb023753f01cd07c80220f7b7bb0bd011",
+      "core/tests/swephelp_test.rs": "0669a91d2224e5c11e5e5c901d9e848445ac5f98197e22ffd4cc3ba5dee893fa",
+      "core/tests/test_util_smoke.rs": "5c4e2a1f09a214db648c5eedfc92358e0c9374814a3d403efede5ad585e068d6",
+      "core/tests/timezone_test.rs": "e2228322718cf4255f5aa3a0aba6699dfa68be511f04724fa05991064f826724",
+      "core/tests/unit_tests.rs": "0a1bb2f259c608fe2511be7b49f9c79bdf20ee1bf2fa467920d3caa30c3e9bd4",
+      "core/tests/wheel_test.rs": "d9edff8fd092afc89291cce7ce05ed5c0de3fee5828c2eaf987560109d7e7fc2",
+      "pkg/celestial_wasm.js": "344d0efa2ac5be2d4f43d2773252afc09ded3d0df969329ea259424b98b7b0df",
+      "pkg/celestial_wasm_bg.wasm": "76e94ee97cff2ff3da281224f69e29173e05c3f7e277e12c7b700e3223fd894c",
+      "wasm/src/additional.rs": "a3941e26b2ff4d87e55645998cc19d3983451a51e6e6bd63345e33a2ef2055f5",
+      "wasm/src/binding.rs": "cedff4072b5cf133b7f8bfebefe2e414b603680a9b2905ec3cef5c19a1100c84",
+      "wasm/src/exports.rs": "c289bff945921889bc74d6c898945079cff01e3983952a4dfeccdbb29ee3221c",
+      "wasm/src/lib.rs": "0d3b7a873fca01531fc03f76a26ce2638655963657fe255f66378e881633b7c6",
+      "wasm/src/methods.rs": "ecc76bebff8b9b95fc6ae6506a658ce513f0f6314d1c7263257fe7893aec908d",
+      "wasm/src/native.rs": "39e0d6f8b995fbe95a234c9c5a8ccfa047c06b5363af81d774214e7960f4d4e1"
+    },
+    "nodeVersion": "v24.18.0"
+  },
+  "records": 172174,
+  "thresholdsDegrees": {
+    "1arcsec": 0.0002777777777777778,
+    "1arcmin": 0.016666666666666666,
+    "6arcmin": 0.1,
+    "1degree": 1
+  },
+  "deltaTSeconds": {
+    "max": 0.0007501171758333286,
+    "p50": 1.7421913911519482e-08,
+    "p95": 1.100937014990311e-07,
+    "p99": 1.5125792571582525e-07,
+    "rms": 4.683395780045271e-06,
+    "worst": {
+      "jdUT": 2429629.25,
+      "utIso": "1939-12-31T18:00:00",
+      "coreMinusSwissSeconds": 0.0007501171758333286
+    }
+  },
+  "comparisons": {
+    "sameUT": [
+      {
+        "id": 0,
+        "name": "Sun",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 6.16290942048181e-05,
+            "p50": 2.1719514634810366e-05,
+            "p95": 5.3562195557788075e-05,
+            "p99": 5.8065300156044903e-05,
+            "rms": 2.922185988469447e-05,
+            "worst": {
+              "absoluteError": 6.16290942048181e-05,
+              "signedError": -6.16290942048181e-05,
+              "jdUT": 2426404.75,
+              "utIso": "1931-03-04T06:00:00",
+              "core": 342.7042320557818,
+              "swiss": 342.704293684876
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 1.6204613134296396e-05,
+            "p50": 1.0605111273091143e-05,
+            "p95": 1.504420063344382e-05,
+            "p99": 1.5483668905260023e-05,
+            "rms": 1.058612521734457e-05,
+            "worst": {
+              "absoluteError": 1.6204613134296396e-05,
+              "signedError": -1.6204613134296396e-05,
+              "jdUT": 2451411.25,
+              "utIso": "1999-08-20T18:00:00",
+              "core": 0.0002231040840919406,
+              "swiss": 0.00023930869722623698
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 7.276329472283294e-08,
+            "p50": 2.7023451754093486e-08,
+            "p95": 5.1020541086410635e-08,
+            "p99": 6.037428642802211e-08,
+            "rms": 3.053093661461611e-08,
+            "worst": {
+              "absoluteError": 7.276329472283294e-08,
+              "signedError": -7.276329472283294e-08,
+              "jdUT": 2460153.75,
+              "utIso": "2023-07-28T06:00:00",
+              "core": 1.0154941859232829,
+              "swiss": 1.0154942586865776
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 7.505264913998388e-07,
+            "p50": 5.8505217559456923e-08,
+            "p95": 1.7302883243974778e-07,
+            "p99": 2.361703535214136e-07,
+            "rms": 8.868212098193303e-08,
+            "worst": {
+              "absoluteError": 7.505264913998388e-07,
+              "signedError": 7.505264913998388e-07,
+              "jdUT": 2433649.753058138,
+              "utIso": "1951-01-03T06:04:24.223000",
+              "core": 1.0195071403913687,
+              "swiss": 1.0195063898648773
+            }
+          }
+        }
+      },
+      {
+        "id": 1,
+        "name": "Moon",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 1.7476632478974352e-06,
+            "p50": 6.011901376723472e-07,
+            "p95": 1.3352010924450045e-06,
+            "p99": 1.5519099383709521e-06,
+            "rms": 7.489256589418236e-07,
+            "worst": {
+              "absoluteError": 1.7476632478974352e-06,
+              "signedError": -1.7476632478974352e-06,
+              "jdUT": 2454097.4086654084,
+              "utIso": "2006-12-27T21:48:28.691000",
+              "core": 9.822668041425915,
+              "swiss": 9.822669789089169
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 2.708495041581216e-07,
+            "p50": 1.3720584668419633e-09,
+            "p95": 8.466597689604783e-09,
+            "p99": 1.3940678407209353e-08,
+            "rms": 5.114777728774031e-09,
+            "worst": {
+              "absoluteError": 2.708495041581216e-07,
+              "signedError": -2.708495041581216e-07,
+              "jdUT": 2446161.5,
+              "utIso": "1985-04-06T00:00:00",
+              "core": 2.1994971666125864,
+              "swiss": 2.1994974374620906
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.2169626417701807e-11,
+            "p50": 1.2031714600319043e-12,
+            "p95": 5.013522973509877e-12,
+            "p99": 6.588943839321015e-12,
+            "rms": 2.3326708480304637e-12,
+            "worst": {
+              "absoluteError": 1.2169626417701807e-11,
+              "signedError": -1.2169626417701807e-11,
+              "jdUT": 2435860.5,
+              "utIso": "1957-01-22T00:00:00",
+              "core": 0.002516148721885878,
+              "swiss": 0.0025161487340555045
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 8.931188797234313e-05,
+            "p50": 2.4869307236663474e-05,
+            "p95": 6.405520313723656e-05,
+            "p99": 7.145148195188962e-05,
+            "rms": 3.394136057193623e-05,
+            "worst": {
+              "absoluteError": 8.931188797234313e-05,
+              "signedError": 8.931188797234313e-05,
+              "jdUT": 2454752.5,
+              "utIso": "2008-10-13T00:00:00",
+              "core": 13.785418646488413,
+              "swiss": 13.78532933460044
+            }
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "Mercury",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 4.563452023376158e-06,
+            "p50": 1.561953922646353e-06,
+            "p95": 3.2928714787772153e-06,
+            "p99": 3.711818937119912e-06,
+            "rms": 1.8932954130648352e-06,
+            "worst": {
+              "absoluteError": 4.563452023376158e-06,
+              "signedError": -4.563452023376158e-06,
+              "jdUT": 2460666.75,
+              "utIso": "2024-12-22T06:00:00",
+              "core": 249.22934461236707,
+              "swiss": 249.2293491758191
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 2.8932408735471427e-07,
+            "p50": 4.434873168701614e-08,
+            "p95": 1.591457069016755e-07,
+            "p99": 2.209117112794696e-07,
+            "rms": 7.552416529516532e-08,
+            "worst": {
+              "absoluteError": 2.8932408735471427e-07,
+              "signedError": 2.8932408735471427e-07,
+              "jdUT": 2429833.5,
+              "utIso": "1940-07-23T00:00:00",
+              "core": -4.9610206690647685,
+              "swiss": -4.961020958388856
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 5.465904839851987e-09,
+            "p50": 2.5756063948279007e-12,
+            "p95": 3.01376035238832e-11,
+            "p99": 1.8882740371317557e-10,
+            "rms": 7.427072664203842e-11,
+            "worst": {
+              "absoluteError": 5.465904839851987e-09,
+              "signedError": -5.465904839851987e-09,
+              "jdUT": 2435110.75,
+              "utIso": "1955-01-03T06:00:00",
+              "core": 1.4050708207936813,
+              "swiss": 1.4050708262595861
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 1.711245294089281e-05,
+            "p50": 1.2800754189967734e-06,
+            "p95": 6.477192082821049e-06,
+            "p99": 8.058590346129433e-06,
+            "rms": 2.8480950321972855e-06,
+            "worst": {
+              "absoluteError": 1.711245294089281e-05,
+              "signedError": -1.711245294089281e-05,
+              "jdUT": 2451673.75,
+              "utIso": "2000-05-09T06:00:00",
+              "core": 2.1697743694525617,
+              "swiss": 2.1697914819055026
+            }
+          }
+        }
+      },
+      {
+        "id": 3,
+        "name": "Venus",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 6.192671662574867e-05,
+            "p50": 2.16771388181769e-05,
+            "p95": 5.422766687104286e-05,
+            "p99": 5.747432997566193e-05,
+            "rms": 2.936591478610169e-05,
+            "worst": {
+              "absoluteError": 6.192671662574867e-05,
+              "signedError": -6.192671662574867e-05,
+              "jdUT": 2426330.5,
+              "utIso": "1930-12-20T00:00:00",
+              "core": 232.92191609754963,
+              "swiss": 232.92197802426625
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 2.8865669279731776e-05,
+            "p50": 1.0251116652315595e-05,
+            "p95": 1.802134903055586e-05,
+            "p99": 2.32175891775732e-05,
+            "rms": 1.1021318076831396e-05,
+            "worst": {
+              "absoluteError": 2.8865669279731776e-05,
+              "signedError": -2.8865669279731776e-05,
+              "jdUT": 2451428.5,
+              "utIso": "1999-09-07T00:00:00",
+              "core": -7.460428113670325,
+              "swiss": -7.460399248001045
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.1184020665133687e-07,
+            "p50": 2.9238719057023133e-08,
+            "p95": 7.474391024997474e-08,
+            "p99": 9.048334573824584e-08,
+            "rms": 3.9804446630286044e-08,
+            "worst": {
+              "absoluteError": 1.1184020665133687e-07,
+              "signedError": -1.1184020665133687e-07,
+              "jdUT": 2430625.0,
+              "utIso": "1942-09-22T12:00:00",
+              "core": 1.6479490954823626,
+              "swiss": 1.6479492073225692
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 1.0860042296556571e-05,
+            "p50": 9.530066401863824e-07,
+            "p95": 2.7299227369881336e-06,
+            "p99": 5.366557428232442e-06,
+            "rms": 1.5428510076116104e-06,
+            "worst": {
+              "absoluteError": 1.0860042296556571e-05,
+              "signedError": 1.0860042296556571e-05,
+              "jdUT": 2444995.75,
+              "utIso": "1982-01-26T06:00:00",
+              "core": -0.5631113105126052,
+              "swiss": -0.5631221705549018
+            }
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Mars",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 6.30469223210639e-05,
+            "p50": 2.0464910093664912e-05,
+            "p95": 5.487980795209069e-05,
+            "p99": 6.05229972404686e-05,
+            "rms": 2.897452375980222e-05,
+            "worst": {
+              "absoluteError": 6.30469223210639e-05,
+              "signedError": -6.30469223210639e-05,
+              "jdUT": 2426349.75,
+              "utIso": "1931-01-08T06:00:00",
+              "core": 133.92289107147326,
+              "swiss": 133.92295411839558
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 1.955230412153952e-05,
+            "p50": 1.0651047533394298e-05,
+            "p95": 1.5254129608011091e-05,
+            "p99": 1.6214719225815505e-05,
+            "rms": 1.0717761761182684e-05,
+            "worst": {
+              "absoluteError": 1.955230412153952e-05,
+              "signedError": 1.955230412153952e-05,
+              "jdUT": 2429455.75,
+              "utIso": "1939-07-11T06:00:00",
+              "core": -5.729756580160374,
+              "swiss": -5.729776132464496
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.718827027374914e-07,
+            "p50": 4.6427157618378345e-08,
+            "p95": 1.2295047343569013e-07,
+            "p99": 1.4387552469408135e-07,
+            "rms": 6.389198351448685e-08,
+            "worst": {
+              "absoluteError": 1.718827027374914e-07,
+              "signedError": -1.718827027374914e-07,
+              "jdUT": 2451808.5,
+              "utIso": "2000-09-21T00:00:00",
+              "core": 2.5018306112124096,
+              "swiss": 2.5018307830951123
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 6.4367943451992815e-06,
+            "p50": 3.8977994248901027e-07,
+            "p95": 1.36683493243972e-06,
+            "p99": 2.4144964113519093e-06,
+            "rms": 6.991188527647535e-07,
+            "worst": {
+              "absoluteError": 6.4367943451992815e-06,
+              "signedError": 6.4367943451992815e-06,
+              "jdUT": 2435726.0,
+              "utIso": "1956-09-09T12:00:00",
+              "core": -0.27693869504623586,
+              "swiss": -0.27694513184058106
+            }
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Jupiter",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 0.00010812996427489452,
+            "p50": 4.0746091144683305e-05,
+            "p95": 8.406730422905184e-05,
+            "p99": 9.842805911802088e-05,
+            "rms": 4.798631167240373e-05,
+            "worst": {
+              "absoluteError": 0.00010812996427489452,
+              "signedError": 0.00010812996427489452,
+              "jdUT": 2466235.25,
+              "utIso": "2040-03-21T18:00:00",
+              "core": 176.29700463623402,
+              "swiss": 176.29689650626975
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 3.256226721615185e-05,
+            "p50": 1.949251141947217e-05,
+            "p95": 2.9734156173455428e-05,
+            "p99": 3.121737580366712e-05,
+            "rms": 1.9806994554438794e-05,
+            "worst": {
+              "absoluteError": 3.256226721615185e-05,
+              "signedError": -3.256226721615185e-05,
+              "jdUT": 2427153.25,
+              "utIso": "1933-03-21T18:00:00",
+              "core": 1.4927002781579457,
+              "swiss": 1.4927328404251619
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.6695022395651904e-06,
+            "p50": 4.5627904077250037e-07,
+            "p95": 1.2131736176979047e-06,
+            "p99": 1.487619683970819e-06,
+            "rms": 6.304388190454299e-07,
+            "worst": {
+              "absoluteError": 1.6695022395651904e-06,
+              "signedError": 1.6695022395651904e-06,
+              "jdUT": 2458956.1438251417,
+              "utIso": "2020-04-16T15:27:06.492000",
+              "core": 5.071855067199345,
+              "swiss": 5.071853397697105
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 7.949363946130328e-06,
+            "p50": 1.2687578546805023e-07,
+            "p95": 4.036307830072861e-07,
+            "p99": 5.355413278446126e-07,
+            "rms": 2.0159554463421638e-07,
+            "worst": {
+              "absoluteError": 7.949363946130328e-06,
+              "signedError": 7.949363946130328e-06,
+              "jdUT": 2465239.0,
+              "utIso": "2037-06-29T12:00:00",
+              "core": 0.22333954500890468,
+              "swiss": 0.22333159564495855
+            }
+          }
+        }
+      },
+      {
+        "id": 6,
+        "name": "Saturn",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 0.000101809443322054,
+            "p50": 3.543733352273648e-05,
+            "p95": 8.12622122623452e-05,
+            "p99": 9.044632926304526e-05,
+            "rms": 4.5422011414290255e-05,
+            "worst": {
+              "absoluteError": 0.000101809443322054,
+              "signedError": 0.000101809443322054,
+              "jdUT": 2466235.75,
+              "utIso": "2040-03-22T06:00:00",
+              "core": 189.18113615773095,
+              "swiss": 189.18103434828762
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 1.6727936999583193e-05,
+            "p50": 8.221940991592902e-06,
+            "p95": 1.4691021105436853e-05,
+            "p99": 1.5828709725326237e-05,
+            "rms": 8.918423231610824e-06,
+            "worst": {
+              "absoluteError": 1.6727936999583193e-05,
+              "signedError": -1.6727936999583193e-05,
+              "jdUT": 2431385.25,
+              "utIso": "1944-10-21T18:00:00",
+              "core": -0.8181148876172126,
+              "swiss": -0.818098159680213
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 4.088590857875829e-06,
+            "p50": 1.453555023012143e-06,
+            "p95": 3.158698886807088e-06,
+            "p99": 3.7525462450105346e-06,
+            "rms": 1.7408804807759045e-06,
+            "worst": {
+              "absoluteError": 4.088590857875829e-06,
+              "signedError": -4.088590857875829e-06,
+              "jdUT": 2465577.5,
+              "utIso": "2038-06-03T00:00:00",
+              "core": 9.360561033317797,
+              "swiss": 9.360565121908655
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 7.05044535767585e-06,
+            "p50": 1.418162163084602e-07,
+            "p95": 6.127942615390126e-07,
+            "p99": 8.1280406237498e-07,
+            "rms": 2.85417165222452e-07,
+            "worst": {
+              "absoluteError": 7.05044535767585e-06,
+              "signedError": 7.05044535767585e-06,
+              "jdUT": 2464160.75,
+              "utIso": "2034-07-17T06:00:00",
+              "core": 0.1328861189605311,
+              "swiss": 0.13287906851517342
+            }
+          }
+        }
+      },
+      {
+        "id": 7,
+        "name": "Uranus",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 0.00038823793630626824,
+            "p50": 9.5892081162674e-05,
+            "p95": 0.0003581457115842568,
+            "p99": 0.0003821384433524599,
+            "rms": 0.00017115023607278205,
+            "worst": {
+              "absoluteError": 0.00038823793630626824,
+              "signedError": -0.00038823793630626824,
+              "jdUT": 2463210.75,
+              "utIso": "2031-12-10T06:00:00",
+              "core": 85.5325700914388,
+              "swiss": 85.53295832937512
+            },
+            "exceedanceCounts": {
+              "1arcsec": 27655,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 3.189509331891216e-05,
+            "p50": 1.9778914997603536e-05,
+            "p95": 2.976580015449648e-05,
+            "p99": 3.105887154396691e-05,
+            "rms": 2.035193882238304e-05,
+            "worst": {
+              "absoluteError": 3.189509331891216e-05,
+              "signedError": -3.189509331891216e-05,
+              "jdUT": 2465049.75,
+              "utIso": "2036-12-22T06:00:00",
+              "core": 0.4452955334979284,
+              "swiss": 0.4453274285912473
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 4.646557668763762e-05,
+            "p50": 1.163222193412139e-05,
+            "p95": 4.193006602637439e-05,
+            "p99": 4.534628046890531e-05,
+            "rms": 2.0462487403638942e-05,
+            "worst": {
+              "absoluteError": 4.646557668763762e-05,
+              "signedError": 4.646557668763762e-05,
+              "jdUT": 2456627.25,
+              "utIso": "2013-11-30T18:00:00",
+              "core": 19.52507944350035,
+              "swiss": 19.52503297792366
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 0.0008051993273098385,
+            "p50": 1.1415010973264694e-07,
+            "p95": 3.261672695393375e-07,
+            "p99": 4.057090287877365e-07,
+            "rms": 2.4370014414702153e-06,
+            "worst": {
+              "absoluteError": 0.0008051993273098385,
+              "signedError": 0.0008051993273098385,
+              "jdUT": 2462292.25,
+              "utIso": "2029-06-04T18:00:00",
+              "core": 0.05901559475186014,
+              "swiss": 0.0582103954245503
+            }
+          }
+        }
+      },
+      {
+        "id": 8,
+        "name": "Neptune",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 4.3033462588937255e-06,
+            "p50": 1.5023804991187717e-06,
+            "p95": 3.346580753316175e-06,
+            "p99": 3.864044094825658e-06,
+            "rms": 1.869088481756971e-06,
+            "worst": {
+              "absoluteError": 4.3033462588937255e-06,
+              "signedError": 4.3033462588937255e-06,
+              "jdUT": 2450320.5,
+              "utIso": "1996-08-25T00:00:00",
+              "core": 295.4411248519382,
+              "swiss": 295.4411205485919
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 2.3147513707189038e-07,
+            "p50": 2.1663415950001763e-08,
+            "p95": 6.960513027898241e-08,
+            "p99": 7.606593905001846e-08,
+            "rms": 3.2511854645820244e-08,
+            "worst": {
+              "absoluteError": 2.3147513707189038e-07,
+              "signedError": 2.3147513707189038e-07,
+              "jdUT": 2452303.0,
+              "utIso": "2002-01-28T12:00:00",
+              "core": 0.10063591769814552,
+              "swiss": 0.10063568622300845
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 9.561069802543898e-08,
+            "p50": 3.136868542696902e-11,
+            "p95": 3.1817766199537806e-10,
+            "p99": 6.337313962490029e-10,
+            "rms": 6.999814931589208e-10,
+            "worst": {
+              "absoluteError": 9.561069802543898e-08,
+              "signedError": -9.561069802543898e-08,
+              "jdUT": 2426496.75,
+              "utIso": "1931-06-04T06:00:00",
+              "core": 30.31365306713701,
+              "swiss": 30.31365316274771
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 1.2049413336854414e-05,
+            "p50": 1.410489684787377e-07,
+            "p95": 4.551248509947205e-07,
+            "p99": 5.925124762597834e-07,
+            "rms": 2.2635725006266577e-07,
+            "worst": {
+              "absoluteError": 1.2049413336854414e-05,
+              "signedError": 1.2049413336854414e-05,
+              "jdUT": 2452670.5,
+              "utIso": "2003-01-31T00:00:00",
+              "core": 0.013805117337021182,
+              "swiss": 0.013793067923684328
+            }
+          }
+        }
+      },
+      {
+        "id": 9,
+        "name": "Pluto",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 5,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 4.111053613087279e-06,
+            "p50": 1.6575074113234223e-06,
+            "p95": 3.308402486368323e-06,
+            "p99": 3.721944934795825e-06,
+            "rms": 1.9538448457468016e-06,
+            "worst": {
+              "absoluteError": 4.111053613087279e-06,
+              "signedError": 4.111053613087279e-06,
+              "jdUT": 2444704.0,
+              "utIso": "1981-04-09T12:00:00",
+              "core": 203.06379435137745,
+              "swiss": 203.06379024032384
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 7.893719669027632e-07,
+            "p50": 1.677446108683256e-07,
+            "p95": 6.070825760318144e-07,
+            "p99": 7.331945801425373e-07,
+            "rms": 2.936957265301017e-07,
+            "worst": {
+              "absoluteError": 7.893719669027632e-07,
+              "signedError": -7.893719669027632e-07,
+              "jdUT": 2443550.5,
+              "utIso": "1978-02-11T00:00:00",
+              "core": 17.404733335890935,
+              "swiss": 17.4047341252629
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.2437637764151077e-07,
+            "p50": 3.0468072509393096e-11,
+            "p95": 3.242206503273337e-10,
+            "p99": 6.592378909431314e-10,
+            "rms": 1.0964975044574717e-09,
+            "worst": {
+              "absoluteError": 1.2437637764151077e-07,
+              "signedError": -1.2437637764151077e-07,
+              "jdUT": 2442496.75,
+              "utIso": "1975-03-25T06:00:00",
+              "core": 29.8346131562701,
+              "swiss": 29.834613280646476
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 7.552348559064503e-06,
+            "p50": 5.638611480144164e-07,
+            "p95": 3.7121024484930778e-06,
+            "p99": 5.111169421512761e-06,
+            "rms": 1.6025063534464026e-06,
+            "worst": {
+              "absoluteError": 7.552348559064503e-06,
+              "signedError": 7.552348559064503e-06,
+              "jdUT": 2441450.0,
+              "utIso": "1972-05-12T12:00:00",
+              "core": -0.01419283132375287,
+              "swiss": -0.014200383672311934
+            }
+          }
+        }
+      },
+      {
+        "id": 10,
+        "name": "MeanNode",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 3.6594861711591875e-05,
+            "p50": 1.4855855312134736e-05,
+            "p95": 3.282030148170634e-05,
+            "p99": 3.541973595048375e-05,
+            "rms": 1.823193404654017e-05,
+            "worst": {
+              "absoluteError": 3.6594861711591875e-05,
+              "signedError": -3.6594861711591875e-05,
+              "jdUT": 2425982.75,
+              "utIso": "1930-01-06T06:00:00",
+              "core": 38.66019067729053,
+              "swiss": 38.66022727215225
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 0.0,
+            "p50": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "rms": 0.0,
+            "worst": {
+              "absoluteError": 0.0,
+              "signedError": 0.0,
+              "jdUT": 2425977.5,
+              "utIso": "1930-01-01T00:00:00",
+              "core": 0.0,
+              "swiss": 0.0
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.1275702593849246e-17,
+            "p50": 9.540979117872439e-18,
+            "p95": 9.974659986866641e-18,
+            "p99": 1.0408340855860843e-17,
+            "rms": 9.546395746006022e-18,
+            "worst": {
+              "absoluteError": 1.1275702593849246e-17,
+              "signedError": 1.1275702593849246e-17,
+              "jdUT": 2445610.0,
+              "utIso": "1983-10-02T12:00:00",
+              "core": 0.0025695552898,
+              "swiss": 0.0025695552897999885
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 2.003269144179587e-07,
+            "p50": 2.6676864869901173e-08,
+            "p95": 7.256287975696e-08,
+            "p99": 1.0084355872505549e-07,
+            "rms": 3.820823308081647e-08,
+            "worst": {
+              "absoluteError": 2.003269144179587e-07,
+              "signedError": 2.003269144179587e-07,
+              "jdUT": 2427449.5,
+              "utIso": "1934-01-12T00:00:00",
+              "core": -0.052911550654174716,
+              "swiss": -0.052911750981089134
+            }
+          }
+        }
+      },
+      {
+        "id": 11,
+        "name": "TrueNode",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 1,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 3.765073046224643e-05,
+            "p50": 2.5442261630814755e-09,
+            "p95": 4.8941382146949765e-08,
+            "p99": 4.618334023120914e-07,
+            "rms": 2.352555322957094e-07,
+            "worst": {
+              "absoluteError": 3.765073046224643e-05,
+              "signedError": -3.765073046224643e-05,
+              "jdUT": 2461950.3078114055,
+              "utIso": "2028-06-27T19:23:14.905000",
+              "core": 293.28856824056083,
+              "swiss": 293.2886058912913
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 0.0,
+            "p50": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "rms": 0.0,
+            "worst": {
+              "absoluteError": 0.0,
+              "signedError": 0.0,
+              "jdUT": 2425977.5,
+              "utIso": "1930-01-01T00:00:00",
+              "core": 0.0,
+              "swiss": 0.0
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 2.0685662614240707e-09,
+            "p50": 3.654290411936323e-13,
+            "p95": 4.029543474066978e-12,
+            "p99": 6.907950105602272e-11,
+            "rms": 1.557344116520513e-11,
+            "worst": {
+              "absoluteError": 2.0685662614240707e-09,
+              "signedError": 2.0685662614240707e-09,
+              "jdUT": 2459277.5,
+              "utIso": "2021-03-04T00:00:00",
+              "core": 0.00260552620153259,
+              "swiss": 0.0026055241329663286
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 0.1337700656989266,
+            "p50": 1.4535614725752488e-09,
+            "p95": 1.723351605500273e-07,
+            "p99": 4.1435279705182e-07,
+            "rms": 0.0003223884805540235,
+            "worst": {
+              "absoluteError": 0.1337700656989266,
+              "signedError": -0.1337700656989266,
+              "jdUT": 2462308.5,
+              "utIso": "2029-06-21T00:00:00",
+              "core": -0.0055152453773448466,
+              "swiss": 0.12825482032158175
+            }
+          }
+        }
+      },
+      {
+        "id": 15,
+        "name": "Chiron",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 5.96716591871882e-05,
+            "p50": 2.3151645905272744e-05,
+            "p95": 5.351936571571514e-05,
+            "p99": 5.767692420704407e-05,
+            "rms": 2.9220934209405914e-05,
+            "worst": {
+              "absoluteError": 5.96716591871882e-05,
+              "signedError": -5.96716591871882e-05,
+              "jdUT": 2426311.25,
+              "utIso": "1930-11-30T18:00:00",
+              "core": 45.396357320482586,
+              "swiss": 45.39641699214178
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 1.4992034871319504e-06,
+            "p50": 1.7705922028543597e-07,
+            "p95": 7.400265987111965e-07,
+            "p99": 9.76453111709573e-07,
+            "rms": 3.4657517046669326e-07,
+            "worst": {
+              "absoluteError": 1.4992034871319504e-06,
+              "signedError": -1.4992034871319504e-06,
+              "jdUT": 2431496.25,
+              "utIso": "1945-02-09T18:00:00",
+              "core": -3.8489197663467296,
+              "swiss": -3.8489182671432425
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.2877967776603327e-06,
+            "p50": 3.8912149680214725e-07,
+            "p95": 9.540667266882965e-07,
+            "p99": 1.1398710798005138e-06,
+            "rms": 5.201775803867234e-07,
+            "worst": {
+              "absoluteError": 1.2877967776603327e-06,
+              "signedError": -1.2877967776603327e-06,
+              "jdUT": 2459026.0,
+              "utIso": "2020-06-25T12:00:00",
+              "core": 18.911217986390984,
+              "swiss": 18.91121927418776
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 2.473469345898316e-06,
+            "p50": 2.473682988689274e-07,
+            "p95": 1.0959545078993724e-06,
+            "p99": 1.4911118542718063e-06,
+            "rms": 4.948223454533688e-07,
+            "worst": {
+              "absoluteError": 2.473469345898316e-06,
+              "signedError": 2.473469345898316e-06,
+              "jdUT": 2461516.25,
+              "utIso": "2027-04-20T18:00:00",
+              "core": 0.05711187518670821,
+              "swiss": 0.05710940171736231
+            }
+          }
+        }
+      }
+    ],
+    "sameTT": [
+      {
+        "id": 0,
+        "name": "Sun",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 6.16290942048181e-05,
+            "p50": 2.1719514634810366e-05,
+            "p95": 5.3562195557788075e-05,
+            "p99": 5.8065300156044903e-05,
+            "rms": 2.9221860359765355e-05,
+            "worst": {
+              "absoluteError": 6.16290942048181e-05,
+              "signedError": -6.16290942048181e-05,
+              "jdUT": 2426404.75,
+              "utIso": "1931-03-04T06:00:00",
+              "core": 342.7042320557818,
+              "swiss": 342.704293684876
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 1.6204613134296396e-05,
+            "p50": 1.0605111273091143e-05,
+            "p95": 1.504420063344382e-05,
+            "p99": 1.5483668905260023e-05,
+            "rms": 1.058612521733812e-05,
+            "worst": {
+              "absoluteError": 1.6204613134296396e-05,
+              "signedError": -1.6204613134296396e-05,
+              "jdUT": 2451411.25,
+              "utIso": "1999-08-20T18:00:00",
+              "core": 0.0002231040840919406,
+              "swiss": 0.00023930869722623698
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 7.276329472283294e-08,
+            "p50": 2.7023451754093486e-08,
+            "p95": 5.1020541086410635e-08,
+            "p99": 6.037428642802211e-08,
+            "rms": 3.0530936601704e-08,
+            "worst": {
+              "absoluteError": 7.276329472283294e-08,
+              "signedError": -7.276329472283294e-08,
+              "jdUT": 2460153.75,
+              "utIso": "2023-07-28T06:00:00",
+              "core": 1.0154941859232829,
+              "swiss": 1.0154942586865776
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 7.505264913998388e-07,
+            "p50": 5.8505217559456923e-08,
+            "p95": 1.7302883243974778e-07,
+            "p99": 2.361703535214136e-07,
+            "rms": 8.868211782860812e-08,
+            "worst": {
+              "absoluteError": 7.505264913998388e-07,
+              "signedError": 7.505264913998388e-07,
+              "jdUT": 2433649.753058138,
+              "utIso": "1951-01-03T06:04:24.223000",
+              "core": 1.0195071403913687,
+              "swiss": 1.0195063898648773
+            }
+          }
+        }
+      },
+      {
+        "id": 1,
+        "name": "Moon",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 1.7476632478974352e-06,
+            "p50": 6.011983515463726e-07,
+            "p95": 1.3352010924450045e-06,
+            "p99": 1.5520959726700303e-06,
+            "rms": 7.489305307838091e-07,
+            "worst": {
+              "absoluteError": 1.7476632478974352e-06,
+              "signedError": -1.7476632478974352e-06,
+              "jdUT": 2454097.4086654084,
+              "utIso": "2006-12-27T21:48:28.691000",
+              "core": 9.822668041425915,
+              "swiss": 9.822669789089169
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 2.708495041581216e-07,
+            "p50": 1.3720584668419633e-09,
+            "p95": 8.465925560585677e-09,
+            "p99": 1.3940678407209353e-08,
+            "rms": 5.114516382122589e-09,
+            "worst": {
+              "absoluteError": 2.708495041581216e-07,
+              "signedError": -2.708495041581216e-07,
+              "jdUT": 2446161.5,
+              "utIso": "1985-04-06T00:00:00",
+              "core": 2.1994971666125864,
+              "swiss": 2.1994974374620906
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.2169626417701807e-11,
+            "p50": 1.2031714600319043e-12,
+            "p95": 5.013522973509877e-12,
+            "p99": 6.588943839321015e-12,
+            "rms": 2.332665118825886e-12,
+            "worst": {
+              "absoluteError": 1.2169626417701807e-11,
+              "signedError": -1.2169626417701807e-11,
+              "jdUT": 2435860.5,
+              "utIso": "1957-01-22T00:00:00",
+              "core": 0.002516148721885878,
+              "swiss": 0.0025161487340555045
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 8.931188797234313e-05,
+            "p50": 2.4869307236663474e-05,
+            "p95": 6.405520313723656e-05,
+            "p99": 7.145148195188962e-05,
+            "rms": 3.394136064869014e-05,
+            "worst": {
+              "absoluteError": 8.931188797234313e-05,
+              "signedError": 8.931188797234313e-05,
+              "jdUT": 2454752.5,
+              "utIso": "2008-10-13T00:00:00",
+              "core": 13.785418646488413,
+              "swiss": 13.78532933460044
+            }
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "Mercury",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 4.563452023376158e-06,
+            "p50": 1.561953922646353e-06,
+            "p95": 3.2928714787772153e-06,
+            "p99": 3.711818937119912e-06,
+            "rms": 1.8932956209346042e-06,
+            "worst": {
+              "absoluteError": 4.563452023376158e-06,
+              "signedError": -4.563452023376158e-06,
+              "jdUT": 2460666.75,
+              "utIso": "2024-12-22T06:00:00",
+              "core": 249.22934461236707,
+              "swiss": 249.2293491758191
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 2.8932408735471427e-07,
+            "p50": 4.434873168701614e-08,
+            "p95": 1.591457069016755e-07,
+            "p99": 2.209117112794696e-07,
+            "rms": 7.552418288337497e-08,
+            "worst": {
+              "absoluteError": 2.8932408735471427e-07,
+              "signedError": 2.8932408735471427e-07,
+              "jdUT": 2429833.5,
+              "utIso": "1940-07-23T00:00:00",
+              "core": -4.9610206690647685,
+              "swiss": -4.961020958388856
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 5.465904839851987e-09,
+            "p50": 2.573496971081113e-12,
+            "p95": 3.0106672710417146e-11,
+            "p99": 1.887398382027774e-10,
+            "rms": 7.426415111600382e-11,
+            "worst": {
+              "absoluteError": 5.465904839851987e-09,
+              "signedError": -5.465904839851987e-09,
+              "jdUT": 2435110.75,
+              "utIso": "1955-01-03T06:00:00",
+              "core": 1.4050708207936813,
+              "swiss": 1.4050708262595861
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 1.711245294089281e-05,
+            "p50": 1.2800754189967734e-06,
+            "p95": 6.477192082821049e-06,
+            "p99": 8.058590346129433e-06,
+            "rms": 2.8480940832997985e-06,
+            "worst": {
+              "absoluteError": 1.711245294089281e-05,
+              "signedError": -1.711245294089281e-05,
+              "jdUT": 2451673.75,
+              "utIso": "2000-05-09T06:00:00",
+              "core": 2.1697743694525617,
+              "swiss": 2.1697914819055026
+            }
+          }
+        }
+      },
+      {
+        "id": 3,
+        "name": "Venus",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 6.192671662574867e-05,
+            "p50": 2.16771388181769e-05,
+            "p95": 5.422766687104286e-05,
+            "p99": 5.747432997566193e-05,
+            "rms": 2.9365915222109973e-05,
+            "worst": {
+              "absoluteError": 6.192671662574867e-05,
+              "signedError": -6.192671662574867e-05,
+              "jdUT": 2426330.5,
+              "utIso": "1930-12-20T00:00:00",
+              "core": 232.92191609754963,
+              "swiss": 232.92197802426625
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 2.8865669279731776e-05,
+            "p50": 1.0251116652315595e-05,
+            "p95": 1.802134903055586e-05,
+            "p99": 2.32175891775732e-05,
+            "rms": 1.1021318052319585e-05,
+            "worst": {
+              "absoluteError": 2.8865669279731776e-05,
+              "signedError": -2.8865669279731776e-05,
+              "jdUT": 2451428.5,
+              "utIso": "1999-09-07T00:00:00",
+              "core": -7.460428113670325,
+              "swiss": -7.460399248001045
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.1184020665133687e-07,
+            "p50": 2.9238719057023133e-08,
+            "p95": 7.474391024997474e-08,
+            "p99": 9.048334573824584e-08,
+            "rms": 3.980444801733445e-08,
+            "worst": {
+              "absoluteError": 1.1184020665133687e-07,
+              "signedError": -1.1184020665133687e-07,
+              "jdUT": 2430625.0,
+              "utIso": "1942-09-22T12:00:00",
+              "core": 1.6479490954823626,
+              "swiss": 1.6479492073225692
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 1.0860042296556571e-05,
+            "p50": 9.530066401863824e-07,
+            "p95": 2.7299227369881336e-06,
+            "p99": 5.366557428232442e-06,
+            "rms": 1.5428513873238754e-06,
+            "worst": {
+              "absoluteError": 1.0860042296556571e-05,
+              "signedError": 1.0860042296556571e-05,
+              "jdUT": 2444995.75,
+              "utIso": "1982-01-26T06:00:00",
+              "core": -0.5631113105126052,
+              "swiss": -0.5631221705549018
+            }
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "Mars",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 6.30469223210639e-05,
+            "p50": 2.0464910093664912e-05,
+            "p95": 5.487980795209069e-05,
+            "p99": 6.05229972404686e-05,
+            "rms": 2.897452396920248e-05,
+            "worst": {
+              "absoluteError": 6.30469223210639e-05,
+              "signedError": -6.30469223210639e-05,
+              "jdUT": 2426349.75,
+              "utIso": "1931-01-08T06:00:00",
+              "core": 133.92289107147326,
+              "swiss": 133.92295411839558
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 1.955230412153952e-05,
+            "p50": 1.0651047533394298e-05,
+            "p95": 1.5254129608011091e-05,
+            "p99": 1.6214719225815505e-05,
+            "rms": 1.0717761761758348e-05,
+            "worst": {
+              "absoluteError": 1.955230412153952e-05,
+              "signedError": 1.955230412153952e-05,
+              "jdUT": 2429455.75,
+              "utIso": "1939-07-11T06:00:00",
+              "core": -5.729756580160374,
+              "swiss": -5.729776132464496
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.718827027374914e-07,
+            "p50": 4.6427157618378345e-08,
+            "p95": 1.2295047343569013e-07,
+            "p99": 1.4387552469408135e-07,
+            "rms": 6.38919838551076e-08,
+            "worst": {
+              "absoluteError": 1.718827027374914e-07,
+              "signedError": -1.718827027374914e-07,
+              "jdUT": 2451808.5,
+              "utIso": "2000-09-21T00:00:00",
+              "core": 2.5018306112124096,
+              "swiss": 2.5018307830951123
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 6.4367943451992815e-06,
+            "p50": 3.8977994248901027e-07,
+            "p95": 1.36683493243972e-06,
+            "p99": 2.4144964113519093e-06,
+            "rms": 6.991182427429242e-07,
+            "worst": {
+              "absoluteError": 6.4367943451992815e-06,
+              "signedError": 6.4367943451992815e-06,
+              "jdUT": 2435726.0,
+              "utIso": "1956-09-09T12:00:00",
+              "core": -0.27693869504623586,
+              "swiss": -0.27694513184058106
+            }
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Jupiter",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 0.00010812996427489452,
+            "p50": 4.0746091144683305e-05,
+            "p95": 8.406730422905184e-05,
+            "p99": 9.842805911802088e-05,
+            "rms": 4.798631172855999e-05,
+            "worst": {
+              "absoluteError": 0.00010812996427489452,
+              "signedError": 0.00010812996427489452,
+              "jdUT": 2466235.25,
+              "utIso": "2040-03-21T18:00:00",
+              "core": 176.29700463623402,
+              "swiss": 176.29689650626975
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 3.256226721615185e-05,
+            "p50": 1.949251141947217e-05,
+            "p95": 2.9734156173455428e-05,
+            "p99": 3.121737580366712e-05,
+            "rms": 1.9806994553147235e-05,
+            "worst": {
+              "absoluteError": 3.256226721615185e-05,
+              "signedError": -3.256226721615185e-05,
+              "jdUT": 2427153.25,
+              "utIso": "1933-03-21T18:00:00",
+              "core": 1.4927002781579457,
+              "swiss": 1.4927328404251619
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.6695022395651904e-06,
+            "p50": 4.5627904077250037e-07,
+            "p95": 1.2131736176979047e-06,
+            "p99": 1.487619683970819e-06,
+            "rms": 6.304388169442223e-07,
+            "worst": {
+              "absoluteError": 1.6695022395651904e-06,
+              "signedError": 1.6695022395651904e-06,
+              "jdUT": 2458956.1438251417,
+              "utIso": "2020-04-16T15:27:06.492000",
+              "core": 5.071855067199345,
+              "swiss": 5.071853397697105
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 7.949363946130328e-06,
+            "p50": 1.2687034911529338e-07,
+            "p95": 4.036307830072861e-07,
+            "p99": 5.355413278446126e-07,
+            "rms": 2.0159624737645783e-07,
+            "worst": {
+              "absoluteError": 7.949363946130328e-06,
+              "signedError": 7.949363946130328e-06,
+              "jdUT": 2465239.0,
+              "utIso": "2037-06-29T12:00:00",
+              "core": 0.22333954500890468,
+              "swiss": 0.22333159564495855
+            }
+          }
+        }
+      },
+      {
+        "id": 6,
+        "name": "Saturn",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 0.000101809443322054,
+            "p50": 3.543733352273648e-05,
+            "p95": 8.12622122623452e-05,
+            "p99": 9.044632926304526e-05,
+            "rms": 4.542201143986182e-05,
+            "worst": {
+              "absoluteError": 0.000101809443322054,
+              "signedError": 0.000101809443322054,
+              "jdUT": 2466235.75,
+              "utIso": "2040-03-22T06:00:00",
+              "core": 189.18113615773095,
+              "swiss": 189.18103434828762
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 1.6727936999583193e-05,
+            "p50": 8.221940991592902e-06,
+            "p95": 1.4691021105436853e-05,
+            "p99": 1.5828709725326237e-05,
+            "rms": 8.918423231494342e-06,
+            "worst": {
+              "absoluteError": 1.6727936999583193e-05,
+              "signedError": -1.6727936999583193e-05,
+              "jdUT": 2431385.25,
+              "utIso": "1944-10-21T18:00:00",
+              "core": -0.8181148876172126,
+              "swiss": -0.818098159680213
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 4.088590857875829e-06,
+            "p50": 1.453555023012143e-06,
+            "p95": 3.158698886807088e-06,
+            "p99": 3.7525462450105346e-06,
+            "rms": 1.740880477926091e-06,
+            "worst": {
+              "absoluteError": 4.088590857875829e-06,
+              "signedError": -4.088590857875829e-06,
+              "jdUT": 2465577.5,
+              "utIso": "2038-06-03T00:00:00",
+              "core": 9.360561033317797,
+              "swiss": 9.360565121908655
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 7.05044535767585e-06,
+            "p50": 1.418243872376712e-07,
+            "p95": 6.128040635988708e-07,
+            "p99": 8.1280406237498e-07,
+            "rms": 2.854178673886359e-07,
+            "worst": {
+              "absoluteError": 7.05044535767585e-06,
+              "signedError": 7.05044535767585e-06,
+              "jdUT": 2464160.75,
+              "utIso": "2034-07-17T06:00:00",
+              "core": 0.1328861189605311,
+              "swiss": 0.13287906851517342
+            }
+          }
+        }
+      },
+      {
+        "id": 7,
+        "name": "Uranus",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 0.00038823793630626824,
+            "p50": 9.5892081162674e-05,
+            "p95": 0.0003581457115842568,
+            "p99": 0.0003821384433524599,
+            "rms": 0.0001711502360686901,
+            "worst": {
+              "absoluteError": 0.00038823793630626824,
+              "signedError": -0.00038823793630626824,
+              "jdUT": 2463210.75,
+              "utIso": "2031-12-10T06:00:00",
+              "core": 85.5325700914388,
+              "swiss": 85.53295832937512
+            },
+            "exceedanceCounts": {
+              "1arcsec": 27655,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 3.189509331891216e-05,
+            "p50": 1.9778914997603536e-05,
+            "p95": 2.976580015449648e-05,
+            "p99": 3.105887154396691e-05,
+            "rms": 2.0351938822420882e-05,
+            "worst": {
+              "absoluteError": 3.189509331891216e-05,
+              "signedError": -3.189509331891216e-05,
+              "jdUT": 2465049.75,
+              "utIso": "2036-12-22T06:00:00",
+              "core": 0.4452955334979284,
+              "swiss": 0.4453274285912473
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 4.646557668763762e-05,
+            "p50": 1.163222193412139e-05,
+            "p95": 4.193006602637439e-05,
+            "p99": 4.534628046890531e-05,
+            "rms": 2.0462487402581523e-05,
+            "worst": {
+              "absoluteError": 4.646557668763762e-05,
+              "signedError": 4.646557668763762e-05,
+              "jdUT": 2456627.25,
+              "utIso": "2013-11-30T18:00:00",
+              "core": 19.52507944350035,
+              "swiss": 19.52503297792366
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 0.0008051993273098385,
+            "p50": 1.1415010973264694e-07,
+            "p95": 3.261672695393375e-07,
+            "p99": 4.057090287877365e-07,
+            "rms": 2.43700143168456e-06,
+            "worst": {
+              "absoluteError": 0.0008051993273098385,
+              "signedError": 0.0008051993273098385,
+              "jdUT": 2462292.25,
+              "utIso": "2029-06-04T18:00:00",
+              "core": 0.05901559475186014,
+              "swiss": 0.0582103954245503
+            }
+          }
+        }
+      },
+      {
+        "id": 8,
+        "name": "Neptune",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 4.3033462588937255e-06,
+            "p50": 1.5023804991187717e-06,
+            "p95": 3.346580753316175e-06,
+            "p99": 3.864044094825658e-06,
+            "rms": 1.869088483891578e-06,
+            "worst": {
+              "absoluteError": 4.3033462588937255e-06,
+              "signedError": 4.3033462588937255e-06,
+              "jdUT": 2450320.5,
+              "utIso": "1996-08-25T00:00:00",
+              "core": 295.4411248519382,
+              "swiss": 295.4411205485919
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 2.3147513707189038e-07,
+            "p50": 2.1663415950001763e-08,
+            "p95": 6.960513027898241e-08,
+            "p99": 7.606593905001846e-08,
+            "rms": 3.2511854743057066e-08,
+            "worst": {
+              "absoluteError": 2.3147513707189038e-07,
+              "signedError": 2.3147513707189038e-07,
+              "jdUT": 2452303.0,
+              "utIso": "2002-01-28T12:00:00",
+              "core": 0.10063591769814552,
+              "swiss": 0.10063568622300845
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 9.561069802543898e-08,
+            "p50": 3.136690907012962e-11,
+            "p95": 3.182094587828037e-10,
+            "p99": 6.337313962490029e-10,
+            "rms": 6.999818896541297e-10,
+            "worst": {
+              "absoluteError": 9.561069802543898e-08,
+              "signedError": -9.561069802543898e-08,
+              "jdUT": 2426496.75,
+              "utIso": "1931-06-04T06:00:00",
+              "core": 30.31365306713701,
+              "swiss": 30.31365316274771
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 1.2049413336854414e-05,
+            "p50": 1.4105202844963416e-07,
+            "p95": 4.550898563576713e-07,
+            "p99": 5.925124762597834e-07,
+            "rms": 2.2635680949122677e-07,
+            "worst": {
+              "absoluteError": 1.2049413336854414e-05,
+              "signedError": 1.2049413336854414e-05,
+              "jdUT": 2452670.5,
+              "utIso": "2003-01-31T00:00:00",
+              "core": 0.013805117337021182,
+              "swiss": 0.013793067923684328
+            }
+          }
+        }
+      },
+      {
+        "id": 9,
+        "name": "Pluto",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 5,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 4.111053613087279e-06,
+            "p50": 1.6575074113234223e-06,
+            "p95": 3.308402486368323e-06,
+            "p99": 3.721944934795825e-06,
+            "rms": 1.9538448389853264e-06,
+            "worst": {
+              "absoluteError": 4.111053613087279e-06,
+              "signedError": 4.111053613087279e-06,
+              "jdUT": 2444704.0,
+              "utIso": "1981-04-09T12:00:00",
+              "core": 203.06379435137745,
+              "swiss": 203.06379024032384
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 7.893719669027632e-07,
+            "p50": 1.677446108683256e-07,
+            "p95": 6.070825760318144e-07,
+            "p99": 7.331945801425373e-07,
+            "rms": 2.9369572655242626e-07,
+            "worst": {
+              "absoluteError": 7.893719669027632e-07,
+              "signedError": -7.893719669027632e-07,
+              "jdUT": 2443550.5,
+              "utIso": "1978-02-11T00:00:00",
+              "core": 17.404733335890935,
+              "swiss": 17.4047341252629
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.2437637764151077e-07,
+            "p50": 3.0466296152553696e-11,
+            "p95": 3.242231372269089e-10,
+            "p99": 6.592378909431314e-10,
+            "rms": 1.0964975971463894e-09,
+            "worst": {
+              "absoluteError": 1.2437637764151077e-07,
+              "signedError": -1.2437637764151077e-07,
+              "jdUT": 2442496.75,
+              "utIso": "1975-03-25T06:00:00",
+              "core": 29.8346131562701,
+              "swiss": 29.834613280646476
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 7.552348559064503e-06,
+            "p50": 5.638611480144164e-07,
+            "p95": 3.7121024484930778e-06,
+            "p99": 5.111169421512761e-06,
+            "rms": 1.6025059141639851e-06,
+            "worst": {
+              "absoluteError": 7.552348559064503e-06,
+              "signedError": 7.552348559064503e-06,
+              "jdUT": 2441450.0,
+              "utIso": "1972-05-12T12:00:00",
+              "core": -0.01419283132375287,
+              "swiss": -0.014200383672311934
+            }
+          }
+        }
+      },
+      {
+        "id": 10,
+        "name": "MeanNode",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 3.6594861711591875e-05,
+            "p50": 1.4855855312134736e-05,
+            "p95": 3.282030148170634e-05,
+            "p99": 3.541973595048375e-05,
+            "rms": 1.823193402264051e-05,
+            "worst": {
+              "absoluteError": 3.6594861711591875e-05,
+              "signedError": -3.6594861711591875e-05,
+              "jdUT": 2425982.75,
+              "utIso": "1930-01-06T06:00:00",
+              "core": 38.66019067729053,
+              "swiss": 38.66022727215225
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 0.0,
+            "p50": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "rms": 0.0,
+            "worst": {
+              "absoluteError": 0.0,
+              "signedError": 0.0,
+              "jdUT": 2425977.5,
+              "utIso": "1930-01-01T00:00:00",
+              "core": 0.0,
+              "swiss": 0.0
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.1275702593849246e-17,
+            "p50": 9.540979117872439e-18,
+            "p95": 9.974659986866641e-18,
+            "p99": 1.0408340855860843e-17,
+            "rms": 9.546453932629929e-18,
+            "worst": {
+              "absoluteError": 1.1275702593849246e-17,
+              "signedError": 1.1275702593849246e-17,
+              "jdUT": 2445610.0,
+              "utIso": "1983-10-02T12:00:00",
+              "core": 0.0025695552898,
+              "swiss": 0.0025695552897999885
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 2.003269144179587e-07,
+            "p50": 2.6679187265649107e-08,
+            "p95": 7.255889769679226e-08,
+            "p99": 1.008636596828284e-07,
+            "rms": 3.8206118522979876e-08,
+            "worst": {
+              "absoluteError": 2.003269144179587e-07,
+              "signedError": 2.003269144179587e-07,
+              "jdUT": 2427449.5,
+              "utIso": "1934-01-12T00:00:00",
+              "core": -0.052911550654174716,
+              "swiss": -0.052911750981089134
+            }
+          }
+        }
+      },
+      {
+        "id": 11,
+        "name": "TrueNode",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 1,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 3.765073046224643e-05,
+            "p50": 2.5442261630814755e-09,
+            "p95": 4.8941382146949765e-08,
+            "p99": 4.618334023120914e-07,
+            "rms": 2.3525555554817746e-07,
+            "worst": {
+              "absoluteError": 3.765073046224643e-05,
+              "signedError": -3.765073046224643e-05,
+              "jdUT": 2461950.3078114055,
+              "utIso": "2028-06-27T19:23:14.905000",
+              "core": 293.28856824056083,
+              "swiss": 293.2886058912913
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 0.0,
+            "p50": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "rms": 0.0,
+            "worst": {
+              "absoluteError": 0.0,
+              "signedError": 0.0,
+              "jdUT": 2425977.5,
+              "utIso": "1930-01-01T00:00:00",
+              "core": 0.0,
+              "swiss": 0.0
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 2.0685662614240707e-09,
+            "p50": 3.654290411936323e-13,
+            "p95": 4.029543474066978e-12,
+            "p99": 6.907950105602272e-11,
+            "rms": 1.5573441214234302e-11,
+            "worst": {
+              "absoluteError": 2.0685662614240707e-09,
+              "signedError": 2.0685662614240707e-09,
+              "jdUT": 2459277.5,
+              "utIso": "2021-03-04T00:00:00",
+              "core": 0.00260552620153259,
+              "swiss": 0.0026055241329663286
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 0.1337700656989266,
+            "p50": 1.453453824743628e-09,
+            "p95": 1.723351605500273e-07,
+            "p99": 4.1435279705182e-07,
+            "rms": 0.0003223884805537873,
+            "worst": {
+              "absoluteError": 0.1337700656989266,
+              "signedError": -0.1337700656989266,
+              "jdUT": 2462308.5,
+              "utIso": "2029-06-21T00:00:00",
+              "core": -0.0055152453773448466,
+              "swiss": 0.12825482032158175
+            }
+          }
+        }
+      },
+      {
+        "id": 15,
+        "name": "Chiron",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 5.96716591871882e-05,
+            "p50": 2.3151645905272744e-05,
+            "p95": 5.351936571571514e-05,
+            "p99": 5.767692420704407e-05,
+            "rms": 2.9220934197723195e-05,
+            "worst": {
+              "absoluteError": 5.96716591871882e-05,
+              "signedError": -5.96716591871882e-05,
+              "jdUT": 2426311.25,
+              "utIso": "1930-11-30T18:00:00",
+              "core": 45.396357320482586,
+              "swiss": 45.39641699214178
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 1.4992034871319504e-06,
+            "p50": 1.7705922028543597e-07,
+            "p95": 7.400265987111965e-07,
+            "p99": 9.76453111709573e-07,
+            "rms": 3.465751686636507e-07,
+            "worst": {
+              "absoluteError": 1.4992034871319504e-06,
+              "signedError": -1.4992034871319504e-06,
+              "jdUT": 2431496.25,
+              "utIso": "1945-02-09T18:00:00",
+              "core": -3.8489197663467296,
+              "swiss": -3.8489182671432425
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.2877967776603327e-06,
+            "p50": 3.8912149680214725e-07,
+            "p95": 9.540667266882965e-07,
+            "p99": 1.1398710798005138e-06,
+            "rms": 5.201775811393121e-07,
+            "worst": {
+              "absoluteError": 1.2877967776603327e-06,
+              "signedError": -1.2877967776603327e-06,
+              "jdUT": 2459026.0,
+              "utIso": "2020-06-25T12:00:00",
+              "core": 18.911217986390984,
+              "swiss": 18.91121927418776
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 2.473469345898316e-06,
+            "p50": 2.4737523255519145e-07,
+            "p95": 1.0959545078993724e-06,
+            "p99": 1.4911118542718063e-06,
+            "rms": 4.948233934320855e-07,
+            "worst": {
+              "absoluteError": 2.473469345898316e-06,
+              "signedError": 2.473469345898316e-06,
+              "jdUT": 2461516.25,
+              "utIso": "2027-04-20T18:00:00",
+              "core": 0.05711187518670821,
+              "swiss": 0.05710940171736231
+            }
+          }
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "jdUT": 2425977.5,
+      "utIso": "1930-01-01T00:00:00",
+      "deltaTCoreSeconds": 24.42289181247125,
+      "deltaTSwissSeconds": 24.42289181247125,
+      "bodies": [
+        {
+          "id": 0,
+          "name": "Sun",
+          "core": [
+            279.85790678588114,
+            -3.808897963019117e-05,
+            0.9833294817429153,
+            1.01966417458177,
+            -1.133063229396689e-05,
+            -1.0096505241288171e-05
+          ],
+          "swissUT": [
+            279.8579628801427,
+            -5.006483388717295e-05,
+            0.9833294676468323,
+            1.0196642062564973,
+            -2.1189166769193924e-05,
+            -1.0097488298637813e-05
+          ],
+          "swissCoreTT": [
+            279.8579628801427,
+            -5.006483388717295e-05,
+            0.9833294676468323,
+            1.0196642062564973,
+            -2.1189166769193924e-05,
+            -1.0097488298637813e-05
+          ]
+        },
+        {
+          "id": 1,
+          "name": "Moon",
+          "core": [
+            290.8623004644896,
+            -4.762482534826323,
+            0.0027169921690551927,
+            11.869027725251843,
+            -0.34767376757717033,
+            3.0936562525631683e-06
+          ],
+          "swissUT": [
+            290.862301977946,
+            -4.762482532750001,
+            0.002716992170200721,
+            11.869021983308615,
+            -0.34768313609950835,
+            3.0983215741521984e-06
+          ],
+          "swissCoreTT": [
+            290.862301977946,
+            -4.762482532750001,
+            0.002716992170200721,
+            11.869021983308615,
+            -0.34768313609950835,
+            3.0983215741521984e-06
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Mercury",
+          "core": [
+            298.09030792066227,
+            -1.6986997391537821,
+            1.110062094326356,
+            1.3655789572640993,
+            0.11306976751116163,
+            -0.022799456238553464
+          ],
+          "swissUT": [
+            298.0903107757594,
+            -1.6986997226948968,
+            1.1100620943180513,
+            1.3655798676140667,
+            0.11306122321299832,
+            -0.022797636656259813
+          ],
+          "swissCoreTT": [
+            298.0903107757594,
+            -1.6986997226948968,
+            1.1100620943180513,
+            1.3655798676140667,
+            0.11306122321299832,
+            -0.022797636656259813
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Venus",
+          "core": [
+            271.0624776737135,
+            -0.0787512001821817,
+            1.6824166117260462,
+            1.2580661502609127,
+            -0.04049193825238482,
+            0.001579974300825343
+          ],
+          "swissUT": [
+            271.062536668087,
+            -0.07876255637895112,
+            1.6824165858548252,
+            1.2580678730118486,
+            -0.040502098291966944,
+            0.0015829352780830275
+          ],
+          "swissCoreTT": [
+            271.062536668087,
+            -0.07876255637895112,
+            1.6824165858548252,
+            1.2580678730118486,
+            -0.040502098291966944,
+            0.0015829352780830275
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Mars",
+          "core": [
+            271.9173696650618,
+            -0.6784326049564035,
+            2.4271088803127574,
+            0.7522174791790843,
+            -0.008830456647372524,
+            -0.0022884863399541358
+          ],
+          "swissUT": [
+            271.9174308496579,
+            -0.67844426620307,
+            2.427108866664862,
+            0.7522176450221555,
+            -0.00884046581220226,
+            -0.002284219007333799
+          ],
+          "swissCoreTT": [
+            271.9174308496579,
+            -0.67844426620307,
+            2.427108866664862,
+            0.7522176450221555,
+            -0.00884046581220226,
+            -0.002284219007333799
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Jupiter",
+          "core": [
+            67.88247313515683,
+            -0.690334109851054,
+            4.204531287602158,
+            -0.09683001706881166,
+            0.0035629328810402837,
+            0.008793374062881215
+          ],
+          "swissUT": [
+            67.88253323062627,
+            -0.6903397903276693,
+            4.204530975501375,
+            -0.09682988488434395,
+            0.00357212766504262,
+            0.008787044136260445
+          ],
+          "swissCoreTT": [
+            67.88253323062627,
+            -0.6903397903276693,
+            4.204530975501375,
+            -0.09682988488434395,
+            0.00357212766504262,
+            0.008787044136260445
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Saturn",
+          "core": [
+            273.7121449872649,
+            0.7744422568317146,
+            11.023513372869601,
+            0.11791246087938319,
+            -0.0009946040433759713,
+            -0.001835417382899698
+          ],
+          "swissUT": [
+            273.7121878878252,
+            0.774430877811942,
+            11.023511689314292,
+            0.11791239254261114,
+            -0.0010045066350991188,
+            -0.0018159632972991851
+          ],
+          "swissCoreTT": [
+            273.7121878878252,
+            0.774430877811942,
+            11.023511689314292,
+            0.11791239254261114,
+            -0.0010045066350991188,
+            -0.0018159632972991851
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Uranus",
+          "core": [
+            7.547127509952685,
+            -0.6899585151254144,
+            20.052244335063072,
+            0.012751599490761342,
+            0.0006598895559819485,
+            0.01722818969323542
+          ],
+          "swissUT": [
+            7.547278696501728,
+            -0.6899631432960283,
+            20.052237088741837,
+            0.012751676357668607,
+            0.0006611557106244689,
+            0.017229619079075425
+          ],
+          "swissCoreTT": [
+            7.547278696501728,
+            -0.6899631432960283,
+            20.052237088741837,
+            0.012751676357668607,
+            0.0006611557106244689,
+            0.017229619079075425
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Neptune",
+          "core": [
+            153.40249696146864,
+            0.6462946193661621,
+            29.551365067141134,
+            -0.013959741078151048,
+            0.00048210236986557365,
+            -0.013952387516778388
+          ],
+          "swissUT": [
+            153.4024981142852,
+            0.6462946123072082,
+            29.551365066909543,
+            -0.013959539368282767,
+            0.0004865654001441235,
+            -0.013983539652844242
+          ],
+          "swissCoreTT": [
+            153.4024981142852,
+            0.6462946123072082,
+            29.551365066909543,
+            -0.013959539368282767,
+            0.0004865654001441235,
+            -0.013983539652844242
+          ]
+        },
+        {
+          "id": 9,
+          "name": "Pluto",
+          "core": [
+            108.72392634084763,
+            -0.26794570610590185,
+            40.35600248434744,
+            -0.021013270297164075,
+            0.0010427103857374397,
+            -0.003310605702354111
+          ],
+          "swissUT": [
+            108.72392601680895,
+            -0.26794574455848624,
+            40.35600248477879,
+            -0.02101305634503729,
+            0.001052099433908427,
+            -0.003381394355477034
+          ],
+          "swissCoreTT": [
+            108.72392601680895,
+            -0.26794574455848624,
+            40.35600248477879,
+            -0.02101305634503729,
+            0.001052099433908427,
+            -0.003381394355477034
+          ]
+        },
+        {
+          "id": 10,
+          "name": "MeanNode",
+          "core": [
+            38.938158128783016,
+            0.0,
+            0.0025695552898,
+            -0.052920006528952325,
+            0.0,
+            0.0
+          ],
+          "swissUT": [
+            38.938194650285546,
+            0.0,
+            0.0025695552897999903,
+            -0.05291998804428485,
+            0.0,
+            0.0
+          ],
+          "swissCoreTT": [
+            38.938194650285546,
+            0.0,
+            0.0025695552897999903,
+            -0.05291998804428485,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 11,
+          "name": "TrueNode",
+          "core": [
+            40.35822458887564,
+            0.0,
+            0.002553922009234345,
+            -0.20698442185368066,
+            0.0,
+            1.0779721784517449e-06
+          ],
+          "swissUT": [
+            40.35822458947937,
+            0.0,
+            0.0025539220094438512,
+            -0.20698442372919643,
+            0.0,
+            1.0779709375517685e-06
+          ],
+          "swissCoreTT": [
+            40.35822458947937,
+            0.0,
+            0.0025539220094438512,
+            -0.20698442372919643,
+            0.0,
+            1.0779709375517685e-06
+          ]
+        },
+        {
+          "id": 15,
+          "name": "Chiron",
+          "core": [
+            39.78197966342315,
+            -1.740980073692233,
+            16.382624403009032,
+            -0.01862132035695845,
+            0.00016556826391349235,
+            0.013874391783195722
+          ],
+          "swissUT": [
+            39.78203931583026,
+            -1.7409797343372615,
+            16.382623759030075,
+            -0.018621020583338917,
+            0.00017187254974725967,
+            0.013859883649554027
+          ],
+          "swissCoreTT": [
+            39.78203931583026,
+            -1.7409797343372615,
+            16.382623759030075,
+            -0.018621020583338917,
+            0.00017187254974725967,
+            0.013859883649554027
+          ]
+        }
+      ]
+    },
+    {
+      "jdUT": 2441465.6666666665,
+      "utIso": "1972-05-28T04:00:00",
+      "deltaTCoreSeconds": 42.687592589720175,
+      "deltaTSwissSeconds": 42.68759256483518,
+      "bodies": [
+        {
+          "id": 0,
+          "name": "Sun",
+          "core": [
+            66.92268354027487,
+            -9.421253430149793e-05,
+            1.0135017178796617,
+            0.9590428658404997,
+            2.0936344544993313e-05,
+            0.0001675118458464872
+          ],
+          "swissUT": [
+            66.92271247429736,
+            -8.947994737769157e-05,
+            1.0135017311198167,
+            0.9590427988585126,
+            9.007485324327118e-06,
+            0.00016751318103639472
+          ],
+          "swissCoreTT": [
+            66.92271247429736,
+            -8.947994737769157e-05,
+            1.0135017311198167,
+            0.9590427988585126,
+            9.007485324327118e-06,
+            0.00016751318103639472
+          ]
+        },
+        {
+          "id": 1,
+          "name": "Moon",
+          "core": [
+            246.71109209999642,
+            -3.9319483369546275,
+            0.002698941719244686,
+            11.998928561125279,
+            0.6806756943263883,
+            -1.1771846572806822e-05
+          ],
+          "swissUT": [
+            246.71109249512816,
+            -3.931948336938553,
+            0.002698941719243786,
+            11.998903351372336,
+            0.6806877926337384,
+            -1.1776309512084511e-05
+          ],
+          "swissCoreTT": [
+            246.71109249512816,
+            -3.931948336938553,
+            0.002698941719243786,
+            11.998903351372336,
+            0.6806877926337384,
+            -1.1776309512084511e-05
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Mercury",
+          "core": [
+            57.669528218402206,
+            -0.6204235103184232,
+            1.2835310592024902,
+            2.0744832737859236,
+            0.1764516989062169,
+            0.00958271623867921
+          ],
+          "swissUT": [
+            57.669530339859655,
+            -0.6204234846917849,
+            1.2835310591975428,
+            2.074489869873778,
+            0.17644141905363914,
+            0.009584874667299069
+          ],
+          "swissCoreTT": [
+            57.669530339859655,
+            -0.6204234846917849,
+            1.2835310591975428,
+            2.074489869873778,
+            0.17644141905363914,
+            0.009584874667299069
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Venus",
+          "core": [
+            94.72276703886295,
+            2.7001721314917173,
+            0.34823555348078367,
+            -0.04083581958153787,
+            -0.14056702800756915,
+            -0.005269054896657829
+          ],
+          "swissUT": [
+            94.72279529761322,
+            2.7001761428089055,
+            0.34823555416978597,
+            -0.04083658027676782,
+            -0.14058016513036056,
+            -0.005268546764981672
+          ],
+          "swissCoreTT": [
+            94.72279529761322,
+            2.7001761428089055,
+            0.34823555416978597,
+            -0.04083658027676782,
+            -0.14058016513036056,
+            -0.005268546764981672
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Mars",
+          "core": [
+            99.98455384844613,
+            1.193209444035718,
+            2.3868956393215686,
+            0.6376227162964201,
+            0.0010586209772978164,
+            0.005733040262548039
+          ],
+          "swissUT": [
+            99.98458192677187,
+            1.1932214396965584,
+            2.3868956322460373,
+            0.6376227105801587,
+            0.0010457307689634948,
+            0.005736348379093686
+          ],
+          "swissCoreTT": [
+            99.98458192677187,
+            1.1932214396965584,
+            2.3868956322460373,
+            0.6376227105801587,
+            0.0010457307689634948,
+            0.005736348379093686
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Jupiter",
+          "core": [
+            276.6730402567746,
+            0.24695149194699068,
+            4.342205378974589,
+            -0.09454183500153741,
+            -0.0017653446246459583,
+            -0.008197188725990992
+          ],
+          "swissUT": [
+            276.67304341156546,
+            0.24694555003860447,
+            4.342204479720769,
+            -0.09454178523349539,
+            -0.0017522168833880333,
+            -0.008203423341817114
+          ],
+          "swissCoreTT": [
+            276.67304341156546,
+            0.24694555003860447,
+            4.342204479720769,
+            -0.09454178523349539,
+            -0.0017522168833880333,
+            -0.008203423341817114
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Saturn",
+          "core": [
+            69.54388963814347,
+            -1.5443602405520214,
+            10.061829919942493,
+            0.12989360260715194,
+            0.0011866359457828534,
+            0.0007977573941823172
+          ],
+          "swissUT": [
+            69.54391171636692,
+            -1.5443517148168304,
+            10.061831131857112,
+            0.12989339793418636,
+            0.0011742769439537703,
+            0.0008143893462072894
+          ],
+          "swissCoreTT": [
+            69.54391171636692,
+            -1.5443517148168304,
+            10.061831131857112,
+            0.12989339793418636,
+            0.0011742769439537703,
+            0.0008143893462072894
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Uranus",
+          "core": [
+            194.45209327206825,
+            0.6709571580709199,
+            17.736613102939994,
+            -0.020572074662620548,
+            -0.0005942846740318215,
+            0.013249111692457828
+          ],
+          "swissUT": [
+            194.45207188297792,
+            0.6709583053604059,
+            17.73662477509249,
+            -0.02057220927128414,
+            -0.0005909460537128405,
+            0.013231227071440935
+          ],
+          "swissCoreTT": [
+            194.45207188297792,
+            0.6709583053604059,
+            17.73662477509249,
+            -0.02057220927128414,
+            -0.0005909460537128405,
+            0.013231227071440935
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Neptune",
+          "core": [
+            243.80274382459518,
+            1.694994409884336,
+            29.30563575871882,
+            -0.026988968019710895,
+            -0.00011216170061235689,
+            0.0007416179301070961
+          ],
+          "swissUT": [
+            243.8027423900299,
+            1.6949944173684,
+            29.30563575872598,
+            -0.026989028211404364,
+            -0.00010029690976971176,
+            0.0006931965041102152
+          ],
+          "swissCoreTT": [
+            243.8027423900299,
+            1.6949944173684,
+            29.30563575872598,
+            -0.026989028211404364,
+            -0.00010029690976971176,
+            0.0006931965041102152
+          ]
+        },
+        {
+          "id": 9,
+          "name": "Pluto",
+          "core": [
+            179.3511088068712,
+            16.48642571291261,
+            30.85655013264812,
+            -0.006428991362477765,
+            -0.007566338143936758,
+            0.014402330426874747
+          ],
+          "swissUT": [
+            179.3511094030903,
+            16.486425147127413,
+            30.856550132642994,
+            -0.0064328616580050105,
+            -0.007566409750979493,
+            0.014383578517985251
+          ],
+          "swissCoreTT": [
+            179.3511094030903,
+            16.486425147127413,
+            30.856550132642994,
+            -0.0064328616580050105,
+            -0.007566409750979493,
+            0.014383578517985251
+          ]
+        },
+        {
+          "id": 10,
+          "name": "MeanNode",
+          "core": [
+            298.78719003223205,
+            0.0,
+            0.0025695552898,
+            -0.0529270537707745,
+            0.0,
+            0.0
+          ],
+          "swissUT": [
+            298.78720447340925,
+            0.0,
+            0.00256955528979999,
+            -0.05292706591604688,
+            0.0,
+            0.0
+          ],
+          "swissCoreTT": [
+            298.78720447340925,
+            0.0,
+            0.00256955528979999,
+            -0.05292706591604688,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 11,
+          "name": "TrueNode",
+          "core": [
+            297.044256191429,
+            0.0,
+            0.0026143602972918778,
+            -0.13704240523202715,
+            0.0,
+            5.596652451420875e-06
+          ],
+          "swissUT": [
+            297.04425583918777,
+            0.0,
+            0.00261436031894931,
+            -0.1370425330464016,
+            0.0,
+            5.596632323942905e-06
+          ],
+          "swissCoreTT": [
+            297.04425583918777,
+            0.0,
+            0.00261436031894931,
+            -0.1370425330464016,
+            0.0,
+            5.596632323942905e-06
+          ]
+        },
+        {
+          "id": 15,
+          "name": "Chiron",
+          "core": [
+            16.19679487153595,
+            1.7686602381625294,
+            19.432202898969955,
+            0.04136862541569777,
+            9.731697326093995e-05,
+            -0.013058199424117662
+          ],
+          "swissUT": [
+            16.19681757798183,
+            1.7686601288215567,
+            19.4322038440678,
+            0.041368964658349175,
+            9.359496418755987e-05,
+            -0.013037818378478066
+          ],
+          "swissCoreTT": [
+            16.19681757798183,
+            1.7686601288215567,
+            19.4322038440678,
+            0.041368964658349175,
+            9.359496418755987e-05,
+            -0.013037818378478066
+          ]
+        }
+      ]
+    },
+    {
+      "jdUT": 2466520.499988426,
+      "utIso": "2040-12-31T23:59:59",
+      "deltaTCoreSeconds": 72.06645018613898,
+      "deltaTSwissSeconds": 72.06645018613885,
+      "bodies": [
+        {
+          "id": 0,
+          "name": "Sun",
+          "core": [
+            280.9297372539393,
+            -0.00011619086376270602,
+            0.9833620166486201,
+            1.0196279820312828,
+            -3.7100424831464916e-05,
+            -1.0324749719308995e-05
+          ],
+          "swissUT": [
+            280.9297089371318,
+            -0.0001278527339546291,
+            0.9833620709115677,
+            1.0196278584382927,
+            -3.14746090812381e-05,
+            -1.0325340589391912e-05
+          ],
+          "swissCoreTT": [
+            280.9297089371318,
+            -0.0001278527339546291,
+            0.9833620709115677,
+            1.0196278584382927,
+            -3.14746090812381e-05,
+            -1.0325340589391912e-05
+          ]
+        },
+        {
+          "id": 1,
+          "name": "Moon",
+          "core": [
+            256.0970694095397,
+            -1.9555044772381993,
+            0.002444454516474973,
+            14.517631242707205,
+            -1.2045199654669294,
+            -3.1782052885991974e-05
+          ],
+          "swissUT": [
+            256.0970705156325,
+            -1.9555044766075564,
+            0.0024444545172158196,
+            14.517692149446036,
+            -1.2045149557951902,
+            -3.177935444087112e-05
+          ],
+          "swissCoreTT": [
+            256.0970705156325,
+            -1.9555044766075564,
+            0.0024444545172158196,
+            14.517692149446036,
+            -1.2045149557951902,
+            -3.177935444087112e-05
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Mercury",
+          "core": [
+            291.1036433657573,
+            -2.162667126971721,
+            1.3436706501151225,
+            1.6214841401794378,
+            -0.00014022951529154683,
+            -0.011958926382659368
+          ],
+          "swissUT": [
+            291.10364494895987,
+            -2.1626672192983185,
+            1.3436706500931765,
+            1.6214873735357416,
+            -0.00013548650859181323,
+            -0.01195662460436138
+          ],
+          "swissCoreTT": [
+            291.10364494895987,
+            -2.1626672192983185,
+            1.3436706500931765,
+            1.6214873735357416,
+            -0.00013548650859181323,
+            -0.01195662460436138
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Venus",
+          "core": [
+            328.06153591667584,
+            -1.3170731761064811,
+            0.7136718536742528,
+            1.04807291654919,
+            0.07550535535071635,
+            -0.0074005947498151925
+          ],
+          "swissUT": [
+            328.06150962205805,
+            -1.3170846049395537,
+            0.713671880456701,
+            1.0480726211334348,
+            0.07550834225357303,
+            -0.007399719928923167
+          ],
+          "swissCoreTT": [
+            328.06150962205805,
+            -1.3170846049395537,
+            0.713671880456701,
+            1.0480726211334348,
+            0.07550834225357303,
+            -0.007399719928923167
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Mars",
+          "core": [
+            277.0754908257253,
+            -0.7746655134261236,
+            2.427173153900961,
+            0.7577967208085538,
+            -0.007851845388837736,
+            -0.0016803053071224557
+          ],
+          "swissUT": [
+            277.07546528260787,
+            -0.7746765388657593,
+            2.4271732996009656,
+            0.7577971748394107,
+            -0.007846087259760385,
+            -0.0016760024708796014
+          ],
+          "swissCoreTT": [
+            277.07546528260787,
+            -0.7746765388657593,
+            2.4271732996009656,
+            0.7577971748394107,
+            -0.007846087259760385,
+            -0.0016760024708796014
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Jupiter",
+          "core": [
+            208.7773378547818,
+            1.2394996549179251,
+            5.6727726843271595,
+            0.12586987574807884,
+            0.0031330901327621145,
+            -0.015440956089219367
+          ],
+          "swissUT": [
+            208.7772506852466,
+            1.2395219219358729,
+            5.672771512308487,
+            0.1258695863957567,
+            0.0031360100331253023,
+            -0.015437844271147813
+          ],
+          "swissCoreTT": [
+            208.7772506852466,
+            1.2395219219358729,
+            5.672771512308487,
+            0.1258695863957567,
+            0.0031360100331253023,
+            -0.015437844271147813
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Saturn",
+          "core": [
+            203.57022447694465,
+            2.4274650104691005,
+            9.820827912790588,
+            0.054307340374359206,
+            0.004230047608100445,
+            -0.016223847136640584
+          ],
+          "swissUT": [
+            203.57012939557524,
+            2.4274648014917317,
+            9.820828633950663,
+            0.05430685708872178,
+            0.004232443953645911,
+            -0.01621999664039667
+          ],
+          "swissCoreTT": [
+            203.57012939557524,
+            2.4274648014917317,
+            9.820828633950663,
+            0.05430685708872178,
+            0.004232443953645911,
+            -0.01621999664039667
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Uranus",
+          "core": [
+            127.05462628572188,
+            0.6357340427984394,
+            17.65028731993058,
+            -0.037676417345990636,
+            0.00038406442487437677,
+            -0.007737783391186087
+          ],
+          "swissUT": [
+            127.05496656152792,
+            0.6357636539906184,
+            17.650319334521154,
+            -0.03767619759832452,
+            0.0003793150420235598,
+            -0.0077659702109444395
+          ],
+          "swissCoreTT": [
+            127.05496656152792,
+            0.6357636539906184,
+            17.650319334521154,
+            -0.03767619759832452,
+            0.0003793150420235598,
+            -0.0077659702109444395
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Neptune",
+          "core": [
+            33.09280214394335,
+            -1.7746965966494832,
+            29.424078221433486,
+            -0.006693485270028435,
+            0.000944863164063185,
+            0.01609881137787717
+          ],
+          "swissUT": [
+            33.0928058375888,
+            -1.7746965647891362,
+            29.42407822143264,
+            -0.0066936140849784215,
+            0.0009415645792011699,
+            0.01607890828513086
+          ],
+          "swissCoreTT": [
+            33.0928058375888,
+            -1.7746965647891362,
+            29.42407822143264,
+            -0.0066936140849784215,
+            0.0009415645792011699,
+            0.01607890828513086
+          ]
+        },
+        {
+          "id": 9,
+          "name": "Pluto",
+          "core": [
+            325.46064220829,
+            -10.011918821777813,
+            39.93346137316132,
+            0.02198583712435622,
+            0.002140192177557387,
+            0.012721503114203826
+          ],
+          "swissUT": [
+            325.460645272795,
+            -10.011919164639552,
+            39.93346137316081,
+            0.021984757464220146,
+            0.002143530028684853,
+            0.012771087932783231
+          ],
+          "swissCoreTT": [
+            325.460645272795,
+            -10.011919164639552,
+            39.93346137316081,
+            0.021984757464220146,
+            0.002143530028684853,
+            0.012771087932783231
+          ]
+        },
+        {
+          "id": 10,
+          "name": "MeanNode",
+          "core": [
+            52.032118771041155,
+            0.0,
+            0.0025695552898,
+            -0.05290184505987173,
+            0.0,
+            0.0
+          ],
+          "swissUT": [
+            52.03209674837413,
+            0.0,
+            0.00256955528979999,
+            -0.052901959911357946,
+            0.0,
+            0.0
+          ],
+          "swissCoreTT": [
+            52.03209674837413,
+            0.0,
+            0.00256955528979999,
+            -0.052901959911357946,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 11,
+          "name": "TrueNode",
+          "core": [
+            53.752733046837875,
+            0.0,
+            0.002626466349992615,
+            -0.053586806301998975,
+            0.0,
+            1.6269408871928932e-05
+          ],
+          "swissUT": [
+            53.752733055974616,
+            0.0,
+            0.002626466351624935,
+            -0.05358680482169981,
+            0.0,
+            1.6269409761213787e-05
+          ],
+          "swissCoreTT": [
+            53.752733055974616,
+            0.0,
+            0.002626466351624935,
+            -0.05358680482169981,
+            0.0,
+            1.6269409761213787e-05
+          ]
+        },
+        {
+          "id": 15,
+          "name": "Chiron",
+          "core": [
+            110.5523365678579,
+            -7.481691847006647,
+            9.975440847753948,
+            -0.0685137697328171,
+            -0.0029230836202186715,
+            -0.004692832936048131
+          ],
+          "swissUT": [
+            110.5523047347866,
+            -7.481692325001352,
+            9.975440417476245,
+            -0.06851349710132829,
+            -0.0029286869684989783,
+            -0.004710156525357808
+          ],
+          "swissCoreTT": [
+            110.5523047347866,
+            -7.481692325001352,
+            9.975440417476245,
+            -0.06851349710132829,
+            -0.0029286869684989783,
+            -0.004710156525357808
+          ]
+        }
+      ]
+    }
+  ],
+  "disagreementWitnesses": [
+    {
+      "jdUT": 2437646.0,
+      "utIso": "1961-12-12T12:00:00",
+      "body": {
+        "id": 9,
+        "name": "Pluto"
+      },
+      "deltaTCoreSeconds": 33.978034134893356,
+      "deltaTSwissSeconds": 33.97803408457909,
+      "core": {
+        "coordinates": [
+          160.13110218099254,
+          13.105669319751136,
+          33.18981444980358,
+          -2.2828355793767577e-06,
+          0.007751449202901459,
+          -0.017280844711987823
+        ],
+        "signIndex": 5,
+        "retrograde": true,
+        "nearestSignBoundaryDegrees": 150,
+        "signedDistanceToBoundaryArcsec": 36471.96785157315,
+        "linearTimeToBoundarySeconds": 383438578032.2956
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -2.2329654462428476e-06,
+            "0.01": -2.2333353443959364e-06,
+            "0.1": -2.2309139048643774e-06
+          },
+          "reference": {
+            "coordinates": [
+              160.13110469996835,
+              13.105669134149968,
+              33.1898144498479,
+              4.0381561590394954e-07,
+              0.00775546390302671,
+              -0.017291062367410164
+            ],
+            "signIndex": 5,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 150,
+            "signedDistanceToBoundaryArcsec": 36471.97691988605,
+            "linearTimeToBoundarySeconds": -2167641397715.209
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              160.13110566273554,
+              13.105669172060566,
+              33.18981444984791,
+              3.8392818984705986e-07,
+              0.0077554652159077695,
+              -0.01729106703931441
+            ],
+            "signIndex": 5,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 150,
+            "signedDistanceToBoundaryArcsec": 36471.98038584793,
+            "linearTimeToBoundarySeconds": -2279925132898.01
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": -0.009068312897397846,
+          "longitudeCoreMinusNoDeflectionArcsec": -0.012534274776498933,
+          "speedCoreMinusReferenceDegreesPerDay": -2.6866511952807073e-06
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -2.2329654462428476e-06,
+            "0.01": -2.2333353443959364e-06,
+            "0.1": -2.2309141890814717e-06
+          },
+          "reference": {
+            "coordinates": [
+              160.13110469996835,
+              13.105669134149968,
+              33.1898144498479,
+              4.0381561590394954e-07,
+              0.00775546390302671,
+              -0.017291062367410164
+            ],
+            "signIndex": 5,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 150,
+            "signedDistanceToBoundaryArcsec": 36471.97691988605,
+            "linearTimeToBoundarySeconds": -2167641397715.209
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              160.13110566273554,
+              13.105669172060566,
+              33.18981444984791,
+              3.8392818984705986e-07,
+              0.0077554652159077695,
+              -0.01729106703931441
+            ],
+            "signIndex": 5,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 150,
+            "signedDistanceToBoundaryArcsec": 36471.98038584793,
+            "linearTimeToBoundarySeconds": -2279925132898.01
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": -0.009068312897397846,
+          "longitudeCoreMinusNoDeflectionArcsec": -0.012534274776498933,
+          "speedCoreMinusReferenceDegreesPerDay": -2.6866511952807073e-06
+        }
+      }
+    },
+    {
+      "jdUT": 2441477.75,
+      "utIso": "1972-06-09T06:00:00",
+      "body": {
+        "id": 9,
+        "name": "Pluto"
+      },
+      "deltaTCoreSeconds": 42.725343752952796,
+      "deltaTSwissSeconds": 42.725343721714026,
+      "core": {
+        "coordinates": [
+          179.31176926566167,
+          16.39197516821948,
+          31.037052279263214,
+          6.2984036176268234e-06,
+          -0.00800829098739651,
+          0.01536941212128258
+        ],
+        "signIndex": 5,
+        "retrograde": false,
+        "nearestSignBoundaryDegrees": 180,
+        "signedDistanceToBoundaryArcsec": -2477.6306436179993,
+        "linearTimeToBoundarySeconds": 9440985217.336248
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 6.244930659262188e-06,
+            "0.01": 6.244484180537659e-06,
+            "0.1": 6.24324058536051e-06
+          },
+          "reference": {
+            "coordinates": [
+              179.3117699695132,
+              16.39197460245808,
+              31.037052279260955,
+              -3.6275933813682145e-08,
+              -0.008008474198641053,
+              0.015359867962821176
+            ],
+            "signIndex": 5,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 180,
+            "signedDistanceToBoundaryArcsec": -2477.6281097525043,
+            "linearTimeToBoundarySeconds": -1639187978990.9775
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              179.31176903375132,
+              16.391974650841888,
+              31.037052279260944,
+              -5.0013270782122085e-08,
+              -0.008008476277332276,
+              0.015359864905188042
+            ],
+            "signIndex": 5,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 180,
+            "signedDistanceToBoundaryArcsec": -2477.6314784952547,
+            "linearTimeToBoundarySeconds": -1188947544401.3955
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": -0.0025338654950246564,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.0008348772553290473,
+          "speedCoreMinusReferenceDegreesPerDay": 6.334679551440506e-06
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 6.244930659262188e-06,
+            "0.01": 6.244482759452156e-06,
+            "0.1": 6.2432404432519636e-06
+          },
+          "reference": {
+            "coordinates": [
+              179.3117699695132,
+              16.39197460245808,
+              31.037052279260955,
+              -3.6275933813682145e-08,
+              -0.008008474198641053,
+              0.015359867962821176
+            ],
+            "signIndex": 5,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 180,
+            "signedDistanceToBoundaryArcsec": -2477.6281097525043,
+            "linearTimeToBoundarySeconds": -1639187978990.9775
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              179.31176903375132,
+              16.391974650841888,
+              31.037052279260944,
+              -5.0013270782122085e-08,
+              -0.008008476277332276,
+              0.015359864905188042
+            ],
+            "signIndex": 5,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 180,
+            "signedDistanceToBoundaryArcsec": -2477.6314784952547,
+            "linearTimeToBoundarySeconds": -1188947544401.3955
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": -0.0025338654950246564,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.0008348772553290473,
+          "speedCoreMinusReferenceDegreesPerDay": 6.334679551440506e-06
+        }
+      }
+    },
+    {
+      "jdUT": 2445366.75,
+      "utIso": "1983-02-01T06:00:00",
+      "body": {
+        "id": 9,
+        "name": "Pluto"
+      },
+      "deltaTCoreSeconds": 53.031853739184946,
+      "deltaTSwissSeconds": 53.03185373831761,
+      "core": {
+        "coordinates": [
+          209.52955747645663,
+          17.12350396792313,
+          29.696908233218796,
+          -3.091576695053621e-06,
+          0.009384207338544908,
+          -0.016415746128472294
+        ],
+        "signIndex": 6,
+        "retrograde": true,
+        "nearestSignBoundaryDegrees": 210,
+        "signedDistanceToBoundaryArcsec": -1693.593084756128,
+        "linearTimeToBoundarySeconds": -13147412483.468115
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -3.1029822510100774e-06,
+            "0.01": -3.102511028598484e-06,
+            "0.1": -3.0872563143826935e-06
+          },
+          "reference": {
+            "coordinates": [
+              209.52955512159662,
+              17.123503727132995,
+              29.696908232855336,
+              1.4609548525527757e-07,
+              0.009378282594219967,
+              -0.016426039577997306
+            ],
+            "signIndex": 6,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": -1693.6015622521836,
+            "linearTimeToBoundarySeconds": 278218299648.54504
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              209.5295560652296,
+              17.123503784928555,
+              29.69690823285534,
+              1.3040504620192918e-07,
+              0.009378285595126991,
+              -0.01642604168538418
+            ],
+            "signIndex": 6,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": -1693.5981651734437,
+            "linearTimeToBoundarySeconds": 311693121915.10376
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.008477496055547817,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.005080417315639352,
+          "speedCoreMinusReferenceDegreesPerDay": -3.2376721803088988e-06
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -3.1029822510100774e-06,
+            "0.01": -3.1025124496839873e-06,
+            "0.1": -3.0872563143826935e-06
+          },
+          "reference": {
+            "coordinates": [
+              209.52955512159662,
+              17.123503727132995,
+              29.696908232855336,
+              1.4609548525527757e-07,
+              0.009378282594219967,
+              -0.016426039577997306
+            ],
+            "signIndex": 6,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": -1693.6015622521836,
+            "linearTimeToBoundarySeconds": 278218299648.54504
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              209.5295560652296,
+              17.123503784928555,
+              29.69690823285534,
+              1.3040504620192918e-07,
+              0.009378285595126991,
+              -0.01642604168538418
+            ],
+            "signIndex": 6,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": -1693.5981651734437,
+            "linearTimeToBoundarySeconds": 311693121915.10376
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.008477496055547817,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.005080417315639352,
+          "speedCoreMinusReferenceDegreesPerDay": -3.2376721803088988e-06
+        }
+      }
+    },
+    {
+      "jdUT": 2446102.5,
+      "utIso": "1985-02-06T00:00:00",
+      "body": {
+        "id": 9,
+        "name": "Pluto"
+      },
+      "deltaTCoreSeconds": 54.39741683883339,
+      "deltaTSwissSeconds": 54.39741683883339,
+      "core": {
+        "coordinates": [
+          214.74862705709498,
+          16.86884993690507,
+          29.56420566026394,
+          -1.0385310267732411e-06,
+          0.009097542097420763,
+          -0.0163642658164933
+        ],
+        "signIndex": 7,
+        "retrograde": true,
+        "nearestSignBoundaryDegrees": 210,
+        "signedDistanceToBoundaryArcsec": 17095.057405541924,
+        "linearTimeToBoundarySeconds": 395059335885.00226
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -1.0045225225994116e-06,
+            "0.01": -1.0046776080261741e-06,
+            "0.1": -1.0030367993503118e-06
+          },
+          "reference": {
+            "coordinates": [
+              214.74862698815915,
+              16.868849310161607,
+              29.564205660215404,
+              4.93085949362623e-06,
+              0.009084039165585683,
+              -0.01637478301308839
+            ],
+            "signIndex": 7,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": 17095.057157372925,
+            "linearTimeToBoundarySeconds": -83206867343.77478
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              214.74862792738514,
+              16.86884936752493,
+              29.564205660215396,
+              4.919946616606737e-06,
+              0.009084045799906128,
+              -0.016374784116431864
+            ],
+            "signIndex": 7,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": 17095.060538586516,
+            "linearTimeToBoundarySeconds": -83391444033.4
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.00024816899895085953,
+          "longitudeCoreMinusNoDeflectionArcsec": -0.0031330445949606656,
+          "speedCoreMinusReferenceDegreesPerDay": -5.969390520399471e-06
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": -1.0045225225994116e-06,
+            "0.01": -1.0046776080261741e-06,
+            "0.1": -1.0030369414588587e-06
+          },
+          "reference": {
+            "coordinates": [
+              214.74862698815915,
+              16.868849310161607,
+              29.564205660215404,
+              4.93085949362623e-06,
+              0.009084039165585683,
+              -0.01637478301308839
+            ],
+            "signIndex": 7,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": 17095.057157372925,
+            "linearTimeToBoundarySeconds": -83206867343.77478
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              214.74862792738514,
+              16.86884936752493,
+              29.564205660215396,
+              4.919946616606737e-06,
+              0.009084045799906128,
+              -0.016374784116431864
+            ],
+            "signIndex": 7,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 210,
+            "signedDistanceToBoundaryArcsec": 17095.060538586516,
+            "linearTimeToBoundarySeconds": -83391444033.4
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.00024816899895085953,
+          "longitudeCoreMinusNoDeflectionArcsec": -0.0031330445949606656,
+          "speedCoreMinusReferenceDegreesPerDay": -5.969390520399471e-06
+        }
+      }
+    },
+    {
+      "jdUT": 2462308.5,
+      "utIso": "2029-06-21T00:00:00",
+      "body": {
+        "id": 11,
+        "name": "TrueNode"
+      },
+      "deltaTCoreSeconds": 69.14906123575882,
+      "deltaTSwissSeconds": 69.14906123575882,
+      "core": {
+        "coordinates": [
+          274.71631148636175,
+          0.0,
+          0.0024817805373840954,
+          -0.0055152453773448466,
+          0.0,
+          2.334315562342751e-06
+        ],
+        "signIndex": 9,
+        "retrograde": true,
+        "nearestSignBoundaryDegrees": 270,
+        "signedDistanceToBoundaryArcsec": 16978.721350902288,
+        "linearTimeToBoundarySeconds": 73884167.34738803
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 0.007730795471593516,
+            "0.01": -0.004319974317393361,
+            "0.1": -0.005506864980576184
+          },
+          "reference": {
+            "coordinates": [
+              274.7163115403161,
+              0.0,
+              0.0024817805357105634,
+              0.12825482032158175,
+              0.0,
+              3.2641058158258883e-06
+            ],
+            "signIndex": 9,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 270,
+            "signedDistanceToBoundaryArcsec": 16978.721545137956,
+            "linearTimeToBoundarySeconds": -3177185.201005203
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              274.7163115403161,
+              0.0,
+              0.0024817805357105634,
+              0.12825482032158175,
+              0.0,
+              3.2641058158258883e-06
+            ],
+            "signIndex": 9,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 270,
+            "signedDistanceToBoundaryArcsec": 16978.721545137956,
+            "linearTimeToBoundarySeconds": -3177185.201005203
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": -0.0001942356675499468,
+          "longitudeCoreMinusNoDeflectionArcsec": -0.0001942356675499468,
+          "speedCoreMinusReferenceDegreesPerDay": -0.1337700656989266
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 0.007730795471593516,
+            "0.01": -0.004319974317393361,
+            "0.1": -0.005506864940785791
+          },
+          "reference": {
+            "coordinates": [
+              274.7163115403161,
+              0.0,
+              0.0024817805357105634,
+              0.12825482032158175,
+              0.0,
+              3.2641058158258883e-06
+            ],
+            "signIndex": 9,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 270,
+            "signedDistanceToBoundaryArcsec": 16978.721545137956,
+            "linearTimeToBoundarySeconds": -3177185.201005203
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              274.7163115403161,
+              0.0,
+              0.0024817805357105634,
+              0.12825482032158175,
+              0.0,
+              3.2641058158258883e-06
+            ],
+            "signIndex": 9,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 270,
+            "signedDistanceToBoundaryArcsec": 16978.721545137956,
+            "linearTimeToBoundarySeconds": -3177185.201005203
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": -0.0001942356675499468,
+          "longitudeCoreMinusNoDeflectionArcsec": -0.0001942356675499468,
+          "speedCoreMinusReferenceDegreesPerDay": -0.1337700656989266
+        }
+      }
+    },
+    {
+      "jdUT": 2450673.855310773,
+      "utIso": "1997-08-13T08:31:38.851000",
+      "body": {
+        "id": 9,
+        "name": "Pluto"
+      },
+      "deltaTCoreSeconds": 62.717392497371314,
+      "deltaTSwissSeconds": 62.71739257243366,
+      "core": {
+        "coordinates": [
+          242.82787944021388,
+          12.50653216365082,
+          29.771316364458155,
+          8.100200947738744e-08,
+          -0.008264332113213233,
+          0.01634782377636648
+        ],
+        "signIndex": 8,
+        "retrograde": false,
+        "nearestSignBoundaryDegrees": 240,
+        "signedDistanceToBoundaryArcsec": 10180.365984769958,
+        "linearTimeToBoundarySeconds": -3016329906021.4785
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 4.875743453589177e-08,
+            "0.01": 4.9500671335889365e-08,
+            "0.1": 4.56844872616958e-08
+          },
+          "reference": {
+            "coordinates": [
+              242.82787782351704,
+              12.506531544603831,
+              29.771316364936812,
+              -2.6554228563789806e-08,
+              -0.008263367348272092,
+              0.016337811076882317
+            ],
+            "signIndex": 8,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 240,
+            "signedDistanceToBoundaryArcsec": 10180.360164661352,
+            "linearTimeToBoundarySeconds": 9201120016156.176
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              242.82787692752694,
+              12.506531585521332,
+              29.771316364936816,
+              -3.922467607670664e-08,
+              -0.008263364075845691,
+              0.016337818669463974
+            ],
+            "signIndex": 8,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 240,
+            "signedDistanceToBoundaryArcsec": 10180.356939096999,
+            "linearTimeToBoundarySeconds": 6228950522383.565
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.005820108606258145,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.00904567295947345,
+          "speedCoreMinusReferenceDegreesPerDay": 1.0755623804117725e-07
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 4.875743453589177e-08,
+            "0.01": 4.9500671335889365e-08,
+            "0.1": 4.56844872616958e-08
+          },
+          "reference": {
+            "coordinates": [
+              242.82787782351704,
+              12.506531544603831,
+              29.771316364936812,
+              -2.6554228563789806e-08,
+              -0.008263367348272092,
+              0.016337811076882317
+            ],
+            "signIndex": 8,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 240,
+            "signedDistanceToBoundaryArcsec": 10180.360164661352,
+            "linearTimeToBoundarySeconds": 9201120016156.176
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              242.82787692752694,
+              12.506531585521332,
+              29.771316364936816,
+              -3.922467607670664e-08,
+              -0.008263364075845691,
+              0.016337818669463974
+            ],
+            "signIndex": 8,
+            "retrograde": true,
+            "nearestSignBoundaryDegrees": 240,
+            "signedDistanceToBoundaryArcsec": 10180.356939096999,
+            "linearTimeToBoundarySeconds": 6228950522383.565
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": 0.005820108606258145,
+          "longitudeCoreMinusNoDeflectionArcsec": 0.00904567295947345,
+          "speedCoreMinusReferenceDegreesPerDay": 1.0755623804117725e-07
+        }
+      }
+    }
+  ]
+}

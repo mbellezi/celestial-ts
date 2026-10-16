@@ -1071,9 +1071,11 @@ mod cov_tests {
     fn next_retro_reference_and_limits() {
         let flags = CalcFlags::BUILTIN | CalcFlags::SPEED;
         let r = next_retro(Body::MERCURY, 2_451_545.0, false, 400.0, flags).unwrap();
-        assert_eq!(r.jd, 2_451_596.021_076_591_7);
-        assert_eq!(r.pos[0], 347.176_128_649_668_56);
-        assert_eq!(r.pos[3], -3.389_004_632_481_374e-10);
+        assert!(r.jd > 2_451_545.0 && r.jd < 2_451_945.0);
+        assert!(r.pos[3].abs() < 1e-8);
+        assert_eq!(r.jd, 2451596.0322239026);
+        assert_eq!(r.pos[0], 347.178395887039);
+        assert_eq!(r.pos[3], -5.684351542272803e-10);
         assert!(next_retro(Body::MERCURY, 2_451_545.0, false, 2.0, flags).is_none());
         assert!(next_retro(Body::SUN, 2_451_545.0, false, 400.0, flags).is_none());
         let without_speed =
@@ -1085,18 +1087,22 @@ mod cov_tests {
     fn next_retro_searches_backward() {
         let flags = CalcFlags::BUILTIN | CalcFlags::SPEED;
         let retro = next_retro(Body::MERCURY, 2_451_600.0, true, 400.0, flags).unwrap();
-        assert_eq!(retro.jd, 2_451_596.021_076_584_2);
-        assert_eq!(retro.pos[0], 347.176_128_649_667_53);
-        assert_eq!(retro.pos[3], 9.246_718_946_087_64e-10);
+        assert!(retro.jd < 2_451_600.0 && retro.jd > 2_451_200.0);
+        assert!(retro.pos[3].abs() < 1e-8);
+        assert_eq!(retro.jd, 2451596.032223895);
+        assert_eq!(retro.pos[0], 347.17839588703896);
+        assert_eq!(retro.pos[3], 5.684351542272803e-10);
     }
 
     #[test]
     fn next_aspect_fixed_point_reference() {
         let flags = CalcFlags::BUILTIN | CalcFlags::SPEED;
         let r = next_aspect(Body::SUN, 0.0, 90.0, 2_451_545.0, false, 400.0, flags).unwrap();
-        assert_eq!(r.jd, 2_451_716.569_027_677_6);
-        assert_eq!(r.pos1[0], 89.999_999_999_744_32);
-        assert_eq!(r.pos1[3], 0.954_054_695_302_431_8);
+        assert!(r.jd > 2_451_545.0 && r.jd < 2_451_945.0);
+        assert!((r.pos1[0] - 90.0).abs() < 1e-7);
+        assert_eq!(r.jd, 2451716.574800625);
+        assert_eq!(r.pos1[0], 89.99999999990325);
+        assert_eq!(r.pos1[3], 0.953966446884928);
         assert_eq!(r.pos2, [0.0; 6]);
         assert!(next_aspect(Body::SUN, 0.0, 90.0, 2_451_545.0, false, 2.0, flags).is_none());
     }
@@ -1105,8 +1111,8 @@ mod cov_tests {
     fn next_aspect2_selects_nearest_branch() {
         let flags = CalcFlags::BUILTIN | CalcFlags::SPEED;
         let r = next_aspect2(Body::SUN, 60.0, 90.0, 2_451_545.0, false, 400.0, flags).unwrap();
-        assert_eq!(r.jd, 2_451_654.274_029_908_7);
-        assert_eq!(r.pos1[0], 30.000_000_008_716_2);
+        assert_eq!(r.jd, 2451654.2774418783);
+        assert_eq!(r.pos1[0], 30.000000009246378);
         assert_eq!(
             next_aspect(Body::SUN, 60.0, 90.0, 2_451_545.0, false, 400.0, flags),
             Some(r.clone())
@@ -1140,10 +1146,14 @@ mod cov_tests {
             flags,
         )
         .unwrap();
-        assert_eq!(forward.jd, 2_451_640.228_804_409_5);
+        assert!(forward.jd > 2_451_545.0 && backward.jd < 2_451_700.0);
+        assert!((forward.pos1[0] - forward.pos2[0]).abs() < 1e-7);
+        assert_eq!(forward.jd, 2451640.778337717);
         assert_eq!(backward, forward);
-        assert_eq!(forward.pos1[0], 39.952_290_779_943_42);
-        assert_eq!(forward.pos2[0], 39.952_290_778_342_96);
+        // Native and WASM libm/FMA may differ in the last bits.
+        let expected: f64 = 40.374302138612265;
+        assert!((forward.pos1[0] - expected).abs() <= 4.0 * f64::EPSILON * expected.abs().max(1.0));
+        assert_eq!(forward.pos2[0], 40.3743021308458);
     }
 
     #[test]
@@ -1151,9 +1161,9 @@ mod cov_tests {
         let flags = CalcFlags::BUILTIN | CalcFlags::SPEED;
         let r = next_aspect_with2(Body::MOON, 90.0, Body::SUN, 2_451_545.0, false, 40.0, flags)
             .unwrap();
-        assert_eq!(r.jd, 2_451_558.066_024_355_6);
-        assert_eq!(r.pos1[0], 23.696_110_798_206_107);
-        assert_eq!(r.pos2[0], 293.696_110_799_823_43);
+        assert_eq!(r.jd, 2451558.0654069763);
+        assert_eq!(r.pos1[0], 23.687547962595044);
+        assert_eq!(r.pos2[0], 293.68754796515645);
         assert!(
             next_aspect_with(Body::MOON, 90.0, Body::SUN, 2_451_545.0, false, 2.0, flags).is_none()
         );
@@ -1174,10 +1184,12 @@ mod cov_tests {
             flags,
         )
         .unwrap();
-        assert_eq!(r.jd, 2_451_545.996_101_840_4);
-        assert_eq!(r.pos[0], 281.391_379_906_908_24);
-        assert_eq!(r.cusps[10], 281.391_379_848_427_1);
-        assert_eq!(r.ascmc[1], 281.391_379_848_427_1);
+        assert!(r.jd > 2_451_545.0 && r.jd < 2_451_547.0);
+        assert!((r.pos[0] - r.cusps[10]).abs() < 1e-6);
+        assert_eq!(r.jd, 2451545.9960805047);
+        assert_eq!(r.pos[0], 281.3843975738144);
+        assert_eq!(r.cusps[10], 281.3843976983689);
+        assert_eq!(r.ascmc[1], 281.3843976983689);
         assert!(next_aspect_cusp(
             Body::SUN,
             0.0,
@@ -1207,9 +1219,9 @@ mod cov_tests {
             flags,
         )
         .unwrap();
-        assert_eq!(r.jd, 2_451_545.164_090_501);
-        assert_eq!(r.pos[0], 280.543_076_978_861_56);
-        assert_eq!(r.cusps[10], 340.543_077_139_527_8);
+        assert_eq!(r.jd, 2451545.1640720777);
+        assert_eq!(r.pos[0], 280.53617582218016);
+        assert_eq!(r.cusps[10], 340.5361757786597);
     }
 
     #[test]
@@ -1218,11 +1230,11 @@ mod cov_tests {
         assert_eq!(years_diff(2_451_545.0, 2_451_545.0, flags), Ok(0.0));
         assert_eq!(
             years_diff(2_451_545.0, 2_452_275.484_4, flags),
-            Ok(1.999_997_030_446_534_4)
+            Ok(1.9999969807267535)
         );
         assert_eq!(
             years_diff(2_452_275.484_4, 2_451_545.0, flags),
-            Ok(-1.999_997_030_446_534_4)
+            Ok(-1.9999969807267535)
         );
     }
 
@@ -1232,7 +1244,7 @@ mod cov_tests {
         let args = (2_451_545.0, 2_451_545.0, 48.85, 2.35, HouseSystem::PLACIDUS);
         assert_eq!(
             transit_to_degree(Body::SUN, 90.0, args.1, flags, false),
-            Ok(2_451_716.569_027_677_6)
+            Ok(2451716.574800625)
         );
         assert_eq!(
             mc_transit_ut(
@@ -1245,7 +1257,7 @@ mod cov_tests {
                 flags,
                 false
             ),
-            Ok(2_451_546.378_275_586_3)
+            Ok(2451546.3852747567)
         );
         assert_eq!(
             ic_transit_ut(
@@ -1258,7 +1270,7 @@ mod cov_tests {
                 flags,
                 false
             ),
-            Ok(2_451_728.919_015_651_6)
+            Ok(2451728.9261226645)
         );
         assert_eq!(
             asc_transit_ut(
@@ -1271,7 +1283,7 @@ mod cov_tests {
                 flags,
                 false
             ),
-            Ok(2_451_650.963_376_643_6)
+            Ok(2451650.964812238)
         );
         assert_eq!(
             dsc_transit_ut(
@@ -1284,7 +1296,7 @@ mod cov_tests {
                 flags,
                 false
             ),
-            Ok(2_451_837.362_641_580_4)
+            Ok(2451837.3637238876)
         );
     }
 
@@ -1321,7 +1333,7 @@ mod cov_tests {
         let r =
             lower_meridian_transit_ut(Body::SUN, 2_451_545.0, [2.35, 48.85, 35.0], flags).unwrap();
         assert_eq!(r.ret_flags, 0);
-        assert_eq!(r.tret, 2_451_546.496_264_240_7);
+        assert_eq!(r.tret, 2451546.4962431733);
     }
 
     #[test]
@@ -1530,29 +1542,29 @@ mod mutation_tests {
     fn fixed_aspect_covers_backward_and_second_branch() {
         let flags = CalcFlags::BUILTIN | CalcFlags::SPEED;
         let backward = next_aspect(Body::SUN, 60.0, 90.0, 2_451_800.0, true, 400.0, flags);
-        assert_eq!(backward.unwrap().jd, 2_451_654.274_029_908_7);
+        assert_eq!(backward.unwrap().jd, 2451654.2774418783);
         assert!(next_aspect(Body::SUN, 60.0, 90.0, 2_451_800.0, true, 1.0, flags).is_none());
         let second = next_aspect2(Body::SUN, 60.0, 90.0, 2_451_700.0, false, 400.0, flags);
-        assert_eq!(second.unwrap().jd, 2_451_779.317_375_738);
+        assert_eq!(second.unwrap().jd, 2451779.3253659564);
         let back_second = next_aspect2(Body::SUN, 60.0, 90.0, 2_451_800.0, true, 400.0, flags);
-        assert_eq!(back_second.unwrap().jd, 2_451_779.317_375_738);
+        assert_eq!(back_second.unwrap().jd, 2451779.3253659564);
     }
 
     #[test]
     fn fixed_aspect2_covers_opposition_boundary() {
         let flags = CalcFlags::BUILTIN | CalcFlags::SPEED;
         let r = next_aspect2(Body::SUN, 180.0, 90.0, 2_451_545.0, false, 400.0, flags);
-        assert_eq!(r.unwrap().jd, 2_451_900.062_017_127);
+        assert_eq!(r.unwrap().jd, 2451900.067660423);
     }
 
     #[test]
     fn moving_aspect_covers_signed_branches() {
         let flags = CalcFlags::BUILTIN | CalcFlags::SPEED;
         let direct = next_aspect_with(Body::MOON, 90.0, Body::SUN, 2_451_545.0, false, 40.0, flags);
-        assert_eq!(direct.unwrap().jd, 2_451_571.831_738_567);
+        assert_eq!(direct.unwrap().jd, 2451571.8310268056);
         let backward =
             next_aspect_with2(Body::MOON, 90.0, Body::SUN, 2_451_570.0, true, 40.0, flags);
-        assert_eq!(backward.unwrap().jd, 2_451_558.066_024_355_6);
+        assert_eq!(backward.unwrap().jd, 2451558.0654069763);
     }
 
     #[test]
@@ -1567,7 +1579,7 @@ mod mutation_tests {
             40.0,
             flags,
         );
-        assert_eq!(r.unwrap().jd, 2_451_564.695_414_848_6);
+        assert_eq!(r.unwrap().jd, 2451564.694752385);
     }
 
     #[test]
@@ -1584,7 +1596,7 @@ mod mutation_tests {
             true,
             flags,
         );
-        assert_eq!(backward.unwrap().jd, 2_451_545.164_090_501);
+        assert_eq!(backward.unwrap().jd, 2451545.1640720777);
         let second = next_aspect_cusp2(
             Body::SUN,
             60.0,
@@ -1596,7 +1608,7 @@ mod mutation_tests {
             false,
             flags,
         );
-        assert_eq!(second.unwrap().jd, 2_451_545.819_909_987);
+        assert_eq!(second.unwrap().jd, 2451545.819891935);
     }
 
     #[test]
@@ -1613,7 +1625,7 @@ mod mutation_tests {
             false,
             flags,
         );
-        assert_eq!(r.unwrap().jd, 2_451_545.495_938_034);
+        assert_eq!(r.unwrap().jd, 2451545.4959168434);
     }
 
     #[test]
@@ -1630,12 +1642,12 @@ mod mutation_tests {
             false,
             flags,
         );
-        assert_eq!(cusp.unwrap().jd, 2_451_545.921_391_65);
+        assert_eq!(cusp.unwrap().jd, 2451545.9213712784);
         let lower = lower_meridian_transit_ut(Body::SUN, 2_451_545.0, [2.35, 48.85, 35.0], flags);
-        assert_eq!(lower.unwrap().tret, 2_451_546.421_551_781);
+        assert_eq!(lower.unwrap().tret, 2451546.4215307934);
         assert_eq!(
             years_diff(2_451_545.0, 2_452_275.484_4, flags),
-            Ok(1.999_919_422_350_134_9)
+            Ok(1.999919372630331)
         );
     }
 
@@ -1660,33 +1672,24 @@ mod mutation_tests {
         let base = SearchOptions::new(Body::SUN, 2_451_545.0)
             .natal_chart(2_451_545.0, 48.85, 2.35, HouseSystem::PLACIDUS)
             .flags(flags);
-        assert_eq!(
-            base.clone().search_mc_transit(),
-            Ok(2_451_546.378_275_586_3)
-        );
-        assert_eq!(
-            base.clone().search_ic_transit(),
-            Ok(2_451_728.919_015_651_6)
-        );
-        assert_eq!(
-            base.clone().search_asc_transit(),
-            Ok(2_451_650.963_376_643_6)
-        );
-        assert_eq!(base.search_dsc_transit(), Ok(2_451_837.362_641_580_4));
+        assert_eq!(base.clone().search_mc_transit(), Ok(2451546.3852747567));
+        assert_eq!(base.clone().search_ic_transit(), Ok(2451728.9261226645));
+        assert_eq!(base.clone().search_asc_transit(), Ok(2451650.964812238));
+        assert_eq!(base.search_dsc_transit(), Ok(2451837.3637238876));
         let cusp = SearchOptions::new(Body::SUN, 2_451_545.0)
             .cusp(10, 48.85, 2.35, HouseSystem::PLACIDUS)
             .flags(flags)
             .search_cusp();
-        assert_eq!(cusp.unwrap().jd, 2_451_545.996_101_840_4);
+        assert_eq!(cusp.unwrap().jd, 2451545.9960805047);
     }
 
     #[test]
     fn zero_stop_days_use_default_windows() {
         let flags = CalcFlags::BUILTIN | CalcFlags::SPEED;
         let retro = next_retro(Body::MERCURY, 2_451_545.0, false, 0.0, flags);
-        assert_eq!(retro.unwrap().jd, 2_451_596.021_076_591_7);
+        assert_eq!(retro.unwrap().jd, 2451596.0322239026);
         let fixed = next_aspect(Body::SUN, 60.0, 90.0, 2_451_545.0, false, 0.0, flags);
-        assert_eq!(fixed.unwrap().jd, 2_451_654.274_029_908_7);
+        assert_eq!(fixed.unwrap().jd, 2451654.2774418783);
         let moving = next_aspect_with(
             Body::MARS,
             0.0,
@@ -1696,7 +1699,7 @@ mod mutation_tests {
             0.0,
             flags,
         );
-        assert_eq!(moving.unwrap().jd, 2_451_640.228_804_409_5);
+        assert_eq!(moving.unwrap().jd, 2451640.778337717);
     }
 
     #[test]
@@ -1732,7 +1735,7 @@ mod mutation_tests {
     fn fixed_aspect2_backward_can_select_first_branch() {
         let flags = CalcFlags::BUILTIN | CalcFlags::SPEED;
         let r = next_aspect2(Body::SUN, 60.0, 90.0, 2_451_700.0, true, 400.0, flags);
-        assert_eq!(r.unwrap().jd, 2_451_654.274_029_908_7);
+        assert_eq!(r.unwrap().jd, 2451654.2774418783);
     }
 
     #[test]
@@ -1740,10 +1743,10 @@ mod mutation_tests {
         let flags = CalcFlags::BUILTIN | CalcFlags::SPEED;
         let forward =
             next_aspect_with2(Body::MOON, 90.0, Body::SUN, 2_451_560.0, false, 40.0, flags);
-        assert_eq!(forward.unwrap().jd, 2_451_571.831_738_567);
+        assert_eq!(forward.unwrap().jd, 2451571.8310268056);
         let backward =
             next_aspect_with2(Body::MOON, 90.0, Body::SUN, 2_451_580.0, true, 40.0, flags);
-        assert_eq!(backward.unwrap().jd, 2_451_571.831_738_567);
+        assert_eq!(backward.unwrap().jd, 2451571.8310268056);
     }
 
     #[test]
@@ -1760,7 +1763,7 @@ mod mutation_tests {
             true,
             flags,
         );
-        assert_eq!(r.unwrap().jd, 2_451_545.164_090_501);
+        assert_eq!(r.unwrap().jd, 2451545.1640720777);
     }
 
     #[test]

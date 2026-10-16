@@ -1,0 +1,843 @@
+{
+  "sourceAuditSha256": "fddd69ded86f0a18f3af02ec6ef1f8a4d7d909f566140fbff73a765d8c2b61d3",
+  "swissVersion": "2.10.03",
+  "ephemerisManifest": {
+    "upstreamCommit": "c113653fe37fe5cdbfcc030a6e341de03ef018d2",
+    "files": [
+      {
+        "name": "sepl_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/sepl_18.se1",
+        "bytes": 484061,
+        "sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+      },
+      {
+        "name": "semo_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/semo_18.se1",
+        "bytes": 1304771,
+        "sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+      },
+      {
+        "name": "seas_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/seas_18.se1",
+        "bytes": 223004,
+        "sha256": "a2cd8fc33807c78ca9a700c91c2e042258b12fc4796519e00781440b5ad8b2e2"
+      }
+    ]
+  },
+  "currentModelProvenance": [
+    {
+      "path": "core/src/astronomy/engine.rs",
+      "auditedSha256": "55d2e6079d3e5b6437bb89223dae41c1e1c77343bebd3b1583270530709af636",
+      "currentSha256": "55d2e6079d3e5b6437bb89223dae41c1e1c77343bebd3b1583270530709af636",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/src/astronomy/planetary.rs",
+      "auditedSha256": "d19f2d15a73de04e4d848b72a4dd6c53168f6fcd901526debc09ce15366a97d0",
+      "currentSha256": "d19f2d15a73de04e4d848b72a4dd6c53168f6fcd901526debc09ce15366a97d0",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/src/astronomy/pluto.rs",
+      "auditedSha256": "7332f1f1891a05b8897f7e068c406488b67a4c83908c5ea87b56ec9f33896084",
+      "currentSha256": "7332f1f1891a05b8897f7e068c406488b67a4c83908c5ea87b56ec9f33896084",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/src/astronomy/chiron.rs",
+      "auditedSha256": "3a6c16f900b5dc84c4e31555ec61790b65e5e0c8247b374b6760a3305127eb03",
+      "currentSha256": "3a6c16f900b5dc84c4e31555ec61790b65e5e0c8247b374b6760a3305127eb03",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/src/astronomy/delta_t.rs",
+      "auditedSha256": "c8046955d4c9747b8a2b0b9a3ed09b9a7f59f3183856e99516afecf69e57c982",
+      "currentSha256": "c8046955d4c9747b8a2b0b9a3ed09b9a7f59f3183856e99516afecf69e57c982",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/src/astronomy/nodes.rs",
+      "auditedSha256": "864a7cf7c558054114417f2b2b4687e44380bc3c7c0eec6fa1f60a253810c29a",
+      "currentSha256": "864a7cf7c558054114417f2b2b4687e44380bc3c7c0eec6fa1f60a253810c29a",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/src/astronomy/deflection.rs",
+      "auditedSha256": "21b191e80a41723d03ae3318538c9ab893c2278d8987657389f3cdfb0239e0cb",
+      "currentSha256": "21b191e80a41723d03ae3318538c9ab893c2278d8987657389f3cdfb0239e0cb",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/src/astronomy/precision_ephemeris.rs",
+      "auditedSha256": "9bcc45eeb1b1a03e30500957a8bbcf6a4e00bd27a3c4ca50abe13e9d8ebec75d",
+      "currentSha256": "9bcc45eeb1b1a03e30500957a8bbcf6a4e00bd27a3c4ca50abe13e9d8ebec75d",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/src/astronomy/precision-ephemeris.bin",
+      "auditedSha256": "b5b8c76376957e84517e225de3f61c98e5aef6a84a56d2f54eb763efe1b645c5",
+      "currentSha256": "b5b8c76376957e84517e225de3f61c98e5aef6a84a56d2f54eb763efe1b645c5",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/src/astronomy/precision-ephemeris.manifest.json",
+      "auditedSha256": "583dbda751870b79b976c40125c88a6a3193f68d774a9a03e31bef9ef48383d4",
+      "currentSha256": "583dbda751870b79b976c40125c88a6a3193f68d774a9a03e31bef9ef48383d4",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/src/astronomy/lunar-node.manifest.json",
+      "auditedSha256": "75b83b65cb7042f15f221639e25cd6349147f8eb0b6c73c9434b757a1aa4a374",
+      "currentSha256": "75b83b65cb7042f15f221639e25cd6349147f8eb0b6c73c9434b757a1aa4a374",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/data/delta-t.json",
+      "auditedSha256": "6de72b434c9de5dcafdd753a9905cd08faca1ce6f5c496e66f45435c8e346deb",
+      "currentSha256": "6de72b434c9de5dcafdd753a9905cd08faca1ce6f5c496e66f45435c8e346deb",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/src/astronomy/lunar-node.bin",
+      "auditedSha256": "c6743dc965c8c31b10a9d15104756ab0eaa922a9df08dcea5342b2f7ac48f03d",
+      "currentSha256": "c6743dc965c8c31b10a9d15104756ab0eaa922a9df08dcea5342b2f7ac48f03d",
+      "matchesCurrent": true
+    },
+    {
+      "path": "core/data/delta-t.bin",
+      "auditedSha256": "3043835591b5e94ca36b49377db4c911b47165c8efd483bcedf34d438178f330",
+      "currentSha256": "3043835591b5e94ca36b49377db4c911b47165c8efd483bcedf34d438178f330",
+      "matchesCurrent": true
+    }
+  ],
+  "frameDerivativeEquation": "d(longitude)/dt = longitude rate from rotated velocity + cos(longitude)*tan(latitude)*d(true obliquity)/dt; mean obliquity replaces true obliquity under NONUT",
+  "referenceCaseEvidence": [
+    "docs/validation/swiss-pluto-speed-diagnostic.json",
+    "docs/validation/true-node-segment-join.json"
+  ],
+  "scope": "Worst velocity samples from the full standard comparison, not a separate full-grid audit.",
+  "notes": [
+    "The audited model includes solar gravitational deflection with a finite-source-distance correction and an effective solar mass profile inside the solar disk; NOGDEFL is a diagnostic comparison, not the engine model.",
+    "The model uses explicit full-state Chebyshev tables for Moon, Mercury, Neptune and Pluto in the supported interval, and an independent-observable quarter-day cubic table for the true node. Table provenance is recorded in the main audit hashes.",
+    "A longitude derivative includes the changing obliquity rotation. Swiss SPEED omits that final ecliptic frame term for the documented Pluto reference cases. The reported correction isolates that term; it is not a blanket explanation of every residual.",
+    "At a lunar source Chebyshev join, short Swiss position differences can cross a discontinuity and produce a narrow speed spike. The separate true-node evidence retains the raw disagreement and identifies the exact source boundary.",
+    "Standard-comparison errors and sign/retrograde disagreement counts are retained in the main audit; no samples are excluded."
+  ],
+  "cases": [
+    {
+      "id": 0,
+      "body": "Sun",
+      "jdUT": 2433649.753058138,
+      "coreSpeedDegreesDay": 1.0195071403913687,
+      "swissStandardSpeedDegreesDay": 1.0195063898648773,
+      "swissNoDeflectionSpeedDegreesDay": 1.0195063898648773,
+      "coreMinusSwissStandardDegreesDay": 7.505264913998388e-07,
+      "coreMinusSwissNoDeflectionDegreesDay": 7.505264913998388e-07,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": 1.0195068827955196,
+          "trueObliquityRateDegreesDay": -1.5440971793453577e-05,
+          "obliquityFrameTermDegreesDay": 1.1042656986343817e-11,
+          "swissReportedPlusFrameTermDegreesDay": 1.01950638987592,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 7.505154487428525e-07,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 4.929195996470595e-07
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": 1.0195058629128662,
+          "trueObliquityRateDegreesDay": -1.5447955615819826e-05,
+          "obliquityFrameTermDegreesDay": 1.1047651487718188e-11,
+          "swissReportedPlusFrameTermDegreesDay": 1.019506389875925,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 7.505154437483511e-07,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -5.269630587887705e-07
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": 1.0195058631080205,
+          "trueObliquityRateDegreesDay": -1.544802610193978e-05,
+          "obliquityFrameTermDegreesDay": 1.1047701896076897e-11,
+          "swissReportedPlusFrameTermDegreesDay": 1.019506389875925,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 7.505154436979427e-07,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -5.267679045020441e-07
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": 1.019505863117577,
+          "trueObliquityRateDegreesDay": -1.5448024678061974e-05,
+          "obliquityFrameTermDegreesDay": 1.104770087778644e-11,
+          "swissReportedPlusFrameTermDegreesDay": 1.019506389875925,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 7.505154436989611e-07,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -5.267583479232744e-07
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.0
+    },
+    {
+      "id": 1,
+      "body": "Moon",
+      "jdUT": 2454752.5,
+      "coreSpeedDegreesDay": 13.785418646488413,
+      "swissStandardSpeedDegreesDay": 13.78532933460044,
+      "swissNoDeflectionSpeedDegreesDay": 13.78532933460044,
+      "coreMinusSwissStandardDegreesDay": 8.931188797234313e-05,
+      "coreMinusSwissNoDeflectionDegreesDay": 8.931188797234313e-05,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": 13.78534622629791,
+          "trueObliquityRateDegreesDay": -5.145216337081182e-06,
+          "obliquityFrameTermDegreesDay": -2.8772983258532515e-07,
+          "swissReportedPlusFrameTermDegreesDay": 13.785329046870608,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 8.959961780492845e-05,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 1.717942730268588e-05
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": 13.785397420598931,
+          "trueObliquityRateDegreesDay": -5.143648821931778e-06,
+          "obliquityFrameTermDegreesDay": -2.876421742942126e-07,
+          "swissReportedPlusFrameTermDegreesDay": 13.785329046958266,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 8.959953014663734e-05,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 6.837364066502426e-05
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": 13.785415196002607,
+          "trueObliquityRateDegreesDay": -5.143630455558509e-06,
+          "obliquityFrameTermDegreesDay": -2.876411472132971e-07,
+          "swissReportedPlusFrameTermDegreesDay": 13.785329046959294,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 8.959952911955643e-05,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 8.614904331314538e-05
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": 13.785328939462984,
+          "trueObliquityRateDegreesDay": -5.143627601814103e-06,
+          "obliquityFrameTermDegreesDay": -2.876409876267323e-07,
+          "swissReportedPlusFrameTermDegreesDay": 13.785329046959452,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 8.959952895996987e-05,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -1.0749646934988076e-07
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.0
+    },
+    {
+      "id": 2,
+      "body": "Mercury",
+      "jdUT": 2451673.75,
+      "coreSpeedDegreesDay": 2.1697743694525617,
+      "swissStandardSpeedDegreesDay": 2.1697914819055026,
+      "swissNoDeflectionSpeedDegreesDay": 2.1713047696069263,
+      "coreMinusSwissStandardDegreesDay": -1.711245294089281e-05,
+      "coreMinusSwissNoDeflectionDegreesDay": -0.001530400154364564,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": 2.1724419867420415,
+          "trueObliquityRateDegreesDay": 6.294661106486971e-06,
+          "obliquityFrameTermDegreesDay": 2.2143659529420155e-09,
+          "swissReportedPlusFrameTermDegreesDay": 2.1697914841198687,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": -1.711466730684575e-05,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 0.0026505026221728834
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": 2.169780550814973,
+          "trueObliquityRateDegreesDay": 6.2992627634327454e-06,
+          "obliquityFrameTermDegreesDay": 2.2159847458040075e-09,
+          "swissReportedPlusFrameTermDegreesDay": 2.1697914841214874,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": -1.711466892563861e-05,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -1.0933306514376953e-05
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": 2.1697474286157235,
+          "trueObliquityRateDegreesDay": 6.299308485916688e-06,
+          "obliquityFrameTermDegreesDay": 2.21600083027782e-09,
+          "swissReportedPlusFrameTermDegreesDay": 2.1697914841215034,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": -1.7114668941723085e-05,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -4.4055505780019264e-05
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": 2.169766188000914,
+          "trueObliquityRateDegreesDay": 6.299327324752443e-06,
+          "obliquityFrameTermDegreesDay": 2.2160074574934533e-09,
+          "swissReportedPlusFrameTermDegreesDay": 2.16979148412151,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": -1.7114668948350302e-05,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -2.5296120596065523e-05
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.8350040217919741
+    },
+    {
+      "id": 3,
+      "body": "Venus",
+      "jdUT": 2444995.75,
+      "coreSpeedDegreesDay": -0.5631113105126052,
+      "swissStandardSpeedDegreesDay": -0.5631221705549018,
+      "swissNoDeflectionSpeedDegreesDay": -0.5631221542052036,
+      "coreMinusSwissStandardDegreesDay": 1.0860042296556571e-05,
+      "coreMinusSwissNoDeflectionDegreesDay": 1.0843692598405674e-05,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": -0.5631148910028927,
+          "trueObliquityRateDegreesDay": 1.8112499856399882e-05,
+          "obliquityFrameTermDegreesDay": 1.0654611396719828e-06,
+          "swissReportedPlusFrameTermDegreesDay": -0.5631211050937621,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 9.794581156884589e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 6.21409086940428e-06
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": -0.5631207803121527,
+          "trueObliquityRateDegreesDay": 1.8115938310272486e-05,
+          "obliquityFrameTermDegreesDay": 1.0656634054558811e-06,
+          "swissReportedPlusFrameTermDegreesDay": -0.5631211048914964,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 9.79437889110069e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 3.245793435772182e-07
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": -0.5631206416122909,
+          "trueObliquityRateDegreesDay": 1.811597330521802e-05,
+          "obliquityFrameTermDegreesDay": 1.065665464020676e-06,
+          "swissReportedPlusFrameTermDegreesDay": -0.5631211048894378,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 9.794376832535895e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 4.632771468304491e-07
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": -0.563121627894872,
+          "trueObliquityRateDegreesDay": 1.8115957310829145e-05,
+          "obliquityFrameTermDegreesDay": 1.0656645231566354e-06,
+          "swissReportedPlusFrameTermDegreesDay": -0.5631211048903786,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 9.794377773399935e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -5.230044933557788e-07
+        }
+      ],
+      "longitudeDeflectionArcsec": -0.00010736673630162841
+    },
+    {
+      "id": 4,
+      "body": "Mars",
+      "jdUT": 2435726.0,
+      "coreSpeedDegreesDay": -0.27693869504623586,
+      "swissStandardSpeedDegreesDay": -0.27694513184058106,
+      "swissNoDeflectionSpeedDegreesDay": -0.2769451347913313,
+      "coreMinusSwissStandardDegreesDay": 6.4367943451992815e-06,
+      "coreMinusSwissNoDeflectionDegreesDay": 6.43974509545453e-06,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": -0.27694270641362495,
+          "trueObliquityRateDegreesDay": -1.0787496130760568e-05,
+          "obliquityFrameTermDegreesDay": 1.1076555239473118e-06,
+          "swissReportedPlusFrameTermDegreesDay": -0.2769440241850571,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 5.32913882125197e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 1.317771432162388e-06
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": -0.27694407656888653,
+          "trueObliquityRateDegreesDay": -1.0790636003892514e-05,
+          "obliquityFrameTermDegreesDay": 1.1079779247877792e-06,
+          "swissReportedPlusFrameTermDegreesDay": -0.27694402386265626,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 5.3288164204115026e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -5.2706230259986264e-08
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": -0.276943927838654,
+          "trueObliquityRateDegreesDay": -1.079066259332069e-05,
+          "obliquityFrameTermDegreesDay": 1.1079806549789782e-06,
+          "swissReportedPlusFrameTermDegreesDay": -0.27694402385992606,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 5.328813690220303e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 9.602127206752705e-08
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": -0.2769395977212608,
+          "trueObliquityRateDegreesDay": -1.0790657823492171e-05,
+          "obliquityFrameTermDegreesDay": 1.1079801652150104e-06,
+          "swissReportedPlusFrameTermDegreesDay": -0.27694402386041583,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 5.328814179984271e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 4.4261391550345984e-06
+        }
+      ],
+      "longitudeDeflectionArcsec": -1.7048660083673894e-05
+    },
+    {
+      "id": 5,
+      "body": "Jupiter",
+      "jdUT": 2465239.0,
+      "coreSpeedDegreesDay": 0.22333954500890468,
+      "swissStandardSpeedDegreesDay": 0.22333159564495855,
+      "swissNoDeflectionSpeedDegreesDay": 0.22735567399580534,
+      "coreMinusSwissStandardDegreesDay": 7.949363946130328e-06,
+      "coreMinusSwissNoDeflectionDegreesDay": -0.004016128986900652,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": 0.2219516357042178,
+          "trueObliquityRateDegreesDay": 1.1018681761184435e-05,
+          "obliquityFrameTermDegreesDay": 1.4042351689581537e-09,
+          "swissReportedPlusFrameTermDegreesDay": 0.22333159704919373,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 7.94795971096137e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -0.0013799613449759181
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": 0.223364573932686,
+          "trueObliquityRateDegreesDay": 1.102151354836198e-05,
+          "obliquityFrameTermDegreesDay": 1.404596055607927e-09,
+          "swissReportedPlusFrameTermDegreesDay": 0.2233315970495546,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 7.94795935007472e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 3.297688313138644e-05
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": 0.22333133323146176,
+          "trueObliquityRateDegreesDay": 1.102154275932069e-05,
+          "obliquityFrameTermDegreesDay": 1.404599778290588e-09,
+          "swissReportedPlusFrameTermDegreesDay": 0.22333159704955832,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 7.947959346352037e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -2.638180965715251e-07
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": 0.2233318353229079,
+          "trueObliquityRateDegreesDay": 1.1021531314101295e-05,
+          "obliquityFrameTermDegreesDay": 1.404598319696907e-09,
+          "swissReportedPlusFrameTermDegreesDay": 0.22333159704955688,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 7.94795934781063e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 2.38273351028841e-07
+        }
+      ],
+      "longitudeDeflectionArcsec": 2.6517644253999606
+    },
+    {
+      "id": 6,
+      "body": "Saturn",
+      "jdUT": 2464160.75,
+      "coreSpeedDegreesDay": 0.1328861189605311,
+      "swissStandardSpeedDegreesDay": 0.13287906851517342,
+      "swissNoDeflectionSpeedDegreesDay": 0.1297399445396845,
+      "coreMinusSwissStandardDegreesDay": 7.05044535767585e-06,
+      "coreMinusSwissNoDeflectionDegreesDay": 0.003146174420846609,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": 0.13161523542883152,
+          "trueObliquityRateDegreesDay": 1.448768613060075e-05,
+          "obliquityFrameTermDegreesDay": -3.969597522473927e-09,
+          "swissReportedPlusFrameTermDegreesDay": 0.1328790645455759,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 7.054414955198323e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -0.0012638291167443754
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": 0.13289876140776866,
+          "trueObliquityRateDegreesDay": 1.4491826374206652e-05,
+          "obliquityFrameTermDegreesDay": -3.9707319410837914e-09,
+          "swissReportedPlusFrameTermDegreesDay": 0.13287906454444148,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 7.054416089616934e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 1.969686332717663e-05
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": 0.13289558144631586,
+          "trueObliquityRateDegreesDay": 1.4491866662722552e-05,
+          "obliquityFrameTermDegreesDay": -3.970742980057956e-09,
+          "swissReportedPlusFrameTermDegreesDay": 0.13287906454443044,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 7.054416100655908e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 1.6516901885417296e-05
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": 0.13288010115071647,
+          "trueObliquityRateDegreesDay": 1.4491845694257411e-05,
+          "obliquityFrameTermDegreesDay": -3.970737234739724e-09,
+          "swissReportedPlusFrameTermDegreesDay": 0.13287906454443618,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 7.054416094910589e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 1.0366062802815178e-06
+        }
+      ],
+      "longitudeDeflectionArcsec": 2.7552073491051488
+    },
+    {
+      "id": 7,
+      "body": "Uranus",
+      "jdUT": 2462292.25,
+      "coreSpeedDegreesDay": 0.05901559475186014,
+      "swissStandardSpeedDegreesDay": 0.0582103954245503,
+      "swissNoDeflectionSpeedDegreesDay": 0.05897217450848429,
+      "coreMinusSwissStandardDegreesDay": 0.0008051993273098385,
+      "coreMinusSwissNoDeflectionDegreesDay": 4.34202433758496e-05,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": 0.050445845133054674,
+          "trueObliquityRateDegreesDay": -4.290494604487352e-06,
+          "obliquityFrameTermDegreesDay": -4.923079426897461e-11,
+          "swissReportedPlusFrameTermDegreesDay": 0.05821039537531951,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 0.0008051993765406327,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -0.007764550242264834
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": 0.05843094382532752,
+          "trueObliquityRateDegreesDay": -4.290604056912694e-06,
+          "obliquityFrameTermDegreesDay": -4.923205016842933e-11,
+          "swissReportedPlusFrameTermDegreesDay": 0.058210395375318254,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 0.0008051993765418886,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 0.0002205484500092681
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": 0.05859074954904896,
+          "trueObliquityRateDegreesDay": -4.290604501175125e-06,
+          "obliquityFrameTermDegreesDay": -4.9232055266068264e-11,
+          "swissReportedPlusFrameTermDegreesDay": 0.05821039537531825,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 0.0008051993765418937,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 0.00038035417373070914
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": 0.058448576493309166,
+          "trueObliquityRateDegreesDay": -4.29061959850179e-06,
+          "obliquityFrameTermDegreesDay": -4.923222849863271e-11,
+          "swissReportedPlusFrameTermDegreesDay": 0.05821039537531807,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 0.000805199376542067,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 0.0002381811179910922
+        }
+      ],
+      "longitudeDeflectionArcsec": -4.28130102158093
+    },
+    {
+      "id": 8,
+      "body": "Neptune",
+      "jdUT": 2452670.5,
+      "coreSpeedDegreesDay": 0.013805117337021182,
+      "swissStandardSpeedDegreesDay": 0.013793067923684328,
+      "swissNoDeflectionSpeedDegreesDay": 0.03804606918960248,
+      "coreMinusSwissStandardDegreesDay": 1.2049413336854414e-05,
+      "coreMinusSwissNoDeflectionDegreesDay": -0.0242409518525813,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": 0.02818693406613791,
+          "trueObliquityRateDegreesDay": 1.5862118732605668e-05,
+          "obliquityFrameTermDegreesDay": 6.364911746427492e-09,
+          "swissReportedPlusFrameTermDegreesDay": 0.013793074288596075,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 1.2043048425107987e-05,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 0.014393859777541837
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": 0.014059471179644392,
+          "trueObliquityRateDegreesDay": 1.5865843926900633e-05,
+          "obliquityFrameTermDegreesDay": 6.366406536204662e-09,
+          "swissReportedPlusFrameTermDegreesDay": 0.013793074290090863,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 1.204304693031821e-05,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 0.0002663968895535278
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": 0.013794250817404591,
+          "trueObliquityRateDegreesDay": 1.586588200549366e-05,
+          "obliquityFrameTermDegreesDay": 6.3664218158081074e-09,
+          "swissReportedPlusFrameTermDegreesDay": 0.013793074290106143,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 1.2043046915038606e-05,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 1.1765272984475313e-06
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": 0.013792059244658273,
+          "trueObliquityRateDegreesDay": 1.5865913334411876e-05,
+          "obliquityFrameTermDegreesDay": 6.366434387003855e-09,
+          "swissReportedPlusFrameTermDegreesDay": 0.013793074290118714,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 1.204304690246741e-05,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -1.015045460441397e-06
+        }
+      ],
+      "longitudeDeflectionArcsec": -1.743523552067927
+    },
+    {
+      "id": 9,
+      "body": "Pluto",
+      "jdUT": 2441450.0,
+      "coreSpeedDegreesDay": -0.01419283132375287,
+      "swissStandardSpeedDegreesDay": -0.014200383672311934,
+      "swissNoDeflectionSpeedDegreesDay": -0.0142003963313209,
+      "coreMinusSwissStandardDegreesDay": 7.552348559064503e-06,
+      "coreMinusSwissNoDeflectionDegreesDay": 7.5650075680305795e-06,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": -0.014192874770910972,
+          "trueObliquityRateDegreesDay": -2.5505164498845454e-05,
+          "obliquityFrameTermDegreesDay": 7.601745265135546e-06,
+          "swissReportedPlusFrameTermDegreesDay": -0.014192781927046799,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": -4.939670607104279e-08,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -9.284386417317341e-08
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": -0.014192883525133135,
+          "trueObliquityRateDegreesDay": -2.5513869276918606e-05,
+          "obliquityFrameTermDegreesDay": 7.604339700686222e-06,
+          "swissReportedPlusFrameTermDegreesDay": -0.014192779332611248,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": -5.199114162171841e-08,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -1.0419252188699773e-07
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": -0.014192884510954702,
+          "trueObliquityRateDegreesDay": -2.5513958316216646e-05,
+          "obliquityFrameTermDegreesDay": 7.604366238608074e-06,
+          "swissReportedPlusFrameTermDegreesDay": -0.014192779306073326,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": -5.2017679543570645e-08,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -1.0520488137559017e-07
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": -0.01419287850387067,
+          "trueObliquityRateDegreesDay": -2.5513980970710073e-05,
+          "obliquityFrameTermDegreesDay": 7.60437299071854e-06,
+          "swissReportedPlusFrameTermDegreesDay": -0.014192779299321216,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": -5.2024431654036376e-08,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -9.920454945446634e-08
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.0020323392504906224
+    },
+    {
+      "id": 10,
+      "body": "MeanNode",
+      "jdUT": 2427449.5,
+      "coreSpeedDegreesDay": -0.052911550654174716,
+      "swissStandardSpeedDegreesDay": -0.052911750981089134,
+      "swissNoDeflectionSpeedDegreesDay": -0.052911750981089134,
+      "coreMinusSwissStandardDegreesDay": 2.003269144179587e-07,
+      "coreMinusSwissNoDeflectionDegreesDay": 2.003269144179587e-07,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": -0.052911632110868585,
+          "trueObliquityRateDegreesDay": -1.1863788393959776e-05,
+          "obliquityFrameTermDegreesDay": -0.0,
+          "swissReportedPlusFrameTermDegreesDay": -0.052911750981089134,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 2.003269144179587e-07,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 1.1887022054873908e-07
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": -0.05291162544299924,
+          "trueObliquityRateDegreesDay": -1.1870786574819658e-05,
+          "obliquityFrameTermDegreesDay": -0.0,
+          "swissReportedPlusFrameTermDegreesDay": -0.052911750981089134,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 2.003269144179587e-07,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 1.255380898956826e-07
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": -0.052911641996890676,
+          "trueObliquityRateDegreesDay": -1.1870859681231364e-05,
+          "obliquityFrameTermDegreesDay": -0.0,
+          "swissReportedPlusFrameTermDegreesDay": -0.052911750981089134,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 2.003269144179587e-07,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 1.0898419845750684e-07
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": -0.05291170744132367,
+          "trueObliquityRateDegreesDay": -1.187084448891113e-05,
+          "obliquityFrameTermDegreesDay": -0.0,
+          "swissReportedPlusFrameTermDegreesDay": -0.052911750981089134,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 2.003269144179587e-07,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 4.3539765466615865e-08
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.0
+    },
+    {
+      "id": 11,
+      "body": "TrueNode",
+      "jdUT": 2462308.5,
+      "coreSpeedDegreesDay": -0.0055152453773448466,
+      "swissStandardSpeedDegreesDay": 0.12825482032158175,
+      "swissNoDeflectionSpeedDegreesDay": 0.12825482032158175,
+      "coreMinusSwissStandardDegreesDay": -0.1337700656989266,
+      "coreMinusSwissNoDeflectionDegreesDay": -0.1337700656989266,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": -0.005506864940785791,
+          "trueObliquityRateDegreesDay": -1.5195816359950627e-05,
+          "obliquityFrameTermDegreesDay": -0.0,
+          "swissReportedPlusFrameTermDegreesDay": 0.12825482032158175,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": -0.1337700656989266,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -0.13376168526236754
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": -0.004319974317393361,
+          "trueObliquityRateDegreesDay": -1.520071569286555e-05,
+          "obliquityFrameTermDegreesDay": -0.0,
+          "swissReportedPlusFrameTermDegreesDay": 0.12825482032158175,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": -0.1337700656989266,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -0.13257479463897512
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": 0.007730795471593516,
+          "trueObliquityRateDegreesDay": -1.5200766152208526e-05,
+          "obliquityFrameTermDegreesDay": -0.0,
+          "swissReportedPlusFrameTermDegreesDay": 0.12825482032158175,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": -0.1337700656989266,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -0.12052402484998824
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": 0.1282550160127728,
+          "trueObliquityRateDegreesDay": -1.520075538597311e-05,
+          "obliquityFrameTermDegreesDay": -0.0,
+          "swissReportedPlusFrameTermDegreesDay": 0.12825482032158175,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": -0.1337700656989266,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 1.9569119105722343e-07
+        }
+      ],
+      "longitudeDeflectionArcsec": 0.0
+    },
+    {
+      "id": 15,
+      "body": "Chiron",
+      "jdUT": 2461516.25,
+      "coreSpeedDegreesDay": 0.05711187518670821,
+      "swissStandardSpeedDegreesDay": 0.05710940171736231,
+      "swissNoDeflectionSpeedDegreesDay": 0.06096045235243711,
+      "coreMinusSwissStandardDegreesDay": 2.473469345898316e-06,
+      "coreMinusSwissNoDeflectionDegreesDay": -0.0038485771657289017,
+      "standardFlagsRequested": 258,
+      "noDeflectionFlagsRequested": 770,
+      "swissPositionFiniteDifferences": [
+        {
+          "requestedStepDays": 0.1,
+          "representedIntervalDays": 0.20000000018626451,
+          "degreesPerDay": 0.05590076050817299,
+          "trueObliquityRateDegreesDay": -1.978230056143882e-05,
+          "obliquityFrameTermDegreesDay": 2.3550989887136847e-08,
+          "swissReportedPlusFrameTermDegreesDay": 0.0571094252683522,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 2.449918356011179e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -0.0012086647601792092
+        },
+        {
+          "requestedStepDays": 0.01,
+          "representedIntervalDays": 0.019999999552965164,
+          "degreesPerDay": 0.0571177609847733,
+          "trueObliquityRateDegreesDay": -1.978751891049166e-05,
+          "obliquityFrameTermDegreesDay": 2.355720237417238e-08,
+          "swissReportedPlusFrameTermDegreesDay": 0.05710942527456469,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 2.4499121435241437e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": 8.335710208614463e-06
+        },
+        {
+          "requestedStepDays": 0.001,
+          "representedIntervalDays": 0.0020000003278255463,
+          "degreesPerDay": 0.057108753158110696,
+          "trueObliquityRateDegreesDay": -1.9787571002375264e-05,
+          "obliquityFrameTermDegreesDay": 2.3557264389983947e-08,
+          "swissReportedPlusFrameTermDegreesDay": 0.0571094252746267,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 2.449912081508332e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -6.721165160061493e-07
+        },
+        {
+          "requestedStepDays": 0.0001,
+          "representedIntervalDays": 0.00019999966025352478,
+          "degreesPerDay": 0.05710923427250887,
+          "trueObliquityRateDegreesDay": -1.9787547463425883e-05,
+          "obliquityFrameTermDegreesDay": 2.355723636667305e-08,
+          "swissReportedPlusFrameTermDegreesDay": 0.05710942527459868,
+          "coreMinusSwissReportedPlusFrameTermDegreesDay": 2.449912109531643e-06,
+          "finiteDifferenceMinusSwissReportedPlusFrameTermDegreesDay": -1.910020898077852e-07
+        }
+      ],
+      "longitudeDeflectionArcsec": -2.3436849851691477
+    }
+  ]
+}

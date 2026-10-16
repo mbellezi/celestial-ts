@@ -271,21 +271,21 @@ mod tests {
         let cases = [
             (
                 RiseSetEvent::Rise,
-                2_463_456.683_211_299_6,
-                2_463_456.918_774_169_4,
-                2_463_456.529_164_489_4,
+                2463456.6831837874,
+                2463456.9187743943,
+                2463456.530023579,
             ),
             (
                 RiseSetEvent::Transit,
-                2_463_456.968_753_850_6,
-                2_463_457.152_051_348_2,
-                2_463_456.831_956_585,
+                2463456.9687322504,
+                2463457.152051277,
+                2463456.832774388,
             ),
             (
                 RiseSetEvent::Set,
-                2_463_457.253_888_645_7,
-                2_463_457.381_877_229_5,
-                2_463_457.134_744_828_6,
+                2463457.253872972,
+                2463457.3818766773,
+                2463457.1355209975,
             ),
         ];
         for (event, expected_sun, expected_moon, expected_saturn) in cases {
@@ -306,6 +306,48 @@ mod tests {
             );
             assert_eq!(polar.jd_ut, 2_451_545.5);
             assert!(!polar.found);
+        }
+    }
+
+    /// Swiss Ephemeris 2.10.03 swe_rise_trans, SWIEPH, standard atmosphere
+    /// (1013.25 mbar, 15 C), observer 12.5 E, 37.5 N, 0 m, UT date 2032-08-12.
+    /// The fixed lunar horizon correction omits its varying parallax and
+    /// semidiameter; allow 90 seconds for that approximation explicitly.
+    #[test]
+    fn rise_set_events_against_independent_swiss_reference() {
+        let cases = [
+            (
+                RiseSetEvent::Rise,
+                [2463456.683226606, 2463456.919675161, 2463456.5300350953],
+            ),
+            (
+                RiseSetEvent::Transit,
+                [2463456.9687268995, 2463457.1520459387, 2463456.832767112],
+            ),
+            (
+                RiseSetEvent::Set,
+                [2463457.253819323, 2463457.3809807375, 2463457.1354945153],
+            ),
+        ];
+        let jd = JulianDay::new(2463456.789);
+        let lat = Latitude::new(37.5);
+        let lon = Longitude::new(12.5);
+        for (event, expected) in cases {
+            let actual = [
+                sun_rise_set(jd, lat, lon, event),
+                moon_rise_set(jd, lat, lon, event),
+                planet_rise_set(jd, lat, lon, event, Planet::Saturn),
+            ];
+            for ((result, reference), seconds) in
+                actual.into_iter().zip(expected).zip([15.0, 90.0, 5.0])
+            {
+                assert!(result.found);
+                assert!(
+                    (result.jd_ut - reference).abs() * 86400.0 < seconds,
+                    "{event:?}: {} seconds error",
+                    (result.jd_ut - reference) * 86400.0
+                );
+            }
         }
     }
 

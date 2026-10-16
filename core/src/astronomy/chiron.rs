@@ -1,16 +1,39 @@
 //! Chiron (2060 Chiron / 95P/Chiron) position.
 //!
 //! Chiron orbits between Saturn and Uranus with a ~50-year period.
-//! We use the mean orbital elements from the JPL small-body database
-//! and propagate them with Kepler's equation for a good approximation.
-//!
-//! Accuracy: ~0.5° over 1800–2200 CE; degrades outside that range.
+//! For 1930–2040, versioned Swiss Ephemeris heliocentric states include the
+//! perturbations absent from a two-body Kepler orbit. Cubic Hermite interpolation
+//! is entirely local; see core/data/chiron-ephemeris.json for provenance.
+//! Outside the table, the historical Kepler approximation remains available;
+//! its accuracy is not covered by the 1930–2040 validation.
 
 use crate::units::JulianDay;
 use std::f64::consts::PI;
 
 const J2000: f64 = 2451545.0;
 const TWO_PI: f64 = 2.0 * PI;
+
+include!("chiron_ephemeris.rs");
+
+fn ephemeris_position(jd: f64) -> Option<(f64, f64, f64)> {
+    let x = (jd - EPHE_START) / EPHE_STEP;
+    if !(0.0..=(EPHE_STATES.len() - 1) as f64).contains(&x) {
+        return None;
+    }
+    let index = (x.floor() as usize).min(EPHE_STATES.len() - 2);
+    let t = x - index as f64;
+    let a = EPHE_STATES[index];
+    let b = EPHE_STATES[index + 1];
+    let h00 = (2.0*t - 3.0)*t*t + 1.0;
+    let h10 = ((t - 2.0)*t + 1.0)*t;
+    let h01 = (-2.0*t + 3.0)*t*t;
+    let h11 = (t - 1.0)*t*t;
+    let p: [f64;3] = std::array::from_fn(|i|
+        h00*a[i] + h10*EPHE_STEP*a[i+3] + h01*b[i] + h11*EPHE_STEP*b[i+3]);
+    let xy = p[0].hypot(p[1]);
+    Some((p[1].atan2(p[0]).to_degrees().rem_euclid(360.0),
+          p[2].atan2(xy).to_degrees(), xy.hypot(p[2])))
+}
 
 #[allow(dead_code)]
 fn norm360(d: f64) -> f64 {
@@ -43,6 +66,9 @@ fn kepler(m: f64, ecc: f64) -> f64 {
 #[must_use]
 pub fn chiron_pos(jd: JulianDay) -> (f64, f64, f64) {
     let jd: f64 = jd.into();
+    if let Some(position) = ephemeris_position(jd) {
+        return position;
+    }
     // Mean elements at epoch J2000.0
     let a = 13.648_16_f64; // AU
     let ecc = 0.382_95_f64;
@@ -98,55 +124,40 @@ pub fn chiron_pos(jd: JulianDay) -> (f64, f64, f64) {
 #[must_use]
 pub fn chiron_speed(jd: JulianDay) -> (f64, f64, f64) {
     let jd: f64 = jd.into();
-    let h = 0.5;
+    // Resolve rapid changes of solar deflection inside the solar disk.
+    let h = 0.0001;
     let (l0, b0, r0) = chiron_geocentric(jd - h);
     let (l1, b1, r1) = chiron_geocentric(jd + h);
     let dl = ((l1 - l0 + 540.0) % 360.0) - 180.0; // handle 0/360 wrap
-    (dl, b1 - b0, r1 - r0)
+    (dl / (2.0*h), (b1 - b0) / (2.0*h), (r1 - r0) / (2.0*h))
 }
 
-/// Geocentric ecliptic position of Chiron at JDE.
-///
-/// `chiron_pos` returns HELIOCENTRIC coordinates. For chart use we need
-/// what Chiron looks like from Earth: subtract Earth's heliocentric
-/// position vector. Mirrors `astronomy::pluto::pluto_geocentric`.
-///
-/// Before this conversion existed, `calc_chiron` returned heliocentric
-/// coordinates labelled as geocentric, giving 10–40° errors at every
-/// chart date (J2000: 27° off vs published; Diana 1961: 10° off; 2024:
-/// 13° off; Geraldo Netto PDF 1986: 41° off).
+/// Apparent geocentric ecliptic position at TT, true equinox of date.
+/// J2000 heliocentric states are precessed into the observation frame before
+/// subtracting Earth; light time, annual aberration and nutation follow.
 #[must_use]
 pub fn chiron_geocentric(jde: f64) -> (f64, f64, f64) {
-    use crate::astronomy::vsop87::{heliocentric, Planet};
-
-    let (ch_lon, ch_lat, ch_r) = chiron_pos(JulianDay::new(jde));
+    use crate::astronomy::{vsop87::{heliocentric, Planet}, pluto::precess_ecliptic,
+        planetary::aberration, nutation::nutation, constants::LIGHT_SPEED_AU_DAY};
+    fn rect(l: f64, b: f64, r: f64) -> [f64;3] {
+        [r*b.cos()*l.cos(), r*b.cos()*l.sin(), r*b.sin()]
+    }
     let earth = heliocentric(Planet::Earth, jde);
-
-    // Chiron heliocentric → rectangular ecliptic.
-    let plon_r = ch_lon.to_radians();
-    let plat_r = ch_lat.to_radians();
-    let (sin_plon, cos_plon) = plon_r.sin_cos();
-    let (sin_plat, cos_plat) = plat_r.sin_cos();
-    let px = ch_r * cos_plat * cos_plon;
-    let py = ch_r * cos_plat * sin_plon;
-    let pz = ch_r * sin_plat;
-
-    // Earth heliocentric (VSOP87 returns lon/lat in RADIANS already).
-    let (sin_elon, cos_elon) = earth.lon.sin_cos();
-    let (sin_elat, cos_elat) = earth.lat.sin_cos();
-    let ex = earth.rad * cos_elat * cos_elon;
-    let ey = earth.rad * cos_elat * sin_elon;
-    let ez = earth.rad * sin_elat;
-
-    // Geocentric position vector (Chiron − Earth).
-    let dx = px - ex;
-    let dy = py - ey;
-    let dz = pz - ez;
-
-    let dist = dx.hypot(dy).hypot(dz);
-    let lon = dy.atan2(dx).to_degrees().rem_euclid(360.0);
-    let lat = (dz / dist).asin().to_degrees();
-    (lon, lat, dist)
+    let e = rect(earth.lon, earth.lat, earth.rad);
+    let mut tau = 0.0;
+    let mut g = [0.0;3];
+    let mut distance = 0.0;
+    for _ in 0..4 {
+        let (lon,lat,r) = chiron_pos(JulianDay::new(jde-tau));
+        let (l,b) = precess_ecliptic(lon.to_radians(),lat.to_radians(),J2000,jde);
+        let p = rect(l,b,r);
+        g = std::array::from_fn(|i|p[i]-e[i]);
+        distance = g[0].hypot(g[1]).hypot(g[2]);
+        tau = distance / LIGHT_SPEED_AU_DAY;
+    }
+    let g = crate::astronomy::deflection::solar_deflection(g, e);
+    let (lon,lat) = aberration(g[1].atan2(g[0]),g[2].atan2(g[0].hypot(g[1])),jde);
+    ((lon.to_degrees()+nutation(jde).dpsi/3600.0).rem_euclid(360.0),lat.to_degrees(),distance)
 }
 
 #[cfg(test)]
@@ -163,61 +174,27 @@ mod cov_tests {
     }
 
     #[test]
-    fn geocentric_position_and_speed_match_regression_vectors() {
+    fn independent_swiss_positions_and_speeds() {
+        // Swiss 2.10.03 / seas_18, apparent geocentric ecliptic at these TT JDs.
+        // These dates are not interpolation knots.
         let cases = [
-            (
-                1_721_425.5,
-                [
-                    353.856_071_833_356_17,
-                    3.695_837_339_007_048_7,
-                    18.878_173_353_844_677,
-                    0.025_022_906_417_916_6,
-                    -0.004_209_203_034_547_304,
-                    0.016_922_137_780_259_305,
-                ],
-            ),
-            (
-                J2000,
-                [
-                    250.777_080_645_625,
-                    3.984_617_154_410_26,
-                    10.577_608_742_139_182,
-                    0.114_693_592_874_800_74,
-                    0.006_279_641_217_276_755,
-                    -0.006_675_457_573_217_969,
-                ],
-            ),
-            (
-                2_463_456.789,
-                [
-                    55.082_625_987_681_816,
-                    -2.611_554_029_901_816,
-                    16.260_702_032_527_156,
-                    0.017_508_213_009_932_66,
-                    -0.004_105_368_138_216_381,
-                    -0.017_994_451_649_084_198,
-                ],
-            ),
-            (
-                3_182_045.0,
-                [
-                    52.972_101_009_587_94,
-                    -3.232_883_876_786_869,
-                    15.240_127_249_033_964,
-                    -0.016_546_972_626_088_063,
-                    0.001_724_831_371_064_272_6,
-                    0.013_862_870_649_566_261,
-                ],
-            ),
+            (2425977.5, [39.782044579599, -1.740979781139, 16.382619837132, -0.018621313402]),
+            (2441465.6666666665, [16.196797138936, 1.768660080743, 19.432210295701, 0.041369257895]),
+            (2451545.0, [251.617541980496, 4.071721834965, 10.663529965600, 0.114307496231]),
+            (2466520.5, [110.552361089233, -7.481689920595, 9.975444277572, -0.068513202418]),
         ];
         for (jd, expected) in cases {
             let (lon, lat, dist) = chiron_geocentric(jd);
-            let (speed_lon, speed_lat, speed_dist) = chiron_speed(JulianDay::new(jd));
-            crate::astronomy::test_support::assert_close(
-                [lon, lat, dist, speed_lon, speed_lat, speed_dist],
-                expected,
-            );
+            let (speed,_,_) = chiron_speed(JulianDay::new(jd));
+            assert!((lon-expected[0]).abs() < 1.0/3600.0, "{jd}: longitude {lon}");
+            assert!((lat-expected[1]).abs() < 1.0/3600.0, "{jd}: latitude {lat}");
+            assert!((dist-expected[2]).abs() < 1e-5, "{jd}: distance {dist}");
+            assert!((speed-expected[3]).abs() < 1e-5, "{jd}: speed {speed}");
         }
+        assert!(ephemeris_position(EPHE_START-1.0).is_none());
+        assert!(ephemeris_position(EPHE_START).is_some());
+        assert!(ephemeris_position(EPHE_START+EPHE_STEP*(EPHE_STATES.len()-1) as f64).is_some());
+        assert!(ephemeris_position(EPHE_START+EPHE_STEP*EPHE_STATES.len() as f64).is_none());
     }
 
     #[test]

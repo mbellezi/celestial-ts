@@ -7,8 +7,8 @@ import { celestial as c } from './runtime.ts';
 
 interface Golden {
   tolerance: number;
-  calc_ut: { jd: number; flags: number; cases: Array<{ body: number; position: number[] }> };
-  houses_ex: { jd: number; lat: number; lon: number; hsys: number; flags: number; cusps: number[]; ascmc: number[] };
+  calc_ut: { jd: number; flags: number; cases: Array<{ body: number; position: number[]; reference_position: number[]; reference_tolerance: number[] }> };
+  houses_ex: { jd: number; lat: number; lon: number; hsys: number; flags: number; cusps: number[]; ascmc: number[]; reference_cusps: number[]; reference_angles: number[]; reference_tolerance: number };
   rise_trans: { jd: number; planet: number; flags: number; event_type: number; geopos: number[]; pressure_mb: number; temp_c: number; ret_flags: number; tret: number };
 }
 
@@ -48,16 +48,19 @@ test('exports cover every flat core function and constant', () => {
   assert.deepEqual(k.MAJOR_ASPECTS, [0, 60, 90, 120, 180]);
 });
 
-test('planet results preserve upstream native golden values and camelCase fields', () => {
+test('planet results match corrected snapshots, independent Swiss positions and camelCase fields', () => {
   const fixture = golden.calc_ut;
   for (const entry of fixture.cases) {
     const result = c.calcUt(fixture.jd, entry.body, fixture.flags);
     assert.deepEqual(Object.keys(result).sort(), ['dist', 'lat', 'lon', 'retFlags', 'speedDist', 'speedLat', 'speedLon']);
     closeVector([result.lon, result.lat, result.dist, result.speedLon, result.speedLat, result.speedDist], entry.position);
+    assert.equal(result.retFlags, fixture.flags);
+    [result.lon, result.lat, result.dist].forEach((value, index) =>
+      close(value, entry.reference_position[index], entry.reference_tolerance[index]));
   }
 });
 
-test('house and rise/transit results preserve upstream golden values', () => {
+test('house and rise/transit results preserve corrected snapshots and independent Swiss house references', () => {
   const h = golden.houses_ex;
   const houses = c.housesEx(h.jd, h.lat, h.lon, h.hsys, h.flags);
   assert.equal(houses.cusps.length, 13);
@@ -65,6 +68,8 @@ test('house and rise/transit results preserve upstream golden values', () => {
   assert.equal(houses.cusps[0], 0);
   closeVector(houses.cusps.slice(1), h.cusps);
   closeVector(houses.ascmc.slice(0, 8), h.ascmc);
+  houses.cusps.slice(1).forEach((value, index) => close(value, h.reference_cusps[index], h.reference_tolerance));
+  houses.ascmc.slice(0, 3).forEach((value, index) => close(value, h.reference_angles[index], h.reference_tolerance));
   const r = golden.rise_trans;
   const rise = c.riseTrans(r.jd, r.planet, r.flags, r.event_type, r.geopos, r.pressure_mb, r.temp_c);
   assert.equal(rise.retFlags, r.ret_flags);

@@ -30,3 +30,12 @@ THIRD-PARTY-NOTICES.txt reproduces the original license and copyright texts
 for the locked registry crates in the WASM release dependency graph, with
 their declared licenses, versions and source repositories. Regenerate it
 with npm run licenses after updating those dependencies.
+
+The solar-deflection implementation and embedded Swiss-derived ephemeris
+tables use the AGPL-3.0-or-later option of Swiss Ephemeris (Astrodienst AG).
+The upstream notice is preserved in core/src/astronomy/deflection.rs.
+Source revision: c113653fe37fe5cdbfcc030a6e341de03ef018d2
+Source: https://github.com/aloistr/swisseph
+The table manifests under core/data/ and core/src/astronomy/ record input
+hashes, versions, generation flags and interpolation validation. Reproducible
+generators are included under scripts/. Runtime interpolation is local.

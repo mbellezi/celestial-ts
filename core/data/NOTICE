@@ -1,0 +1,26 @@
+Astronomical data used by the 1930–2040 engine
+
+VSOP87D: Bretagnon and Francou, Astronomy and Astrophysics 202 (1988).
+Original coefficient files: https://ftp.imcce.fr/pub/ephem/planets/vsop87/
+The generator scripts/generate-vsop87.py records the SHA-256 of each input
+in core/src/astronomy/vsop87_data.rs. Values use their native radians/AU units.
+
+Moon, Mercury, Neptune, Pluto, Chiron, true lunar node and delta T: data
+derived from Swiss Ephemeris, copyright Astrodienst AG, distributed here
+under AGPL-3.0-or-later.
+The repository LICENSE supplies the license text. Source ephemeris URLs,
+versions, hashes, timescales and interpolation intervals are recorded in
+the manifests under core/data/ and core/src/astronomy/. The generators
+are included in this repository. Swiss Ephemeris is a data generation and
+validation dependency only; no Swiss library or network service is required
+by the Rust/WebAssembly runtime.
+
+The Swiss comparison validates interpolation/implementation fidelity; for
+the derived tables it is not an independent physical ephemeris model.
+The validated range is 1930–2040. Approximate analytical fallbacks outside
+the tables do not inherit that accuracy claim.
+
+Pluto analytical fallback and geometric heliocentric API: Meeus,
+Astronomical Algorithms, second edition, chapter 37, table 37.A.
+The corrected 43-term numerical table and reference frame transformation
+replace the previous incomplete table and mixed-reference-frame calculation.

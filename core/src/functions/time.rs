@@ -558,6 +558,9 @@ pub fn iso_week(jd: JulianDay) -> (i32, u32) {
     }
 }
 
+// Wrapper regression vectors follow the corrected VSOP87D/apparent models;
+// external model anchors and measured residuals are in astronomy tests and
+// docs/validation/pluto-nodes-model.md. Preserve strict wrapper tolerances.
 #[cfg(test)]
 mod iso_week_tests {
     #[cfg(target_arch = "wasm32")]
@@ -673,7 +676,7 @@ mod mutation_tests {
         assert_eq!(
             pair,
             JdPair {
-                et: 2_460_370.500_514_672_6,
+                et: 2460370.500458155,
                 ut1: 2_460_370.499_658_565,
             }
         );
@@ -756,12 +759,12 @@ mod mutation_tests {
                 Degrees::new(23.4),
                 Degrees::new(-0.004),
             ),
-            4.354_880_721_874_905
+            4.354880720876392
         );
         let expected = [
             0.135_234_324_487_036_4,
-            0.055_065_461_383_026_11,
-            0.083_421_012_774_689_04,
+            0.055065458538376785,
+            0.083421332476532,
             0.080_322_053_247_365,
         ];
         for (jd, expected) in [1_721_425.5, 2_451_545.0, 2_463_456.789, 3_182_045.0]
@@ -830,7 +833,7 @@ mod mutation_tests {
             nutation(jd),
             (0.003_015_295_494_215_732, -0.002_083_851_675_260_442)
         );
-        assert_eq!(tt_to_ut(jd), 2_463_456.788_081_351);
+        assert_eq!(tt_to_ut(jd), 2463456.788190829);
     }
 
     #[test]

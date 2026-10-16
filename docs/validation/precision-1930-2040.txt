@@ -1,0 +1,62 @@
+Precisão do motor natal entre 1930 e 2040
+Auditoria de 16 de outubro de 2026, após a implementação da deflexão solar
+
+A nova auditoria encontrou zero diferenças de signo e seis diferenças brutas de retrogradação. Das 26 diferenças anteriores de retrogradação, 21 foram corrigidas; as quatro de Plutão e uma do nodo verdadeiro continuam registradas por diferenças da referência. O modelo mais preciso revelou uma quinta ocorrência de Plutão, da mesma natureza. Nenhuma interpretação foi implementada nesta etapa.
+
+Amostragem: 172.174 instantes e 13 corpos, totalizando 2.238.262 avaliações corpo/instante em cada comparação. A grade tem passo de seis horas de 1930-01-01 até o fim de 2040, mais 10.000 instantes pseudoaleatórios com semente fixa, o último segundo de 2040 e uma amostra natal explícita. As comparações em UT e TT usam Swiss Ephemeris 2.10.03 e pyswisseph 2.10.3.2. O backend SWIEPH foi confirmado em todas as chamadas. Nenhuma amostra foi excluída.
+
+Correções implementadas
+A deflexão solar considera a distância finita da fonte e a distribuição de massa efetiva para raios que atravessam o disco solar. O cálculo precede aberração e nutação. As velocidades planetárias usam diferenças centrais com meio intervalo de 0,0001 dia e o intervalo efetivamente representável em ponto flutuante.
+A conversão UT/TT usa o modelo ΔT versionado da Swiss no intervalo suportado, com interpolação diária e precedência da configuração manual do usuário. A diferença máxima amostrada caiu de 13,458 segundos para 0,000750 segundo. Em 100.000 testes independentes da interpolação, o máximo foi 0,000982 segundo. A previsão futura de rotação terrestre continua sendo uma estimativa do modelo.
+Lua, Mercúrio, Netuno e Plutão usam estados cartesianos completos, tabulados uniformemente por polinômios de Chebyshev. Isso corrige a precisão insuficiente das séries anteriores junto às fronteiras dos signos. São dados Swiss versionados para todo o intervalo, com verificações fora dos pontos de geração e nas junções. Os estados planetários ainda passam pela deflexão, aberração e nutação do motor. A Lua recebe nutação, conforme a convenção da fonte.
+O nodo verdadeiro usa amostras a cada seis horas e interpolação cúbica separada de posição e velocidade. Uma regra geral baseada nas junções do arquivo lunar reconstrói velocidades de amostras que coincidam com essas junções a partir de vizinhos seguros. A conversão de tempo corrigida também resolve uma das estações.
+
+Erros máximos de longitude em UT, em segundos de arco
+Corpo | Antes desta etapa | Atual
+Sun | 0.673705 | 0.221865
+Moon | 18.248673 | 0.006292
+Mercury | 2.106135 | 0.016428
+Venus | 1.815770 | 0.222936
+Mars | 2.213079 | 0.226969
+Jupiter | 3.892550 | 0.389268
+Saturn | 3.685960 | 0.366514
+Uranus | 3.960807 | 1.397657
+Neptune | 4.276870 | 0.015492
+Pluto | 1.835180 | 0.014800
+MeanNode | 0.131100 | 0.131742
+TrueNode | 0.411997 | 0.135543
+Chiron | 2.445430 | 0.214818
+
+O maior resíduo longitudinal foi 1,397657 segundo de arco, em Urano. Esses máximos são observados na amostragem, não limites matemáticos para todos os instantes. A comparação cobre posições aparentes tropicais geocêntricas, flags 258. Não demonstra compatibilidade integral das demais opções da API, como velocidades siderais e topocêntricas.
+
+As seis divergências brutas de retrogradação
+Cinco são de Plutão, em 1961-12-12, 1972-06-09, 1983-02-01, 1985-02-06 e 1997-08-13. A rotina Swiss transforma o vetor velocidade para a eclíptica pela obliquidade instantânea, mas omite a derivada temporal dessa rotação. Perto da estação, o termo cos(longitude) × tan(latitude) × d(obliquidade)/dt pode mudar o sinal. Em todos os cinco casos, o motor concorda com diferenças centrais das próprias posições Swiss; acrescentar o termo à velocidade Swiss também alinha os sinais. Testes NONUT, TRUEPOS e J2000 isolam a causa. Pequenos resíduos de velocidade permanecem medidos no diagnóstico.
+A sexta é do nodo verdadeiro em 2029-06-21 00:00 UT. O instante está cerca de dois segundos antes de uma junção de segmentos do arquivo lunar Swiss. O cálculo curto de velocidade atravessa uma pequena descontinuidade e retorna +0,128254820 grau/dia; a tabela do motor retorna -0,005515245 grau/dia. Diferenças em intervalos maiores e uma diferença muito curta inteiramente dentro de um segmento confirmam o movimento negativo. O diagnóstico preserva o pico positivo e identifica a junção exata.
+Os seis casos permanecem nos contadores do JSON principal, tanto em UT quanto em TT. residual-classification.json relaciona cada ocorrência à evidência; não restaram divergências sem explicação nessa amostragem. Isso não representa igualdade bruta com o campo SPEED da Swiss nem certifica todos os instantes próximos de estações.
+
+Velocidades e casas
+O maior resíduo bruto de velocidade continua sendo o pico do nodo na junção, 481,572 segundos de arco/dia. Em Urano, o máximo foi 2,899 segundos de arco/dia perto do disco solar: a diferença angular entre VSOP e Swiss coloca o raio em lados distintos de um nó da tabela de massa solar efetiva. A mudança de inclinação nessa tabela afeta a derivada. velocity-residuals.json mantém os valores, as comparações sem deflexão e as diferenças centrais. uranus-speed-knot-diagnostic.json registra a geometria e os intervalos distintos da tabela solar.
+As casas foram reavaliadas em 7.920 configurações. O máximo não polar de cúspides/ASC foi 0,855 segundo de arco; nas regiões polares, Iguais/Whole Sign chegaram a 0,969 segundo de arco. As 960 configurações polares de Placidus rejeitadas pela Swiss também foram rejeitadas pela API pública.
+
+Dados, alcance e reprodução
+As tabelas de Lua, Mercúrio, Netuno, Plutão, Quíron, nodo verdadeiro e ΔT são derivadas de dados Swiss. Para elas, esta auditoria mede fidelidade de representação e do processamento, não valida uma teoria física independente. O runtime Rust/WASM não precisa de instalação Swiss ou rede. Os manifestos registram versões, arquivos de origem, hashes, flags, cobertura e verificações de interpolação. Os geradores estão em scripts/. As aproximações fora das tabelas não herdam a precisão medida aqui.
+O binário WASM passou a ter 15.590.861 bytes, cerca de 15,6 MB sem compressão, principalmente pelo aumento das tabelas embutidas. Essa é a contrapartida de armazenamento da precisão adotada.
+npm test passou: 1.506 testes Rust/doc, 331 de interface, 80 de gráficos e 74 de relatórios, total de 1.991. Também passaram 20 mutações da interface, cinco dos gráficos e as verificações de documentação e licenças. As regressões cobrem as oito fronteiras de signo anteriores e os casos de estação; diferenças de último bit entre native e WASM usam tolerâncias explícitas de poucos ULP.
+Os arquivos *-before-deflection preservam a etapa anterior. Os JSON atuais guardam percentis, piores instantes, todos os casos divergentes e hashes do WASM, fontes e dados. Documentos de modelos anteriores estão identificados como históricos.
+
+Reprodução a partir da raiz do repositório, com Rust 1.96.0, wasm-bindgen 0.2.129, Node 24 e Python com pyswisseph 2.10.3.2:
+1. npm run build
+2. node scripts/validation/export-core.mjs /tmp/celestial-core-audit.bin
+3. python scripts/validation/compare-swiss.py --ephe DIRETORIO_PINNED --input /tmp/celestial-core-audit.bin
+4. python scripts/validation/houses-swiss.py --output /tmp/celestial-houses.json
+5. node scripts/validation/houses-core.mjs --reference /tmp/celestial-houses.json
+6. python scripts/validation/swiss-pluto-speed-diagnostic.py --ephe-dir DIRETORIO_PINNED --output docs/validation/swiss-pluto-speed-diagnostic.json
+7. python scripts/validation/node-diagnostic.py --ephe DIRETORIO_PINNED
+8. python scripts/validation/velocity-diagnostic.py --ephe DIRETORIO_PINNED
+9. python scripts/validation/classify-residuals.py
+10. python scripts/validation/uranus-speed-diagnostic.py --ephe DIRETORIO_PINNED
+11. npm test
+
+Origem Swiss fixada: https://github.com/aloistr/swisseph/tree/c113653fe37fe5cdbfcc030a6e341de03ef018d2
+Convenções da API: https://www.astro.com/swisseph/swephprg.htm
+WASM SHA256: 76e94ee97cff2ff3da281224f69e29173e05c3f7e277e12c7b700e3223fd894c

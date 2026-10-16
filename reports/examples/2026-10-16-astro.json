@@ -1,0 +1,81 @@
+{
+  "version": "1.0.0",
+  "editorialVersion": "astro-pt-BR-1.0.0",
+  "sourceReportVersion": "1.0.0",
+  "catalogVersion": "1.0.0",
+  "locale": "pt-BR",
+  "style": "astro",
+  "kind": "day",
+  "range": {
+    "start": "2026-10-16T03:00:00.000Z",
+    "endExclusive": "2026-10-17T03:00:00.000Z",
+    "timeZone": "America/Sao_Paulo"
+  },
+  "title": "O DIA 16 DE OUTUBRO DE 2026: SUSTENTAR O ESFORÇO",
+  "overview": "O dia convidará você a sustentar o esforço. Disciplina e paciência oferecem uma referência para manter o esforço em tarefas exigentes. O cotidiano oferece pistas para reconhecer o que você precisa e como deseja compartilhar o cuidado.",
+  "passages": [
+    {
+      "at": "2026-10-16T12:05:09.183Z",
+      "background": false,
+      "eventIds": [
+        "aspect:mars:saturn:120:2026-10-16T03:00:00.000Z",
+        "sign:moon:9:2026-10-16T12:56:53.783Z"
+      ],
+      "interpretationKeys": [
+        "aspect:mars:saturn:120",
+        "sign:moon:9"
+      ],
+      "sourceKeys": [
+        "astro:pair:mars:saturn",
+        "astro:aspect:120",
+        "astro:aspect:120:variant:2",
+        "astro:body:moon",
+        "astro:sign:9"
+      ],
+      "exact": [
+        "2026-10-16T12:05:09.183Z",
+        "2026-10-16T12:56:53.783Z"
+      ],
+      "paragraphs": [
+        "Às 09:05, Marte e Saturno formarão trígono exato. Uma tarefa exigente pede uma combinação de iniciativa e paciência. Observe o que depende de prática, organização ou respeito a um limite real. A constância poderá ser mais útil do que forçar um avanço imediato, sobretudo quando o trabalho precisa continuar depois do entusiasmo inicial. Uma combinação mais espontânea dessas necessidades poderá ser aproveitada em uma atividade que tenha sentido para você.",
+        "Às 09:56, a Lua entrará em Capricórnio. Nos detalhes do cotidiano, você poderá reconhecer necessidades que costumam passar sem palavras. Perceba o que oferece acolhimento e como você pede apoio. O que você deseja construir pede atenção ao tempo e aos compromissos envolvidos. Reconhecer etapas e limites poderá ajudar a transformar uma intenção em uma tarefa possível."
+      ]
+    },
+    {
+      "at": "2026-10-16T17:50:53.069Z",
+      "background": false,
+      "eventIds": [
+        "aspect:moon:neptune:90:2026-10-16T05:43:59.491Z",
+        "aspect:moon:venus:60:2026-10-16T15:04:33.154Z"
+      ],
+      "interpretationKeys": [
+        "aspect:moon:neptune:90",
+        "aspect:moon:venus:60"
+      ],
+      "sourceKeys": [
+        "astro:pair:moon:neptune",
+        "astro:aspect:90",
+        "astro:aspect:90:variant:1",
+        "astro:pair:moon:venus",
+        "astro:aspect:60",
+        "astro:aspect:60:variant:1"
+      ],
+      "exact": [
+        "2026-10-16T17:50:53.069Z",
+        "2026-10-16T22:51:14.681Z"
+      ],
+      "paragraphs": [
+        "Às 14:50, a Lua e Netuno formarão quadratura exata. Uma escuta sensível poderá revelar nuances que uma conversa apressada deixa passar. Preserve, ao mesmo tempo, a diferença entre perceber um clima e conhecer o que outra pessoa sente. Música, imagens ou escrita poderão oferecer uma linguagem para impressões ainda difíceis de explicar. O atrito entre essas necessidades pede ajustes na maneira de agir, sem exigir uma solução apressada.",
+        "Às 19:51, a Lua e Vênus formarão sextil exato. Pequenos gestos de cuidado poderão ajudar você a perceber como deseja dar e receber afeto. Observe o ambiente, a convivência e os hábitos que tornam um encontro agradável. A vontade de manter a harmonia também merece escuta quando deixa alguma necessidade sua sem palavras. Uma possibilidade de cooperação poderá ganhar forma se você tomar a iniciativa de aproximar essas necessidades no cotidiano."
+      ]
+    }
+  ],
+  "selection": {
+    "totalEvents": 28,
+    "selectedEvents": 4,
+    "omittedEvents": 24,
+    "maxEvents": 4,
+    "policy": "Seleção editorial de eclipses, estações, lunações, ingressos e aspectos exatos; distribuição ao longo do mês e até um contexto já em curso (dois na ausência de mudanças). Não mede intensidade nem probabilidade."
+  },
+  "disclaimer": "Leitura astrológica simbólica e coletiva, sem caráter de previsão individual, diagnóstico ou orientação de investimento."
+}

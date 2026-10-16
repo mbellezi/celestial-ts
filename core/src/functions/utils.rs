@@ -405,6 +405,9 @@ pub fn split_deg(deg: f64, round_flag: i32) -> (i32, i32, i32, f64, i32) {
     }
 }
 
+// Wrapper regression vectors follow the corrected VSOP87D/apparent models;
+// external model anchors and measured residuals are in astronomy tests and
+// docs/validation/pluto-nodes-model.md. Preserve strict wrapper tolerances.
 #[cfg(test)]
 mod tests {
     #[cfg(target_arch = "wasm32")]
@@ -497,9 +500,9 @@ mod tests {
         assert_eq!(
             ecliptic,
             AzAlt {
-                azimuth: 169.86785954068296,
-                true_alt: -15.342945848546734,
-                apparent_alt: -15.342945848546734,
+                azimuth: 169.86785954194318,
+                true_alt: -15.342945848702811,
+                apparent_alt: -15.342945848702811,
             }
         );
 
@@ -548,19 +551,19 @@ mod tests {
         let [lon, lat, distance] = azalt_rev(jd, 1, [12.1, 49.0, 330.0], [30.0, 20.0]);
         crate::astronomy::test_support::assert_close(
             [lon, lat],
-            [263.2952821649003, -16.008111300982545],
+            [263.29528216625334, -16.008111300982545],
         );
         assert_eq!(distance, 1.0);
         let [lon, lat, distance] = azalt_rev(jd, 1, [12.1, 49.0, 330.0], [300.0, -10.0]);
         crate::astronomy::test_support::assert_close(
             [lon, lat],
-            [5.744614658115211, -27.00703852286642],
+            [5.744614659468255, -27.00703852286642],
         );
         assert_eq!(distance, 1.0);
         let [lon, lat, distance] = azalt_rev(jd, 0, [12.1, 49.0, 330.0], [30.0, 20.0]);
         crate::astronomy::test_support::assert_close(
             [lon, lat],
-            [263.50382882092117, 7.27850978034093],
+            [263.5038288222309, 7.27850978040182],
         );
         assert_eq!(distance, 1.0);
     }
@@ -571,7 +574,7 @@ mod tests {
         let below_south = f64::from_bits(180.0_f64.to_bits() - 1);
         assert_eq!(
             azalt_rev(jd, 1, [12.1, 49.0, 330.0], [below_south, 20.0]),
-            [112.55706881489692, 61.0, 1.0]
+            [112.55706881624928, 61.0, 1.0]
         );
     }
 

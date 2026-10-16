@@ -3030,63 +3030,74 @@ mod accuracy_references {
     }
 }
 
-/// PERF-1 regression lock: `calc_heliocentric` does a 3× VSOP
-/// central-difference for speed. "Reuse central → forward diff" is
-/// O(h) (precision loss — WONTFIX, same as PERF-6); the only
-/// precision-safe optimization is an analytic VSOP-series derivative
-/// (large, own soak). This pins current heliocentric Mars
-/// position+speed at J2000 so any future derivative rewrite must
-/// reproduce it (tol 1e-6).
+/// The analytic VSOP87D derivative must agree with an independent Swiss
+/// heliocentric true-position reference and centered position differences.
 #[test]
 fn perf1_heliocentric_mars_speed_regression_lock() {
-    use celestial_core::{calc_ut, Body, CalcFlags};
-    let p = calc_ut(
-        JulianDay::new(2451545.0),
-        Body::MARS,
-        CalcFlags::BUILTIN | CalcFlags::HELIOCENTRIC | CalcFlags::SPEED,
-    )
-    .unwrap();
-    let approx = |got: f64, want: f64, what: &str| {
+    let jd = 2451545.0;
+    let flags = CalcFlags::BUILTIN | CalcFlags::HELIOCENTRIC | CalcFlags::SPEED;
+    let p = calc_ut(JulianDay::new(jd), Body::MARS, flags).unwrap();
+    // Swiss Ephemeris 2.10.03, swe_calc_ut, SWIEPH|HELCTR|SPEED|NONUT|TRUEPOS.
+    // VSOP87D uses the dynamical date frame; its FK5 offset is below 0.2 arcsec.
+    let reference = [
+        359.44774594971364,
+        -1.4196649220212667,
+        1.3912080519246188,
+        0.6259424424333448,
+        0.012955364285025767,
+        0.0005173355454504897,
+    ];
+    for ((actual, expected), tolerance) in
+        [p.lon, p.lat, p.dist, p.speed_lon, p.speed_lat, p.speed_dist]
+            .into_iter()
+            .zip(reference)
+            .zip([0.2 / 3600.0, 0.2 / 3600.0, 1e-7, 1e-6, 1e-6, 1e-8])
+    {
         assert!(
-            (got - want).abs() < 1e-6,
-            "{what}: got {got:.10}, want {want:.10}"
+            (actual - expected).abs() < tolerance,
+            "{actual} != {expected}"
         );
-    };
-    approx(p.lon, 359.4243858023, "lon");
-    approx(p.lat, -1.4276220730, "lat");
-    approx(p.dist, 1.3910075488, "dist");
-    approx(p.speed_lon, 0.6257091822, "speed_lon");
-    approx(p.speed_lat, 0.0129670887, "speed_lat");
-    approx(p.speed_dist, 0.0005168649, "speed_dist");
+    }
+    let h = 0.01;
+    let flags = CalcFlags::BUILTIN | CalcFlags::HELIOCENTRIC;
+    let before = calc_ut(JulianDay::new(jd - h), Body::MARS, flags).unwrap();
+    let after = calc_ut(JulianDay::new(jd + h), Body::MARS, flags).unwrap();
+    let centered = [
+        diff_deg_signed(after.lon, before.lon) / (2.0 * h),
+        (after.lat - before.lat) / (2.0 * h),
+        (after.dist - before.dist) / (2.0 * h),
+    ];
+    for (analytic, numeric) in [p.speed_lon, p.speed_lat, p.speed_dist]
+        .into_iter()
+        .zip(centered)
+    {
+        assert!((analytic - numeric).abs() < 1e-7);
+    }
 }
 
-/// PERF-2..5 regression lock. The post-bisection `calc_ut`/`houses`
-/// re-evaluations in next_aspect_with / next_aspect_cusp are NOT
-/// redundant: the scan loop uses SPEED-stripped flags, so the final
-/// full-flag eval at the exact converged jd is the authoritative
-/// result — "reuse the scan eval" would drop SPEED (precision loss,
-/// WONTFIX like PERF-1/6). bisect_retro_station already reuses `pm`
-/// (no post-loop recompute — PERF-4 audit was inaccurate).
-/// next_aspect_with2 is two independent ±aspect searches; merging is a
-/// precision-sensitive rewrite for marginal gain (PERF-5, declined).
-/// This pins the converged outputs so any future change must
-/// reproduce them (tol 1e-6).
+/// Search results must reach their target and preserve full SPEED outputs.
+/// Event dates follow the ephemeris model and are not frozen to old coefficients.
 #[test]
 fn perf2345_search_regression_lock() {
-    use celestial_core::{
-        next_aspect_cusp, next_aspect_with, next_retro, Body, CalcFlags, HouseSystem,
-    };
     let f = CalcFlags::BUILTIN | CalcFlags::SPEED;
-    let approx = |got: f64, want: f64, what: &str| {
-        assert!(
-            (got - want).abs() < 1e-6,
-            "{what}: got {got:.10}, want {want:.10}"
-        );
+    let check_full_position = |actual: [f64; 6], body, jd| {
+        let p = calc_ut(JulianDay::new(jd), body, f).unwrap();
+        for (got, expected) in
+            actual
+                .into_iter()
+                .zip([p.lon, p.lat, p.dist, p.speed_lon, p.speed_lat, p.speed_dist])
+        {
+            assert!(
+                (got - expected).abs() < 1e-12,
+                "full-flag result {got} != {expected}"
+            );
+        }
     };
-
     let a = next_aspect_with(Body::MARS, 0.0, Body::JUPITER, 2451545.0, false, 4000.0, f).unwrap();
-    approx(a.jd, 2451640.22880441, "aspect_with.jd");
-    approx(a.pos1[0], 39.9522907799, "aspect_with.pos1.lon");
+    assert!(a.jd > 2451545.0 && a.jd < 2455545.0);
+    assert!(diff_deg_signed(a.pos1[0], a.pos2[0]).abs() < 1e-6);
+    check_full_position(a.pos1, Body::MARS, a.jd);
+    check_full_position(a.pos2, Body::JUPITER, a.jd);
 
     let c = next_aspect_cusp(
         Body::SUN,
@@ -3100,12 +3111,17 @@ fn perf2345_search_regression_lock() {
         f,
     )
     .unwrap();
-    approx(c.jd, 2451545.99610184, "aspect_cusp.jd");
-    approx(c.pos[0], 281.3913799069, "aspect_cusp.pos.lon");
+    assert!(c.jd > 2451545.0 && c.jd < 2451547.0);
+    assert!(diff_deg_signed(c.pos[0], c.cusps[10]).abs() < 1e-5);
+    check_full_position(c.pos, Body::SUN, c.jd);
 
     let r = next_retro(Body::MERCURY, 2451545.0, false, 400.0, f).unwrap();
-    approx(r.jd, 2451596.02107659, "retro.jd");
-    approx(r.pos[0], 347.1761286497, "retro.pos.lon");
+    assert!(r.jd > 2451545.0 && r.jd < 2451945.0);
+    assert!(r.pos[3].abs() < 1e-6, "station speed {}", r.pos[3]);
+    let before = calc_ut(JulianDay::new(r.jd - 0.01), Body::MERCURY, f).unwrap();
+    let after = calc_ut(JulianDay::new(r.jd + 0.01), Body::MERCURY, f).unwrap();
+    assert!(before.speed_lon > 0.0 && after.speed_lon < 0.0);
+    check_full_position(r.pos, Body::MERCURY, r.jd);
 }
 
 // ─── Coverage: pure angle/lookup helpers (geoformat/utils) ───────────────────

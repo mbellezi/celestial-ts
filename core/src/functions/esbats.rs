@@ -356,6 +356,9 @@ fn name_by_month(month: i32) -> EsbatName {
     }
 }
 
+// Wrapper regression vectors follow the corrected VSOP87D/apparent models;
+// external model anchors and measured residuals are in astronomy tests and
+// docs/validation/pluto-nodes-model.md. Preserve strict wrapper tolerances.
 #[cfg(test)]
 mod cov_tests {
     #[cfg(target_arch = "wasm32")]
@@ -432,47 +435,47 @@ mod cov_tests {
 
     #[test]
     fn full_moon_algorithms_match_regression_vectors() {
-        assert_eq!(elongation(2_451_545.0).unwrap(), 302.947_972_773_529_44);
+        assert_eq!(elongation(2_451_545.0).unwrap(), 302.95483746923765);
         assert_eq!(
             full_moon_signed(2_451_545.0).unwrap(),
-            122.947_972_773_529_44
+            122.95483746923765
         );
-        assert_eq!(next_full_moon(2_451_545.0).unwrap(), 2_451_564.695_414_848);
+        assert_eq!(next_full_moon(2_451_545.0).unwrap(), 2451564.6947523844);
         assert_eq!(
             newton_refine_full_moon(2_451_564.7, 2_451_563.0, 2_451_566.0).unwrap(),
-            2_451_564.695_414_705
+            2451564.6947521963
         );
         assert_eq!(
             bisect_full_moon(2_451_563.0, 2_451_566.0).unwrap(),
-            2_451_564.695_414_848_6
+            2451564.6947523844
         );
         assert_eq!(
             bisect_fallback_full_moon(2_451_563.0, 2_451_566.0).unwrap(),
-            2_451_564.695_373_535
+            2451564.6946411133
         );
 
         let esbat = next_esbat(2_451_545.0).unwrap();
         assert_eq!(esbat.name, EsbatName::Wolf);
         assert_eq!(esbat.display_name, "Wolf Moon");
-        assert_eq!(esbat.jd, 2_451_564.695_414_848);
+        assert_eq!(esbat.jd, 2451564.6947523844);
 
         let year = esbats_for_year(2024).unwrap();
         assert_eq!(year.len(), 12);
         assert_eq!(
             year.iter().map(|esbat| esbat.jd).collect::<Vec<_>>(),
             [
-                2_460_335.246_546_664,
-                2_460_365.021_785_906,
-                2_460_394.792_341_809,
-                2_460_424.492_619_832_5,
-                2_460_454.078_767_684_8,
-                2_460_483.547_498_919_5,
-                2_460_512.929_167_372,
-                2_460_542.268_537_950_7,
-                2_460_571.607_732_561_4,
-                2_460_600.976_912_261,
-                2_460_630.395_015_158_7,
-                2_460_659.876_584_482_4,
+                2460335.245831504,
+                2460365.0211355593,
+                2460394.7918962887,
+                2460424.4923494835,
+                2460454.078573554,
+                2460483.5471430435,
+                2460512.928582106,
+                2460542.267928668,
+                2460571.6072908333,
+                2460600.9766606446,
+                2460630.3948058123,
+                2460659.876173835,
             ]
         );
 

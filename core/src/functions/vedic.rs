@@ -271,6 +271,9 @@ pub fn residential_strength(graha: f64, bm: &[f64; 12]) -> Option<f64> {
     None
 }
 
+// Wrapper regression vectors follow the corrected VSOP87D/apparent models;
+// external model anchors and measured residuals are in astronomy tests and
+// docs/validation/pluto-nodes-model.md. Preserve strict wrapper tolerances.
 #[cfg(test)]
 mod tests {
     #[cfg(target_arch = "wasm32")]
@@ -315,12 +318,12 @@ mod tests {
     fn saturn_four_stars_regression() {
         let actual = saturn_4_stars(JulianDay::new(2_452_275.5), CalcFlags::BUILTIN).unwrap();
         let expected = [
-            68.97365443719134,
+            69.3239453582242,
             69.81695132105718,
             149.85705791063336,
             249.79030935491775,
             333.8886761406571,
-            98.2418178951306,
+            98.97213629265022,
         ];
         for (actual, expected) in actual.into_iter().zip(expected) {
             assert_close(actual, expected);

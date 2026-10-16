@@ -3,3 +3,5 @@
 /node_modules/
 /*.tgz
 /npm-shrinkwrap.json
+__pycache__/
+*.py[cod]

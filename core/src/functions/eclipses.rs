@@ -436,6 +436,9 @@ pub fn lun_occult_where(
     })
 }
 
+// Wrapper regression vectors follow the corrected VSOP87D/apparent models;
+// external model anchors and measured residuals are in astronomy tests and
+// docs/validation/pluto-nodes-model.md. Preserve strict wrapper tolerances.
 #[cfg(test)]
 mod tests {
     #[cfg(target_arch = "wasm32")]
@@ -450,7 +453,7 @@ mod tests {
         assert_eq!(direct.ret_flags, 5);
         assert_eq!(
             direct.geopos[..2],
-            [-112.397_420_263_862_07, 17.471_952_013_398_788]
+            [-112.41812794482985, 17.471_952_013_398_788]
         );
         assert_eq!(direct.attr[0], 1.243_040_393_729_840_9);
 
@@ -458,7 +461,7 @@ mod tests {
         assert_eq!(searched.ret_flags, 33);
         assert_eq!(
             searched.geopos[..2],
-            [82.394_190_704_691_54, 26.598_867_953_774_743]
+            [82.37621324709232, 26.598_867_953_774_743]
         );
         assert_eq!(searched.attr[0], 1.098_997_037_776_069_2);
 
@@ -486,13 +489,13 @@ mod tests {
         );
         crate::astronomy::test_support::assert_close(
             [moon_body_separation(2_451_545.0, Body::VENUS).unwrap()],
-            [18.467_528_321_254_28],
+            [18.465911292981023],
         );
         assert_eq!(moon_body_separation(2_451_545.0, Body(i32::MAX)), None);
         let (jd, separation) = refine_separation_minimum(2_451_545.0, 0.1, Body::VENUS);
         crate::astronomy::test_support::assert_close(
             [jd, separation],
-            [2_451_545.199_998_957, 16.341_352_223_792_576],
+            [2_451_545.199_998_957, 16.33965910001326],
         );
     }
 
@@ -524,7 +527,7 @@ mod tests {
         )
         .unwrap();
         assert_eq!(forward.ret_flags, 64);
-        assert_eq!(forward.tret[0], 2_451_551.737_477_73);
+        assert_eq!(forward.tret[0], 2451551.737448831);
 
         let backward = lun_occult_when_glob(
             JulianDay::new(2_451_545.0),
@@ -535,7 +538,7 @@ mod tests {
             true,
         )
         .unwrap();
-        assert_eq!(backward.tret[0], 2_451_524.417_441_363_4);
+        assert_eq!(backward.tret[0], 2451524.41756487);
 
         let local = lun_occult_when_loc(
             JulianDay::new(2_451_545.0),
@@ -547,6 +550,6 @@ mod tests {
         )
         .unwrap();
         assert_eq!(local.tret, forward.tret);
-        assert_eq!(local.attr[1], -6.585_406_883_780_061_4);
+        assert_eq!(local.attr[1], -6.592897497020969);
     }
 }

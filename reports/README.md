@@ -1,6 +1,6 @@
 # Relatórios coletivos
 
-`celestial-wasm/reports` fornece JSON em português para intervalos entre 2026 e 2035. A referência é ocidental, tropical e geocêntrica; a leitura é coletiva e psicológica, sem mapa natal ou previsão individual.
+`celestial-wasm/reports` fornece relatórios em JSON, texto, HTML e Markdown em português para intervalos entre 2026 e 2035. A referência é ocidental, tropical e geocêntrica; a leitura é coletiva e psicológica, sem mapa natal ou previsão individual.
 
 ```ts
 import init, * as core from 'celestial-wasm';
@@ -62,3 +62,110 @@ A seleção editorial favorece eclipses, estações, ingressos não lunares e as
 `selection` registra eventos totais, selecionados e omitidos; a omissão é deliberada. `eventIds`, `interpretationKey` e o pequeno dicionário `interpretations` permitem conferir cada destaque no relatório completo. Os caches `compact` e `compactRendered` reutilizam o relatório calculado, respeitam `cacheSize` e o orçamento estimado de 8 MiB cada; `clearCache()` também os limpa. Opções equivalentes usam a mesma chave canônica e objetos retornados são cópias independentes.
 
 Execute `npm run build:reports && node reports/examples/generate-compact.ts` para reproduzir os exemplos de [mês em JSON](examples/february-2026-compact.json), [mês em texto](examples/february-2026-compact.txt), [dia em JSON](examples/2026-02-17-compact.json) e [dia em texto](examples/2026-02-17-compact.txt). O script imprime contagens de palavras, seleção e tempos da primeira consulta e do cache.
+
+## Leitura astro em prosa
+
+`generator.reportAstro(input, options?)` retorna um `AstroReport` com título temático, panorama e passagens em ordem cronológica. `generator.reportAstroText(input, options?)` apresenta essa leitura em texto, com a seção “O MOMENTO ATUAL”, transições datadas e reflexões práticas. No dia, a leitura é mais breve; no mês e em outros períodos, há espaço para desenvolver a sequência dos acontecimentos.
+
+```ts
+const october = {
+  start: '2026-10-01',
+  end: '2026-10-31',
+  timeZone: 'America/Sao_Paulo',
+};
+const astro = generator.reportAstro(october);
+const astroText = generator.reportAstroText(october);
+const shorter = generator.reportAstro(october, { maxEvents: 8 });
+
+// Também é possível reaproveitar um relatório completo já calculado.
+import { astroReport, renderAstroReportText } from 'celestial-wasm/reports';
+const fromFull = astroReport(generator.report(october));
+const fromObject = renderAstroReportText(fromFull);
+```
+
+`maxEvents` aceita inteiros de 1 a 32. O padrão seleciona até quatro eventos para um único dia local e dezoito para um mês ou outro período. A seleção é deliberada: `selection` informa o total de eventos, quantos foram selecionados e quantos foram omitidos. As versões completa e compacta mantêm seus próprios formatos e critérios.
+
+A prosa é determinística e usa um corpus editorial local versionado, sem LLM, API ou acesso à rede durante a geração. O conteúdo parte dos eventos calculados: não acrescenta Quíron, configurações de aspectos ou acontecimentos ausentes dos dados. Cada passagem preserva `eventIds`, `interpretationKeys`, `sourceKeys` e `exact`, permitindo conferir sua origem no relatório completo. `editorialVersion` identifica a versão do corpus. Os horários e as datas seguem o fuso solicitado; condições que já estavam em curso são descritas como continuidade, sem simular um novo ingresso, e os instantes exatos pertencem ao intervalo consultado.
+
+Os caches `astro` e `astroRendered` reutilizam os cálculos e respeitam `cacheSize` e o orçamento estimado de 8 MiB por cache. Objetos retornados são cópias independentes, opções equivalentes compartilham a chave canônica e `clearCache()` também limpa esses resultados.
+
+Após compilar o núcleo WASM, execute:
+
+```sh
+npm run build:reports
+node reports/examples/generate-astro.ts
+```
+
+O script usa `America/Sao_Paulo` e salva quatro arquivos em `reports/examples/`: `october-2026-astro.json`, `october-2026-astro.txt`, `2026-10-16-astro.json` e `2026-10-16-astro.txt`. Também imprime contagem de palavras, seleção editorial, tempo da primeira consulta, tempo da recuperação em cache e estatísticas dos caches.
+
+
+## HTML e Markdown
+
+As três leituras oferecem HTML básico e Markdown. Os métodos do gerador usam
+as mesmas opções das respectivas saídas em texto:
+
+| Leitura | HTML | Markdown | Opções |
+| --- | --- | --- | --- |
+| Completa | `generator.reportHTML(input, options?)` | `generator.reportMarkdown(input, options?)` | `ReportTextOptions`, com seleção de áreas em `domains` |
+| Compacta | `generator.reportCompactHTML(input, options?)` | `generator.reportCompactMarkdown(input, options?)` | `CompactReportOptions`, com `maxHighlights` e `domains` |
+| Astro | `generator.reportAstroHTML(input, options?)` | `generator.reportAstroMarkdown(input, options?)` | `AstroReportOptions`, com `maxEvents` |
+
+Para formatar um objeto existente, use os renderizadores independentes. Eles
+não inicializam o WASM, consultam serviços externos nem repetem cálculos
+astronômicos:
+
+```ts
+import {
+  renderReportHTML,
+  renderReportMarkdown,
+  renderCompactReportHTML,
+  renderCompactReportMarkdown,
+  renderAstroReportHTML,
+  renderAstroReportMarkdown,
+} from 'celestial-wasm/reports';
+
+const fullHTML = renderReportHTML(january, { domains: ['general', 'family'] });
+const fullMarkdown = renderReportMarkdown(january, { domains: 'all' });
+const compact = generator.reportCompact(input, { maxHighlights: 4 });
+const compactHTML = renderCompactReportHTML(compact);
+const compactMarkdown = renderCompactReportMarkdown(compact);
+const astro = generator.reportAstro(input, { maxEvents: 8 });
+const astroHTML = renderAstroReportHTML(astro);
+const astroMarkdown = renderAstroReportMarkdown(astro);
+```
+
+O HTML é um fragmento `<article lang="pt-BR">` com títulos hierárquicos, seções
+e parágrafos. Não inclui `doctype`, documento completo, CSS ou scripts; a
+aplicação hospedeira define a apresentação. A leitura completa organiza a
+cronologia com títulos de evento e subtítulos por área selecionada. A compacta
+inclui “Panorama”, “Destaques”, “Áreas da vida”, quando houver áreas, e “Sobre esta
+leitura”. A astro usa seu título temático e as seções “Panorama”, “O MOMENTO
+ATUAL” e “Sobre esta leitura”. As datas e o conteúdo seguem os respectivos
+objetos e renderizadores de texto.
+
+Os campos de conteúdo são tratados como texto literal: o HTML escapa caracteres
+reservados, e o Markdown escapa caracteres de marcação e HTML literal. Uma tag
+presente no texto de uma interpretação aparece como texto, sem ser inserida como
+HTML ativo. O Markdown usa títulos e parágrafos comuns, sem depender de extensões.
+
+As saídas do gerador compartilham os caches `rendered`, `compactRendered` e
+`astroRendered` com o texto, usando chaves distintas por formato e opções.
+Cada cache mantém o limite `cacheSize` e o orçamento estimado de 8 MiB;
+`clearCache()` limpa também essas saídas. Reutilizar um objeto com os
+renderizadores independentes permite gerar outros formatos sem consultar o
+gerador novamente.
+
+Após `npm run build:reports`, execute:
+
+```sh
+node reports/examples/generate-markup.ts
+```
+
+O script lê os JSON já salvos em `reports/examples/`, sem inicializar o núcleo
+WASM, e gera estes pares de arquivos:
+
+| Leitura | HTML | Markdown |
+| --- | --- | --- |
+| Completa de fevereiro de 2026 | [february-2026.html](examples/february-2026.html) | [february-2026.md](examples/february-2026.md) |
+| Compacta de fevereiro de 2026 | [february-2026-compact.html](examples/february-2026-compact.html) | [february-2026-compact.md](examples/february-2026-compact.md) |
+| Astro de outubro de 2026 | [october-2026-astro.html](examples/october-2026-astro.html) | [october-2026-astro.md](examples/october-2026-astro.md) |

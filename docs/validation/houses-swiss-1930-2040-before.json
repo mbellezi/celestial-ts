@@ -1,0 +1,1091 @@
+{
+  "swissVersion": "2.10.03",
+  "wrapperVersion": "2.10.3.2",
+  "reproducibility": {
+    "nodeVersion": "v24.18.0",
+    "sha256": {
+      "reference": "fd6efa3e383d01a9d5635b0f480de5190bff331fc0fd68be4112852b0dc20be8",
+      "swissScript": "5fc0e0c7dc9e982e9334345ce9a4816af5ec8188faae8f3d4b5eb190cf57083f",
+      "coreScript": "89946f26c3e26135d8999893b7729dd2ed5b58a1f7449673db37184cd201caa0"
+    }
+  },
+  "polarOppositionCounts": {
+    "E/UT": {
+      "locations": 960,
+      "opposition180": 312,
+      "ascOpposition180": 312
+    },
+    "E/sameARMCeps": {
+      "locations": 960,
+      "opposition180": 312,
+      "ascOpposition180": 312
+    },
+    "W/UT": {
+      "locations": 960,
+      "opposition180": 312,
+      "ascOpposition180": 312
+    },
+    "W/sameARMCeps": {
+      "locations": 960,
+      "opposition180": 312,
+      "ascOpposition180": 312
+    }
+  },
+  "polarOppositionToleranceArcsec": 3600,
+  "wasmSha256": "4bb097835103c488972e5776ad6aa9d2b6dd4adbf15a917e766bda3edfc13881",
+  "methodology": {
+    "reference": "pyswisseph houses UT tropical, Gregorian Julian day; houses_armc using Swiss apparent sidereal time and true obliquity calc_ut(ECL_NUT)",
+    "difference": "shortest angular distance; arcseconds",
+    "denominators": "48 dates x 11 latitudes x 5 longitudes x 3 systems = 7920 rows; normal 1680 locations/system and polar 960 locations/system; cusp statistics contain 12 values/location; angle statistics one/location. All 960 polar Placidus rows throw in Swiss and are excluded from numeric comparison.",
+    "samplingWarning": "Sampled grid only. Zero WholeSign disagreement does not exclude sign-boundary disagreements when ASC is within the UT angle error of a sign edge.",
+    "isolation": "sameARMCeps passes identical Swiss ARMC and true obliquity to both engines, isolating house formulae from time/obliquity pipeline."
+  },
+  "units": "arcsec shortest circular difference",
+  "grid": {
+    "years": "1930 to 2040 decade inclusive",
+    "datesHours": [
+      "Jan1 0.12345",
+      "Mar20 6.789",
+      "Jun21 12.3456",
+      "Oct16 23.98765"
+    ],
+    "latitudes": [
+      -80,
+      -70,
+      -60,
+      -45,
+      -23.55,
+      0,
+      23.55,
+      45,
+      60,
+      70,
+      80
+    ],
+    "longitudes": [
+      -179.9,
+      -74,
+      -46.6333,
+      0,
+      151.2
+    ],
+    "systems": [
+      "P",
+      "E",
+      "W"
+    ],
+    "rowCount": 7920
+  },
+  "swissErrors": 960,
+  "swissPolarErrors": 960,
+  "coreNonfinite": 0,
+  "stats": {
+    "polar/E/UT/cusps": {
+      "n": 11520,
+      "p50": 5.579890483386407,
+      "p95": 647998.1723402496,
+      "p99": 647999.7260542938,
+      "max": 647999.9933642625,
+      "over1arcsec": 8964,
+      "over60arcsec": 3744,
+      "worst": {
+        "arcsec": 647999.9933642625,
+        "field": "cusp1",
+        "got": 352.54328007322056,
+        "want": 172.54328191648096,
+        "case": {
+          "year": 2020,
+          "month": 3,
+          "day": 20,
+          "hour": 6.789,
+          "lat": -80,
+          "lon": -179.9,
+          "armc": 100.19748823703966,
+          "eps": 23.436651041456674
+        }
+      }
+    },
+    "polar/E/UT/ASC": {
+      "n": 960,
+      "p50": 5.579890483386407,
+      "p95": 647998.1723402496,
+      "p99": 647999.726054294,
+      "max": 647999.9933642625,
+      "over1arcsec": 747,
+      "over60arcsec": 312,
+      "worst": {
+        "arcsec": 647999.9933642625,
+        "field": "ASC",
+        "got": 352.54328007322056,
+        "want": 172.54328191648096,
+        "case": {
+          "year": 2020,
+          "month": 3,
+          "day": 20,
+          "hour": 6.789,
+          "lat": -80,
+          "lon": -179.9,
+          "armc": 100.19748823703966,
+          "eps": 23.436651041456674
+        }
+      }
+    },
+    "polar/E/UT/MC": {
+      "n": 960,
+      "p50": 0.597253279920551,
+      "p95": 1.7933966433247406,
+      "p99": 1.986728769952606,
+      "max": 2.1245848538001155,
+      "over1arcsec": 332,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 2.1245848538001155,
+        "field": "MC",
+        "got": 234.79318013409912,
+        "want": 234.7937702965585,
+        "case": {
+          "year": 1950,
+          "month": 3,
+          "day": 20,
+          "hour": 6.789,
+          "lat": -80,
+          "lon": -46.6333,
+          "armc": 232.43616620165275,
+          "eps": 23.448450031757428
+        }
+      }
+    },
+    "polar/E/UT/ARMC": {
+      "n": 960,
+      "p50": 0.09083262111744261,
+      "p95": 0.20782362644240493,
+      "p99": 0.2118249399245542,
+      "max": 0.2118249399245542,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0.2118249399245542,
+        "field": "ARMC",
+        "got": 281.87603859537643,
+        "want": 281.8760974356376,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -80,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "polar/E/sameARMCeps/cusps": {
+      "n": 11520,
+      "p50": 0,
+      "p95": 648000,
+      "p99": 648000,
+      "max": 648000,
+      "over1arcsec": 3744,
+      "over60arcsec": 3744,
+      "worst": {
+        "arcsec": 648000,
+        "field": "cusp1",
+        "got": 25.81075713206542,
+        "want": 205.81075713206542,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -80,
+          "lon": -74,
+          "armc": 27.77609743563758,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "polar/E/sameARMCeps/ASC": {
+      "n": 960,
+      "p50": 0,
+      "p95": 648000,
+      "p99": 648000,
+      "max": 648000,
+      "over1arcsec": 312,
+      "over60arcsec": 312,
+      "worst": {
+        "arcsec": 648000,
+        "field": "ASC",
+        "got": 25.81075713206542,
+        "want": 205.81075713206542,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -80,
+          "lon": -74,
+          "armc": 27.77609743563758,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "polar/E/sameARMCeps/MC": {
+      "n": 960,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0,
+        "field": "MC",
+        "got": 280.91980499756437,
+        "want": 280.91980499756437,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -80,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "polar/E/sameARMCeps/ARMC": {
+      "n": 960,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0,
+        "field": "ARMC",
+        "got": 281.8760974356376,
+        "want": 281.8760974356376,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -80,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "polar/W/UT/cusps": {
+      "n": 11520,
+      "p50": 0,
+      "p95": 648000,
+      "p99": 648000,
+      "max": 648000,
+      "over1arcsec": 3744,
+      "over60arcsec": 3744,
+      "worst": {
+        "arcsec": 648000,
+        "field": "cusp1",
+        "got": 0,
+        "want": 180,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -80,
+          "lon": -74,
+          "armc": 27.77609743563758,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "polar/W/UT/ASC": {
+      "n": 960,
+      "p50": 5.579890483386407,
+      "p95": 647998.1723402496,
+      "p99": 647999.726054294,
+      "max": 647999.9933642625,
+      "over1arcsec": 747,
+      "over60arcsec": 312,
+      "worst": {
+        "arcsec": 647999.9933642625,
+        "field": "ASC",
+        "got": 352.54328007322056,
+        "want": 172.54328191648096,
+        "case": {
+          "year": 2020,
+          "month": 3,
+          "day": 20,
+          "hour": 6.789,
+          "lat": -80,
+          "lon": -179.9,
+          "armc": 100.19748823703966,
+          "eps": 23.436651041456674
+        }
+      }
+    },
+    "polar/W/UT/MC": {
+      "n": 960,
+      "p50": 0.597253279920551,
+      "p95": 1.7933966433247406,
+      "p99": 1.986728769952606,
+      "max": 2.1245848538001155,
+      "over1arcsec": 332,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 2.1245848538001155,
+        "field": "MC",
+        "got": 234.79318013409912,
+        "want": 234.7937702965585,
+        "case": {
+          "year": 1950,
+          "month": 3,
+          "day": 20,
+          "hour": 6.789,
+          "lat": -80,
+          "lon": -46.6333,
+          "armc": 232.43616620165275,
+          "eps": 23.448450031757428
+        }
+      }
+    },
+    "polar/W/UT/ARMC": {
+      "n": 960,
+      "p50": 0.09083262111744261,
+      "p95": 0.20782362644240493,
+      "p99": 0.2118249399245542,
+      "max": 0.2118249399245542,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0.2118249399245542,
+        "field": "ARMC",
+        "got": 281.87603859537643,
+        "want": 281.8760974356376,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -80,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "polar/W/sameARMCeps/cusps": {
+      "n": 11520,
+      "p50": 0,
+      "p95": 648000,
+      "p99": 648000,
+      "max": 648000,
+      "over1arcsec": 3744,
+      "over60arcsec": 3744,
+      "worst": {
+        "arcsec": 648000,
+        "field": "cusp1",
+        "got": 0,
+        "want": 180,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -80,
+          "lon": -74,
+          "armc": 27.77609743563758,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "polar/W/sameARMCeps/ASC": {
+      "n": 960,
+      "p50": 0,
+      "p95": 648000,
+      "p99": 648000,
+      "max": 648000,
+      "over1arcsec": 312,
+      "over60arcsec": 312,
+      "worst": {
+        "arcsec": 648000,
+        "field": "ASC",
+        "got": 25.81075713206542,
+        "want": 205.81075713206542,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -80,
+          "lon": -74,
+          "armc": 27.77609743563758,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "polar/W/sameARMCeps/MC": {
+      "n": 960,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0,
+        "field": "MC",
+        "got": 280.91980499756437,
+        "want": 280.91980499756437,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -80,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "polar/W/sameARMCeps/ARMC": {
+      "n": 960,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0,
+        "field": "ARMC",
+        "got": 281.8760974356376,
+        "want": 281.8760974356376,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -80,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/P/UT/cusps": {
+      "n": 20160,
+      "p50": 1.025893681890011,
+      "p95": 9.778705759936202,
+      "p99": 21.752586280763353,
+      "max": 47.2504271240723,
+      "over1arcsec": 10236,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 47.2504271240723,
+        "field": "cusp1",
+        "got": 302.17447087456344,
+        "want": 302.18759599320896,
+        "case": {
+          "year": 1960,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": 60,
+          "lon": 151.2,
+          "armc": 252.71676578024352,
+          "eps": 23.44174321044507
+        }
+      }
+    },
+    "normal/P/UT/ASC": {
+      "n": 1680,
+      "p50": 1.623976047449105,
+      "p95": 21.298097723229148,
+      "p99": 40.74687343836558,
+      "max": 47.2504271240723,
+      "over1arcsec": 1020,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 47.2504271240723,
+        "field": "ASC",
+        "got": 302.17447087456344,
+        "want": 302.18759599320896,
+        "case": {
+          "year": 1960,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": 60,
+          "lon": 151.2,
+          "armc": 252.71676578024352,
+          "eps": 23.44174321044507
+        }
+      }
+    },
+    "normal/P/UT/MC": {
+      "n": 1680,
+      "p50": 0.597253279920551,
+      "p95": 1.7933966433247406,
+      "p99": 1.986728769952606,
+      "max": 2.1245848538001155,
+      "over1arcsec": 581,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 2.1245848538001155,
+        "field": "MC",
+        "got": 234.79318013409912,
+        "want": 234.7937702965585,
+        "case": {
+          "year": 1950,
+          "month": 3,
+          "day": 20,
+          "hour": 6.789,
+          "lat": -60,
+          "lon": -46.6333,
+          "armc": 232.43616620165275,
+          "eps": 23.448450031757428
+        }
+      }
+    },
+    "normal/P/UT/ARMC": {
+      "n": 1680,
+      "p50": 0.09083262111744261,
+      "p95": 0.20782362644240493,
+      "p99": 0.2118249399245542,
+      "max": 0.2118249399245542,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0.2118249399245542,
+        "field": "ARMC",
+        "got": 281.87603859537643,
+        "want": 281.8760974356376,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/P/sameARMCeps/cusps": {
+      "n": 20160,
+      "p50": 0.0000011267275112913921,
+      "p95": 0.00007968947102199309,
+      "p99": 0.00019564704416552559,
+      "max": 0.0004885675480181817,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0.0004885675480181817,
+        "field": "cusp6",
+        "got": 138.82976388834538,
+        "want": 138.82976375263212,
+        "case": {
+          "year": 2000,
+          "month": 3,
+          "day": 20,
+          "hour": 6.789,
+          "lat": 60,
+          "lon": 0,
+          "armc": 279.94400449476433,
+          "eps": 23.43813918147586
+        }
+      }
+    },
+    "normal/P/sameARMCeps/ASC": {
+      "n": 1680,
+      "p50": 0,
+      "p95": 0,
+      "p99": 4.092726157978177e-10,
+      "max": 4.092726157978177e-10,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 4.092726157978177e-10,
+        "field": "ASC",
+        "got": 44.626535346356405,
+        "want": 44.626535346356505,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": 60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/P/sameARMCeps/MC": {
+      "n": 1680,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0,
+        "field": "MC",
+        "got": 280.91980499756437,
+        "want": 280.91980499756437,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/P/sameARMCeps/ARMC": {
+      "n": 1680,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0,
+        "field": "ARMC",
+        "got": 281.8760974356376,
+        "want": 281.8760974356376,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/E/UT/cusps": {
+      "n": 20160,
+      "p50": 1.623976047449105,
+      "p95": 21.298097723229148,
+      "p99": 40.74687343836558,
+      "max": 47.2504271240723,
+      "over1arcsec": 12240,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 47.2504271240723,
+        "field": "cusp1",
+        "got": 302.17447087456344,
+        "want": 302.18759599320896,
+        "case": {
+          "year": 1960,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": 60,
+          "lon": 151.2,
+          "armc": 252.71676578024352,
+          "eps": 23.44174321044507
+        }
+      }
+    },
+    "normal/E/UT/ASC": {
+      "n": 1680,
+      "p50": 1.623976047449105,
+      "p95": 21.298097723229148,
+      "p99": 40.74687343836558,
+      "max": 47.2504271240723,
+      "over1arcsec": 1020,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 47.2504271240723,
+        "field": "ASC",
+        "got": 302.17447087456344,
+        "want": 302.18759599320896,
+        "case": {
+          "year": 1960,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": 60,
+          "lon": 151.2,
+          "armc": 252.71676578024352,
+          "eps": 23.44174321044507
+        }
+      }
+    },
+    "normal/E/UT/MC": {
+      "n": 1680,
+      "p50": 0.597253279920551,
+      "p95": 1.7933966433247406,
+      "p99": 1.986728769952606,
+      "max": 2.1245848538001155,
+      "over1arcsec": 581,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 2.1245848538001155,
+        "field": "MC",
+        "got": 234.79318013409912,
+        "want": 234.7937702965585,
+        "case": {
+          "year": 1950,
+          "month": 3,
+          "day": 20,
+          "hour": 6.789,
+          "lat": -60,
+          "lon": -46.6333,
+          "armc": 232.43616620165275,
+          "eps": 23.448450031757428
+        }
+      }
+    },
+    "normal/E/UT/ARMC": {
+      "n": 1680,
+      "p50": 0.09083262111744261,
+      "p95": 0.20782362644240493,
+      "p99": 0.2118249399245542,
+      "max": 0.2118249399245542,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0.2118249399245542,
+        "field": "ARMC",
+        "got": 281.87603859537643,
+        "want": 281.8760974356376,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/E/sameARMCeps/cusps": {
+      "n": 20160,
+      "p50": 0,
+      "p95": 0,
+      "p99": 4.092726157978177e-10,
+      "max": 4.092726157978177e-10,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 4.092726157978177e-10,
+        "field": "cusp5",
+        "got": 344.3427350562655,
+        "want": 344.3427350562656,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -60,
+          "lon": 0,
+          "armc": 101.77609743563758,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/E/sameARMCeps/ASC": {
+      "n": 1680,
+      "p50": 0,
+      "p95": 0,
+      "p99": 4.092726157978177e-10,
+      "max": 4.092726157978177e-10,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 4.092726157978177e-10,
+        "field": "ASC",
+        "got": 44.626535346356405,
+        "want": 44.626535346356505,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": 60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/E/sameARMCeps/MC": {
+      "n": 1680,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0,
+        "field": "MC",
+        "got": 280.91980499756437,
+        "want": 280.91980499756437,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/E/sameARMCeps/ARMC": {
+      "n": 1680,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0,
+        "field": "ARMC",
+        "got": 281.8760974356376,
+        "want": 281.8760974356376,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/W/UT/cusps": {
+      "n": 20160,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0,
+        "field": "cusp1",
+        "got": 0,
+        "want": 0,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/W/UT/ASC": {
+      "n": 1680,
+      "p50": 1.623976047449105,
+      "p95": 21.298097723229148,
+      "p99": 40.74687343836558,
+      "max": 47.2504271240723,
+      "over1arcsec": 1020,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 47.2504271240723,
+        "field": "ASC",
+        "got": 302.17447087456344,
+        "want": 302.18759599320896,
+        "case": {
+          "year": 1960,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": 60,
+          "lon": 151.2,
+          "armc": 252.71676578024352,
+          "eps": 23.44174321044507
+        }
+      }
+    },
+    "normal/W/UT/MC": {
+      "n": 1680,
+      "p50": 0.597253279920551,
+      "p95": 1.7933966433247406,
+      "p99": 1.986728769952606,
+      "max": 2.1245848538001155,
+      "over1arcsec": 581,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 2.1245848538001155,
+        "field": "MC",
+        "got": 234.79318013409912,
+        "want": 234.7937702965585,
+        "case": {
+          "year": 1950,
+          "month": 3,
+          "day": 20,
+          "hour": 6.789,
+          "lat": -60,
+          "lon": -46.6333,
+          "armc": 232.43616620165275,
+          "eps": 23.448450031757428
+        }
+      }
+    },
+    "normal/W/UT/ARMC": {
+      "n": 1680,
+      "p50": 0.09083262111744261,
+      "p95": 0.20782362644240493,
+      "p99": 0.2118249399245542,
+      "max": 0.2118249399245542,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0.2118249399245542,
+        "field": "ARMC",
+        "got": 281.87603859537643,
+        "want": 281.8760974356376,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/W/sameARMCeps/cusps": {
+      "n": 20160,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0,
+        "field": "cusp1",
+        "got": 0,
+        "want": 0,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/W/sameARMCeps/ASC": {
+      "n": 1680,
+      "p50": 0,
+      "p95": 0,
+      "p99": 4.092726157978177e-10,
+      "max": 4.092726157978177e-10,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 4.092726157978177e-10,
+        "field": "ASC",
+        "got": 44.626535346356405,
+        "want": 44.626535346356505,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": 60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/W/sameARMCeps/MC": {
+      "n": 1680,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0,
+        "field": "MC",
+        "got": 280.91980499756437,
+        "want": 280.91980499756437,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    },
+    "normal/W/sameARMCeps/ARMC": {
+      "n": 1680,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "max": 0,
+      "over1arcsec": 0,
+      "over60arcsec": 0,
+      "worst": {
+        "arcsec": 0,
+        "field": "ARMC",
+        "got": 281.8760974356376,
+        "want": 281.8760974356376,
+        "case": {
+          "year": 1930,
+          "month": 1,
+          "day": 1,
+          "hour": 0.12345,
+          "lat": -60,
+          "lon": -179.9,
+          "armc": 281.8760974356376,
+          "eps": 23.450198119400728
+        }
+      }
+    }
+  },
+  "diagnostics": {
+    "nonpolar": "Identical ARMC/eps removes most UT discrepancy. Core houses UT uses mean obliquity polynomial.",
+    "polar": "Swiss C API documents Porphyry fallback with ERR beyond polar circle; pyswisseph throws and does not expose fallback. Core returns finite clamped Placidus values. See polarOppositionCounts for measured 180-degree disagreements for each system and mode."
+  },
+  "sources": [
+    "https://www.astro.com/swisseph/swephprg.htm"
+  ]
+}

@@ -1,0 +1,575 @@
+{
+  "jdUT": 2462292.25,
+  "jdTT": 2462292.2508002133,
+  "auditSha256": "fddd69ded86f0a18f3af02ec6ef1f8a4d7d909f566140fbff73a765d8c2b61d3",
+  "generatorSha256": "52d7d25e5025a1a9e823772745d5db776b167cc15f0c5f33dfea058a5ffb3cd2",
+  "auditedInputHashes": {
+    "pkg/celestial_wasm.js": "344d0efa2ac5be2d4f43d2773252afc09ded3d0df969329ea259424b98b7b0df",
+    "pkg/celestial_wasm_bg.wasm": "76e94ee97cff2ff3da281224f69e29173e05c3f7e277e12c7b700e3223fd894c",
+    "core/src/astronomy/deflection.rs": "21b191e80a41723d03ae3318538c9ab893c2278d8987657389f3cdfb0239e0cb",
+    "core/src/astronomy/vsop87.rs": "20567773406bb40242440934add7742dd78b851c57ee0bd3102d20b6c07965c1",
+    "core/src/astronomy/vsop87_data.rs": "b49eb04cf219145bc21d20e0328246a866a19f97ff5bd57318cd4814bf68e618",
+    "core/src/astronomy/constants.rs": "34eb0569cb10fa85b9067e34234c490960e97a8377da1bca0feeca2284602fd0"
+  },
+  "swissVersion": "2.10.03",
+  "wrapperVersion": "2.10.3.2",
+  "ephemerisManifest": {
+    "upstreamCommit": "c113653fe37fe5cdbfcc030a6e341de03ef018d2",
+    "files": [
+      {
+        "name": "sepl_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/sepl_18.se1",
+        "bytes": 484061,
+        "sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+      },
+      {
+        "name": "semo_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/semo_18.se1",
+        "bytes": 1304771,
+        "sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+      },
+      {
+        "name": "seas_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/seas_18.se1",
+        "bytes": 223004,
+        "sha256": "a2cd8fc33807c78ca9a700c91c2e042258b12fc4796519e00781440b5ad8b2e2"
+      }
+    ]
+  },
+  "flags": {
+    "coreApparent": 258,
+    "coreHeliocentric": 8,
+    "swissUranusPreDeflectionXYZ": 5698,
+    "swissEarthGeometricReceptionXYZ": 5722,
+    "swissApparentWithSpeed": 258,
+    "swissNoDeflectionWithSpeed": 770
+  },
+  "description": "Read-only Uranus worst-speed diagnostic. Core geometry reconstructed by compiling audited VSOP87 and deflection modules without production edits; apparent positions use the audited WASM. Swiss observer Earth is geometric heliocentric at reception time (TRUEPOS); Uranus retains light time.",
+  "corePositions": [
+    {
+      "h": 0,
+      "tt": 2462292.2508002133,
+      "p": {
+        "lon": 74.33311960553378,
+        "lat": 0.0024101721051382604,
+        "dist": 20.27420410717428,
+        "speedLon": 0.05901559475186014,
+        "speedLat": -0.0004947896774487074,
+        "speedDist": -6.0653576389126366e-05,
+        "retFlags": 258
+      },
+      "uranusHelio": {
+        "lon": 74.33351652357835,
+        "lat": 0.002509743570516704,
+        "dist": 19.259630426267734,
+        "speedLon": 0,
+        "speedLat": 0,
+        "speedDist": 0,
+        "retFlags": 10
+      }
+    },
+    {
+      "h": 0.1,
+      "tt": 2462292.3508002134,
+      "p": {
+        "lon": 74.33942947425385,
+        "lat": 0.002393080340730464,
+        "dist": 20.274196706639504,
+        "speedLon": 0.06283471188502683,
+        "speedLat": 2.3978555878833147e-05,
+        "speedDist": -8.735700792005702e-05,
+        "retFlags": 258
+      },
+      "uranusHelio": {
+        "lon": 74.33468267657415,
+        "lat": 0.002525462609435511,
+        "dist": 19.259611599094328,
+        "speedLon": 0,
+        "speedLat": 0,
+        "speedDist": 0,
+        "retFlags": 10
+      }
+    },
+    {
+      "h": -0.1,
+      "tt": 2462292.150800213,
+      "p": {
+        "lon": 74.32933216883364,
+        "lat": 0.0024214498934292186,
+        "dist": 20.274208837530562,
+        "speedLon": 0.04170128334911279,
+        "speedLat": 0.000997389293663693,
+        "speedDist": -3.395341336033252e-05,
+        "retFlags": 258
+      },
+      "uranusHelio": {
+        "lon": 74.33235037265041,
+        "lat": 0.002494024555320828,
+        "dist": 19.259649253425547,
+        "speedLon": 0,
+        "speedLat": 0,
+        "speedDist": 0,
+        "retFlags": 10
+      }
+    },
+    {
+      "h": 0.01,
+      "tt": 2462292.260800213,
+      "p": {
+        "lon": 74.33371997937117,
+        "lat": 0.002405728518567527,
+        "dist": 20.27420348728237,
+        "speedLon": 0.0611493494012959,
+        "speedLat": -0.00040333661651179644,
+        "speedDist": -6.332413803448184e-05,
+        "retFlags": 258
+      },
+      "uranusHelio": {
+        "lon": 74.33363313878256,
+        "lat": 0.0025113154733041655,
+        "dist": 19.25962854355107,
+        "speedLon": 0,
+        "speedLat": 0,
+        "speedDist": 0,
+        "retFlags": 10
+      }
+    },
+    {
+      "h": -0.01,
+      "tt": 2462292.2408002135,
+      "p": {
+        "lon": 74.33254898710302,
+        "lat": 0.0024153990499592255,
+        "dist": 20.274204700364336,
+        "speedLon": 0.05511167299119746,
+        "speedLat": -0.0005556587803902634,
+        "speedDist": -5.798416937767792e-05,
+        "retFlags": 258
+      },
+      "uranusHelio": {
+        "lon": 74.3333999083954,
+        "lat": 0.0025081716679657804,
+        "dist": 19.259632308984195,
+        "speedLon": 0,
+        "speedLat": 0,
+        "speedDist": 0,
+        "retFlags": 10
+      }
+    },
+    {
+      "h": 0.001,
+      "tt": 2462292.2518002135,
+      "p": {
+        "lon": 74.33317862068328,
+        "lat": 0.0024096867344237634,
+        "dist": 20.274204046386608,
+        "speedLon": 0.05901467886071789,
+        "speedLat": -0.0004760919913045284,
+        "speedDist": -6.092134487396456e-05,
+        "retFlags": 258
+      },
+      "uranusHelio": {
+        "lon": 74.33352818510066,
+        "lat": 0.0025099007608138887,
+        "dist": 19.259630237995978,
+        "speedLon": 0,
+        "speedLat": 0,
+        "speedDist": 0,
+        "retFlags": 10
+      }
+    },
+    {
+      "h": -0.001,
+      "tt": 2462292.249800213,
+      "p": {
+        "lon": 74.33306111756048,
+        "lat": 0.0024106569316149264,
+        "dist": 20.274204167694844,
+        "speedLon": 0.05819632429865834,
+        "speedLat": -0.0004835030591183149,
+        "speedDist": -6.038737110096231e-05,
+        "retFlags": 258
+      },
+      "uranusHelio": {
+        "lon": 74.33350486205751,
+        "lat": 0.002509586380221891,
+        "dist": 19.259630614539372,
+        "speedLon": 0,
+        "speedLat": 0,
+        "speedDist": 0,
+        "retFlags": 10
+      }
+    },
+    {
+      "h": 0.0001,
+      "tt": 2462292.250900213,
+      "p": {
+        "lon": 74.33312550707831,
+        "lat": 0.0024101227218227693,
+        "dist": 20.27420410110752,
+        "speedLon": 0.059015499752134985,
+        "speedLat": -0.0004928825084381423,
+        "speedDist": -6.068116325770496e-05,
+        "retFlags": 258
+      },
+      "uranusHelio": {
+        "lon": 74.33351768972842,
+        "lat": 0.002509759289516932,
+        "dist": 19.25963040744068,
+        "speedLon": 0,
+        "speedLat": 0,
+        "speedDist": 0,
+        "retFlags": 10
+      }
+    },
+    {
+      "h": -0.0001,
+      "tt": 2462292.2507002135,
+      "p": {
+        "lon": 74.33311370397941,
+        "lat": 0.002410221679590156,
+        "dist": 20.274204113238216,
+        "speedLon": 0.05901568676730073,
+        "speedLat": -0.000496705351729682,
+        "speedDist": -6.062709086365909e-05,
+        "retFlags": 258
+      },
+      "uranusHelio": {
+        "lon": 74.3335153574289,
+        "lat": 0.0025097278515165016,
+        "dist": 19.25963044509481,
+        "speedLon": 0,
+        "speedLat": 0,
+        "speedDist": 0,
+        "retFlags": 10
+      }
+    }
+  ],
+  "geometry": [
+    {
+      "offsetDays": 0,
+      "core": {
+        "h": 0,
+        "radius": 0.23119573483822722,
+        "g": [
+          5.474166071645344,
+          19.521189955884243,
+          0.0008400557620117033
+        ],
+        "earth": [
+          -0.27290053082890414,
+          -0.9771599352817903,
+          -2.606727068460799e-06
+        ],
+        "deflected": [
+          5.474571262527554,
+          19.52107633088735,
+          0.0008554929385990701
+        ]
+      },
+      "swiss": {
+        "geocentricPreDeflectionXYZ": [
+          5.4740571261449755,
+          19.521204863456887,
+          0.0008458544596811494
+        ],
+        "earthReceptionXYZ": [
+          -0.27290127746390996,
+          -0.9771597254655313,
+          -2.5977855393601437e-06
+        ],
+        "solarFractionalRadius": 0.2298607275781421,
+        "effectiveMassTableIndex": 22
+      }
+    },
+    {
+      "offsetDays": 0.0001,
+      "core": {
+        "h": 0.0001,
+        "radius": 0.23153747933039331,
+        "g": [
+          5.474164060087531,
+          19.521190513667666,
+          0.0008400610600782182
+        ],
+        "earth": [
+          -0.2728989017842246,
+          -0.977160405331125,
+          -2.6067421098797654e-06
+        ],
+        "deflected": [
+          5.474569249504524,
+          19.52107688912763,
+          0.0008554754630330136
+        ]
+      },
+      "swiss": {
+        "geocentricPreDeflectionXYZ": [
+          5.474055114587311,
+          19.521205421243163,
+          0.000845859757973112
+        ],
+        "earthReceptionXYZ": [
+          -0.2728996484195932,
+          -0.977160195516029,
+          -2.5978006372808257e-06
+        ],
+        "solarFractionalRadius": 0.23020246583985984,
+        "effectiveMassTableIndex": 23
+      }
+    },
+    {
+      "offsetDays": -0.0001,
+      "core": {
+        "h": -0.0001,
+        "radius": 0.23085399104989807,
+        "g": [
+          5.474168083202521,
+          19.52118939809784,
+          0.000840050463943831
+        ],
+        "earth": [
+          -0.2729021598726786,
+          -0.9771594652297173,
+          -2.6067120256919923e-06
+        ],
+        "deflected": [
+          5.474573275553122,
+          19.5210757726432,
+          0.000855510481798883
+        ]
+      },
+      "swiss": {
+        "geocentricPreDeflectionXYZ": [
+          5.474059137701853,
+          19.52120430566783,
+          0.0008458491613921706
+        ],
+        "earthReceptionXYZ": [
+          -0.2729029065074383,
+          -0.9771592554122668,
+          -2.5977704401658468e-06
+        ],
+        "solarFractionalRadius": 0.2295189900146669,
+        "effectiveMassTableIndex": 22
+      }
+    },
+    {
+      "offsetDays": 0.001,
+      "core": {
+        "h": 0.001,
+        "radius": 0.23461321586908876,
+        "g": [
+          5.4741459559917,
+          19.521195533604903,
+          0.0008401087427395866
+        ],
+        "earth": [
+          -0.272884240316982,
+          -0.977164635659195,
+          -2.6068774221887702e-06
+        ],
+        "deflected": [
+          5.4745511323630796,
+          19.521081913136776,
+          0.0008553211773797727
+        ]
+      },
+      "swiss": {
+        "geocentricPreDeflectionXYZ": [
+          5.4740370104935065,
+          19.521210441205607,
+          0.0008459074426382323
+        ],
+        "earthReceptionXYZ": [
+          -0.2728849869549289,
+          -0.9771644258547465,
+          -2.597936456402145e-06
+        ],
+        "solarFractionalRadius": 0.23327814745153205,
+        "effectiveMassTableIndex": 23
+      }
+    },
+    {
+      "offsetDays": -0.001,
+      "core": {
+        "h": -0.001,
+        "radius": 0.2277783214515157,
+        "g": [
+          5.4741861872201065,
+          19.52118437788596,
+          0.0008400027811483694
+        ],
+        "earth": [
+          -0.2729168212617836,
+          -0.977155234627739,
+          -2.6065765797484464e-06
+        ],
+        "deflected": [
+          5.4745912130008865,
+          19.521070798727667,
+          0.0008556645072710523
+        ]
+      },
+      "swiss": {
+        "geocentricPreDeflectionXYZ": [
+          5.474077241717412,
+          19.521199285430697,
+          0.0008458014765893824
+        ],
+        "earthReceptionXYZ": [
+          -0.2729175678940656,
+          -0.9771550247996119,
+          -2.5976344868641145e-06
+        ],
+        "solarFractionalRadius": 0.22644337753318866,
+        "effectiveMassTableIndex": 22
+      }
+    },
+    {
+      "offsetDays": 0.01,
+      "core": {
+        "h": 0.01,
+        "radius": 0.26537315057431177,
+        "g": [
+          5.4739649115939315,
+          19.52124572059342,
+          0.0008405855630584206
+        ],
+        "earth": [
+          -0.27273762219411,
+          -0.977206926595014,
+          -2.6082245304027944e-06
+        ],
+        "deflected": [
+          5.474366474535861,
+          19.521133117499616,
+          0.0008539204484458937
+        ]
+      },
+      "swiss": {
+        "geocentricPreDeflectionXYZ": [
+          5.473855966115581,
+          19.52126062844619,
+          0.0008463842829880742
+        ],
+        "earthReceptionXYZ": [
+          -0.2727383688580913,
+          -0.977206716896978,
+          -2.5992886044084325e-06
+        ],
+        "solarFractionalRadius": 0.26403761591409164,
+        "effectiveMassTableIndex": 26
+      }
+    },
+    {
+      "offsetDays": -0.01,
+      "core": {
+        "h": -0.01,
+        "radius": 0.19702522749973847,
+        "g": [
+          5.474367223791798,
+          19.52113416342774,
+          0.0008395259474675104
+        ],
+        "earth": [
+          -0.2730634315810835,
+          -0.9771129162981197,
+          -2.6052161080526537e-06
+        ],
+        "deflected": [
+          5.47476590483287,
+          19.521022359402252,
+          0.0008573426224223739
+        ]
+      },
+      "swiss": {
+        "geocentricPreDeflectionXYZ": [
+          5.474258278269292,
+          19.521149070720472,
+          0.0008453246228088641
+        ],
+        "earthReceptionXYZ": [
+          -0.27306417818724465,
+          -0.9771127063636484,
+          -2.5962689105218076e-06
+        ],
+        "solarFractionalRadius": 0.19569097783286293,
+        "effectiveMassTableIndex": 19
+      }
+    }
+  ],
+  "swissDerivatives": [
+    {
+      "stepDays": 0.01,
+      "actualIntervalDays": 0.019999999552965164,
+      "standard": {
+        "reportedSpeedDegreesPerDay": 0.0582103954245503,
+        "centralDerivativeDegreesPerDay": 0.05843094382532752,
+        "leftDerivativeDegreesPerDay": 0.05691155443108379,
+        "rightDerivativeDegreesPerDay": 0.059950333219571245
+      },
+      "noDeflection": {
+        "reportedSpeedDegreesPerDay": 0.05897217450848429,
+        "centralDerivativeDegreesPerDay": 0.05897226317806811,
+        "leftDerivativeDegreesPerDay": 0.058972242272479276,
+        "rightDerivativeDegreesPerDay": 0.058972284083656956
+      }
+    },
+    {
+      "stepDays": 0.001,
+      "actualIntervalDays": 0.0020000003278255463,
+      "standard": {
+        "reportedSpeedDegreesPerDay": 0.0582103954245503,
+        "centralDerivativeDegreesPerDay": 0.058590749563259804,
+        "leftDerivativeDegreesPerDay": 0.05819881658503753,
+        "rightDerivativeDegreesPerDay": 0.05898268254148208
+      },
+      "noDeflection": {
+        "reportedSpeedDegreesPerDay": 0.05897217450848429,
+        "centralDerivativeDegreesPerDay": 0.058972264586914284,
+        "leftDerivativeDegreesPerDay": 0.05897226251923526,
+        "rightDerivativeDegreesPerDay": 0.058972266654593306
+      }
+    },
+    {
+      "stepDays": 0.0001,
+      "actualIntervalDays": 0.00019999966025352478,
+      "standard": {
+        "reportedSpeedDegreesPerDay": 0.0582103954245503,
+        "centralDerivativeDegreesPerDay": 0.05844857642225477,
+        "leftDerivativeDegreesPerDay": 0.05820932242111248,
+        "rightDerivativeDegreesPerDay": 0.05868783042339706
+      },
+      "noDeflection": {
+        "reportedSpeedDegreesPerDay": 0.05897217450848429,
+        "centralDerivativeDegreesPerDay": 0.05897225945838807,
+        "leftDerivativeDegreesPerDay": 0.05897225931627929,
+        "rightDerivativeDegreesPerDay": 0.05897225960049686
+      }
+    },
+    {
+      "stepDays": 1e-05,
+      "actualIntervalDays": 2.00001522898674e-05,
+      "standard": {
+        "reportedSpeedDegreesPerDay": 0.0582103954245503,
+        "centralDerivativeDegreesPerDay": 0.058210466982183136,
+        "leftDerivativeDegreesPerDay": 0.05821036537534561,
+        "rightDerivativeDegreesPerDay": 0.05821056858902066
+      },
+      "noDeflection": {
+        "reportedSpeedDegreesPerDay": 0.05897217450848429,
+        "centralDerivativeDegreesPerDay": 0.05897226104913963,
+        "leftDerivativeDegreesPerDay": 0.0589722603386023,
+        "rightDerivativeDegreesPerDay": 0.05897226175967695
+      }
+    }
+  ],
+  "corePreAberrationDerivative": {
+    "stepDays": 0.0001,
+    "rawDegreesPerDay": 0.05899236415714036,
+    "deflectedDegreesPerDay": 0.0590357630442953,
+    "deflectionContributionArcsecPerDay": 0.1562359937577834
+  },
+  "finding": "Core and Swiss pre-deflection positions differ slightly through their distinct underlying theories. At this instant that shift puts the solar ray in adjacent linear effective-mass table intervals, with a different local slope. The standard 0.0001-day symmetric velocity step also straddles a Swiss interval boundary but remains in one core interval. Reported Swiss SPEED converges to the local derivative with a smaller step that does not cross the boundary. This is a sensitive solar-disc/knot sample, not evidence of a general VSOP velocity failure."
+}
