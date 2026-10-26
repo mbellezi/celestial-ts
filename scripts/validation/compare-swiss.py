@@ -19,6 +19,9 @@ def main():
     p.add_argument('--output', default='docs/validation/swiss-1930-2040.json', type=pathlib.Path)
     a = p.parse_args()
     started = time.monotonic()
+    require(swe.version == '2.10.03', 'Swiss version mismatch: expected 2.10.03')
+    require(importlib.metadata.version('pyswisseph') == '2.10.3.2',
+            'Wrapper version mismatch: expected pyswisseph 2.10.3.2')
 
     def digest(p):
         return hashlib.sha256(p.read_bytes()).hexdigest()

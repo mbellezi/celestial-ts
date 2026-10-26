@@ -1,0 +1,87 @@
+CONFERÊNCIA DO NODO NORTE — 1930–2040
+Executada em 2026-10-16
+
+Resultado
+O Nodo Norte dos relatórios natais usa trueNode, corpo 11 (nodo verdadeiro).
+Na amostragem, sua longitude difere da Swiss em no máximo 0,135543 segundo
+de arco. Não houve divergência de signo. Há uma divergência de sentido do
+movimento; portanto, o resultado não é uma reprodução exata da Swiss.
+O nodo médio, corpo 10, foi conferido separadamente como controle.
+
+Método e referência
+- WASM reconstruído a partir do código atual com npm run build.
+- Swiss Ephemeris 2.10.03, wrapper pyswisseph 2.10.3.2.
+- Arquivos sepl_18.se1, semo_18.se1 e seas_18.se1 com SHA-256 verificados,
+  do commit c113653fe37fe5cdbfcc030a6e341de03ef018d2 da fonte Swiss.
+- Flags 258 (SWIEPH | SPEED): coordenadas tropicais geocêntricas aparentes.
+  Backend SWIEPH confirmado em todas as chamadas; sem fallback Moshier.
+- 172.174 instantes por corpo: 162.172 pontos a cada seis horas entre
+  1930-01-01 00:00 UT e 2040-12-31 18:00 UT, 10.000 pontos pseudoaleatórios
+  com semente 0x19302040, o último segundo de 2040 e uma amostra explícita
+  em 1972-05-28 04:00 UT. Nenhuma amostra foi excluída.
+- Comparações no mesmo UT e no mesmo TT (este com o delta T do motor).
+  Os rótulos de calendário representam UT1; não há conversão UT1–UTC.
+- Os hashes do código, WASM, scripts e arquivos Swiss estão no JSON anexo.
+
+Resultados no mesmo UT
+Observável                              Nodo médio          Nodo verdadeiro
+Máximo de longitude (arcsec)             0,131741502         0,135542630
+Percentil 99 de longitude (arcsec)        0,127511049         0,001662600
+Máximo de latitude (arcsec)              0                   0
+Máximo de distância (AU)                 1,12757e-17         2,06857e-9
+Máximo de velocidade (arcsec/dia)         0,000721177         481,572237
+Percentil 99 de velocidade (arcsec/dia)   0,000363037         0,001491670
+Divergências de signo                    0                   0
+Divergências direto/retrógrado           0                   1
+
+Velocidade significa velocidade longitudinal. A comparação no mesmo TT
+preserva os máximos e as contagens acima. A maior diferença entre os modelos
+de delta T nesta amostragem é 0,000751 segundo (arredondamento para cima).
+O JSON contém percentis, RMS e os instantes dos maiores resíduos.
+
+Caso de movimento divergente: 2029-06-21 00:00 UT, JD 2462308.5
+- Longitude do motor: 274,716311486362 graus.
+- Longitude Swiss:    274,716311540316 graus.
+- Velocidade do motor: -0,005515245377 grau/dia (retrógrado).
+- Velocidade Swiss:    +0,128254820322 grau/dia (direto).
+
+O diagnóstico scripts/validation/node-diagnostic.py foi executado novamente;
+reproduziu sem alterações docs/validation/true-node-segment-join.json.
+A diferença central curta utilizada pela Swiss atravessa uma descontinuidade
+na junção de segmentos do arquivo lunar. Diferenças de posição em intervalos
+maiores e dentro de um mesmo segmento sustentam o movimento negativo. A
+tabela interpolada do motor suaviza esse pico. O desacordo com a velocidade
+bruta Swiss foi mantido tanto nas estatísticas quanto no registro individual.
+
+Limites
+São máximos observados, não limites matemáticos para todo instante. A grade
+e os pontos aleatórios não garantem coincidência perto de toda estação ou
+ingresso em signo. A tabela do nodo verdadeiro deriva da própria Swiss;
+esta conferência mede fidelidade à referência, não validação observacional
+independente. O escopo não inclui casas, outras combinações de flags ou
+datas fora de 1930–2040. As métricas agregadas cobrem longitude, latitude,
+distância e velocidade longitudinal, não as outras duas velocidades.
+
+Verificações e mudanças
+Build concluído e 19 testes Rust/WASM selecionados pelo filtro node passaram,
+incluindo os 21 casos de estações e o caso da descontinuidade. Nenhum cálculo
+do motor foi alterado. O exportador ganhou --nodes para repetir esta seleção;
+o comparador agora rejeita versões diferentes de 2.10.03 / 2.10.3.2.
+
+Reprodução a partir da raiz, com Rust 1.96.0, wasm-bindgen 0.2.129, Node 24,
+Python com pyswisseph 2.10.3.2 e arquivos Swiss correspondentes ao manifesto:
+
+npm run build
+node scripts/validation/export-core.mjs /tmp/celestial-north-node-1930-2040.bin --nodes
+python scripts/validation/compare-swiss.py --ephe /tmp/celestial-swiss-ephe --input /tmp/celestial-north-node-1930-2040.bin --output docs/validation/north-node-swiss-1930-2040.json
+python scripts/validation/node-diagnostic.py --ephe /tmp/celestial-swiss-ephe
+cargo test --locked -p celestial-core --lib node --target wasm32-unknown-unknown
+
+Evidências e referências
+- docs/validation/north-node-swiss-1930-2040.json
+- docs/validation/true-node-segment-join.json
+- docs/validation/pluto-nodes-model.md
+- core/src/astronomy/lunar-node.manifest.json
+- reports/src/natal.ts e reports/src/natal-catalog.ts (identificação do nodo)
+- https://www.astro.com/swisseph/swephprg.htm (convenções da API)
+- https://github.com/aloistr/swisseph/tree/c113653fe37fe5cdbfcc030a6e341de03ef018d2

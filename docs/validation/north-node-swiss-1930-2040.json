@@ -1,0 +1,888 @@
+{
+  "schemaVersion": 1,
+  "description": "Apparent tropical geocentric core WASM versus Swiss Ephemeris; sameUT uses independent delta T; sameTT uses core delta T for both. Absolute-error percentiles use linear interpolation. Thresholds are descriptive, not user requirements.",
+  "limitation": "Six-hour grid plus 10000 deterministic random instants and explicit samples is not continuous certification. No interpretations changed.",
+  "timeConvention": "jdUT and utIso use conventional UT1 Julian days rendered as calendar ISO labels; no UT1-to-UTC or leap-second conversion. Historical and future delta T values are models, not asserted observations.",
+  "wrapperVersion": "2.10.3.2",
+  "pythonVersion": "3.14.5 (v3.14.5:5607950ef23, May 10 2026, 07:38:09) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "auditScriptHashes": {
+    "scripts/validation/compare-swiss.py": "3c6ae19159d161a3ee899dcb90331be030c0350024d52b4f7ad4101c8558ea79",
+    "scripts/validation/export-core.mjs": "ecdd5847e1ea535908e5bf2358c6bd5e441f9e6cb1b784b008573da6544a2d27"
+  },
+  "swissVersion": "2.10.03",
+  "swissFlagsRequested": 258,
+  "swissEphemerisFlagVerifiedEveryCall": true,
+  "ephemerisManifest": {
+    "upstreamCommit": "c113653fe37fe5cdbfcc030a6e341de03ef018d2",
+    "files": [
+      {
+        "name": "sepl_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/sepl_18.se1",
+        "bytes": 484061,
+        "sha256": "ca1393ceab3a44fbc895887cf789c68819ae6a1cbc9b22225872dbe4ccd99a66"
+      },
+      {
+        "name": "semo_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/semo_18.se1",
+        "bytes": 1304771,
+        "sha256": "1ca07bd67c24374d77226180c20a4f9996cba013697894810518e7eb582ca4f7"
+      },
+      {
+        "name": "seas_18.se1",
+        "url": "https://raw.githubusercontent.com/aloistr/swisseph/c113653fe37fe5cdbfcc030a6e341de03ef018d2/ephe/seas_18.se1",
+        "bytes": 223004,
+        "sha256": "a2cd8fc33807c78ca9a700c91c2e042258b12fc4796519e00781440b5ad8b2e2"
+      }
+    ]
+  },
+  "coreManifest": {
+    "schemaVersion": 1,
+    "format": "headerless little-endian IEEE754 float64 records",
+    "recordDoubles": 14,
+    "recordLayout": [
+      "jdUT",
+      "deltaTDays",
+      "MeanNode.lon",
+      "MeanNode.lat",
+      "MeanNode.dist",
+      "MeanNode.speedLon",
+      "MeanNode.speedLat",
+      "MeanNode.speedDist",
+      "TrueNode.lon",
+      "TrueNode.lat",
+      "TrueNode.dist",
+      "TrueNode.speedLon",
+      "TrueNode.speedLat",
+      "TrueNode.speedDist"
+    ],
+    "units": {
+      "lon": "degrees",
+      "lat": "degrees",
+      "dist": "AU",
+      "speedLon": "degrees/day",
+      "speedLat": "degrees/day",
+      "speedDist": "AU/day"
+    },
+    "bodies": [
+      {
+        "id": 10,
+        "name": "MeanNode"
+      },
+      {
+        "id": 11,
+        "name": "TrueNode"
+      }
+    ],
+    "flags": 258,
+    "sampling": {
+      "startInclusiveJD": 2425977.5,
+      "endExclusiveJD": 2466520.5,
+      "gridStepDays": 0.25,
+      "gridCount": 162172,
+      "randomCount": 10000,
+      "randomGenerator": "xorshift32 unsigned / 2^32",
+      "seed": 422584384,
+      "extraJD": [
+        2466520.499988426,
+        2441465.6666666665
+      ]
+    },
+    "records": 172174,
+    "binarySha256": "3227eb6c58331784649b94eefef3fc245284a258a5ee8de540bbebf338348e00",
+    "sourceHashScope": "Rust/TOML sources plus BIN/JSON ephemeris assets under core/data and core/src/astronomy; wasm package artifacts",
+    "hashes": {
+      "core/Cargo.toml": "e66ad7973d47004dfacd3b17cc8095632b8bade2a215e37462cea8050552ecda",
+      "core/benches/celestial_bench.rs": "d76c829be116f6b5432a0d9ca6512011bb3e53eb0102cbc1b63fea467565dc3d",
+      "core/build.rs": "1bbbddd657edd63e6634439db5c66b4735a8b2860ef3b1f131229e01d614ed72",
+      "core/data/chiron-ephemeris.json": "a1fe1df53f9da1d82f286f9d649701039a4cd9610afb7e844fac9234a620add2",
+      "core/data/delta-t.bin": "3043835591b5e94ca36b49377db4c911b47165c8efd483bcedf34d438178f330",
+      "core/data/delta-t.json": "6de72b434c9de5dcafdd753a9905cd08faca1ce6f5c496e66f45435c8e346deb",
+      "core/src/astronomy/ayanamsa.rs": "72b9845047bf08579ef5cba45e0e86294df08496c4cf01acec6b6d462029d51b",
+      "core/src/astronomy/chiron.rs": "3a6c16f900b5dc84c4e31555ec61790b65e5e0c8247b374b6760a3305127eb03",
+      "core/src/astronomy/chiron_ephemeris.rs": "c2e27ff47b6df79e984f045a4fe9eb396db3fbf4af20616032c12e82205b9477",
+      "core/src/astronomy/constants.rs": "34eb0569cb10fa85b9067e34234c490960e97a8377da1bca0feeca2284602fd0",
+      "core/src/astronomy/crossings.rs": "482c42fa3dd18cd90449341df5061374643f6abd35dd5bdfcdf3386a3a7c0dbb",
+      "core/src/astronomy/deflection.rs": "21b191e80a41723d03ae3318538c9ab893c2278d8987657389f3cdfb0239e0cb",
+      "core/src/astronomy/delta_t.rs": "c8046955d4c9747b8a2b0b9a3ed09b9a7f59f3183856e99516afecf69e57c982",
+      "core/src/astronomy/eclipses.rs": "718c7fcbc300b639fa68a7c2be5512d3e53b4f0423f6ba77f00f7572b991f596",
+      "core/src/astronomy/engine.rs": "55d2e6079d3e5b6437bb89223dae41c1e1c77343bebd3b1583270530709af636",
+      "core/src/astronomy/fixstars.rs": "219b72ba3bb1cf56d476b2386fea88fbe67cdc4ec6271c205979348dbba545d4",
+      "core/src/astronomy/heliacal.rs": "2d845bcbb5e40670d833af9ed2e817a6e956b0089398e4c6a07b8dc87bf78816",
+      "core/src/astronomy/houses.rs": "f5708b6a08c08543cbd5cd4ca0fe0826a15ba5d0d9635b1680ff585ad06e6bd1",
+      "core/src/astronomy/lunar-node.bin": "c6743dc965c8c31b10a9d15104756ab0eaa922a9df08dcea5342b2f7ac48f03d",
+      "core/src/astronomy/lunar-node.manifest.json": "75b83b65cb7042f15f221639e25cd6349147f8eb0b6c73c9434b757a1aa4a374",
+      "core/src/astronomy/mod.rs": "56645e1d02ba98e1d35de5f91aa3f174c4c035913e3aba3f7746ecf6d4abbdb9",
+      "core/src/astronomy/moon.rs": "23b6fd10cc9beafcd081c9f76ba50ee4009a6c637cce33ae0bd50333ee8757f4",
+      "core/src/astronomy/nodes.rs": "864a7cf7c558054114417f2b2b4687e44380bc3c7c0eec6fa1f60a253810c29a",
+      "core/src/astronomy/nutation.rs": "43892151a2f470376c4374ae615840dd7efbbd752f3f8dac5bd417e2671122dd",
+      "core/src/astronomy/phenomena.rs": "aced8956526ceed38b5f15dc89d63514615e74e1775b7364fe0bbbe03bd20b58",
+      "core/src/astronomy/planetary.rs": "d19f2d15a73de04e4d848b72a4dd6c53168f6fcd901526debc09ce15366a97d0",
+      "core/src/astronomy/pluto.rs": "7332f1f1891a05b8897f7e068c406488b67a4c83908c5ea87b56ec9f33896084",
+      "core/src/astronomy/precision-ephemeris.bin": "b5b8c76376957e84517e225de3f61c98e5aef6a84a56d2f54eb763efe1b645c5",
+      "core/src/astronomy/precision-ephemeris.manifest.json": "583dbda751870b79b976c40125c88a6a3193f68d774a9a03e31bef9ef48383d4",
+      "core/src/astronomy/precision_ephemeris.rs": "9bcc45eeb1b1a03e30500957a8bbcf6a4e00bd27a3c4ca50abe13e9d8ebec75d",
+      "core/src/astronomy/rise_set.rs": "850660278ab0490724be8f57908c4feba2794a64033b266f3abb4ac7efdd3b23",
+      "core/src/astronomy/solar_cycle.rs": "057511cc277f085ffc4d017d29c41c81a00eda3528e135986be29ddd4fa8a8e2",
+      "core/src/astronomy/test_support.rs": "acea71791d4054642d6d330b3c934ada94adfabe386d96d5e36a652be5f16875",
+      "core/src/astronomy/vsop87.rs": "20567773406bb40242440934add7742dd78b851c57ee0bd3102d20b6c07965c1",
+      "core/src/astronomy/vsop87_data.rs": "b49eb04cf219145bc21d20e0328246a866a19f97ff5bd57318cd4814bf68e618",
+      "core/src/body/mod.rs": "4384306b20986e47cbc8500d9c9f17a3d47eac369bd88a483f41330c7ff0f293",
+      "core/src/calendar/buddhist/mod.rs": "7c83fddc6b6364caf4b75e0c4e4e6b32b06215314202aa0f273ec74ef1e98c96",
+      "core/src/calendar/celtic/mod.rs": "ab5e83a559d9a0696672babc3958e8594db1546647d1cd570f7b58c10e460d35",
+      "core/src/calendar/christian/mod.rs": "008d03c79ff46a82c5b6f393fff3eaf3503596cdbe81e8d9f8fdbf9d3b2c2b57",
+      "core/src/calendar/hebrew/calendar.rs": "62f4627812ecde7fe74b1e0bdffc51c51c2c7835a3e7ffcc96feba88e946a7c2",
+      "core/src/calendar/hebrew/mod.rs": "8a44186c07206a37721d9d0ed178daaade7a2c817fb22ef77dd5f2d1c3fe3ca1",
+      "core/src/calendar/hindu/mod.rs": "0a21973bcb46e3abc9b70eafc69768612bac7ee8125762a8dcbeaea20fa60eec",
+      "core/src/calendar/islamic/mod.rs": "4e75393a463b5ee9aff8485b1554af8cae47715586b2e1a40e7061577d4c45b9",
+      "core/src/calendar/mod.rs": "38264538a05f61099dad605631a84cb3a1ba56a36b167f9bf309b822d6af26dc",
+      "core/src/calendar/persian/mod.rs": "3fcf7c7c24896b086ff360b98569b5f633038d04ac38aabd55c1c24db9ff217b",
+      "core/src/chart.rs": "9d9c9b349d2a9c9afaa582c57bed8d3711856efdc2f8e19e88ac0dd59d690e22",
+      "core/src/constants.rs": "3fdcdb6978b7e310fb8982adf49a27635a2a7f638baf70d89423e633d8ada5d0",
+      "core/src/error.rs": "5ae13c0e3e9c011a8931d4798df25324a8526e16bccf14be01c2109081b194e7",
+      "core/src/functions/aspects.rs": "d3ae0dc1d68264b7577c12e302b6e972e00121c242f16b3730a468719e0d8fd9",
+      "core/src/functions/calc.rs": "beeb973d9aeabef41731da1264d212ec98ff95b3262735bfff44fd188b6341af",
+      "core/src/functions/chart.rs": "bdb205914edf807b6c60fbb796c89d6191d79cec6266c518958cb68a9750f0dc",
+      "core/src/functions/chinese.rs": "f7031fabcaf0106e4fc78de9bb0a9cd8baa928398bf681d291a21d22aeffbc2a",
+      "core/src/functions/config.rs": "a0cabf962be5a6b78b1b83233268db0eb37c2cc069ec67508171731cb6230ece",
+      "core/src/functions/coptic.rs": "a40152cde76b5508f342e08ebda220c47e4cf8e80dd224de2527dc70d87f2c00",
+      "core/src/functions/easter.rs": "6992df1985089cdb9e7733b1ddb9cd94db37a7ca16b3d537f0aeea5b8d2a4ec4",
+      "core/src/functions/eclipses.rs": "dfbc3f3c466eaf21785963a53d8ec7533ca88852aeafef4b80803d5298f14ee1",
+      "core/src/functions/esbats.rs": "807420f204d5a02a983c61bb2a17c50bf193257fe00afd6521bd50175c3a1844",
+      "core/src/functions/geoformat.rs": "6160427397a2ef629d04f41166e88f0829e055fbd69317cbcedf3da0a8b89ff9",
+      "core/src/functions/hellenistic.rs": "2b6cacf3bd5854505ae74f524e559bbe5f99dc3660a4f13bde55b613602f4320",
+      "core/src/functions/houses.rs": "3d53c25711930cde309800b1cdead491767d7f2d6041f22ef2552e09fda0affb",
+      "core/src/functions/indigenous.rs": "310c82038b5a18ca430f487ab2f1a3700163f5e16f576023c1c6540f58c548e4",
+      "core/src/functions/islamic.rs": "cd039bdea85d771a56cdedba31e1acb05d4145d3d5e0dbacd51ec35009e14cad",
+      "core/src/functions/jewish.rs": "0888e132fb2d141787a379c617d0b45ff8f59228a8556f862d7dc600d3dbc4c8",
+      "core/src/functions/mesoamerican.rs": "759d3046d67929f3dba2e0eb1c02b4f6f0667bd8fa81790cd74ff36361953be9",
+      "core/src/functions/mod.rs": "59392f30fc516f429b387b876747e025abd2dfd9b76d992c3ebedbf03f9d8562",
+      "core/src/functions/moon_phases.rs": "0b37a7b5923378f0ab281d7a494b2ac521824ce44432c5bea8dc94c5299bf774",
+      "core/src/functions/motion.rs": "7a6f3228ea983dd053314337b7cf8beba12bf5aa17a5f74f6e459aefd9b141e5",
+      "core/src/functions/nowruz.rs": "8c7f564f3577cc768432d8008201270f8b70558ed9aa5641ecd229560bec0d98",
+      "core/src/functions/omer.rs": "4fb9d943e8f901c1ba2faca2ac56a49786a1dd0f47a6097382b892b08732b412",
+      "core/src/functions/panchanga.rs": "f5c952080167b096a3e75333390eb28be12a12ab30fbd20087b5a047efdaa781",
+      "core/src/functions/phenomena.rs": "8fef36f86bf835e1ef5ff401c6970a3f3141c7bd5402a42d75ac901b7ef15291",
+      "core/src/functions/sabbats.rs": "f02536ebaed23859961d9bbb1a0a0d89dc4112a675b3d07471b03a9335917386",
+      "core/src/functions/searches.rs": "b9155357e914df7972edc927d843064c7e684aaf4868b2bc28bb3b40dc2f86bf",
+      "core/src/functions/tibetan.rs": "d07be7d47611088857931996c774f808525aa931fd6c8a85ef596386f6fb8be4",
+      "core/src/functions/time.rs": "d79e9aca781d5acd54833680a0f63b607d50f549e5c1493721a69bff48c47d83",
+      "core/src/functions/timezone.rs": "83287bf60435600e1529b9d8bdb06de5f441b8fadc017fc6903c17fd95c459e0",
+      "core/src/functions/utils.rs": "a84a8b39e106521584642913168e98e5d2dfb32c4f01df1e121c9a77485ea935",
+      "core/src/functions/vedic.rs": "a787a063ffcd3e2da37c0923fea142788135336764de262c1ce278c05bb25ec1",
+      "core/src/functions/vesak.rs": "e507218f12aeeed5cbdc7fddf21f913a843860061aecdeed0889b635bd25aa6c",
+      "core/src/functions/zoroastrian.rs": "e2d1d0b56172dc4d77590ff11edfeba6b6573e41823f279c2432b7075dcfa33d",
+      "core/src/geo.rs": "ba581d9224fc4cb445e78934e226d97c0728100bad1c0603eb63d4bfecfb499d",
+      "core/src/houses.rs": "ab65f3021ab7e96cc9751a9537eece3ae0a52e40d8c593dd423ca352ac0a43b0",
+      "core/src/lib.rs": "47d4b9e7a7001f53ef71a378308853c3a0f1eb27759d8f12b3e26c8239f6fcdb",
+      "core/src/moon.rs": "f24d5ec9549d7f32b53666619ca8177b2c8822b9a26a1af0cd8946d6ceef185d",
+      "core/src/motion.rs": "c7bb2e870881421e87e126903a688cc2464edf93f47f6d0386fc5474afa6ecac",
+      "core/src/position.rs": "4834339a38919276d9744e5727bf5ff1e6620a409234f4de901580aad60c5235",
+      "core/src/solar.rs": "21d799f53c393787b36debc15f9fd7bbc260c54ca7cfc4859e65dc3710a003d4",
+      "core/src/time.rs": "2376d7193c341008a053ca38cfa9b8d8e8c97c391d5998c7bf2cdbe540091475",
+      "core/src/types.rs": "9fa040095cffcd447e816fc69ca220c047524c857bc69625ae309c4b3cebeae9",
+      "core/src/units.rs": "405f362c173f18c3d9ac37e99ce010194033d81be7932b3765af37cdb7960435",
+      "core/src/vedic.rs": "c95bb174625d3bc8009407002cb5c8870b288cbcfe10e561a8fc402bcf4032cd",
+      "core/tests/bench_timing.rs": "fc0280e3d6c96c1559a4b8fe34949ba655d771f3c819d48990ff9bafb97d37a1",
+      "core/tests/binding_parity.rs": "b2207598ed4f0968f824183683d14188ff14343d4c03890f69fba3ffbeda6fe3",
+      "core/tests/chinese_test.rs": "82ccd2381d9b1e7d3eefe1dd3c975a26a8519ef63d7cff6e7181352e86677913",
+      "core/tests/external_reference.rs": "9ba1b287e9eeef2027d86dc0f12499a214a646a15b2deefd6386f94135acb720",
+      "core/tests/hellenistic_test.rs": "03ab743e2cd402e585af951b0400720a2b6692f889ad7807a0a0abbcf87c20a1",
+      "core/tests/helpers_test.rs": "f324b87436647b99754b0e2471ecc50720d0451eafd085955155792798cc3e1c",
+      "core/tests/indigenous_test.rs": "1cdfeb6d7656f3540203efbcc039198663a1f641050b67fb7c197b97c615c614",
+      "core/tests/integration_tests.rs": "9bf91fb7c5b423675d8b6a6ae8e188caab4333866727f896578a5dcab2e28306",
+      "core/tests/mesoamerican_test.rs": "9c094a048d4421e50e9c6d3eea7867ad8e91e98acdfa4c1a0f48be6661f564c8",
+      "core/tests/new_features_test.rs": "395516fb88fa8d194e345e26658b3574b9bef5dc9f40e97f95d453c2e256cfd2",
+      "core/tests/rel_clamps.rs": "4e7c01cea7bdfb2c990259c9af6257cca7a445e09e55fa5a096cc94899d71068",
+      "core/tests/sabbats_esbats_test.rs": "f911d5b5b89a459bbe7d2b1ad06d2bec00a87b1dee4dca25bd45f3729f43764e",
+      "core/tests/support/mod.rs": "9a402388904ddbe5459105e7712a384fb023753f01cd07c80220f7b7bb0bd011",
+      "core/tests/swephelp_test.rs": "0669a91d2224e5c11e5e5c901d9e848445ac5f98197e22ffd4cc3ba5dee893fa",
+      "core/tests/test_util_smoke.rs": "5c4e2a1f09a214db648c5eedfc92358e0c9374814a3d403efede5ad585e068d6",
+      "core/tests/timezone_test.rs": "e2228322718cf4255f5aa3a0aba6699dfa68be511f04724fa05991064f826724",
+      "core/tests/unit_tests.rs": "0a1bb2f259c608fe2511be7b49f9c79bdf20ee1bf2fa467920d3caa30c3e9bd4",
+      "core/tests/wheel_test.rs": "d9edff8fd092afc89291cce7ce05ed5c0de3fee5828c2eaf987560109d7e7fc2",
+      "pkg/celestial_wasm.js": "344d0efa2ac5be2d4f43d2773252afc09ded3d0df969329ea259424b98b7b0df",
+      "pkg/celestial_wasm_bg.wasm": "76e94ee97cff2ff3da281224f69e29173e05c3f7e277e12c7b700e3223fd894c",
+      "wasm/src/additional.rs": "a3941e26b2ff4d87e55645998cc19d3983451a51e6e6bd63345e33a2ef2055f5",
+      "wasm/src/binding.rs": "cedff4072b5cf133b7f8bfebefe2e414b603680a9b2905ec3cef5c19a1100c84",
+      "wasm/src/exports.rs": "c289bff945921889bc74d6c898945079cff01e3983952a4dfeccdbb29ee3221c",
+      "wasm/src/lib.rs": "0d3b7a873fca01531fc03f76a26ce2638655963657fe255f66378e881633b7c6",
+      "wasm/src/methods.rs": "ecc76bebff8b9b95fc6ae6506a658ce513f0f6314d1c7263257fe7893aec908d",
+      "wasm/src/native.rs": "39e0d6f8b995fbe95a234c9c5a8ccfa047c06b5363af81d774214e7960f4d4e1"
+    },
+    "nodeVersion": "v24.18.0"
+  },
+  "records": 172174,
+  "thresholdsDegrees": {
+    "1arcsec": 0.0002777777777777778,
+    "1arcmin": 0.016666666666666666,
+    "6arcmin": 0.1,
+    "1degree": 1
+  },
+  "deltaTSeconds": {
+    "max": 0.0007501171758333286,
+    "p50": 1.7421913911519482e-08,
+    "p95": 1.100937014990311e-07,
+    "p99": 1.5125792571582525e-07,
+    "rms": 4.683395780045271e-06,
+    "worst": {
+      "jdUT": 2429629.25,
+      "utIso": "1939-12-31T18:00:00",
+      "coreMinusSwissSeconds": 0.0007501171758333286
+    }
+  },
+  "comparisons": {
+    "sameUT": [
+      {
+        "id": 10,
+        "name": "MeanNode",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 3.6594861711591875e-05,
+            "p50": 1.4855855312134736e-05,
+            "p95": 3.282030148170634e-05,
+            "p99": 3.541973595048375e-05,
+            "rms": 1.823193404654017e-05,
+            "worst": {
+              "absoluteError": 3.6594861711591875e-05,
+              "signedError": -3.6594861711591875e-05,
+              "jdUT": 2425982.75,
+              "utIso": "1930-01-06T06:00:00",
+              "core": 38.66019067729053,
+              "swiss": 38.66022727215225
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 0.0,
+            "p50": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "rms": 0.0,
+            "worst": {
+              "absoluteError": 0.0,
+              "signedError": 0.0,
+              "jdUT": 2425977.5,
+              "utIso": "1930-01-01T00:00:00",
+              "core": 0.0,
+              "swiss": 0.0
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.1275702593849246e-17,
+            "p50": 9.540979117872439e-18,
+            "p95": 9.974659986866641e-18,
+            "p99": 1.0408340855860843e-17,
+            "rms": 9.546395746006022e-18,
+            "worst": {
+              "absoluteError": 1.1275702593849246e-17,
+              "signedError": 1.1275702593849246e-17,
+              "jdUT": 2445610.0,
+              "utIso": "1983-10-02T12:00:00",
+              "core": 0.0025695552898,
+              "swiss": 0.0025695552897999885
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 2.003269144179587e-07,
+            "p50": 2.6676864869901173e-08,
+            "p95": 7.256287975696e-08,
+            "p99": 1.0084355872505549e-07,
+            "rms": 3.820823308081647e-08,
+            "worst": {
+              "absoluteError": 2.003269144179587e-07,
+              "signedError": 2.003269144179587e-07,
+              "jdUT": 2427449.5,
+              "utIso": "1934-01-12T00:00:00",
+              "core": -0.052911550654174716,
+              "swiss": -0.052911750981089134
+            }
+          }
+        }
+      },
+      {
+        "id": 11,
+        "name": "TrueNode",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 1,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 3.765073046224643e-05,
+            "p50": 2.5442261630814755e-09,
+            "p95": 4.8941382146949765e-08,
+            "p99": 4.618334023120914e-07,
+            "rms": 2.352555322957094e-07,
+            "worst": {
+              "absoluteError": 3.765073046224643e-05,
+              "signedError": -3.765073046224643e-05,
+              "jdUT": 2461950.3078114055,
+              "utIso": "2028-06-27T19:23:14.905000",
+              "core": 293.28856824056083,
+              "swiss": 293.2886058912913
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 0.0,
+            "p50": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "rms": 0.0,
+            "worst": {
+              "absoluteError": 0.0,
+              "signedError": 0.0,
+              "jdUT": 2425977.5,
+              "utIso": "1930-01-01T00:00:00",
+              "core": 0.0,
+              "swiss": 0.0
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 2.0685662614240707e-09,
+            "p50": 3.654290411936323e-13,
+            "p95": 4.029543474066978e-12,
+            "p99": 6.907950105602272e-11,
+            "rms": 1.557344116520513e-11,
+            "worst": {
+              "absoluteError": 2.0685662614240707e-09,
+              "signedError": 2.0685662614240707e-09,
+              "jdUT": 2459277.5,
+              "utIso": "2021-03-04T00:00:00",
+              "core": 0.00260552620153259,
+              "swiss": 0.0026055241329663286
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 0.1337700656989266,
+            "p50": 1.4535614725752488e-09,
+            "p95": 1.723351605500273e-07,
+            "p99": 4.1435279705182e-07,
+            "rms": 0.0003223884805540235,
+            "worst": {
+              "absoluteError": 0.1337700656989266,
+              "signedError": -0.1337700656989266,
+              "jdUT": 2462308.5,
+              "utIso": "2029-06-21T00:00:00",
+              "core": -0.0055152453773448466,
+              "swiss": 0.12825482032158175
+            }
+          }
+        }
+      }
+    ],
+    "sameTT": [
+      {
+        "id": 10,
+        "name": "MeanNode",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 0,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 3.6594861711591875e-05,
+            "p50": 1.4855855312134736e-05,
+            "p95": 3.282030148170634e-05,
+            "p99": 3.541973595048375e-05,
+            "rms": 1.823193402264051e-05,
+            "worst": {
+              "absoluteError": 3.6594861711591875e-05,
+              "signedError": -3.6594861711591875e-05,
+              "jdUT": 2425982.75,
+              "utIso": "1930-01-06T06:00:00",
+              "core": 38.66019067729053,
+              "swiss": 38.66022727215225
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 0.0,
+            "p50": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "rms": 0.0,
+            "worst": {
+              "absoluteError": 0.0,
+              "signedError": 0.0,
+              "jdUT": 2425977.5,
+              "utIso": "1930-01-01T00:00:00",
+              "core": 0.0,
+              "swiss": 0.0
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 1.1275702593849246e-17,
+            "p50": 9.540979117872439e-18,
+            "p95": 9.974659986866641e-18,
+            "p99": 1.0408340855860843e-17,
+            "rms": 9.546453932629929e-18,
+            "worst": {
+              "absoluteError": 1.1275702593849246e-17,
+              "signedError": 1.1275702593849246e-17,
+              "jdUT": 2445610.0,
+              "utIso": "1983-10-02T12:00:00",
+              "core": 0.0025695552898,
+              "swiss": 0.0025695552897999885
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 2.003269144179587e-07,
+            "p50": 2.6679187265649107e-08,
+            "p95": 7.255889769679226e-08,
+            "p99": 1.008636596828284e-07,
+            "rms": 3.8206118522979876e-08,
+            "worst": {
+              "absoluteError": 2.003269144179587e-07,
+              "signedError": 2.003269144179587e-07,
+              "jdUT": 2427449.5,
+              "utIso": "1934-01-12T00:00:00",
+              "core": -0.052911550654174716,
+              "swiss": -0.052911750981089134
+            }
+          }
+        }
+      },
+      {
+        "id": 11,
+        "name": "TrueNode",
+        "count": 172174,
+        "signDisagreements": 0,
+        "retrogradeDisagreements": 1,
+        "metrics": {
+          "longitude": {
+            "unit": "degrees",
+            "max": 3.765073046224643e-05,
+            "p50": 2.5442261630814755e-09,
+            "p95": 4.8941382146949765e-08,
+            "p99": 4.618334023120914e-07,
+            "rms": 2.3525555554817746e-07,
+            "worst": {
+              "absoluteError": 3.765073046224643e-05,
+              "signedError": -3.765073046224643e-05,
+              "jdUT": 2461950.3078114055,
+              "utIso": "2028-06-27T19:23:14.905000",
+              "core": 293.28856824056083,
+              "swiss": 293.2886058912913
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "latitude": {
+            "unit": "degrees",
+            "max": 0.0,
+            "p50": 0.0,
+            "p95": 0.0,
+            "p99": 0.0,
+            "rms": 0.0,
+            "worst": {
+              "absoluteError": 0.0,
+              "signedError": 0.0,
+              "jdUT": 2425977.5,
+              "utIso": "1930-01-01T00:00:00",
+              "core": 0.0,
+              "swiss": 0.0
+            },
+            "exceedanceCounts": {
+              "1arcsec": 0,
+              "1arcmin": 0,
+              "6arcmin": 0,
+              "1degree": 0
+            }
+          },
+          "distance": {
+            "unit": "AU",
+            "max": 2.0685662614240707e-09,
+            "p50": 3.654290411936323e-13,
+            "p95": 4.029543474066978e-12,
+            "p99": 6.907950105602272e-11,
+            "rms": 1.5573441214234302e-11,
+            "worst": {
+              "absoluteError": 2.0685662614240707e-09,
+              "signedError": 2.0685662614240707e-09,
+              "jdUT": 2459277.5,
+              "utIso": "2021-03-04T00:00:00",
+              "core": 0.00260552620153259,
+              "swiss": 0.0026055241329663286
+            }
+          },
+          "speedLongitude": {
+            "unit": "degrees/day",
+            "max": 0.1337700656989266,
+            "p50": 1.453453824743628e-09,
+            "p95": 1.723351605500273e-07,
+            "p99": 4.1435279705182e-07,
+            "rms": 0.0003223884805537873,
+            "worst": {
+              "absoluteError": 0.1337700656989266,
+              "signedError": -0.1337700656989266,
+              "jdUT": 2462308.5,
+              "utIso": "2029-06-21T00:00:00",
+              "core": -0.0055152453773448466,
+              "swiss": 0.12825482032158175
+            }
+          }
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "jdUT": 2425977.5,
+      "utIso": "1930-01-01T00:00:00",
+      "deltaTCoreSeconds": 24.42289181247125,
+      "deltaTSwissSeconds": 24.42289181247125,
+      "bodies": [
+        {
+          "id": 10,
+          "name": "MeanNode",
+          "core": [
+            38.938158128783016,
+            0.0,
+            0.0025695552898,
+            -0.052920006528952325,
+            0.0,
+            0.0
+          ],
+          "swissUT": [
+            38.938194650285546,
+            0.0,
+            0.0025695552897999903,
+            -0.05291998804428485,
+            0.0,
+            0.0
+          ],
+          "swissCoreTT": [
+            38.938194650285546,
+            0.0,
+            0.0025695552897999903,
+            -0.05291998804428485,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 11,
+          "name": "TrueNode",
+          "core": [
+            40.35822458887564,
+            0.0,
+            0.002553922009234345,
+            -0.20698442185368066,
+            0.0,
+            1.0779721784517449e-06
+          ],
+          "swissUT": [
+            40.35822458947937,
+            0.0,
+            0.0025539220094438512,
+            -0.20698442372919643,
+            0.0,
+            1.0779709375517685e-06
+          ],
+          "swissCoreTT": [
+            40.35822458947937,
+            0.0,
+            0.0025539220094438512,
+            -0.20698442372919643,
+            0.0,
+            1.0779709375517685e-06
+          ]
+        }
+      ]
+    },
+    {
+      "jdUT": 2441465.6666666665,
+      "utIso": "1972-05-28T04:00:00",
+      "deltaTCoreSeconds": 42.687592589720175,
+      "deltaTSwissSeconds": 42.68759256483518,
+      "bodies": [
+        {
+          "id": 10,
+          "name": "MeanNode",
+          "core": [
+            298.78719003223205,
+            0.0,
+            0.0025695552898,
+            -0.0529270537707745,
+            0.0,
+            0.0
+          ],
+          "swissUT": [
+            298.78720447340925,
+            0.0,
+            0.00256955528979999,
+            -0.05292706591604688,
+            0.0,
+            0.0
+          ],
+          "swissCoreTT": [
+            298.78720447340925,
+            0.0,
+            0.00256955528979999,
+            -0.05292706591604688,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 11,
+          "name": "TrueNode",
+          "core": [
+            297.044256191429,
+            0.0,
+            0.0026143602972918778,
+            -0.13704240523202715,
+            0.0,
+            5.596652451420875e-06
+          ],
+          "swissUT": [
+            297.04425583918777,
+            0.0,
+            0.00261436031894931,
+            -0.1370425330464016,
+            0.0,
+            5.596632323942905e-06
+          ],
+          "swissCoreTT": [
+            297.04425583918777,
+            0.0,
+            0.00261436031894931,
+            -0.1370425330464016,
+            0.0,
+            5.596632323942905e-06
+          ]
+        }
+      ]
+    },
+    {
+      "jdUT": 2466520.499988426,
+      "utIso": "2040-12-31T23:59:59",
+      "deltaTCoreSeconds": 72.06645018613898,
+      "deltaTSwissSeconds": 72.06645018613885,
+      "bodies": [
+        {
+          "id": 10,
+          "name": "MeanNode",
+          "core": [
+            52.032118771041155,
+            0.0,
+            0.0025695552898,
+            -0.05290184505987173,
+            0.0,
+            0.0
+          ],
+          "swissUT": [
+            52.03209674837413,
+            0.0,
+            0.00256955528979999,
+            -0.052901959911357946,
+            0.0,
+            0.0
+          ],
+          "swissCoreTT": [
+            52.03209674837413,
+            0.0,
+            0.00256955528979999,
+            -0.052901959911357946,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "id": 11,
+          "name": "TrueNode",
+          "core": [
+            53.752733046837875,
+            0.0,
+            0.002626466349992615,
+            -0.053586806301998975,
+            0.0,
+            1.6269408871928932e-05
+          ],
+          "swissUT": [
+            53.752733055974616,
+            0.0,
+            0.002626466351624935,
+            -0.05358680482169981,
+            0.0,
+            1.6269409761213787e-05
+          ],
+          "swissCoreTT": [
+            53.752733055974616,
+            0.0,
+            0.002626466351624935,
+            -0.05358680482169981,
+            0.0,
+            1.6269409761213787e-05
+          ]
+        }
+      ]
+    }
+  ],
+  "disagreementWitnesses": [
+    {
+      "jdUT": 2462308.5,
+      "utIso": "2029-06-21T00:00:00",
+      "body": {
+        "id": 11,
+        "name": "TrueNode"
+      },
+      "deltaTCoreSeconds": 69.14906123575882,
+      "deltaTSwissSeconds": 69.14906123575882,
+      "core": {
+        "coordinates": [
+          274.71631148636175,
+          0.0,
+          0.0024817805373840954,
+          -0.0055152453773448466,
+          0.0,
+          2.334315562342751e-06
+        ],
+        "signIndex": 9,
+        "retrograde": true,
+        "nearestSignBoundaryDegrees": 270,
+        "signedDistanceToBoundaryArcsec": 16978.721350902288,
+        "linearTimeToBoundarySeconds": 73884167.34738803
+      },
+      "mismatchModes": [
+        "sameUT",
+        "sameTT"
+      ],
+      "comparisons": {
+        "sameUT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 0.007730795471593516,
+            "0.01": -0.004319974317393361,
+            "0.1": -0.005506864980576184
+          },
+          "reference": {
+            "coordinates": [
+              274.7163115403161,
+              0.0,
+              0.0024817805357105634,
+              0.12825482032158175,
+              0.0,
+              3.2641058158258883e-06
+            ],
+            "signIndex": 9,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 270,
+            "signedDistanceToBoundaryArcsec": 16978.721545137956,
+            "linearTimeToBoundarySeconds": -3177185.201005203
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              274.7163115403161,
+              0.0,
+              0.0024817805357105634,
+              0.12825482032158175,
+              0.0,
+              3.2641058158258883e-06
+            ],
+            "signIndex": 9,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 270,
+            "signedDistanceToBoundaryArcsec": 16978.721545137956,
+            "linearTimeToBoundarySeconds": -3177185.201005203
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": -0.0001942356675499468,
+          "longitudeCoreMinusNoDeflectionArcsec": -0.0001942356675499468,
+          "speedCoreMinusReferenceDegreesPerDay": -0.1337700656989266
+        },
+        "sameTT": {
+          "centralDifferenceLongitudeSpeedDegreesPerDayByStepDays": {
+            "0.001": 0.007730795471593516,
+            "0.01": -0.004319974317393361,
+            "0.1": -0.005506864940785791
+          },
+          "reference": {
+            "coordinates": [
+              274.7163115403161,
+              0.0,
+              0.0024817805357105634,
+              0.12825482032158175,
+              0.0,
+              3.2641058158258883e-06
+            ],
+            "signIndex": 9,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 270,
+            "signedDistanceToBoundaryArcsec": 16978.721545137956,
+            "linearTimeToBoundarySeconds": -3177185.201005203
+          },
+          "withoutGravitationalDeflection": {
+            "coordinates": [
+              274.7163115403161,
+              0.0,
+              0.0024817805357105634,
+              0.12825482032158175,
+              0.0,
+              3.2641058158258883e-06
+            ],
+            "signIndex": 9,
+            "retrograde": false,
+            "nearestSignBoundaryDegrees": 270,
+            "signedDistanceToBoundaryArcsec": 16978.721545137956,
+            "linearTimeToBoundarySeconds": -3177185.201005203
+          },
+          "noDeflectionFlagsReturned": 770,
+          "longitudeCoreMinusReferenceArcsec": -0.0001942356675499468,
+          "longitudeCoreMinusNoDeflectionArcsec": -0.0001942356675499468,
+          "speedCoreMinusReferenceDegreesPerDay": -0.1337700656989266
+        }
+      }
+    }
+  ]
+}

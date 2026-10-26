@@ -404,3 +404,13 @@ usa aproximações analíticas cuja precisão não é coberta pela auditoria.
 A [auditoria de precisão](docs/validation/precision-1930-2040.txt) registra a
 amostragem, os resíduos e as diferenças de convenção. Nos corpos tabulados,
 a comparação mede fidelidade à Swiss, não valida uma teoria física independente.
+
+A [conferência do Nodo Norte em 1930–2040](docs/validation/north-node-swiss-1930-2040.txt)
+compara os nodos verdadeiro e médio com Swiss Ephemeris **2.10.03** em 172.174
+instantes por corpo. No nodo verdadeiro usado pelos relatórios, o maior resíduo
+de longitude foi **0,136 segundo de arco**, sem divergências de signo na amostra;
+uma divergência de movimento em 21/06/2029 permanece documentada. Para repetir
+apenas os nodos, use `node scripts/validation/export-core.mjs /tmp/celestial-north-node-1930-2040.bin --nodes`
+e o comparador indicado no relatório. O comparador exige pyswisseph **2.10.3.2**
+e Swiss **2.10.03**; os resultados cobrem flags `SWIEPH | SPEED`, não todas as
+opções da API nem todos os instantes possíveis.

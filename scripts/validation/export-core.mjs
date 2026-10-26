@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// node scripts/validation/export-core.mjs [/tmp/celestial-core-audit.bin]
+// node scripts/validation/export-core.mjs [/tmp/celestial-core-audit.bin] [--nodes]
 // Rebuild pkg first to audit a new core; hashes identify the exact artifact and source.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -8,12 +8,18 @@ import { fileURLToPath } from 'node:url';
 import * as core from '../../pkg/celestial_wasm.js';
 function main() {
   const root = fileURLToPath(new URL('../../', import.meta.url));
-  const output = path.resolve(process.argv[2] ?? '/tmp/celestial-core-audit.bin');
+  const args = process.argv.slice(2);
+  const nodesOnly = args.includes('--nodes');
+  const positional = args.filter(arg => arg !== '--nodes');
+  if (positional.length > 1 || positional.some(arg => arg.startsWith('--'))) {
+    throw new Error('Usage: export-core.mjs [output.bin] [--nodes]');
+  }
+  const output = path.resolve(positional[0] ?? '/tmp/celestial-core-audit.bin');
   const sha256 = data => crypto.createHash('sha256').update(data).digest('hex');
   const wasm = fs.readFileSync(path.join(root, 'pkg/celestial_wasm_bg.wasm'));
   core.initSync({module: wasm});
-  const bodies = [0,1,2,3,4,5,6,7,8,9,10,11,15];
-  const names = ['Sun','Moon','Mercury','Venus','Mars','Jupiter','Saturn','Uranus','Neptune','Pluto','MeanNode','TrueNode','Chiron'];
+  const bodies = nodesOnly ? [10,11] : [0,1,2,3,4,5,6,7,8,9,10,11,15];
+  const names = nodesOnly ? ['MeanNode','TrueNode'] : ['Sun','Moon','Mercury','Venus','Mars','Jupiter','Saturn','Uranus','Neptune','Pluto','MeanNode','TrueNode','Chiron'];
   const fields = ['lon','lat','dist','speedLon','speedLat','speedDist'];
   const start = core.julday(1930,1,1,0,1), end = core.julday(2041,1,1,0,1);
   const dates = [];
